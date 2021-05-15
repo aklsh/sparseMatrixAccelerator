@@ -1,0 +1,279 @@
+
+
+================================================================
+== Vitis HLS Report for 'sparse2_4Mult'
+================================================================
+* Date:           Sun May 15 20:23:08 2022
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        structSparse
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       36|       36|  0.360 us|  0.360 us|   37|   37|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+-------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |                         |             |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+        |         Instance        |    Module   |   min   |   max   |    min    |    max    | min | max |   Type  |
+        +-------------------------+-------------+---------+---------+-----------+-----------+-----+-----+---------+
+        |grp_decodeStage_fu_1013  |decodeStage  |        2|        2|  20.000 ns|  20.000 ns|    2|    2|       no|
+        |grp_macStage_fu_1147     |macStage     |       31|       31|   0.310 us|   0.310 us|    4|    4|      yes|
+        +-------------------------+-------------+---------+---------+-----------+-----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       -|      -|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        0|   40|   11178|  13796|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    159|    -|
+|Register         |        -|    -|    4165|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|   40|   15343|  13955|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|   18|      14|     26|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------+---------------+---------+----+------+------+-----+
+    |         Instance        |     Module    | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +-------------------------+---------------+---------+----+------+------+-----+
+    |control_s_axi_U          |control_s_axi  |        0|   0|  3803|  6320|    0|
+    |grp_decodeStage_fu_1013  |decodeStage    |        0|   0|  1059|   962|    0|
+    |grp_macStage_fu_1147     |macStage       |        0|  40|  6316|  6514|    0|
+    +-------------------------+---------------+---------+----+------+------+-----+
+    |Total                    |               |        0|  40| 11178| 13796|    0|
+    +-------------------------+---------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    N/A
+
+    * Multiplexer: 
+    +-----------+-----+-----------+-----+-----------+
+    |    Name   | LUT | Input Size| Bits| Total Bits|
+    +-----------+-----+-----------+-----+-----------+
+    |ap_NS_fsm  |  159|         36|    1|         36|
+    +-----------+-----+-----------+-----+-----------+
+    |Total      |  159|         36|    1|         36|
+    +-----------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------+----+----+-----+-----------+
+    |                 Name                 | FF | LUT| Bits| Const Bits|
+    +--------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                             |  35|   0|   35|          0|
+    |call_ret_reg_1983                     |  32|   0|   32|          0|
+    |dataValues_0_read_reg_1663            |  32|   0|   32|          0|
+    |dataValues_10_read_reg_1713           |  32|   0|   32|          0|
+    |dataValues_11_read_reg_1718           |  32|   0|   32|          0|
+    |dataValues_12_read_reg_1723           |  32|   0|   32|          0|
+    |dataValues_13_read_reg_1728           |  32|   0|   32|          0|
+    |dataValues_14_read_reg_1733           |  32|   0|   32|          0|
+    |dataValues_15_read_reg_1738           |  32|   0|   32|          0|
+    |dataValues_16_read_reg_1743           |  32|   0|   32|          0|
+    |dataValues_17_read_reg_1748           |  32|   0|   32|          0|
+    |dataValues_18_read_reg_1753           |  32|   0|   32|          0|
+    |dataValues_19_read_reg_1758           |  32|   0|   32|          0|
+    |dataValues_1_read_reg_1668            |  32|   0|   32|          0|
+    |dataValues_20_read_reg_1763           |  32|   0|   32|          0|
+    |dataValues_21_read_reg_1768           |  32|   0|   32|          0|
+    |dataValues_22_read_reg_1773           |  32|   0|   32|          0|
+    |dataValues_23_read_reg_1778           |  32|   0|   32|          0|
+    |dataValues_24_read_reg_1783           |  32|   0|   32|          0|
+    |dataValues_25_read_reg_1788           |  32|   0|   32|          0|
+    |dataValues_26_read_reg_1793           |  32|   0|   32|          0|
+    |dataValues_27_read_reg_1798           |  32|   0|   32|          0|
+    |dataValues_28_read_reg_1803           |  32|   0|   32|          0|
+    |dataValues_29_read_reg_1808           |  32|   0|   32|          0|
+    |dataValues_2_read_reg_1673            |  32|   0|   32|          0|
+    |dataValues_30_read_reg_1813           |  32|   0|   32|          0|
+    |dataValues_31_read_reg_1818           |  32|   0|   32|          0|
+    |dataValues_3_read_reg_1678            |  32|   0|   32|          0|
+    |dataValues_4_read_reg_1683            |  32|   0|   32|          0|
+    |dataValues_5_read_reg_1688            |  32|   0|   32|          0|
+    |dataValues_6_read_reg_1693            |  32|   0|   32|          0|
+    |dataValues_7_read_reg_1698            |  32|   0|   32|          0|
+    |dataValues_8_read_reg_1703            |  32|   0|   32|          0|
+    |dataValues_9_read_reg_1708            |  32|   0|   32|          0|
+    |grp_decodeStage_fu_1013_ap_start_reg  |   1|   0|    1|          0|
+    |grp_macStage_fu_1147_ap_start_reg     |   1|   0|    1|          0|
+    |inp_vector_0_read_reg_1343            |  32|   0|   32|          0|
+    |inp_vector_10_read_reg_1393           |  32|   0|   32|          0|
+    |inp_vector_11_read_reg_1398           |  32|   0|   32|          0|
+    |inp_vector_12_read_reg_1403           |  32|   0|   32|          0|
+    |inp_vector_13_read_reg_1408           |  32|   0|   32|          0|
+    |inp_vector_14_read_reg_1413           |  32|   0|   32|          0|
+    |inp_vector_15_read_reg_1418           |  32|   0|   32|          0|
+    |inp_vector_16_read_reg_1423           |  32|   0|   32|          0|
+    |inp_vector_17_read_reg_1428           |  32|   0|   32|          0|
+    |inp_vector_18_read_reg_1433           |  32|   0|   32|          0|
+    |inp_vector_19_read_reg_1438           |  32|   0|   32|          0|
+    |inp_vector_1_read_reg_1348            |  32|   0|   32|          0|
+    |inp_vector_20_read_reg_1443           |  32|   0|   32|          0|
+    |inp_vector_21_read_reg_1448           |  32|   0|   32|          0|
+    |inp_vector_22_read_reg_1453           |  32|   0|   32|          0|
+    |inp_vector_23_read_reg_1458           |  32|   0|   32|          0|
+    |inp_vector_24_read_reg_1463           |  32|   0|   32|          0|
+    |inp_vector_25_read_reg_1468           |  32|   0|   32|          0|
+    |inp_vector_26_read_reg_1473           |  32|   0|   32|          0|
+    |inp_vector_27_read_reg_1478           |  32|   0|   32|          0|
+    |inp_vector_28_read_reg_1483           |  32|   0|   32|          0|
+    |inp_vector_29_read_reg_1488           |  32|   0|   32|          0|
+    |inp_vector_2_read_reg_1353            |  32|   0|   32|          0|
+    |inp_vector_30_read_reg_1493           |  32|   0|   32|          0|
+    |inp_vector_31_read_reg_1498           |  32|   0|   32|          0|
+    |inp_vector_32_read_reg_1503           |  32|   0|   32|          0|
+    |inp_vector_33_read_reg_1508           |  32|   0|   32|          0|
+    |inp_vector_34_read_reg_1513           |  32|   0|   32|          0|
+    |inp_vector_35_read_reg_1518           |  32|   0|   32|          0|
+    |inp_vector_36_read_reg_1523           |  32|   0|   32|          0|
+    |inp_vector_37_read_reg_1528           |  32|   0|   32|          0|
+    |inp_vector_38_read_reg_1533           |  32|   0|   32|          0|
+    |inp_vector_39_read_reg_1538           |  32|   0|   32|          0|
+    |inp_vector_3_read_reg_1358            |  32|   0|   32|          0|
+    |inp_vector_40_read_reg_1543           |  32|   0|   32|          0|
+    |inp_vector_41_read_reg_1548           |  32|   0|   32|          0|
+    |inp_vector_42_read_reg_1553           |  32|   0|   32|          0|
+    |inp_vector_43_read_reg_1558           |  32|   0|   32|          0|
+    |inp_vector_44_read_reg_1563           |  32|   0|   32|          0|
+    |inp_vector_45_read_reg_1568           |  32|   0|   32|          0|
+    |inp_vector_46_read_reg_1573           |  32|   0|   32|          0|
+    |inp_vector_47_read_reg_1578           |  32|   0|   32|          0|
+    |inp_vector_48_read_reg_1583           |  32|   0|   32|          0|
+    |inp_vector_49_read_reg_1588           |  32|   0|   32|          0|
+    |inp_vector_4_read_reg_1363            |  32|   0|   32|          0|
+    |inp_vector_50_read_reg_1593           |  32|   0|   32|          0|
+    |inp_vector_51_read_reg_1598           |  32|   0|   32|          0|
+    |inp_vector_52_read_reg_1603           |  32|   0|   32|          0|
+    |inp_vector_53_read_reg_1608           |  32|   0|   32|          0|
+    |inp_vector_54_read_reg_1613           |  32|   0|   32|          0|
+    |inp_vector_55_read_reg_1618           |  32|   0|   32|          0|
+    |inp_vector_56_read_reg_1623           |  32|   0|   32|          0|
+    |inp_vector_57_read_reg_1628           |  32|   0|   32|          0|
+    |inp_vector_58_read_reg_1633           |  32|   0|   32|          0|
+    |inp_vector_59_read_reg_1638           |  32|   0|   32|          0|
+    |inp_vector_5_read_reg_1368            |  32|   0|   32|          0|
+    |inp_vector_60_read_reg_1643           |  32|   0|   32|          0|
+    |inp_vector_61_read_reg_1648           |  32|   0|   32|          0|
+    |inp_vector_62_read_reg_1653           |  32|   0|   32|          0|
+    |inp_vector_63_read_reg_1658           |  32|   0|   32|          0|
+    |inp_vector_6_read_reg_1373            |  32|   0|   32|          0|
+    |inp_vector_7_read_reg_1378            |  32|   0|   32|          0|
+    |inp_vector_8_read_reg_1383            |  32|   0|   32|          0|
+    |inp_vector_9_read_reg_1388            |  32|   0|   32|          0|
+    |multInpsRow_10_reg_1873               |  32|   0|   32|          0|
+    |multInpsRow_11_reg_1878               |  32|   0|   32|          0|
+    |multInpsRow_12_reg_1883               |  32|   0|   32|          0|
+    |multInpsRow_13_reg_1888               |  32|   0|   32|          0|
+    |multInpsRow_14_reg_1893               |  32|   0|   32|          0|
+    |multInpsRow_15_reg_1898               |  32|   0|   32|          0|
+    |multInpsRow_16_reg_1903               |  32|   0|   32|          0|
+    |multInpsRow_17_reg_1908               |  32|   0|   32|          0|
+    |multInpsRow_18_reg_1913               |  32|   0|   32|          0|
+    |multInpsRow_19_reg_1918               |  32|   0|   32|          0|
+    |multInpsRow_1_reg_1828                |  32|   0|   32|          0|
+    |multInpsRow_20_reg_1923               |  32|   0|   32|          0|
+    |multInpsRow_21_reg_1928               |  32|   0|   32|          0|
+    |multInpsRow_22_reg_1933               |  32|   0|   32|          0|
+    |multInpsRow_23_reg_1938               |  32|   0|   32|          0|
+    |multInpsRow_24_reg_1943               |  32|   0|   32|          0|
+    |multInpsRow_25_reg_1948               |  32|   0|   32|          0|
+    |multInpsRow_26_reg_1953               |  32|   0|   32|          0|
+    |multInpsRow_27_reg_1958               |  32|   0|   32|          0|
+    |multInpsRow_28_reg_1963               |  32|   0|   32|          0|
+    |multInpsRow_29_reg_1968               |  32|   0|   32|          0|
+    |multInpsRow_2_reg_1833                |  32|   0|   32|          0|
+    |multInpsRow_30_reg_1973               |  32|   0|   32|          0|
+    |multInpsRow_31_reg_1978               |  32|   0|   32|          0|
+    |multInpsRow_3_reg_1838                |  32|   0|   32|          0|
+    |multInpsRow_4_reg_1843                |  32|   0|   32|          0|
+    |multInpsRow_5_reg_1848                |  32|   0|   32|          0|
+    |multInpsRow_6_reg_1853                |  32|   0|   32|          0|
+    |multInpsRow_7_reg_1858                |  32|   0|   32|          0|
+    |multInpsRow_8_reg_1863                |  32|   0|   32|          0|
+    |multInpsRow_9_reg_1868                |  32|   0|   32|          0|
+    |multInpsRow_reg_1823                  |  32|   0|   32|          0|
+    +--------------------------------------+----+----+-----+-----------+
+    |Total                                 |4165|   0| 4165|          0|
+    +--------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+---------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  | Source Object |    C Type    |
++-----------------------+-----+-----+------------+---------------+--------------+
+|s_axi_control_AWVALID  |   in|    1|       s_axi|        control|        scalar|
+|s_axi_control_AWREADY  |  out|    1|       s_axi|        control|        scalar|
+|s_axi_control_AWADDR   |   in|   10|       s_axi|        control|        scalar|
+|s_axi_control_WVALID   |   in|    1|       s_axi|        control|        scalar|
+|s_axi_control_WREADY   |  out|    1|       s_axi|        control|        scalar|
+|s_axi_control_WDATA    |   in|   32|       s_axi|        control|        scalar|
+|s_axi_control_WSTRB    |   in|    4|       s_axi|        control|        scalar|
+|s_axi_control_ARVALID  |   in|    1|       s_axi|        control|        scalar|
+|s_axi_control_ARREADY  |  out|    1|       s_axi|        control|        scalar|
+|s_axi_control_ARADDR   |   in|   10|       s_axi|        control|        scalar|
+|s_axi_control_RVALID   |  out|    1|       s_axi|        control|        scalar|
+|s_axi_control_RREADY   |   in|    1|       s_axi|        control|        scalar|
+|s_axi_control_RDATA    |  out|   32|       s_axi|        control|        scalar|
+|s_axi_control_RRESP    |  out|    2|       s_axi|        control|        scalar|
+|s_axi_control_BVALID   |  out|    1|       s_axi|        control|        scalar|
+|s_axi_control_BREADY   |   in|    1|       s_axi|        control|        scalar|
+|s_axi_control_BRESP    |  out|    2|       s_axi|        control|        scalar|
+|ap_local_block         |  out|    1|  ap_ctrl_hs|  sparse2_4Mult|  return value|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|  sparse2_4Mult|  return value|
+|ap_rst_n               |   in|    1|  ap_ctrl_hs|  sparse2_4Mult|  return value|
+|ap_start               |   in|    1|  ap_ctrl_hs|  sparse2_4Mult|  return value|
+|ap_done                |  out|    1|  ap_ctrl_hs|  sparse2_4Mult|  return value|
+|ap_idle                |  out|    1|  ap_ctrl_hs|  sparse2_4Mult|  return value|
+|ap_ready               |  out|    1|  ap_ctrl_hs|  sparse2_4Mult|  return value|
++-----------------------+-----+-----+------------+---------------+--------------+
+
