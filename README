@@ -1,0 +1,35 @@
+Sparse Matrix Vector (SpMV) Multiplication Accelerator
+======================================================
+
+Group Members:
+    - Arjun Menon V. (@arjunmenonv)
+    - Akilesh Kannan (@aklsh)
+    - Balasubramaniam M.C. (@bala122)
+
+Introduction
+------------
+Sparse matrices are very widely used in many modern applications like Machine Learning, Network Routing, Multi-body simulations, Graph Algorithms etc. Using standard matrix algorithms to perform computations with these matrices is inefficient in CPUs due to their sparsity - doing a lot of redundant computations, and having a lot of pointer-chasing in sparse linear algebra library implementations causes a slowdown due to the memory accesses. GPUs, while being able to accelerate this computation, due to the massive parallelism they offer, do not have a good performance-per-watt characteristic, nor are they flexible enough to build specialized architectures which can reduce their power consumption, while enhancing performance.
+
+FPGAs can be configured to act as computation engines for high-performance computing. With thousands of functional units and their ability to internally route data in an efficient manner (depending on the application), they present an opportunity to scale performance at lower power consumption. Combined with a CPU which can perform some amount of  pre-processing, encoding/decoding, we shall be able to get the best of both worlds.
+
+Methodology and Evaluation
+--------------------------
+We plan on using a hybrid CPU/FPGA approach (using the Digilent Zybo-Z7 board) to accelerate the performance of sparse matrix vector (SPMV) multiplication. As the sparse matrix is static during runtime, we plan to design 2 design variants:
+    - Scheduling of the operations on non-zero elements of the matrix is done during compile time and is in memory along with the sparse matrix itself. This opens up opportunities to identify global sparsity patterns and tune the scheduling algorithm in a way to account for these [5].
+    - Scheduling of the operations on non-zero elements is done during run-time by the CPU using and the elements are streamed to the FPGA accelerator which can perform the computations in an efficient pipelined manner. This method uses different sparse matrix encoding techniques (CSR, RIR, CISR etc.), which helps in scheduling operations in the FPGA [1, 2, 3].
+
+While we expect the first method to be faster than the second, we feel that there might be a bottleneck introduced due to the large amount of information that needs to be fetched from memory, especially for large matrices. We plan on studying the trade-offs between these two approaches.
+
+We will evaluate the design using sparse matrices from the Sparse Matrix Suite [4] from the University of Florida. We shall also compare it with an ARM SIMD implementation (pure software) of a sparse matrix multiplication algorithm on the A9 core on-board.
+
+References
+----------
+[1] M. Soltaniyeh, R. P. Martin, and S. Nagarakatte, “Synergistic CPU-FPGA Acceleration of Sparse Linear Algebra,” arXiv:2004.13907 [cs], Apr. 2020, Accessed: Mar. 27, 2022. [Online]. Available: http://arxiv.org/abs/2004.13907
+
+[2] J. Fowers, K. Ovtcharov, K. Strauss, E. S. Chung, and G. Stitt, “A High Memory Bandwidth FPGA Accelerator for Sparse Matrix-Vector Multiplication,” in 2014 IEEE 22nd Annual International Symposium on Field-Programmable Custom Computing Machines, Boston, MA, USA, May 2014, pp. 36–43. doi: 10.1109/FCCM.2014.23.
+
+[3] S. Li, D. Liu, and W. Liu, “Optimized Data Reuse via Reordering for Sparse Matrix-Vector Multiplication on FPGAs,” in 2021 IEEE/ACM International Conference On Computer Aided Design (ICCAD), Nov. 2021, pp. 1–9. doi: 10.1109/ICCAD51958.2021.9643453.
+
+[4] T. A. Davis and Y. Hu, “The University of Florida sparse matrix collection,” ACM Trans. Math. Softw., vol. 38, no. 1, p. 1:1-1:25, Dec. 2011, doi: 10.1145/2049662.2049663
+
+[5] A. Mishra et al., “Accelerating Sparse Deep Neural Networks,” arXiv:2104.08378 [cs], Apr. 2021, Accessed: Apr. 03, 2022. [Online]. Available: http://arxiv.org/abs/2104.08378
