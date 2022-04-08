@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+import re, sys
+
+def main():
+    # example:
+    # feat(apikey): added the ability to add api key to configuration
+    pattern = r'(build|docs|feat|fix|perf|style|test|chore|revert|hls|arm)(\([\w\-]+\))?:\s.*'
+    filename = sys.argv[1]
+    commitMessage = open(filename, 'r').read()
+    m = re.match(pattern, commitMessage)
+    if m == None:
+        raise SystemExit("Conventional Commit Validation Failed")
+    else:
+        print("Conventional Commit Validation Passed")
+
+if __name__ == "__main__":
+    main()
