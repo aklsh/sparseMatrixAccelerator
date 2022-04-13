@@ -16,11 +16,11 @@ const float matrix[][8] = {
 };
 
 //TODO- can either implement encoded data in linked list/ array ( will need to know number of non-zeros before hand
+//TODO- ** Figure out how row id decoding is done- esp with empty rows **
 struct elem
 {
  float value;
  int col_index;
- int row_length;
 };
 int main()
 {
@@ -114,7 +114,7 @@ int main()
               //Encode
               Elem_arr[non_zero_count].value = matrix[row_id][col_index];
               Elem_arr[non_zero_count].col_index = col_index;
-              Elem_arr[non_zero_count].row_length = num_non_zero_in_row[row_id];
+              //Elem_arr[non_zero_count].row_length = num_non_zero_in_row[row_id];
               non_zero_count++;
               slot_non_zeros_done[slot_num]++;
               slot_col_index_last[slot_num] = col_index;
@@ -146,7 +146,6 @@ int main()
         printf("Unmapped row %d\n",row_id);
         
         //Mapping process
-        //If row is non-empty then we can map
         //Whenever a new row is mapped update global_max_row id
         if(num_non_zero_in_row[row_id] !=0)
         {
@@ -178,11 +177,13 @@ int main()
   
   
   //Test output
+  int row_len_arr_index= 0;
   for(int index = 0;index<num_non_zero;index++)
   {
     printf("Val:       %f \n",Elem_arr[index].value);
     printf("Col_index: %d \n",Elem_arr[index].col_index);
-    printf("Row_len:   %d \n",Elem_arr[index].row_length);
+    if(row_len_arr_index<
+    printf("Row_len:   %d \n",row_len_arr[);
     printf("------------------------------\n");
   }
   
