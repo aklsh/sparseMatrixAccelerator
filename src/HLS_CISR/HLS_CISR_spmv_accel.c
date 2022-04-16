@@ -1,16 +1,18 @@
 #define num_slots 4
 #define N 8
-const int rows_per_slot = (int)ceil((float)N/num_slots);
+//rows_per_slot = (int)math.ceil((float)N/num_slots);
+#define rows_per_slot  2
 
-using namespace std;
-#include <iostream>
+//#include <math.h>
+//#include <stdio.h>
+#include <stdbool.h>
 struct slot_data
 {
   float data;
   int col_index;
 };
 //TODO- How does HLS implement this interface using AXI?
-void spmv_CISR_accel(
+void HLS_CISR_spmv_accel(
 		//Cmd_start- signal implying start of computation
 		bool cmd_start,
 
@@ -80,23 +82,22 @@ void spmv_CISR_accel(
 
     }
 
-    //Figure out row index CISR decoding
-    //CISR DECODING
+    //Row assignment and CISR row id DECODING
     //First see which are new row mappings
-    for(int slot_id=0;slot_id<num_slots;slot_id++)
+    for(int slot_id2=0;slot_id2<num_slots;slot_id2++)
     {
 
     	//New Row assignment
     	//Can parallelize the row id decoding part
     	//If some slot is done with a row
-    	if(slot_row_counter[slot_id]==0)
+    	if(slot_row_counter[slot_id2]==0)
     	{
     		//Assign new row len
-    		slot_row_counter[slot_id] = row_len_slot_arr[slot_row_len_id[slot_id]];
-    		slot_row_len_id[slot_id]++;
+    		slot_row_counter[slot_id2] = row_len_slot_arr[slot_id2][slot_row_len_id[slot_id2]];
+    		slot_row_len_id[slot_id2]++;
     		//CISR row id decoding
     		//Store row id the slot has to work on
-    		slot_row_id[slot_id] = max_row_id;
+    		slot_row_id[slot_id2] = max_row_id;
     		max_row_id++;
 
     	}
@@ -110,13 +111,13 @@ void spmv_CISR_accel(
 
 
 	//Implement 4 MAC units which does the computation
-	for(int slot_id=0;slot_id<num_slots;slot_id++)
+	for(int slot_id3=0;slot_id3<num_slots;slot_id3++)
 	{
-		int row_index = slot_row_id[slot_id];
-		float matrix_val = slot_data_arr[slot_id].data;
-		int col_index    = slot_data_arr[slot_id].col_index;
+		int row_index = slot_row_id[slot_id3];
+		float matrix_val = slot_data_arr[slot_id3].data;
+		int col_index    = slot_data_arr[slot_id3].col_index;
 	    output_vec[row_index]+= matrix_val*inp_vec[col_index];
-	    slot_row_counter[slot_id]--;
+	    slot_row_counter[slot_id3]--;
 
 
 	}

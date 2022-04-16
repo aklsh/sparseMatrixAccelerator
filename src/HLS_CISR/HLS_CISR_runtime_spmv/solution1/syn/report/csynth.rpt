@@ -1,0 +1,28 @@
+
+
+================================================================
+== Synthesis Summary Report of 'HLS_CISR_spmv_accel'
+================================================================
++ General Information: 
+    * Date:           Sat Apr 16 23:45:21 2022
+    * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+    * Project:        HLS_CISR_runtime_spmv
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------+------+-------+---------+---------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    |        Modules        | Issue|       | Latency | Latency | Iteration|         | Trip |          |      |        |           |           |     |
+    |        & Loops        | Type | Slack | (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP  |     FF    |    LUT    | URAM|
+    +-----------------------+------+-------+---------+---------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    |+ HLS_CISR_spmv_accel  |     -|  -0.04|       43|  430.000|         -|       44|     -|        no|     -|  5 (2%)|  900 (~0%)|  1528 (2%)|    -|
+    | o VITIS_LOOP_53_1     |     -|  -7.30|        4|   40.000|         1|        1|     4|       yes|     -|       -|          -|          -|    -|
+    | o VITIS_LOOP_70_3     |     -|  -7.30|        4|   40.000|         1|        1|     4|       yes|     -|       -|          -|          -|    -|
+    | o VITIS_LOOP_87_4     |     -|  -7.30|        4|   40.000|         2|        1|     4|       yes|     -|       -|          -|          -|    -|
+    | o VITIS_LOOP_114_5    |    II|  -7.30|       20|  200.000|         6|        5|     4|       yes|     -|       -|          -|          -|    -|
+    +-----------------------+------+-------+---------+---------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+

@@ -5,6 +5,11 @@
                 <option name="name" value="HLS_CISR_spmv_accel"/>
             </pragma>
         </directive>
+        <directive functionName="HLS_CISR_spmv_accel" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="HLS_CISR_spmv_accel"/>
+            </pragma>
+        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

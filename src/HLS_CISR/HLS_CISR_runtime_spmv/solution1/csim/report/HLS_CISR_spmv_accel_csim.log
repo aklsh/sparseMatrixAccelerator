@@ -1,0 +1,52 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../HLS_CISR_spmv_accel_tb.c in debug mode
+INFO: [HLS 200-10] Running '/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'shivaubuntu' on host 'shivaubuntu-Inspiron-7572' (Linux_x86_64 version 5.4.0-107-generic) on Sat Apr 16 23:41:52 IST 2022
+INFO: [HLS 200-10] On os Ubuntu 20.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution1/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_shivaubuntu/865801650132712513177
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+inp_vec 0.000000
+inp_vec 1.000000
+inp_vec 1.000000
+inp_vec 1.000000
+inp_vec 0.000000
+inp_vec 0.000000
+inp_vec 1.000000
+inp_vec 1.000000
+out_val[0] =  0.000000
+out_val[1] =  -32.500000
+out_val[2] =  0.000000
+out_val[3] =  0.800000
+out_val[4] =  0.000000
+out_val[5] =  0.000000
+out_val[6] =  0.000000
+out_val[7] =  0.000000
+out_val[0] =  0.300000
+out_val[1] =  -32.500000
+out_val[2] =  0.000000
+out_val[3] =  0.800000
+out_val[4] =  12.600000
+out_val[5] =  0.000000
+out_val[6] =  0.000000
+out_val[7] =  0.000000
+out_val[0] =  0.300000
+out_val[1] =  -32.500000
+out_val[2] =  0.000000
+out_val[3] =  6.200000
+out_val[4] =  14.100000
+out_val[5] =  5.400000
+out_val[6] =  55.599998
+out_val[7] =  0.000000
+out_val[0] =  0.300000
+out_val[1] =  -32.500000
+out_val[2] =  0.000000
+out_val[3] =  6.200000
+out_val[4] =  20.799999
+out_val[5] =  14.700001
+out_val[6] =  55.599998
+out_val[7] =  17.600000
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

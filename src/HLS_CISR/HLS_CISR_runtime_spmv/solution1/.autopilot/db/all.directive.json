@@ -1,6 +1,7 @@
 {"sourceFile": [{
       "name": "",
-      "directive": [{
+      "directive": [
+        {
           "functionName": "HLS_CISR_spmv_accel",
           "label": "",
           "functionLabel": "",
@@ -11,5 +12,18 @@
                 "value": "HLS_CISR_spmv_accel"
               }]
           }
-        }]
+        },
+        {
+          "functionName": "HLS_CISR_spmv_accel",
+          "label": "",
+          "functionLabel": "",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "HLS_CISR_spmv_accel"
+              }]
+          }
+        }
+      ]
     }]}
