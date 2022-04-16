@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 92.966 MB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;HLS_CISR_spmv_accel.cpp&apos; ..." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Source Code Analysis and Preprocessing: CPU user time: 0.71 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.73 seconds; current allocated memory: 93.217 MB." resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 214-157]" key="HLS 214-157" tag="" content="Top function not found: there is no function named &apos;HLS_CISR_spmv_accel&apos;" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command csynth_design CPU user time: 4.26 seconds. CPU system time: 0.54 seconds. Elapsed time: 4.81 seconds; current allocated memory: 94.161 MB." resolution=""/>
+</Messages>
