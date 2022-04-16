@@ -57,7 +57,7 @@ set NewPortList {[
  	{ "name": "output_vec_o_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "output_vec", "role": "o_ap_vld" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8"],
 		"CDFG" : "HLS_CISR_spmv_accel",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
@@ -77,6 +77,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "slot_arr_row_len", "Type" : "None", "Direction" : "I"},
 			{"Name" : "output_vec", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "max_row_id", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "slot_row_id", "Type" : "Memory", "Direction" : "O"},
 			{"Name" : "row_len_slot_arr", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "slot_counter_0", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "slot_counter_1", "Type" : "OVld", "Direction" : "IO"},
@@ -90,13 +91,14 @@ set RtlHierarchyInfo {[
 			{"Name" : "slot_row_len_id_1", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "slot_row_len_id_2", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "slot_row_len_id_3", "Type" : "OVld", "Direction" : "IO"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.row_len_slot_arr_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_U1", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fmul_32ns_32ns_32_4_max_dsp_1_U2", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U3", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U4", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U5", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U6", "Parent" : "0"}]}
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.slot_row_id_U", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.row_len_slot_arr_U", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_U1", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fmul_32ns_32ns_32_4_max_dsp_1_U2", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U3", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U4", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U5", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_42_32_1_1_U6", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -107,6 +109,7 @@ set ArgLastReadFirstWriteLatency {
 		slot_arr_row_len {Type I LastRead 2 FirstWrite -1}
 		output_vec {Type IO LastRead 11 FirstWrite 15}
 		max_row_id {Type IO LastRead -1 FirstWrite -1}
+		slot_row_id {Type O LastRead -1 FirstWrite -1}
 		row_len_slot_arr {Type IO LastRead -1 FirstWrite -1}
 		slot_counter_0 {Type IO LastRead -1 FirstWrite -1}
 		slot_counter_1 {Type IO LastRead -1 FirstWrite -1}

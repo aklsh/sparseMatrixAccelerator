@@ -111,12 +111,19 @@ void HLS_CISR_spmv_accel(
 
 
 	//Implement 4 MAC units which does the computation
-	for(int slot_id3=0;slot_id3<num_slots;slot_id3++)
+    for(int slot_id3=0;slot_id3<num_slots;slot_id3++)
 	{
+
 		int row_index = slot_row_id[slot_id3];
 		float matrix_val = slot_data_arr[slot_id3].data;
 		int col_index    = slot_data_arr[slot_id3].col_index;
-	    output_vec[row_index]+= matrix_val*inp_vec[col_index];
+
+        #pragma HLS dependence variable=output_vec
+        //#pragma HLS dependence variable=slot_row_id
+        //#pragma HLS dependence variable=slot_data_arr
+
+
+		output_vec[row_index] = output_vec[row_index] + matrix_val*inp_vec[col_index];
 	    slot_row_counter[slot_id3]--;
 
 

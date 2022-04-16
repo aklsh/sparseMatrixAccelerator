@@ -135,6 +135,7 @@
       "impl\/vhdl\/HLS_CISR_spmv_accel_fmul_32ns_32ns_32_4_max_dsp_1.vhd",
       "impl\/vhdl\/HLS_CISR_spmv_accel_mux_42_32_1_1.vhd",
       "impl\/vhdl\/HLS_CISR_spmv_accel_row_len_slot_arr.vhd",
+      "impl\/vhdl\/HLS_CISR_spmv_accel_slot_row_id.vhd",
       "impl\/vhdl\/HLS_CISR_spmv_accel.vhd"
     ],
     "Verilog": [
@@ -143,6 +144,8 @@
       "impl\/verilog\/HLS_CISR_spmv_accel_mux_42_32_1_1.v",
       "impl\/verilog\/HLS_CISR_spmv_accel_row_len_slot_arr.v",
       "impl\/verilog\/HLS_CISR_spmv_accel_row_len_slot_arr_ram.dat",
+      "impl\/verilog\/HLS_CISR_spmv_accel_slot_row_id.v",
+      "impl\/verilog\/HLS_CISR_spmv_accel_slot_row_id_ram.dat",
       "impl\/verilog\/HLS_CISR_spmv_accel.v"
     ],
     "IpMisc": ["impl\/misc\/logo.png"],
@@ -367,7 +370,7 @@
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "7.256"
+          "Estimate": "7.600"
         },
         "Loops": [
           {
@@ -406,10 +409,10 @@
           "DSP": "5",
           "AVAIL_DSP": "220",
           "UTIL_DSP": "2",
-          "FF": "900",
+          "FF": "964",
           "AVAIL_FF": "106400",
           "UTIL_FF": "~0",
-          "LUT": "1528",
+          "LUT": "1558",
           "AVAIL_LUT": "53200",
           "UTIL_LUT": "2",
           "URAM": "0",
@@ -421,7 +424,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2022-04-16 23:45:22 IST",
+    "Time": "2022-04-17 00:16:25 IST",
     "ToolName": "vivado_hls",
     "ToolVersion": "2020.2"
   }

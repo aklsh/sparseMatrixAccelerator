@@ -15,7 +15,7 @@
         <PipelineType>none</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>7.256</EstimatedClockPeriod>
+            <EstimatedClockPeriod>7.600</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
@@ -63,8 +63,8 @@
         <Resources>
             <BRAM_18K>0</BRAM_18K>
             <DSP>5</DSP>
-            <FF>900</FF>
-            <LUT>1528</LUT>
+            <FF>964</FF>
+            <LUT>1558</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -239,7 +239,7 @@
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
-                    <EstimatedClockPeriod>7.256</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>7.600</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>38</Best-caseLatency>
@@ -294,10 +294,10 @@
                     <DSP>5</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
                     <UTIL_DSP>2</UTIL_DSP>
-                    <FF>900</FF>
+                    <FF>964</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>~0</UTIL_FF>
-                    <LUT>1528</LUT>
+                    <LUT>1558</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>2</UTIL_LUT>
                     <URAM>0</URAM>
