@@ -17,11 +17,11 @@ int main()
 	//Initialize out vec
 	float out_vec [] = {0,0,0,0,0,0,0,0};
 
-	for(int i=0;i<8;i++)
-	{
-		printf("inp_vec %f\n",inp_vec[i]);
+	//for(int i=0;i<8;i++)
+	//{
+//		printf("inp_vec %f\n",inp_vec[i]);
 
-	}
+	//}
 
 	bool cmd_start = false;
 
@@ -67,18 +67,38 @@ int main()
 				out_vec
 		);
 
-		//Test out_vec now
+		//for(int i1=0;i1<8;i1++)
+			//			{
+				//		printf("out_val[%d] =  %f\n",i1,out_vec[i1]);
+					//	}
+	}
+	//Test out_vec now
+    /*
+1	0.3
+2	-32.5
+3	0
+4	6.2
+5	20.8
+6	14.7
+7	55.6
+8	17.6
+      */
 
-		/*	for(int i1=0;i1<8;i1++)
-			{
-				printf("out_val[%d] =  %f\n",i1,out_vec[i1]);
-
-			}*/
-
+	float res_expected []={0.3,-32.5,0,6.2,20.8,14.7,55.6,17.6};
+	bool correct = true;
+	float err_lim = 0.1;
+	for(int i1=0;i1<8;i1++)
+	{
+		correct = correct & (abs(out_vec[i1]-res_expected[i1])<err_lim);
+		printf("out_val[%d] =  %f\n",i1,out_vec[i1]);
 	}
 
 
-	return 0;
+
+	if(correct)
+		return 0;
+	else
+		return 1;
 
 
 
