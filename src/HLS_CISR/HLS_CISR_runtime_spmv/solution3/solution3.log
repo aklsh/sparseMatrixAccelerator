@@ -1,0 +1,1787 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 93.112 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.43 seconds. CPU system time: 0.17 seconds. Elapsed time: 0.31 seconds; current allocated memory: 94.336 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.89 seconds. CPU system time: 0.32 seconds. Elapsed time: 4.58 seconds; current allocated memory: 96.981 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 96.983 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 98.379 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 97.600 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4floatP0A.i2' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:127).
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 118.551 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 112.457 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_68_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_122_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_122_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 113.376 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 114.448 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 93.111 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.43 seconds. CPU system time: 0.2 seconds. Elapsed time: 0.32 seconds; current allocated memory: 94.320 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25:26) in function 'initialize' completely with a factor of 4 (HLS_CISR_spmv_accel.c:25:26)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122:23) in function 'output_write' completely with a factor of 4 (HLS_CISR_spmv_accel.c:122:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:29:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:30:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:31:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:32:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:33:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:29:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:30:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:31:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:32:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:33:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:29:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:30:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:31:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:32:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:33:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:29:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:30:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:31:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:32:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:33:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:126:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:126:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:126:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:126:18)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5 seconds. CPU system time: 0.29 seconds. Elapsed time: 4.75 seconds; current allocated memory: 97.304 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 97.307 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 98.814 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 97.961 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 93.147 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.49 seconds. CPU system time: 0.19 seconds. Elapsed time: 0.34 seconds; current allocated memory: 94.311 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25:26) in function 'initialize' completely with a factor of 4 (HLS_CISR_spmv_accel.c:25:26)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:29:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:30:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:31:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:32:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:33:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:29:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:30:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:31:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:32:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:33:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:29:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:30:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:31:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:32:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:33:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:29:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:30:33)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:31:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:32:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:33:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.89 seconds. CPU system time: 0.32 seconds. Elapsed time: 4.83 seconds; current allocated memory: 97.310 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 97.312 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 98.811 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 97.959 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [XFORM 203-603] ==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 93.147 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.47 seconds. CPU system time: 0.18 seconds. Elapsed time: 0.34 seconds; current allocated memory: 94.311 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122:23) in function 'output_write' partially with a factor of 2 (HLS_CISR_spmv_accel.c:122:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:149:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.71 seconds. CPU system time: 0.3 seconds. Elapsed time: 4.59 seconds; current allocated memory: 97.079 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 97.080 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 98.545 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 97.714 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 118.759 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 112.707 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_68_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_122_1'.
+WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_122_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('output_vec_addr_1_write_ln127', HLS_CISR_spmv_accel.c:127) of variable 'bitcast_ln127_1', HLS_CISR_spmv_accel.c:127 on array 'output_vec' and 'store' operation ('output_vec_addr_write_ln127', HLS_CISR_spmv_accel.c:127) of variable 'bitcast_ln127', HLS_CISR_spmv_accel.c:127 on array 'output_vec'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 2, loop 'VITIS_LOOP_122_1'
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 93.147 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: HLS_CISR_spmv_accel.c:111:7
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region: HLS_CISR_spmv_accel.c:114:6
+WARNING: [HLS 200-471] Dataflow form checks found 2 issue(s) in file HLS_CISR_spmv_accel.c
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.49 seconds. CPU system time: 0.2 seconds. Elapsed time: 0.34 seconds; current allocated memory: 94.315 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.57 seconds. CPU system time: 0.36 seconds. Elapsed time: 4.54 seconds; current allocated memory: 96.771 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 96.773 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 98.102 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 97.361 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_123_1' (HLS_CISR_spmv_accel.c:123) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
+INFO: [XFORM 203-721] Extract dataflow region from loop VITIS_LOOP_101_1 (HLS_CISR_spmv_accel.c:107)  of function 'compute.1'.
+INFO: [HLS 200-988] Store statement on variable  'slot_res_arr' in a dataflow region ( 'dataflow_in_loop_VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:32)) will infer a separate dataflow process. Consider placing this store inside a function.
+INFO: [HLS 200-988] Store statement on variable  'slot_row_counter' in a dataflow region ( 'dataflow_in_loop_VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:32)) will infer a separate dataflow process. Consider placing this store inside a function.
+INFO: [XFORM 203-712] Applying dataflow to function 'dataflow_in_loop_VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:107:32), detected/extracted 3 process function(s): 
+	 'dataflow_in_loop_VITIS_LOOP_101_1.entry4'
+	 'Block_entry_proc_proc'
+	 'Block_entry_proc_proc3'.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.21 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 117.987 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_res_arr' (HLS_CISR_spmv_accel.c:29:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_counter' (HLS_CISR_spmv_accel.c:30:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_counter' (HLS_CISR_spmv_accel.c:31:37)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_len_id' (HLS_CISR_spmv_accel.c:32:36)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_id' (HLS_CISR_spmv_accel.c:33:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_counter' (HLS_CISR_spmv_accel.c:59:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_res_arr' (HLS_CISR_spmv_accel.c:83:35)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_counter' (HLS_CISR_spmv_accel.c:86:39)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_len_id' (HLS_CISR_spmv_accel.c:87:37)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_id' (HLS_CISR_spmv_accel.c:90:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_counter' (HLS_CISR_spmv_accel.c:114:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_res_arr' (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 200-1449] Process Block_entry_proc_proc has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process Block_entry_proc_proc3 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+WARNING: [HLS 200-1449] Process dataflow_in_loop_VITIS_LOOP_101_1 has both a predecessor and reads an input from its caller (see the GUI dataflow viewer). This may lead to lower throughput. Consider copying this input via a predecessor process.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 159.022 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+WARNING: [SYN 201-103] Legalizing function name 'dataflow_in_loop_VITIS_LOOP_101_1.entry4' to 'dataflow_in_loop_VITIS_LOOP_101_1_entry4'.
+WARNING: [SYN 201-103] Legalizing function name 'compute.1' to 'compute_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_VITIS_LOOP_101_1_entry4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 159.206 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 159.306 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_entry_proc_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 159.442 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 159.592 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_entry_proc_proc3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 159.666 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 159.760 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'dataflow_in_loop_VITIS_LOOP_101_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 159.824 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 159.985 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 160.055 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 160.181 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 4, loop 'VITIS_LOOP_68_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_123_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_123_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 160.612 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 161.115 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_VITIS_LOOP_101_1_entry4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_VITIS_LOOP_101_1_entry4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 161.360 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_entry_proc_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_entry_proc_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 162.004 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_entry_proc_proc3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_entry_proc_proc3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 162.682 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'dataflow_in_loop_VITIS_LOOP_101_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'dataflow_in_loop_VITIS_LOOP_101_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 163.363 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 164.121 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 93.147 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.54 seconds. CPU system time: 0.25 seconds. Elapsed time: 0.39 seconds; current allocated memory: 94.311 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_123_1' (HLS_CISR_spmv_accel.c:123:23) in function 'output_write' completely with a factor of 4 (HLS_CISR_spmv_accel.c:123:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:127:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:127:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:127:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:127:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:34)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.02 seconds. CPU system time: 0.32 seconds. Elapsed time: 4.95 seconds; current allocated memory: 96.889 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 96.890 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 98.250 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 97.475 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4floatP0A.i2' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:111).
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 118.573 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 112.473 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_68_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_101_1'.
+WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_101_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('slot_res_arr_3_write_ln111', HLS_CISR_spmv_accel.c:111) of variable 'add_i', HLS_CISR_spmv_accel.c:111 on static variable 'slot_res_arr_3' and 'load' operation ('slot_res_arr_3_load_1', aesl_mux_load.4floatP0A.i2:7->HLS_CISR_spmv_accel.c:111) on static variable 'slot_res_arr_3'.
+WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_101_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('slot_res_arr_3_write_ln111', HLS_CISR_spmv_accel.c:111) of variable 'add_i', HLS_CISR_spmv_accel.c:111 on static variable 'slot_res_arr_3' and 'load' operation ('slot_res_arr_3_load_1', aesl_mux_load.4floatP0A.i2:7->HLS_CISR_spmv_accel.c:111) on static variable 'slot_res_arr_3'.
+WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_101_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('slot_res_arr_3_write_ln111', HLS_CISR_spmv_accel.c:111) of variable 'add_i', HLS_CISR_spmv_accel.c:111 on static variable 'slot_res_arr_3' and 'load' operation ('slot_res_arr_3_load_1', aesl_mux_load.4floatP0A.i2:7->HLS_CISR_spmv_accel.c:111) on static variable 'slot_res_arr_3'.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 93.147 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.53 seconds. CPU system time: 0.19 seconds. Elapsed time: 0.36 seconds; current allocated memory: 94.311 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.98 seconds. CPU system time: 0.39 seconds. Elapsed time: 4.83 seconds; current allocated memory: 97.008 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 97.009 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 98.404 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 97.625 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_123_1' (HLS_CISR_spmv_accel.c:123) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4floatP0A.i2' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:128).
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.22 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 118.596 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 112.527 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_68_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_123_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_123_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 113.448 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 114.490 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 20ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 20 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 93.099 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.56 seconds. CPU system time: 0.22 seconds. Elapsed time: 0.38 seconds; current allocated memory: 94.292 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.6 seconds. CPU system time: 0.36 seconds. Elapsed time: 5.52 seconds; current allocated memory: 97.002 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 97.004 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 98.399 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 97.621 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_123_1' (HLS_CISR_spmv_accel.c:123) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4floatP0A.i2' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:128).
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 118.571 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 112.477 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_68_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_123_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_123_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 113.380 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 114.426 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 5 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 93.099 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.52 seconds. CPU system time: 0.19 seconds. Elapsed time: 0.35 seconds; current allocated memory: 94.339 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.99 seconds. CPU system time: 0.35 seconds. Elapsed time: 4.84 seconds; current allocated memory: 97.002 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 97.004 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 98.398 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 97.620 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_123_1' (HLS_CISR_spmv_accel.c:123) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4floatP0A.i2' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:128).
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.21 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 118.585 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 112.494 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_49_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('slot_counter_0_write_ln59', HLS_CISR_spmv_accel.c:59) of variable 'add_ln59', HLS_CISR_spmv_accel.c:59 on static variable 'slot_counter_0' and 'load' operation ('slot_counter_0_load', HLS_CISR_spmv_accel.c:53) on static variable 'slot_counter_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 4, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_68_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('slot_row_counter_0_write_ln86', HLS_CISR_spmv_accel.c:86) of variable 'row_len_slot_arr_load', HLS_CISR_spmv_accel.c:86 on static variable 'slot_row_counter_0' and 'load' operation ('slot_row_counter_0_load_1', HLS_CISR_spmv_accel.c:80) on static variable 'slot_row_counter_0'.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 93.099 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.52 seconds. CPU system time: 0.19 seconds. Elapsed time: 0.36 seconds; current allocated memory: 94.339 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_123_1' (HLS_CISR_spmv_accel.c:123:23) in function 'output_write' completely with a factor of 4 (HLS_CISR_spmv_accel.c:123:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:150:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:114:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:127:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:127:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:127:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:127:18)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.99 seconds. CPU system time: 0.34 seconds. Elapsed time: 4.81 seconds; current allocated memory: 97.035 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 97.037 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 98.478 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 97.662 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.21 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 118.516 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 112.191 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_68_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 113.077 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101]==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 93.113 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.51 seconds. CPU system time: 0.19 seconds. Elapsed time: 0.35 seconds; current allocated memory: 94.321 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.01 seconds. CPU system time: 0.33 seconds. Elapsed time: 4.8 seconds; current allocated memory: 96.984 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 96.985 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 98.409 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 97.611 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [XFORM 203-603] Inlining function 'aesl_mux_load.4floatP0A.i2' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:129).
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.21 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.23 seconds; current allocated memory: 118.575 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 112.479 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_68_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_122_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_122_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.21 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 113.399 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 114.471 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 93.113 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.47 seconds. CPU system time: 0.19 seconds. Elapsed time: 0.33 seconds; current allocated memory: 94.321 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122:23) in function 'output_write' completely with a factor of 4 (HLS_CISR_spmv_accel.c:122:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.8 seconds. CPU system time: 0.31 seconds. Elapsed time: 4.57 seconds; current allocated memory: 97.033 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 97.035 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 98.502 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 97.674 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.17 seconds; current allocated memory: 118.531 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 112.202 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_68_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 113.091 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 114.100 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 93.113 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.5 seconds. CPU system time: 0.18 seconds. Elapsed time: 0.34 seconds; current allocated memory: 94.321 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25:26) in function 'initialize' completely with a factor of 4 (HLS_CISR_spmv_accel.c:25:26)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49:22) in function 'store_row_len_arr' completely with a factor of 4 (HLS_CISR_spmv_accel.c:49:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68:21) in function 'CISR_decoder' completely with a factor of 4 (HLS_CISR_spmv_accel.c:68:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122:23) in function 'output_write' completely with a factor of 4 (HLS_CISR_spmv_accel.c:122:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.84 seconds. CPU system time: 0.39 seconds. Elapsed time: 4.75 seconds; current allocated memory: 97.245 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 97.247 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 98.796 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 97.954 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (HLS_CISR_spmv_accel.c:80:5) in function 'HLS_CISR_spmv_accel'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (HLS_CISR_spmv_accel.c:80:5) in function 'HLS_CISR_spmv_accel'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (HLS_CISR_spmv_accel.c:80:5) in function 'HLS_CISR_spmv_accel'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (HLS_CISR_spmv_accel.c:80:5) in function 'HLS_CISR_spmv_accel'... converting 3 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:138)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 119.065 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 113.170 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_35_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_35_2'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_35_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_35_2'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_35_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_35_2'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_35_2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_35_2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 114.372 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.31 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 115.801 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/cmd_start' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/inp_vec' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/slot_data_arr' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/slot_arr_row_len' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/output_vec' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'HLS_CISR_spmv_accel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'max_row_id' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'slot_res_arr_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'slot_counter_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'slot_row_counter_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'slot_row_len_id_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'slot_row_id_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'slot_res_arr_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'slot_counter_1' is power-on initialization.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 93.113 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.48 seconds. CPU system time: 0.2 seconds. Elapsed time: 0.34 seconds; current allocated memory: 94.321 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49:22) in function 'store_row_len_arr' partially with a factor of 4 (HLS_CISR_spmv_accel.c:49:22)
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68:21) in function 'CISR_decoder' partially with a factor of 4 (HLS_CISR_spmv_accel.c:68:21)
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' partially with a factor of 4 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-188] Unrolling loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122:23) in function 'output_write' partially with a factor of 4 (HLS_CISR_spmv_accel.c:122:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.31 seconds. CPU system time: 0.34 seconds. Elapsed time: 5.19 seconds; current allocated memory: 98.180 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 98.181 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 99.830 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 98.896 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-102] Partitioning array 'row_len_slot_arr' in dimension 2 automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 119.915 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_res_arr' (HLS_CISR_spmv_accel.c:29:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_counter' (HLS_CISR_spmv_accel.c:30:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_counter' (HLS_CISR_spmv_accel.c:31:37)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_len_id' (HLS_CISR_spmv_accel.c:32:36)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_id' (HLS_CISR_spmv_accel.c:33:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr.0' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr.0' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_counter' (HLS_CISR_spmv_accel.c:59:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_res_arr' (HLS_CISR_spmv_accel.c:83:35)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_counter' (HLS_CISR_spmv_accel.c:86:39)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_len_id' (HLS_CISR_spmv_accel.c:87:37)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_id' (HLS_CISR_spmv_accel.c:90:34)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_res_arr' (HLS_CISR_spmv_accel.c:110:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_counter' (HLS_CISR_spmv_accel.c:113:32)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.14 seconds; current allocated memory: 113.935 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_49_1'.
+WARNING: [HLS 200-885] Unable to schedule 'load' operation ('slot_arr_row_len_load_2', HLS_CISR_spmv_accel.c:55) on array 'slot_arr_row_len' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'slot_arr_row_len'.
+WARNING: [HLS 200-885] Unable to schedule 'store' operation ('slot_counter_addr_1_write_ln59', HLS_CISR_spmv_accel.c:59) of variable 'add_ln59', HLS_CISR_spmv_accel.c:59 on array 'slot_counter' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'slot_counter'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 5, loop 'VITIS_LOOP_49_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_68_1'.
+WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_68_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('max_row_id_write_ln91', HLS_CISR_spmv_accel.c:91) of variable 'add_ln91_3', HLS_CISR_spmv_accel.c:91 on static variable 'max_row_id' and 'load' operation ('max_row_id_load', HLS_CISR_spmv_accel.c:90) on static variable 'max_row_id'.
+WARNING: [HLS 200-885] Unable to schedule 'store' operation ('slot_row_counter_addr_1_write_ln86', HLS_CISR_spmv_accel.c:86) of variable 'row_len_slot_arr_0_load', HLS_CISR_spmv_accel.c:86 on array 'slot_row_counter' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'slot_row_counter'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 4, Depth = 5, loop 'VITIS_LOOP_68_1'
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_101_1'.
+WARNING: [HLS 200-885] Unable to schedule 'load' operation ('slot_data_arr_load_2', HLS_CISR_spmv_accel.c:106) on array 'slot_data_arr' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'slot_data_arr'.
+WARNING: [HLS 200-885] Unable to schedule 'store' operation ('slot_row_counter_addr_4_write_ln113', HLS_CISR_spmv_accel.c:113) of variable 'add_ln113', HLS_CISR_spmv_accel.c:113 on array 'slot_row_counter' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'slot_row_counter'.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 93.113 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.48 seconds. CPU system time: 0.16 seconds. Elapsed time: 0.32 seconds; current allocated memory: 94.321 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49:22) in function 'store_row_len_arr' completely with a factor of 8 (HLS_CISR_spmv_accel.c:49:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68:21) in function 'CISR_decoder' completely with a factor of 8 (HLS_CISR_spmv_accel.c:68:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 8 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122:23) in function 'output_write' completely with a factor of 8 (HLS_CISR_spmv_accel.c:122:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:91:25)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:91:25)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:91:25)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:91:25)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:91:25)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:91:25)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:91:25)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:36)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:91:25)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:23:22)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:58:52)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:58:52)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:58:52)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:58:52)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:58:52)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:58:52)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:58:52)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:58:52)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:129:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:129:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:129:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:129:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:129:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:129:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:129:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:129:34)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.6 seconds. CPU system time: 0.39 seconds. Elapsed time: 5.52 seconds; current allocated memory: 98.972 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 98.975 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 100.527 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 99.832 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-102] Partitioning array 'row_len_slot_arr' in dimension 2 automatically.
+INFO: [XFORM 203-102] Partitioning array 'max_row_id' automatically.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.21 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 120.847 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_res_arr' (HLS_CISR_spmv_accel.c:110:30)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_counter' (HLS_CISR_spmv_accel.c:113:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_res_arr' (HLS_CISR_spmv_accel.c:29:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_counter' (HLS_CISR_spmv_accel.c:30:33)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_counter' (HLS_CISR_spmv_accel.c:31:37)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_len_id' (HLS_CISR_spmv_accel.c:32:36)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_id' (HLS_CISR_spmv_accel.c:33:32)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr.0' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr.0' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_counter' (HLS_CISR_spmv_accel.c:59:29)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_res_arr' (HLS_CISR_spmv_accel.c:83:35)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_counter' (HLS_CISR_spmv_accel.c:86:39)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_len_id' (HLS_CISR_spmv_accel.c:87:37)
+INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_id' (HLS_CISR_spmv_accel.c:90:34)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 134.172 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+WARNING: [SYN 201-103] Legalizing function name 'compute.1' to 'compute_1'.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'CISR_decoder' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 134.798 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 135.267 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'compute_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 135.744 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 136.394 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_25_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 136.968 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.21 seconds; current allocated memory: 137.552 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'CISR_decoder' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'CISR_decoder'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 138.195 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'compute_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'compute_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.17 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 141.097 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/cmd_start' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/inp_vec' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/slot_data_arr' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/slot_arr_row_len' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/output_vec' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'HLS_CISR_spmv_accel' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'max_row_id_0' is power-on initialization.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'HLS_CISR_spmv_accel'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.27 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 144.305 MB.
+INFO: [RTMG 210-278] Implementing memory 'HLS_CISR_spmv_accel_slot_res_arr_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'HLS_CISR_spmv_accel_slot_counter_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [RTMG 210-278] Implementing memory 'HLS_CISR_spmv_accel_slot_row_id_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.53 seconds. CPU system time: 0.05 seconds. Elapsed time: 1.57 seconds; current allocated memory: 153.317 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for HLS_CISR_spmv_accel.
+INFO: [VLOG 209-307] Generating Verilog RTL for HLS_CISR_spmv_accel.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 93.113 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.48 seconds. CPU system time: 0.16 seconds. Elapsed time: 0.33 seconds; current allocated memory: 94.321 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49:22) in function 'store_row_len_arr' completely with a factor of 2 (HLS_CISR_spmv_accel.c:49:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68:21) in function 'CISR_decoder' completely with a factor of 2 (HLS_CISR_spmv_accel.c:68:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 2 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122:23) in function 'output_write' completely with a factor of 2 (HLS_CISR_spmv_accel.c:122:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:53:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:53:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.62 seconds. CPU system time: 0.35 seconds. Elapsed time: 4.51 seconds; current allocated memory: 96.903 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 96.906 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 98.257 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 97.474 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 4.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 118.104 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:52)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.1 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 111.270 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+WARNING: [HLS 200-885] Unable to schedule 'store' operation ('row_len_slot_arr_addr_6_write_ln37', HLS_CISR_spmv_accel.c:37) of constant 0 on array 'row_len_slot_arr' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'row_len_slot_arr'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 2, loop 'VITIS_LOOP_25_1'
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 93.113 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.47 seconds. CPU system time: 0.16 seconds. Elapsed time: 0.32 seconds; current allocated memory: 94.321 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49:22) in function 'store_row_len_arr' completely with a factor of 2 (HLS_CISR_spmv_accel.c:49:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68:21) in function 'CISR_decoder' completely with a factor of 2 (HLS_CISR_spmv_accel.c:68:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (HLS_CISR_spmv_accel.c:101:21) in function 'compute' completely with a factor of 2 (HLS_CISR_spmv_accel.c:101:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_122_1' (HLS_CISR_spmv_accel.c:122:23) in function 'output_write' completely with a factor of 2 (HLS_CISR_spmv_accel.c:122:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:151:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:53:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:53:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:90:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:110:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:113:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:128:18)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.91 seconds. CPU system time: 0.37 seconds. Elapsed time: 4.77 seconds; current allocated memory: 96.903 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 96.906 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 98.250 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 97.461 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 4.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.1 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.12 seconds; current allocated memory: 118.085 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:50)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 111.171 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+WARNING: [HLS 200-885] Unable to schedule 'store' operation ('row_len_slot_arr_addr_6_write_ln37', HLS_CISR_spmv_accel.c:37) of constant 0 on array 'row_len_slot_arr' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'row_len_slot_arr'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 2, loop 'VITIS_LOOP_25_1'
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 93.113 MB.
+INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.46 seconds. CPU system time: 0.16 seconds. Elapsed time: 0.31 seconds; current allocated memory: 94.321 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_49_1' (HLS_CISR_spmv_accel.c:49:22) in function 'store_row_len_arr' completely with a factor of 2 (HLS_CISR_spmv_accel.c:49:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_68_1' (HLS_CISR_spmv_accel.c:68:21) in function 'CISR_decoder' completely with a factor of 2 (HLS_CISR_spmv_accel.c:68:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_102_1' (HLS_CISR_spmv_accel.c:102:21) in function 'compute' completely with a factor of 2 (HLS_CISR_spmv_accel.c:102:21)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_124_1' (HLS_CISR_spmv_accel.c:124:23) in function 'output_write' completely with a factor of 2 (HLS_CISR_spmv_accel.c:124:23)
+INFO: [HLS 214-178] Inlining function 'initialize' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:153:0)
+INFO: [HLS 214-178] Inlining function 'store_row_len_arr' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:153:0)
+INFO: [HLS 214-178] Inlining function 'CISR_decoder' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:153:0)
+INFO: [HLS 214-178] Inlining function 'compute' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:153:0)
+INFO: [HLS 214-178] Inlining function 'output_write' into 'HLS_CISR_spmv_accel' (HLS_CISR_spmv_accel.c:153:0)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:53:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:53:23)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:59:29)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:91:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:80:5)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:83:35)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:68)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:86:39)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:87:37)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:91:34)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:115:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:111:30)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:115:32)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:130:18)
+WARNING: [HLS 214-167] The program may have out of bound array access (HLS_CISR_spmv_accel.c:130:18)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.65 seconds. CPU system time: 0.36 seconds. Elapsed time: 4.52 seconds; current allocated memory: 96.903 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 96.906 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 98.250 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 97.463 MB.
+INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' automatically.
+INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_25_1' (HLS_CISR_spmv_accel.c:25) in function 'HLS_CISR_spmv_accel' for pipelining.
+INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_35_2' (HLS_CISR_spmv_accel.c:35) in function 'HLS_CISR_spmv_accel' completely with a factor of 4.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_id' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_res_arr' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_id' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_res_arr' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 118.088 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:37:41)
+INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:58:50)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.09 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 111.176 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_25_1'.
+WARNING: [HLS 200-885] Unable to schedule 'store' operation ('row_len_slot_arr_addr_6_write_ln37', HLS_CISR_spmv_accel.c:37) of constant 0 on array 'row_len_slot_arr' due to limited memory ports. Please consider using a memory core with more ports or partitioning the array 'row_len_slot_arr'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 2, loop 'VITIS_LOOP_25_1'
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2020.2 (64-bit)
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+==============================================================

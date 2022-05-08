@@ -1,0 +1,2365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1651817315489">
+  <ports id="1" name="cmd_start" type="PortType" originalName="cmd_start" coreId="4294967295" bitwidth="1">
+    <dataOutputObjs>read</dataOutputObjs>
+  </ports>
+  <ports id="2" name="inp_vec" type="PortType" coreName="RAM" coreId="68" bitwidth="32" iftype="IfTypeRegister" arraysize="8">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="3" name="slot_data_arr" type="PortType" coreName="RAM" coreId="1827860384" bitwidth="64" iftype="IfTypeRegister" arraysize="2">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="4" name="slot_arr_row_len" type="PortType" coreName="RAM" coreId="49" bitwidth="32" iftype="IfTypeRegister" arraysize="2">
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+    <dataOutputObjs>getelementptr</dataOutputObjs>
+  </ports>
+  <ports id="5" name="output_vec" type="PortType" coreName="RAM" coreId="3298534883" bitwidth="32" direction="DirOut" iftype="IfTypeRegister" arraysize="8">
+    <dataInputObjs>getelementptr</dataInputObjs>
+    <dataInputObjs>getelementptr</dataInputObjs>
+  </ports>
+  <edges id="228" source_obj="//@ports.0" sink_obj="//@blocks.0/@node_objs.0"/>
+  <edges id="229" sink_obj="//@blocks.0/@node_objs.1"/>
+  <edges id="230" source_obj="//@blocks.0/@node_objs.0" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="231" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="232" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@blocks.0/@node_objs.2"/>
+  <edges id="233" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.1/@node_objs.0"/>
+  <edges id="234" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="235" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.16" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0" is_back_edge="1"/>
+  <edges id="238" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="239" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="242" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="245" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="246" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="247" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="250" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="252" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="253" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="256" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.2"/>
+  <edges id="257" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.3"/>
+  <edges id="264" source_obj="//@regions.0/@basic_blocks.1/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.4"/>
+  <edges id="265" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="267" source_obj="//@regions.0/@basic_blocks.1/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.5"/>
+  <edges id="268" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.6"/>
+  <edges id="273" source_obj="//@regions.0/@basic_blocks.1/@node_objs.6" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.7"/>
+  <edges id="274" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="276" source_obj="//@regions.0/@basic_blocks.1/@node_objs.7" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.8"/>
+  <edges id="277" source_obj="//@regions.0/@basic_blocks.1/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.9"/>
+  <edges id="282" source_obj="//@regions.0/@basic_blocks.1/@node_objs.9" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.10"/>
+  <edges id="283" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="285" source_obj="//@regions.0/@basic_blocks.1/@node_objs.10" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.11"/>
+  <edges id="286" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.12"/>
+  <edges id="287" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="288" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="289" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.13"/>
+  <edges id="290" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="291" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="292" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="293" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.0"/>
+  <edges id="294" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.0"/>
+  <edges id="295" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.0"/>
+  <edges id="296" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.10/@node_objs.0"/>
+  <edges id="297" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.10/@node_objs.0"/>
+  <edges id="298" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.10/@node_objs.0"/>
+  <edges id="299" source_obj="//@regions.0/@basic_blocks.1/@node_objs.12" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.0"/>
+  <edges id="300" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.14" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.0"/>
+  <edges id="301" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.15" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.0"/>
+  <edges id="303" source_obj="//@regions.0/@basic_blocks.1/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.0"/>
+  <edges id="305" source_obj="//@regions.0/@basic_blocks.1/@node_objs.5" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.1"/>
+  <edges id="307" source_obj="//@regions.0/@basic_blocks.1/@node_objs.8" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.2"/>
+  <edges id="309" source_obj="//@regions.0/@basic_blocks.1/@node_objs.11" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.3"/>
+  <edges id="310" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.4"/>
+  <edges id="311" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.2/@node_objs.0"/>
+  <edges id="314" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="317" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3/@node_objs.0"/>
+  <edges id="318" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.3/@node_objs.1"/>
+  <edges id="319" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.3/@node_objs.1"/>
+  <edges id="321" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3/@node_objs.1"/>
+  <edges id="322" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.3/@node_objs.2"/>
+  <edges id="323" sink_obj="//@blocks.3/@node_objs.3"/>
+  <edges id="324" source_obj="//@ports.3" sink_obj="//@blocks.3/@node_objs.4"/>
+  <edges id="327" source_obj="//@blocks.3/@node_objs.4" sink_obj="//@blocks.3/@node_objs.5"/>
+  <edges id="328" source_obj="//@blocks.3/@node_objs.5" sink_obj="//@blocks.3/@node_objs.6"/>
+  <edges id="331" source_obj="//@blocks.3/@node_objs.6" sink_obj="//@blocks.3/@node_objs.7"/>
+  <edges id="332" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.3/@node_objs.7"/>
+  <edges id="333" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.3/@node_objs.7"/>
+  <edges id="334" source_obj="//@blocks.3/@node_objs.3" sink_obj="//@blocks.4/@node_objs.0"/>
+  <edges id="335" sink_obj="//@blocks.4/@node_objs.1"/>
+  <edges id="337" source_obj="//@blocks.4/@node_objs.0" sink_obj="//@blocks.4/@node_objs.1"/>
+  <edges id="338" source_obj="//@blocks.3/@node_objs.5" sink_obj="//@blocks.4/@node_objs.2"/>
+  <edges id="339" source_obj="//@blocks.4/@node_objs.1" sink_obj="//@blocks.4/@node_objs.2"/>
+  <edges id="340" source_obj="//@blocks.3/@node_objs.3" sink_obj="//@blocks.4/@node_objs.3"/>
+  <edges id="343" source_obj="//@blocks.4/@node_objs.3" sink_obj="//@blocks.4/@node_objs.4"/>
+  <edges id="344" sink_obj="//@blocks.4/@node_objs.4"/>
+  <edges id="345" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.4/@node_objs.5"/>
+  <edges id="346" sink_obj="//@blocks.5/@node_objs.0"/>
+  <edges id="347" source_obj="//@ports.3" sink_obj="//@blocks.5/@node_objs.1"/>
+  <edges id="351" source_obj="//@blocks.5/@node_objs.1" sink_obj="//@blocks.5/@node_objs.2"/>
+  <edges id="352" source_obj="//@blocks.5/@node_objs.2" sink_obj="//@blocks.5/@node_objs.3"/>
+  <edges id="354" source_obj="//@blocks.5/@node_objs.3" sink_obj="//@blocks.5/@node_objs.4"/>
+  <edges id="355" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.5/@node_objs.4"/>
+  <edges id="356" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.5/@node_objs.4"/>
+  <edges id="357" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.6/@node_objs.0"/>
+  <edges id="358" source_obj="//@blocks.6/@node_objs.0" sink_obj="//@blocks.6/@node_objs.1"/>
+  <edges id="361" source_obj="//@blocks.6/@node_objs.1" sink_obj="//@blocks.6/@node_objs.2"/>
+  <edges id="362" sink_obj="//@blocks.6/@node_objs.3"/>
+  <edges id="364" source_obj="//@blocks.6/@node_objs.2" sink_obj="//@blocks.6/@node_objs.3"/>
+  <edges id="365" source_obj="//@blocks.5/@node_objs.2" sink_obj="//@blocks.6/@node_objs.4"/>
+  <edges id="366" source_obj="//@blocks.6/@node_objs.3" sink_obj="//@blocks.6/@node_objs.4"/>
+  <edges id="367" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.6/@node_objs.5"/>
+  <edges id="369" source_obj="//@blocks.6/@node_objs.5" sink_obj="//@blocks.6/@node_objs.6"/>
+  <edges id="370" sink_obj="//@blocks.6/@node_objs.6"/>
+  <edges id="371" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.6/@node_objs.7"/>
+  <edges id="372" sink_obj="//@blocks.7/@node_objs.0"/>
+  <edges id="373" source_obj="//@blocks.7/@node_objs.0" sink_obj="//@blocks.7/@node_objs.1"/>
+  <edges id="375" source_obj="//@blocks.7/@node_objs.1" sink_obj="//@blocks.7/@node_objs.2"/>
+  <edges id="376" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.7/@node_objs.2"/>
+  <edges id="377" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.7/@node_objs.2"/>
+  <edges id="379" sink_obj="//@blocks.8/@node_objs.0"/>
+  <edges id="380" sink_obj="//@blocks.8/@node_objs.1"/>
+  <edges id="381" source_obj="//@blocks.8/@node_objs.1" sink_obj="//@blocks.8/@node_objs.2"/>
+  <edges id="382" sink_obj="//@blocks.8/@node_objs.3"/>
+  <edges id="384" source_obj="//@blocks.8/@node_objs.2" sink_obj="//@blocks.8/@node_objs.3"/>
+  <edges id="385" source_obj="//@blocks.8/@node_objs.3" sink_obj="//@blocks.8/@node_objs.4"/>
+  <edges id="386" source_obj="//@blocks.8/@node_objs.1" sink_obj="//@blocks.8/@node_objs.5"/>
+  <edges id="388" source_obj="//@blocks.8/@node_objs.5" sink_obj="//@blocks.8/@node_objs.6"/>
+  <edges id="389" sink_obj="//@blocks.8/@node_objs.6"/>
+  <edges id="390" source_obj="//@blocks.3/@node_objs.2" sink_obj="//@blocks.8/@node_objs.7"/>
+  <edges id="391" sink_obj="//@blocks.8/@node_objs.7"/>
+  <edges id="392" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.8/@node_objs.8"/>
+  <edges id="394" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.8/@node_objs.9"/>
+  <edges id="396" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.9/@node_objs.0"/>
+  <edges id="397" source_obj="//@blocks.3/@node_objs.0" sink_obj="//@blocks.9/@node_objs.0"/>
+  <edges id="398" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.9/@node_objs.0"/>
+  <edges id="399" source_obj="//@blocks.8/@node_objs.8" sink_obj="//@blocks.9/@node_objs.1"/>
+  <edges id="400" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.9/@node_objs.1"/>
+  <edges id="402" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.9/@node_objs.1"/>
+  <edges id="403" source_obj="//@blocks.8/@node_objs.8" sink_obj="//@blocks.9/@node_objs.2"/>
+  <edges id="404" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.9/@node_objs.2"/>
+  <edges id="405" source_obj="//@blocks.3/@node_objs.1" sink_obj="//@blocks.9/@node_objs.2"/>
+  <edges id="406" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.9/@node_objs.2"/>
+  <edges id="407" source_obj="//@blocks.8/@node_objs.4" sink_obj="//@blocks.9/@node_objs.3"/>
+  <edges id="408" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.9/@node_objs.3"/>
+  <edges id="409" source_obj="//@blocks.7/@node_objs.0" sink_obj="//@blocks.9/@node_objs.3"/>
+  <edges id="410" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.9/@node_objs.3"/>
+  <edges id="411" source_obj="//@blocks.9/@node_objs.2" sink_obj="//@blocks.9/@node_objs.4"/>
+  <edges id="412" sink_obj="//@blocks.9/@node_objs.5"/>
+  <edges id="413" source_obj="//@blocks.9/@node_objs.5" sink_obj="//@blocks.9/@node_objs.6"/>
+  <edges id="415" source_obj="//@blocks.9/@node_objs.6" sink_obj="//@blocks.9/@node_objs.7"/>
+  <edges id="416" edge_type="CtrlEdge" source_obj="//@blocks.11" sink_obj="//@blocks.9/@node_objs.7"/>
+  <edges id="417" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.9/@node_objs.7"/>
+  <edges id="419" sink_obj="//@blocks.10/@node_objs.0"/>
+  <edges id="420" sink_obj="//@blocks.10/@node_objs.1"/>
+  <edges id="421" source_obj="//@blocks.10/@node_objs.1" sink_obj="//@blocks.10/@node_objs.2"/>
+  <edges id="422" source_obj="//@blocks.10/@node_objs.2" sink_obj="//@blocks.10/@node_objs.3"/>
+  <edges id="424" source_obj="//@blocks.10/@node_objs.3" sink_obj="//@blocks.10/@node_objs.4"/>
+  <edges id="425" sink_obj="//@blocks.10/@node_objs.5"/>
+  <edges id="427" source_obj="//@blocks.10/@node_objs.4" sink_obj="//@blocks.10/@node_objs.5"/>
+  <edges id="428" source_obj="//@blocks.10/@node_objs.5" sink_obj="//@blocks.10/@node_objs.6"/>
+  <edges id="429" source_obj="//@blocks.10/@node_objs.1" sink_obj="//@blocks.10/@node_objs.7"/>
+  <edges id="431" source_obj="//@blocks.10/@node_objs.7" sink_obj="//@blocks.10/@node_objs.8"/>
+  <edges id="432" sink_obj="//@blocks.10/@node_objs.8"/>
+  <edges id="433" source_obj="//@blocks.9/@node_objs.4" sink_obj="//@blocks.10/@node_objs.9"/>
+  <edges id="434" sink_obj="//@blocks.10/@node_objs.9"/>
+  <edges id="435" source_obj="//@blocks.9/@node_objs.2" sink_obj="//@blocks.10/@node_objs.10"/>
+  <edges id="437" edge_type="CtrlEdge" source_obj="//@blocks.11" sink_obj="//@blocks.10/@node_objs.11"/>
+  <edges id="439" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.11/@node_objs.0"/>
+  <edges id="440" source_obj="//@blocks.9/@node_objs.0" sink_obj="//@blocks.11/@node_objs.0"/>
+  <edges id="441" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.11/@node_objs.0"/>
+  <edges id="442" source_obj="//@blocks.10/@node_objs.10" sink_obj="//@blocks.11/@node_objs.1"/>
+  <edges id="443" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.11/@node_objs.1"/>
+  <edges id="444" source_obj="//@blocks.9/@node_objs.1" sink_obj="//@blocks.11/@node_objs.1"/>
+  <edges id="445" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.11/@node_objs.1"/>
+  <edges id="446" source_obj="//@blocks.10/@node_objs.6" sink_obj="//@blocks.11/@node_objs.2"/>
+  <edges id="447" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.11/@node_objs.2"/>
+  <edges id="448" source_obj="//@blocks.9/@node_objs.5" sink_obj="//@blocks.11/@node_objs.2"/>
+  <edges id="449" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.11/@node_objs.2"/>
+  <edges id="450" source_obj="//@ports.2" sink_obj="//@blocks.11/@node_objs.3"/>
+  <edges id="453" source_obj="//@blocks.11/@node_objs.3" sink_obj="//@blocks.11/@node_objs.4"/>
+  <edges id="454" source_obj="//@blocks.11/@node_objs.4" sink_obj="//@blocks.11/@node_objs.5"/>
+  <edges id="455" source_obj="//@blocks.11/@node_objs.5" sink_obj="//@blocks.11/@node_objs.6"/>
+  <edges id="458" source_obj="//@blocks.11/@node_objs.4" sink_obj="//@blocks.11/@node_objs.7"/>
+  <edges id="463" source_obj="//@blocks.11/@node_objs.7" sink_obj="//@blocks.11/@node_objs.8"/>
+  <edges id="464" source_obj="//@ports.1" sink_obj="//@blocks.11/@node_objs.9"/>
+  <edges id="466" source_obj="//@blocks.11/@node_objs.8" sink_obj="//@blocks.11/@node_objs.9"/>
+  <edges id="467" source_obj="//@blocks.11/@node_objs.9" sink_obj="//@blocks.11/@node_objs.10"/>
+  <edges id="468" source_obj="//@blocks.11/@node_objs.10" sink_obj="//@blocks.11/@node_objs.11"/>
+  <edges id="469" source_obj="//@blocks.11/@node_objs.6" sink_obj="//@blocks.11/@node_objs.12"/>
+  <edges id="470" source_obj="//@blocks.11/@node_objs.11" sink_obj="//@blocks.11/@node_objs.12"/>
+  <edges id="471" sink_obj="//@blocks.11/@node_objs.13"/>
+  <edges id="472" source_obj="//@blocks.11/@node_objs.13" sink_obj="//@blocks.11/@node_objs.14"/>
+  <edges id="473" source_obj="//@blocks.11/@node_objs.12" sink_obj="//@blocks.11/@node_objs.14"/>
+  <edges id="474" source_obj="//@blocks.11/@node_objs.14" sink_obj="//@blocks.11/@node_objs.15"/>
+  <edges id="475" sink_obj="//@blocks.11/@node_objs.15"/>
+  <edges id="476" source_obj="//@blocks.9/@node_objs.3" sink_obj="//@blocks.11/@node_objs.16"/>
+  <edges id="478" source_obj="//@blocks.11/@node_objs.16" sink_obj="//@blocks.11/@node_objs.17"/>
+  <edges id="479" sink_obj="//@blocks.11/@node_objs.17"/>
+  <edges id="480" source_obj="//@ports.2" sink_obj="//@blocks.11/@node_objs.18"/>
+  <edges id="483" source_obj="//@blocks.11/@node_objs.18" sink_obj="//@blocks.11/@node_objs.19"/>
+  <edges id="484" source_obj="//@blocks.11/@node_objs.19" sink_obj="//@blocks.11/@node_objs.20"/>
+  <edges id="485" source_obj="//@blocks.11/@node_objs.20" sink_obj="//@blocks.11/@node_objs.21"/>
+  <edges id="487" source_obj="//@blocks.11/@node_objs.19" sink_obj="//@blocks.11/@node_objs.22"/>
+  <edges id="490" source_obj="//@blocks.11/@node_objs.22" sink_obj="//@blocks.11/@node_objs.23"/>
+  <edges id="491" source_obj="//@ports.1" sink_obj="//@blocks.11/@node_objs.24"/>
+  <edges id="493" source_obj="//@blocks.11/@node_objs.23" sink_obj="//@blocks.11/@node_objs.24"/>
+  <edges id="494" source_obj="//@blocks.11/@node_objs.24" sink_obj="//@blocks.11/@node_objs.25"/>
+  <edges id="495" source_obj="//@blocks.11/@node_objs.25" sink_obj="//@blocks.11/@node_objs.26"/>
+  <edges id="496" source_obj="//@blocks.11/@node_objs.21" sink_obj="//@blocks.11/@node_objs.27"/>
+  <edges id="497" source_obj="//@blocks.11/@node_objs.26" sink_obj="//@blocks.11/@node_objs.27"/>
+  <edges id="498" sink_obj="//@blocks.11/@node_objs.28"/>
+  <edges id="499" source_obj="//@blocks.11/@node_objs.28" sink_obj="//@blocks.11/@node_objs.29"/>
+  <edges id="500" source_obj="//@blocks.11/@node_objs.27" sink_obj="//@blocks.11/@node_objs.29"/>
+  <edges id="501" source_obj="//@blocks.11/@node_objs.29" sink_obj="//@blocks.11/@node_objs.30"/>
+  <edges id="502" sink_obj="//@blocks.11/@node_objs.30"/>
+  <edges id="503" source_obj="//@blocks.11/@node_objs.2" sink_obj="//@blocks.11/@node_objs.31"/>
+  <edges id="505" source_obj="//@blocks.11/@node_objs.31" sink_obj="//@blocks.11/@node_objs.32"/>
+  <edges id="506" sink_obj="//@blocks.11/@node_objs.32"/>
+  <edges id="507" sink_obj="//@blocks.11/@node_objs.33"/>
+  <edges id="508" source_obj="//@blocks.11/@node_objs.33" sink_obj="//@blocks.11/@node_objs.34"/>
+  <edges id="509" source_obj="//@blocks.11/@node_objs.14" sink_obj="//@blocks.11/@node_objs.35"/>
+  <edges id="510" source_obj="//@blocks.11/@node_objs.36" sink_obj="//@ports.4"/>
+  <edges id="512" source_obj="//@blocks.11/@node_objs.34" sink_obj="//@blocks.11/@node_objs.36"/>
+  <edges id="513" source_obj="//@blocks.11/@node_objs.35" sink_obj="//@blocks.11/@node_objs.37"/>
+  <edges id="514" source_obj="//@blocks.11/@node_objs.36" sink_obj="//@blocks.11/@node_objs.37"/>
+  <edges id="515" sink_obj="//@blocks.11/@node_objs.38"/>
+  <edges id="516" source_obj="//@blocks.11/@node_objs.38" sink_obj="//@blocks.11/@node_objs.39"/>
+  <edges id="517" source_obj="//@blocks.11/@node_objs.29" sink_obj="//@blocks.11/@node_objs.40"/>
+  <edges id="518" source_obj="//@blocks.11/@node_objs.41" sink_obj="//@ports.4"/>
+  <edges id="520" source_obj="//@blocks.11/@node_objs.39" sink_obj="//@blocks.11/@node_objs.41"/>
+  <edges id="521" source_obj="//@blocks.11/@node_objs.40" sink_obj="//@blocks.11/@node_objs.42"/>
+  <edges id="522" source_obj="//@blocks.11/@node_objs.41" sink_obj="//@blocks.11/@node_objs.42"/>
+  <edges id="523" source_obj="//@blocks.11/@node_objs.0" sink_obj="//@blocks.11/@node_objs.43"/>
+  <edges id="524" edge_type="CtrlEdge" source_obj="//@blocks.13" sink_obj="//@blocks.11/@node_objs.43"/>
+  <edges id="525" edge_type="CtrlEdge" source_obj="//@blocks.12" sink_obj="//@blocks.11/@node_objs.43"/>
+  <edges id="527" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.0"/>
+  <edges id="528" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.13" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.1"/>
+  <edges id="530" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.0"/>
+  <edges id="531" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.13" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.1"/>
+  <edges id="533" sink_obj="//@regions.0/@basic_blocks.14/@node_objs.0"/>
+  <edges id="534" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.16" sink_obj="//@regions.0/@basic_blocks.14/@node_objs.1"/>
+  <edges id="536" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.0"/>
+  <edges id="537" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.16" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.1"/>
+  <edges id="539" sink_obj="//@regions.0/@basic_blocks.8/@node_objs.0"/>
+  <edges id="540" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.10" sink_obj="//@regions.0/@basic_blocks.8/@node_objs.1"/>
+  <edges id="542" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.0"/>
+  <edges id="543" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.10" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.1"/>
+  <edges id="545" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
+  <edges id="546" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="548" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="549" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
+  <edges id="551" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
+  <edges id="552" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.7" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.1"/>
+  <edges id="554" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.0"/>
+  <edges id="555" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.7" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.1"/>
+  <edges id="556" source_obj="//@blocks.11/@node_objs.1" sink_obj="//@blocks.12/@node_objs.0"/>
+  <edges id="557" sink_obj="//@blocks.12/@node_objs.0"/>
+  <edges id="558" edge_type="CtrlEdge" source_obj="//@blocks.13" sink_obj="//@blocks.12/@node_objs.1"/>
+  <edges id="686" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.1"/>
+  <edges id="687" edge_type="CtrlEdge" source_obj="//@blocks.0" sink_obj="//@blocks.3"/>
+  <edges id="688" edge_type="CtrlEdge" source_obj="//@blocks.1" sink_obj="//@regions.0/@basic_blocks.0"/>
+  <edges id="689" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@blocks.2"/>
+  <edges id="690" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="691" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.3"/>
+  <edges id="692" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.2"/>
+  <edges id="693" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.4"/>
+  <edges id="694" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.4"/>
+  <edges id="695" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.6"/>
+  <edges id="696" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.5"/>
+  <edges id="697" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.7"/>
+  <edges id="698" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.7"/>
+  <edges id="699" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.7" sink_obj="//@regions.0/@basic_blocks.9"/>
+  <edges id="700" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.7" sink_obj="//@regions.0/@basic_blocks.8"/>
+  <edges id="701" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.10"/>
+  <edges id="702" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.10"/>
+  <edges id="703" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.10" sink_obj="//@regions.0/@basic_blocks.12"/>
+  <edges id="704" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.10" sink_obj="//@regions.0/@basic_blocks.11"/>
+  <edges id="705" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.13"/>
+  <edges id="706" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.13"/>
+  <edges id="707" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.13" sink_obj="//@regions.0/@basic_blocks.15"/>
+  <edges id="708" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.13" sink_obj="//@regions.0/@basic_blocks.14"/>
+  <edges id="709" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.14" sink_obj="//@regions.0/@basic_blocks.16"/>
+  <edges id="710" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.15" sink_obj="//@regions.0/@basic_blocks.16"/>
+  <edges id="711" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.16" sink_obj="//@regions.0/@basic_blocks.0" is_back_edge="1"/>
+  <edges id="712" edge_type="CtrlEdge" source_obj="//@blocks.2" sink_obj="//@blocks.3"/>
+  <edges id="713" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.5"/>
+  <edges id="714" edge_type="CtrlEdge" source_obj="//@blocks.3" sink_obj="//@blocks.4"/>
+  <edges id="715" edge_type="CtrlEdge" source_obj="//@blocks.4" sink_obj="//@blocks.5"/>
+  <edges id="716" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.7"/>
+  <edges id="717" edge_type="CtrlEdge" source_obj="//@blocks.5" sink_obj="//@blocks.6"/>
+  <edges id="718" edge_type="CtrlEdge" source_obj="//@blocks.6" sink_obj="//@blocks.7"/>
+  <edges id="719" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.8"/>
+  <edges id="720" edge_type="CtrlEdge" source_obj="//@blocks.7" sink_obj="//@blocks.9"/>
+  <edges id="721" edge_type="CtrlEdge" source_obj="//@blocks.8" sink_obj="//@blocks.9"/>
+  <edges id="722" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.10"/>
+  <edges id="723" edge_type="CtrlEdge" source_obj="//@blocks.9" sink_obj="//@blocks.11"/>
+  <edges id="724" edge_type="CtrlEdge" source_obj="//@blocks.10" sink_obj="//@blocks.11"/>
+  <edges id="725" edge_type="CtrlEdge" source_obj="//@blocks.11" sink_obj="//@blocks.12"/>
+  <edges id="726" edge_type="CtrlEdge" source_obj="//@blocks.11" sink_obj="//@blocks.13"/>
+  <edges id="727" edge_type="CtrlEdge" source_obj="//@blocks.12" sink_obj="//@blocks.13"/>
+  <edges id="728" edge_type="VirtEdge" source_obj="//@blocks.11/@node_objs.37" sink_obj="//@blocks.11/@node_objs.42"/>
+  <edges id="729" edge_type="VirtEdge" source_obj="//@blocks.4/@node_objs.2" sink_obj="//@blocks.8/@node_objs.4"/>
+  <edges id="730" edge_type="VirtEdge" source_obj="//@blocks.6/@node_objs.4" sink_obj="//@blocks.10/@node_objs.6"/>
+  <edges id="731" edge_type="VirtEdge" source_obj="//@blocks.8/@node_objs.1" sink_obj="//@blocks.8/@node_objs.6"/>
+  <edges id="732" edge_type="VirtEdge" source_obj="//@blocks.10/@node_objs.1" sink_obj="//@blocks.10/@node_objs.8"/>
+  <edges id="733" edge_type="VirtEdge" source_obj="//@blocks.11/@node_objs.28" sink_obj="//@blocks.11/@node_objs.30"/>
+  <edges id="734" edge_type="VirtEdge" source_obj="//@blocks.11/@node_objs.13" sink_obj="//@blocks.11/@node_objs.15"/>
+  <edges id="735" edge_type="VirtEdge" source_obj="//@blocks.0/@node_objs.1" sink_obj="//@blocks.12/@node_objs.0"/>
+  <edges id="736" edge_type="VirtEdge" source_obj="//@blocks.3/@node_objs.3" sink_obj="//@blocks.4/@node_objs.4"/>
+  <edges id="737" edge_type="VirtEdge" source_obj="//@blocks.5/@node_objs.0" sink_obj="//@blocks.6/@node_objs.6"/>
+  <edges id="738" edge_type="VirtEdge" source_obj="//@blocks.7/@node_objs.0" sink_obj="//@blocks.11/@node_objs.17"/>
+  <edges id="739" edge_type="VirtEdge" source_obj="//@blocks.8/@node_objs.0" sink_obj="//@blocks.11/@node_objs.13"/>
+  <edges id="740" edge_type="VirtEdge" source_obj="//@blocks.8/@node_objs.0" sink_obj="//@blocks.11/@node_objs.15"/>
+  <edges id="741" edge_type="VirtEdge" source_obj="//@blocks.8/@node_objs.7" sink_obj="//@blocks.11/@node_objs.33"/>
+  <edges id="742" edge_type="VirtEdge" source_obj="//@blocks.9/@node_objs.5" sink_obj="//@blocks.11/@node_objs.32"/>
+  <edges id="743" edge_type="VirtEdge" source_obj="//@blocks.10/@node_objs.0" sink_obj="//@blocks.11/@node_objs.28"/>
+  <edges id="744" edge_type="VirtEdge" source_obj="//@blocks.10/@node_objs.0" sink_obj="//@blocks.11/@node_objs.30"/>
+  <edges id="745" edge_type="VirtEdge" source_obj="//@blocks.10/@node_objs.9" sink_obj="//@blocks.11/@node_objs.38"/>
+  <blocks id="36" name="block_36" type="BlockType">
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>.preheader.preheader</controlOutputObjs>
+    <controlOutputObjs>initialize.exit</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="33" name="cmd_start_read" lineNumber="140" originalName="cmd_start" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="HLS_CISR_spmv_accel" bitwidth="1" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="140" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="HLS_CISR_spmv_accel"/>
+      <dataInputObjs>cmd_start</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="34" name="max_row_id_load" lineNumber="91" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="CISR_decoder" bitwidth="32" opcode="load" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="91" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="35" name="br_ln21" lineNumber="21" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="initialize" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="21" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+      <dataInputObjs>read</dataInputObjs>
+      <controlInputObjs>initialize.exit</controlInputObjs>
+      <controlInputObjs>.preheader.preheader</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>140</validLinenumbers>
+      <validLinenumbers>91</validLinenumbers>
+      <validLinenumbers>21</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="38" name=".preheader.preheader" type="BlockType">
+    <controlInputObjs>block_36</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>.preheader</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="37" name="br_ln0" coreId="177" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <controlInputObjs>.preheader</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="107" name="initialize.exit.loopexit" type="BlockType">
+    <controlInputObjs>.preheader</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>initialize.exit</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="106" name="br_ln0" coreId="2751463552" opcode="br" nodeLabel="3.0" m_display="0" m_delay="1.58" m_topoIndex="52" m_clusterGroupNumber="-1">
+      <controlInputObjs>initialize.exit</controlInputObjs>
+    </node_objs>
+  </blocks>
+  <blocks id="116" name="initialize.exit" type="BlockType">
+    <controlInputObjs>block_36</controlInputObjs>
+    <controlInputObjs>initialize.exit.loopexit</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>initialize.exit._crit_edge</controlOutputObjs>
+    <controlOutputObjs>block_123</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="108" name="max_row_id_flag_0" coreId="0" bitwidth="1" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="55" m_clusterGroupNumber="-1">
+      <dataOutputObjs>phi</dataOutputObjs>
+      <controlInputObjs>block_36</controlInputObjs>
+      <controlInputObjs>initialize.exit.loopexit</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="109" name="max_row_id_loc_0" lineNumber="91" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828237849" contextFuncName="CISR_decoder" bitwidth="32" opcode="phi" nodeLabel="4.0" m_display="0" m_topoIndex="56" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="91" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <controlInputObjs>block_36</controlInputObjs>
+      <controlInputObjs>initialize.exit.loopexit</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="110" name="trunc_ln53" lineNumber="53" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="trunc_ln53_fu_560_p1" coreId="1828239368" contextFuncName="store_row_len_arr" bitwidth="3" opcode="trunc" nodeLabel="4.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="53" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="111" name="slot_row_count" lineNumber="53" originalName="slot_row_count" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="12" contextFuncName="store_row_len_arr" bitwidth="32" opcode="load" nodeLabel="4.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="53" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="112" name="slot_arr_row_len_addr" lineNumber="55" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="28271" contextFuncName="store_row_len_arr" bitwidth="1" opcode="getelementptr" nodeLabel="3.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="55" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>slot_arr_row_len</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="113" name="slot_arr_row_len_load" lineNumber="55" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="store_row_len_arr" bitwidth="32" opcode="load" nodeLabel="3.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="54" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="55" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="114" name="icmp_ln55" lineNumber="55" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="grp_fu_410_p2" opType="icmp" coreId="132" contextFuncName="store_row_len_arr" bitwidth="1" opcode="icmp" nodeLabel="4.0" m_display="0" m_delay="2.47" m_topoIndex="59" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="55" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="115" name="br_ln55" lineNumber="55" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="store_row_len_arr" opcode="br" nodeLabel="4.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="55" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>block_123</controlInputObjs>
+      <controlInputObjs>initialize.exit._crit_edge</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>91</validLinenumbers>
+      <validLinenumbers>53</validLinenumbers>
+      <validLinenumbers>55</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="123" name="block_123" type="BlockType">
+    <controlInputObjs>initialize.exit</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>initialize.exit._crit_edge</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="117" name="zext_ln58" lineNumber="58" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="zext_ln58_fu_568_p1" coreId="0" contextFuncName="store_row_len_arr" bitwidth="64" opcode="zext" nodeLabel="4.0" m_display="0" m_topoIndex="61" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="58" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="118" name="row_len_slot_arr_addr" lineNumber="58" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828249040" contextFuncName="store_row_len_arr" bitwidth="3" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="62" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="58" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="119" name="row_len_slot_arr_addr_write_ln58" lineNumber="58" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="store_row_len_arr" opcode="store" nodeLabel="4.0" m_display="0" m_delay="2.32" m_topoIndex="63" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="58" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataInputObjs>getelementptr</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="120" name="add_ln59" lineNumber="59" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="add_ln59_fu_573_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="store_row_len_arr" bitwidth="32" opcode="add" nodeLabel="4.0" m_display="0" m_delay="2.55" m_topoIndex="64" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="59" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="121" name="slot_counter_0_write_ln59" lineNumber="59" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="808464928" contextFuncName="store_row_len_arr" opcode="store" nodeLabel="4.0" m_display="0" m_delay="1.58" m_topoIndex="65" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="59" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>add</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="122" name="br_ln60" lineNumber="60" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828059368" contextFuncName="store_row_len_arr" opcode="br" nodeLabel="4.0" m_display="0" m_topoIndex="66" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="60" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <controlInputObjs>initialize.exit._crit_edge</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>58</validLinenumbers>
+      <validLinenumbers>59</validLinenumbers>
+      <validLinenumbers>60</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="129" name="initialize.exit._crit_edge" type="BlockType">
+    <controlInputObjs>initialize.exit</controlInputObjs>
+    <controlInputObjs>block_123</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>store_row_len_arr.exit</controlOutputObjs>
+    <controlOutputObjs>block_138</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="124" name="slot_row_count_1" lineNumber="53" originalName="slot_row_count" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="store_row_len_arr" bitwidth="32" opcode="load" nodeLabel="5.0" m_display="0" m_topoIndex="69" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="53" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="125" name="slot_arr_row_len_addr_1" lineNumber="55" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="store_row_len_arr" bitwidth="1" opcode="getelementptr" nodeLabel="4.0" m_display="0" m_topoIndex="67" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="55" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>slot_arr_row_len</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="126" name="slot_arr_row_len_load_1" lineNumber="55" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="store_row_len_arr" bitwidth="32" opcode="load" nodeLabel="4.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="68" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="55" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="127" name="icmp_ln55_1" lineNumber="55" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="grp_fu_410_p2" opType="icmp" coreId="132" contextFuncName="store_row_len_arr" bitwidth="1" opcode="icmp" nodeLabel="5.0" m_display="0" m_delay="2.47" m_topoIndex="70" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="55" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="128" name="br_ln55" lineNumber="55" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="store_row_len_arr" opcode="br" nodeLabel="5.0" m_display="0" m_topoIndex="71" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="55" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>block_138</controlInputObjs>
+      <controlInputObjs>store_row_len_arr.exit</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>53</validLinenumbers>
+      <validLinenumbers>55</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="138" name="block_138" type="BlockType">
+    <controlInputObjs>initialize.exit._crit_edge</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>store_row_len_arr.exit</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="130" name="trunc_ln58" lineNumber="58" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="trunc_ln58_fu_589_p1" coreId="0" contextFuncName="store_row_len_arr" bitwidth="3" opcode="trunc" nodeLabel="5.0" m_display="0" m_topoIndex="72" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="58" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>xor</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="131" name="xor_ln58" lineNumber="58" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="xor_ln58_fu_593_p2" opType="xor" coreId="1828069744" contextFuncName="store_row_len_arr" bitwidth="3" opcode="xor" nodeLabel="5.0" m_display="0" m_delay="0.96" m_topoIndex="73" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="58" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="132" name="zext_ln58_1" lineNumber="58" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="zext_ln58_1_fu_599_p1" coreId="539119430" contextFuncName="store_row_len_arr" bitwidth="64" opcode="zext" nodeLabel="5.0" m_display="0" m_topoIndex="74" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="58" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>xor</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="133" name="row_len_slot_arr_addr_1" lineNumber="58" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="543236200" contextFuncName="store_row_len_arr" bitwidth="3" opcode="getelementptr" nodeLabel="5.0" m_display="0" m_topoIndex="75" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="58" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="134" name="row_len_slot_arr_addr_1_write_ln58" lineNumber="58" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="store_row_len_arr" opcode="store" nodeLabel="5.0" m_display="0" m_delay="2.32" m_topoIndex="76" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="58" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataInputObjs>getelementptr</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="135" name="add_ln59_1" lineNumber="59" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="add_ln59_1_fu_604_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="store_row_len_arr" bitwidth="32" opcode="add" nodeLabel="5.0" m_display="0" m_delay="2.55" m_topoIndex="77" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="59" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="136" name="slot_counter_1_write_ln59" lineNumber="59" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1413567571" contextFuncName="store_row_len_arr" opcode="store" nodeLabel="5.0" m_display="0" m_delay="1.58" m_topoIndex="78" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="59" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <dataInputObjs>add</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="137" name="br_ln60" lineNumber="60" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="691024698" contextFuncName="store_row_len_arr" opcode="br" nodeLabel="5.0" m_display="0" m_topoIndex="79" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="60" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="store_row_len_arr"/>
+      <controlInputObjs>store_row_len_arr.exit</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>58</validLinenumbers>
+      <validLinenumbers>59</validLinenumbers>
+      <validLinenumbers>60</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="142" name="store_row_len_arr.exit" type="BlockType">
+    <controlInputObjs>initialize.exit._crit_edge</controlInputObjs>
+    <controlInputObjs>block_138</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_153</controlOutputObjs>
+    <controlOutputObjs>store_row_len_arr.exit._crit_edge</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="139" name="slot_row_counter_0_load" lineNumber="80" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="543516513" contextFuncName="CISR_decoder" bitwidth="32" opcode="load" nodeLabel="5.0" m_display="0" m_topoIndex="80" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="80" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="140" name="icmp_ln80" lineNumber="80" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="icmp_ln80_fu_620_p2" opType="icmp" coreId="1281315657" contextFuncName="CISR_decoder" bitwidth="1" opcode="icmp" nodeLabel="5.0" m_display="0" m_delay="2.47" m_topoIndex="81" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="80" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="141" name="br_ln80" lineNumber="80" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1953653104" contextFuncName="CISR_decoder" opcode="br" nodeLabel="5.0" m_display="0" m_delay="1.58" m_topoIndex="82" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="80" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>store_row_len_arr.exit._crit_edge</controlInputObjs>
+      <controlInputObjs>block_153</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>80</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="153" name="block_153" type="BlockType">
+    <controlInputObjs>store_row_len_arr.exit</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>store_row_len_arr.exit._crit_edge</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="143" name="slot_res_arr_0_write_ln83" lineNumber="83" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="842478637" contextFuncName="CISR_decoder" opcode="store" nodeLabel="5.0" m_display="0" m_delay="1.58" m_topoIndex="83" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="83" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="144" name="slot_row_len_id_0_load" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="840979276" contextFuncName="CISR_decoder" bitwidth="32" opcode="load" nodeLabel="5.0" m_display="0" m_topoIndex="84" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="145" name="zext_ln86" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="zext_ln86_fu_630_p1" coreId="539767328" contextFuncName="CISR_decoder" bitwidth="64" opcode="zext" nodeLabel="5.0" m_display="0" m_topoIndex="85" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="146" name="row_len_slot_arr_addr_2" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="4294967295" contextFuncName="CISR_decoder" bitwidth="3" opcode="getelementptr" nodeLabel="5.0" m_display="0" m_topoIndex="86" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="147" name="row_len_slot_arr_load" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="CISR_decoder" bitwidth="32" opcode="load" nodeLabel="5.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="87" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="148" name="add_ln87" lineNumber="87" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="add_ln87_fu_635_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="CISR_decoder" bitwidth="32" opcode="add" nodeLabel="5.0" m_display="0" m_delay="2.55" m_topoIndex="88" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="87" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="149" name="slot_row_len_id_0_write_ln87" lineNumber="87" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="4228300630" contextFuncName="CISR_decoder" opcode="store" nodeLabel="5.0" m_display="0" m_delay="1.58" m_topoIndex="89" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="87" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>add</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="150" name="slot_row_id_0_write_ln91" lineNumber="91" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="2751465344" contextFuncName="CISR_decoder" opcode="store" nodeLabel="5.0" m_display="0" m_delay="1.58" m_topoIndex="90" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="91" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>trunc</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="151" name="add_ln92" lineNumber="92" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="add_ln92_fu_652_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="CISR_decoder" bitwidth="32" opcode="add" nodeLabel="6.0" m_display="0" m_delay="2.55" m_topoIndex="91" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="92" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="152" name="br_ln94" lineNumber="94" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="CISR_decoder" opcode="br" nodeLabel="6.0" m_display="0" m_delay="1.58" m_topoIndex="92" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="94" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <controlInputObjs>store_row_len_arr.exit._crit_edge</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>83</validLinenumbers>
+      <validLinenumbers>86</validLinenumbers>
+      <validLinenumbers>87</validLinenumbers>
+      <validLinenumbers>91</validLinenumbers>
+      <validLinenumbers>92</validLinenumbers>
+      <validLinenumbers>94</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="162" name="store_row_len_arr.exit._crit_edge" type="BlockType">
+    <controlInputObjs>store_row_len_arr.exit</controlInputObjs>
+    <controlInputObjs>block_153</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>block_175</controlOutputObjs>
+    <controlOutputObjs>CISR_decoder.exit</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="154" name="max_row_id_flag_1" coreId="606" bitwidth="1" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="93" m_clusterGroupNumber="-1">
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <controlInputObjs>block_153</controlInputObjs>
+      <controlInputObjs>store_row_len_arr.exit</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="155" name="max_row_id_new_1" lineNumber="92" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="CISR_decoder" bitwidth="32" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="94" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="92" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <controlInputObjs>block_153</controlInputObjs>
+      <controlInputObjs>store_row_len_arr.exit</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="156" name="max_row_id_loc_1" lineNumber="92" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828097688" contextFuncName="CISR_decoder" bitwidth="32" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="95" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="92" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <controlInputObjs>block_153</controlInputObjs>
+      <controlInputObjs>store_row_len_arr.exit</controlInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="157" name="empty_15" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="2751463552" contextFuncName="CISR_decoder" bitwidth="32" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="96" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <controlInputObjs>block_153</controlInputObjs>
+      <controlInputObjs>store_row_len_arr.exit</controlInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="158" name="trunc_ln80" lineNumber="80" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="trunc_ln80_fu_660_p1" coreId="0" contextFuncName="CISR_decoder" bitwidth="3" opcode="trunc" nodeLabel="6.0" m_display="0" m_topoIndex="97" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="80" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="159" name="slot_row_counter_1_load" lineNumber="80" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828103464" contextFuncName="CISR_decoder" bitwidth="32" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="98" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="80" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataOutputObjs>icmp</dataOutputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="160" name="icmp_ln80_1" lineNumber="80" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="icmp_ln80_1_fu_668_p2" opType="icmp" coreId="1828103160" contextFuncName="CISR_decoder" bitwidth="1" opcode="icmp" nodeLabel="6.0" m_display="0" m_delay="2.47" m_topoIndex="99" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="80" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="161" name="br_ln80" lineNumber="80" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828105008" contextFuncName="CISR_decoder" opcode="br" nodeLabel="6.0" m_display="0" m_delay="1.58" m_topoIndex="100" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="80" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>icmp</dataInputObjs>
+      <controlInputObjs>CISR_decoder.exit</controlInputObjs>
+      <controlInputObjs>block_175</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>92</validLinenumbers>
+      <validLinenumbers>86</validLinenumbers>
+      <validLinenumbers>80</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="175" name="block_175" type="BlockType">
+    <controlInputObjs>store_row_len_arr.exit._crit_edge</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>phi</controlOutputObjs>
+    <controlOutputObjs>CISR_decoder.exit</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="163" name="slot_res_arr_1_write_ln83" lineNumber="83" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="CISR_decoder" opcode="store" nodeLabel="6.0" m_display="0" m_delay="1.58" m_topoIndex="101" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="83" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="164" name="slot_row_len_id_1_load" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="49" contextFuncName="CISR_decoder" bitwidth="32" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="102" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="165" name="trunc_ln86" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="trunc_ln86_fu_678_p1" coreId="2751463552" contextFuncName="CISR_decoder" bitwidth="3" opcode="trunc" nodeLabel="6.0" m_display="0" m_topoIndex="103" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>xor</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="166" name="xor_ln86" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="xor_ln86_fu_682_p2" opType="xor" coreId="1828254144" contextFuncName="CISR_decoder" bitwidth="3" opcode="xor" nodeLabel="6.0" m_display="0" m_delay="0.96" m_topoIndex="104" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="167" name="zext_ln86_1" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="zext_ln86_1_fu_688_p1" coreId="1828255193" contextFuncName="CISR_decoder" bitwidth="64" opcode="zext" nodeLabel="6.0" m_display="0" m_topoIndex="105" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>xor</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="168" name="row_len_slot_arr_addr_3" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="CISR_decoder" bitwidth="3" opcode="getelementptr" nodeLabel="6.0" m_display="0" m_topoIndex="106" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="169" name="row_len_slot_arr_load_1" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="CISR_decoder" bitwidth="32" opcode="load" nodeLabel="6.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="107" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="170" name="add_ln87_1" lineNumber="87" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="add_ln87_1_fu_693_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="CISR_decoder" bitwidth="32" opcode="add" nodeLabel="6.0" m_display="0" m_delay="2.55" m_topoIndex="108" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="87" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="171" name="slot_row_len_id_1_write_ln87" lineNumber="87" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="2751463552" contextFuncName="CISR_decoder" opcode="store" nodeLabel="6.0" m_display="0" m_delay="1.58" m_topoIndex="109" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="87" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>add</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="172" name="slot_row_id_1_write_ln91" lineNumber="91" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828251056" contextFuncName="CISR_decoder" opcode="store" nodeLabel="6.0" m_display="0" m_delay="1.58" m_topoIndex="110" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="91" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>trunc</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="173" name="add_ln92_1" lineNumber="92" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="add_ln92_1_fu_711_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="CISR_decoder" bitwidth="32" opcode="add" nodeLabel="7.0" m_display="0" m_delay="2.55" m_topoIndex="111" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="92" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>phi</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="174" name="br_ln94" lineNumber="94" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="2751463552" contextFuncName="CISR_decoder" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="112" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="94" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <controlInputObjs>CISR_decoder.exit</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>83</validLinenumbers>
+      <validLinenumbers>86</validLinenumbers>
+      <validLinenumbers>87</validLinenumbers>
+      <validLinenumbers>91</validLinenumbers>
+      <validLinenumbers>92</validLinenumbers>
+      <validLinenumbers>94</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="220" name="CISR_decoder.exit" type="BlockType">
+    <controlInputObjs>store_row_len_arr.exit._crit_edge</controlInputObjs>
+    <controlInputObjs>block_175</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>mergeST</controlOutputObjs>
+    <controlOutputObjs>CISR_decoder.exit.new</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="176" name="max_row_id_flag_2" coreId="1828266392" bitwidth="1" opcode="phi" nodeLabel="20.0" m_display="0" m_topoIndex="149" m_clusterGroupNumber="-1">
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>br</dataOutputObjs>
+      <controlInputObjs>block_175</controlInputObjs>
+      <controlInputObjs>store_row_len_arr.exit._crit_edge</controlInputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="177" name="max_row_id_new_2" lineNumber="92" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828265912" contextFuncName="CISR_decoder" bitwidth="32" opcode="phi" nodeLabel="8.0" m_display="0" m_topoIndex="117" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="92" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>add</dataInputObjs>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <controlInputObjs>block_175</controlInputObjs>
+      <controlInputObjs>store_row_len_arr.exit._crit_edge</controlInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="178" name="empty_16" lineNumber="86" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="CISR_decoder" bitwidth="32" opcode="phi" nodeLabel="8.0" m_display="0" m_topoIndex="118" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="86" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="CISR_decoder"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>add</dataOutputObjs>
+      <controlInputObjs>block_175</controlInputObjs>
+      <controlInputObjs>store_row_len_arr.exit._crit_edge</controlInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="179" name="slot_data_arr_addr" lineNumber="107" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828268184" contextFuncName="compute" bitwidth="1" opcode="getelementptr" nodeLabel="7.0" m_display="0" m_topoIndex="113" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="107" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>slot_data_arr</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="180" name="slot_data_arr_load" lineNumber="107" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="compute" bitwidth="64" opcode="load" nodeLabel="7.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="114" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="107" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="181" name="trunc_ln107" lineNumber="107" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="trunc_ln107_fu_729_p1" coreId="132" contextFuncName="compute" bitwidth="32" opcode="trunc" nodeLabel="8.0" m_display="0" m_topoIndex="119" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="107" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="182" name="matrix_val" lineNumber="107" originalName="matrix_val" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="matrix_val_fu_759_p1" coreId="1828263776" contextFuncName="compute" bitwidth="32" opcode="bitcast" nodeLabel="10.0" m_display="0" m_topoIndex="133" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="107" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>fmul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="183" name="col_index" lineNumber="108" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="grp_fu_416_p4" coreId="1828272633" contextFuncName="compute" bitwidth="3" opcode="partselect" nodeLabel="8.0" m_display="0" m_topoIndex="120" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="108" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="184" name="zext_ln111" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="zext_ln111_fu_733_p1" coreId="1828273872" contextFuncName="compute" bitwidth="64" opcode="zext" nodeLabel="8.0" m_display="0" m_topoIndex="121" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="185" name="inp_vec_addr" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828277440" contextFuncName="compute" bitwidth="3" opcode="getelementptr" nodeLabel="8.0" m_display="0" m_topoIndex="122" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>inp_vec</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="186" name="inp_vec_load" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="compute" bitwidth="32" opcode="load" nodeLabel="8.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="123" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="187" name="bitcast_ln111" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="bitcast_ln111_fu_763_p1" coreId="0" contextFuncName="compute" bitwidth="32" opcode="bitcast" nodeLabel="10.0" m_display="0" m_topoIndex="134" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>fmul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="188" name="mul_i" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="fmul_32ns_32ns_32_4_max_dsp_1_U2" coreName="FMul_maxdsp" implIndex="maxdsp" control="auto" opType="fmul" coreId="30" contextFuncName="compute" bitwidth="32" opcode="fmul" nodeLabel="10.0" nodeLatency="3" m_display="0" m_delay="5.7" m_topoIndex="135" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataOutputObjs>fadd</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="189" name="slot_res_arr_0_load" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="7345" contextFuncName="compute" bitwidth="32" opcode="load" nodeLabel="14.0" m_display="0" m_topoIndex="139" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataOutputObjs>fadd</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="190" name="add_i" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="fadd_32ns_32ns_32_5_full_dsp_1_U1" coreName="FAddSub_fulldsp" implIndex="fulldsp" control="auto" opType="fadd" coreId="18" contextFuncName="compute" bitwidth="32" opcode="fadd" nodeLabel="14.0" nodeLatency="4" m_display="0" m_delay="7.25" m_topoIndex="140" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataInputObjs>fmul</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="191" name="slot_res_arr_0_write_ln111" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="compute" opcode="store" nodeLabel="19.0" m_display="0" m_delay="1.58" m_topoIndex="143" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>fadd</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="192" name="add_ln115" lineNumber="115" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="add_ln115_fu_717_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="compute" bitwidth="32" opcode="add" nodeLabel="7.0" m_display="0" m_delay="2.55" m_topoIndex="115" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="115" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="193" name="slot_row_counter_0_write_ln115" lineNumber="115" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="compute" opcode="store" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="116" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="115" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>add</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="194" name="slot_data_arr_addr_1" lineNumber="107" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="compute" bitwidth="1" opcode="getelementptr" nodeLabel="8.0" m_display="0" m_topoIndex="124" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="107" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>slot_data_arr</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="195" name="slot_data_arr_load_1" lineNumber="107" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="compute" bitwidth="64" opcode="load" nodeLabel="8.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="125" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="107" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>trunc</dataOutputObjs>
+      <dataOutputObjs>partselect</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="196" name="trunc_ln107_1" lineNumber="107" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="trunc_ln107_1_fu_750_p1" coreId="49" contextFuncName="compute" bitwidth="32" opcode="trunc" nodeLabel="9.0" m_display="0" m_topoIndex="128" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="107" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="197" name="matrix_val_1" lineNumber="107" originalName="matrix_val" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="matrix_val_1_fu_768_p1" coreId="17729" contextFuncName="compute" bitwidth="32" opcode="bitcast" nodeLabel="11.0" m_display="0" m_topoIndex="136" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="107" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>trunc</dataInputObjs>
+      <dataOutputObjs>fmul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="198" name="col_index_1" lineNumber="108" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="grp_fu_416_p4" coreId="0" contextFuncName="compute" bitwidth="3" opcode="partselect" nodeLabel="9.0" m_display="0" m_topoIndex="129" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="108" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>zext</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="199" name="zext_ln111_1" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="zext_ln111_1_fu_754_p1" coreId="1828289904" contextFuncName="compute" bitwidth="64" opcode="zext" nodeLabel="9.0" m_display="0" m_topoIndex="130" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>partselect</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="200" name="inp_vec_addr_1" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="2751463552" contextFuncName="compute" bitwidth="3" opcode="getelementptr" nodeLabel="9.0" m_display="0" m_topoIndex="131" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>inp_vec</dataInputObjs>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>load</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="201" name="inp_vec_load_1" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="compute" bitwidth="32" opcode="load" nodeLabel="9.0" nodeLatency="1" m_display="0" m_delay="2.32" m_topoIndex="132" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>getelementptr</dataInputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="202" name="bitcast_ln111_1" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="bitcast_ln111_1_fu_772_p1" coreId="1828295384" contextFuncName="compute" bitwidth="32" opcode="bitcast" nodeLabel="11.0" m_display="0" m_topoIndex="137" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>fmul</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="203" name="mul_1_i" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="fmul_32ns_32ns_32_4_max_dsp_1_U2" coreName="FMul_maxdsp" implIndex="maxdsp" control="auto" opType="fmul" coreId="30" contextFuncName="compute" bitwidth="32" opcode="fmul" nodeLabel="11.0" nodeLatency="3" m_display="0" m_delay="5.7" m_topoIndex="138" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataOutputObjs>fadd</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="204" name="slot_res_arr_1_load" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="132" contextFuncName="compute" bitwidth="32" opcode="load" nodeLabel="15.0" m_display="0" m_topoIndex="141" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataOutputObjs>fadd</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="205" name="add_1_i" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="fadd_32ns_32ns_32_5_full_dsp_1_U1" coreName="FAddSub_fulldsp" implIndex="fulldsp" control="auto" opType="fadd" coreId="18" contextFuncName="compute" bitwidth="32" opcode="fadd" nodeLabel="15.0" nodeLatency="4" m_display="0" m_delay="7.25" m_topoIndex="142" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataInputObjs>fmul</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <dataOutputObjs>bitcast</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="206" name="slot_res_arr_1_write_ln111" lineNumber="111" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="2751463552" contextFuncName="compute" opcode="store" nodeLabel="20.0" m_display="0" m_delay="1.58" m_topoIndex="150" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="111" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>fadd</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="207" name="add_ln115_1" lineNumber="115" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="add_ln115_1_fu_738_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="compute" bitwidth="32" opcode="add" nodeLabel="8.0" m_display="0" m_delay="2.55" m_topoIndex="126" m_clusterGroupNumber="1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="115" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>phi</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="208" name="slot_row_counter_1_write_ln115" lineNumber="115" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="132" contextFuncName="compute" opcode="store" nodeLabel="8.0" m_display="0" m_delay="1.58" m_topoIndex="127" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="115" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="compute"/>
+      <dataInputObjs>add</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="209" name="row_index" lineNumber="130" originalName="row_index" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="132" contextFuncName="output_write" bitwidth="3" opcode="load" nodeLabel="19.0" m_display="0" m_topoIndex="144" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="130" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="output_write"/>
+      <dataOutputObjs>zext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="210" name="zext_ln131" lineNumber="131" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="zext_ln131_fu_797_p1" coreId="2751463552" contextFuncName="output_write" bitwidth="64" opcode="zext" nodeLabel="19.0" m_display="0" m_topoIndex="145" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="131" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="output_write"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="211" name="bitcast_ln131" lineNumber="131" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="bitcast_ln131_fu_802_p1" coreId="0" contextFuncName="output_write" bitwidth="32" opcode="bitcast" nodeLabel="19.0" m_display="0" m_topoIndex="146" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="131" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="output_write"/>
+      <dataInputObjs>fadd</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="212" name="output_vec_addr" lineNumber="131" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828308552" contextFuncName="output_write" bitwidth="3" opcode="getelementptr" nodeLabel="19.0" m_display="0" m_topoIndex="147" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="131" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="output_write"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>output_vec</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="213" name="output_vec_addr_write_ln131" lineNumber="131" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="output_write" opcode="store" nodeLabel="19.0" m_display="0" m_delay="2.32" m_topoIndex="148" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="131" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="output_write"/>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataInputObjs>getelementptr</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="214" name="row_index_1" lineNumber="130" originalName="row_index" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="output_write" bitwidth="3" opcode="load" nodeLabel="20.0" m_display="0" m_topoIndex="151" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="130" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="output_write"/>
+      <dataOutputObjs>zext</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="215" name="zext_ln131_1" lineNumber="131" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="zext_ln131_1_fu_817_p1" coreId="0" contextFuncName="output_write" bitwidth="64" opcode="zext" nodeLabel="20.0" m_display="0" m_topoIndex="152" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="131" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="output_write"/>
+      <dataInputObjs>load</dataInputObjs>
+      <dataOutputObjs>getelementptr</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="216" name="bitcast_ln131_1" lineNumber="131" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="bitcast_ln131_1_fu_822_p1" coreId="0" contextFuncName="output_write" bitwidth="32" opcode="bitcast" nodeLabel="20.0" m_display="0" m_topoIndex="153" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="131" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="output_write"/>
+      <dataInputObjs>fadd</dataInputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="217" name="output_vec_addr_1" lineNumber="131" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="output_write" bitwidth="3" opcode="getelementptr" nodeLabel="20.0" m_display="0" m_topoIndex="154" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="131" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="output_write"/>
+      <dataInputObjs>zext</dataInputObjs>
+      <dataOutputObjs>output_vec</dataOutputObjs>
+      <dataOutputObjs>store</dataOutputObjs>
+      <constName>empty</constName>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="218" name="output_vec_addr_1_write_ln131" lineNumber="131" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="output_write" opcode="store" nodeLabel="20.0" m_display="0" m_delay="2.32" m_topoIndex="155" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="131" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="output_write"/>
+      <dataInputObjs>bitcast</dataInputObjs>
+      <dataInputObjs>getelementptr</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="219" name="br_ln0" coreId="0" opcode="br" nodeLabel="20.0" m_display="0" m_topoIndex="156" m_clusterGroupNumber="-1">
+      <dataInputObjs>phi</dataInputObjs>
+      <controlInputObjs>CISR_decoder.exit.new</controlInputObjs>
+      <controlInputObjs>mergeST</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>92</validLinenumbers>
+      <validLinenumbers>86</validLinenumbers>
+      <validLinenumbers>107</validLinenumbers>
+      <validLinenumbers>108</validLinenumbers>
+      <validLinenumbers>111</validLinenumbers>
+      <validLinenumbers>115</validLinenumbers>
+      <validLinenumbers>130</validLinenumbers>
+      <validLinenumbers>131</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="223" name="mergeST" type="BlockType">
+    <controlInputObjs>CISR_decoder.exit</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>CISR_decoder.exit.new</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="221" name="max_row_id_write_ln23" lineNumber="23" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="initialize" opcode="store" nodeLabel="20.0" m_display="0" m_topoIndex="157" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="23" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+      <dataInputObjs>phi</dataInputObjs>
+    </node_objs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="222" name="br_ln0" coreId="0" opcode="br" nodeLabel="20.0" m_display="0" m_topoIndex="158" m_clusterGroupNumber="-1">
+      <controlInputObjs>CISR_decoder.exit.new</controlInputObjs>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>23</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <blocks id="225" name="CISR_decoder.exit.new" type="BlockType">
+    <controlInputObjs>CISR_decoder.exit</controlInputObjs>
+    <controlInputObjs>mergeST</controlInputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <controlOutputObjs>br</controlOutputObjs>
+    <node_objs xsi:type="cdfg:CdfgNode" id="224" name="_ln201" lineNumber="201" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="HLS_CISR_spmv_accel" opcode="ret" nodeLabel="20.0" m_display="0" m_topoIndex="159" m_clusterGroupNumber="-1">
+      <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="201" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="HLS_CISR_spmv_accel"/>
+    </node_objs>
+    <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+      <validLinenumbers>201</validLinenumbers>
+    </fileValidLineNumbers>
+  </blocks>
+  <regions anchor_node="-1" region_type="8" interval="2" typeName="Pipeline" id="826" pipe_depth="2" RegionName="VITIS_LOOP_25_1">
+    <basic_blocks id="45" name=".preheader" type="BlockType">
+      <controlInputObjs>.preheader.preheader</controlInputObjs>
+      <controlInputObjs>.split226</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>initialize.exit.loopexit</controlOutputObjs>
+      <controlOutputObjs>.split2</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="39" name="slot_id" lineNumber="25" originalName="slot_id" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="132" contextFuncName="initialize" bitwidth="2" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="25" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>add</dataInputObjs>
+        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>icmp</dataOutputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+        <dataOutputObjs>trunc</dataOutputObjs>
+        <controlInputObjs>.split226</controlInputObjs>
+        <controlInputObjs>.preheader.preheader</controlInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="add_ln25" lineNumber="25" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="add_ln25_fu_438_p2" coreName="Adder" implIndex="fabric" control="auto" opType="add" coreId="1" contextFuncName="initialize" bitwidth="2" opcode="add" nodeLabel="1.0" m_display="0" m_delay="1.56" m_topoIndex="6" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="25" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="42" name="icmp_ln25" lineNumber="25" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="icmp_ln25_fu_444_p2" opType="icmp" coreId="289" contextFuncName="initialize" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="0.95" m_topoIndex="7" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="25" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="br_ln25" lineNumber="25" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="132" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="25" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>icmp</dataInputObjs>
+        <controlInputObjs>.split2</controlInputObjs>
+        <controlInputObjs>initialize.exit.loopexit</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>25</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="61" name=".split2" type="BlockType">
+      <controlInputObjs>.preheader</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>branch7</controlOutputObjs>
+      <controlOutputObjs>branch6</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="46" name="tmp" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="tmp_fu_450_p3" coreId="49" contextFuncName="initialize" bitwidth="4" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>zext</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <dataOutputObjs>or</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="zext_ln37" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="zext_ln37_fu_458_p1" coreId="465" contextFuncName="initialize" bitwidth="64" opcode="zext" nodeLabel="1.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="row_len_slot_arr_addr_4" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1" contextFuncName="initialize" bitwidth="3" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>zext</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="49" name="or_ln37" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="or_ln37_fu_463_p2" coreId="132" contextFuncName="initialize" bitwidth="4" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="tmp_1" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="tmp_1_fu_469_p3" coreId="529" contextFuncName="initialize" bitwidth="64" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="13" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="row_len_slot_arr_addr_5" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="769" contextFuncName="initialize" bitwidth="3" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="or_ln37_1" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="or_ln37_1_fu_478_p2" coreId="132" contextFuncName="initialize" bitwidth="4" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="tmp_2" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="tmp_2_fu_484_p3" coreId="0" contextFuncName="initialize" bitwidth="64" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="16" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="54" name="row_len_slot_arr_addr_6" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="132" contextFuncName="initialize" bitwidth="3" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="or_ln37_2" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="or_ln37_2_fu_493_p2" coreId="0" contextFuncName="initialize" bitwidth="4" opcode="or" nodeLabel="1.0" m_display="0" m_topoIndex="18" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataOutputObjs>bitconcatenate</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="56" name="tmp_3" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="tmp_3_fu_499_p3" coreId="1852793701" contextFuncName="initialize" bitwidth="64" opcode="bitconcatenate" nodeLabel="1.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>or</dataInputObjs>
+        <dataOutputObjs>getelementptr</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="row_len_slot_arr_addr_7" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="49" contextFuncName="initialize" bitwidth="3" opcode="getelementptr" nodeLabel="1.0" m_display="0" m_topoIndex="20" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>bitconcatenate</dataInputObjs>
+        <dataOutputObjs>store</dataOutputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="59" name="trunc_ln29" lineNumber="29" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." rtlName="trunc_ln29_fu_508_p1" coreId="2865" contextFuncName="initialize" bitwidth="1" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="29" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="br_ln29" lineNumber="29" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="22" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="29" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <controlInputObjs>branch6</controlInputObjs>
+        <controlInputObjs>branch7</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>37</validLinenumbers>
+        <validLinenumbers>29</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="64" name="branch6" type="BlockType">
+      <controlInputObjs>.split2</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split214</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="slot_res_arr_0_write_ln29" lineNumber="29" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828050280" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="23" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="29" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="br_ln29" lineNumber="29" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="49" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="29" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <controlInputObjs>.split214</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>29</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="67" name="branch7" type="BlockType">
+      <controlInputObjs>.split2</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split214</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="65" name="slot_res_arr_1_write_ln29" lineNumber="29" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="25" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="29" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="br_ln29" lineNumber="29" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="29" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <controlInputObjs>.split214</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>29</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="69" name=".split214" type="BlockType">
+      <controlInputObjs>branch6</controlInputObjs>
+      <controlInputObjs>branch7</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>branch9</controlOutputObjs>
+      <controlOutputObjs>branch8</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="68" name="br_ln30" lineNumber="30" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="30" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <controlInputObjs>branch8</controlInputObjs>
+        <controlInputObjs>branch9</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>30</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="72" name="branch8" type="BlockType">
+      <controlInputObjs>.split214</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split21418</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="slot_counter_0_write_ln30" lineNumber="30" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="28" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="30" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="71" name="br_ln30" lineNumber="30" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828207824" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="30" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <controlInputObjs>.split21418</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>30</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="75" name="branch9" type="BlockType">
+      <controlInputObjs>.split214</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split21418</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="slot_counter_1_write_ln30" lineNumber="30" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="2751463552" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="30" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="30" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="74" name="br_ln30" lineNumber="30" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828209968" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="31" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="30" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <controlInputObjs>.split21418</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>30</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="77" name=".split21418" type="BlockType">
+      <controlInputObjs>branch8</controlInputObjs>
+      <controlInputObjs>branch9</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>branch5</controlOutputObjs>
+      <controlOutputObjs>branch4</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="br_ln31" lineNumber="31" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="76" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="31" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <controlInputObjs>branch4</controlInputObjs>
+        <controlInputObjs>branch5</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>31</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="80" name="branch4" type="BlockType">
+      <controlInputObjs>.split21418</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split210</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="slot_row_counter_0_write_ln31" lineNumber="31" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828210840" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="33" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="31" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="br_ln31" lineNumber="31" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="34" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="31" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <controlInputObjs>.split210</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>31</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="83" name="branch5" type="BlockType">
+      <controlInputObjs>.split21418</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split210</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="slot_row_counter_1_write_ln31" lineNumber="31" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828213776" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="35" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="31" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="br_ln31" lineNumber="31" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="4294967295" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="31" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <controlInputObjs>.split210</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>31</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="85" name=".split210" type="BlockType">
+      <controlInputObjs>branch4</controlInputObjs>
+      <controlInputObjs>branch5</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>branch1</controlOutputObjs>
+      <controlOutputObjs>branch0</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="br_ln32" lineNumber="32" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="144" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="32" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <controlInputObjs>branch0</controlInputObjs>
+        <controlInputObjs>branch1</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>32</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="88" name="branch0" type="BlockType">
+      <controlInputObjs>.split210</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split22</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="slot_row_len_id_0_write_ln32" lineNumber="32" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="7" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="38" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="32" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="87" name="br_ln32" lineNumber="32" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828218744" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="32" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <controlInputObjs>.split22</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>32</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="91" name="branch1" type="BlockType">
+      <controlInputObjs>.split210</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split22</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="slot_row_len_id_1_write_ln32" lineNumber="32" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828220568" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="40" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="32" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="90" name="br_ln32" lineNumber="32" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="49" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="32" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <controlInputObjs>.split22</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>32</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="93" name=".split22" type="BlockType">
+      <controlInputObjs>branch0</controlInputObjs>
+      <controlInputObjs>branch1</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>branch3</controlOutputObjs>
+      <controlOutputObjs>branch2</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="92" name="br_ln33" lineNumber="33" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828223936" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="33" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <controlInputObjs>branch2</controlInputObjs>
+        <controlInputObjs>branch3</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>33</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="96" name="branch2" type="BlockType">
+      <controlInputObjs>.split22</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split226</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="94" name="slot_row_id_0_write_ln33" lineNumber="33" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1269" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="43" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="33" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="95" name="br_ln33" lineNumber="33" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="49" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="33" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <controlInputObjs>.split226</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>33</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="99" name="branch3" type="BlockType">
+      <controlInputObjs>.split22</controlInputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.split226</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="97" name="slot_row_id_1_write_ln33" lineNumber="33" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="0" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="45" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="33" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="98" name="br_ln33" lineNumber="33" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreId="1828228568" contextFuncName="initialize" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="46" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="33" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <controlInputObjs>.split226</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>33</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+    <basic_blocks id="105" name=".split226" type="BlockType">
+      <controlInputObjs>branch2</controlInputObjs>
+      <controlInputObjs>branch3</controlInputObjs>
+      <controlOutputObjs>phi</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>br</controlOutputObjs>
+      <controlOutputObjs>.preheader</controlOutputObjs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="100" name="row_len_slot_arr_addr_4_write_ln37" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="2.32" m_topoIndex="47" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="101" name="row_len_slot_arr_addr_5_write_ln37" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="initialize" opcode="store" nodeLabel="1.0" m_display="0" m_delay="2.32" m_topoIndex="48" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="102" name="row_len_slot_arr_addr_6_write_ln37" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="initialize" opcode="store" nodeLabel="2.0" m_display="0" m_delay="2.32" m_topoIndex="49" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="103" name="row_len_slot_arr_addr_7_write_ln37" lineNumber="37" fileName="HLS_CISR_spmv_accel.c" fileDirectory=".." coreName="RAM" implIndex="auto" control="auto" opType="ram" coreId="82" contextFuncName="initialize" opcode="store" nodeLabel="2.0" m_display="0" m_delay="2.32" m_topoIndex="50" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="HLS_CISR_spmv_accel.c" linenumber="37" fileDirectory="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR" functionName="initialize"/>
+        <dataInputObjs>getelementptr</dataInputObjs>
+        <constName>empty</constName>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="104" name="br_ln0" coreId="1828235848" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
+        <controlInputObjs>.preheader</controlInputObjs>
+      </node_objs>
+      <fileValidLineNumbers fileName="HLS_CISR_spmv_accel.c">
+        <validLinenumbers>37</validLinenumbers>
+      </fileValidLineNumbers>
+    </basic_blocks>
+  </regions>
+  <ScheduleInfo time="0"/>
+  <ScheduleInfo time="1"/>
+  <ScheduleInfo time="2"/>
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <ScheduleInfo time="11"/>
+  <ScheduleInfo time="12"/>
+  <ScheduleInfo time="13"/>
+  <ScheduleInfo time="14"/>
+  <ScheduleInfo time="15"/>
+  <ScheduleInfo time="16"/>
+  <ScheduleInfo time="17"/>
+  <ScheduleInfo time="18"/>
+  <ScheduleInfo time="19"/>
+  <ScheduleInfo time="20"/>
+  <regnodes realName="icmp_ln80_1_reg_897">
+    <nodeIds>160</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln107_1_reg_936">
+    <nodeIds>196</nodeIds>
+  </regnodes>
+  <regnodes realName="inp_vec_addr_1_reg_941">
+    <nodeIds>200</nodeIds>
+  </regnodes>
+  <regnodes realName="matrix_val_1_reg_956">
+    <nodeIds>197</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln53_reg_866">
+    <nodeIds>110</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln80_reg_885">
+    <nodeIds>140</nodeIds>
+  </regnodes>
+  <regnodes realName="matrix_val_reg_946">
+    <nodeIds>182</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln25_reg_840">
+    <nodeIds>40</nodeIds>
+  </regnodes>
+  <regnodes realName="mul_1_i_reg_974">
+    <nodeIds>203</nodeIds>
+  </regnodes>
+  <regnodes realName="reg_430">
+    <nodeIds>190</nodeIds>
+    <nodeIds>205</nodeIds>
+  </regnodes>
+  <regnodes realName="slot_id_reg_275">
+    <nodeIds>39</nodeIds>
+  </regnodes>
+  <regnodes realName="max_row_id_loc_1_reg_336">
+    <nodeIds>156</nodeIds>
+  </regnodes>
+  <regnodes realName="row_len_slot_arr_addr_7_reg_853">
+    <nodeIds>57</nodeIds>
+  </regnodes>
+  <regnodes realName="row_len_slot_arr_load_1_reg_906">
+    <nodeIds>169</nodeIds>
+  </regnodes>
+  <regnodes realName="empty_15_reg_347">
+    <nodeIds>157</nodeIds>
+  </regnodes>
+  <regnodes realName="max_row_id_flag_0_reg_286">
+    <nodeIds>108</nodeIds>
+  </regnodes>
+  <regnodes realName="empty_16_reg_369">
+    <nodeIds>178</nodeIds>
+  </regnodes>
+  <regnodes realName="inp_vec_addr_reg_926">
+    <nodeIds>185</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln92_1_reg_911">
+    <nodeIds>173</nodeIds>
+  </regnodes>
+  <regnodes realName="bitcast_ln111_1_reg_961">
+    <nodeIds>202</nodeIds>
+  </regnodes>
+  <regnodes realName="row_len_slot_arr_addr_2_reg_889">
+    <nodeIds>146</nodeIds>
+  </regnodes>
+  <regnodes realName="slot_arr_row_len_addr_1_reg_874">
+    <nodeIds>125</nodeIds>
+  </regnodes>
+  <regnodes realName="max_row_id_new_1_reg_324">
+    <nodeIds>155</nodeIds>
+  </regnodes>
+  <regnodes realName="row_len_slot_arr_addr_3_reg_901">
+    <nodeIds>168</nodeIds>
+  </regnodes>
+  <regnodes realName="row_len_slot_arr_addr_6_reg_848">
+    <nodeIds>54</nodeIds>
+  </regnodes>
+  <regnodes realName="slot_data_arr_addr_reg_916">
+    <nodeIds>179</nodeIds>
+  </regnodes>
+  <regnodes realName="slot_arr_row_len_addr_reg_861">
+    <nodeIds>112</nodeIds>
+  </regnodes>
+  <regnodes realName="mul_i_reg_966">
+    <nodeIds>188</nodeIds>
+  </regnodes>
+  <regnodes realName="max_row_id_loc_0_reg_300">
+    <nodeIds>109</nodeIds>
+  </regnodes>
+  <regnodes realName="max_row_id_flag_2_reg_378">
+    <nodeIds>176</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln107_reg_921">
+    <nodeIds>181</nodeIds>
+  </regnodes>
+  <regnodes realName="cmd_start_read_reg_833">
+    <nodeIds>33</nodeIds>
+  </regnodes>
+  <regnodes realName="slot_data_arr_addr_1_reg_931">
+    <nodeIds>194</nodeIds>
+  </regnodes>
+  <regnodes realName="max_row_id_flag_1_reg_312">
+    <nodeIds>154</nodeIds>
+  </regnodes>
+  <regnodes realName="max_row_id_new_2_reg_358">
+    <nodeIds>177</nodeIds>
+  </regnodes>
+  <regnodes realName="reg_426">
+    <nodeIds>186</nodeIds>
+    <nodeIds>201</nodeIds>
+  </regnodes>
+  <regnodes realName="bitcast_ln111_reg_951">
+    <nodeIds>187</nodeIds>
+  </regnodes>
+  <expressionNodes realName="icmp_ln25_fu_444">
+    <nodeIds>42</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln107_fu_729">
+    <nodeIds>181</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln86_fu_678">
+    <nodeIds>165</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln80_1_fu_668">
+    <nodeIds>160</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln37_fu_463">
+    <nodeIds>49</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="row_len_slot_arr_addr_3_gep_fu_202">
+    <nodeIds>168</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="slot_data_arr_addr_1_gep_fu_237">
+    <nodeIds>194</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_450">
+    <nodeIds>46</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln29_fu_508">
+    <nodeIds>59</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln111_1_fu_754">
+    <nodeIds>199</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="max_row_id_flag_0_phi_fu_291">
+    <nodeIds>108</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln107_1_fu_750">
+    <nodeIds>196</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln86_fu_630">
+    <nodeIds>145</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="row_len_slot_arr_addr_4_gep_fu_112">
+    <nodeIds>48</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln86_fu_682">
+    <nodeIds>166</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln37_1_fu_478">
+    <nodeIds>52</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="row_len_slot_arr_addr_6_gep_fu_126">
+    <nodeIds>54</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln58_fu_568">
+    <nodeIds>117</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln115_fu_717">
+    <nodeIds>192</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln111_fu_733">
+    <nodeIds>184</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="max_row_id_flag_2_phi_fu_382">
+    <nodeIds>176</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="output_vec_addr_gep_fu_254">
+    <nodeIds>212</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="grp_fu_416">
+    <nodeIds>183</nodeIds>
+    <nodeIds>198</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="row_len_slot_arr_addr_7_gep_fu_133">
+    <nodeIds>57</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="slot_data_arr_addr_gep_fu_210">
+    <nodeIds>179</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln59_fu_573">
+    <nodeIds>120</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln92_1_fu_711">
+    <nodeIds>173</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln59_1_fu_604">
+    <nodeIds>135</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="row_len_slot_arr_addr_2_gep_fu_194">
+    <nodeIds>146</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="output_vec_addr_1_gep_fu_267">
+    <nodeIds>217</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln58_1_fu_599">
+    <nodeIds>132</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="max_row_id_new_1_phi_fu_328">
+    <nodeIds>155</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="max_row_id_flag_1_phi_fu_315">
+    <nodeIds>154</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln80_fu_660">
+    <nodeIds>158</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="max_row_id_new_2_phi_fu_361">
+    <nodeIds>177</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="matrix_val_1_fu_768">
+    <nodeIds>197</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="row_len_slot_arr_addr_gep_fu_167">
+    <nodeIds>118</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="bitcast_ln131_1_fu_822">
+    <nodeIds>216</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln25_fu_438">
+    <nodeIds>40</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="inp_vec_addr_1_gep_fu_246">
+    <nodeIds>200</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="max_row_id_loc_1_phi_fu_339">
+    <nodeIds>156</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_3_fu_499">
+    <nodeIds>56</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="slot_id_phi_fu_279">
+    <nodeIds>39</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln86_1_fu_688">
+    <nodeIds>167</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_16_phi_fu_372">
+    <nodeIds>178</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="matrix_val_fu_759">
+    <nodeIds>182</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="row_len_slot_arr_addr_5_gep_fu_119">
+    <nodeIds>51</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="xor_ln58_fu_593">
+    <nodeIds>131</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln87_1_fu_693">
+    <nodeIds>170</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln92_fu_652">
+    <nodeIds>151</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_15_phi_fu_350">
+    <nodeIds>157</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln87_fu_635">
+    <nodeIds>148</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln80_fu_620">
+    <nodeIds>140</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="or_ln37_2_fu_493">
+    <nodeIds>55</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="grp_fu_410">
+    <nodeIds>114</nodeIds>
+    <nodeIds>127</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="max_row_id_loc_0_phi_fu_304">
+    <nodeIds>109</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln58_fu_589">
+    <nodeIds>130</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_1_fu_469">
+    <nodeIds>50</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="inp_vec_addr_gep_fu_224">
+    <nodeIds>185</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="bitcast_ln111_fu_763">
+    <nodeIds>187</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_2_fu_484">
+    <nodeIds>53</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln53_fu_560">
+    <nodeIds>110</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="slot_arr_row_len_addr_1_gep_fu_176">
+    <nodeIds>125</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln37_fu_458">
+    <nodeIds>47</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="slot_arr_row_len_addr_gep_fu_153">
+    <nodeIds>112</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="row_len_slot_arr_addr_1_gep_fu_185">
+    <nodeIds>133</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln131_1_fu_817">
+    <nodeIds>215</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="zext_ln131_fu_797">
+    <nodeIds>210</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="bitcast_ln111_1_fu_772">
+    <nodeIds>202</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="bitcast_ln131_fu_802">
+    <nodeIds>211</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln115_1_fu_738">
+    <nodeIds>207</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_fu_390">
+    <nodeIds>190</nodeIds>
+    <nodeIds>205</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_394">
+    <nodeIds>188</nodeIds>
+    <nodeIds>203</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="store_ln91_store_fu_705">
+    <nodeIds>172</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln59_store_fu_610">
+    <nodeIds>136</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln32_store_fu_536">
+    <nodeIds>86</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln87_store_fu_699">
+    <nodeIds>171</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln33_store_fu_554">
+    <nodeIds>97</nodeIds>
+  </ioNodes>
+  <ioNodes realName="row_index_load_fu_793">
+    <nodeIds>209</nodeIds>
+  </ioNodes>
+  <ioNodes realName="slot_row_count_1_load_fu_585">
+    <nodeIds>124</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln31_store_fu_530">
+    <nodeIds>81</nodeIds>
+  </ioNodes>
+  <ioNodes realName="slot_res_arr_0_load_load_fu_777">
+    <nodeIds>189</nodeIds>
+  </ioNodes>
+  <ioNodes realName="slot_row_counter_1_load_load_fu_664">
+    <nodeIds>159</nodeIds>
+  </ioNodes>
+  <ioNodes realName="slot_res_arr_1_load_load_fu_782">
+    <nodeIds>204</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln30_store_fu_512">
+    <nodeIds>70</nodeIds>
+  </ioNodes>
+  <ioNodes realName="cmd_start_read_read_fu_106">
+    <nodeIds>33</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln23_store_fu_827">
+    <nodeIds>221</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln91_store_fu_647">
+    <nodeIds>150</nodeIds>
+  </ioNodes>
+  <ioNodes realName="slot_row_len_id_0_load_load_fu_626">
+    <nodeIds>144</nodeIds>
+  </ioNodes>
+  <ioNodes realName="slot_row_counter_0_load_load_fu_616">
+    <nodeIds>139</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln30_store_fu_518">
+    <nodeIds>73</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln111_store_fu_787">
+    <nodeIds>191</nodeIds>
+  </ioNodes>
+  <ioNodes realName="grp_store_fu_398">
+    <nodeIds>62</nodeIds>
+    <nodeIds>143</nodeIds>
+  </ioNodes>
+  <ioNodes realName="slot_row_len_id_1_load_load_fu_674">
+    <nodeIds>164</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln115_store_fu_744">
+    <nodeIds>208</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln111_store_fu_807">
+    <nodeIds>206</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln33_store_fu_548">
+    <nodeIds>94</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln87_store_fu_641">
+    <nodeIds>149</nodeIds>
+  </ioNodes>
+  <ioNodes realName="row_index_1_load_fu_813">
+    <nodeIds>214</nodeIds>
+  </ioNodes>
+  <ioNodes realName="slot_row_count_load_fu_564">
+    <nodeIds>111</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln32_store_fu_542">
+    <nodeIds>89</nodeIds>
+  </ioNodes>
+  <ioNodes realName="max_row_id_load_load_fu_434">
+    <nodeIds>34</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln59_store_fu_579">
+    <nodeIds>121</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln31_store_fu_524">
+    <nodeIds>78</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln115_store_fu_723">
+    <nodeIds>193</nodeIds>
+  </ioNodes>
+  <ioNodes realName="grp_store_fu_404">
+    <nodeIds>65</nodeIds>
+    <nodeIds>163</nodeIds>
+  </ioNodes>
+  <memoryPorts dataString="inp_vec">
+    <nodeIds>186</nodeIds>
+    <nodeIds>201</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="output_vec">
+    <nodeIds>213</nodeIds>
+    <nodeIds>218</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="row_len_slot_arr">
+    <nodeIds>101</nodeIds>
+    <nodeIds>103</nodeIds>
+    <nodeIds>119</nodeIds>
+    <nodeIds>147</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="row_len_slot_arr" portID="1">
+    <nodeIds>100</nodeIds>
+    <nodeIds>102</nodeIds>
+    <nodeIds>134</nodeIds>
+    <nodeIds>169</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="slot_arr_row_len">
+    <nodeIds>113</nodeIds>
+    <nodeIds>126</nodeIds>
+  </memoryPorts>
+  <memoryPorts dataString="slot_data_arr">
+    <nodeIds>180</nodeIds>
+    <nodeIds>195</nodeIds>
+  </memoryPorts>
+  <ioPorts name="cmd_start">
+    <contents name="read">
+      <nodeIds>33</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="inp_vec(p0)">
+    <contents name="load">
+      <nodeIds>186</nodeIds>
+      <nodeIds>201</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="output_vec(p0)">
+    <contents name="store">
+      <nodeIds>213</nodeIds>
+      <nodeIds>218</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="slot_arr_row_len(p0)">
+    <contents name="load">
+      <nodeIds>113</nodeIds>
+      <nodeIds>126</nodeIds>
+    </contents>
+  </ioPorts>
+  <ioPorts name="slot_data_arr(p0)">
+    <contents name="load">
+      <nodeIds>180</nodeIds>
+      <nodeIds>195</nodeIds>
+    </contents>
+  </ioPorts>
+  <fsm>
+    <states id="1">
+      <operations id="22" stage="1" latency="1"/>
+      <operations id="23" stage="1" latency="1"/>
+      <operations id="24" stage="1" latency="1"/>
+      <operations id="25" stage="1" latency="1"/>
+      <operations id="26" stage="1" latency="1"/>
+      <operations id="27" stage="1" latency="1"/>
+      <operations id="28" stage="1" latency="1"/>
+      <operations id="29" stage="1" latency="1"/>
+      <operations id="30" stage="1" latency="1"/>
+      <operations id="31" stage="1" latency="1"/>
+      <operations id="32" stage="1" latency="1"/>
+      <operations id="33" stage="1" latency="1"/>
+      <operations id="34" stage="1" latency="1"/>
+      <operations id="35" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
+    </states>
+    <states id="2">
+      <operations id="39" stage="1" latency="1"/>
+      <operations id="40" stage="1" latency="1"/>
+      <operations id="41" stage="1" latency="1"/>
+      <operations id="42" stage="1" latency="1"/>
+      <operations id="43" stage="1" latency="1"/>
+      <operations id="44" stage="1" latency="1"/>
+      <operations id="46" stage="1" latency="1"/>
+      <operations id="47" stage="1" latency="1"/>
+      <operations id="48" stage="1" latency="1"/>
+      <operations id="49" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="1"/>
+      <operations id="53" stage="1" latency="1"/>
+      <operations id="54" stage="1" latency="1"/>
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="56" stage="1" latency="1"/>
+      <operations id="57" stage="1" latency="1"/>
+      <operations id="58" stage="1" latency="1"/>
+      <operations id="59" stage="1" latency="1"/>
+      <operations id="60" stage="1" latency="1"/>
+      <operations id="62" stage="1" latency="1"/>
+      <operations id="63" stage="1" latency="1"/>
+      <operations id="65" stage="1" latency="1"/>
+      <operations id="66" stage="1" latency="1"/>
+      <operations id="68" stage="1" latency="1"/>
+      <operations id="70" stage="1" latency="1"/>
+      <operations id="71" stage="1" latency="1"/>
+      <operations id="73" stage="1" latency="1"/>
+      <operations id="74" stage="1" latency="1"/>
+      <operations id="76" stage="1" latency="1"/>
+      <operations id="78" stage="1" latency="1"/>
+      <operations id="79" stage="1" latency="1"/>
+      <operations id="81" stage="1" latency="1"/>
+      <operations id="82" stage="1" latency="1"/>
+      <operations id="84" stage="1" latency="1"/>
+      <operations id="86" stage="1" latency="1"/>
+      <operations id="87" stage="1" latency="1"/>
+      <operations id="89" stage="1" latency="1"/>
+      <operations id="90" stage="1" latency="1"/>
+      <operations id="92" stage="1" latency="1"/>
+      <operations id="94" stage="1" latency="1"/>
+      <operations id="95" stage="1" latency="1"/>
+      <operations id="97" stage="1" latency="1"/>
+      <operations id="98" stage="1" latency="1"/>
+      <operations id="100" stage="1" latency="1"/>
+      <operations id="101" stage="1" latency="1"/>
+    </states>
+    <states id="3">
+      <operations id="102" stage="1" latency="1"/>
+      <operations id="103" stage="1" latency="1"/>
+      <operations id="104" stage="1" latency="1"/>
+    </states>
+    <states id="4">
+      <operations id="106" stage="1" latency="1"/>
+      <operations id="112" stage="1" latency="1"/>
+      <operations id="113" stage="2" latency="2"/>
+    </states>
+    <states id="5">
+      <operations id="108" stage="1" latency="1"/>
+      <operations id="109" stage="1" latency="1"/>
+      <operations id="110" stage="1" latency="1"/>
+      <operations id="111" stage="1" latency="1"/>
+      <operations id="113" stage="1" latency="2"/>
+      <operations id="114" stage="1" latency="1"/>
+      <operations id="115" stage="1" latency="1"/>
+      <operations id="117" stage="1" latency="1"/>
+      <operations id="118" stage="1" latency="1"/>
+      <operations id="119" stage="1" latency="1"/>
+      <operations id="120" stage="1" latency="1"/>
+      <operations id="121" stage="1" latency="1"/>
+      <operations id="122" stage="1" latency="1"/>
+      <operations id="125" stage="1" latency="1"/>
+      <operations id="126" stage="2" latency="2"/>
+    </states>
+    <states id="6">
+      <operations id="124" stage="1" latency="1"/>
+      <operations id="126" stage="1" latency="2"/>
+      <operations id="127" stage="1" latency="1"/>
+      <operations id="128" stage="1" latency="1"/>
+      <operations id="130" stage="1" latency="1"/>
+      <operations id="131" stage="1" latency="1"/>
+      <operations id="132" stage="1" latency="1"/>
+      <operations id="133" stage="1" latency="1"/>
+      <operations id="134" stage="1" latency="1"/>
+      <operations id="135" stage="1" latency="1"/>
+      <operations id="136" stage="1" latency="1"/>
+      <operations id="137" stage="1" latency="1"/>
+      <operations id="139" stage="1" latency="1"/>
+      <operations id="140" stage="1" latency="1"/>
+      <operations id="141" stage="1" latency="1"/>
+      <operations id="143" stage="1" latency="1"/>
+      <operations id="144" stage="1" latency="1"/>
+      <operations id="145" stage="1" latency="1"/>
+      <operations id="146" stage="1" latency="1"/>
+      <operations id="147" stage="2" latency="2"/>
+      <operations id="148" stage="1" latency="1"/>
+      <operations id="149" stage="1" latency="1"/>
+      <operations id="150" stage="1" latency="1"/>
+    </states>
+    <states id="7">
+      <operations id="147" stage="1" latency="2"/>
+      <operations id="151" stage="1" latency="1"/>
+      <operations id="152" stage="1" latency="1"/>
+      <operations id="154" stage="1" latency="1"/>
+      <operations id="155" stage="1" latency="1"/>
+      <operations id="156" stage="1" latency="1"/>
+      <operations id="157" stage="1" latency="1"/>
+      <operations id="158" stage="1" latency="1"/>
+      <operations id="159" stage="1" latency="1"/>
+      <operations id="160" stage="1" latency="1"/>
+      <operations id="161" stage="1" latency="1"/>
+      <operations id="163" stage="1" latency="1"/>
+      <operations id="164" stage="1" latency="1"/>
+      <operations id="165" stage="1" latency="1"/>
+      <operations id="166" stage="1" latency="1"/>
+      <operations id="167" stage="1" latency="1"/>
+      <operations id="168" stage="1" latency="1"/>
+      <operations id="169" stage="2" latency="2"/>
+      <operations id="170" stage="1" latency="1"/>
+      <operations id="171" stage="1" latency="1"/>
+      <operations id="172" stage="1" latency="1"/>
+    </states>
+    <states id="8">
+      <operations id="169" stage="1" latency="2"/>
+      <operations id="173" stage="1" latency="1"/>
+      <operations id="174" stage="1" latency="1"/>
+      <operations id="179" stage="1" latency="1"/>
+      <operations id="180" stage="2" latency="2"/>
+      <operations id="192" stage="1" latency="1"/>
+      <operations id="193" stage="1" latency="1"/>
+    </states>
+    <states id="9">
+      <operations id="177" stage="1" latency="1"/>
+      <operations id="178" stage="1" latency="1"/>
+      <operations id="180" stage="1" latency="2"/>
+      <operations id="181" stage="1" latency="1"/>
+      <operations id="183" stage="1" latency="1"/>
+      <operations id="184" stage="1" latency="1"/>
+      <operations id="185" stage="1" latency="1"/>
+      <operations id="186" stage="2" latency="2"/>
+      <operations id="194" stage="1" latency="1"/>
+      <operations id="195" stage="2" latency="2"/>
+      <operations id="207" stage="1" latency="1"/>
+      <operations id="208" stage="1" latency="1"/>
+    </states>
+    <states id="10">
+      <operations id="186" stage="1" latency="2"/>
+      <operations id="195" stage="1" latency="2"/>
+      <operations id="196" stage="1" latency="1"/>
+      <operations id="198" stage="1" latency="1"/>
+      <operations id="199" stage="1" latency="1"/>
+      <operations id="200" stage="1" latency="1"/>
+      <operations id="201" stage="2" latency="2"/>
+    </states>
+    <states id="11">
+      <operations id="182" stage="1" latency="1"/>
+      <operations id="187" stage="1" latency="1"/>
+      <operations id="188" stage="4" latency="4"/>
+      <operations id="201" stage="1" latency="2"/>
+    </states>
+    <states id="12">
+      <operations id="188" stage="3" latency="4"/>
+      <operations id="197" stage="1" latency="1"/>
+      <operations id="202" stage="1" latency="1"/>
+      <operations id="203" stage="4" latency="4"/>
+    </states>
+    <states id="13">
+      <operations id="188" stage="2" latency="4"/>
+      <operations id="203" stage="3" latency="4"/>
+    </states>
+    <states id="14">
+      <operations id="188" stage="1" latency="4"/>
+      <operations id="203" stage="2" latency="4"/>
+    </states>
+    <states id="15">
+      <operations id="189" stage="1" latency="1"/>
+      <operations id="190" stage="5" latency="5"/>
+      <operations id="203" stage="1" latency="4"/>
+    </states>
+    <states id="16">
+      <operations id="190" stage="4" latency="5"/>
+      <operations id="204" stage="1" latency="1"/>
+      <operations id="205" stage="5" latency="5"/>
+    </states>
+    <states id="17">
+      <operations id="190" stage="3" latency="5"/>
+      <operations id="205" stage="4" latency="5"/>
+    </states>
+    <states id="18">
+      <operations id="190" stage="2" latency="5"/>
+      <operations id="205" stage="3" latency="5"/>
+    </states>
+    <states id="19">
+      <operations id="190" stage="1" latency="5"/>
+      <operations id="205" stage="2" latency="5"/>
+    </states>
+    <states id="20">
+      <operations id="191" stage="1" latency="1"/>
+      <operations id="205" stage="1" latency="5"/>
+      <operations id="209" stage="1" latency="1"/>
+      <operations id="210" stage="1" latency="1"/>
+      <operations id="211" stage="1" latency="1"/>
+      <operations id="212" stage="1" latency="1"/>
+      <operations id="213" stage="1" latency="1"/>
+    </states>
+    <states id="21">
+      <operations id="176" stage="1" latency="1"/>
+      <operations id="206" stage="1" latency="1"/>
+      <operations id="214" stage="1" latency="1"/>
+      <operations id="215" stage="1" latency="1"/>
+      <operations id="216" stage="1" latency="1"/>
+      <operations id="217" stage="1" latency="1"/>
+      <operations id="218" stage="1" latency="1"/>
+      <operations id="219" stage="1" latency="1"/>
+      <operations id="221" stage="1" latency="1"/>
+      <operations id="222" stage="1" latency="1"/>
+      <operations id="224" stage="1" latency="1"/>
+    </states>
+    <transitions inState="1" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="1" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="8">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="8" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="11">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="11" outState="12">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="12" outState="13">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="13" outState="14">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="14" outState="15">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="15" outState="16">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="16" outState="17">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="17" outState="18">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="18" outState="19">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="19" outState="20">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="20" outState="21">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="3" outState="2">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="2" outState="3">
+      <condition id="-1"/>
+    </transitions>
+  </fsm>
+  <CFGRegionsRoot>
+    <cfgRegions mId="1" mTag="HLS_CISR_spmv_accel" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="18" mMaxLatency="23">
+      <subRegions>2</subRegions>
+      <subRegions>3</subRegions>
+      <subRegions>4</subRegions>
+      <subRegions>5</subRegions>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="2" mTag="Entry" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>36</basicBlocks>
+      <basicBlocks>38</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="3" mTag="VITIS_LOOP_25_1" mII="2" mDepth="2" mMinTripCount="2" mMaxTripCount="2" mMinLatency="4" mMaxLatency="4" mType="1">
+      <basicBlocks>45</basicBlocks>
+      <basicBlocks>61</basicBlocks>
+      <basicBlocks>64</basicBlocks>
+      <basicBlocks>67</basicBlocks>
+      <basicBlocks>69</basicBlocks>
+      <basicBlocks>72</basicBlocks>
+      <basicBlocks>75</basicBlocks>
+      <basicBlocks>77</basicBlocks>
+      <basicBlocks>80</basicBlocks>
+      <basicBlocks>83</basicBlocks>
+      <basicBlocks>85</basicBlocks>
+      <basicBlocks>88</basicBlocks>
+      <basicBlocks>91</basicBlocks>
+      <basicBlocks>93</basicBlocks>
+      <basicBlocks>96</basicBlocks>
+      <basicBlocks>99</basicBlocks>
+      <basicBlocks>105</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="4" mTag="Region 1" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1">
+      <basicBlocks>107</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+    <cfgRegions mId="5" mTag="Return" mII="-1" mDepth="-1" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="17" mMaxLatency="17">
+      <basicBlocks>116</basicBlocks>
+      <basicBlocks>123</basicBlocks>
+      <basicBlocks>129</basicBlocks>
+      <basicBlocks>138</basicBlocks>
+      <basicBlocks>142</basicBlocks>
+      <basicBlocks>153</basicBlocks>
+      <basicBlocks>162</basicBlocks>
+      <basicBlocks>175</basicBlocks>
+      <basicBlocks>220</basicBlocks>
+      <basicBlocks>223</basicBlocks>
+      <basicBlocks>225</basicBlocks>
+      <mDfPipe/>
+    </cfgRegions>
+  </CFGRegionsRoot>
+</cdfg:DBCdfg>

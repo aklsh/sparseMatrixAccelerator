@@ -1,0 +1,502 @@
+
+
+================================================================
+== Vitis HLS Report for 'HLS_CISR_spmv_accel'
+================================================================
+* Date:           Sat May  7 19:54:08 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        HLS_CISR_runtime_spmv
+* Solution:       solution5 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  12.00 ns|  8.024 ns|     3.24 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       19|       24|  0.228 us|  0.288 us|   20|   25|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_25_1  |        4|        4|         2|          2|          1|     2|       yes|
+        |- VITIS_LOOP_67_1  |        2|        2|         2|          1|          1|     2|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 2, depth = 2
+  * Pipeline-1: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 21
+* Pipeline : 2
+  Pipeline-0 : II = 2, D = 2, States = { 2 3 }
+  Pipeline-1 : II = 1, D = 2, States = { 7 8 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 4 2 
+2 --> 4 3 
+3 --> 2 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 9 8 
+8 --> 7 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1"   --->   Operation 22 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %cmd_start"   --->   Operation 23 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %cmd_start, void @empty_3, i32 0, i32 0, void @empty_4, i32 0, i32 0, void @empty_4, void @empty_4, void @empty_4, i32 0, i32 0, i32 0, i32 0, void @empty_4, void @empty_4"   --->   Operation 24 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %inp_vec, void @empty_2, i32 0, i32 0, void @empty_4, i32 4294967295, i32 0, void @empty_4, void @empty_4, void @empty_4, i32 0, i32 0, i32 0, i32 0, void @empty_4, void @empty_4"   --->   Operation 25 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %inp_vec"   --->   Operation 26 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %slot_data_arr, void @empty_2, i32 0, i32 0, void @empty_4, i32 4294967295, i32 0, void @empty_4, void @empty_4, void @empty_4, i32 0, i32 0, i32 0, i32 0, void @empty_4, void @empty_4"   --->   Operation 27 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i64 %slot_data_arr"   --->   Operation 28 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %slot_arr_row_len, void @empty_2, i32 0, i32 0, void @empty_4, i32 4294967295, i32 0, void @empty_4, void @empty_4, void @empty_4, i32 0, i32 0, i32 0, i32 0, void @empty_4, void @empty_4"   --->   Operation 29 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %slot_arr_row_len"   --->   Operation 30 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %output_vec, void @empty_2, i32 0, i32 0, void @empty_4, i32 4294967295, i32 0, void @empty_4, void @empty_4, void @empty_4, i32 0, i32 0, i32 0, i32 0, void @empty_4, void @empty_4"   --->   Operation 31 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %output_vec"   --->   Operation 32 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%cmd_start_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %cmd_start" [HLS_CISR_spmv_accel.c:139]   --->   Operation 33 'read' 'cmd_start_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%br_ln21 = br i1 %cmd_start_read, void %initialize.exit, void" [HLS_CISR_spmv_accel.c:21]   --->   Operation 34 'br' 'br_ln21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (1.58ns)   --->   "%store_ln23 = store i32 0, i32 %max_row_id" [HLS_CISR_spmv_accel.c:23]   --->   Operation 35 'store' 'store_ln23' <Predicate = (cmd_start_read)> <Delay = 1.58>
+ST_1 : Operation 36 [1/1] (1.58ns)   --->   "%br_ln25 = br void" [HLS_CISR_spmv_accel.c:25]   --->   Operation 36 'br' 'br_ln25' <Predicate = (cmd_start_read)> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 3.28>
+ST_2 : Operation 37 [1/1] (0.00ns)   --->   "%slot_id = phi i2 %add_ln25, void %.split4613, i2 0, void" [HLS_CISR_spmv_accel.c:25]   --->   Operation 37 'phi' 'slot_id' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 38 [1/1] (1.56ns)   --->   "%add_ln25 = add i2 %slot_id, i2 1" [HLS_CISR_spmv_accel.c:25]   --->   Operation 38 'add' 'add_ln25' <Predicate = true> <Delay = 1.56> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 39 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (0.95ns)   --->   "%icmp_ln25 = icmp_eq  i2 %slot_id, i2 2" [HLS_CISR_spmv_accel.c:25]   --->   Operation 40 'icmp' 'icmp_ln25' <Predicate = true> <Delay = 0.95> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 2, i64 2, i64 2"   --->   Operation 41 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%br_ln25 = br i1 %icmp_ln25, void %.split4, void %initialize.exit.loopexit" [HLS_CISR_spmv_accel.c:25]   --->   Operation 42 'br' 'br_ln25' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%tmp = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i2.i2, i2 %slot_id, i2 0" [HLS_CISR_spmv_accel.c:36]   --->   Operation 43 'bitconcatenate' 'tmp' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%zext_ln36 = zext i4 %tmp" [HLS_CISR_spmv_accel.c:36]   --->   Operation 44 'zext' 'zext_ln36' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%row_len_slot_arr_addr_3 = getelementptr i32 %row_len_slot_arr, i64 0, i64 %zext_ln36" [HLS_CISR_spmv_accel.c:36]   --->   Operation 45 'getelementptr' 'row_len_slot_arr_addr_3' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%or_ln36 = or i4 %tmp, i4 1" [HLS_CISR_spmv_accel.c:36]   --->   Operation 46 'or' 'or_ln36' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_1 = bitconcatenate i64 @_ssdm_op_BitConcatenate.i64.i60.i4, i60 0, i4 %or_ln36" [HLS_CISR_spmv_accel.c:36]   --->   Operation 47 'bitconcatenate' 'tmp_1' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%row_len_slot_arr_addr_4 = getelementptr i32 %row_len_slot_arr, i64 0, i64 %tmp_1" [HLS_CISR_spmv_accel.c:36]   --->   Operation 48 'getelementptr' 'row_len_slot_arr_addr_4' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%or_ln36_1 = or i4 %tmp, i4 2" [HLS_CISR_spmv_accel.c:36]   --->   Operation 49 'or' 'or_ln36_1' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%tmp_2 = bitconcatenate i64 @_ssdm_op_BitConcatenate.i64.i60.i4, i60 0, i4 %or_ln36_1" [HLS_CISR_spmv_accel.c:36]   --->   Operation 50 'bitconcatenate' 'tmp_2' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%row_len_slot_arr_addr_5 = getelementptr i32 %row_len_slot_arr, i64 0, i64 %tmp_2" [HLS_CISR_spmv_accel.c:36]   --->   Operation 51 'getelementptr' 'row_len_slot_arr_addr_5' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 52 [1/1] (0.00ns)   --->   "%or_ln36_2 = or i4 %tmp, i4 3" [HLS_CISR_spmv_accel.c:36]   --->   Operation 52 'or' 'or_ln36_2' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_3 = bitconcatenate i64 @_ssdm_op_BitConcatenate.i64.i60.i4, i60 0, i4 %or_ln36_2" [HLS_CISR_spmv_accel.c:36]   --->   Operation 53 'bitconcatenate' 'tmp_3' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 54 [1/1] (0.00ns)   --->   "%row_len_slot_arr_addr_6 = getelementptr i32 %row_len_slot_arr, i64 0, i64 %tmp_3" [HLS_CISR_spmv_accel.c:36]   --->   Operation 54 'getelementptr' 'row_len_slot_arr_addr_6' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 55 [1/1] (0.00ns)   --->   "%specloopname_ln25 = specloopname void @_ssdm_op_SpecLoopName, void @empty" [HLS_CISR_spmv_accel.c:25]   --->   Operation 55 'specloopname' 'specloopname_ln25' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 56 [1/1] (0.00ns)   --->   "%trunc_ln28 = trunc i2 %slot_id" [HLS_CISR_spmv_accel.c:28]   --->   Operation 56 'trunc' 'trunc_ln28' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%br_ln28 = br i1 %trunc_ln28, void %branch18, void %branch19" [HLS_CISR_spmv_accel.c:28]   --->   Operation 57 'br' 'br_ln28' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 58 [1/1] (1.58ns)   --->   "%store_ln28 = store i32 0, i32 %slot_res_arr_0" [HLS_CISR_spmv_accel.c:28]   --->   Operation 58 'store' 'store_ln28' <Predicate = (!icmp_ln25 & !trunc_ln28)> <Delay = 1.58>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%br_ln28 = br void %.split430" [HLS_CISR_spmv_accel.c:28]   --->   Operation 59 'br' 'br_ln28' <Predicate = (!icmp_ln25 & !trunc_ln28)> <Delay = 0.00>
+ST_2 : Operation 60 [1/1] (1.58ns)   --->   "%store_ln28 = store i32 0, i32 %slot_res_arr_1" [HLS_CISR_spmv_accel.c:28]   --->   Operation 60 'store' 'store_ln28' <Predicate = (!icmp_ln25 & trunc_ln28)> <Delay = 1.58>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%br_ln28 = br void %.split430" [HLS_CISR_spmv_accel.c:28]   --->   Operation 61 'br' 'br_ln28' <Predicate = (!icmp_ln25 & trunc_ln28)> <Delay = 0.00>
+ST_2 : Operation 62 [1/1] (0.00ns)   --->   "%br_ln29 = br i1 %trunc_ln28, void %branch20, void %branch21" [HLS_CISR_spmv_accel.c:29]   --->   Operation 62 'br' 'br_ln29' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 63 [1/1] (1.58ns)   --->   "%store_ln29 = store i32 0, i32 %slot_counter_0" [HLS_CISR_spmv_accel.c:29]   --->   Operation 63 'store' 'store_ln29' <Predicate = (!icmp_ln25 & !trunc_ln28)> <Delay = 1.58>
+ST_2 : Operation 64 [1/1] (0.00ns)   --->   "%br_ln29 = br void %.split43034" [HLS_CISR_spmv_accel.c:29]   --->   Operation 64 'br' 'br_ln29' <Predicate = (!icmp_ln25 & !trunc_ln28)> <Delay = 0.00>
+ST_2 : Operation 65 [1/1] (1.58ns)   --->   "%store_ln29 = store i32 0, i32 %slot_counter_1" [HLS_CISR_spmv_accel.c:29]   --->   Operation 65 'store' 'store_ln29' <Predicate = (!icmp_ln25 & trunc_ln28)> <Delay = 1.58>
+ST_2 : Operation 66 [1/1] (0.00ns)   --->   "%br_ln29 = br void %.split43034" [HLS_CISR_spmv_accel.c:29]   --->   Operation 66 'br' 'br_ln29' <Predicate = (!icmp_ln25 & trunc_ln28)> <Delay = 0.00>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%br_ln30 = br i1 %trunc_ln28, void %branch14, void %branch15" [HLS_CISR_spmv_accel.c:30]   --->   Operation 67 'br' 'br_ln30' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 68 [1/1] (1.70ns)   --->   "%store_ln30 = store i32 0, i32 %slot_row_counter_0" [HLS_CISR_spmv_accel.c:30]   --->   Operation 68 'store' 'store_ln30' <Predicate = (!icmp_ln25 & !trunc_ln28)> <Delay = 1.70>
+ST_2 : Operation 69 [1/1] (0.00ns)   --->   "%br_ln30 = br void %.split423" [HLS_CISR_spmv_accel.c:30]   --->   Operation 69 'br' 'br_ln30' <Predicate = (!icmp_ln25 & !trunc_ln28)> <Delay = 0.00>
+ST_2 : Operation 70 [1/1] (1.70ns)   --->   "%store_ln30 = store i32 0, i32 %slot_row_counter_1" [HLS_CISR_spmv_accel.c:30]   --->   Operation 70 'store' 'store_ln30' <Predicate = (!icmp_ln25 & trunc_ln28)> <Delay = 1.70>
+ST_2 : Operation 71 [1/1] (0.00ns)   --->   "%br_ln30 = br void %.split423" [HLS_CISR_spmv_accel.c:30]   --->   Operation 71 'br' 'br_ln30' <Predicate = (!icmp_ln25 & trunc_ln28)> <Delay = 0.00>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%br_ln31 = br i1 %trunc_ln28, void %branch4, void %branch5" [HLS_CISR_spmv_accel.c:31]   --->   Operation 72 'br' 'br_ln31' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 73 [1/1] (1.58ns)   --->   "%store_ln31 = store i32 0, i32 %slot_row_len_id_0" [HLS_CISR_spmv_accel.c:31]   --->   Operation 73 'store' 'store_ln31' <Predicate = (!icmp_ln25 & !trunc_ln28)> <Delay = 1.58>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%br_ln31 = br void %.split46" [HLS_CISR_spmv_accel.c:31]   --->   Operation 74 'br' 'br_ln31' <Predicate = (!icmp_ln25 & !trunc_ln28)> <Delay = 0.00>
+ST_2 : Operation 75 [1/1] (1.58ns)   --->   "%store_ln31 = store i32 0, i32 %slot_row_len_id_1" [HLS_CISR_spmv_accel.c:31]   --->   Operation 75 'store' 'store_ln31' <Predicate = (!icmp_ln25 & trunc_ln28)> <Delay = 1.58>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%br_ln31 = br void %.split46" [HLS_CISR_spmv_accel.c:31]   --->   Operation 76 'br' 'br_ln31' <Predicate = (!icmp_ln25 & trunc_ln28)> <Delay = 0.00>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%br_ln32 = br i1 %trunc_ln28, void %branch8, void %branch9" [HLS_CISR_spmv_accel.c:32]   --->   Operation 77 'br' 'br_ln32' <Predicate = (!icmp_ln25)> <Delay = 0.00>
+ST_2 : Operation 78 [1/1] (1.58ns)   --->   "%store_ln32 = store i3 0, i3 %slot_row_id_0" [HLS_CISR_spmv_accel.c:32]   --->   Operation 78 'store' 'store_ln32' <Predicate = (!icmp_ln25 & !trunc_ln28)> <Delay = 1.58>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%br_ln32 = br void %.split4613" [HLS_CISR_spmv_accel.c:32]   --->   Operation 79 'br' 'br_ln32' <Predicate = (!icmp_ln25 & !trunc_ln28)> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (1.58ns)   --->   "%store_ln32 = store i3 0, i3 %slot_row_id_1" [HLS_CISR_spmv_accel.c:32]   --->   Operation 80 'store' 'store_ln32' <Predicate = (!icmp_ln25 & trunc_ln28)> <Delay = 1.58>
+ST_2 : Operation 81 [1/1] (0.00ns)   --->   "%br_ln32 = br void %.split4613" [HLS_CISR_spmv_accel.c:32]   --->   Operation 81 'br' 'br_ln32' <Predicate = (!icmp_ln25 & trunc_ln28)> <Delay = 0.00>
+ST_2 : Operation 82 [1/1] (2.32ns)   --->   "%store_ln36 = store i32 0, i3 %row_len_slot_arr_addr_3" [HLS_CISR_spmv_accel.c:36]   --->   Operation 82 'store' 'store_ln36' <Predicate = (!icmp_ln25)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_2 : Operation 83 [1/1] (2.32ns)   --->   "%store_ln36 = store i32 0, i3 %row_len_slot_arr_addr_4" [HLS_CISR_spmv_accel.c:36]   --->   Operation 83 'store' 'store_ln36' <Predicate = (!icmp_ln25)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 3 <SV = 2> <Delay = 2.32>
+ST_3 : Operation 84 [1/1] (2.32ns)   --->   "%store_ln36 = store i32 0, i3 %row_len_slot_arr_addr_5" [HLS_CISR_spmv_accel.c:36]   --->   Operation 84 'store' 'store_ln36' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_3 : Operation 85 [1/1] (2.32ns)   --->   "%store_ln36 = store i32 0, i3 %row_len_slot_arr_addr_6" [HLS_CISR_spmv_accel.c:36]   --->   Operation 85 'store' 'store_ln36' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 86 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+
+State 4 <SV = 2> <Delay = 2.32>
+ST_4 : Operation 87 [1/1] (0.00ns)   --->   "%br_ln0 = br void %initialize.exit"   --->   Operation 87 'br' 'br_ln0' <Predicate = (cmd_start_read)> <Delay = 0.00>
+ST_4 : Operation 88 [1/1] (0.00ns)   --->   "%slot_arr_row_len_addr = getelementptr i32 %slot_arr_row_len, i64 0, i64 0" [HLS_CISR_spmv_accel.c:54]   --->   Operation 88 'getelementptr' 'slot_arr_row_len_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 89 [2/2] (2.32ns)   --->   "%slot_arr_row_len_load = load i1 %slot_arr_row_len_addr" [HLS_CISR_spmv_accel.c:54]   --->   Operation 89 'load' 'slot_arr_row_len_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+State 5 <SV = 3> <Delay = 7.11>
+ST_5 : Operation 90 [1/1] (0.00ns)   --->   "%slot_row_count = load i32 %slot_counter_0" [HLS_CISR_spmv_accel.c:52]   --->   Operation 90 'load' 'slot_row_count' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 91 [1/2] (2.32ns)   --->   "%slot_arr_row_len_load = load i1 %slot_arr_row_len_addr" [HLS_CISR_spmv_accel.c:54]   --->   Operation 91 'load' 'slot_arr_row_len_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_5 : Operation 92 [1/1] (2.47ns)   --->   "%icmp_ln54 = icmp_eq  i32 %slot_arr_row_len_load, i32 4294967295" [HLS_CISR_spmv_accel.c:54]   --->   Operation 92 'icmp' 'icmp_ln54' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 93 [1/1] (0.00ns)   --->   "%br_ln54 = br i1 %icmp_ln54, void, void %initialize.exit._crit_edge" [HLS_CISR_spmv_accel.c:54]   --->   Operation 93 'br' 'br_ln54' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 94 [1/1] (0.00ns)   --->   "%zext_ln57 = zext i32 %slot_row_count" [HLS_CISR_spmv_accel.c:57]   --->   Operation 94 'zext' 'zext_ln57' <Predicate = (!icmp_ln54)> <Delay = 0.00>
+ST_5 : Operation 95 [1/1] (0.00ns)   --->   "%row_len_slot_arr_addr = getelementptr i32 %row_len_slot_arr, i64 0, i64 %zext_ln57" [HLS_CISR_spmv_accel.c:57]   --->   Operation 95 'getelementptr' 'row_len_slot_arr_addr' <Predicate = (!icmp_ln54)> <Delay = 0.00>
+ST_5 : Operation 96 [1/1] (2.32ns)   --->   "%store_ln57 = store i32 %slot_arr_row_len_load, i3 %row_len_slot_arr_addr" [HLS_CISR_spmv_accel.c:57]   --->   Operation 96 'store' 'store_ln57' <Predicate = (!icmp_ln54)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_5 : Operation 97 [1/1] (2.55ns)   --->   "%add_ln58 = add i32 %slot_row_count, i32 1" [HLS_CISR_spmv_accel.c:58]   --->   Operation 97 'add' 'add_ln58' <Predicate = (!icmp_ln54)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 98 [1/1] (1.58ns)   --->   "%store_ln58 = store i32 %add_ln58, i32 %slot_counter_0" [HLS_CISR_spmv_accel.c:58]   --->   Operation 98 'store' 'store_ln58' <Predicate = (!icmp_ln54)> <Delay = 1.58>
+ST_5 : Operation 99 [1/1] (0.00ns)   --->   "%br_ln59 = br void %initialize.exit._crit_edge" [HLS_CISR_spmv_accel.c:59]   --->   Operation 99 'br' 'br_ln59' <Predicate = (!icmp_ln54)> <Delay = 0.00>
+ST_5 : Operation 100 [1/1] (0.00ns)   --->   "%slot_arr_row_len_addr_1 = getelementptr i32 %slot_arr_row_len, i64 0, i64 1" [HLS_CISR_spmv_accel.c:54]   --->   Operation 100 'getelementptr' 'slot_arr_row_len_addr_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 101 [2/2] (2.32ns)   --->   "%slot_arr_row_len_load_1 = load i1 %slot_arr_row_len_addr_1" [HLS_CISR_spmv_accel.c:54]   --->   Operation 101 'load' 'slot_arr_row_len_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+
+State 6 <SV = 4> <Delay = 7.11>
+ST_6 : Operation 102 [1/1] (0.00ns)   --->   "%slot_row_count_1 = load i32 %slot_counter_1" [HLS_CISR_spmv_accel.c:52]   --->   Operation 102 'load' 'slot_row_count_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 103 [1/2] (2.32ns)   --->   "%slot_arr_row_len_load_1 = load i1 %slot_arr_row_len_addr_1" [HLS_CISR_spmv_accel.c:54]   --->   Operation 103 'load' 'slot_arr_row_len_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 2> <RAM>
+ST_6 : Operation 104 [1/1] (2.47ns)   --->   "%icmp_ln54_1 = icmp_eq  i32 %slot_arr_row_len_load_1, i32 4294967295" [HLS_CISR_spmv_accel.c:54]   --->   Operation 104 'icmp' 'icmp_ln54_1' <Predicate = true> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 105 [1/1] (0.00ns)   --->   "%br_ln54 = br i1 %icmp_ln54_1, void, void %store_row_len_arr.exit" [HLS_CISR_spmv_accel.c:54]   --->   Operation 105 'br' 'br_ln54' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 106 [1/1] (0.00ns)   --->   "%trunc_ln57 = trunc i32 %slot_row_count_1" [HLS_CISR_spmv_accel.c:57]   --->   Operation 106 'trunc' 'trunc_ln57' <Predicate = (!icmp_ln54_1)> <Delay = 0.00>
+ST_6 : Operation 107 [1/1] (0.96ns)   --->   "%xor_ln57 = xor i3 %trunc_ln57, i3 4" [HLS_CISR_spmv_accel.c:57]   --->   Operation 107 'xor' 'xor_ln57' <Predicate = (!icmp_ln54_1)> <Delay = 0.96> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.96> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 108 [1/1] (0.00ns)   --->   "%zext_ln57_1 = zext i3 %xor_ln57" [HLS_CISR_spmv_accel.c:57]   --->   Operation 108 'zext' 'zext_ln57_1' <Predicate = (!icmp_ln54_1)> <Delay = 0.00>
+ST_6 : Operation 109 [1/1] (0.00ns)   --->   "%row_len_slot_arr_addr_1 = getelementptr i32 %row_len_slot_arr, i64 0, i64 %zext_ln57_1" [HLS_CISR_spmv_accel.c:57]   --->   Operation 109 'getelementptr' 'row_len_slot_arr_addr_1' <Predicate = (!icmp_ln54_1)> <Delay = 0.00>
+ST_6 : Operation 110 [1/1] (2.32ns)   --->   "%store_ln57 = store i32 %slot_arr_row_len_load_1, i3 %row_len_slot_arr_addr_1" [HLS_CISR_spmv_accel.c:57]   --->   Operation 110 'store' 'store_ln57' <Predicate = (!icmp_ln54_1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_6 : Operation 111 [1/1] (2.55ns)   --->   "%add_ln58_1 = add i32 %slot_row_count_1, i32 1" [HLS_CISR_spmv_accel.c:58]   --->   Operation 111 'add' 'add_ln58_1' <Predicate = (!icmp_ln54_1)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 112 [1/1] (1.58ns)   --->   "%store_ln58 = store i32 %add_ln58_1, i32 %slot_counter_1" [HLS_CISR_spmv_accel.c:58]   --->   Operation 112 'store' 'store_ln58' <Predicate = (!icmp_ln54_1)> <Delay = 1.58>
+ST_6 : Operation 113 [1/1] (0.00ns)   --->   "%br_ln59 = br void %store_row_len_arr.exit" [HLS_CISR_spmv_accel.c:59]   --->   Operation 113 'br' 'br_ln59' <Predicate = (!icmp_ln54_1)> <Delay = 0.00>
+ST_6 : Operation 114 [1/1] (1.58ns)   --->   "%br_ln67 = br void" [HLS_CISR_spmv_accel.c:67]   --->   Operation 114 'br' 'br_ln67' <Predicate = true> <Delay = 1.58>
+
+State 7 <SV = 5> <Delay = 5.02>
+ST_7 : Operation 115 [1/1] (0.00ns)   --->   "%slot_id2 = phi i2 %add_ln67, void %.split._crit_edge, i2 0, void %store_row_len_arr.exit" [HLS_CISR_spmv_accel.c:67]   --->   Operation 115 'phi' 'slot_id2' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 116 [1/1] (1.56ns)   --->   "%add_ln67 = add i2 %slot_id2, i2 1" [HLS_CISR_spmv_accel.c:67]   --->   Operation 116 'add' 'add_ln67' <Predicate = true> <Delay = 1.56> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 117 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 117 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 118 [1/1] (0.95ns)   --->   "%icmp_ln67 = icmp_eq  i2 %slot_id2, i2 2" [HLS_CISR_spmv_accel.c:67]   --->   Operation 118 'icmp' 'icmp_ln67' <Predicate = true> <Delay = 0.95> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 119 [1/1] (0.00ns)   --->   "%empty_19 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 2, i64 2, i64 2"   --->   Operation 119 'speclooptripcount' 'empty_19' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 120 [1/1] (0.00ns)   --->   "%br_ln67 = br i1 %icmp_ln67, void %.split, void %CISR_decoder.exit" [HLS_CISR_spmv_accel.c:67]   --->   Operation 120 'br' 'br_ln67' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 121 [1/1] (0.00ns)   --->   "%trunc_ln85 = trunc i2 %slot_id2" [HLS_CISR_spmv_accel.c:85]   --->   Operation 121 'trunc' 'trunc_ln85' <Predicate = (!icmp_ln67)> <Delay = 0.00>
+ST_7 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_4_cast = bitconcatenate i3 @_ssdm_op_BitConcatenate.i3.i1.i2, i1 %trunc_ln85, i2 0" [HLS_CISR_spmv_accel.c:67]   --->   Operation 122 'bitconcatenate' 'tmp_4_cast' <Predicate = (!icmp_ln67)> <Delay = 0.00>
+ST_7 : Operation 123 [1/1] (0.00ns)   --->   "%specloopname_ln67 = specloopname void @_ssdm_op_SpecLoopName, void @empty_0" [HLS_CISR_spmv_accel.c:67]   --->   Operation 123 'specloopname' 'specloopname_ln67' <Predicate = (!icmp_ln67)> <Delay = 0.00>
+ST_7 : Operation 124 [1/1] (0.00ns)   --->   "%slot_row_counter_0_load_1 = load i32 %slot_row_counter_0" [HLS_CISR_spmv_accel.c:79]   --->   Operation 124 'load' 'slot_row_counter_0_load_1' <Predicate = (!icmp_ln67)> <Delay = 0.00>
+ST_7 : Operation 125 [1/1] (0.00ns)   --->   "%slot_row_counter_1_load_1 = load i32 %slot_row_counter_1" [HLS_CISR_spmv_accel.c:79]   --->   Operation 125 'load' 'slot_row_counter_1_load_1' <Predicate = (!icmp_ln67)> <Delay = 0.00>
+ST_7 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node icmp_ln79)   --->   "%select_ln79 = select i1 %trunc_ln85, i32 %slot_row_counter_1_load_1, i32 %slot_row_counter_0_load_1" [HLS_CISR_spmv_accel.c:79]   --->   Operation 126 'select' 'select_ln79' <Predicate = (!icmp_ln67)> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 127 [1/1] (2.47ns) (out node of the LUT)   --->   "%icmp_ln79 = icmp_eq  i32 %select_ln79, i32 0" [HLS_CISR_spmv_accel.c:79]   --->   Operation 127 'icmp' 'icmp_ln79' <Predicate = (!icmp_ln67)> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 128 [1/1] (0.00ns)   --->   "%br_ln79 = br i1 %icmp_ln79, void %.split._crit_edge, void" [HLS_CISR_spmv_accel.c:79]   --->   Operation 128 'br' 'br_ln79' <Predicate = (!icmp_ln67)> <Delay = 0.00>
+ST_7 : Operation 129 [1/1] (0.00ns)   --->   "%br_ln82 = br i1 %trunc_ln85, void %branch16, void %branch17" [HLS_CISR_spmv_accel.c:82]   --->   Operation 129 'br' 'br_ln82' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 130 [1/1] (1.58ns)   --->   "%store_ln82 = store i32 0, i32 %slot_res_arr_0" [HLS_CISR_spmv_accel.c:82]   --->   Operation 130 'store' 'store_ln82' <Predicate = (!icmp_ln67 & icmp_ln79 & !trunc_ln85)> <Delay = 1.58>
+ST_7 : Operation 131 [1/1] (0.00ns)   --->   "%br_ln82 = br void" [HLS_CISR_spmv_accel.c:82]   --->   Operation 131 'br' 'br_ln82' <Predicate = (!icmp_ln67 & icmp_ln79 & !trunc_ln85)> <Delay = 0.00>
+ST_7 : Operation 132 [1/1] (1.58ns)   --->   "%store_ln82 = store i32 0, i32 %slot_res_arr_1" [HLS_CISR_spmv_accel.c:82]   --->   Operation 132 'store' 'store_ln82' <Predicate = (!icmp_ln67 & icmp_ln79 & trunc_ln85)> <Delay = 1.58>
+ST_7 : Operation 133 [1/1] (0.00ns)   --->   "%br_ln82 = br void" [HLS_CISR_spmv_accel.c:82]   --->   Operation 133 'br' 'br_ln82' <Predicate = (!icmp_ln67 & icmp_ln79 & trunc_ln85)> <Delay = 0.00>
+ST_7 : Operation 134 [1/1] (0.00ns)   --->   "%slot_row_len_id_0_load = load i32 %slot_row_len_id_0" [HLS_CISR_spmv_accel.c:85]   --->   Operation 134 'load' 'slot_row_len_id_0_load' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 135 [1/1] (0.00ns)   --->   "%slot_row_len_id_1_load = load i32 %slot_row_len_id_1" [HLS_CISR_spmv_accel.c:85]   --->   Operation 135 'load' 'slot_row_len_id_1_load' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 136 [1/1] (0.69ns)   --->   "%select_ln85 = select i1 %trunc_ln85, i32 %slot_row_len_id_1_load, i32 %slot_row_len_id_0_load" [HLS_CISR_spmv_accel.c:85]   --->   Operation 136 'select' 'select_ln85' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_7 : Operation 137 [1/1] (0.00ns)   --->   "%trunc_ln85_1 = trunc i32 %select_ln85" [HLS_CISR_spmv_accel.c:85]   --->   Operation 137 'trunc' 'trunc_ln85_1' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 138 [1/1] (1.65ns)   --->   "%add_ln85 = add i3 %tmp_4_cast, i3 %trunc_ln85_1" [HLS_CISR_spmv_accel.c:85]   --->   Operation 138 'add' 'add_ln85' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 139 [1/1] (0.00ns)   --->   "%zext_ln85 = zext i3 %add_ln85" [HLS_CISR_spmv_accel.c:85]   --->   Operation 139 'zext' 'zext_ln85' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 140 [1/1] (0.00ns)   --->   "%row_len_slot_arr_addr_2 = getelementptr i32 %row_len_slot_arr, i64 0, i64 %zext_ln85" [HLS_CISR_spmv_accel.c:85]   --->   Operation 140 'getelementptr' 'row_len_slot_arr_addr_2' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 141 [2/2] (2.32ns)   --->   "%row_len_slot_arr_load = load i3 %row_len_slot_arr_addr_2" [HLS_CISR_spmv_accel.c:85]   --->   Operation 141 'load' 'row_len_slot_arr_load' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_7 : Operation 142 [1/1] (0.00ns)   --->   "%br_ln85 = br i1 %trunc_ln85, void %branch10, void %branch11" [HLS_CISR_spmv_accel.c:85]   --->   Operation 142 'br' 'br_ln85' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 143 [1/1] (2.55ns)   --->   "%add_ln86 = add i32 %select_ln85, i32 1" [HLS_CISR_spmv_accel.c:86]   --->   Operation 143 'add' 'add_ln86' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 144 [1/1] (0.00ns)   --->   "%br_ln86 = br i1 %trunc_ln85, void %branch0, void %branch1" [HLS_CISR_spmv_accel.c:86]   --->   Operation 144 'br' 'br_ln86' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 145 [1/1] (1.58ns)   --->   "%store_ln86 = store i32 %add_ln86, i32 %slot_row_len_id_0" [HLS_CISR_spmv_accel.c:86]   --->   Operation 145 'store' 'store_ln86' <Predicate = (!icmp_ln67 & icmp_ln79 & !trunc_ln85)> <Delay = 1.58>
+ST_7 : Operation 146 [1/1] (0.00ns)   --->   "%br_ln86 = br void" [HLS_CISR_spmv_accel.c:86]   --->   Operation 146 'br' 'br_ln86' <Predicate = (!icmp_ln67 & icmp_ln79 & !trunc_ln85)> <Delay = 0.00>
+ST_7 : Operation 147 [1/1] (1.58ns)   --->   "%store_ln86 = store i32 %add_ln86, i32 %slot_row_len_id_1" [HLS_CISR_spmv_accel.c:86]   --->   Operation 147 'store' 'store_ln86' <Predicate = (!icmp_ln67 & icmp_ln79 & trunc_ln85)> <Delay = 1.58>
+ST_7 : Operation 148 [1/1] (0.00ns)   --->   "%br_ln86 = br void" [HLS_CISR_spmv_accel.c:86]   --->   Operation 148 'br' 'br_ln86' <Predicate = (!icmp_ln67 & icmp_ln79 & trunc_ln85)> <Delay = 0.00>
+ST_7 : Operation 149 [1/1] (0.00ns)   --->   "%max_row_id_load = load i32 %max_row_id" [HLS_CISR_spmv_accel.c:90]   --->   Operation 149 'load' 'max_row_id_load' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 150 [1/1] (0.00ns)   --->   "%trunc_ln90 = trunc i32 %max_row_id_load" [HLS_CISR_spmv_accel.c:90]   --->   Operation 150 'trunc' 'trunc_ln90' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 151 [1/1] (0.00ns)   --->   "%br_ln90 = br i1 %trunc_ln85, void %branch6, void %branch7" [HLS_CISR_spmv_accel.c:90]   --->   Operation 151 'br' 'br_ln90' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 152 [1/1] (1.58ns)   --->   "%store_ln90 = store i3 %trunc_ln90, i3 %slot_row_id_0" [HLS_CISR_spmv_accel.c:90]   --->   Operation 152 'store' 'store_ln90' <Predicate = (!icmp_ln67 & icmp_ln79 & !trunc_ln85)> <Delay = 1.58>
+ST_7 : Operation 153 [1/1] (0.00ns)   --->   "%br_ln90 = br void" [HLS_CISR_spmv_accel.c:90]   --->   Operation 153 'br' 'br_ln90' <Predicate = (!icmp_ln67 & icmp_ln79 & !trunc_ln85)> <Delay = 0.00>
+ST_7 : Operation 154 [1/1] (1.58ns)   --->   "%store_ln90 = store i3 %trunc_ln90, i3 %slot_row_id_1" [HLS_CISR_spmv_accel.c:90]   --->   Operation 154 'store' 'store_ln90' <Predicate = (!icmp_ln67 & icmp_ln79 & trunc_ln85)> <Delay = 1.58>
+ST_7 : Operation 155 [1/1] (0.00ns)   --->   "%br_ln90 = br void" [HLS_CISR_spmv_accel.c:90]   --->   Operation 155 'br' 'br_ln90' <Predicate = (!icmp_ln67 & icmp_ln79 & trunc_ln85)> <Delay = 0.00>
+ST_7 : Operation 156 [1/1] (2.55ns)   --->   "%add_ln91 = add i32 %max_row_id_load, i32 1" [HLS_CISR_spmv_accel.c:91]   --->   Operation 156 'add' 'add_ln91' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 157 [1/1] (1.58ns)   --->   "%store_ln91 = store i32 %add_ln91, i32 %max_row_id" [HLS_CISR_spmv_accel.c:91]   --->   Operation 157 'store' 'store_ln91' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 1.58>
+ST_7 : Operation 158 [1/1] (0.00ns)   --->   "%br_ln93 = br void %.split._crit_edge" [HLS_CISR_spmv_accel.c:93]   --->   Operation 158 'br' 'br_ln93' <Predicate = (!icmp_ln67 & icmp_ln79)> <Delay = 0.00>
+ST_7 : Operation 159 [1/1] (0.00ns)   --->   "%br_ln0 = br void"   --->   Operation 159 'br' 'br_ln0' <Predicate = (!icmp_ln67)> <Delay = 0.00>
+
+State 8 <SV = 6> <Delay = 4.02>
+ST_8 : Operation 160 [1/2] (2.32ns)   --->   "%row_len_slot_arr_load = load i3 %row_len_slot_arr_addr_2" [HLS_CISR_spmv_accel.c:85]   --->   Operation 160 'load' 'row_len_slot_arr_load' <Predicate = (icmp_ln79)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_8 : Operation 161 [1/1] (1.70ns)   --->   "%store_ln85 = store i32 %row_len_slot_arr_load, i32 %slot_row_counter_0" [HLS_CISR_spmv_accel.c:85]   --->   Operation 161 'store' 'store_ln85' <Predicate = (icmp_ln79 & !trunc_ln85)> <Delay = 1.70>
+ST_8 : Operation 162 [1/1] (0.00ns)   --->   "%br_ln85 = br void" [HLS_CISR_spmv_accel.c:85]   --->   Operation 162 'br' 'br_ln85' <Predicate = (icmp_ln79 & !trunc_ln85)> <Delay = 0.00>
+ST_8 : Operation 163 [1/1] (1.70ns)   --->   "%store_ln85 = store i32 %row_len_slot_arr_load, i32 %slot_row_counter_1" [HLS_CISR_spmv_accel.c:85]   --->   Operation 163 'store' 'store_ln85' <Predicate = (icmp_ln79 & trunc_ln85)> <Delay = 1.70>
+ST_8 : Operation 164 [1/1] (0.00ns)   --->   "%br_ln85 = br void" [HLS_CISR_spmv_accel.c:85]   --->   Operation 164 'br' 'br_ln85' <Predicate = (icmp_ln79 & trunc_ln85)> <Delay = 0.00>
+
+State 9 <SV = 6> <Delay = 4.25>
+ST_9 : Operation 165 [1/1] (0.00ns)   --->   "%slot_data_arr_addr = getelementptr i64 %slot_data_arr, i64 0, i64 0" [HLS_CISR_spmv_accel.c:106]   --->   Operation 165 'getelementptr' 'slot_data_arr_addr' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 166 [2/2] (2.32ns)   --->   "%slot_data_arr_load = load i1 %slot_data_arr_addr" [HLS_CISR_spmv_accel.c:106]   --->   Operation 166 'load' 'slot_data_arr_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 2> <RAM>
+ST_9 : Operation 167 [1/1] (0.00ns)   --->   "%slot_row_counter_0_load = load i32 %slot_row_counter_0" [HLS_CISR_spmv_accel.c:114]   --->   Operation 167 'load' 'slot_row_counter_0_load' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 168 [1/1] (2.55ns)   --->   "%add_ln114 = add i32 %slot_row_counter_0_load, i32 4294967295" [HLS_CISR_spmv_accel.c:114]   --->   Operation 168 'add' 'add_ln114' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 169 [1/1] (1.70ns)   --->   "%store_ln114 = store i32 %add_ln114, i32 %slot_row_counter_0" [HLS_CISR_spmv_accel.c:114]   --->   Operation 169 'store' 'store_ln114' <Predicate = true> <Delay = 1.70>
+ST_9 : Operation 170 [1/1] (0.00ns)   --->   "%slot_row_counter_1_load = load i32 %slot_row_counter_1" [HLS_CISR_spmv_accel.c:114]   --->   Operation 170 'load' 'slot_row_counter_1_load' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 171 [1/1] (2.55ns)   --->   "%add_ln114_1 = add i32 %slot_row_counter_1_load, i32 4294967295" [HLS_CISR_spmv_accel.c:114]   --->   Operation 171 'add' 'add_ln114_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 172 [1/1] (1.70ns)   --->   "%store_ln114 = store i32 %add_ln114_1, i32 %slot_row_counter_1" [HLS_CISR_spmv_accel.c:114]   --->   Operation 172 'store' 'store_ln114' <Predicate = true> <Delay = 1.70>
+
+State 10 <SV = 7> <Delay = 4.64>
+ST_10 : Operation 173 [1/2] (2.32ns)   --->   "%slot_data_arr_load = load i1 %slot_data_arr_addr" [HLS_CISR_spmv_accel.c:106]   --->   Operation 173 'load' 'slot_data_arr_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 2> <RAM>
+ST_10 : Operation 174 [1/1] (0.00ns)   --->   "%trunc_ln106 = trunc i64 %slot_data_arr_load" [HLS_CISR_spmv_accel.c:106]   --->   Operation 174 'trunc' 'trunc_ln106' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 175 [1/1] (0.00ns)   --->   "%col_index = partselect i3 @_ssdm_op_PartSelect.i3.i64.i32.i32, i64 %slot_data_arr_load, i32 32, i32 34" [HLS_CISR_spmv_accel.c:107]   --->   Operation 175 'partselect' 'col_index' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 176 [1/1] (0.00ns)   --->   "%zext_ln110 = zext i3 %col_index" [HLS_CISR_spmv_accel.c:110]   --->   Operation 176 'zext' 'zext_ln110' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 177 [1/1] (0.00ns)   --->   "%inp_vec_addr = getelementptr i32 %inp_vec, i64 0, i64 %zext_ln110" [HLS_CISR_spmv_accel.c:110]   --->   Operation 177 'getelementptr' 'inp_vec_addr' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 178 [2/2] (2.32ns)   --->   "%inp_vec_load = load i3 %inp_vec_addr" [HLS_CISR_spmv_accel.c:110]   --->   Operation 178 'load' 'inp_vec_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_10 : Operation 179 [1/1] (0.00ns)   --->   "%slot_data_arr_addr_1 = getelementptr i64 %slot_data_arr, i64 0, i64 1" [HLS_CISR_spmv_accel.c:106]   --->   Operation 179 'getelementptr' 'slot_data_arr_addr_1' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 180 [2/2] (2.32ns)   --->   "%slot_data_arr_load_1 = load i1 %slot_data_arr_addr_1" [HLS_CISR_spmv_accel.c:106]   --->   Operation 180 'load' 'slot_data_arr_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 2> <RAM>
+
+State 11 <SV = 8> <Delay = 8.02>
+ST_11 : Operation 181 [1/1] (0.00ns)   --->   "%matrix_val = bitcast i32 %trunc_ln106" [HLS_CISR_spmv_accel.c:106]   --->   Operation 181 'bitcast' 'matrix_val' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 182 [1/2] (2.32ns)   --->   "%inp_vec_load = load i3 %inp_vec_addr" [HLS_CISR_spmv_accel.c:110]   --->   Operation 182 'load' 'inp_vec_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_11 : Operation 183 [1/1] (0.00ns)   --->   "%bitcast_ln110 = bitcast i32 %inp_vec_load" [HLS_CISR_spmv_accel.c:110]   --->   Operation 183 'bitcast' 'bitcast_ln110' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 184 [4/4] (5.70ns)   --->   "%mul_i = fmul i32 %matrix_val, i32 %bitcast_ln110" [HLS_CISR_spmv_accel.c:110]   --->   Operation 184 'fmul' 'mul_i' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_11 : Operation 185 [1/2] (2.32ns)   --->   "%slot_data_arr_load_1 = load i1 %slot_data_arr_addr_1" [HLS_CISR_spmv_accel.c:106]   --->   Operation 185 'load' 'slot_data_arr_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 64> <Depth = 2> <RAM>
+ST_11 : Operation 186 [1/1] (0.00ns)   --->   "%trunc_ln106_1 = trunc i64 %slot_data_arr_load_1" [HLS_CISR_spmv_accel.c:106]   --->   Operation 186 'trunc' 'trunc_ln106_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 187 [1/1] (0.00ns)   --->   "%col_index_1 = partselect i3 @_ssdm_op_PartSelect.i3.i64.i32.i32, i64 %slot_data_arr_load_1, i32 32, i32 34" [HLS_CISR_spmv_accel.c:107]   --->   Operation 187 'partselect' 'col_index_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 188 [1/1] (0.00ns)   --->   "%zext_ln110_1 = zext i3 %col_index_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 188 'zext' 'zext_ln110_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 189 [1/1] (0.00ns)   --->   "%inp_vec_addr_1 = getelementptr i32 %inp_vec, i64 0, i64 %zext_ln110_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 189 'getelementptr' 'inp_vec_addr_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 190 [2/2] (2.32ns)   --->   "%inp_vec_load_1 = load i3 %inp_vec_addr_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 190 'load' 'inp_vec_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 12 <SV = 9> <Delay = 8.02>
+ST_12 : Operation 191 [3/4] (5.70ns)   --->   "%mul_i = fmul i32 %matrix_val, i32 %bitcast_ln110" [HLS_CISR_spmv_accel.c:110]   --->   Operation 191 'fmul' 'mul_i' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 192 [1/1] (0.00ns)   --->   "%matrix_val_1 = bitcast i32 %trunc_ln106_1" [HLS_CISR_spmv_accel.c:106]   --->   Operation 192 'bitcast' 'matrix_val_1' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 193 [1/2] (2.32ns)   --->   "%inp_vec_load_1 = load i3 %inp_vec_addr_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 193 'load' 'inp_vec_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_12 : Operation 194 [1/1] (0.00ns)   --->   "%bitcast_ln110_1 = bitcast i32 %inp_vec_load_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 194 'bitcast' 'bitcast_ln110_1' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 195 [4/4] (5.70ns)   --->   "%mul_1_i = fmul i32 %matrix_val_1, i32 %bitcast_ln110_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 195 'fmul' 'mul_1_i' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 10> <Delay = 5.70>
+ST_13 : Operation 196 [2/4] (5.70ns)   --->   "%mul_i = fmul i32 %matrix_val, i32 %bitcast_ln110" [HLS_CISR_spmv_accel.c:110]   --->   Operation 196 'fmul' 'mul_i' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_13 : Operation 197 [3/4] (5.70ns)   --->   "%mul_1_i = fmul i32 %matrix_val_1, i32 %bitcast_ln110_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 197 'fmul' 'mul_1_i' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 11> <Delay = 5.70>
+ST_14 : Operation 198 [1/4] (5.70ns)   --->   "%mul_i = fmul i32 %matrix_val, i32 %bitcast_ln110" [HLS_CISR_spmv_accel.c:110]   --->   Operation 198 'fmul' 'mul_i' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 199 [2/4] (5.70ns)   --->   "%mul_1_i = fmul i32 %matrix_val_1, i32 %bitcast_ln110_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 199 'fmul' 'mul_1_i' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 15 <SV = 12> <Delay = 7.25>
+ST_15 : Operation 200 [1/1] (0.00ns)   --->   "%slot_res_arr_0_load = load i32 %slot_res_arr_0" [HLS_CISR_spmv_accel.c:110]   --->   Operation 200 'load' 'slot_res_arr_0_load' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 201 [5/5] (7.25ns)   --->   "%add_i = fadd i32 %slot_res_arr_0_load, i32 %mul_i" [HLS_CISR_spmv_accel.c:110]   --->   Operation 201 'fadd' 'add_i' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 202 [1/4] (5.70ns)   --->   "%mul_1_i = fmul i32 %matrix_val_1, i32 %bitcast_ln110_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 202 'fmul' 'mul_1_i' <Predicate = true> <Delay = 5.70> <CoreInst = "FMul_maxdsp">   --->   Core 30 'FMul_maxdsp' <Latency = 3> <II = 1> <Delay = 5.70> <FuncUnit> <Opcode : 'fmul'> <InPorts = 2> <OutPorts = 1>
+
+State 16 <SV = 13> <Delay = 7.25>
+ST_16 : Operation 203 [4/5] (7.25ns)   --->   "%add_i = fadd i32 %slot_res_arr_0_load, i32 %mul_i" [HLS_CISR_spmv_accel.c:110]   --->   Operation 203 'fadd' 'add_i' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 204 [1/1] (0.00ns)   --->   "%slot_res_arr_1_load = load i32 %slot_res_arr_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 204 'load' 'slot_res_arr_1_load' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 205 [5/5] (7.25ns)   --->   "%add_1_i = fadd i32 %slot_res_arr_1_load, i32 %mul_1_i" [HLS_CISR_spmv_accel.c:110]   --->   Operation 205 'fadd' 'add_1_i' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 17 <SV = 14> <Delay = 7.25>
+ST_17 : Operation 206 [3/5] (7.25ns)   --->   "%add_i = fadd i32 %slot_res_arr_0_load, i32 %mul_i" [HLS_CISR_spmv_accel.c:110]   --->   Operation 206 'fadd' 'add_i' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 207 [4/5] (7.25ns)   --->   "%add_1_i = fadd i32 %slot_res_arr_1_load, i32 %mul_1_i" [HLS_CISR_spmv_accel.c:110]   --->   Operation 207 'fadd' 'add_1_i' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 15> <Delay = 7.25>
+ST_18 : Operation 208 [2/5] (7.25ns)   --->   "%add_i = fadd i32 %slot_res_arr_0_load, i32 %mul_i" [HLS_CISR_spmv_accel.c:110]   --->   Operation 208 'fadd' 'add_i' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 209 [3/5] (7.25ns)   --->   "%add_1_i = fadd i32 %slot_res_arr_1_load, i32 %mul_1_i" [HLS_CISR_spmv_accel.c:110]   --->   Operation 209 'fadd' 'add_1_i' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 16> <Delay = 7.25>
+ST_19 : Operation 210 [1/5] (7.25ns)   --->   "%add_i = fadd i32 %slot_res_arr_0_load, i32 %mul_i" [HLS_CISR_spmv_accel.c:110]   --->   Operation 210 'fadd' 'add_i' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 211 [2/5] (7.25ns)   --->   "%add_1_i = fadd i32 %slot_res_arr_1_load, i32 %mul_1_i" [HLS_CISR_spmv_accel.c:110]   --->   Operation 211 'fadd' 'add_1_i' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 17> <Delay = 7.25>
+ST_20 : Operation 212 [1/1] (1.58ns)   --->   "%store_ln110 = store i32 %add_i, i32 %slot_res_arr_0" [HLS_CISR_spmv_accel.c:110]   --->   Operation 212 'store' 'store_ln110' <Predicate = true> <Delay = 1.58>
+ST_20 : Operation 213 [1/5] (7.25ns)   --->   "%add_1_i = fadd i32 %slot_res_arr_1_load, i32 %mul_1_i" [HLS_CISR_spmv_accel.c:110]   --->   Operation 213 'fadd' 'add_1_i' <Predicate = true> <Delay = 7.25> <CoreInst = "FAddSub_fulldsp">   --->   Core 18 'FAddSub_fulldsp' <Latency = 4> <II = 1> <Delay = 7.25> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 214 [1/1] (0.00ns)   --->   "%row_index = load i3 %slot_row_id_0" [HLS_CISR_spmv_accel.c:129]   --->   Operation 214 'load' 'row_index' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 215 [1/1] (0.00ns)   --->   "%zext_ln130 = zext i3 %row_index" [HLS_CISR_spmv_accel.c:130]   --->   Operation 215 'zext' 'zext_ln130' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 216 [1/1] (0.00ns)   --->   "%bitcast_ln130 = bitcast i32 %add_i" [HLS_CISR_spmv_accel.c:130]   --->   Operation 216 'bitcast' 'bitcast_ln130' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 217 [1/1] (0.00ns)   --->   "%output_vec_addr = getelementptr i32 %output_vec, i64 0, i64 %zext_ln130" [HLS_CISR_spmv_accel.c:130]   --->   Operation 217 'getelementptr' 'output_vec_addr' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 218 [1/1] (2.32ns)   --->   "%store_ln130 = store i32 %bitcast_ln130, i3 %output_vec_addr" [HLS_CISR_spmv_accel.c:130]   --->   Operation 218 'store' 'store_ln130' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+
+State 21 <SV = 18> <Delay = 2.32>
+ST_21 : Operation 219 [1/1] (1.58ns)   --->   "%store_ln110 = store i32 %add_1_i, i32 %slot_res_arr_1" [HLS_CISR_spmv_accel.c:110]   --->   Operation 219 'store' 'store_ln110' <Predicate = true> <Delay = 1.58>
+ST_21 : Operation 220 [1/1] (0.00ns)   --->   "%row_index_1 = load i3 %slot_row_id_1" [HLS_CISR_spmv_accel.c:129]   --->   Operation 220 'load' 'row_index_1' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 221 [1/1] (0.00ns)   --->   "%zext_ln130_1 = zext i3 %row_index_1" [HLS_CISR_spmv_accel.c:130]   --->   Operation 221 'zext' 'zext_ln130_1' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 222 [1/1] (0.00ns)   --->   "%bitcast_ln130_1 = bitcast i32 %add_1_i" [HLS_CISR_spmv_accel.c:130]   --->   Operation 222 'bitcast' 'bitcast_ln130_1' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 223 [1/1] (0.00ns)   --->   "%output_vec_addr_1 = getelementptr i32 %output_vec, i64 0, i64 %zext_ln130_1" [HLS_CISR_spmv_accel.c:130]   --->   Operation 223 'getelementptr' 'output_vec_addr_1' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 224 [1/1] (2.32ns)   --->   "%store_ln130 = store i32 %bitcast_ln130_1, i3 %output_vec_addr_1" [HLS_CISR_spmv_accel.c:130]   --->   Operation 224 'store' 'store_ln130' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 8> <RAM>
+ST_21 : Operation 225 [1/1] (0.00ns)   --->   "%ret_ln199 = ret" [HLS_CISR_spmv_accel.c:199]   --->   Operation 225 'ret' 'ret_ln199' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 12ns, clock uncertainty: 3.24ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	'store' operation ('store_ln23', HLS_CISR_spmv_accel.c:23) of constant 0 on static variable 'max_row_id' [36]  (1.59 ns)
+
+ <State 2>: 3.28ns
+The critical path consists of the following:
+	'phi' operation ('slot_id', HLS_CISR_spmv_accel.c:25) with incoming values : ('add_ln25', HLS_CISR_spmv_accel.c:25) [39]  (0 ns)
+	'getelementptr' operation ('row_len_slot_arr_addr_3', HLS_CISR_spmv_accel.c:36) [48]  (0 ns)
+	'store' operation ('store_ln36', HLS_CISR_spmv_accel.c:36) of constant 0 on array 'row_len_slot_arr' [100]  (2.32 ns)
+	blocking operation 0.959 ns on control path)
+
+ <State 3>: 2.32ns
+The critical path consists of the following:
+	'store' operation ('store_ln36', HLS_CISR_spmv_accel.c:36) of constant 0 on array 'row_len_slot_arr' [102]  (2.32 ns)
+
+ <State 4>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('slot_arr_row_len_addr', HLS_CISR_spmv_accel.c:54) [109]  (0 ns)
+	'load' operation ('slot_arr_row_len_load', HLS_CISR_spmv_accel.c:54) on array 'slot_arr_row_len' [110]  (2.32 ns)
+
+ <State 5>: 7.12ns
+The critical path consists of the following:
+	'load' operation ('slot_arr_row_len_load', HLS_CISR_spmv_accel.c:54) on array 'slot_arr_row_len' [110]  (2.32 ns)
+	'icmp' operation ('icmp_ln54', HLS_CISR_spmv_accel.c:54) [111]  (2.47 ns)
+	blocking operation 2.32 ns on control path)
+
+ <State 6>: 7.12ns
+The critical path consists of the following:
+	'load' operation ('slot_arr_row_len_load_1', HLS_CISR_spmv_accel.c:54) on array 'slot_arr_row_len' [123]  (2.32 ns)
+	'icmp' operation ('icmp_ln54_1', HLS_CISR_spmv_accel.c:54) [124]  (2.47 ns)
+	blocking operation 2.32 ns on control path)
+
+ <State 7>: 5.03ns
+The critical path consists of the following:
+	'phi' operation ('slot_id2', HLS_CISR_spmv_accel.c:67) with incoming values : ('add_ln67', HLS_CISR_spmv_accel.c:67) [138]  (0 ns)
+	'select' operation ('select_ln85', HLS_CISR_spmv_accel.c:85) [164]  (0.698 ns)
+	'add' operation ('add_ln86', HLS_CISR_spmv_accel.c:86) [178]  (2.55 ns)
+	'store' operation ('store_ln86', HLS_CISR_spmv_accel.c:86) of variable 'add_ln86', HLS_CISR_spmv_accel.c:86 on static variable 'slot_row_len_id_0' [181]  (1.59 ns)
+	blocking operation 0.188 ns on control path)
+
+ <State 8>: 4.03ns
+The critical path consists of the following:
+	'load' operation ('row_len_slot_arr_load', HLS_CISR_spmv_accel.c:85) on array 'row_len_slot_arr' [169]  (2.32 ns)
+	'store' operation ('store_ln85', HLS_CISR_spmv_accel.c:85) of variable 'row_len_slot_arr_load', HLS_CISR_spmv_accel.c:85 on static variable 'slot_row_counter_0' [172]  (1.71 ns)
+
+ <State 9>: 4.26ns
+The critical path consists of the following:
+	'load' operation ('slot_row_counter_0_load', HLS_CISR_spmv_accel.c:114) on static variable 'slot_row_counter_0' [216]  (0 ns)
+	'add' operation ('add_ln114', HLS_CISR_spmv_accel.c:114) [217]  (2.55 ns)
+	'store' operation ('store_ln114', HLS_CISR_spmv_accel.c:114) of variable 'add_ln114', HLS_CISR_spmv_accel.c:114 on static variable 'slot_row_counter_0' [218]  (1.71 ns)
+
+ <State 10>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('slot_data_arr_load', HLS_CISR_spmv_accel.c:106) on array 'slot_data_arr' [204]  (2.32 ns)
+	'getelementptr' operation ('inp_vec_addr', HLS_CISR_spmv_accel.c:110) [209]  (0 ns)
+	'load' operation ('inp_vec_load', HLS_CISR_spmv_accel.c:110) on array 'inp_vec' [210]  (2.32 ns)
+
+ <State 11>: 8.02ns
+The critical path consists of the following:
+	'load' operation ('inp_vec_load', HLS_CISR_spmv_accel.c:110) on array 'inp_vec' [210]  (2.32 ns)
+	'fmul' operation ('mul_i', HLS_CISR_spmv_accel.c:110) [212]  (5.7 ns)
+
+ <State 12>: 8.02ns
+The critical path consists of the following:
+	'load' operation ('inp_vec_load_1', HLS_CISR_spmv_accel.c:110) on array 'inp_vec' [226]  (2.32 ns)
+	'fmul' operation ('mul_1_i', HLS_CISR_spmv_accel.c:110) [228]  (5.7 ns)
+
+ <State 13>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('mul_i', HLS_CISR_spmv_accel.c:110) [212]  (5.7 ns)
+
+ <State 14>: 5.7ns
+The critical path consists of the following:
+	'fmul' operation ('mul_i', HLS_CISR_spmv_accel.c:110) [212]  (5.7 ns)
+
+ <State 15>: 7.26ns
+The critical path consists of the following:
+	'load' operation ('slot_res_arr_0_load', HLS_CISR_spmv_accel.c:110) on static variable 'slot_res_arr_0' [213]  (0 ns)
+	'fadd' operation ('add_i', HLS_CISR_spmv_accel.c:110) [214]  (7.26 ns)
+
+ <State 16>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add_i', HLS_CISR_spmv_accel.c:110) [214]  (7.26 ns)
+
+ <State 17>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add_i', HLS_CISR_spmv_accel.c:110) [214]  (7.26 ns)
+
+ <State 18>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add_i', HLS_CISR_spmv_accel.c:110) [214]  (7.26 ns)
+
+ <State 19>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add_i', HLS_CISR_spmv_accel.c:110) [214]  (7.26 ns)
+
+ <State 20>: 7.26ns
+The critical path consists of the following:
+	'fadd' operation ('add_1_i', HLS_CISR_spmv_accel.c:110) [230]  (7.26 ns)
+
+ <State 21>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('row_index', HLS_CISR_spmv_accel.c:129) on static variable 'slot_row_id_1' [240]  (0 ns)
+	'getelementptr' operation ('output_vec_addr_1', HLS_CISR_spmv_accel.c:130) [243]  (0 ns)
+	'store' operation ('store_ln130', HLS_CISR_spmv_accel.c:130) of variable 'bitcast_ln130_1', HLS_CISR_spmv_accel.c:130 on array 'output_vec' [244]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

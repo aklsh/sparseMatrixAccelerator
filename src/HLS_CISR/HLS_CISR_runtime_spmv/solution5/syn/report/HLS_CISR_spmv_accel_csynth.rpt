@@ -1,0 +1,231 @@
+
+
+================================================================
+== Vitis HLS Report for 'HLS_CISR_spmv_accel'
+================================================================
+* Date:           Sat May  7 19:54:08 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        HLS_CISR_runtime_spmv
+* Solution:       solution5 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  12.00 ns|  8.024 ns|     3.24 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       19|       24|  0.228 us|  0.288 us|   20|   25|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_25_1  |        4|        4|         2|          2|          1|     2|       yes|
+        |- VITIS_LOOP_67_1  |        2|        2|         2|          1|          1|     2|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    401|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    5|     348|    711|    -|
+|Memory           |        0|    -|      64|      4|    -|
+|Multiplexer      |        -|    -|       -|    492|    -|
+|Register         |        -|    -|     486|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    5|     898|   1608|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    2|      ~0|      3|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+    |              Instance             |             Module             | BRAM_18K| DSP|  FF | LUT | URAM|
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+    |fadd_32ns_32ns_32_5_full_dsp_1_U1  |fadd_32ns_32ns_32_5_full_dsp_1  |        0|   2|  205|  390|    0|
+    |fmul_32ns_32ns_32_4_max_dsp_1_U2   |fmul_32ns_32ns_32_4_max_dsp_1   |        0|   3|  143|  321|    0|
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+    |Total                              |                                |        0|   5|  348|  711|    0|
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +--------------------+------------------+---------+----+----+-----+------+-----+------+-------------+
+    |       Memory       |      Module      | BRAM_18K| FF | LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +--------------------+------------------+---------+----+----+-----+------+-----+------+-------------+
+    |row_len_slot_arr_U  |row_len_slot_arr  |        0|  64|   4|    0|     8|   32|     1|          256|
+    +--------------------+------------------+---------+----+----+-----+------+-----+------+-------------+
+    |Total               |                  |        0|  64|   4|    0|     8|   32|     1|          256|
+    +--------------------+------------------+---------+----+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+----+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |add_ln114_1_fu_660_p2    |         +|   0|  0|  39|          32|           2|
+    |add_ln114_fu_648_p2      |         +|   0|  0|  39|          32|           2|
+    |add_ln25_fu_343_p2       |         +|   0|  0|  10|           2|           1|
+    |add_ln58_1_fu_505_p2     |         +|   0|  0|  39|          32|           1|
+    |add_ln58_fu_474_p2       |         +|   0|  0|  39|          32|           1|
+    |add_ln67_fu_517_p2       |         +|   0|  0|  10|           2|           1|
+    |add_ln85_fu_575_p2       |         +|   0|  0|  11|           3|           3|
+    |add_ln86_fu_586_p2       |         +|   0|  0|  39|          32|           1|
+    |add_ln91_fu_624_p2       |         +|   0|  0|  39|          32|           1|
+    |grp_fu_309_p2            |      icmp|   0|  0|  18|          32|           2|
+    |icmp_ln25_fu_349_p2      |      icmp|   0|  0|   8|           2|           3|
+    |icmp_ln67_fu_523_p2      |      icmp|   0|  0|   8|           2|           3|
+    |icmp_ln79_fu_549_p2      |      icmp|   0|  0|  18|          32|           1|
+    |or_ln36_1_fu_383_p2      |        or|   0|  0|   4|           4|           2|
+    |or_ln36_2_fu_398_p2      |        or|   0|  0|   4|           4|           2|
+    |or_ln36_fu_368_p2        |        or|   0|  0|   4|           4|           1|
+    |select_ln79_fu_541_p3    |    select|   0|  0|  32|           1|          32|
+    |select_ln85_fu_563_p3    |    select|   0|  0|  32|           1|          32|
+    |ap_enable_pp1            |       xor|   0|  0|   2|           1|           2|
+    |ap_enable_reg_pp1_iter1  |       xor|   0|  0|   2|           2|           1|
+    |xor_ln57_fu_494_p2       |       xor|   0|  0|   4|           3|           4|
+    +-------------------------+----------+----+---+----+------------+------------+
+    |Total                    |          |   0|  0| 401|         287|          98|
+    +-------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +--------------------------------------------+-----+-----------+-----+-----------+
+    |                    Name                    | LUT | Input Size| Bits| Total Bits|
+    +--------------------------------------------+-----+-----------+-----+-----------+
+    |ap_NS_fsm                                   |  106|         21|    1|         21|
+    |ap_enable_reg_pp1_iter1                     |   14|          3|    1|          3|
+    |ap_sig_allocacmp_slot_row_counter_0_load_1  |    9|          2|   32|         64|
+    |ap_sig_allocacmp_slot_row_counter_1_load_1  |    9|          2|   32|         64|
+    |grp_fu_289_p0                               |   14|          3|   32|         96|
+    |grp_fu_289_p1                               |   14|          3|   32|         96|
+    |grp_fu_293_p0                               |   14|          3|   32|         96|
+    |grp_fu_293_p1                               |   14|          3|   32|         96|
+    |grp_load_fu_315_p1                          |   14|          3|   32|         96|
+    |grp_load_fu_319_p1                          |   14|          3|   32|         96|
+    |inp_vec_address0                            |   14|          3|    3|          9|
+    |max_row_id                                  |    9|          2|   32|         64|
+    |output_vec_address0                         |   14|          3|    3|          9|
+    |output_vec_d0                               |   14|          3|   32|         96|
+    |row_len_slot_arr_address0                   |   25|          5|    3|         15|
+    |row_len_slot_arr_address1                   |   20|          4|    3|         12|
+    |row_len_slot_arr_d0                         |   14|          3|   32|         96|
+    |row_len_slot_arr_d1                         |   14|          3|   32|         96|
+    |slot_arr_row_len_address0                   |   14|          3|    1|          3|
+    |slot_counter_0                              |    9|          2|   32|         64|
+    |slot_counter_1                              |    9|          2|   32|         64|
+    |slot_data_arr_address0                      |   14|          3|    1|          3|
+    |slot_id2_reg_278                            |    9|          2|    2|          4|
+    |slot_id_reg_267                             |    9|          2|    2|          4|
+    |slot_res_arr_0                              |    9|          2|   32|         64|
+    |slot_res_arr_1                              |    9|          2|   32|         64|
+    |slot_row_counter_0                          |   14|          3|   32|         96|
+    |slot_row_counter_1                          |   14|          3|   32|         96|
+    |slot_row_id_0                               |    9|          2|    3|          6|
+    |slot_row_id_1                               |    9|          2|    3|          6|
+    |slot_row_len_id_0                           |    9|          2|   32|         64|
+    |slot_row_len_id_1                           |    9|          2|   32|         64|
+    +--------------------------------------------+-----+-----------+-----+-----------+
+    |Total                                       |  492|        104|  666|       1727|
+    +--------------------------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------+----+----+-----+-----------+
+    |               Name              | FF | LUT| Bits| Const Bits|
+    +---------------------------------+----+----+-----+-----------+
+    |add_ln25_reg_762                 |   2|   0|    2|          0|
+    |ap_CS_fsm                        |  20|   0|   20|          0|
+    |ap_enable_reg_pp1_iter0          |   1|   0|    1|          0|
+    |ap_enable_reg_pp1_iter1          |   1|   0|    1|          0|
+    |icmp_ln79_reg_812                |   1|   0|    1|          0|
+    |max_row_id                       |  32|   0|   32|          0|
+    |mul_1_i_reg_879                  |  32|   0|   32|          0|
+    |mul_i_reg_871                    |  32|   0|   32|          0|
+    |reg_333                          |  32|   0|   32|          0|
+    |row_len_slot_arr_addr_5_reg_770  |   1|   0|    3|          2|
+    |row_len_slot_arr_addr_6_reg_775  |   1|   0|    3|          2|
+    |slot_counter_0                   |  32|   0|   32|          0|
+    |slot_counter_1                   |  32|   0|   32|          0|
+    |slot_id2_reg_278                 |   2|   0|    2|          0|
+    |slot_id_reg_267                  |   2|   0|    2|          0|
+    |slot_res_arr_0                   |  32|   0|   32|          0|
+    |slot_res_arr_1                   |  32|   0|   32|          0|
+    |slot_row_counter_0               |  32|   0|   32|          0|
+    |slot_row_counter_1               |  32|   0|   32|          0|
+    |slot_row_id_0                    |   3|   0|    3|          0|
+    |slot_row_id_1                    |   3|   0|    3|          0|
+    |slot_row_len_id_0                |  32|   0|   32|          0|
+    |slot_row_len_id_1                |  32|   0|   32|          0|
+    |trunc_ln106_1_reg_851            |  32|   0|   32|          0|
+    |trunc_ln106_reg_826              |  32|   0|   32|          0|
+    |trunc_ln85_reg_808               |   1|   0|    1|          0|
+    +---------------------------------+----+----+-----+-----------+
+    |Total                            | 486|   0|  490|          4|
+    +---------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+---------------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  |    Source Object    |    C Type    |
++---------------------------+-----+-----+------------+---------------------+--------------+
+|ap_clk                     |   in|    1|  ap_ctrl_hs|  HLS_CISR_spmv_accel|  return value|
+|ap_rst                     |   in|    1|  ap_ctrl_hs|  HLS_CISR_spmv_accel|  return value|
+|ap_start                   |   in|    1|  ap_ctrl_hs|  HLS_CISR_spmv_accel|  return value|
+|ap_done                    |  out|    1|  ap_ctrl_hs|  HLS_CISR_spmv_accel|  return value|
+|ap_idle                    |  out|    1|  ap_ctrl_hs|  HLS_CISR_spmv_accel|  return value|
+|ap_ready                   |  out|    1|  ap_ctrl_hs|  HLS_CISR_spmv_accel|  return value|
+|cmd_start                  |   in|    1|     ap_none|            cmd_start|        scalar|
+|inp_vec_address0           |  out|    3|   ap_memory|              inp_vec|         array|
+|inp_vec_ce0                |  out|    1|   ap_memory|              inp_vec|         array|
+|inp_vec_q0                 |   in|   32|   ap_memory|              inp_vec|         array|
+|slot_data_arr_address0     |  out|    1|   ap_memory|        slot_data_arr|         array|
+|slot_data_arr_ce0          |  out|    1|   ap_memory|        slot_data_arr|         array|
+|slot_data_arr_q0           |   in|   64|   ap_memory|        slot_data_arr|         array|
+|slot_arr_row_len_address0  |  out|    1|   ap_memory|     slot_arr_row_len|         array|
+|slot_arr_row_len_ce0       |  out|    1|   ap_memory|     slot_arr_row_len|         array|
+|slot_arr_row_len_q0        |   in|   32|   ap_memory|     slot_arr_row_len|         array|
+|output_vec_address0        |  out|    3|   ap_memory|           output_vec|         array|
+|output_vec_ce0             |  out|    1|   ap_memory|           output_vec|         array|
+|output_vec_we0             |  out|    1|   ap_memory|           output_vec|         array|
+|output_vec_d0              |  out|   32|   ap_memory|           output_vec|         array|
++---------------------------+-----+-----+------------+---------------------+--------------+
+

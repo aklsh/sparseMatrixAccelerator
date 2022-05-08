@@ -1,0 +1,26 @@
+
+
+================================================================
+== Synthesis Summary Report of 'HLS_CISR_spmv_accel'
+================================================================
++ General Information: 
+    * Date:           Sat May  7 19:54:08 2022
+    * Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+    * Project:        HLS_CISR_runtime_spmv
+    * Solution:       solution5 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------+------+-------+---------+---------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    |        Modules        | Issue|       | Latency | Latency | Iteration|         | Trip |          |      |        |           |           |     |
+    |        & Loops        | Type | Slack | (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP  |     FF    |    LUT    | URAM|
+    +-----------------------+------+-------+---------+---------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+    |+ HLS_CISR_spmv_accel  |     -|  -0.74|       24|  288.000|         -|       25|     -|        no|     -|  5 (2%)|  898 (~0%)|  1608 (3%)|    -|
+    | o VITIS_LOOP_25_1     |    II|  -8.76|        4|   48.000|         2|        2|     2|       yes|     -|       -|          -|          -|    -|
+    | o VITIS_LOOP_67_1     |     -|  -8.76|        2|   24.000|         2|        1|     2|       yes|     -|       -|          -|          -|    -|
+    +-----------------------+------+-------+---------+---------+----------+---------+------+----------+------+--------+-----------+-----------+-----+
+

@@ -1,0 +1,44 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling(apcc) ../../../../HLS_CISR_spmv_accel_tb.c in debug mode
+INFO: [HLS 200-10] Running '/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/apcc'
+INFO: [HLS 200-10] For user 'shivaubuntu' on host 'shivaubuntu-Inspiron-7572' (Linux_x86_64 version 5.4.0-109-generic) on Fri May 06 11:37:32 IST 2022
+INFO: [HLS 200-10] On os Ubuntu 20.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution3/csim/build'
+INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_shivaubuntu/251521651817252787049
+INFO: [APCC 202-1] APCC is done.
+   Generating csim.exe
+Slot 0 has to work on 0 row
+Slot 1 has to work on 1 row
+slot id 0 Multiplying for 0 col index: val 0.200000 and remaining vals in row 2
+slot id 1 Multiplying for 3 col index: val -32.500000 and remaining vals in row 1
+Slot 1 has to work on 2 row
+slot id 0 Multiplying for 3 col index: val 0.300000 and remaining vals in row 1
+slot id 1 Multiplying for 4 col index: val 25.200001 and remaining vals in row 2
+Slot 0 has to work on 3 row
+slot id 0 Multiplying for 1 col index: val 0.800000 and remaining vals in row 3
+slot id 1 Multiplying for 5 col index: val 100.199997 and remaining vals in row 1
+Slot 1 has to work on 4 row
+slot id 0 Multiplying for 5 col index: val 1.200000 and remaining vals in row 2
+slot id 1 Multiplying for 2 col index: val 12.600000 and remaining vals in row 3
+slot id 0 Multiplying for 7 col index: val 5.400000 and remaining vals in row 1
+slot id 1 Multiplying for 6 col index: val 1.500000 and remaining vals in row 2
+Slot 0 has to work on 5 row
+slot id 0 Multiplying for 3 col index: val 5.400000 and remaining vals in row 2
+slot id 1 Multiplying for 7 col index: val 6.700000 and remaining vals in row 1
+Slot 1 has to work on 6 row
+slot id 0 Multiplying for 7 col index: val 9.300000 and remaining vals in row 1
+slot id 1 Multiplying for 1 col index: val 55.599998 and remaining vals in row 2
+Slot 0 has to work on 7 row
+slot id 0 Multiplying for 6 col index: val 17.600000 and remaining vals in row 1
+slot id 1 Multiplying for 5 col index: val 1.200000 and remaining vals in row 1
+out_val[0] =  0.300000
+out_val[1] =  -32.500000
+out_val[2] =  0.000000
+out_val[3] =  6.200000
+out_val[4] =  20.799999
+out_val[5] =  14.700001
+out_val[6] =  55.599998
+out_val[7] =  17.600000
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
