@@ -40,7 +40,7 @@ Given below is a summary table of different solutions explored with the same cod
 Note- DSP slices in all cases are- 5 = ( 2 fadd 3 fmul)
 Solutions 3,4,5 and 1,2, 6 are separately pareto optimal wrt Latency vs FF usage vs LUT usage
 # Design Descriptions and Pareto-optimality
-1. 
+1.  
 2. 
 3.
 4.
