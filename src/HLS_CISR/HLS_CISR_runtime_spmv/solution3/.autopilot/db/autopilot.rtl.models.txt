@@ -1,4 +1,0 @@
-HLS_CISR_spmv_accel_fadd_32ns_32ns_32_5_full_dsp_1
-HLS_CISR_spmv_accel_fmul_32ns_32ns_32_4_max_dsp_1
-HLS_CISR_spmv_accel_row_len_slot_arr
-HLS_CISR_spmv_accel
