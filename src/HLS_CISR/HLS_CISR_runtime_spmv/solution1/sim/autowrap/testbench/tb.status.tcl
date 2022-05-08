@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution1/./sim/autowrap/testbench/HLS_CISR_spmv_accel.c_pre.c.tb.c
