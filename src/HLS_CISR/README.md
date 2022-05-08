@@ -24,7 +24,7 @@ d) slot\_row\_id- Each slot works on a current row and needs to know its current
 4. Compute: This is the most basic module. It is simply concerned with doing the appropriate fp multiply and accumulate for the matrix value and the right input vector value looking at the col\_id and row\_id (decoded) and stores into a slot\_res\_arr (for different slots). After this, the  slot\_row\_counter is decremented to signify it has done 1 MAC operation.
 
 5. Output\_write: This module simply deals with writing the slot\_res\_arr into the output\_vec regularly with every iteration. After all iterations output\_vec will have the right result values for the SPMV.
-
+ 
 
 ## Design Solutions
 Given below is a summary table of different solutions explored with the same code, by varying - the number of "HLS unroll" pragmas in different modules, the maximum Tclk allowed, number of slots.
