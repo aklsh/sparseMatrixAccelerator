@@ -1,8 +1,0 @@
-INFO: [HLS 200-10] Running '/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/apcc'
-INFO: [HLS 200-10] For user 'shivaubuntu' on host 'shivaubuntu-Inspiron-7572' (Linux_x86_64 version 5.4.0-109-generic) on Fri May 06 10:41:01 IST 2022
-INFO: [HLS 200-10] On os Ubuntu 20.04.4 LTS
-INFO: [HLS 200-10] In directory '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution2/sim/wrapc'
-clang: warning: argument unused during compilation: '-fno-builtin-isinf'
-clang: warning: argument unused during compilation: '-fno-builtin-isnan'
-INFO: [APCC 202-3] Tmp directory is /tmp/apcc_db_shivaubuntu/149031651813861814226
-INFO: [APCC 202-1] APCC is done.
