@@ -1,7 +1,0 @@
-Running: xsim.dir/HLS_CISR_spmv_accel/xsimk -simmode gui -wdb HLS_CISR_spmv_accel.wdb -simrunnum 0 -socket 60199
-Design successfully loaded
-Design Loading Memory Usage: 29528 KB (Peak: 29536 KB)
-Design Loading CPU Usage: 10 ms
-Simulation completed
-Simulation Memory Usage: 120432 KB (Peak: 168796 KB)
-Simulation CPU Usage: 30 ms
