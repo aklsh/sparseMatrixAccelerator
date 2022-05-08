@@ -42,6 +42,31 @@
 			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution1/.tcls</location>
 		</link>
 		<link>
+			<name>solution2/constraints</name>
+			<type>2</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution2/.tcls</location>
+		</link>
+		<link>
+			<name>solution3/constraints</name>
+			<type>2</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution3/.tcls</location>
+		</link>
+		<link>
+			<name>solution4/constraints</name>
+			<type>2</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution4/.tcls</location>
+		</link>
+		<link>
+			<name>solution5/constraints</name>
+			<type>2</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution5/.tcls</location>
+		</link>
+		<link>
+			<name>solution6/constraints</name>
+			<type>2</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution6/.tcls</location>
+		</link>
+		<link>
 			<name>source/HLS_CISR_spmv_accel.c</name>
 			<type>1</type>
 			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_spmv_accel.c</location>
@@ -65,6 +90,81 @@
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
 			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution1/script.tcl</location>
+		</link>
+		<link>
+			<name>solution2/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution2/solution2.directive</location>
+		</link>
+		<link>
+			<name>solution2/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution2/directives.tcl</location>
+		</link>
+		<link>
+			<name>solution2/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution2/script.tcl</location>
+		</link>
+		<link>
+			<name>solution3/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution3/solution3.directive</location>
+		</link>
+		<link>
+			<name>solution3/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution3/directives.tcl</location>
+		</link>
+		<link>
+			<name>solution3/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution3/script.tcl</location>
+		</link>
+		<link>
+			<name>solution4/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution4/solution4.directive</location>
+		</link>
+		<link>
+			<name>solution4/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution4/directives.tcl</location>
+		</link>
+		<link>
+			<name>solution4/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution4/script.tcl</location>
+		</link>
+		<link>
+			<name>solution5/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution5/solution5.directive</location>
+		</link>
+		<link>
+			<name>solution5/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution5/directives.tcl</location>
+		</link>
+		<link>
+			<name>solution5/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution5/script.tcl</location>
+		</link>
+		<link>
+			<name>solution6/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution6/solution6.directive</location>
+		</link>
+		<link>
+			<name>solution6/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution6/directives.tcl</location>
+		</link>
+		<link>
+			<name>solution6/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution6/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

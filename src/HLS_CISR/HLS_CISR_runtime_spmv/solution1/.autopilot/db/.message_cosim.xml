@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="INFO" prefix="[COSIM 212-47]" key="COSIM_TCL_47_1115" tag="" content="Using XSIM for RTL simulation." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-14]" key="COSIM_TCL_14_1084" tag="" content="Instrumenting C test bench ..." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/apcc&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;shivaubuntu&apos; on host &apos;shivaubuntu-Inspiron-7572&apos; (Linux_x86_64 version 5.4.0-109-generic) on Sat May 07 20:13:37 IST 2022"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1429" tag="" content="On os Ubuntu 20.04.4 LTS"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution1/sim/wrapc&apos;"/>
+	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is /tmp/apcc_db_shivaubuntu/1078201651934617313625"/>
+	<Message severity="INFO" prefix="[APCC 202-1]" key="APCC_1_1611" tag="" content="APCC is done."/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1427" tag="" content="Running &apos;/Xilinx/Vivado/2020.2/bin/unwrapped/lnx64.o/apcc&apos;"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1428" tag="" content="For user &apos;shivaubuntu&apos; on host &apos;shivaubuntu-Inspiron-7572&apos; (Linux_x86_64 version 5.4.0-109-generic) on Sat May 07 20:13:43 IST 2022"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1429" tag="" content="On os Ubuntu 20.04.4 LTS"/>
+	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1430" tag="" content="In directory &apos;/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution1/sim/wrapc&apos;"/>
+	<Message severity="INFO" prefix="[APCC 202-3]" key="APCC_3_1610" tag="" content="Tmp directory is /tmp/apcc_db_shivaubuntu/1078911651934624034750"/>
+	<Message severity="INFO" prefix="[APCC 202-1]" key="APCC_1_1611" tag="" content="APCC is done."/>
+	<Message severity="INFO" prefix="[COSIM 212-302]" key="COSIM_TCL_302_1177" tag="" content="Starting C TB testing ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-333]" key="COSIM_TCL_333_1204" tag="" content="Generating C post check test bench ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-12]" key="COSIM_TCL_12_1082" tag="" content="Generating RTL test bench ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-1]" key="COSIM_TCL_1_1071" tag="" content="*** C/RTL co-simulation file generation completed. ***" resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-323]" key="COSIM_TCL_323_1195" tag="" content="Starting verilog simulation." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-15]" key="COSIM_TCL_15_1085" tag="" content="Starting XSIM ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-316]" key="COSIM_TCL_316_1188" tag="" content="Starting C post checking ..." resolution=""/>
+	<Message severity="INFO" prefix="[COSIM 212-1000]" key="COSIM_TCL_1000_1070" tag="" content="*** C/RTL co-simulation finished: PASS ***" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command cosim_design CPU user time: 89.4 seconds. CPU system time: 3.79 seconds. Elapsed time: 77.36 seconds; current allocated memory: 99.446 MB." resolution=""/>
+</Messages>

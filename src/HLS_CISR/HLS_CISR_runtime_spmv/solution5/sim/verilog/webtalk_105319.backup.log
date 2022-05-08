@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Webtalk v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat May  7 19:57:44 2022
+# Process ID: 105319
+# Current directory: /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution5/sim/verilog
+# Command line: wbtcv -mode batch -source /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution5/sim/verilog/xsim.dir/HLS_CISR_spmv_accel/webtalk/xsim_webtalk.tcl -notrace
+# Log file: /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution5/sim/verilog/webtalk.log
+# Journal file: /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution5/sim/verilog/webtalk.jou
+#-----------------------------------------------------------
+source /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution5/sim/verilog/xsim.dir/HLS_CISR_spmv_accel/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sat May  7 19:57:44 2022...

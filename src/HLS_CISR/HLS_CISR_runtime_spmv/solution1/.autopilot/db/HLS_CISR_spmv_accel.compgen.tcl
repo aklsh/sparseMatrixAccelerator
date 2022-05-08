@@ -182,183 +182,12 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 3
-set name HLS_CISR_spmv_accel_mux_42_32_1_1
-set corename simcore_mux
-set op mux
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set din0_width 32
-set din0_signed 0
-set din1_width 32
-set din1_signed 0
-set din2_width 32
-set din2_signed 0
-set din3_width 32
-set din3_signed 0
-set din4_width 2
-set din4_signed 0
-set dout_width 32
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mux] == "ap_gen_simcore_mux"} {
-eval "ap_gen_simcore_mux { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    din0_width ${din0_width} \
-    din0_signed ${din0_signed} \
-    din1_width ${din1_width} \
-    din1_signed ${din1_signed} \
-    din2_width ${din2_width} \
-    din2_signed ${din2_signed} \
-    din3_width ${din3_width} \
-    din3_signed ${din3_signed} \
-    din4_width ${din4_width} \
-    din4_signed ${din4_signed} \
-    dout_width ${dout_width} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mux, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mux
-set corename Multiplexer
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_pipemux] == "::AESL_LIB_VIRTEX::xil_gen_pipemux"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_pipemux { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    din0_width ${din0_width} \
-    din0_signed ${din0_signed} \
-    din1_width ${din1_width} \
-    din1_signed ${din1_signed} \
-    din2_width ${din2_width} \
-    din2_signed ${din2_signed} \
-    din3_width ${din3_width} \
-    din3_signed ${din3_signed} \
-    din4_width ${din4_width} \
-    din4_signed ${din4_signed} \
-    dout_width ${dout_width} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_pipemux, check your platform lib"
-}
-}
-
-
 # Memory (RAM/ROM)  definition:
-set ID 10
-set hasByteEnable 0
-set MemName HLS_CISR_spmv_accel_slot_row_id
-set CoreName ap_simcore_mem
-set PortList { 0 3 }
-set DataWd 32
-set AddrRange 4
-set AddrWd 2
-set impl_style auto
-set TrueReset 0
-set IsROM 0
-set ROMData { }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.322
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName RAM
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RAM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_RAM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 2 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    style ${impl_style} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_RAM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 11
+set ID 5
 set hasByteEnable 0
 set MemName HLS_CISR_spmv_accel_row_len_slot_arr
 set CoreName ap_simcore_mem
-set PortList { 0 2 }
+set PortList { 2 2 }
 set DataWd 32
 set AddrRange 8
 set AddrWd 3
@@ -447,10 +276,86 @@ if {${::AESL::PGuard_autoexp_gen}} {
 }
 
 set axilite_register_dict [dict create]
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 7 \
+    name inp_vec \
+    reset_level 1 \
+    sync_rst true \
+    dir I \
+    corename inp_vec \
+    op interface \
+    ports { inp_vec_address0 { O 3 vector } inp_vec_ce0 { O 1 bit } inp_vec_q0 { I 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'inp_vec'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 8 \
+    name slot_data_arr \
+    reset_level 1 \
+    sync_rst true \
+    dir I \
+    corename slot_data_arr \
+    op interface \
+    ports { slot_data_arr_address0 { O 2 vector } slot_data_arr_ce0 { O 1 bit } slot_data_arr_q0 { I 64 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'slot_data_arr'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 9 \
+    name slot_arr_row_len \
+    reset_level 1 \
+    sync_rst true \
+    dir I \
+    corename slot_arr_row_len \
+    op interface \
+    ports { slot_arr_row_len_address0 { O 2 vector } slot_arr_row_len_ce0 { O 1 bit } slot_arr_row_len_q0 { I 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'slot_arr_row_len'"
+}
+}
+
+
+# XIL_BRAM:
+if {${::AESL::PGuard_autoexp_gen}} {
+if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
+eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
+    id 10 \
+    name output_vec \
+    reset_level 1 \
+    sync_rst true \
+    dir O \
+    corename output_vec \
+    op interface \
+    ports { output_vec_address0 { O 3 vector } output_vec_ce0 { O 1 bit } output_vec_we0 { O 1 bit } output_vec_d0 { O 32 vector } } \
+} "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'output_vec'"
+}
+}
+
+
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 12 \
+    id 6 \
     name cmd_start \
     type other \
     dir I \
@@ -459,66 +364,6 @@ eval "cg_default_interface_gen_dc { \
     corename dc_cmd_start \
     op interface \
     ports { cmd_start { I 1 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 13 \
-    name inp_vec \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_inp_vec \
-    op interface \
-    ports { inp_vec { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 14 \
-    name slot_data_arr \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_slot_data_arr \
-    op interface \
-    ports { slot_data_arr { I 64 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 15 \
-    name slot_arr_row_len \
-    type other \
-    dir I \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_slot_arr_row_len \
-    op interface \
-    ports { slot_arr_row_len { I 32 vector } } \
-} "
-}
-
-# Direct connection:
-if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 16 \
-    name output_vec \
-    type other \
-    dir IO \
-    reset_level 1 \
-    sync_rst true \
-    corename dc_output_vec \
-    op interface \
-    ports { output_vec_i { I 32 vector } output_vec_o { O 32 vector } output_vec_o_ap_vld { O 1 bit } } \
 } "
 }
 

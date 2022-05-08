@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'HLS_CISR_spmv_accel'" level="0">
-<item name = "Date">Sun Apr 17 00:16:23 2022
+<item name = "Date">Sat May  7 20:12:44 2022
 </item>
 <item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)</item>
 <item name = "Project">HLS_CISR_runtime_spmv</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.600 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.256 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">38, 43, 0.380 us, 0.430 us, 39, 44, none</column>
+<column name="">24, 29, 0.240 us, 0.290 us, 25, 30, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -35,10 +35,7 @@
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- VITIS_LOOP_53_1">4, 4, 1, 1, 1, 4, yes</column>
-<column name="- VITIS_LOOP_70_3">4, 4, 1, 1, 1, 4, yes</column>
-<column name="- VITIS_LOOP_87_4">4, 4, 2, 1, 1, 4, yes</column>
-<column name="- VITIS_LOOP_114_5">20, 20, 6, 5, 1, 4, yes</column>
+<column name="- VITIS_LOOP_26_1">4, 4, 1, 1, 1, 4, yes</column>
 </table>
 </item>
 </section>

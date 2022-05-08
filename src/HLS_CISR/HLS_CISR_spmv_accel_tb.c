@@ -30,7 +30,7 @@ int main()
 	{
 		struct slot_data sparse_data_inp_arr[num_slots];
 		int row_len[num_slots];
-		//Assign input data to accel, 4 slots at once
+		//Assign input data to accel, numslots slots at once
 		for(int slot_id = 0;slot_id < num_slots; slot_id++)
 		{
 			sparse_data_inp_arr[slot_id].data= sparse_mat[index + slot_id].data;
@@ -60,7 +60,7 @@ int main()
 				cmd_start,
 				//Inp vector
 				inp_vec,
-				//Inputs of sparse matrix -size = num_slots = 4
+				//Inputs of sparse matrix -size = num_slots
 				sparse_data_inp_arr,
 				row_len,
 				//Outputs

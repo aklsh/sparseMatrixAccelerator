@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# xsim v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri May  6 11:39:43 2022
+# Process ID: 25872
+# Current directory: /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution3/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/HLS_CISR_spmv_accel/xsim_script.tcl}
+# Log file: /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution3/sim/verilog/xsim.log
+# Journal file: /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution3/sim/verilog/xsim.jou
+#-----------------------------------------------------------
+source xsim.dir/HLS_CISR_spmv_accel/xsim_script.tcl
+source HLS_CISR_spmv_accel.tcl

@@ -5,7 +5,9 @@
     <downStreamTool>
         <DownStreamTool name="vivado"/>
     </downStreamTool>
-    <config/>
+    <config>
+        <config_export format="ip_catalog" output="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_spmv_accel.zip" rtl="verilog"/>
+    </config>
     <UIConfigurations>
         <UIAutosynConf boardInfo="Zybo Z7-20 (xc7z020clg400-1) " hideTrivialOp="true" isBasedOnBoard="true" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
             <Platform>xilinx/zynq/zynq</Platform>
@@ -38,8 +40,8 @@
             </RTLs>
         </UIAutoSimConf>
     </UIConfigurations>
-    <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" rtl="verilog" rtlButton="false" rtlCombo="verilog">
-        <Format formatName="ip_catalog"/>
+    <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" output="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_spmv_accel.zip" rtl="verilog" rtlButton="true" rtlCombo="verilog">
+        <Format formatName="ip_catalog" description="" vendor="" library="" ipname="HLS_CISR_spmv_accel" version="" display_name="" taxonomy=""/>
         <Format formatName="sysgen"/>
         <Format formatName="sysgen_ise"/>
         <Format formatName="syn_dcp"/>
@@ -53,12 +55,6 @@
             <Rtl active="false" name="vhdl"/>
         </SimFlow>
     </Simulation>
-    <name>
-        <value string="solution1"/>
-    </name>
-    <project>
-        <value string="HLS_CISR_runtime_spmv"/>
-    </project>
     <flowTarget value="vivado"/>
     <targetInfo>
         <TargetInfo value="xc7z020:-clg400:-1"/>
@@ -69,7 +65,13 @@
         <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
     </libraryList>
     <clockList>
-        <clock default="false" name="default" period="10"/>
+        <clock name="default" default="false" period="10"/>
     </clockList>
+    <name>
+        <value string="solution1"/>
+    </name>
+    <project>
+        <value string="HLS_CISR_runtime_spmv"/>
+    </project>
 </solution>
 

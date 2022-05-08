@@ -22,10 +22,10 @@ void initialize(bool cmd_start,int* max_row_id,float *slot_res_arr,int *slot_cou
 	      {
 	      	max_row_id[0]=0;
 	      	//Initialize at start
+
 	      	for(int slot_id=0;slot_id<num_slots;slot_id++)
 	      	    {
 
-	 // #pragma HLS unroll factor=4
 	      		  slot_res_arr[slot_id]=0;
 	      		  slot_counter[slot_id]=0;
 	      		  slot_row_counter[slot_id]=0;
@@ -55,7 +55,7 @@ void store_row_len_arr(int *slot_counter,int *slot_arr_row_len,int row_len_slot_
     	if(slot_arr_row_len[slot_id1]!=-1)
     	{
     		//Stores row length assigned to given slot
-    		row_len_slot_arr[slot_id1][slot_row_count%rows_per_slot] = slot_arr_row_len[slot_id1];
+    		row_len_slot_arr[slot_id1][slot_row_count] = slot_arr_row_len[slot_id1];
     		slot_counter[slot_id1]++;
     	}
    }
@@ -68,7 +68,9 @@ void CISR_decoder(int *slot_row_counter,int row_len_slot_arr[num_slots][rows_per
 	  for(int slot_id2=0;slot_id2<num_slots;slot_id2++)
 		          {
 
-		       #pragma HLS unroll factor=4
+		      //#pragma HLS PIPELINE
+
+		      //#pragma HLS unroll factor=4
 		       //Row assignment and CISR row id DECODING
 		       //First see which are new row mappings
 
@@ -85,6 +87,7 @@ void CISR_decoder(int *slot_row_counter,int row_len_slot_arr[num_slots][rows_per
 		       		slot_row_len_id[slot_id2]++;
 		       		//CISR row id decoding
 		       		//Store row id the slot has to work on
+		       		//printf("Slot %d has to work on %d row\n",slot_id2,max_row_id[0]);
 		       		slot_row_id[slot_id2] = max_row_id[0];
 		       		max_row_id[0]++;
 
@@ -105,7 +108,8 @@ void compute(struct  slot_data *slot_data_arr,float *inp_vec,float *slot_res_arr
 		  	int col_index    = slot_data_arr[slot_id3].col_index;
 		  	//#pragma HLS dependence variable=slot_data_arr
 
-		    slot_res_arr[slot_id3] += matrix_val*inp_vec[col_index%8];
+		    slot_res_arr[slot_id3] += matrix_val*inp_vec[col_index];
+		    //printf("slot id %d Multiplying for %d col index: val %f and remaining vals in row %d\n",slot_id3,col_index,matrix_val,slot_row_counter[slot_id3]);
 
 
 		  	slot_row_counter[slot_id3]--;
@@ -120,9 +124,11 @@ void output_write(float *output_vec,float *slot_res_arr,int *slot_row_id)
     for(int slot_id4=0;slot_id4<num_slots;slot_id4++)
 	    {
            #pragma HLS unroll factor=4
+    	   ///#pragma HLS PIPELINE
+
 
 	    	 int row_index = slot_row_id[slot_id4];
-	    	 output_vec[row_index%8] = slot_res_arr[slot_id4];
+	    	 output_vec[row_index] = slot_res_arr[slot_id4];
 	    	 //output_vec[row_index]= res_expected[row_index];
 
 	    }
@@ -148,7 +154,6 @@ void HLS_CISR_spmv_accel(
 
 
 
-//#pragma HLS DATAFLOW
 	//Each slot has an array of row_lengths- ie, the row_length of the rows its supposed to work on
 	    static int row_len_slot_arr[num_slots][rows_per_slot];
 	    //This stores the id pointing to row_len_arr for each slot

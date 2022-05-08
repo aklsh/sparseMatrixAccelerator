@@ -1,131 +1,49 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'shivaubuntu' on host 'shivaubuntu-Inspiron-7572' (Linux_x86_64 version 5.4.0-107-generic) on Sun Apr 17 00:16:16 IST 2022
+INFO: [HLS 200-10] For user 'shivaubuntu' on host 'shivaubuntu-Inspiron-7572' (Linux_x86_64 version 5.4.0-109-generic) on Sun May 08 01:27:41 IST 2022
 INFO: [HLS 200-10] On os Ubuntu 20.04.4 LTS
 INFO: [HLS 200-10] In directory '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR'
-Sourcing Tcl script '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution1/csynth.tcl'
+Sourcing Tcl script '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution6/export.tcl'
 INFO: [HLS 200-1510] Running: open_project HLS_CISR_runtime_spmv 
 INFO: [HLS 200-10] Opening project '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv'.
 INFO: [HLS 200-1510] Running: set_top HLS_CISR_spmv_accel 
 INFO: [HLS 200-1510] Running: add_files HLS_CISR_spmv_accel.c 
 INFO: [HLS 200-10] Adding design file 'HLS_CISR_spmv_accel.c' to the project
-INFO: [HLS 200-1510] Running: add_files -tb HLS_CISR_spmv_accel_tb.c 
+INFO: [HLS 200-1510] Running: add_files -tb HLS_CISR_spmv_accel_tb.c -cflags -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas 
 INFO: [HLS 200-10] Adding test bench file 'HLS_CISR_spmv_accel_tb.c' to the project
-INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
-INFO: [HLS 200-10] Opening solution '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution1'.
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: open_solution solution6 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_runtime_spmv/solution6'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
 INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
-INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 12 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
 INFO: [HLS 200-1510] Running: set_directive_top -name HLS_CISR_spmv_accel HLS_CISR_spmv_accel 
-INFO: [HLS 200-1510] Running: csynth_design 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 92.970 MB.
-INFO: [HLS 200-10] Analyzing design file 'HLS_CISR_spmv_accel.c' ... 
-WARNING: [HLS 207-5534] Assuming false dependence as a "true/false" selection was not specified: HLS_CISR_spmv_accel.c:121:9
-WARNING: [HLS 207-5534] Assuming false dependence as a "true/false" selection was not specified: HLS_CISR_spmv_accel.c:122:9
-WARNING: [HLS 207-5534] Assuming false dependence as a "true/false" selection was not specified: HLS_CISR_spmv_accel.c:123:9
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.51 seconds. CPU system time: 0.2 seconds. Elapsed time: 0.35 seconds; current allocated memory: 94.228 MB.
-INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 4.52 seconds. CPU system time: 0.35 seconds. Elapsed time: 4.48 seconds; current allocated memory: 96.646 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 96.646 MB.
-INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 97.906 MB.
-INFO: [HLS 200-10] Checking synthesizability ...
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 97.166 MB.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_53_1' (HLS_CISR_spmv_accel.c:53) in function 'HLS_CISR_spmv_accel' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_70_3' (HLS_CISR_spmv_accel.c:70) in function 'HLS_CISR_spmv_accel' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_87_4' (HLS_CISR_spmv_accel.c:87) in function 'HLS_CISR_spmv_accel' automatically.
-INFO: [XFORM 203-510] Pipelining loop 'VITIS_LOOP_114_5' (HLS_CISR_spmv_accel.c:114) in function 'HLS_CISR_spmv_accel' automatically.
-INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'VITIS_LOOP_53_1' (HLS_CISR_spmv_accel.c:53) in function 'HLS_CISR_spmv_accel' for pipelining.
-INFO: [HLS 200-489] Unrolling loop 'VITIS_LOOP_60_2' (HLS_CISR_spmv_accel.c:60) in function 'HLS_CISR_spmv_accel' completely with a factor of 2.
-INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_len_id' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'slot_row_counter' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'slot_counter' completely based on array size.
-INFO: [XFORM 203-101] Partitioning array 'slot_row_len_id' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'slot_row_counter' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'slot_counter' in dimension 1 completely.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 117.829 MB.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'output_vec' (HLS_CISR_spmv_accel.c:26).
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'slot_row_id'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'slot_data_arr' (HLS_CISR_spmv_accel.c:22).
-INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_id' (HLS_CISR_spmv_accel.c:58:29)
-INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:62:38)
-INFO: [HLS 200-472] Inferring partial write operation for 'row_len_slot_arr' (HLS_CISR_spmv_accel.c:78:49)
-INFO: [HLS 200-472] Inferring partial write operation for 'slot_row_id' (HLS_CISR_spmv_accel.c:100:29)
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 111.023 MB.
-INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'HLS_CISR_spmv_accel' ...
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'HLS_CISR_spmv_accel' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_53_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_53_1'
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_70_3'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, loop 'VITIS_LOOP_70_3'
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_87_4'.
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, loop 'VITIS_LOOP_87_4'
-INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_114_5'.
-WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_114_5'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between wire write on port 'output_vec' (HLS_CISR_spmv_accel.c:126) and wire read on port 'output_vec' (HLS_CISR_spmv_accel.c:126).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_114_5'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between wire write on port 'output_vec' (HLS_CISR_spmv_accel.c:126) and wire read on port 'output_vec' (HLS_CISR_spmv_accel.c:126).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_114_5'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between wire write on port 'output_vec' (HLS_CISR_spmv_accel.c:126) and wire read on port 'output_vec' (HLS_CISR_spmv_accel.c:126).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-880.html
-WARNING: [HLS 200-880] The II Violation in module 'HLS_CISR_spmv_accel' (loop 'VITIS_LOOP_114_5'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between wire write on port 'output_vec' (HLS_CISR_spmv_accel.c:126) and wire read on port 'output_vec' (HLS_CISR_spmv_accel.c:126).
-Resolution: For help on HLS 200-880 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-880.html
-INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 5, Depth = 6, loop 'VITIS_LOOP_114_5'
-WARNING: [HLS 200-871] Estimated clock period (7.5996ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
-Resolution: For help on HLS 200-871 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-871.html
-WARNING: [HLS 200-1016] The critical path in module 'HLS_CISR_spmv_accel' consists of the following:	'phi' operation ('slot_id2', HLS_CISR_spmv_accel.c:87) with incoming values : ('add_ln87', HLS_CISR_spmv_accel.c:87) [134]  (0 ns)
-	'mux' operation ('tmp_1', HLS_CISR_spmv_accel.c:96) [157]  (1.83 ns)
-	'add' operation ('add_ln97', HLS_CISR_spmv_accel.c:97) [163]  (2.55 ns)
-	'store' operation ('slot_row_len_id_2_write_ln97', HLS_CISR_spmv_accel.c:97) of variable 'add_ln97', HLS_CISR_spmv_accel.c:97 on static variable 'slot_row_len_id_2' [167]  (1.59 ns)
-	blocking operation 1.63 ns on control path)
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog -output /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_spmv_accel.zip 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
 
-Resolution: For help on HLS 200-1016 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1016.html
-INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 111.693 MB.
-INFO: [BIND 205-100] Starting micro-architecture generation ...
-INFO: [BIND 205-101] Performing variable lifetime analysis.
-INFO: [BIND 205-101] Exploring resource sharing.
-INFO: [BIND 205-101] Binding ...
-INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.13 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 112.479 MB.
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'HLS_CISR_spmv_accel' 
-INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/cmd_start' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/inp_vec' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/slot_data_arr' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/slot_arr_row_len' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'HLS_CISR_spmv_accel/output_vec' to 'ap_ovld'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'HLS_CISR_spmv_accel' to 'ap_ctrl_hs'.
-WARNING: [RTGEN 206-101] Register 'max_row_id' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_counter_0' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_counter_1' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_counter_2' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_counter_3' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_row_counter_0' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_row_counter_1' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_row_counter_2' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_row_counter_3' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_row_len_id_0' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_row_len_id_1' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_row_len_id_2' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'slot_row_len_id_3' is power-on initialization.
-INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_5_full_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_4_max_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mux_42_32_1_1': 4 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'HLS_CISR_spmv_accel'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 113.539 MB.
-INFO: [RTMG 210-278] Implementing memory 'HLS_CISR_spmv_accel_slot_row_id_ram (RAM)' using auto RAMs with power-on initialization.
-INFO: [RTMG 210-278] Implementing memory 'HLS_CISR_spmv_accel_row_len_slot_arr_ram (RAM)' using auto RAMs with power-on initialization.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.69 seconds. CPU system time: 0.04 seconds. Elapsed time: 1.73 seconds; current allocated memory: 123.323 MB.
-INFO: [VHDL 208-304] Generating VHDL RTL for HLS_CISR_spmv_accel.
-INFO: [VLOG 209-307] Generating Verilog RTL for HLS_CISR_spmv_accel.
-INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 131.59 MHz
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7.5 seconds. CPU system time: 0.63 seconds. Elapsed time: 7.38 seconds; current allocated memory: 123.500 MB.
-INFO: [HLS 200-112] Total CPU user time: 10.45 seconds. Total CPU system time: 1.14 seconds. Total elapsed time: 9.74 seconds; peak allocated memory: 123.323 MB.
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/Xilinx/Vivado/2020.2/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'HLS_CISR_spmv_accel_ap_fadd_3_full_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'HLS_CISR_spmv_accel_ap_fadd_3_full_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'HLS_CISR_spmv_accel_ap_fadd_3_full_dsp_32'...
+WARNING: [IP_Flow 19-4832] The IP name 'HLS_CISR_spmv_accel_ap_fmul_2_max_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'HLS_CISR_spmv_accel_ap_fmul_2_max_dsp_32'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'HLS_CISR_spmv_accel_ap_fmul_2_max_dsp_32'...
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/Xilinx/Vivado/2020.2/data/ip'.
+INFO: [Common 17-206] Exiting Vivado at Sun May  8 01:28:06 2022...
+INFO: [HLS 200-802] Generated output file HLS_CISR_spmv_accel.zip
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 23.53 seconds. CPU system time: 1.62 seconds. Elapsed time: 26.74 seconds; current allocated memory: 102.157 MB.
