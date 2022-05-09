@@ -16,4 +16,4 @@ If a row is completely empty, even that is encoded and stored- this is unavoidab
 
 
 **References**\
-https://files.zotero.net/eyJleHBpcmVzIjoxNjQ5ODQxNzk2LCJoYXNoIjoiODIzNWY1OGRiNTg2ZWExMDU3MTUyZjM3ZWI5ODJkNzQiLCJjb250ZW50VHlwZSI6ImFwcGxpY2F0aW9uXC9wZGYiLCJjaGFyc2V0IjoiIiwiZmlsZW5hbWUiOiJGb3dlcnMgZXQgYWxfMjAxNF9BIEhpZ2ggTWVtb3J5IEJhbmR3aWR0aCBGUEdBIEFjY2VsZXJhdG9yIGZvciBTcGFyc2UgTWF0cml4LVZlY3RvciBNdWx0aXBsaWNhdGlvbi5wZGYifQ%3D%3D/a1bc780001a937e1344ec3bb5a92dce495344558bb71e8e11b7ac2eeb0d6d785/Fowers%20et%20al_2014_A%20High%20Memory%20Bandwidth%20FPGA%20Accelerator%20for%20Sparse%20Matrix-Vector%20Multiplication.pdf
+J. Fowers, K. Ovtcharov, K. Strauss, E. S. Chung and G. Stitt, "A High Memory Bandwidth FPGA Accelerator for Sparse Matrix-Vector Multiplication," 2014 IEEE 22nd Annual International Symposium on Field-Programmable Custom Computing Machines, 2014, pp. 36-43, doi: 10.1109/FCCM.2014.23.
