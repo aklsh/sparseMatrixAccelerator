@@ -48,7 +48,9 @@ void store_row_len_arr(int *slot_counter,int *slot_arr_row_len,int row_len_slot_
 	//STORING ROW LENGTH ARR INTO ACCEL
     for(int slot_id1=0;slot_id1<num_slots;slot_id1++)
     {
-        #pragma HLS unroll factor=4
+
+		//#pragma HLS PIPELINE
+    	//#pragma HLS unroll factor=4
     	//Counts no. of rows mapped to given slot so far
     	int slot_row_count = slot_counter[slot_id1];
     	//If its a valid row_length
@@ -70,7 +72,7 @@ void CISR_decoder(int *slot_row_counter,int row_len_slot_arr[num_slots][rows_per
 
 		      //#pragma HLS PIPELINE
 
-		      //#pragma HLS unroll factor=4
+		       //#pragma HLS unroll factor=4
 		       //Row assignment and CISR row id DECODING
 		       //First see which are new row mappings
 
@@ -103,7 +105,8 @@ void compute(struct  slot_data *slot_data_arr,float *inp_vec,float *slot_res_arr
 		    {
 		  	//Implement 4 MAC units which does the computation
 		    #pragma HLS unroll factor=4
-
+            //#pragma HLS allocation operation instances=mul limit=4
+			//#pragma HLS allocation operation instances=add limit=4
 		  	float matrix_val = slot_data_arr[slot_id3].data;
 		  	int col_index    = slot_data_arr[slot_id3].col_index;
 		  	//#pragma HLS dependence variable=slot_data_arr
@@ -124,7 +127,7 @@ void output_write(float *output_vec,float *slot_res_arr,int *slot_row_id)
     for(int slot_id4=0;slot_id4<num_slots;slot_id4++)
 	    {
            #pragma HLS unroll factor=4
-    	   ///#pragma HLS PIPELINE
+    	   //#pragma HLS PIPELINE
 
 
 	    	 int row_index = slot_row_id[slot_id4];

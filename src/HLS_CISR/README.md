@@ -28,21 +28,25 @@ d) slot\_row\_id- Each slot works on a current row and needs to know its current
 
 ## Design Solutions
 Given below is a summary table of different solutions explored with the same code, by varying - the number of "HLS unroll" pragmas in different modules, the maximum Tclk allowed, number of slots.
-| Solution no. |              |     |      |      |                                                                   |           |                  |                |
-|--------------|--------------|-----|------|------|-------------------------------------------------------------------|-----------|------------------|----------------|
-|              | Latency (ns) | DSP | FF   | LUT  | Description ( Initialize module- no unroll)                       | Num slots | Target Tclk (ns) | Verified cosim |
-| 1            | 290          | 5   | 1713 | 2355 | All funcs hls unroll                                              | 4         | 10               | yes            |
-| 2            | 340          | 5   | 1367 | 1907 | Only compute and output\_write have unroll                         | 4         | 10               |                |
-| 6            | 360          | 5   | 1290 | 2010 | Compute, output\_write and store\_row\_len array modules have unroll | 4         | 12               | yes            |
-| 3            | 230          | 5   | 1125 | 1634 | All funcs hls unroll                                              | 2         | 10               |                |
-| 4            | 270          | 5   | 936  | 1627 | Only compute and output\_write have unroll                         | 2         | 10               |                |
-| 5            | 288          | 5   | 898  | 1608 | Compute, output\_write and store\_row\_len array modules have unroll | 2         | 12               | yes            |
+| Solution no. |              |     |      |      |                                                                                                              |           |                  |                |
+|--------------|--------------|-----|------|------|--------------------------------------------------------------------------------------------------------------|-----------|------------------|----------------|
+|              | Latency (ns) | DSP | FF   | LUT  | Description ( Initialize module- no unroll)                                                                  | Num slots | Target Tclk (ns) | Verified cosim |
+| 1            | 310          | 5   | 1323 | 2010 | Store row_len_arr,compute,output_write- unroll and CISR decode- pipeline                                     | 4         | 10               | yes            |
+| 2            | 330          | 5   | 1330 | 1889 | Only compute and output_write have unroll pragmas(Store row_len_arr, CISR decode is pipelined automatically) | 4         | 10               | yes            |
+| 6            | 290          | 5   | 1713 | 2355 | Store row_len_arr,compute,output_write  and CISR decode-- unroll                                             | 4         | 10               | yes            |
+| 3            | 230          | 5   | 1125 | 1634 | All funcs hls unroll                                                                                         | 2         | 10               |                |
+| 4            | 270          | 5   | 936  | 1627 | Only compute and output_write have unroll                                                                    | 2         | 10               |                |
+| 5            | 288          | 5   | 898  | 1608 | Compute, output_write and store_row_len array modules have unroll                                            | 2         | 12               | yes            |
 Note- DSP slices in all cases are- 5 = ( 2 fadd 3 fmul)
 Solutions 3,4,5 and 1,2, 6 are separately pareto optimal wrt Latency vs FF usage vs LUT usage
 # Design Descriptions and Pareto-optimality
-1.  
-2. 
-3.
+We vary the presence or absence of pragmas like- HLS unroll and HLS PIPELINE in the four main functions/modules and see how our solution's performance and resource usage estimates vary. 
+Note- It is observed that a loop / function with no pragma is automatically pipelined with some initiation interval.
+### Num_slots 4
+1. Solution 1: We add the HLS unroll pragma to Store\_len\_arr , compute and output\_write modules and the PIPELINE pragma to CISR decode function. We can straight away notice that in the compute and output\_write funcitons there are no condiional executions inside the loop. So, different iterations of the loop in these cases get executed as much as possible in parallel subject to resource constraints (there is only 1 adder and 1 multiplier in the compute module and hardware for writing to output vector are pipelined with II = 1 cycle). The CISR decode function has an if statement in it- so it was a good idea to use HLS pipeline instead of HLS unroll to blindly produce more hardware. It made the loop II=1 cycle with a lot of writes and reads done in parallel except for updating 'row\_len_slot\_arr' which was done sequentiall.  Lastly, in the   Store\_len\_arr module, adding an HLS unroll was a bad idea with an if condition in the loop since, from observation it had produced more hardware each of which did only one iteration one after the other- hence, reducing the Hardware utilization as well. Since we unrolled so many loops, we reduced the cycles reserved as "checkpoints" in between the loops (signified by "br\_<line\_number>" in HLS) and total latency also reduces. However, the amount of LUTs increase a lot since we have tried to unroll a lot of modules.
+2. Solution 2: Here, we added the unroll only in compute and output\_write modules as needed because it didnt have any if condition in it. The other modules were pipelined. This was actually a very good decision because in cases where there are if conditions in loops, it is better to use HLS PIPELINE since it tries to do a lot of processes in parallel and also try to increase the Hardware utilization efficiency. Ofcourse, here with more loops not unrolled, the "checkpoints" in between the loops (signified by "br\_<line\_number>" in HLS) increase and hence total latency also increases. However, this is probably the best solution in terms of H.U.E and relative gains in latency.
+3. Solution 6: Here, we blindly add unroll everywhere which is ofcourse the worst decision. Store\_len\_arr and CISR decode modules suffer due to this. They not only have multiple hardware units working only at different clock cycles (for the different iterations) and hence increasing LUT usage drastically, they also have the CISR decode operations and Store\_len\_arr operations intermixed and hence in order to do the computation right, its possible that a lot of intermediate data has to be stored in extra flip flops ( and used after many cycles), so we also see an increase in flip flop usage. However, since we have unrolled all 4 modules, the number of loop "checkpoints" go down and we see the latency coming down. 
+### Num_slots 2
 4.
 5.
 6.
