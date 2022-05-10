@@ -1,0 +1,56 @@
+INFO: Applying HLS Y2K22 patch v1.2 for IP revision
+INFO: [HLS 200-10] Running '/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'shivaubuntu' on host 'shivaubuntu-Inspiron-7572' (Linux_x86_64 version 5.4.0-109-generic) on Tue May 10 20:08:50 IST 2022
+INFO: [HLS 200-10] On os Ubuntu 20.04.4 LTS
+INFO: [HLS 200-10] In directory '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2'
+Sourcing Tcl script '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: open_project HLS_CISR_Runtime_accel_v2 
+INFO: [HLS 200-10] Opening project '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2'.
+INFO: [HLS 200-1510] Running: set_top HLS_accel_v2 
+INFO: [HLS 200-1510] Running: add_files HLS_accel_v2.cpp 
+INFO: [HLS 200-10] Adding design file 'HLS_accel_v2.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb HLS_accel_tb_v2.cpp 
+INFO: [HLS 200-10] Adding test bench file 'HLS_accel_tb_v2.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../HLS_accel_tb_v2.cpp in debug mode
+   Compiling ../../../../HLS_accel_v2.cpp in debug mode
+   Generating csim.exe
+WARNING: Hls::stream 'hls::stream<int, 0>.4' contains leftover data, which may result in RTL simulation hanging.
+WARNING: Hls::stream 'hls::stream<int, 0>.3' contains leftover data, which may result in RTL simulation hanging.
+WARNING: Hls::stream 'hls::stream<int, 0>.2' contains leftover data, which may result in RTL simulation hanging.
+WARNING: Hls::stream 'hls::stream<int, 0>.1' contains leftover data, which may result in RTL simulation hanging.
+out_val[0] =  15.000000
+out_val[1] =  -11.700000
+out_val[2] =  55.599998
+out_val[3] =  23.800001
+out_val[4] =  0.000000
+out_val[5] =  0.000000
+out_val[6] =  0.000000
+out_val[7] =  0.000000
+The maximum depth reached by any of the 12 hls::stream() instances in the design is 3
+@E Simulation failed: Function 'main' returns nonzero value '1'.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1.45 seconds. CPU system time: 0.24 seconds. Elapsed time: 0.97 seconds; current allocated memory: 93.049 MB.
+4
+    while executing
+"source /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/csim.tcl"
+    invoked from within
+"hls::main /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/csim.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"
