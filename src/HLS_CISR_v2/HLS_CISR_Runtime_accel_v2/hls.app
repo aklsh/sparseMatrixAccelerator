@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" top="HLS_accel_v2" name="HLS_CISR_Runtime_accel_v2">
+<project xmlns="com.autoesl.autopilot.project" name="HLS_CISR_Runtime_accel_v2" top="HLS_accel_v2">
     <includePaths/>
     <libraryPaths/>
     <Simulation>

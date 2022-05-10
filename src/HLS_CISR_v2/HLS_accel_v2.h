@@ -2,7 +2,7 @@
 #define __HLS_ACCEL_V2_H_
 
 #include <stdio.h>
-void HLS_CISR_spmv_accel_v2(
+void HLS_accel_v2(
 
 		//Inp vector
 		float  inp_vec[8],

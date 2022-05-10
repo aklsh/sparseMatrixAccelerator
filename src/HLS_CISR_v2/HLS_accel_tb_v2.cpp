@@ -24,7 +24,7 @@ int main()
 	//}
 
 	//printf("%f\n",sparse_mat[0].data);
-	HLS_CISR_spmv_accel_v2(
+	HLS_accel_v2(
 					//Inp vector
 					inp_vec,
 					//Full sparse matrix

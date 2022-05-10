@@ -11,7 +11,9 @@ using namespace hls;
 #define num_non_zero 16
 //#include <math.h>
 //#include <stdio.h>
-#include <stdbool.h>
+//#include <iostream>
+//using namespace std;
+//#include <stdbool.h>
 /*struct slot_data
 //#include "encoded_data.h"
 {
@@ -29,12 +31,26 @@ void CISR_decoder(int *slot_row_counter,
 		int* max_row_id)
 {
 
-	  for(int slot_id2=0;slot_id2<num_slots;slot_id2++)
+
+	int tmp_slot_row_count[num_slots];
+	for(int slot_id2=0;slot_id2<num_slots;slot_id2++)
+   {
+
+		 //Read from FIFO
+		row_len_slot_arr[slot_id2].read(tmp_slot_row_count[slot_id2]);
+
+
+			          }
+	for(int slot_id2=0;slot_id2<num_slots;slot_id2++)
 		          {
 
-		      //#pragma HLS PIPELINE
 
-		       //#pragma HLS unroll factor=4
+		    //Read for row_len_arr all slots from fifo
+
+
+
+		  	  //#pragma HLS PIPELINE
+		      // #pragma HLS unroll factor=4
 		       //Row assignment and CISR row id DECODING
 		       //First see which are new row mappings
 
@@ -47,12 +63,13 @@ void CISR_decoder(int *slot_row_counter,
 		       		slot_res_arr[slot_id2] = 0;
 
 		       		//Assign new row len
-		       		//Read from FIFO
-		       		row_len_slot_arr[slot_id2].read(slot_row_counter[slot_id2]);
+		       		//cout<<"Reading row len arr for slot"<<slot_id2<<":"<<slot_row_counter[slot_id2];
+		       		slot_row_counter[slot_id2] = tmp_slot_row_count[slot_id2];
 
 		       		//CISR row id decoding
 		       		//Store row id the slot has to work on
-		       		//printf("Slot %d has to work on %d row\n",slot_id2,max_row_id[0]);
+		       		//cout<<"Slot"<<slot_id2<<"has to work on" <<max_row_id[0] <<"row\n";
+
 		       		slot_row_id[slot_id2] = max_row_id[0];
 		       		max_row_id[0]++;
 
@@ -105,9 +122,10 @@ void output_write(float *output_vec,float *slot_res_arr,int *slot_row_id)
 
 }
 
-void initialize(int *max_row_id,float *slot_res_arr,int *slot_row_counter,int *slot_row_id)
+void initialize(int *max_row_id,float *slot_res_arr,int *slot_row_counter,int *slot_row_id, int* row_count)
 {
 	max_row_id[0]=0;
+	row_count[0] = 0;
       	//Initialize at start
 
       	for(int slot_id=0;slot_id<num_slots;slot_id++)
@@ -138,6 +156,7 @@ void fifo_push(
 	//Assign input data to accel, numslots slots at once
 	for(int slot_id = 0;slot_id < num_slots; slot_id++)
 	{
+
 		float slot_data_val= sparse_mat[index + slot_id].data;
 		int slot_col_index = sparse_mat[index + slot_id].col_index;
 
@@ -146,6 +165,7 @@ void fifo_push(
 		slot_data_arr_col_index[slot_id].write(slot_col_index);
 
 
+		//cout<<"Rowcount "<<row_count[0] <<"slot"<<slot_id;
 	    int row_len;
 		//When to stop reading row_len
 		if(row_count[0]+slot_id<N)
@@ -187,6 +207,8 @@ void full_compute(
 )
 {
 
+
+
 	//Check for new row assignments and take next val in row_len_arr
 	CISR_decoder(slot_row_counter,
 				row_len_slot_arr,
@@ -217,7 +239,7 @@ void full_compute(
 
 
 //TODO- How does HLS implement this interface using AXI?
-void HLS_CISR_spmv_accel_v2(
+void HLS_accel_v2(
 
 		//Inp vector
 		float  inp_vec[8],
@@ -267,7 +289,7 @@ void HLS_CISR_spmv_accel_v2(
 
 
 	//First initialize- done once
-    initialize(max_row_id,slot_res_arr,slot_row_counter,slot_row_id);
+    initialize(max_row_id,slot_res_arr,slot_row_counter,slot_row_id,row_count);
 
 
     //Now, go through the given input matrix and feed in slot data to its fifos and row_len_data to the row_len fifos
@@ -278,7 +300,7 @@ void HLS_CISR_spmv_accel_v2(
     //Compute- Do the computation based on given slot data and row len data
 	for(int index=0;index<num_non_zero;index+=num_slots)
 	{
-		//#pragma DATAFLOW
+		#pragma HLS DATAFLOW
 
 
 		//First, push slot data and row length data to fifos.
@@ -306,17 +328,7 @@ void HLS_CISR_spmv_accel_v2(
 
 	}
 
-		/*HLS_CISR_spmv_accel_v2(
-				//Cmd_start- signal implying start of computation
-				cmd_start,
-				//Inp vector
-				inp_vec,
-				//Inputs of sparse matrix -size = num_slots
-				sparse_data_inp_arr,
-				row_len,
-				//Outputs
-				out_vec
-		);*/
+
 
 		//for(int i1=0;i1<8;i1++)
 			//			{
