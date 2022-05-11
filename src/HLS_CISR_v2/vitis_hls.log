@@ -1,6 +1,6 @@
 INFO: Applying HLS Y2K22 patch v1.2 for IP revision
 INFO: [HLS 200-10] Running '/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/lnx64.o/vitis_hls'
-INFO: [HLS 200-10] For user 'shivaubuntu' on host 'shivaubuntu-Inspiron-7572' (Linux_x86_64 version 5.4.0-109-generic) on Tue May 10 22:50:02 IST 2022
+INFO: [HLS 200-10] For user 'shivaubuntu' on host 'shivaubuntu-Inspiron-7572' (Linux_x86_64 version 5.4.0-109-generic) on Wed May 11 20:47:54 IST 2022
 INFO: [HLS 200-10] On os Ubuntu 20.04.4 LTS
 INFO: [HLS 200-10] In directory '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2'
 Sourcing Tcl script '/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/cosim.tcl'
@@ -19,6 +19,7 @@ INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: set_directive_top -name HLS_accel_v2 HLS_accel_v2 
 INFO: [HLS 200-1510] Running: cosim_design 
 INFO: [COSIM 212-47] Using XSIM for RTL simulation.
 INFO: [COSIM 212-14] Instrumenting C test bench ...
@@ -56,7 +57,7 @@ INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'HLS_accel_v2_ap_f
 WARNING: [IP_Flow 19-4832] The IP name 'HLS_accel_v2_ap_fmul_2_max_dsp_32' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
 INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'HLS_accel_v2_ap_fmul_2_max_dsp_32'...
 INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'HLS_accel_v2_ap_fmul_2_max_dsp_32'...
-INFO: [Common 17-206] Exiting Vivado at Tue May 10 22:50:31 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed May 11 20:48:25 2022...
 INFO: [COSIM 212-1] *** C/RTL co-simulation file generation completed. ***
 INFO: [COSIM 212-323] Starting verilog simulation. 
 INFO: [COSIM 212-15] Starting XSIM ...
@@ -74,13 +75,14 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project
 INFO: [VRFC 10-311] analyzing module glbl
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/AESL_deadlock_detection_unit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AESL_deadlock_detect_unit
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_dataflow_in_loop_VITIS_LOOP_301_1.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HLS_accel_v2_dataflow_in_loop_VITIS_LOOP_301_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_fmul_32ns_32ns_32_4_max_dsp_1.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module HLS_accel_v2_fmul_32ns_32ns_32_4_max_dsp_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_fifo_push_sparse_mat_col_index.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module HLS_accel_v2_fifo_push_sparse_mat_col_index_rom
 INFO: [VRFC 10-311] analyzing module HLS_accel_v2_fifo_push_sparse_mat_col_index
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_full_compute_slot_res_arr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HLS_accel_v2_full_compute_slot_res_arr_ram
+INFO: [VRFC 10-311] analyzing module HLS_accel_v2_full_compute_slot_res_arr
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2.autotb.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module apatb_HLS_accel_v2_top
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_fifo_push_row_len_arr.v" into library xil_defaultlib
@@ -97,9 +99,6 @@ INFO: [VRFC 10-311] analyzing module HLS_accel_v2_fifo_w32_d2_S_shiftReg
 INFO: [VRFC 10-311] analyzing module HLS_accel_v2_fifo_w32_d2_S
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_fifo_push.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module HLS_accel_v2_fifo_push
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_fifo_w32_d4_S.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HLS_accel_v2_fifo_w32_d4_S_shiftReg
-INFO: [VRFC 10-311] analyzing module HLS_accel_v2_fifo_w32_d4_S
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_fifo_push_sparse_mat_data.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module HLS_accel_v2_fifo_push_sparse_mat_data_rom
 INFO: [VRFC 10-311] analyzing module HLS_accel_v2_fifo_push_sparse_mat_data
@@ -107,14 +106,10 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project
 INFO: [VRFC 10-311] analyzing module AESL_automem_inp_vec
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/AESL_automem_output_vec.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AESL_automem_output_vec
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_full_compute_tmp_slot_row_count.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HLS_accel_v2_full_compute_tmp_slot_row_count_ram
-INFO: [VRFC 10-311] analyzing module HLS_accel_v2_full_compute_tmp_slot_row_count
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module HLS_accel_v2
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_slot_row_id.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module HLS_accel_v2_slot_row_id_ram
-INFO: [VRFC 10-311] analyzing module HLS_accel_v2_slot_row_id
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2_dataflow_in_loop_VITIS_LOOP_358_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module HLS_accel_v2_dataflow_in_loop_VITIS_LOOP_358_1
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/AESL_deadlock_detector.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module AESL_deadlock_detector
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/dataflow_monitor.sv" into library xil_defaultlib
@@ -162,10 +157,6 @@ Compiling package ieee.vital_timing
 Compiling package ieee.vital_primitives
 Compiling package unisim.vpkg
 Compiling package xil_defaultlib.$unit_dataflow_monitor_sv
-Compiling module xil_defaultlib.HLS_accel_v2_full_compute_tmp_sl...
-Compiling module xil_defaultlib.HLS_accel_v2_full_compute_tmp_sl...
-Compiling module xil_defaultlib.HLS_accel_v2_slot_row_id_ram
-Compiling module xil_defaultlib.HLS_accel_v2_slot_row_id(DataWid...
 Compiling module xil_defaultlib.HLS_accel_v2_fifo_push_sparse_ma...
 Compiling module xil_defaultlib.HLS_accel_v2_fifo_push_sparse_ma...
 Compiling module xil_defaultlib.HLS_accel_v2_fifo_push_sparse_ma...
@@ -173,6 +164,8 @@ Compiling module xil_defaultlib.HLS_accel_v2_fifo_push_sparse_ma...
 Compiling module xil_defaultlib.HLS_accel_v2_fifo_push_row_len_a...
 Compiling module xil_defaultlib.HLS_accel_v2_fifo_push_row_len_a...
 Compiling module xil_defaultlib.HLS_accel_v2_fifo_push
+Compiling module xil_defaultlib.HLS_accel_v2_full_compute_slot_r...
+Compiling module xil_defaultlib.HLS_accel_v2_full_compute_slot_r...
 Compiling architecture muxcy_v of entity unisim.MUXCY [muxcy_default]
 Compiling architecture synth of entity xbip_pipe_v3_0_6.xbip_pipe_v3_0_6_viv [\xbip_pipe_v3_0_6_viv(c_has_ce=1...]
 Compiling architecture rtl of entity floating_point_v7_1_11.delay [\delay(width=7,length=0)\]
@@ -308,8 +301,6 @@ Compiling module xil_defaultlib.HLS_accel_v2_fmul_32ns_32ns_32_4...
 Compiling module xil_defaultlib.HLS_accel_v2_full_compute
 Compiling module xil_defaultlib.HLS_accel_v2_fifo_w32_d2_S_shift...
 Compiling module xil_defaultlib.HLS_accel_v2_fifo_w32_d2_S
-Compiling module xil_defaultlib.HLS_accel_v2_fifo_w32_d4_S_shift...
-Compiling module xil_defaultlib.HLS_accel_v2_fifo_w32_d4_S
 Compiling module xil_defaultlib.HLS_accel_v2_dataflow_in_loop_VI...
 Compiling module xil_defaultlib.HLS_accel_v2
 Compiling module xil_defaultlib.AESL_automem_inp_vec
@@ -332,7 +323,7 @@ Built simulation snapshot HLS_accel_v2
     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
 source /home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/xsim.dir/HLS_accel_v2/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-206] Exiting Webtalk at Tue May 10 22:50:50 2022...
+INFO: [Common 17-206] Exiting Webtalk at Wed May 11 20:48:44 2022...
 
 ****** xsim v2020.2 (64-bit)
   **** SW Build 3064766 on Wed Nov 18 09:12:47 MST 2020
@@ -352,11 +343,43 @@ source HLS_accel_v2.tcl
 // RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
 ////////////////////////////////////////////////////////////////////////////////////
 // RTL Simulation : 0 / 1 [0.00%] @ "125000"
-// RTL Simulation : 1 / 1 [100.00%] @ "3895000"
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 245 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U16/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 245 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U17/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 265 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U16/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 265 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U17/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 365 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U16/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 365 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U17/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 385 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U16/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 385 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U17/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 485 ns  Iteration: 11  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U17/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 485 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U16/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 505 ns  Iteration: 11  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U17/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 505 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U16/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 605 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U16/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 605 ns  Iteration: 12  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U17/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 625 ns  Iteration: 11  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U16/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+Warning: OPMODE Input Warning : The OPMODE 0110X0X with CARRYINSEL  000 to DSP48E1 instance is invalid.
+Time: 625 ns  Iteration: 11  Process: /apatb_HLS_accel_v2_top/AESL_inst_HLS_accel_v2/dataflow_in_loop_VITIS_LOOP_358_1_U0/full_compute_U0/fadd_32ns_32ns_32_5_full_dsp_1_U17/HLS_accel_v2_ap_fadd_3_full_dsp_32_u/inst/i_synth/addsub_op/ADDSUB/dsp/OP/dsp48e1_body/ALIGN_ADD/DSP2/i_no_versal_es1_workaround/DSP/prcs_opmode_drc  File: /Xilinx/Vivado/2020.2/data/vhdl/src/unisims/primitive/DSP48E1.vhd
+// RTL Simulation : 1 / 1 [100.00%] @ "685000"
 ////////////////////////////////////////////////////////////////////////////////////
-$finish called at time : 3935 ns : File "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2.autotb.v" Line 269
+$finish called at time : 725 ns : File "/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR_v2/HLS_CISR_Runtime_accel_v2/solution1/sim/verilog/HLS_accel_v2.autotb.v" Line 298
 ## quit
-INFO: [Common 17-206] Exiting xsim at Tue May 10 22:51:02 2022...
+INFO: [Common 17-206] Exiting xsim at Wed May 11 20:48:57 2022...
 INFO: [COSIM 212-316] Starting C post checking ...
 out_val[0] =  0.300000
 out_val[1] =  -32.500000
@@ -368,4 +391,4 @@ out_val[6] =  55.599998
 out_val[7] =  17.600000
 INFO: [COSIM 212-1000] *** C/RTL co-simulation finished: PASS ***
 INFO: [COSIM 212-211] II is measurable only when transaction number is greater than 1 in RTL simulation. Otherwise, they will be marked as all NA. If user wants to calculate them, please make sure there are at least 2 transactions in RTL simulation.
-INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 68.84 seconds. CPU system time: 3.16 seconds. Elapsed time: 58.5 seconds; current allocated memory: 99.329 MB.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 67.33 seconds. CPU system time: 4.03 seconds. Elapsed time: 60.94 seconds; current allocated memory: 99.557 MB.
