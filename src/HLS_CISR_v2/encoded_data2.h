@@ -1,4 +1,8 @@
-struct slot_data
+#ifndef ENCODED_DATA2_H_
+#define ENCODED_DATA2_H_
+
+//For num slots= 2
+/*struct slot_data
 {
   float data;
   int col_index;
@@ -18,7 +22,7 @@ const struct slot_data sparse_mat[] = {
 [5].data = 100.199997,
 [5].col_index = 5,
 [6].data = 1.2,
-[6].col_index =5,
+[6].col_index = 5,
 [7].data = 12.6,
 [7].col_index = 2,
 [8].data = 5.400000,
@@ -32,13 +36,19 @@ const struct slot_data sparse_mat[] = {
 [12].data = 9.300000,
 [12].col_index =7,
 [13].data = 55.6,
-[13].col_index =1,
+[13].col_index = 1,
 [14].data = 17.600000,
-[14].col_index =6,
+[14].col_index = 6,
 [15].data = 1.2,
 [15].col_index =5
-};
-const int row_len_arr[] = {2,1,3,2,2,3,1,2};
+};*/
+
+float data_val_arr[] = {0.20000,-32.5,0.3,25.20001,0.8,100.199997,1.2,12.6,5.4000,1.5,5.4,6.7,9.3,55.6,17.6,1.2};
+int col_index_arr[] ={0,3,3,4,1,5,5,2,7,6,3,7,7,1,6,5};
+
+int row_len_arr[] = {2,1,3,2,2,3,1,2};
 
 //row_len_arr[0] = 2;
 
+
+#endif

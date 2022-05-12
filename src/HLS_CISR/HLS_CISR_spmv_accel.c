@@ -50,7 +50,7 @@ void store_row_len_arr(int *slot_counter,int *slot_arr_row_len,int row_len_slot_
     {
 
 		//#pragma HLS PIPELINE
-    	//#pragma HLS unroll factor=4
+		//#pragma HLS unroll factor=4
     	//Counts no. of rows mapped to given slot so far
     	int slot_row_count = slot_counter[slot_id1];
     	//If its a valid row_length

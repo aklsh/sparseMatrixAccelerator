@@ -1,9 +1,9 @@
 #ifndef ENCODED_DATA_H_
 #define ENCODED_DATA_H_
 
+//for num slots = 4
 
-
-struct slot_data
+/*struct slot_data
 {
   float data;
   int col_index;
@@ -33,9 +33,11 @@ slot_data sparse_mat[]= {
 		{},
 
 
-};
+};*/
+
+float data_val_arr[] = {0.20000,-32.5,25.2,0.8,0.3,12.6,100.199997,1.2,5.4,1.5,55.5999,5.4,9.3,6.7,1.2,17.6};
+int col_index_arr[] ={0,3,4,1,3,2,5,5,3,6,1,7,7,7,5,6};
 int row_len_arr[] = {2,1,2,3,2,3,2,1};
 
-//row_len_arr[0] = 2;
 
 #endif

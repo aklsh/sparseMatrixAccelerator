@@ -1,4 +1,4 @@
-#define num_slots 4
+#define num_slots 1
 #define N 8
 #define num_non_zero 16
 //#include "encoded_data.h"
@@ -6,6 +6,7 @@
 #include<math.h>
 #include<stdbool.h>
 #include "HLS_accel_v2.h"
+#include "encoded_data3.h"
 //RUNS ON HOST
 int main()
 {
@@ -28,9 +29,11 @@ int main()
 					//Inp vector
 					inp_vec,
 					//Full sparse matrix
-				//	sparse_mat,
+				 	//sparse_mat,
+					data_val_arr,
+					col_index_arr,
 					//Full row len array
-				//	row_len_arr,
+			     	row_len_arr,
 					//Outputs
 					out_vec
 			);

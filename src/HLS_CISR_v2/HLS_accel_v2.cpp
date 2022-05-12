@@ -2,12 +2,12 @@
 #include "hls_stream.h"
 using namespace hls;
 //NOTE- **HAVE TO INCLUDE ENCODED DATA IN DUT FILE (NOT IN TB)**
-#include "encoded_data.h"
-#define num_slots 4
-#define FIFO_DEPTH 2
+//#include "encoded_data.h"
+#define num_slots 1
+#define FIFO_DEPTH 4
 #define N 8 //Number of rows in sparse matrix
 //rows_per_slot = (int)math.ceil((float)N/num_slots);
-#define rows_per_slot  2
+#define rows_per_slot  8
 #define num_non_zero 16
 //#include <math.h>
 //#include <stdio.h>
@@ -15,12 +15,10 @@ using namespace hls;
 //using namespace std;
 //#include <stdbool.h>
 /*struct slot_data
-//#include "encoded_data.h"
 {
   float data;
   int col_index;
 };*/
-
 float res_expected []={0.3,-32.5,0,6.2,20.8,14.7,55.6,17.6};
 
 
@@ -36,12 +34,13 @@ void CISR_decoder(int *slot_row_counter,
 	for(int slot_id2=0;slot_id2<num_slots;slot_id2++)
    {
 
-		//#pragma HLS unroll factor=4
-		 //Read from FIFO
-		row_len_slot_arr[slot_id2].read(tmp_slot_row_count[slot_id2]);
-
-
-			          }
+		//#pragma HLS unroll factor=1
+		 //Read from FIFO ONLY WHEN SLOT IS DONE WITH CURRENT ROW
+		if(slot_row_counter[slot_id2]==0)
+		{
+			row_len_slot_arr[slot_id2].read(tmp_slot_row_count[slot_id2]);
+		}
+    }
 	for(int slot_id2=0;slot_id2<num_slots;slot_id2++)
 		          {
 
@@ -50,26 +49,28 @@ void CISR_decoder(int *slot_row_counter,
 
 
 
-		  	  //#pragma HLS PIPELINE
-		       // #pragma HLS unroll factor=4
+		  	   #pragma HLS PIPELINE
+		       //#pragma HLS unroll factor=1
 		       //Row assignment and CISR row id DECODING
 		       //First see which are new row mappings
 
 		       	//New Row assignment
 		       	//Can parallelize the row id decoding part
 		       	//If some slot is done with a row
+				//cout<<"slot_row_counter "<<slot_row_counter[slot_id2]<<" Slot "<<slot_id2<<"\n";
+
 		       	if(slot_row_counter[slot_id2]==0)
 		       	{
 
 		       		slot_res_arr[slot_id2] = 0;
 
 		       		//Assign new row len
-		       		//cout<<"Reading row len arr for slot"<<slot_id2<<":"<<slot_row_counter[slot_id2];
+		       		//cout<<"Reading row len arr for slot"<<slot_id2<<":"<<tmp_slot_row_count[slot_id2];
 		       		slot_row_counter[slot_id2] = tmp_slot_row_count[slot_id2];
 
 		       		//CISR row id decoding
 		       		//Store row id the slot has to work on
-		       		//cout<<"Slot"<<slot_id2<<"has to work on" <<max_row_id[0] <<"row\n";
+		       		//cout<<"Slot "<<slot_id2<<" has to work on " <<max_row_id[0] <<" row\n";
 
 		       		slot_row_id[slot_id2] = max_row_id[0];
 		       		max_row_id[0]++;
@@ -89,7 +90,7 @@ void compute( stream<float, FIFO_DEPTH> slot_data_arr_value[num_slots],
 	 for(int slot_id3=0;slot_id3<num_slots;slot_id3++)
 		    {
 
-		 	//#pragma HLS unroll factor=4
+		 	#pragma HLS unroll factor=1
             //#pragma HLS allocation operation instances=mul limit=4
 			//#pragma HLS allocation operation instances=add limit=4
 		  	float matrix_val;
@@ -99,8 +100,8 @@ void compute( stream<float, FIFO_DEPTH> slot_data_arr_value[num_slots],
 		  	//#pragma HLS dependence variable=slot_data_arr
 
 		    slot_res_arr[slot_id3] += matrix_val*inp_vec[col_index];
-		    //printf("slot id %d Multiplying for %d col index: val %f and remaining vals in row %d\n",slot_id3,col_index,matrix_val,slot_row_counter[slot_id3]);
-		  	slot_row_counter[slot_id3]--;
+		    //cout<<"slot_id "<<slot_id3<<"Multiplying for "<<col_index<<"col index: val "<<matrix_val<<" and remaining vals in row "<<slot_row_counter[slot_id3]<<"\n";
+		    slot_row_counter[slot_id3]--;
 
 
 
@@ -111,7 +112,7 @@ void output_write(float *output_vec,float *slot_res_arr,int *slot_row_id)
 {
     for(int slot_id4=0;slot_id4<num_slots;slot_id4++)
 	    {
-            //#pragma HLS unroll factor=4
+         // #pragma HLS unroll factor=1
     	  // #pragma HLS PIPELINE
 
 
@@ -145,12 +146,58 @@ void output_write(float *output_vec,float *slot_res_arr,int *slot_row_id)
 }*/
 
 
-void fifo_push(
-		//int index2,
-		//sparse_mat,
+void fifo_push_1(
 		int *row_len_arr,
+		stream<int,rows_per_slot> row_len_slot_arr[num_slots])
+{
+#pragma HLS PIPELINE
+	//One time initialization
+	static int row_count=0;
+	static int index2=0;
+	//struct slot_data sparse_data_inp_arr[num_slots];
+	//int row_len[num_slots];
+	//Assign input data to accel, numslots slots at once
+
+	bool cond = index2<(num_non_zero/num_slots);
+	if(cond)
+	{
+
+		for(int slot_id = 0;slot_id < num_slots; slot_id++)
+			{
+
+
+
+				//cout<<"Rowcount "<<row_count<<" slot "<<slot_id<<"\n";
+			    int row_len;
+				//When to stop reading row_len
+				if(row_count+slot_id<N)
+				{
+				   row_len = row_len_arr[row_count+slot_id];
+				}
+				//Other wise give -1 (invalid)
+				else
+				{
+					row_len = -1;
+				}
+
+				//Push row length data
+				row_len_slot_arr[slot_id].write(row_len);
+
+			}
+			row_count+=num_slots;
+
+	}
+	index2++;
+
+
+}
+void fifo_push_2(
+		//int index2,
+		//struct slot_data sparse_mat[num_non_zero],
+		float data_val_arr[num_non_zero],
+		int col_index_arr[num_non_zero],
+		//sparse_mat,
 		//int *row_count,
-		stream<int,rows_per_slot> row_len_slot_arr[num_slots],
 		stream<float,FIFO_DEPTH> slot_data_arr_value[num_slots],
 		stream<int,FIFO_DEPTH> slot_data_arr_col_index[num_slots])
 {
@@ -170,31 +217,19 @@ void fifo_push(
 		for(int slot_id = 0;slot_id < num_slots; slot_id++)
 			{
 
-				//#pragma HLS unroll factor=4
+				//#pragma HLS unroll factor=1
 				//#pragma HLS PIPELINE
-				float slot_data_val= sparse_mat[index2*num_slots + slot_id].data;
-				int slot_col_index = sparse_mat[index2*num_slots + slot_id].col_index;
+				//float slot_data_val= sparse_mat[index2*num_slots + slot_id].data;
+				float slot_data_val= data_val_arr[index2*num_slots+slot_id];
+				//int slot_col_index = sparse_mat[index2*num_slots + slot_id].col_index;
+				int slot_col_index= col_index_arr[index2*num_slots+slot_id];
+
 
 				//Push to slot data fifo
 				slot_data_arr_value[slot_id].write(slot_data_val);
 				slot_data_arr_col_index[slot_id].write(slot_col_index);
 
 
-				//cout<<"Rowcount "<<row_count[0] <<"slot"<<slot_id;
-			    int row_len;
-				//When to stop reading row_len
-				if(row_count+slot_id<N)
-				{
-				   row_len = row_len_arr[row_count+slot_id];
-				}
-				//Other wise give -1 (invalid)
-				else
-				{
-					row_len = -1;
-				}
-
-				//Push row length data
-				row_len_slot_arr[slot_id].write(row_len);
 
 			}
 			row_count+=num_slots;
@@ -314,9 +349,12 @@ void HLS_accel_v2(
 		float  inp_vec[8],
 		//Sparse mat
 		//struct slot_data sparse_mat[num_non_zero],
+		float data_val_arr[num_non_zero],
+		int col_index_arr[num_non_zero],
+
 
 		//row len arr
-		//int row_len_arr[N],
+	    int row_len_arr[N],
 		//Outputs
 		//TODO- Where does HLS store the output vector arrays- which we are passing as pointers
 		float  output_vec [8]
@@ -337,7 +375,9 @@ void HLS_accel_v2(
       	stream<int, FIFO_DEPTH> slot_data_arr_col_index[num_slots];
 		//struct  slot_data  slot_data_arr[num_slots]
 
-
+	#pragma HLS ARRAY_PARTITION variable=data_val_arr  dim=1 //factor=2 type=block
+ 	#pragma HLS ARRAY_PARTITION variable=col_index_arr   dim=1 //factor=2 type=block
+	#pragma HLS ARRAY_PARTITION variable=row_len_arr   dim=1 //type=block factor=2
 
 	     //For fifo push, row_count keeps track of how many rows are surpassed for pushing values of row_len_arr into fifos
 	    // int row_count[1];
@@ -370,13 +410,19 @@ void HLS_accel_v2(
 
 
 
+
 		//First, push slot data and row length data to fifos.
-		fifo_push(
+		fifo_push_1(
 				//index2,
 				//sparse_mat,
 				row_len_arr,
-				//row_count,
-				row_len_slot_arr,
+				row_len_slot_arr
+			)
+		fifo_push_2(
+				//index2,
+				//sparse_mat,
+				data_val_arr,
+				col_index_arr,
 				slot_data_arr_value,
 				slot_data_arr_col_index);
 
@@ -385,13 +431,7 @@ void HLS_accel_v2(
 		//Read inps to full compute- necessary predecessor process
 
 		//Second, launch full compute
-		/*full_compute_predecessor(
-				slot_row_counter,slot_row_counter_tmp,
-			    slot_res_arr,    slot_res_arr_tmp,
-				slot_row_id, slot_row_id_tmp,
-				max_row_id, max_row_id_tmp,
-				inp_vec , inp_vec_tmp
-				);*/
+
 
 
 
