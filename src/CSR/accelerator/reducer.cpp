@@ -1,42 +1,53 @@
 #include "reducer.hpp"
 
+// Reducer circuit data structure - (value, label)
 reducer_data::reducer_data(int value_init, int label_init){
 	value = value_init;
 	label = label_init;
 }
 
-reducer_level::add(){
+// Add values present in the buffer and update label to be max(label1, label2)
+void reducer_level::add(reducer_data *out){
 	if(num_items == 2){
 		num_items = 0;
 		valid = true;
-		return reducer_data(buffer[0].value + buffer[1].value, buffer[0].label);
+		#pragma HLS PIPELINE
+		out->value = buffer[0].value + buffer[1].value;
+		out->label = buffer[0].label;
 	}
 	else if(num_items == 1){
 		if(buffer[0].label < (1<<curr_level) + 1){
 			num_items = 0;
 			valid = true;
-			return buffer[0];
+			out->value = buffer[0].value;
+			out->label = buffer[0].label;
 		}
 	}
 	else if (num_items == 0){
 		valid = false;
-		return reducer_data(0, 0);
+		out->value = 0;
+		out->label = 0;
 	}
 }
 
-reducer_level::insert(reducer_data new_data){
+// Insert new value into buffer
+void reducer_level::insert(reducer_data new_data){
 	buffer[num_items] = new_data;
-	num_items += 1;
+	num_items++;
 }
 
-reducer::reduce(reducer_data new_data){
-	levels[0].insert(new_data);
-	for(int i=1;i<=NUM_REDUCER_LEVELS;i++){
-		level_out = levels[i-1].add();
+// Reducer circuit - takes a new sum
+void reducer::reduce(int* out, reducer_data *new_data){
+	reducer_data out_data, level_out;
+
+	levels[0].insert(*new_data);
+	reducer_loop: for(int i=1;i<NUM_REDUCER_LEVELS;i++){
+		levels[i-1].add(&level_out);
 		if(levels[i-1].valid)
 			levels[i].insert(level_out);
 	}
-	out = levels[NUM_REDUCERS_LEVELS-1].add();
-	if(levels[NUM_REDUCERS_LEVELS-1].valid == true)
-		return out.value;
+
+	levels[NUM_REDUCER_LEVELS-1].add(&out_data);
+	if(levels[NUM_REDUCER_LEVELS-1].valid == true)
+		*out = out_data.value;
 }

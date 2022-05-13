@@ -1,6 +1,7 @@
 #include <iostream>
-#include "mult_node.hpp"
-#include "add_node.hpp"
+#include "hls_stream.h"
+
+#include "accelerator.hpp"
 
 int main(){
 	return 0;

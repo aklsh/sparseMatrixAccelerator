@@ -7,7 +7,7 @@ class reducer_data{
 	public:
 		int value;
 		int label;
-		reducer_data(int, int);
+		reducer_data(int=0, int=0);
 };
 
 class reducer_level{
@@ -16,7 +16,7 @@ class reducer_level{
 		reducer_data buffer[2];
 		int num_items;
 		bool valid;
-		reducer_data add();
+		void add(reducer_data*);
 		void insert(reducer_data);
 };
 
@@ -24,7 +24,7 @@ class reducer{
 	public:
 		reducer_level levels[NUM_REDUCER_LEVELS];
 		bool valid;
-		int reduce(reducer_data);
+		void reduce(int*, reducer_data*);
 };
 
 #endif
