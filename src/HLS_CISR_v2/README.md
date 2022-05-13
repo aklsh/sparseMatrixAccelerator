@@ -25,9 +25,9 @@ Given below is a summary table of different solutions explored with the same cod
 | 2            | 790          | 5   | 2010 | 3229 | num_slots = 2  and II in full compute = 9 | 10               | yes            |
 | 3            | 1050         | 5   | 1238 | 1887 | num_slots =1 and II in full compute = 6   | 10               | yes            |
 
-Note- DSP slices  5 => ( 2 for fadd 3 for fmul), so 10 => 2 fadd and 2 fmul units
-Latency provided here is the max latency of the hardware (got from synthesis) for the full compute operation.
-Solutions 1,2,3 are pareto optimal in terms of latency vs FF usage vs LUT usage.
+Note- DSP slices  5 => ( 2 for fadd 3 for fmul), so 10 => 2 fadd and 2 fmul units\
+Latency provided here is the max latency of the hardware (got from synthesis) for the full compute operation.\
+Solutions 1,2,3 are pareto optimal in terms of latency vs FF usage vs LUT usage.\
 So, as said previously, this version takes approx. 50-100 cycles for completing the full computation whereas the previous version took ~ 30 cycles to do the computation under one iteration alone (same Target Tclk). So, this version gives a significant performance boost.
 ## Design Descriptions and Pareto-optimality
 We vary the number of slots, II in the HLS pipeline pragma under full\_compute and generate different solutions:
