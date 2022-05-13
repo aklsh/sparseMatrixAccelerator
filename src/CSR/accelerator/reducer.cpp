@@ -7,26 +7,26 @@ reducer_data::reducer_data(int value_init, int label_init){
 }
 
 // Add values present in the buffer and update label to be max(label1, label2)
-void reducer_level::add(reducer_data *out){
+void reducer_level::add(reducer_data &out){
+	#pragma HLS PIPELINE
 	if(num_items == 2){
 		num_items = 0;
 		valid = true;
-		#pragma HLS PIPELINE
-		out->value = buffer[0].value + buffer[1].value;
-		out->label = buffer[0].label;
+		out.value = buffer[0].value + buffer[1].value;
+		out.label = buffer[0].label;
 	}
 	else if(num_items == 1){
 		if(buffer[0].label < (1<<curr_level) + 1){
 			num_items = 0;
 			valid = true;
-			out->value = buffer[0].value;
-			out->label = buffer[0].label;
+			out.value = buffer[0].value;
+			out.label = buffer[0].label;
 		}
 	}
 	else if (num_items == 0){
 		valid = false;
-		out->value = 0;
-		out->label = 0;
+		out.value = 0;
+		out.label = 0;
 	}
 }
 
@@ -37,17 +37,19 @@ void reducer_level::insert(reducer_data new_data){
 }
 
 // Reducer circuit - takes a new sum
-void reducer::reduce(int* out, reducer_data *new_data){
-	reducer_data out_data, level_out;
+int reducer::reduce(int value, int label){
+	reducer_data out_data, level_out, new_data;
+	new_data.label = label;
+	new_data.value = value;
 
-	levels[0].insert(*new_data);
+	levels[0].insert(new_data);
 	reducer_loop: for(int i=1;i<NUM_REDUCER_LEVELS;i++){
-		levels[i-1].add(&level_out);
+		#pragma HLS PIPELINE
+		levels[i-1].add(level_out);
 		if(levels[i-1].valid)
 			levels[i].insert(level_out);
 	}
 
-	levels[NUM_REDUCER_LEVELS-1].add(&out_data);
-	if(levels[NUM_REDUCER_LEVELS-1].valid == true)
-		*out = out_data.value;
+	levels[NUM_REDUCER_LEVELS-1].add(out_data);
+	return out_data.value;
 }
