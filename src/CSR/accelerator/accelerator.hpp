@@ -1,6 +1,8 @@
 #ifndef __ACCELERATOR_UNIT__
 #define __ACCELERATOR_UNIT__
 
+#include "stdbool.h"
+
 #include "constants.hpp"
 #include "../encoded_data.hpp"
 #include "reducer.hpp"

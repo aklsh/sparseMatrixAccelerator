@@ -1,0 +1,13 @@
+<pragmas>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="9" pragmaType="unroll" parentfunction="set_storage" factor="-1" skip_exit_check="0"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="4" pragmaType="array_partition" parentfunction="set_storage" dim="1" factor="0" mode="complete" dynamic="0" variable="init_vector"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="5" pragmaType="array_partition" parentfunction="set_storage" dim="1" factor="0" mode="complete" dynamic="0" variable="storage"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="42" pragmaType="pipeline" parentfunction="accelerate" off="0" ii="-1" style=""/>
+<pragma file="SPMV_CSR_src/accelerator/reducer.cpp" line="45" pragmaType="unroll" parentfunction="reduce" factor="-1" skip_exit_check="0"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="20" pragmaType="unroll" parentfunction="multipliers" factor="-1" skip_exit_check="0"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="16" pragmaType="array_partition" parentfunction="multipliers" dim="1" factor="0" mode="complete" dynamic="0" variable="multiplier_outs"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="17" pragmaType="array_partition" parentfunction="multipliers" dim="1" factor="0" mode="complete" dynamic="0" variable="storage"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="31" pragmaType="express_balance" parentfunction="adders" off="0"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="35" pragmaType="pipeline" parentfunction="adders" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="31" pragmaType="array_partition" parentfunction="adders" dim="1" factor="0" mode="complete" dynamic="0" variable="multiplier_outs"/>
+</pragmas>

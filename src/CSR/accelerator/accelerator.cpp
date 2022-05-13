@@ -1,16 +1,23 @@
 #include "accelerator.hpp"
 
 // Initialize storage with vector
-void accelerator::set_storage(int *init_vector){
-	*storage = *init_vector;
+void set_storage(int storage[N], int init_vector[N], bool init){
+	#pragma HLS array_partition variable=init_vector type=complete
+	#pragma HLS array_partition variable=storage type=complete
+
+	if(init)
+		set_storage_loop: for(int i=0;i<N;i++){
+			#pragma HLS UNROLL
+			storage[i] = init_vector[i];
+		}
 }
 
 // Multiplier nodes
-void accelerator::multipliers(int *subrow_vals, int *subrow_col_indices, bool *mult_enables){
+void multipliers(int multiplier_outs[K], int storage[N], int *subrow_vals, int *subrow_col_indices, bool *mult_enables){
 	#pragma HLS array_partition variable=multiplier_outs type=complete
 	#pragma HLS array_partition variable=storage type=complete
 
-	multipliers: for(int i=0;i<K;i++){
+	multipliers_loop: for(int i=0;i<K;i++){
 		#pragma HLS UNROLL
 		if(mult_enables[i]){
 			multiplier_outs[i] = subrow_vals[i]*storage[subrow_col_indices[i]];
@@ -21,20 +28,27 @@ void accelerator::multipliers(int *subrow_vals, int *subrow_col_indices, bool *m
 }
 
 // Adder Tree
-void accelerator::adders(int *sum){
+void adders(int &sum, int multiplier_outs[K]){
 	#pragma HLS EXPRESSION_BALANCE
-	#pragma HLS PIPELINE
-	adder_tree: for(int p=0;p<K;p++)
-		*sum+=multiplier_outs[p];
+	#pragma HLS array_partition variable=multiplier_outs type=complete
+
+	adder_tree: for(int p=0;p<K;p++){
+		#pragma HLS PIPELINE
+		sum+=multiplier_outs[p];
+	}
 }
 
 // Main compute
-void accelerate(int &out, int *subrow_vals, int *subrow_col_indices, bool *mult_enables, int label){
-	accelerator *accel;
+void accelerate(int &out, int *subrow_vals, int *subrow_col_indices, bool mult_enables[K], int label, bool init_vector, int vector[N]){
+	static int multiplier_outs[K];
+	static int storage[N];
+	static int sum;
 
-	int sum = 0;
+	static reducer reducer_circuit;
 
-	accel->multipliers(subrow_vals, subrow_col_indices, mult_enables);
-	accel->adders(&sum);
-	out = accel->reducer_circuit.reduce(sum, label);
+	#pragma HLS PIPELINE
+	set_storage(storage, vector, init_vector);
+	multipliers(multiplier_outs, storage, subrow_vals, subrow_col_indices, mult_enables);
+	adders(sum, multiplier_outs);
+	reducer_circuit.reduce(out, sum, label);
 }

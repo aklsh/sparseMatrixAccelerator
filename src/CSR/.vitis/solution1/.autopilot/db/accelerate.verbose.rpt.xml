@@ -1,0 +1,189 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'accelerate'" level="0">
+<item name = "Date">Fri May 13 23:48:27 2022
+</item>
+<item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)</item>
+<item name = "Project">SPMV_CSR</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.912 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">6, 6, 60.000 ns, 60.000 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_reduce_fu_334">reduce, 2, 2, 20.000 ns, 20.000 ns, 1, 1, yes</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 73, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, 3, 815, 646, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, -, -</column>
+<column name="Register">-, -, 1129, 96, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 1, 1, 1, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="mul_32s_32s_32_2_1_U5">mul_32s_32s_32_2_1, 0, 3, 165, 50, 0</column>
+<column name="mux_2332_32_1_1_U4">mux_2332_32_1_1, 0, 0, 0, 113, 0</column>
+<column name="grp_reduce_fu_334">reduce, 0, 0, 650, 483, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln37_fu_657_p2">+, 0, 0, 39, 32, 32</column>
+<column name="select_ln22_fu_647_p3">select, 0, 0, 32, 1, 32</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="accelerate_int_int_int_bool_int_bool_int_storage">32, 0, 32, 0</column>
+<column name="accelerate_int_int_int_bool_int_bool_int_storage_1">32, 0, 32, 0</column>
+<column name="accelerate_int_int_int_bool_int_bool_int_storage_2">32, 0, 32, 0</column>
+<column name="accelerate_int_int_int_bool_int_bool_int_storage_3">32, 0, 32, 0</column>
+<column name="accelerate_int_int_int_bool_int_bool_int_storage_4">32, 0, 32, 0</column>
+<column name="accelerate_int_int_int_bool_int_bool_int_storage_5">32, 0, 32, 0</column>
+<column name="accelerate_int_int_int_bool_int_bool_int_storage_6">32, 0, 32, 0</column>
+<column name="accelerate_int_int_int_bool_int_bool_int_storage_7">32, 0, 32, 0</column>
+<column name="accelerate_int_int_int_bool_int_bool_int_storage_8">32, 0, 32, 0</column>
+<column name="accelerate_int_int_int_bool_int_bool_int_storage_9">32, 0, 32, 0</column>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter4">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter5">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter6">1, 0, 1, 0</column>
+<column name="grp_reduce_fu_334_ap_start_reg">1, 0, 1, 0</column>
+<column name="label_r_read_reg_673">32, 0, 32, 0</column>
+<column name="mul_ln23_reg_703">32, 0, 32, 0</column>
+<column name="mult_enables_load_reg_693">1, 0, 1, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_11">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_12">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_13">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_14">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_16">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_21">32, 0, 32, 0</column>
+<column name="p_ZZ10accelerateRiPiS0_PbibS0_E7storage_22">32, 0, 32, 0</column>
+<column name="subrow_col_indices_read_reg_688">32, 0, 32, 0</column>
+<column name="subrow_vals_read_reg_683">32, 0, 32, 0</column>
+<column name="sum">32, 0, 32, 0</column>
+<column name="tmp_reg_698">32, 0, 32, 0</column>
+<column name="label_r_read_reg_673">64, 32, 32, 0</column>
+<column name="mult_enables_load_reg_693">64, 32, 1, 0</column>
+<column name="subrow_vals_read_reg_683">64, 32, 32, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_local_block">out, 1, ap_ctrl_hs, accelerate, return value</column>
+<column name="ap_local_deadlock">out, 1, ap_ctrl_hs, accelerate, return value</column>
+<column name="ap_clk">in, 1, ap_ctrl_hs, accelerate, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, accelerate, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, accelerate, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, accelerate, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, accelerate, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, accelerate, return value</column>
+<column name="out_r">out, 32, ap_ovld, out_r, pointer</column>
+<column name="out_r_ap_vld">out, 1, ap_ovld, out_r, pointer</column>
+<column name="out_r_ap_lwr">out, 1, ap_ovld, out_r, pointer</column>
+<column name="subrow_vals">in, 32, ap_none, subrow_vals, pointer</column>
+<column name="subrow_col_indices">in, 32, ap_none, subrow_col_indices, pointer</column>
+<column name="mult_enables_address0">out, 2, ap_memory, mult_enables, array</column>
+<column name="mult_enables_ce0">out, 1, ap_memory, mult_enables, array</column>
+<column name="mult_enables_q0">in, 1, ap_memory, mult_enables, array</column>
+<column name="label_r">in, 32, ap_none, label_r, scalar</column>
+<column name="init_vector">in, 1, ap_none, init_vector, scalar</column>
+<column name="vector_0">in, 32, ap_none, vector_0, pointer</column>
+<column name="vector_1">in, 32, ap_none, vector_1, pointer</column>
+<column name="vector_2">in, 32, ap_none, vector_2, pointer</column>
+<column name="vector_3">in, 32, ap_none, vector_3, pointer</column>
+<column name="vector_4">in, 32, ap_none, vector_4, pointer</column>
+<column name="vector_5">in, 32, ap_none, vector_5, pointer</column>
+<column name="vector_6">in, 32, ap_none, vector_6, pointer</column>
+<column name="vector_7">in, 32, ap_none, vector_7, pointer</column>
+<column name="vector_8">in, 32, ap_none, vector_8, pointer</column>
+<column name="vector_9">in, 32, ap_none, vector_9, pointer</column>
+<column name="vector_10">in, 32, ap_none, vector_10, pointer</column>
+<column name="vector_11">in, 32, ap_none, vector_11, pointer</column>
+<column name="vector_12">in, 32, ap_none, vector_12, pointer</column>
+<column name="vector_13">in, 32, ap_none, vector_13, pointer</column>
+<column name="vector_14">in, 32, ap_none, vector_14, pointer</column>
+<column name="vector_15">in, 32, ap_none, vector_15, pointer</column>
+<column name="vector_16">in, 32, ap_none, vector_16, pointer</column>
+<column name="vector_17">in, 32, ap_none, vector_17, pointer</column>
+<column name="vector_18">in, 32, ap_none, vector_18, pointer</column>
+<column name="vector_19">in, 32, ap_none, vector_19, pointer</column>
+<column name="vector_20">in, 32, ap_none, vector_20, pointer</column>
+<column name="vector_21">in, 32, ap_none, vector_21, pointer</column>
+<column name="vector_22">in, 32, ap_none, vector_22, pointer</column>
+</table>
+</item>
+</section>
+</profile>

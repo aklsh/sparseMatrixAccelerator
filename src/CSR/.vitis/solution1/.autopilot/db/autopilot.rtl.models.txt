@@ -1,0 +1,4 @@
+accelerate_mux_2332_32_1_1
+accelerate_mul_32s_32s_32_2_1
+reduce
+accelerate

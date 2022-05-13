@@ -1,0 +1,206 @@
+
+
+================================================================
+== Vitis HLS Report for 'accelerate'
+================================================================
+* Date:           Fri May 13 23:48:27 2022
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        SPMV_CSR
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.912 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |        6|        6|  60.000 ns|  60.000 ns|    1|    1|      yes|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------+--------+---------+---------+-----------+-----------+-----+-----+---------+
+        |                   |        |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+        |      Instance     | Module |   min   |   max   |    min    |    max    | min | max |   Type  |
+        +-------------------+--------+---------+---------+-----------+-----------+-----+-----+---------+
+        |grp_reduce_fu_334  |reduce  |        2|        2|  20.000 ns|  20.000 ns|    1|    1|      yes|
+        +-------------------+--------+---------+---------+-----------+-----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     73|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    3|     815|    646|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|      -|    -|
+|Register         |        -|    -|    1129|     96|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    3|    1944|    815|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    1|       1|      1|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-----------------------+--------------------+---------+----+-----+-----+-----+
+    |        Instance       |       Module       | BRAM_18K| DSP|  FF | LUT | URAM|
+    +-----------------------+--------------------+---------+----+-----+-----+-----+
+    |mul_32s_32s_32_2_1_U5  |mul_32s_32s_32_2_1  |        0|   3|  165|   50|    0|
+    |mux_2332_32_1_1_U4     |mux_2332_32_1_1     |        0|   0|    0|  113|    0|
+    |grp_reduce_fu_334      |reduce              |        0|   0|  650|  483|    0|
+    +-----------------------+--------------------+---------+----+-----+-----+-----+
+    |Total                  |                    |        0|   3|  815|  646|    0|
+    +-----------------------+--------------------+---------+----+-----+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |add_ln37_fu_657_p2     |         +|   0|  0|  39|          32|          32|
+    |select_ln22_fu_647_p3  |    select|   0|  0|  32|           1|          32|
+    |ap_enable_pp0          |       xor|   0|  0|   2|           1|           2|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0|  73|          34|          66|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    N/A
+
+    * Register: 
+    +----------------------------------------------------+----+----+-----+-----------+
+    |                        Name                        | FF | LUT| Bits| Const Bits|
+    +----------------------------------------------------+----+----+-----+-----------+
+    |accelerate_int_int_int_bool_int_bool_int_storage    |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_bool_int_storage_1  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_bool_int_storage_2  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_bool_int_storage_3  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_bool_int_storage_4  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_bool_int_storage_5  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_bool_int_storage_6  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_bool_int_storage_7  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_bool_int_storage_8  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_bool_int_storage_9  |  32|   0|   32|          0|
+    |ap_CS_fsm                                           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6                             |   1|   0|    1|          0|
+    |grp_reduce_fu_334_ap_start_reg                      |   1|   0|    1|          0|
+    |label_r_read_reg_673                                |  32|   0|   32|          0|
+    |mul_ln23_reg_703                                    |  32|   0|   32|          0|
+    |mult_enables_load_reg_693                           |   1|   0|    1|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_11          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_12          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_13          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_14          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_16          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_21          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbibS0_E7storage_22          |  32|   0|   32|          0|
+    |subrow_col_indices_read_reg_688                     |  32|   0|   32|          0|
+    |subrow_vals_read_reg_683                            |  32|   0|   32|          0|
+    |sum                                                 |  32|   0|   32|          0|
+    |tmp_reg_698                                         |  32|   0|   32|          0|
+    |label_r_read_reg_673                                |  64|  32|   32|          0|
+    |mult_enables_load_reg_693                           |  64|  32|    1|          0|
+    |subrow_vals_read_reg_683                            |  64|  32|   32|          0|
+    +----------------------------------------------------+----+----+-----+-----------+
+    |Total                                               |1129|  96| 1002|          0|
+    +----------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+--------------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |    Source Object   |    C Type    |
++-----------------------+-----+-----+------------+--------------------+--------------+
+|ap_local_block         |  out|    1|  ap_ctrl_hs|          accelerate|  return value|
+|ap_local_deadlock      |  out|    1|  ap_ctrl_hs|          accelerate|  return value|
+|ap_clk                 |   in|    1|  ap_ctrl_hs|          accelerate|  return value|
+|ap_rst                 |   in|    1|  ap_ctrl_hs|          accelerate|  return value|
+|ap_start               |   in|    1|  ap_ctrl_hs|          accelerate|  return value|
+|ap_done                |  out|    1|  ap_ctrl_hs|          accelerate|  return value|
+|ap_idle                |  out|    1|  ap_ctrl_hs|          accelerate|  return value|
+|ap_ready               |  out|    1|  ap_ctrl_hs|          accelerate|  return value|
+|out_r                  |  out|   32|     ap_ovld|               out_r|       pointer|
+|out_r_ap_vld           |  out|    1|     ap_ovld|               out_r|       pointer|
+|out_r_ap_lwr           |  out|    1|     ap_ovld|               out_r|       pointer|
+|subrow_vals            |   in|   32|     ap_none|         subrow_vals|       pointer|
+|subrow_col_indices     |   in|   32|     ap_none|  subrow_col_indices|       pointer|
+|mult_enables_address0  |  out|    2|   ap_memory|        mult_enables|         array|
+|mult_enables_ce0       |  out|    1|   ap_memory|        mult_enables|         array|
+|mult_enables_q0        |   in|    1|   ap_memory|        mult_enables|         array|
+|label_r                |   in|   32|     ap_none|             label_r|        scalar|
+|init_vector            |   in|    1|     ap_none|         init_vector|        scalar|
+|vector_0               |   in|   32|     ap_none|            vector_0|       pointer|
+|vector_1               |   in|   32|     ap_none|            vector_1|       pointer|
+|vector_2               |   in|   32|     ap_none|            vector_2|       pointer|
+|vector_3               |   in|   32|     ap_none|            vector_3|       pointer|
+|vector_4               |   in|   32|     ap_none|            vector_4|       pointer|
+|vector_5               |   in|   32|     ap_none|            vector_5|       pointer|
+|vector_6               |   in|   32|     ap_none|            vector_6|       pointer|
+|vector_7               |   in|   32|     ap_none|            vector_7|       pointer|
+|vector_8               |   in|   32|     ap_none|            vector_8|       pointer|
+|vector_9               |   in|   32|     ap_none|            vector_9|       pointer|
+|vector_10              |   in|   32|     ap_none|           vector_10|       pointer|
+|vector_11              |   in|   32|     ap_none|           vector_11|       pointer|
+|vector_12              |   in|   32|     ap_none|           vector_12|       pointer|
+|vector_13              |   in|   32|     ap_none|           vector_13|       pointer|
+|vector_14              |   in|   32|     ap_none|           vector_14|       pointer|
+|vector_15              |   in|   32|     ap_none|           vector_15|       pointer|
+|vector_16              |   in|   32|     ap_none|           vector_16|       pointer|
+|vector_17              |   in|   32|     ap_none|           vector_17|       pointer|
+|vector_18              |   in|   32|     ap_none|           vector_18|       pointer|
+|vector_19              |   in|   32|     ap_none|           vector_19|       pointer|
+|vector_20              |   in|   32|     ap_none|           vector_20|       pointer|
+|vector_21              |   in|   32|     ap_none|           vector_21|       pointer|
+|vector_22              |   in|   32|     ap_none|           vector_22|       pointer|
++-----------------------+-----+-----+------------+--------------------+--------------+
+

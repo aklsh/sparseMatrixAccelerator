@@ -24,7 +24,7 @@ class reducer{
 	public:
 		reducer_level levels[NUM_REDUCER_LEVELS];
 		bool valid;
-		int reduce(int, int);
+		void reduce(int&, int, int);
 };
 
 #endif
