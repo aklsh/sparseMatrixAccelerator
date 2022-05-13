@@ -1,4 +1,5 @@
 **CISR Encoding**\
+![CISR Encoding](CISR_encoding.png)
 CISR encoding is a kind of encoding that reduces the burden on scheduling- typically for runtime scheduling. We encode the sparse matrix in this form offline, and then while loading the data at runtime- it's easy to schedule using this format.
 The way it works is as follows:
 Let's say we have 'N' slots/ hardware MAC units responsible for doing the multiply and accumulate during sparse Matrix Vector multiply. Now, using this CISR format, one will notice that all the first non-zero elements of each row (until a limit of N rows) is stored in contiguous memory locations. So, all the runtime-scheduler has to do is to fetch the first 'N' values and push it into the MAC units for all slots. 
