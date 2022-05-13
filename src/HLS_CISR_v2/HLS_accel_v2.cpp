@@ -3,11 +3,11 @@
 using namespace hls;
 //NOTE- **HAVE TO INCLUDE ENCODED DATA IN DUT FILE (NOT IN TB)**
 //#include "encoded_data.h"
-#define num_slots 1
-#define FIFO_DEPTH 4
+#define num_slots 4
+#define FIFO_DEPTH 1
 #define N 8 //Number of rows in sparse matrix
 //rows_per_slot = (int)math.ceil((float)N/num_slots);
-#define rows_per_slot  8
+#define rows_per_slot  2
 #define num_non_zero 16
 //#include <math.h>
 //#include <stdio.h>
@@ -34,7 +34,7 @@ void CISR_decoder(int *slot_row_counter,
 	for(int slot_id2=0;slot_id2<num_slots;slot_id2++)
    {
 
-		//#pragma HLS unroll factor=1
+		//#pragma HLS unroll factor=4
 		 //Read from FIFO ONLY WHEN SLOT IS DONE WITH CURRENT ROW
 		if(slot_row_counter[slot_id2]==0)
 		{
@@ -50,7 +50,7 @@ void CISR_decoder(int *slot_row_counter,
 
 
 		  	   #pragma HLS PIPELINE
-		       //#pragma HLS unroll factor=1
+		       //#pragma HLS unroll factor=4
 		       //Row assignment and CISR row id DECODING
 		       //First see which are new row mappings
 
@@ -90,7 +90,7 @@ void compute( stream<float, FIFO_DEPTH> slot_data_arr_value[num_slots],
 	 for(int slot_id3=0;slot_id3<num_slots;slot_id3++)
 		    {
 
-		 	#pragma HLS unroll factor=1
+		 	#pragma HLS unroll factor=4
             //#pragma HLS allocation operation instances=mul limit=4
 			//#pragma HLS allocation operation instances=add limit=4
 		  	float matrix_val;
@@ -112,7 +112,7 @@ void output_write(float *output_vec,float *slot_res_arr,int *slot_row_id)
 {
     for(int slot_id4=0;slot_id4<num_slots;slot_id4++)
 	    {
-         // #pragma HLS unroll factor=1
+         // #pragma HLS unroll factor=4
     	  // #pragma HLS PIPELINE
 
 
@@ -146,7 +146,7 @@ void output_write(float *output_vec,float *slot_res_arr,int *slot_row_id)
 }*/
 
 
-void fifo_push_1(
+/*void fifo_push_1(
 		int *row_len_arr,
 		stream<int,rows_per_slot> row_len_slot_arr[num_slots])
 {
@@ -190,7 +190,7 @@ void fifo_push_1(
 	index2++;
 
 
-}
+}*/
 void fifo_push_2(
 		//int index2,
 		//struct slot_data sparse_mat[num_non_zero],
@@ -199,7 +199,10 @@ void fifo_push_2(
 		//sparse_mat,
 		//int *row_count,
 		stream<float,FIFO_DEPTH> slot_data_arr_value[num_slots],
-		stream<int,FIFO_DEPTH> slot_data_arr_col_index[num_slots])
+		stream<int,FIFO_DEPTH> slot_data_arr_col_index[num_slots],
+				int *row_len_arr,
+				stream<int,rows_per_slot> row_len_slot_arr[num_slots])
+
 {
 
 	#pragma HLS PIPELINE
@@ -217,7 +220,7 @@ void fifo_push_2(
 		for(int slot_id = 0;slot_id < num_slots; slot_id++)
 			{
 
-				//#pragma HLS unroll factor=1
+				//#pragma HLS unroll factor=4
 				//#pragma HLS PIPELINE
 				//float slot_data_val= sparse_mat[index2*num_slots + slot_id].data;
 				float slot_data_val= data_val_arr[index2*num_slots+slot_id];
@@ -229,6 +232,22 @@ void fifo_push_2(
 				slot_data_arr_value[slot_id].write(slot_data_val);
 				slot_data_arr_col_index[slot_id].write(slot_col_index);
 
+
+			    int row_len;
+						//When to stop reading row_len
+						if(row_count+slot_id<N)
+						{
+						   row_len = row_len_arr[row_count+slot_id];
+						   row_len_slot_arr[slot_id].write(row_len);
+						}
+						//Other wise give -1 (invalid)
+						//else
+					//	{
+						//	row_len = -1;
+					//	}
+
+						//Push row length data
+						//row_len_slot_arr[slot_id].write(row_len);
 
 
 			}
@@ -412,19 +431,22 @@ void HLS_accel_v2(
 
 
 		//First, push slot data and row length data to fifos.
-		fifo_push_1(
+		/*fifo_push_1(
 				//index2,
 				//sparse_mat,
 				row_len_arr,
 				row_len_slot_arr
-			)
+			)*/
 		fifo_push_2(
 				//index2,
 				//sparse_mat,
 				data_val_arr,
 				col_index_arr,
 				slot_data_arr_value,
-				slot_data_arr_col_index);
+				slot_data_arr_col_index,
+				row_len_arr,
+				row_len_slot_arr
+				);
 
 		//TODO- intermediate fifo read before compute?
 

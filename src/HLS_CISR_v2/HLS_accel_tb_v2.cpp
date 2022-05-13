@@ -1,4 +1,4 @@
-#define num_slots 1
+#define num_slots 4
 #define N 8
 #define num_non_zero 16
 //#include "encoded_data.h"
@@ -6,7 +6,7 @@
 #include<math.h>
 #include<stdbool.h>
 #include "HLS_accel_v2.h"
-#include "encoded_data3.h"
+#include "encoded_data.h"
 //RUNS ON HOST
 int main()
 {
