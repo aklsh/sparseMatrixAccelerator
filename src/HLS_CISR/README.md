@@ -39,7 +39,7 @@ Given below is a summary table of different solutions explored with the same cod
 
 Note- DSP slices in all cases are- 5 = ( 2 fadd 3 fmul)\
 Latency provided here is the max latency of the hardware upon one function call/ transaction in an iteration from testbench or host.\
-Solutions 3,4,5 and 1,2, 6 are separately pareto optimal wrt Latency vs FF usage vs LUT usage\
+Solutions 3,4,5 and 1,2, 6 are separately pareto optimal wrt Latency vs FF usage vs LUT usage
 # Design Descriptions and Pareto-optimality
 We vary the presence or absence of pragmas like- HLS unroll and HLS PIPELINE in the four main functions/modules and see how our solution's performance and resource usage estimates vary. 
 Note- It is observed that a loop / function with no pragma is automatically pipelined with some initiation interval.
