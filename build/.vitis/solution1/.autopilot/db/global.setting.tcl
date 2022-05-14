@@ -42,7 +42,7 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7z020:-clg400:-1
-set SourceFiles {sc {} c {../../SPMV_CSR_src/accelerator/accelerator.cpp ../../SPMV_CSR_src/accelerator/reducer.cpp}}
+set SourceFiles {sc {} c {../../SPMV_CSR_src/accelerator/reducer.cpp ../../SPMV_CSR_src/accelerator/accelerator.cpp}}
 set SourceFlags {sc {} c {{} {}}}
 set DirectiveFile /home/akileshkannan/SPMV_CSR/solution1/solution1.directive
 set TBFiles {verilog ../../SPMV_CSR_src/main.cpp bc ../../SPMV_CSR_src/main.cpp vhdl ../../SPMV_CSR_src/main.cpp sc ../../SPMV_CSR_src/main.cpp cas ../../SPMV_CSR_src/main.cpp c {}}

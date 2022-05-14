@@ -4,55 +4,6 @@
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
 # 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.cpp"
-# 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 1
-
-
-
-# 1 "/opt/Xilinx/Vitis_HLS/2021.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/include/stdbool.h" 1 3 4
-# 5 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 2
-
-# 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/constants.hpp" 1
-# 7 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 2
-# 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/../encoded_data.hpp" 1
-# 8 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 2
-# 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/reducer.hpp" 1
-
-
-
-
-
-
-class reducer_data{
- public:
-  int value;
-  int label;
-  reducer_data(int=0, int=0);
-};
-
-class reducer_level{
- public:
-  int curr_level;
-  reducer_data buffer[2];
-  int num_items;
-  bool valid;
-  void add(reducer_data&);
-  void insert(reducer_data);
-};
-
-class reducer{
- public:
-  reducer_level adder_levels[2];
-  bool valid;
-  void reduce(int&, int, int);
-  void set_levels();
-};
-# 9 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 2
-
-void set_storage(int[23], int[23], bool);
-void multipliers(int[4], int[23], int[4], int[4], bool[4]);
-void adders(int&, int[4]);
-void accelerate(int&, int[4], int[4], bool[4], int, int[23], bool);
-# 2 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.cpp" 2
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/bits/libc-header-start.h" 1 3 4
@@ -951,24 +902,80 @@ extern int __uflow (FILE *);
 extern int __overflow (FILE *, int);
 # 902 "/usr/include/stdio.h" 3 4
 }
+# 2 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.cpp" 2
+# 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 1
+
+
+
+# 1 "/opt/Xilinx/Vitis_HLS/2021.2/tps/lnx64/gcc-6.2.0/lib/gcc/x86_64-pc-linux-gnu/6.2.0/include/stdbool.h" 1 3 4
+# 5 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 2
+
+# 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/constants.hpp" 1
+# 7 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 2
+# 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/../encoded_data.hpp" 1
+# 8 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 2
+# 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/reducer.hpp" 1
+
+
+
+
+
+
+
+# 7 "/home/akileshkannan/SPMV_CSR_src/accelerator/reducer.hpp"
+class reducer_data{
+ public:
+  int value;
+  int label;
+  reducer_data(int=0, int=0);
+};
+
+class reducer_level{
+ public:
+  reducer_data buffer[2];
+  int num_items;
+  bool valid;
+  void add(reducer_data&, int);
+  void insert(reducer_data);
+};
+
+class reducer{
+ public:
+  reducer_level adder_levels[2];
+  bool valid;
+  void reduce(int&, int, int);
+};
+# 9 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 2
+
+static int storage[23];
+static reducer reducer_circuit;
+static int multiplier_outs[4];
+static int sum;
+
+
+void initialise(int[23], bool);
+void set_storage(int[23], int[23], bool);
+void multipliers(int[4], int[23], int[4], int[4], bool[4]);
+void adders(int&, int[4]);
+void accelerate(int&, int[4], int[4], bool[4], int, int[23], bool);
 # 3 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.cpp" 2
 
 
-
-# 5 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.cpp"
-void set_storage(int storage[23], int init_vector[23], bool init){
+void initialise(int init_vector[23], bool init){
 #pragma HLS array_partition variable=init_vector type=complete
 #pragma HLS array_partition variable=storage type=complete
+#pragma HLS bind_storage variable=storage type=ram_1wnr impl=bram
 
- if(init)
-  set_storage_loop: for(int i=0;i<23;i++){
+ if(init){
+  set_storage_loop: for(int j=0;j<23;j++){
 #pragma HLS UNROLL
-   storage[i] = init_vector[i];
+   storage[j] = init_vector[j];
   }
+ }
 }
 
 
-void multipliers(int multiplier_outs[4], int storage[23], int subrow_vals[4], int subrow_col_indices[4], bool mult_enables[4]){
+void multipliers(int subrow_vals[4], int subrow_col_indices[4], bool mult_enables[4]){
 #pragma HLS array_partition variable=multiplier_outs type=complete
 #pragma HLS array_partition variable=mult_enables type=complete
 #pragma HLS array_partition variable=subrow_vals type=complete
@@ -977,23 +984,24 @@ void multipliers(int multiplier_outs[4], int storage[23], int subrow_vals[4], in
 
  multipliers_loop: for(int c=0;c<4;c++){
 #pragma HLS UNROLL
-  if(mult_enables[c]){
+  if(mult_enables[c])
    multiplier_outs[c] = subrow_vals[c]*storage[subrow_col_indices[c]];
-  }
   else
    multiplier_outs[c] = 0;
  }
 }
 
 
-void adders(int &sum, int multiplier_outs[4]){
+void adders(){
 #pragma HLS EXPRESSION_BALANCE
 #pragma HLS array_partition variable=multiplier_outs type=complete
 
+ int x = 0;
  adder_tree: for(int p=0;p<4;p++){
 #pragma HLS PIPELINE
-  sum+=multiplier_outs[p];
+  x+=multiplier_outs[p];
  }
+ sum = x;
 }
 
 
@@ -1001,28 +1009,14 @@ void accelerate(int &out, int subrow_vals[4], int subrow_col_indices[4], bool mu
 #pragma HLS array_partition variable=subrow_vals type=complete
 #pragma HLS array_partition variable=subrow_col_indices type=complete
 
- static int multiplier_outs[4];
- static int storage[23];
- static int sum;
-
- static reducer reducer_circuit;
-
 #pragma HLS PIPELINE
- if(init){
-  set_storage(storage, init_vector, init);
-  printf("storage array: ");
-  for(int u=0;u<23;u++)
-   printf("%d ", storage[u]);
-  printf("\n");
-  reducer_circuit.set_levels();
- }
- else{
-  multipliers(multiplier_outs, storage, subrow_vals, subrow_col_indices, mult_enables);
-  printf("mult outs: ");
-  for(int u=0;u<4;u++)
-   printf("%d ", multiplier_outs[u]);
-  printf("\n");
-  adders(sum, multiplier_outs);
-  reducer_circuit.reduce(out, sum, label);
- }
+ initialise(init_vector, init);
+ multipliers(subrow_vals, subrow_col_indices, mult_enables);
+ printf("mult outs: ");
+ for(int u=0;u<4;u++)
+  printf("%d ", multiplier_outs[u]);
+ printf("\n");
+ adders();
+ printf("sum: %d\n", sum);
+ reducer_circuit.reduce(out, sum, label);
 }

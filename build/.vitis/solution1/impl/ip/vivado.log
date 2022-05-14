@@ -2,8 +2,8 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Sat May 14 08:46:39 2022
-# Process ID: 26350
+# Start of session at: Sat May 14 21:00:20 2022
+# Process ID: 7427
 # Current directory: /home/akileshkannan/SPMV_CSR/solution1/impl/ip
 # Command line: vivado -notrace -mode batch -source run_ippack.tcl
 # Log file: /home/akileshkannan/SPMV_CSR/solution1/impl/ip/vivado.log
@@ -11,7 +11,8 @@
 # Running On: pop-os, OS: Linux, CPU Frequency: 2894.628 MHz, CPU Physical cores: 8, Host memory: 8336 MB
 #-----------------------------------------------------------
 source run_ippack.tcl -notrace
+ipx::create_core: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2630.820 ; gain = 0.000 ; free physical = 809 ; free virtual = 6750
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2021.2/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Sat May 14 08:46:54 2022...
+INFO: [Common 17-206] Exiting Vivado at Sat May 14 21:00:39 2022...

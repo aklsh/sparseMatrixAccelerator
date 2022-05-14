@@ -16,7 +16,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../SPMV_CSR_src/main.cpp ../../../../SPMV_CSR_src/accelerator/accelerator.cpp ../../../../SPMV_CSR_src/accelerator/reducer.cpp
+HLS_SOURCES = ../../../../SPMV_CSR_src/main.cpp ../../../../SPMV_CSR_src/accelerator/reducer.cpp ../../../../SPMV_CSR_src/accelerator/accelerator.cpp
 
 override TARGET := csim.exe
 
@@ -74,14 +74,14 @@ $(ObjDir)/main.o: ../../../../SPMV_CSR_src/main.cpp $(ObjDir)/.dir
 
 -include $(ObjDir)/main.d
 
-$(ObjDir)/accelerator.o: ../../../../SPMV_CSR_src/accelerator/accelerator.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../SPMV_CSR_src/accelerator/accelerator.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/accelerator.d
-
 $(ObjDir)/reducer.o: ../../../../SPMV_CSR_src/accelerator/reducer.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../SPMV_CSR_src/accelerator/reducer.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/reducer.d
+
+$(ObjDir)/accelerator.o: ../../../../SPMV_CSR_src/accelerator/accelerator.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../SPMV_CSR_src/accelerator/accelerator.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/accelerator.d

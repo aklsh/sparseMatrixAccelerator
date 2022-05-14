@@ -38,4 +38,4 @@ set depth_list {
 {init_vector_22 1}
 {init 1}
 }
-set trans_num 27
+set trans_num 26

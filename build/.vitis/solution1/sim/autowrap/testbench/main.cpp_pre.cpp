@@ -4,7 +4,6 @@
 # 1 "/usr/include/stdc-predef.h" 1 3 4
 # 1 "<command-line>" 2
 # 1 "/home/akileshkannan/SPMV_CSR_src/main.cpp"
-
 # 1 "/usr/include/stdio.h" 1 3 4
 # 27 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/bits/libc-header-start.h" 1 3 4
@@ -903,7 +902,7 @@ extern int __uflow (FILE *);
 extern int __overflow (FILE *, int);
 # 902 "/usr/include/stdio.h" 3 4
 }
-# 3 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
+# 2 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
 # 1 "/opt/Xilinx/Vitis_HLS/2021.2/include/hls_stream.h" 1
 # 61 "/opt/Xilinx/Vitis_HLS/2021.2/include/hls_stream.h"
 # 1 "/opt/Xilinx/Vitis_HLS/2021.2/include/hls_stream_thread_unsafe.h" 1
@@ -43893,7 +43892,7 @@ public:
 
 }
 # 62 "/opt/Xilinx/Vitis_HLS/2021.2/include/hls_stream.h" 2
-# 4 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
+# 3 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
 # 1 "/opt/Xilinx/Vitis_HLS/2021.2/include/hls_math.h" 1
 # 40 "/opt/Xilinx/Vitis_HLS/2021.2/include/hls_math.h"
 # 1 "/opt/Xilinx/Vitis_HLS/2021.2/tps/lnx64/gcc-6.2.0/include/c++/6.2.0/cmath" 1 3
@@ -89316,12 +89315,12 @@ namespace hls {
     uint32_t logb(uint32_t);
 
 };
-# 5 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
+# 4 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
 
 # 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/constants.hpp" 1
-# 7 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
+# 6 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
 # 1 "/home/akileshkannan/SPMV_CSR_src/encoded_data.hpp" 1
-# 8 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
+# 7 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
 # 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 1
 
 
@@ -89348,11 +89347,10 @@ class reducer_data{
 
 class reducer_level{
  public:
-  int curr_level;
   reducer_data buffer[2];
   int num_items;
   bool valid;
-  void add(reducer_data&);
+  void add(reducer_data&, int);
   void insert(reducer_data);
 };
 
@@ -89361,26 +89359,33 @@ class reducer{
   reducer_level adder_levels[2];
   bool valid;
   void reduce(int&, int, int);
-  void set_levels();
 };
 # 9 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 2
 
+static int storage[23];
+static reducer reducer_circuit;
+static int multiplier_outs[4];
+static int sum;
+
+
+void initialise(int[23], bool);
 void set_storage(int[23], int[23], bool);
 void multipliers(int[4], int[23], int[4], int[4], bool[4]);
 void adders(int&, int[4]);
 void accelerate(int&, int[4], int[4], bool[4], int, int[23], bool);
-# 9 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
+# 8 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
 
 int main(){
  int val[] = {1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 1, 1, 1, 3, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1};
  int row_ptr[] = {0, 1, 5, 6, 8, 9, 14, 18, 23, 28, 29, 36, 39, 42, 42, 43, 47, 51, 53, 54, 54, 60, 61};
  int col_index[] = {20, 6, 10, 12, 20, 20, 1, 22, 12, 6, 12, 13, 18, 20, 1, 5, 12, 20, 1, 2, 6, 15, 22, 1, 7, 9, 13, 18, 1, 0, 1, 2, 10, 11, 20, 21, 10, 15, 20, 5, 8, 22, 1, 2, 10, 15, 20, 1, 2, 10, 20, 11, 22, 8, 1, 2, 10, 19, 20, 22, 20, 1, 8, 20};
 
- int vector_x[23] = {1};
+ int vector_x[23] = {0};
+ std::fill(vector_x, vector_x+23, 1);
  for(int q=0;q<23;q++)
   printf("x[%d] = %d\n", q, vector_x[q]);
- int vector_y[23] = {-1};
- int ref_y[23] = {0};
+ int vector_y[23] = {0};
+ int ref_y[23] = {1, 6, 2, 2, 1, 5, 4, 9, 5, 1, 11, 5, 3, 0, 1, 5, 4, 2, 1, 0, 7, 1, 4};
 
  bool init_storage = false;
  int out = 0;
@@ -89390,12 +89395,11 @@ int main(){
  int label = 0;
  int len_array[23] = {0};
 
- init_storage = true;
 
 
- accelerate(out, subrow_vals, subrow_col_indices, mult_enables, label, vector_x, init_storage);
 
- init_storage = false;
+
+
 
  int processed_elements = 0;
  int curr_row_len = 0;
@@ -89440,6 +89444,9 @@ int main(){
     }
    }
    curr_label = curr_num_subrows - f;
+   printf("curr_label = %d\n", curr_label);
+   if(row_index == 0 && f == 0)
+    init_storage = true;
    accelerate(vector_y[row_index], curr_subrow_elements, curr_subrow_indices, curr_subrow_mult_enables, curr_label, vector_x, init_storage);
    processed_elements += num_elements_processed_curr;
    elements_left_curr_row -= num_elements_processed_curr;

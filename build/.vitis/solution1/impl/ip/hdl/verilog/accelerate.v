@@ -7,7 +7,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="accelerate_accelerate,hls_ip_2021_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=pipeline,HLS_SYN_CLOCK=6.912000,HLS_SYN_LAT=7,HLS_SYN_TPT=1,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=2923,HLS_SYN_LUT=1875,HLS_VERSION=2021_2}" *)
+(* CORE_GENERATION_INFO="accelerate_accelerate,hls_ip_2021_2,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z020-clg400-1,HLS_INPUT_CLOCK=10.000000,HLS_INPUT_ARCH=pipeline,HLS_SYN_CLOCK=6.923000,HLS_SYN_LAT=6,HLS_SYN_TPT=1,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=2826,HLS_SYN_LUT=1851,HLS_VERSION=2021_2}" *)
 
 module accelerate (
         ap_local_block,
@@ -33,30 +33,30 @@ module accelerate (
         mult_enables_2,
         mult_enables_3,
         label_r,
-        init_vector,
-        vector_0,
-        vector_1,
-        vector_2,
-        vector_3,
-        vector_4,
-        vector_5,
-        vector_6,
-        vector_7,
-        vector_8,
-        vector_9,
-        vector_10,
-        vector_11,
-        vector_12,
-        vector_13,
-        vector_14,
-        vector_15,
-        vector_16,
-        vector_17,
-        vector_18,
-        vector_19,
-        vector_20,
-        vector_21,
-        vector_22,
+        init_vector_0,
+        init_vector_1,
+        init_vector_2,
+        init_vector_3,
+        init_vector_4,
+        init_vector_5,
+        init_vector_6,
+        init_vector_7,
+        init_vector_8,
+        init_vector_9,
+        init_vector_10,
+        init_vector_11,
+        init_vector_12,
+        init_vector_13,
+        init_vector_14,
+        init_vector_15,
+        init_vector_16,
+        init_vector_17,
+        init_vector_18,
+        init_vector_19,
+        init_vector_20,
+        init_vector_21,
+        init_vector_22,
+        init,
         out_r_ap_lwr
 );
 
@@ -85,30 +85,30 @@ input   mult_enables_1;
 input   mult_enables_2;
 input   mult_enables_3;
 input  [31:0] label_r;
-input   init_vector;
-input  [31:0] vector_0;
-input  [31:0] vector_1;
-input  [31:0] vector_2;
-input  [31:0] vector_3;
-input  [31:0] vector_4;
-input  [31:0] vector_5;
-input  [31:0] vector_6;
-input  [31:0] vector_7;
-input  [31:0] vector_8;
-input  [31:0] vector_9;
-input  [31:0] vector_10;
-input  [31:0] vector_11;
-input  [31:0] vector_12;
-input  [31:0] vector_13;
-input  [31:0] vector_14;
-input  [31:0] vector_15;
-input  [31:0] vector_16;
-input  [31:0] vector_17;
-input  [31:0] vector_18;
-input  [31:0] vector_19;
-input  [31:0] vector_20;
-input  [31:0] vector_21;
-input  [31:0] vector_22;
+input  [31:0] init_vector_0;
+input  [31:0] init_vector_1;
+input  [31:0] init_vector_2;
+input  [31:0] init_vector_3;
+input  [31:0] init_vector_4;
+input  [31:0] init_vector_5;
+input  [31:0] init_vector_6;
+input  [31:0] init_vector_7;
+input  [31:0] init_vector_8;
+input  [31:0] init_vector_9;
+input  [31:0] init_vector_10;
+input  [31:0] init_vector_11;
+input  [31:0] init_vector_12;
+input  [31:0] init_vector_13;
+input  [31:0] init_vector_14;
+input  [31:0] init_vector_15;
+input  [31:0] init_vector_16;
+input  [31:0] init_vector_17;
+input  [31:0] init_vector_18;
+input  [31:0] init_vector_19;
+input  [31:0] init_vector_20;
+input  [31:0] init_vector_21;
+input  [31:0] init_vector_22;
+input   init;
 output   out_r_ap_lwr;
 
 reg ap_done;
@@ -125,7 +125,6 @@ reg    ap_enable_reg_pp0_iter3;
 reg    ap_enable_reg_pp0_iter4;
 reg    ap_enable_reg_pp0_iter5;
 reg    ap_enable_reg_pp0_iter6;
-reg    ap_enable_reg_pp0_iter7;
 reg    ap_idle_pp0;
 wire    ap_block_state1_pp0_stage0_iter0;
 wire    ap_block_state2_pp0_stage0_iter1;
@@ -134,138 +133,132 @@ wire    ap_block_state4_pp0_stage0_iter3;
 wire    ap_block_state5_pp0_stage0_iter4;
 wire    ap_block_state6_pp0_stage0_iter5;
 wire    ap_block_state7_pp0_stage0_iter6;
-wire    ap_block_state8_pp0_stage0_iter7;
 wire    ap_block_pp0_stage0_subdone;
-reg   [31:0] accelerate_int_int_int_bool_int_bool_int_storage;
-reg   [31:0] accelerate_int_int_int_bool_int_bool_int_storage_1;
-reg   [31:0] accelerate_int_int_int_bool_int_bool_int_storage_2;
-reg   [31:0] accelerate_int_int_int_bool_int_bool_int_storage_3;
-reg   [31:0] accelerate_int_int_int_bool_int_bool_int_storage_4;
-reg   [31:0] accelerate_int_int_int_bool_int_bool_int_storage_5;
-reg   [31:0] accelerate_int_int_int_bool_int_bool_int_storage_6;
-reg   [31:0] accelerate_int_int_int_bool_int_bool_int_storage_7;
-reg   [31:0] accelerate_int_int_int_bool_int_bool_int_storage_8;
-reg   [31:0] accelerate_int_int_int_bool_int_bool_int_storage_9;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_11;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_12;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_13;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_14;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_16;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_21;
-reg   [31:0] p_ZZ10accelerateRiPiS0_PbibS0_E7storage_22;
-reg   [31:0] sum;
+reg   [31:0] p_ZL7storage_0;
+reg   [31:0] p_ZL7storage_1;
+reg   [31:0] p_ZL7storage_2;
+reg   [31:0] p_ZL7storage_3;
+reg   [31:0] p_ZL7storage_4;
+reg   [31:0] p_ZL7storage_5;
+reg   [31:0] p_ZL7storage_6;
+reg   [31:0] p_ZL7storage_7;
+reg   [31:0] p_ZL7storage_8;
+reg   [31:0] p_ZL7storage_9;
+reg   [31:0] p_ZL7storage_10;
+reg   [31:0] p_ZL7storage_11;
+reg   [31:0] p_ZL7storage_12;
+reg   [31:0] p_ZL7storage_13;
+reg   [31:0] p_ZL7storage_14;
+reg   [31:0] p_ZL7storage_15;
+reg   [31:0] p_ZL7storage_16;
+reg   [31:0] p_ZL7storage_17;
+reg   [31:0] p_ZL7storage_18;
+reg   [31:0] p_ZL7storage_19;
+reg   [31:0] p_ZL7storage_20;
+reg   [31:0] p_ZL7storage_21;
+reg   [31:0] p_ZL7storage_22;
 wire    ap_block_pp0_stage0_11001;
-reg   [31:0] label_r_read_reg_1190;
-reg   [31:0] label_r_read_reg_1190_pp0_iter1_reg;
-reg   [31:0] label_r_read_reg_1190_pp0_iter2_reg;
-reg   [31:0] label_r_read_reg_1190_pp0_iter3_reg;
-reg   [31:0] label_r_read_reg_1190_pp0_iter4_reg;
-reg   [0:0] mult_enables_0_read_reg_1195;
-reg   [0:0] mult_enables_0_read_reg_1195_pp0_iter1_reg;
-reg   [0:0] mult_enables_0_read_reg_1195_pp0_iter2_reg;
-reg  signed [31:0] subrow_vals_0_read_reg_1200;
-wire  signed [31:0] tmp_fu_907_p25;
-reg  signed [31:0] tmp_reg_1205;
-reg   [0:0] mult_enables_1_read_reg_1210;
-reg   [0:0] mult_enables_1_read_reg_1210_pp0_iter1_reg;
-reg   [0:0] mult_enables_1_read_reg_1210_pp0_iter2_reg;
-reg  signed [31:0] subrow_vals_1_read_reg_1215;
-wire  signed [31:0] tmp_1_fu_959_p25;
-reg  signed [31:0] tmp_1_reg_1220;
-reg   [0:0] mult_enables_2_read_reg_1225;
-reg   [0:0] mult_enables_2_read_reg_1225_pp0_iter1_reg;
-reg   [0:0] mult_enables_2_read_reg_1225_pp0_iter2_reg;
-reg  signed [31:0] subrow_vals_2_read_reg_1230;
-wire  signed [31:0] tmp_2_fu_1011_p25;
-reg  signed [31:0] tmp_2_reg_1235;
-reg   [0:0] mult_enables_3_read_reg_1240;
-reg   [0:0] mult_enables_3_read_reg_1240_pp0_iter1_reg;
-reg   [0:0] mult_enables_3_read_reg_1240_pp0_iter2_reg;
-reg  signed [31:0] subrow_vals_3_read_reg_1245;
-wire  signed [31:0] tmp_3_fu_1063_p25;
-reg  signed [31:0] tmp_3_reg_1250;
-wire   [31:0] grp_fu_1115_p2;
-reg   [31:0] mul_ln26_reg_1255;
-wire   [31:0] grp_fu_1119_p2;
-reg   [31:0] mul_ln26_1_reg_1260;
-wire   [31:0] grp_fu_1123_p2;
-reg   [31:0] mul_ln26_2_reg_1265;
-wire   [31:0] grp_fu_1127_p2;
-reg   [31:0] mul_ln26_3_reg_1270;
-wire   [31:0] select_ln25_1_fu_1137_p3;
-reg   [31:0] select_ln25_1_reg_1275;
-wire   [31:0] add_ln40_2_fu_1161_p2;
-reg   [31:0] add_ln40_2_reg_1280;
-wire   [31:0] add_ln40_3_fu_1176_p2;
-reg   [31:0] add_ln40_3_reg_1285;
-wire    grp_reduce_fu_626_ap_start;
-wire    grp_reduce_fu_626_ap_done;
-wire    grp_reduce_fu_626_ap_idle;
-wire    grp_reduce_fu_626_ap_ready;
-wire   [31:0] grp_reduce_fu_626_out_r;
-wire    grp_reduce_fu_626_out_r_ap_vld;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_phi_fu_399_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_reg_396;
-wire   [0:0] init_vector_read_read_fu_174_p2;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_phi_fu_409_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_reg_406;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_phi_fu_419_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_reg_416;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_phi_fu_429_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_reg_426;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_phi_fu_439_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_reg_436;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_phi_fu_449_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_reg_446;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_phi_fu_459_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_reg_456;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_phi_fu_469_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_reg_466;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_phi_fu_479_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_reg_476;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_phi_fu_489_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_reg_486;
-reg   [31:0] ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_phi_fu_499_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_reg_496;
-reg   [31:0] ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_phi_fu_509_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_reg_506;
-reg   [31:0] ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_phi_fu_519_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_reg_516;
-reg   [31:0] ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_phi_fu_529_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_reg_526;
-reg   [31:0] ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_phi_fu_539_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_reg_536;
-reg   [31:0] ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_phi_fu_549_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_reg_546;
-reg   [31:0] ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_12_phi_fu_559_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_12_reg_556;
-reg   [31:0] ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_phi_fu_569_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_reg_566;
-reg   [31:0] ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_phi_fu_579_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_reg_576;
-reg   [31:0] ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_phi_fu_589_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_reg_586;
-reg   [31:0] ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_phi_fu_599_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_reg_596;
-reg   [31:0] ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_phi_fu_609_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_reg_606;
-reg   [31:0] ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_phi_fu_619_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_reg_616;
-reg    grp_reduce_fu_626_ap_start_reg;
+reg   [31:0] label_r_read_reg_1182;
+reg   [31:0] label_r_read_reg_1182_pp0_iter1_reg;
+reg   [31:0] label_r_read_reg_1182_pp0_iter2_reg;
+reg   [31:0] label_r_read_reg_1182_pp0_iter3_reg;
+reg   [0:0] mult_enables_0_read_reg_1187;
+reg   [0:0] mult_enables_0_read_reg_1187_pp0_iter1_reg;
+reg   [0:0] mult_enables_0_read_reg_1187_pp0_iter2_reg;
+reg  signed [31:0] subrow_vals_0_read_reg_1192;
+wire  signed [31:0] tmp_fu_913_p25;
+reg  signed [31:0] tmp_reg_1197;
+reg   [0:0] mult_enables_1_read_reg_1202;
+reg   [0:0] mult_enables_1_read_reg_1202_pp0_iter1_reg;
+reg   [0:0] mult_enables_1_read_reg_1202_pp0_iter2_reg;
+reg  signed [31:0] subrow_vals_1_read_reg_1207;
+wire  signed [31:0] tmp_1_fu_965_p25;
+reg  signed [31:0] tmp_1_reg_1212;
+reg   [0:0] mult_enables_2_read_reg_1217;
+reg   [0:0] mult_enables_2_read_reg_1217_pp0_iter1_reg;
+reg   [0:0] mult_enables_2_read_reg_1217_pp0_iter2_reg;
+reg  signed [31:0] subrow_vals_2_read_reg_1222;
+wire  signed [31:0] tmp_2_fu_1017_p25;
+reg  signed [31:0] tmp_2_reg_1227;
+reg   [0:0] mult_enables_3_read_reg_1232;
+reg   [0:0] mult_enables_3_read_reg_1232_pp0_iter1_reg;
+reg   [0:0] mult_enables_3_read_reg_1232_pp0_iter2_reg;
+reg  signed [31:0] subrow_vals_3_read_reg_1237;
+wire  signed [31:0] tmp_3_fu_1069_p25;
+reg  signed [31:0] tmp_3_reg_1242;
+wire   [31:0] grp_fu_1121_p2;
+reg   [31:0] mul_ln29_reg_1247;
+wire   [31:0] grp_fu_1125_p2;
+reg   [31:0] mul_ln29_1_reg_1252;
+wire   [31:0] grp_fu_1129_p2;
+reg   [31:0] mul_ln29_2_reg_1257;
+wire   [31:0] grp_fu_1133_p2;
+reg   [31:0] mul_ln29_3_reg_1262;
+wire   [31:0] x_1_fu_1173_p2;
+reg   [31:0] x_1_reg_1267;
+wire    grp_reduce_fu_632_ap_start;
+wire    grp_reduce_fu_632_ap_done;
+wire    grp_reduce_fu_632_ap_idle;
+wire    grp_reduce_fu_632_ap_ready;
+wire   [31:0] grp_reduce_fu_632_out_r;
+wire    grp_reduce_fu_632_out_r_ap_vld;
+reg   [31:0] ap_phi_mux_p_ZL7storage_0_loc_0_phi_fu_405_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_0_loc_0_reg_402;
+wire   [0:0] init_read_read_fu_180_p2;
+reg   [31:0] ap_phi_mux_p_ZL7storage_1_loc_0_phi_fu_415_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_1_loc_0_reg_412;
+reg   [31:0] ap_phi_mux_p_ZL7storage_2_loc_0_phi_fu_425_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_2_loc_0_reg_422;
+reg   [31:0] ap_phi_mux_p_ZL7storage_3_loc_0_phi_fu_435_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_3_loc_0_reg_432;
+reg   [31:0] ap_phi_mux_p_ZL7storage_4_loc_0_phi_fu_445_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_4_loc_0_reg_442;
+reg   [31:0] ap_phi_mux_p_ZL7storage_5_loc_0_phi_fu_455_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_5_loc_0_reg_452;
+reg   [31:0] ap_phi_mux_p_ZL7storage_6_loc_0_phi_fu_465_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_6_loc_0_reg_462;
+reg   [31:0] ap_phi_mux_p_ZL7storage_7_loc_0_phi_fu_475_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_7_loc_0_reg_472;
+reg   [31:0] ap_phi_mux_p_ZL7storage_8_loc_0_phi_fu_485_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_8_loc_0_reg_482;
+reg   [31:0] ap_phi_mux_p_ZL7storage_9_loc_0_phi_fu_495_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_9_loc_0_reg_492;
+reg   [31:0] ap_phi_mux_p_ZL7storage_10_loc_0_phi_fu_505_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_10_loc_0_reg_502;
+reg   [31:0] ap_phi_mux_p_ZL7storage_11_loc_0_phi_fu_515_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_11_loc_0_reg_512;
+reg   [31:0] ap_phi_mux_p_ZL7storage_12_loc_0_phi_fu_525_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_12_loc_0_reg_522;
+reg   [31:0] ap_phi_mux_p_ZL7storage_13_loc_0_phi_fu_535_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_13_loc_0_reg_532;
+reg   [31:0] ap_phi_mux_p_ZL7storage_14_loc_0_phi_fu_545_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_14_loc_0_reg_542;
+reg   [31:0] ap_phi_mux_p_ZL7storage_15_loc_0_phi_fu_555_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_15_loc_0_reg_552;
+reg   [31:0] ap_phi_mux_p_ZL7storage_16_loc_0_phi_fu_565_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_16_loc_0_reg_562;
+reg   [31:0] ap_phi_mux_p_ZL7storage_17_loc_0_phi_fu_575_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_17_loc_0_reg_572;
+reg   [31:0] ap_phi_mux_p_ZL7storage_18_loc_0_phi_fu_585_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_18_loc_0_reg_582;
+reg   [31:0] ap_phi_mux_p_ZL7storage_19_loc_0_phi_fu_595_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_19_loc_0_reg_592;
+reg   [31:0] ap_phi_mux_p_ZL7storage_20_loc_0_phi_fu_605_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_20_loc_0_reg_602;
+reg   [31:0] ap_phi_mux_p_ZL7storage_21_loc_0_phi_fu_615_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_21_loc_0_reg_612;
+reg   [31:0] ap_phi_mux_p_ZL7storage_22_loc_0_phi_fu_625_p4;
+wire   [31:0] ap_phi_reg_pp0_iter0_p_ZL7storage_22_loc_0_reg_622;
+reg    grp_reduce_fu_632_ap_start_reg;
 wire    ap_block_pp0_stage0;
-wire   [31:0] select_ln25_fu_1131_p3;
-wire   [31:0] select_ln25_3_fu_1149_p3;
-wire   [31:0] add_ln40_1_fu_1155_p2;
-wire   [31:0] select_ln25_2_fu_1143_p3;
-wire   [31:0] add_ln40_fu_1171_p2;
+wire   [31:0] select_ln28_1_fu_1143_p3;
+wire   [31:0] x_fu_1137_p3;
+wire   [31:0] select_ln28_2_fu_1149_p3;
+wire   [31:0] select_ln28_3_fu_1155_p3;
+wire   [31:0] add_ln43_1_fu_1167_p2;
+wire   [31:0] add_ln43_fu_1161_p2;
 reg   [0:0] ap_NS_fsm;
-reg    ap_idle_pp0_0to6;
+reg    ap_idle_pp0_0to5;
 reg    ap_reset_idle_pp0;
 wire    ap_enable_pp0;
 wire    ap_ce_reg;
@@ -279,45 +272,43 @@ initial begin
 #0 ap_enable_reg_pp0_iter4 = 1'b0;
 #0 ap_enable_reg_pp0_iter5 = 1'b0;
 #0 ap_enable_reg_pp0_iter6 = 1'b0;
-#0 ap_enable_reg_pp0_iter7 = 1'b0;
-#0 accelerate_int_int_int_bool_int_bool_int_storage = 32'd0;
-#0 accelerate_int_int_int_bool_int_bool_int_storage_1 = 32'd0;
-#0 accelerate_int_int_int_bool_int_bool_int_storage_2 = 32'd0;
-#0 accelerate_int_int_int_bool_int_bool_int_storage_3 = 32'd0;
-#0 accelerate_int_int_int_bool_int_bool_int_storage_4 = 32'd0;
-#0 accelerate_int_int_int_bool_int_bool_int_storage_5 = 32'd0;
-#0 accelerate_int_int_int_bool_int_bool_int_storage_6 = 32'd0;
-#0 accelerate_int_int_int_bool_int_bool_int_storage_7 = 32'd0;
-#0 accelerate_int_int_int_bool_int_bool_int_storage_8 = 32'd0;
-#0 accelerate_int_int_int_bool_int_bool_int_storage_9 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_11 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_12 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_13 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_14 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_16 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_21 = 32'd0;
-#0 p_ZZ10accelerateRiPiS0_PbibS0_E7storage_22 = 32'd0;
-#0 sum = 32'd0;
-#0 grp_reduce_fu_626_ap_start_reg = 1'b0;
+#0 p_ZL7storage_0 = 32'd0;
+#0 p_ZL7storage_1 = 32'd0;
+#0 p_ZL7storage_2 = 32'd0;
+#0 p_ZL7storage_3 = 32'd0;
+#0 p_ZL7storage_4 = 32'd0;
+#0 p_ZL7storage_5 = 32'd0;
+#0 p_ZL7storage_6 = 32'd0;
+#0 p_ZL7storage_7 = 32'd0;
+#0 p_ZL7storage_8 = 32'd0;
+#0 p_ZL7storage_9 = 32'd0;
+#0 p_ZL7storage_10 = 32'd0;
+#0 p_ZL7storage_11 = 32'd0;
+#0 p_ZL7storage_12 = 32'd0;
+#0 p_ZL7storage_13 = 32'd0;
+#0 p_ZL7storage_14 = 32'd0;
+#0 p_ZL7storage_15 = 32'd0;
+#0 p_ZL7storage_16 = 32'd0;
+#0 p_ZL7storage_17 = 32'd0;
+#0 p_ZL7storage_18 = 32'd0;
+#0 p_ZL7storage_19 = 32'd0;
+#0 p_ZL7storage_20 = 32'd0;
+#0 p_ZL7storage_21 = 32'd0;
+#0 p_ZL7storage_22 = 32'd0;
+#0 grp_reduce_fu_632_ap_start_reg = 1'b0;
 end
 
-accelerate_reduce grp_reduce_fu_626(
+accelerate_reduce grp_reduce_fu_632(
     .ap_clk(ap_clk),
     .ap_rst(ap_rst),
-    .ap_start(grp_reduce_fu_626_ap_start),
-    .ap_done(grp_reduce_fu_626_ap_done),
-    .ap_idle(grp_reduce_fu_626_ap_idle),
-    .ap_ready(grp_reduce_fu_626_ap_ready),
-    .out_r(grp_reduce_fu_626_out_r),
-    .out_r_ap_vld(grp_reduce_fu_626_out_r_ap_vld),
-    .value_r(add_ln40_3_reg_1285),
-    .label_r(label_r_read_reg_1190_pp0_iter4_reg)
+    .ap_start(grp_reduce_fu_632_ap_start),
+    .ap_done(grp_reduce_fu_632_ap_done),
+    .ap_idle(grp_reduce_fu_632_ap_idle),
+    .ap_ready(grp_reduce_fu_632_ap_ready),
+    .out_r(grp_reduce_fu_632_out_r),
+    .out_r_ap_vld(grp_reduce_fu_632_out_r_ap_vld),
+    .value_r(x_1_reg_1267),
+    .label_r(label_r_read_reg_1182_pp0_iter3_reg)
 );
 
 accelerate_mux_2332_32_1_1 #(
@@ -349,31 +340,31 @@ accelerate_mux_2332_32_1_1 #(
     .din23_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
 mux_2332_32_1_1_U4(
-    .din0(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_phi_fu_399_p4),
-    .din1(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_phi_fu_409_p4),
-    .din2(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_phi_fu_419_p4),
-    .din3(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_phi_fu_429_p4),
-    .din4(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_phi_fu_439_p4),
-    .din5(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_phi_fu_449_p4),
-    .din6(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_phi_fu_459_p4),
-    .din7(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_phi_fu_469_p4),
-    .din8(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_phi_fu_479_p4),
-    .din9(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_phi_fu_489_p4),
-    .din10(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_phi_fu_499_p4),
-    .din11(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_phi_fu_509_p4),
-    .din12(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_phi_fu_519_p4),
-    .din13(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_phi_fu_529_p4),
-    .din14(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_phi_fu_539_p4),
-    .din15(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_phi_fu_549_p4),
-    .din16(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_12_phi_fu_559_p4),
-    .din17(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_phi_fu_569_p4),
-    .din18(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_phi_fu_579_p4),
-    .din19(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_phi_fu_589_p4),
-    .din20(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_phi_fu_599_p4),
-    .din21(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_phi_fu_609_p4),
-    .din22(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_phi_fu_619_p4),
+    .din0(ap_phi_mux_p_ZL7storage_0_loc_0_phi_fu_405_p4),
+    .din1(ap_phi_mux_p_ZL7storage_1_loc_0_phi_fu_415_p4),
+    .din2(ap_phi_mux_p_ZL7storage_2_loc_0_phi_fu_425_p4),
+    .din3(ap_phi_mux_p_ZL7storage_3_loc_0_phi_fu_435_p4),
+    .din4(ap_phi_mux_p_ZL7storage_4_loc_0_phi_fu_445_p4),
+    .din5(ap_phi_mux_p_ZL7storage_5_loc_0_phi_fu_455_p4),
+    .din6(ap_phi_mux_p_ZL7storage_6_loc_0_phi_fu_465_p4),
+    .din7(ap_phi_mux_p_ZL7storage_7_loc_0_phi_fu_475_p4),
+    .din8(ap_phi_mux_p_ZL7storage_8_loc_0_phi_fu_485_p4),
+    .din9(ap_phi_mux_p_ZL7storage_9_loc_0_phi_fu_495_p4),
+    .din10(ap_phi_mux_p_ZL7storage_10_loc_0_phi_fu_505_p4),
+    .din11(ap_phi_mux_p_ZL7storage_11_loc_0_phi_fu_515_p4),
+    .din12(ap_phi_mux_p_ZL7storage_12_loc_0_phi_fu_525_p4),
+    .din13(ap_phi_mux_p_ZL7storage_13_loc_0_phi_fu_535_p4),
+    .din14(ap_phi_mux_p_ZL7storage_14_loc_0_phi_fu_545_p4),
+    .din15(ap_phi_mux_p_ZL7storage_15_loc_0_phi_fu_555_p4),
+    .din16(ap_phi_mux_p_ZL7storage_16_loc_0_phi_fu_565_p4),
+    .din17(ap_phi_mux_p_ZL7storage_17_loc_0_phi_fu_575_p4),
+    .din18(ap_phi_mux_p_ZL7storage_18_loc_0_phi_fu_585_p4),
+    .din19(ap_phi_mux_p_ZL7storage_19_loc_0_phi_fu_595_p4),
+    .din20(ap_phi_mux_p_ZL7storage_20_loc_0_phi_fu_605_p4),
+    .din21(ap_phi_mux_p_ZL7storage_21_loc_0_phi_fu_615_p4),
+    .din22(ap_phi_mux_p_ZL7storage_22_loc_0_phi_fu_625_p4),
     .din23(subrow_col_indices_0),
-    .dout(tmp_fu_907_p25)
+    .dout(tmp_fu_913_p25)
 );
 
 accelerate_mux_2332_32_1_1 #(
@@ -405,31 +396,31 @@ accelerate_mux_2332_32_1_1 #(
     .din23_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
 mux_2332_32_1_1_U5(
-    .din0(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_phi_fu_399_p4),
-    .din1(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_phi_fu_409_p4),
-    .din2(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_phi_fu_419_p4),
-    .din3(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_phi_fu_429_p4),
-    .din4(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_phi_fu_439_p4),
-    .din5(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_phi_fu_449_p4),
-    .din6(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_phi_fu_459_p4),
-    .din7(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_phi_fu_469_p4),
-    .din8(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_phi_fu_479_p4),
-    .din9(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_phi_fu_489_p4),
-    .din10(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_phi_fu_499_p4),
-    .din11(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_phi_fu_509_p4),
-    .din12(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_phi_fu_519_p4),
-    .din13(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_phi_fu_529_p4),
-    .din14(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_phi_fu_539_p4),
-    .din15(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_phi_fu_549_p4),
-    .din16(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_12_phi_fu_559_p4),
-    .din17(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_phi_fu_569_p4),
-    .din18(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_phi_fu_579_p4),
-    .din19(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_phi_fu_589_p4),
-    .din20(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_phi_fu_599_p4),
-    .din21(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_phi_fu_609_p4),
-    .din22(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_phi_fu_619_p4),
+    .din0(ap_phi_mux_p_ZL7storage_0_loc_0_phi_fu_405_p4),
+    .din1(ap_phi_mux_p_ZL7storage_1_loc_0_phi_fu_415_p4),
+    .din2(ap_phi_mux_p_ZL7storage_2_loc_0_phi_fu_425_p4),
+    .din3(ap_phi_mux_p_ZL7storage_3_loc_0_phi_fu_435_p4),
+    .din4(ap_phi_mux_p_ZL7storage_4_loc_0_phi_fu_445_p4),
+    .din5(ap_phi_mux_p_ZL7storage_5_loc_0_phi_fu_455_p4),
+    .din6(ap_phi_mux_p_ZL7storage_6_loc_0_phi_fu_465_p4),
+    .din7(ap_phi_mux_p_ZL7storage_7_loc_0_phi_fu_475_p4),
+    .din8(ap_phi_mux_p_ZL7storage_8_loc_0_phi_fu_485_p4),
+    .din9(ap_phi_mux_p_ZL7storage_9_loc_0_phi_fu_495_p4),
+    .din10(ap_phi_mux_p_ZL7storage_10_loc_0_phi_fu_505_p4),
+    .din11(ap_phi_mux_p_ZL7storage_11_loc_0_phi_fu_515_p4),
+    .din12(ap_phi_mux_p_ZL7storage_12_loc_0_phi_fu_525_p4),
+    .din13(ap_phi_mux_p_ZL7storage_13_loc_0_phi_fu_535_p4),
+    .din14(ap_phi_mux_p_ZL7storage_14_loc_0_phi_fu_545_p4),
+    .din15(ap_phi_mux_p_ZL7storage_15_loc_0_phi_fu_555_p4),
+    .din16(ap_phi_mux_p_ZL7storage_16_loc_0_phi_fu_565_p4),
+    .din17(ap_phi_mux_p_ZL7storage_17_loc_0_phi_fu_575_p4),
+    .din18(ap_phi_mux_p_ZL7storage_18_loc_0_phi_fu_585_p4),
+    .din19(ap_phi_mux_p_ZL7storage_19_loc_0_phi_fu_595_p4),
+    .din20(ap_phi_mux_p_ZL7storage_20_loc_0_phi_fu_605_p4),
+    .din21(ap_phi_mux_p_ZL7storage_21_loc_0_phi_fu_615_p4),
+    .din22(ap_phi_mux_p_ZL7storage_22_loc_0_phi_fu_625_p4),
     .din23(subrow_col_indices_1),
-    .dout(tmp_1_fu_959_p25)
+    .dout(tmp_1_fu_965_p25)
 );
 
 accelerate_mux_2332_32_1_1 #(
@@ -461,31 +452,31 @@ accelerate_mux_2332_32_1_1 #(
     .din23_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
 mux_2332_32_1_1_U6(
-    .din0(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_phi_fu_399_p4),
-    .din1(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_phi_fu_409_p4),
-    .din2(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_phi_fu_419_p4),
-    .din3(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_phi_fu_429_p4),
-    .din4(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_phi_fu_439_p4),
-    .din5(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_phi_fu_449_p4),
-    .din6(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_phi_fu_459_p4),
-    .din7(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_phi_fu_469_p4),
-    .din8(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_phi_fu_479_p4),
-    .din9(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_phi_fu_489_p4),
-    .din10(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_phi_fu_499_p4),
-    .din11(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_phi_fu_509_p4),
-    .din12(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_phi_fu_519_p4),
-    .din13(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_phi_fu_529_p4),
-    .din14(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_phi_fu_539_p4),
-    .din15(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_phi_fu_549_p4),
-    .din16(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_12_phi_fu_559_p4),
-    .din17(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_phi_fu_569_p4),
-    .din18(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_phi_fu_579_p4),
-    .din19(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_phi_fu_589_p4),
-    .din20(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_phi_fu_599_p4),
-    .din21(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_phi_fu_609_p4),
-    .din22(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_phi_fu_619_p4),
+    .din0(ap_phi_mux_p_ZL7storage_0_loc_0_phi_fu_405_p4),
+    .din1(ap_phi_mux_p_ZL7storage_1_loc_0_phi_fu_415_p4),
+    .din2(ap_phi_mux_p_ZL7storage_2_loc_0_phi_fu_425_p4),
+    .din3(ap_phi_mux_p_ZL7storage_3_loc_0_phi_fu_435_p4),
+    .din4(ap_phi_mux_p_ZL7storage_4_loc_0_phi_fu_445_p4),
+    .din5(ap_phi_mux_p_ZL7storage_5_loc_0_phi_fu_455_p4),
+    .din6(ap_phi_mux_p_ZL7storage_6_loc_0_phi_fu_465_p4),
+    .din7(ap_phi_mux_p_ZL7storage_7_loc_0_phi_fu_475_p4),
+    .din8(ap_phi_mux_p_ZL7storage_8_loc_0_phi_fu_485_p4),
+    .din9(ap_phi_mux_p_ZL7storage_9_loc_0_phi_fu_495_p4),
+    .din10(ap_phi_mux_p_ZL7storage_10_loc_0_phi_fu_505_p4),
+    .din11(ap_phi_mux_p_ZL7storage_11_loc_0_phi_fu_515_p4),
+    .din12(ap_phi_mux_p_ZL7storage_12_loc_0_phi_fu_525_p4),
+    .din13(ap_phi_mux_p_ZL7storage_13_loc_0_phi_fu_535_p4),
+    .din14(ap_phi_mux_p_ZL7storage_14_loc_0_phi_fu_545_p4),
+    .din15(ap_phi_mux_p_ZL7storage_15_loc_0_phi_fu_555_p4),
+    .din16(ap_phi_mux_p_ZL7storage_16_loc_0_phi_fu_565_p4),
+    .din17(ap_phi_mux_p_ZL7storage_17_loc_0_phi_fu_575_p4),
+    .din18(ap_phi_mux_p_ZL7storage_18_loc_0_phi_fu_585_p4),
+    .din19(ap_phi_mux_p_ZL7storage_19_loc_0_phi_fu_595_p4),
+    .din20(ap_phi_mux_p_ZL7storage_20_loc_0_phi_fu_605_p4),
+    .din21(ap_phi_mux_p_ZL7storage_21_loc_0_phi_fu_615_p4),
+    .din22(ap_phi_mux_p_ZL7storage_22_loc_0_phi_fu_625_p4),
     .din23(subrow_col_indices_2),
-    .dout(tmp_2_fu_1011_p25)
+    .dout(tmp_2_fu_1017_p25)
 );
 
 accelerate_mux_2332_32_1_1 #(
@@ -517,31 +508,31 @@ accelerate_mux_2332_32_1_1 #(
     .din23_WIDTH( 32 ),
     .dout_WIDTH( 32 ))
 mux_2332_32_1_1_U7(
-    .din0(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_phi_fu_399_p4),
-    .din1(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_phi_fu_409_p4),
-    .din2(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_phi_fu_419_p4),
-    .din3(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_phi_fu_429_p4),
-    .din4(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_phi_fu_439_p4),
-    .din5(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_phi_fu_449_p4),
-    .din6(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_phi_fu_459_p4),
-    .din7(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_phi_fu_469_p4),
-    .din8(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_phi_fu_479_p4),
-    .din9(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_phi_fu_489_p4),
-    .din10(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_phi_fu_499_p4),
-    .din11(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_phi_fu_509_p4),
-    .din12(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_phi_fu_519_p4),
-    .din13(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_phi_fu_529_p4),
-    .din14(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_phi_fu_539_p4),
-    .din15(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_phi_fu_549_p4),
-    .din16(ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_12_phi_fu_559_p4),
-    .din17(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_phi_fu_569_p4),
-    .din18(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_phi_fu_579_p4),
-    .din19(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_phi_fu_589_p4),
-    .din20(ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_phi_fu_599_p4),
-    .din21(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_phi_fu_609_p4),
-    .din22(ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_phi_fu_619_p4),
+    .din0(ap_phi_mux_p_ZL7storage_0_loc_0_phi_fu_405_p4),
+    .din1(ap_phi_mux_p_ZL7storage_1_loc_0_phi_fu_415_p4),
+    .din2(ap_phi_mux_p_ZL7storage_2_loc_0_phi_fu_425_p4),
+    .din3(ap_phi_mux_p_ZL7storage_3_loc_0_phi_fu_435_p4),
+    .din4(ap_phi_mux_p_ZL7storage_4_loc_0_phi_fu_445_p4),
+    .din5(ap_phi_mux_p_ZL7storage_5_loc_0_phi_fu_455_p4),
+    .din6(ap_phi_mux_p_ZL7storage_6_loc_0_phi_fu_465_p4),
+    .din7(ap_phi_mux_p_ZL7storage_7_loc_0_phi_fu_475_p4),
+    .din8(ap_phi_mux_p_ZL7storage_8_loc_0_phi_fu_485_p4),
+    .din9(ap_phi_mux_p_ZL7storage_9_loc_0_phi_fu_495_p4),
+    .din10(ap_phi_mux_p_ZL7storage_10_loc_0_phi_fu_505_p4),
+    .din11(ap_phi_mux_p_ZL7storage_11_loc_0_phi_fu_515_p4),
+    .din12(ap_phi_mux_p_ZL7storage_12_loc_0_phi_fu_525_p4),
+    .din13(ap_phi_mux_p_ZL7storage_13_loc_0_phi_fu_535_p4),
+    .din14(ap_phi_mux_p_ZL7storage_14_loc_0_phi_fu_545_p4),
+    .din15(ap_phi_mux_p_ZL7storage_15_loc_0_phi_fu_555_p4),
+    .din16(ap_phi_mux_p_ZL7storage_16_loc_0_phi_fu_565_p4),
+    .din17(ap_phi_mux_p_ZL7storage_17_loc_0_phi_fu_575_p4),
+    .din18(ap_phi_mux_p_ZL7storage_18_loc_0_phi_fu_585_p4),
+    .din19(ap_phi_mux_p_ZL7storage_19_loc_0_phi_fu_595_p4),
+    .din20(ap_phi_mux_p_ZL7storage_20_loc_0_phi_fu_605_p4),
+    .din21(ap_phi_mux_p_ZL7storage_21_loc_0_phi_fu_615_p4),
+    .din22(ap_phi_mux_p_ZL7storage_22_loc_0_phi_fu_625_p4),
     .din23(subrow_col_indices_3),
-    .dout(tmp_3_fu_1063_p25)
+    .dout(tmp_3_fu_1069_p25)
 );
 
 accelerate_mul_32s_32s_32_2_1 #(
@@ -553,10 +544,10 @@ accelerate_mul_32s_32s_32_2_1 #(
 mul_32s_32s_32_2_1_U8(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(subrow_vals_0_read_reg_1200),
-    .din1(tmp_reg_1205),
+    .din0(subrow_vals_0_read_reg_1192),
+    .din1(tmp_reg_1197),
     .ce(1'b1),
-    .dout(grp_fu_1115_p2)
+    .dout(grp_fu_1121_p2)
 );
 
 accelerate_mul_32s_32s_32_2_1 #(
@@ -568,10 +559,10 @@ accelerate_mul_32s_32s_32_2_1 #(
 mul_32s_32s_32_2_1_U9(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(subrow_vals_1_read_reg_1215),
-    .din1(tmp_1_reg_1220),
+    .din0(subrow_vals_1_read_reg_1207),
+    .din1(tmp_1_reg_1212),
     .ce(1'b1),
-    .dout(grp_fu_1119_p2)
+    .dout(grp_fu_1125_p2)
 );
 
 accelerate_mul_32s_32s_32_2_1 #(
@@ -583,10 +574,10 @@ accelerate_mul_32s_32s_32_2_1 #(
 mul_32s_32s_32_2_1_U10(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(subrow_vals_2_read_reg_1230),
-    .din1(tmp_2_reg_1235),
+    .din0(subrow_vals_2_read_reg_1222),
+    .din1(tmp_2_reg_1227),
     .ce(1'b1),
-    .dout(grp_fu_1123_p2)
+    .dout(grp_fu_1129_p2)
 );
 
 accelerate_mul_32s_32s_32_2_1 #(
@@ -598,10 +589,10 @@ accelerate_mul_32s_32s_32_2_1 #(
 mul_32s_32s_32_2_1_U11(
     .clk(ap_clk),
     .reset(ap_rst),
-    .din0(subrow_vals_3_read_reg_1245),
-    .din1(tmp_3_reg_1250),
+    .din0(subrow_vals_3_read_reg_1237),
+    .din1(tmp_3_reg_1242),
     .ce(1'b1),
-    .dout(grp_fu_1127_p2)
+    .dout(grp_fu_1133_p2)
 );
 
 always @ (posedge ap_clk) begin
@@ -674,124 +665,105 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
-        ap_enable_reg_pp0_iter7 <= 1'b0;
+        grp_reduce_fu_632_ap_start_reg <= 1'b0;
     end else begin
-        if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
-            ap_enable_reg_pp0_iter7 <= ap_enable_reg_pp0_iter6;
+        if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter3 == 1'b1))) begin
+            grp_reduce_fu_632_ap_start_reg <= 1'b1;
+        end else if ((grp_reduce_fu_632_ap_ready == 1'b1)) begin
+            grp_reduce_fu_632_ap_start_reg <= 1'b0;
         end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (ap_rst == 1'b1) begin
-        grp_reduce_fu_626_ap_start_reg <= 1'b0;
-    end else begin
-        if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter4 == 1'b1))) begin
-            grp_reduce_fu_626_ap_start_reg <= 1'b1;
-        end else if ((grp_reduce_fu_626_ap_ready == 1'b1)) begin
-            grp_reduce_fu_626_ap_start_reg <= 1'b0;
-        end
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0) & (init_vector_read_read_fu_174_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-        accelerate_int_int_int_bool_int_bool_int_storage <= vector_0;
-        accelerate_int_int_int_bool_int_bool_int_storage_1 <= vector_1;
-        accelerate_int_int_int_bool_int_bool_int_storage_2 <= vector_2;
-        accelerate_int_int_int_bool_int_bool_int_storage_3 <= vector_3;
-        accelerate_int_int_int_bool_int_bool_int_storage_4 <= vector_4;
-        accelerate_int_int_int_bool_int_bool_int_storage_5 <= vector_5;
-        accelerate_int_int_int_bool_int_bool_int_storage_6 <= vector_6;
-        accelerate_int_int_int_bool_int_bool_int_storage_7 <= vector_7;
-        accelerate_int_int_int_bool_int_bool_int_storage_8 <= vector_8;
-        accelerate_int_int_int_bool_int_bool_int_storage_9 <= vector_9;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10 <= vector_10;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_11 <= vector_11;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_12 <= vector_12;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_13 <= vector_13;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_14 <= vector_14;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15 <= vector_15;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_16 <= vector_16;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17 <= vector_17;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18 <= vector_18;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19 <= vector_19;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20 <= vector_20;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_21 <= vector_21;
-        p_ZZ10accelerateRiPiS0_PbibS0_E7storage_22 <= vector_22;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if ((1'b0 == ap_block_pp0_stage0_11001)) begin
-        add_ln40_2_reg_1280 <= add_ln40_2_fu_1161_p2;
-        add_ln40_3_reg_1285 <= add_ln40_3_fu_1176_p2;
-        label_r_read_reg_1190_pp0_iter2_reg <= label_r_read_reg_1190_pp0_iter1_reg;
-        label_r_read_reg_1190_pp0_iter3_reg <= label_r_read_reg_1190_pp0_iter2_reg;
-        label_r_read_reg_1190_pp0_iter4_reg <= label_r_read_reg_1190_pp0_iter3_reg;
-        mult_enables_0_read_reg_1195_pp0_iter2_reg <= mult_enables_0_read_reg_1195_pp0_iter1_reg;
-        mult_enables_1_read_reg_1210_pp0_iter2_reg <= mult_enables_1_read_reg_1210_pp0_iter1_reg;
-        mult_enables_2_read_reg_1225_pp0_iter2_reg <= mult_enables_2_read_reg_1225_pp0_iter1_reg;
-        mult_enables_3_read_reg_1240_pp0_iter2_reg <= mult_enables_3_read_reg_1240_pp0_iter1_reg;
-        select_ln25_1_reg_1275 <= select_ln25_1_fu_1137_p3;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        label_r_read_reg_1190 <= label_r;
-        label_r_read_reg_1190_pp0_iter1_reg <= label_r_read_reg_1190;
-        mult_enables_0_read_reg_1195 <= mult_enables_0;
-        mult_enables_0_read_reg_1195_pp0_iter1_reg <= mult_enables_0_read_reg_1195;
-        mult_enables_1_read_reg_1210 <= mult_enables_1;
-        mult_enables_1_read_reg_1210_pp0_iter1_reg <= mult_enables_1_read_reg_1210;
-        mult_enables_2_read_reg_1225 <= mult_enables_2;
-        mult_enables_2_read_reg_1225_pp0_iter1_reg <= mult_enables_2_read_reg_1225;
-        mult_enables_3_read_reg_1240 <= mult_enables_3;
-        mult_enables_3_read_reg_1240_pp0_iter1_reg <= mult_enables_3_read_reg_1240;
-        subrow_vals_0_read_reg_1200 <= subrow_vals_0;
-        subrow_vals_1_read_reg_1215 <= subrow_vals_1;
-        subrow_vals_2_read_reg_1230 <= subrow_vals_2;
-        subrow_vals_3_read_reg_1245 <= subrow_vals_3;
-        tmp_1_reg_1220 <= tmp_1_fu_959_p25;
-        tmp_2_reg_1235 <= tmp_2_fu_1011_p25;
-        tmp_3_reg_1250 <= tmp_3_fu_1063_p25;
-        tmp_reg_1205 <= tmp_fu_907_p25;
+        label_r_read_reg_1182 <= label_r;
+        label_r_read_reg_1182_pp0_iter1_reg <= label_r_read_reg_1182;
+        mult_enables_0_read_reg_1187 <= mult_enables_0;
+        mult_enables_0_read_reg_1187_pp0_iter1_reg <= mult_enables_0_read_reg_1187;
+        mult_enables_1_read_reg_1202 <= mult_enables_1;
+        mult_enables_1_read_reg_1202_pp0_iter1_reg <= mult_enables_1_read_reg_1202;
+        mult_enables_2_read_reg_1217 <= mult_enables_2;
+        mult_enables_2_read_reg_1217_pp0_iter1_reg <= mult_enables_2_read_reg_1217;
+        mult_enables_3_read_reg_1232 <= mult_enables_3;
+        mult_enables_3_read_reg_1232_pp0_iter1_reg <= mult_enables_3_read_reg_1232;
+        subrow_vals_0_read_reg_1192 <= subrow_vals_0;
+        subrow_vals_1_read_reg_1207 <= subrow_vals_1;
+        subrow_vals_2_read_reg_1222 <= subrow_vals_2;
+        subrow_vals_3_read_reg_1237 <= subrow_vals_3;
+        tmp_1_reg_1212 <= tmp_1_fu_965_p25;
+        tmp_2_reg_1227 <= tmp_2_fu_1017_p25;
+        tmp_3_reg_1242 <= tmp_3_fu_1069_p25;
+        tmp_reg_1197 <= tmp_fu_913_p25;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (mult_enables_1_read_reg_1210_pp0_iter1_reg == 1'd1))) begin
-        mul_ln26_1_reg_1260 <= grp_fu_1119_p2;
+    if ((1'b0 == ap_block_pp0_stage0_11001)) begin
+        label_r_read_reg_1182_pp0_iter2_reg <= label_r_read_reg_1182_pp0_iter1_reg;
+        label_r_read_reg_1182_pp0_iter3_reg <= label_r_read_reg_1182_pp0_iter2_reg;
+        mult_enables_0_read_reg_1187_pp0_iter2_reg <= mult_enables_0_read_reg_1187_pp0_iter1_reg;
+        mult_enables_1_read_reg_1202_pp0_iter2_reg <= mult_enables_1_read_reg_1202_pp0_iter1_reg;
+        mult_enables_2_read_reg_1217_pp0_iter2_reg <= mult_enables_2_read_reg_1217_pp0_iter1_reg;
+        mult_enables_3_read_reg_1232_pp0_iter2_reg <= mult_enables_3_read_reg_1232_pp0_iter1_reg;
+        x_1_reg_1267 <= x_1_fu_1173_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (mult_enables_2_read_reg_1225_pp0_iter1_reg == 1'd1))) begin
-        mul_ln26_2_reg_1265 <= grp_fu_1123_p2;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (mult_enables_1_read_reg_1202_pp0_iter1_reg == 1'd1))) begin
+        mul_ln29_1_reg_1252 <= grp_fu_1125_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (mult_enables_3_read_reg_1240_pp0_iter1_reg == 1'd1))) begin
-        mul_ln26_3_reg_1270 <= grp_fu_1127_p2;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (mult_enables_2_read_reg_1217_pp0_iter1_reg == 1'd1))) begin
+        mul_ln29_2_reg_1257 <= grp_fu_1129_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (mult_enables_0_read_reg_1195_pp0_iter1_reg == 1'd1))) begin
-        mul_ln26_reg_1255 <= grp_fu_1115_p2;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (mult_enables_3_read_reg_1232_pp0_iter1_reg == 1'd1))) begin
+        mul_ln29_3_reg_1262 <= grp_fu_1133_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter4 == 1'b1))) begin
-        sum <= add_ln40_3_fu_1176_p2;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (mult_enables_0_read_reg_1187_pp0_iter1_reg == 1'd1))) begin
+        mul_ln29_reg_1247 <= grp_fu_1121_p2;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0) & (init_read_read_fu_180_p2 == 1'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
+        p_ZL7storage_0 <= init_vector_0;
+        p_ZL7storage_1 <= init_vector_1;
+        p_ZL7storage_10 <= init_vector_10;
+        p_ZL7storage_11 <= init_vector_11;
+        p_ZL7storage_12 <= init_vector_12;
+        p_ZL7storage_13 <= init_vector_13;
+        p_ZL7storage_14 <= init_vector_14;
+        p_ZL7storage_15 <= init_vector_15;
+        p_ZL7storage_16 <= init_vector_16;
+        p_ZL7storage_17 <= init_vector_17;
+        p_ZL7storage_18 <= init_vector_18;
+        p_ZL7storage_19 <= init_vector_19;
+        p_ZL7storage_2 <= init_vector_2;
+        p_ZL7storage_20 <= init_vector_20;
+        p_ZL7storage_21 <= init_vector_21;
+        p_ZL7storage_22 <= init_vector_22;
+        p_ZL7storage_3 <= init_vector_3;
+        p_ZL7storage_4 <= init_vector_4;
+        p_ZL7storage_5 <= init_vector_5;
+        p_ZL7storage_6 <= init_vector_6;
+        p_ZL7storage_7 <= init_vector_7;
+        p_ZL7storage_8 <= init_vector_8;
+        p_ZL7storage_9 <= init_vector_9;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter7 == 1'b1))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter6 == 1'b1))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -807,7 +779,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_enable_reg_pp0_iter7 == 1'b0) & (ap_enable_reg_pp0_iter6 == 1'b0) & (ap_enable_reg_pp0_iter5 == 1'b0) & (ap_enable_reg_pp0_iter4 == 1'b0) & (ap_enable_reg_pp0_iter3 == 1'b0) & (ap_enable_reg_pp0_iter2 == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
+    if (((ap_enable_reg_pp0_iter6 == 1'b0) & (ap_enable_reg_pp0_iter5 == 1'b0) & (ap_enable_reg_pp0_iter4 == 1'b0) & (ap_enable_reg_pp0_iter3 == 1'b0) & (ap_enable_reg_pp0_iter2 == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
         ap_idle_pp0 = 1'b1;
     end else begin
         ap_idle_pp0 = 1'b0;
@@ -815,240 +787,240 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_enable_reg_pp0_iter6 == 1'b0) & (ap_enable_reg_pp0_iter5 == 1'b0) & (ap_enable_reg_pp0_iter4 == 1'b0) & (ap_enable_reg_pp0_iter3 == 1'b0) & (ap_enable_reg_pp0_iter2 == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
-        ap_idle_pp0_0to6 = 1'b1;
+    if (((ap_enable_reg_pp0_iter5 == 1'b0) & (ap_enable_reg_pp0_iter4 == 1'b0) & (ap_enable_reg_pp0_iter3 == 1'b0) & (ap_enable_reg_pp0_iter2 == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
+        ap_idle_pp0_0to5 = 1'b1;
     end else begin
-        ap_idle_pp0_0to6 = 1'b0;
+        ap_idle_pp0_0to5 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_12_phi_fu_559_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_16;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_12_phi_fu_559_p4 = vector_16;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_0_loc_0_phi_fu_405_p4 = p_ZL7storage_0;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_0_loc_0_phi_fu_405_p4 = init_vector_0;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_12_phi_fu_559_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_12_reg_556;
+        ap_phi_mux_p_ZL7storage_0_loc_0_phi_fu_405_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_0_loc_0_reg_402;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_phi_fu_409_p4 = accelerate_int_int_int_bool_int_bool_int_storage_1;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_phi_fu_409_p4 = vector_1;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_10_loc_0_phi_fu_505_p4 = p_ZL7storage_10;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_10_loc_0_phi_fu_505_p4 = init_vector_10;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_phi_fu_409_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_reg_406;
+        ap_phi_mux_p_ZL7storage_10_loc_0_phi_fu_505_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_10_loc_0_reg_502;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_phi_fu_419_p4 = accelerate_int_int_int_bool_int_bool_int_storage_2;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_phi_fu_419_p4 = vector_2;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_11_loc_0_phi_fu_515_p4 = p_ZL7storage_11;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_11_loc_0_phi_fu_515_p4 = init_vector_11;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_phi_fu_419_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_reg_416;
+        ap_phi_mux_p_ZL7storage_11_loc_0_phi_fu_515_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_11_loc_0_reg_512;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_phi_fu_429_p4 = accelerate_int_int_int_bool_int_bool_int_storage_3;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_phi_fu_429_p4 = vector_3;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_12_loc_0_phi_fu_525_p4 = p_ZL7storage_12;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_12_loc_0_phi_fu_525_p4 = init_vector_12;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_phi_fu_429_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_reg_426;
+        ap_phi_mux_p_ZL7storage_12_loc_0_phi_fu_525_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_12_loc_0_reg_522;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_phi_fu_439_p4 = accelerate_int_int_int_bool_int_bool_int_storage_4;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_phi_fu_439_p4 = vector_4;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_13_loc_0_phi_fu_535_p4 = p_ZL7storage_13;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_13_loc_0_phi_fu_535_p4 = init_vector_13;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_phi_fu_439_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_reg_436;
+        ap_phi_mux_p_ZL7storage_13_loc_0_phi_fu_535_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_13_loc_0_reg_532;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_phi_fu_449_p4 = accelerate_int_int_int_bool_int_bool_int_storage_5;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_phi_fu_449_p4 = vector_5;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_14_loc_0_phi_fu_545_p4 = p_ZL7storage_14;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_14_loc_0_phi_fu_545_p4 = init_vector_14;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_phi_fu_449_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_reg_446;
+        ap_phi_mux_p_ZL7storage_14_loc_0_phi_fu_545_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_14_loc_0_reg_542;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_phi_fu_459_p4 = accelerate_int_int_int_bool_int_bool_int_storage_6;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_phi_fu_459_p4 = vector_6;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_15_loc_0_phi_fu_555_p4 = p_ZL7storage_15;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_15_loc_0_phi_fu_555_p4 = init_vector_15;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_phi_fu_459_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_reg_456;
+        ap_phi_mux_p_ZL7storage_15_loc_0_phi_fu_555_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_15_loc_0_reg_552;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_phi_fu_469_p4 = accelerate_int_int_int_bool_int_bool_int_storage_7;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_phi_fu_469_p4 = vector_7;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_16_loc_0_phi_fu_565_p4 = p_ZL7storage_16;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_16_loc_0_phi_fu_565_p4 = init_vector_16;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_phi_fu_469_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_reg_466;
+        ap_phi_mux_p_ZL7storage_16_loc_0_phi_fu_565_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_16_loc_0_reg_562;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_phi_fu_479_p4 = accelerate_int_int_int_bool_int_bool_int_storage_8;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_phi_fu_479_p4 = vector_8;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_17_loc_0_phi_fu_575_p4 = p_ZL7storage_17;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_17_loc_0_phi_fu_575_p4 = init_vector_17;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_phi_fu_479_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_reg_476;
+        ap_phi_mux_p_ZL7storage_17_loc_0_phi_fu_575_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_17_loc_0_reg_572;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_phi_fu_489_p4 = accelerate_int_int_int_bool_int_bool_int_storage_9;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_phi_fu_489_p4 = vector_9;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_18_loc_0_phi_fu_585_p4 = p_ZL7storage_18;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_18_loc_0_phi_fu_585_p4 = init_vector_18;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_phi_fu_489_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_reg_486;
+        ap_phi_mux_p_ZL7storage_18_loc_0_phi_fu_585_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_18_loc_0_reg_582;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_phi_fu_399_p4 = accelerate_int_int_int_bool_int_bool_int_storage;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_phi_fu_399_p4 = vector_0;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_19_loc_0_phi_fu_595_p4 = p_ZL7storage_19;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_19_loc_0_phi_fu_595_p4 = init_vector_19;
     end else begin
-        ap_phi_mux_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_phi_fu_399_p4 = ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_reg_396;
+        ap_phi_mux_p_ZL7storage_19_loc_0_phi_fu_595_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_19_loc_0_reg_592;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_phi_fu_619_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_22;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_phi_fu_619_p4 = vector_22;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_1_loc_0_phi_fu_415_p4 = p_ZL7storage_1;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_1_loc_0_phi_fu_415_p4 = init_vector_1;
     end else begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_phi_fu_619_p4 = ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_reg_616;
+        ap_phi_mux_p_ZL7storage_1_loc_0_phi_fu_415_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_1_loc_0_reg_412;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_phi_fu_519_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_12;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_phi_fu_519_p4 = vector_12;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_20_loc_0_phi_fu_605_p4 = p_ZL7storage_20;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_20_loc_0_phi_fu_605_p4 = init_vector_20;
     end else begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_phi_fu_519_p4 = ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_reg_516;
+        ap_phi_mux_p_ZL7storage_20_loc_0_phi_fu_605_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_20_loc_0_reg_602;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_phi_fu_529_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_13;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_phi_fu_529_p4 = vector_13;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_21_loc_0_phi_fu_615_p4 = p_ZL7storage_21;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_21_loc_0_phi_fu_615_p4 = init_vector_21;
     end else begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_phi_fu_529_p4 = ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_reg_526;
+        ap_phi_mux_p_ZL7storage_21_loc_0_phi_fu_615_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_21_loc_0_reg_612;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_phi_fu_539_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_14;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_phi_fu_539_p4 = vector_14;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_22_loc_0_phi_fu_625_p4 = p_ZL7storage_22;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_22_loc_0_phi_fu_625_p4 = init_vector_22;
     end else begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_phi_fu_539_p4 = ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_reg_536;
+        ap_phi_mux_p_ZL7storage_22_loc_0_phi_fu_625_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_22_loc_0_reg_622;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_phi_fu_609_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_21;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_phi_fu_609_p4 = vector_21;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_2_loc_0_phi_fu_425_p4 = p_ZL7storage_2;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_2_loc_0_phi_fu_425_p4 = init_vector_2;
     end else begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_phi_fu_609_p4 = ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_reg_606;
+        ap_phi_mux_p_ZL7storage_2_loc_0_phi_fu_425_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_2_loc_0_reg_422;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_phi_fu_509_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_11;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_phi_fu_509_p4 = vector_11;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_3_loc_0_phi_fu_435_p4 = p_ZL7storage_3;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_3_loc_0_phi_fu_435_p4 = init_vector_3;
     end else begin
-        ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_phi_fu_509_p4 = ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_reg_506;
+        ap_phi_mux_p_ZL7storage_3_loc_0_phi_fu_435_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_3_loc_0_reg_432;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_phi_fu_499_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_phi_fu_499_p4 = vector_10;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_4_loc_0_phi_fu_445_p4 = p_ZL7storage_4;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_4_loc_0_phi_fu_445_p4 = init_vector_4;
     end else begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_phi_fu_499_p4 = ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_reg_496;
+        ap_phi_mux_p_ZL7storage_4_loc_0_phi_fu_445_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_4_loc_0_reg_442;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_phi_fu_549_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_phi_fu_549_p4 = vector_15;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_5_loc_0_phi_fu_455_p4 = p_ZL7storage_5;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_5_loc_0_phi_fu_455_p4 = init_vector_5;
     end else begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_phi_fu_549_p4 = ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_reg_546;
+        ap_phi_mux_p_ZL7storage_5_loc_0_phi_fu_455_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_5_loc_0_reg_452;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_phi_fu_569_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_phi_fu_569_p4 = vector_17;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_6_loc_0_phi_fu_465_p4 = p_ZL7storage_6;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_6_loc_0_phi_fu_465_p4 = init_vector_6;
     end else begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_phi_fu_569_p4 = ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_reg_566;
+        ap_phi_mux_p_ZL7storage_6_loc_0_phi_fu_465_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_6_loc_0_reg_462;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_phi_fu_579_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_phi_fu_579_p4 = vector_18;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_7_loc_0_phi_fu_475_p4 = p_ZL7storage_7;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_7_loc_0_phi_fu_475_p4 = init_vector_7;
     end else begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_phi_fu_579_p4 = ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_reg_576;
+        ap_phi_mux_p_ZL7storage_7_loc_0_phi_fu_475_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_7_loc_0_reg_472;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_phi_fu_589_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_phi_fu_589_p4 = vector_19;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_8_loc_0_phi_fu_485_p4 = p_ZL7storage_8;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_8_loc_0_phi_fu_485_p4 = init_vector_8;
     end else begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_phi_fu_589_p4 = ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_reg_586;
+        ap_phi_mux_p_ZL7storage_8_loc_0_phi_fu_485_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_8_loc_0_reg_482;
     end
 end
 
 always @ (*) begin
-    if ((init_vector_read_read_fu_174_p2 == 1'd0)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_phi_fu_599_p4 = p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20;
-    end else if ((init_vector_read_read_fu_174_p2 == 1'd1)) begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_phi_fu_599_p4 = vector_20;
+    if ((init_read_read_fu_180_p2 == 1'd0)) begin
+        ap_phi_mux_p_ZL7storage_9_loc_0_phi_fu_495_p4 = p_ZL7storage_9;
+    end else if ((init_read_read_fu_180_p2 == 1'd1)) begin
+        ap_phi_mux_p_ZL7storage_9_loc_0_phi_fu_495_p4 = init_vector_9;
     end else begin
-        ap_phi_mux_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_phi_fu_599_p4 = ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_reg_596;
+        ap_phi_mux_p_ZL7storage_9_loc_0_phi_fu_495_p4 = ap_phi_reg_pp0_iter0_p_ZL7storage_9_loc_0_reg_492;
     end
 end
 
@@ -1061,7 +1033,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_start == 1'b0) & (ap_idle_pp0_0to6 == 1'b1))) begin
+    if (((ap_start == 1'b0) & (ap_idle_pp0_0to5 == 1'b1))) begin
         ap_reset_idle_pp0 = 1'b1;
     end else begin
         ap_reset_idle_pp0 = 1'b0;
@@ -1069,7 +1041,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter7 == 1'b1))) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter6 == 1'b1))) begin
         out_r_ap_lwr = 1'b1;
     end else begin
         out_r_ap_lwr = 1'b0;
@@ -1087,13 +1059,9 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln40_1_fu_1155_p2 = (select_ln25_fu_1131_p3 + select_ln25_3_fu_1149_p3);
+assign add_ln43_1_fu_1167_p2 = (select_ln28_2_fu_1149_p3 + select_ln28_3_fu_1155_p3);
 
-assign add_ln40_2_fu_1161_p2 = (add_ln40_1_fu_1155_p2 + select_ln25_2_fu_1143_p3);
-
-assign add_ln40_3_fu_1176_p2 = (add_ln40_2_reg_1280 + add_ln40_fu_1171_p2);
-
-assign add_ln40_fu_1171_p2 = (sum + select_ln25_1_reg_1275);
+assign add_ln43_fu_1161_p2 = (select_ln28_1_fu_1143_p3 + x_fu_1137_p3);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
 
@@ -1117,8 +1085,6 @@ assign ap_block_state6_pp0_stage0_iter5 = ~(1'b1 == 1'b1);
 
 assign ap_block_state7_pp0_stage0_iter6 = ~(1'b1 == 1'b1);
 
-assign ap_block_state8_pp0_stage0_iter7 = ~(1'b1 == 1'b1);
-
 assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
 
 assign ap_enable_reg_pp0_iter0 = ap_start;
@@ -1127,66 +1093,68 @@ assign ap_local_block = 1'b0;
 
 assign ap_local_deadlock = 1'b0;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_12_reg_556 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_0_loc_0_reg_402 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_1_loc_0_reg_406 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_10_loc_0_reg_502 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_2_loc_0_reg_416 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_11_loc_0_reg_512 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_3_loc_0_reg_426 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_12_loc_0_reg_522 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_4_loc_0_reg_436 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_13_loc_0_reg_532 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_5_loc_0_reg_446 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_14_loc_0_reg_542 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_6_loc_0_reg_456 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_15_loc_0_reg_552 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_7_loc_0_reg_466 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_16_loc_0_reg_562 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_8_loc_0_reg_476 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_17_loc_0_reg_572 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_9_loc_0_reg_486 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_18_loc_0_reg_582 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_int_int_int_bool_int_bool_int_storage_loc_0_reg_396 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_19_loc_0_reg_592 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_14_reg_616 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_1_loc_0_reg_412 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_l_unsigned_int128_char_0_reg_516 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_20_loc_0_reg_602 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_lo_char_0_reg_526 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_21_loc_0_reg_612 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_loc_0_reg_536 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_22_loc_0_reg_622 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_13_reg_606 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_2_loc_0_reg_422 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_accelerate_mulmulmulmulint_int_int_bool_int_bool_int_storage_long_unsigned_int128_char_0_reg_506 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_3_loc_0_reg_432 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10_loc_0_reg_496 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_4_loc_0_reg_442 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15_loc_0_reg_546 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_5_loc_0_reg_452 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17_loc_0_reg_566 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_6_loc_0_reg_462 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18_loc_0_reg_576 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_7_loc_0_reg_472 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19_loc_0_reg_586 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_8_loc_0_reg_482 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20_loc_0_reg_596 = 'bx;
+assign ap_phi_reg_pp0_iter0_p_ZL7storage_9_loc_0_reg_492 = 'bx;
 
-assign grp_reduce_fu_626_ap_start = grp_reduce_fu_626_ap_start_reg;
+assign grp_reduce_fu_632_ap_start = grp_reduce_fu_632_ap_start_reg;
 
-assign init_vector_read_read_fu_174_p2 = init_vector;
+assign init_read_read_fu_180_p2 = init;
 
-assign out_r = grp_reduce_fu_626_out_r;
+assign out_r = grp_reduce_fu_632_out_r;
 
-assign out_r_ap_vld = grp_reduce_fu_626_out_r_ap_vld;
+assign out_r_ap_vld = grp_reduce_fu_632_out_r_ap_vld;
 
-assign select_ln25_1_fu_1137_p3 = ((mult_enables_1_read_reg_1210_pp0_iter2_reg[0:0] == 1'b1) ? mul_ln26_1_reg_1260 : 32'd0);
+assign select_ln28_1_fu_1143_p3 = ((mult_enables_1_read_reg_1202_pp0_iter2_reg[0:0] == 1'b1) ? mul_ln29_1_reg_1252 : 32'd0);
 
-assign select_ln25_2_fu_1143_p3 = ((mult_enables_2_read_reg_1225_pp0_iter2_reg[0:0] == 1'b1) ? mul_ln26_2_reg_1265 : 32'd0);
+assign select_ln28_2_fu_1149_p3 = ((mult_enables_2_read_reg_1217_pp0_iter2_reg[0:0] == 1'b1) ? mul_ln29_2_reg_1257 : 32'd0);
 
-assign select_ln25_3_fu_1149_p3 = ((mult_enables_3_read_reg_1240_pp0_iter2_reg[0:0] == 1'b1) ? mul_ln26_3_reg_1270 : 32'd0);
+assign select_ln28_3_fu_1155_p3 = ((mult_enables_3_read_reg_1232_pp0_iter2_reg[0:0] == 1'b1) ? mul_ln29_3_reg_1262 : 32'd0);
 
-assign select_ln25_fu_1131_p3 = ((mult_enables_0_read_reg_1195_pp0_iter2_reg[0:0] == 1'b1) ? mul_ln26_reg_1255 : 32'd0);
+assign x_1_fu_1173_p2 = (add_ln43_1_fu_1167_p2 + add_ln43_fu_1161_p2);
+
+assign x_fu_1137_p3 = ((mult_enables_0_read_reg_1187_pp0_iter2_reg[0:0] == 1'b1) ? mul_ln29_reg_1247 : 32'd0);
 
 endmodule //accelerate

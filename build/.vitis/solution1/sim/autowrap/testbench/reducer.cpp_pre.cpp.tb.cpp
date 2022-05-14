@@ -26,11 +26,10 @@ class reducer_data{
 
 class reducer_level{
  public:
-  int curr_level;
   reducer_data buffer[2];
   int num_items;
   bool valid;
-  void add(reducer_data&);
+  void add(reducer_data&, int);
   void insert(reducer_data);
 };
 
@@ -39,7 +38,6 @@ class reducer{
   reducer_level adder_levels[2];
   bool valid;
   void reduce(int&, int, int);
-  void set_levels();
 };
 # 2 "/home/akileshkannan/SPMV_CSR_src/accelerator/reducer.cpp" 2
 
@@ -50,7 +48,7 @@ reducer_data::reducer_data(int value_init, int label_init){
 }
 
 
-void reducer_level::add(reducer_data &out){
+void reducer_level::add(reducer_data &out, int curr_level){
  if(num_items == 2){
   num_items = 0;
   valid = true;
@@ -78,13 +76,6 @@ void reducer_level::insert(reducer_data new_data){
  num_items++;
 }
 
-void reducer::set_levels(){
- for(int i=0;i<2;i++){
-#pragma HLS UNROLL
-  adder_levels[i].curr_level = i;
- }
-}
-
 
 void reducer::reduce(int &out, int value, int label){
  reducer_data out_data, level_out, new_data;
@@ -94,12 +85,12 @@ void reducer::reduce(int &out, int value, int label){
  adder_levels[0].insert(new_data);
  reducer_loop: for(int b=1;b<2;b++){
 #pragma HLS UNROLL
-  adder_levels[b-1].add(level_out);
+  adder_levels[b-1].add(level_out, b-1);
   if(adder_levels[b-1].valid)
    adder_levels[b].insert(level_out);
  }
 
- adder_levels[2 -1].add(out_data);
+ adder_levels[2 -1].add(out_data, 2 -1);
  if(adder_levels[2 -1].valid)
   out = out_data.value;
 }

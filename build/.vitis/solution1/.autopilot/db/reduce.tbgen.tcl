@@ -15,15 +15,13 @@ set C_modelArgList {
 	{ out_r int 32 regular {pointer 1}  }
 	{ value_r int 32 regular  }
 	{ label_r int 32 regular  }
-	{ reducer_circuit_adder_levels_curr_level_1 int 1 regular {pointer 0} {global 0}  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "out_r", "interface" : "wire", "bitwidth" : 32, "direction" : "WRITEONLY"} , 
  	{ "Name" : "value_r", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "label_r", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "reducer_circuit_adder_levels_curr_level_1", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY", "extern" : 0} ]}
+ 	{ "Name" : "label_r", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
-set portNum 11
+set portNum 10
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -35,7 +33,6 @@ set portList {
 	{ out_r_ap_vld sc_out sc_logic 1 outvld 0 } 
 	{ value_r sc_in sc_lv 32 signal 1 } 
 	{ label_r sc_in sc_lv 32 signal 2 } 
-	{ reducer_circuit_adder_levels_curr_level_1 sc_in sc_lv 1 signal 3 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -47,8 +44,7 @@ set NewPortList {[
  	{ "name": "out_r", "direction": "out", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "out_r", "role": "default" }} , 
  	{ "name": "out_r_ap_vld", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "out_r", "role": "ap_vld" }} , 
  	{ "name": "value_r", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "value_r", "role": "default" }} , 
- 	{ "name": "label_r", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "label_r", "role": "default" }} , 
- 	{ "name": "reducer_circuit_adder_levels_curr_level_1", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "reducer_circuit_adder_levels_curr_level_1", "role": "default" }}  ]}
+ 	{ "name": "label_r", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "label_r", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
@@ -78,8 +74,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_0_1", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "reducer_circuit_adder_levels_valid_1", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_1_1", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "reducer_circuit_adder_levels_buffer_label_1_0", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "reducer_circuit_adder_levels_curr_level_1", "Type" : "None", "Direction" : "I"}]}]}
+			{"Name" : "reducer_circuit_adder_levels_buffer_label_1_0", "Type" : "OVld", "Direction" : "IO"}]}]}
 
 
 set ArgLastReadFirstWriteLatency {
@@ -96,8 +91,7 @@ set ArgLastReadFirstWriteLatency {
 		reducer_circuit_adder_levels_buffer_value_0_1 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_valid_1 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_value_1_1 {Type IO LastRead -1 FirstWrite -1}
-		reducer_circuit_adder_levels_buffer_label_1_0 {Type IO LastRead -1 FirstWrite -1}
-		reducer_circuit_adder_levels_curr_level_1 {Type I LastRead 2 FirstWrite -1}}}
+		reducer_circuit_adder_levels_buffer_label_1_0 {Type IO LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -114,5 +108,4 @@ set Spec2ImplPortList {
 	out_r { ap_vld {  { out_r out_data 1 32 }  { out_r_ap_vld out_vld 1 1 } } }
 	value_r { ap_none {  { value_r in_data 0 32 } } }
 	label_r { ap_none {  { label_r in_data 0 32 } } }
-	reducer_circuit_adder_levels_curr_level_1 { ap_none {  { reducer_circuit_adder_levels_curr_level_1 in_data 0 1 } } }
 }

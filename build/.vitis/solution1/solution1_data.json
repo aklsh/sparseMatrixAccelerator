@@ -352,13 +352,10 @@
     "FlowTarget": "vivado",
     "ConfigTcl": [
       "config_export -format=ip_catalog",
+      "config_export -output=\/home\/akileshkannan\/SPMV_CSR_src",
       "config_export -rtl=verilog"
     ],
-    "DirectiveTcl": [
-      "set_directive_top accelerate -name accelerate",
-      "set_directive_top accelerate -name accelerate",
-      "set_directive_top accelerate -name accelerate"
-    ],
+    "DirectiveTcl": ["set_directive_top accelerate -name accelerate"],
     "ProfileOption": "0",
     "ProfileType": "none",
     "KernelName": "accelerate"
@@ -368,8 +365,8 @@
     "ClockPeriod": "10",
     "Uncertainty": "2.7",
     "IsCombinational": "0",
-    "II": "2",
-    "Latency": "8"
+    "II": "1",
+    "Latency": "6"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
   "Ipx": {
@@ -386,8 +383,8 @@
   },
   "Files": {
     "CSource": [
-      "..\/..\/SPMV_CSR_src\/accelerator\/accelerator.cpp",
-      "..\/..\/SPMV_CSR_src\/accelerator\/reducer.cpp"
+      "..\/..\/SPMV_CSR_src\/accelerator\/reducer.cpp",
+      "..\/..\/SPMV_CSR_src\/accelerator\/accelerator.cpp"
     ],
     "Vhdl": [
       "impl\/vhdl\/accelerate_accelerate_Pipeline_1.vhd",
@@ -1244,7 +1241,7 @@
       "ModuleName": "accelerate",
       "Instances": [{
           "ModuleName": "reduce",
-          "InstanceName": "grp_reduce_fu_400"
+          "InstanceName": "grp_reduce_fu_632"
         }]
     },
     "Info": {
@@ -1276,13 +1273,13 @@
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "6.894"
+          "Estimate": "5.039"
         },
         "Area": {
           "FF": "650",
           "AVAIL_FF": "106400",
           "UTIL_FF": "~0",
-          "LUT": "501",
+          "LUT": "484",
           "AVAIL_LUT": "53200",
           "UTIL_LUT": "~0",
           "BRAM_18K": "0",
@@ -1298,28 +1295,28 @@
       },
       "accelerate": {
         "Latency": {
-          "LatencyBest": "8",
-          "LatencyAvg": "8",
-          "LatencyWorst": "8",
-          "PipelineII": "2",
-          "PipelineDepth": "9",
+          "LatencyBest": "6",
+          "LatencyAvg": "6",
+          "LatencyWorst": "6",
+          "PipelineII": "1",
+          "PipelineDepth": "7",
           "PipelineType": "yes"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "6.912"
+          "Estimate": "6.923"
         },
         "Area": {
           "DSP": "12",
           "AVAIL_DSP": "220",
           "UTIL_DSP": "5",
-          "FF": "2736",
+          "FF": "2826",
           "AVAIL_FF": "106400",
           "UTIL_FF": "2",
-          "LUT": "1507",
+          "LUT": "1851",
           "AVAIL_LUT": "53200",
-          "UTIL_LUT": "2",
+          "UTIL_LUT": "3",
           "BRAM_18K": "0",
           "AVAIL_BRAM": "280",
           "UTIL_BRAM": "0",
@@ -1333,7 +1330,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2022-05-14 14:36:17 +0530",
+    "Time": "2022-05-14 21:00:18 +0530",
     "ToolName": "vitis_hls",
     "ToolVersion": "2021.2"
   }

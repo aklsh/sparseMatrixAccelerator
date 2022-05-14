@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'reduce'
 ================================================================
-* Date:           Sat May 14 14:36:16 2022
+* Date:           Sat May 14 21:00:04 2022
 
 * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
 * Project:        SPMV_CSR
@@ -20,7 +20,7 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  6.894 ns|     2.70 ns|
+    |ap_clk  |  10.00 ns|  5.039 ns|     2.70 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
@@ -103,7 +103,7 @@ ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%br_ln29 = br void %._crit_edge" [S
 ST_1 : Operation 23 [1/1] (1.58ns)   --->   "%store_ln13 = store i1 1, i1 %reducer_circuit_adder_levels_valid_0" [SPMV_CSR_src/accelerator/reducer.cpp:13]   --->   Operation 23 'store' 'store_ln13' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 1.58>
 ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_buffer_value_0_1_load = load i32 %reducer_circuit_adder_levels_buffer_value_0_1" [SPMV_CSR_src/accelerator/reducer.cpp:14]   --->   Operation 24 'load' 'reducer_circuit_adder_levels_buffer_value_0_1_load' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
 ST_1 : Operation 25 [1/1] (2.55ns)   --->   "%level_out_value = add i32 %reducer_circuit_adder_levels_buffer_value_0_1_load, i32 %level_out_value_1" [SPMV_CSR_src/accelerator/reducer.cpp:14]   --->   Operation 25 'add' 'level_out_value' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit"   --->   Operation 26 'br' 'br_ln0' <Predicate = (reducer_circuit_adder_levels_num_items_0_load != 1 & reducer_circuit_adder_levels_num_items_0_load != 0)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln0 = br void %_ZN13reducer_level3addER12reducer_datai.exit"   --->   Operation 26 'br' 'br_ln0' <Predicate = (reducer_circuit_adder_levels_num_items_0_load != 1 & reducer_circuit_adder_levels_num_items_0_load != 0)> <Delay = 0.00>
 
 State 2 <SV = 1> <Delay = 4.05>
 ST_2 : Operation 27 [1/1] (0.00ns)   --->   "%level_out_label = phi i32 %label_read, void %branch4, i32 %reducer_circuit_adder_levels_buffer_label_0_0_load, void" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 27 'phi' 'level_out_label' <Predicate = true> <Delay = 0.00>
@@ -111,66 +111,60 @@ ST_2 : Operation 28 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_i
 ST_2 : Operation 29 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_buffer_value_1_0_load = load i32 %reducer_circuit_adder_levels_buffer_value_1_0" [SPMV_CSR_src/accelerator/reducer.cpp:14]   --->   Operation 29 'load' 'reducer_circuit_adder_levels_buffer_value_1_0_load' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 30 [1/1] (0.00ns)   --->   "%tmp = partselect i31 @_ssdm_op_PartSelect.i31.i32.i32.i32, i32 %level_out_label, i32 1, i32 31" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 30 'partselect' 'tmp' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 0)> <Delay = 0.00>
 ST_2 : Operation 31 [1/1] (2.47ns)   --->   "%icmp_ln18 = icmp_slt  i31 %tmp, i31 1" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 31 'icmp' 'icmp_ln18' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 0)> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%br_ln18 = br i1 %icmp_ln18, void %_ZN13reducer_level3addER12reducer_data.exit, void" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 32 'br' 'br_ln18' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 0)> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%br_ln18 = br i1 %icmp_ln18, void %_ZN13reducer_level3addER12reducer_datai.exit, void" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 32 'br' 'br_ln18' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 0)> <Delay = 0.00>
 ST_2 : Operation 33 [1/1] (1.58ns)   --->   "%store_ln20 = store i1 1, i1 %reducer_circuit_adder_levels_valid_0" [SPMV_CSR_src/accelerator/reducer.cpp:20]   --->   Operation 33 'store' 'store_ln20' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18)> <Delay = 1.58>
-ST_2 : Operation 34 [1/1] (1.70ns)   --->   "%br_ln23 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread" [SPMV_CSR_src/accelerator/reducer.cpp:23]   --->   Operation 34 'br' 'br_ln23' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18)> <Delay = 1.70>
-ST_2 : Operation 35 [1/1] (1.70ns)   --->   "%br_ln16 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread" [SPMV_CSR_src/accelerator/reducer.cpp:16]   --->   Operation 35 'br' 'br_ln16' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 1.70>
-ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_valid_0_load = load i1 %reducer_circuit_adder_levels_valid_0" [SPMV_CSR_src/accelerator/reducer.cpp:55]   --->   Operation 36 'load' 'reducer_circuit_adder_levels_valid_0_load' <Predicate = (reducer_circuit_adder_levels_num_items_0_load != 1 & !icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load != 1 & reducer_circuit_adder_levels_num_items_0_load != 0)> <Delay = 0.00>
-ST_2 : Operation 37 [1/1] (1.70ns)   --->   "%br_ln55 = br i1 %reducer_circuit_adder_levels_valid_0_load, void %mergeST, void %_ZN13reducer_level3addER12reducer_data.exit.thread" [SPMV_CSR_src/accelerator/reducer.cpp:55]   --->   Operation 37 'br' 'br_ln55' <Predicate = (reducer_circuit_adder_levels_num_items_0_load != 1 & !icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load != 1 & reducer_circuit_adder_levels_num_items_0_load != 0)> <Delay = 1.70>
-ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_0_new_0 = phi i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_data.exit, i32 0, void, i32 0, void" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 38 'phi' 'reducer_circuit_adder_levels_num_items_0_new_0' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
-ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%level_out_017_31 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit, i32 %level_out_value_1, void, i32 %level_out_value, void"   --->   Operation 39 'phi' 'level_out_017_31' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (1.70ns)   --->   "%br_ln23 = br void %_ZN13reducer_level3addER12reducer_datai.exit.thread" [SPMV_CSR_src/accelerator/reducer.cpp:23]   --->   Operation 34 'br' 'br_ln23' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18)> <Delay = 1.70>
+ST_2 : Operation 35 [1/1] (1.70ns)   --->   "%br_ln16 = br void %_ZN13reducer_level3addER12reducer_datai.exit.thread" [SPMV_CSR_src/accelerator/reducer.cpp:16]   --->   Operation 35 'br' 'br_ln16' <Predicate = (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 1.70>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_valid_0_load = load i1 %reducer_circuit_adder_levels_valid_0" [SPMV_CSR_src/accelerator/reducer.cpp:48]   --->   Operation 36 'load' 'reducer_circuit_adder_levels_valid_0_load' <Predicate = (reducer_circuit_adder_levels_num_items_0_load != 1 & !icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load != 1 & reducer_circuit_adder_levels_num_items_0_load != 0)> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (1.70ns)   --->   "%br_ln48 = br i1 %reducer_circuit_adder_levels_valid_0_load, void %mergeST, void %_ZN13reducer_level3addER12reducer_datai.exit.thread" [SPMV_CSR_src/accelerator/reducer.cpp:48]   --->   Operation 37 'br' 'br_ln48' <Predicate = (reducer_circuit_adder_levels_num_items_0_load != 1 & !icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load != 1 & reducer_circuit_adder_levels_num_items_0_load != 0)> <Delay = 1.70>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_0_new_0 = phi i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_datai.exit, i32 0, void, i32 0, void" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 38 'phi' 'reducer_circuit_adder_levels_num_items_0_new_0' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%level_out_017_31 = phi i32 0, void %_ZN13reducer_level3addER12reducer_datai.exit, i32 %level_out_value_1, void, i32 %level_out_value, void"   --->   Operation 39 'phi' 'level_out_017_31' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
 ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%trunc_ln34_1 = trunc i32 %reducer_circuit_adder_levels_num_items_1_load" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 40 'trunc' 'trunc_ln34_1' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
 ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%br_ln34 = br i1 %trunc_ln34_1, void %branch2, void %branch3" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 41 'br' 'br_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
 ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_adder_levels_buffer_value_1_0" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 42 'store' 'store_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18 & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 1 & !trunc_ln34_1)> <Delay = 0.00>
-ST_2 : Operation 43 [1/1] (1.58ns)   --->   "%br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread16" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 43 'br' 'br_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18 & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 1 & !trunc_ln34_1)> <Delay = 1.58>
+ST_2 : Operation 43 [1/1] (1.58ns)   --->   "%br_ln34 = br void %_ZN13reducer_level3addER12reducer_datai.exit.thread16" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 43 'br' 'br_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18 & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 1 & !trunc_ln34_1)> <Delay = 1.58>
 ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_adder_levels_buffer_value_1_1" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 44 'store' 'store_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load & trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18 & trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 1 & trunc_ln34_1)> <Delay = 0.00>
-ST_2 : Operation 45 [1/1] (1.58ns)   --->   "%br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread16" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 45 'br' 'br_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load & trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18 & trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 1 & trunc_ln34_1)> <Delay = 1.58>
+ST_2 : Operation 45 [1/1] (1.58ns)   --->   "%br_ln34 = br void %_ZN13reducer_level3addER12reducer_datai.exit.thread16" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 45 'br' 'br_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load & trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18 & trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 1 & trunc_ln34_1)> <Delay = 1.58>
 ST_2 : Operation 46 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_buffer_value_1_0_loc_0 = phi i32 %level_out_017_31, void %branch2, i32 %reducer_circuit_adder_levels_buffer_value_1_0_load, void %branch3" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 46 'phi' 'reducer_circuit_adder_levels_buffer_value_1_0_loc_0' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
-ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%br_ln34 = br i1 %trunc_ln34_1, void %branch6, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 47 'br' 'br_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%br_ln34 = br i1 %trunc_ln34_1, void %branch6, void %_ZN13reducer_level3addER12reducer_datai.exit.thread1622" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 47 'br' 'br_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
 ST_2 : Operation 48 [1/1] (2.55ns)   --->   "%add_ln35_1 = add i32 %reducer_circuit_adder_levels_num_items_1_load, i32 1" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 48 'add' 'add_ln35_1' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 49 [1/1] (1.58ns)   --->   "%br_ln56 = br void %mergeST" [SPMV_CSR_src/accelerator/reducer.cpp:56]   --->   Operation 49 'br' 'br_ln56' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 1.58>
-ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_0_new_1 = phi i32 %reducer_circuit_adder_levels_num_items_0_new_0, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_data.exit" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 50 'phi' 'reducer_circuit_adder_levels_num_items_0_new_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 49 [1/1] (1.58ns)   --->   "%br_ln49 = br void %mergeST" [SPMV_CSR_src/accelerator/reducer.cpp:49]   --->   Operation 49 'br' 'br_ln49' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 1.58>
+ST_2 : Operation 50 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_0_new_1 = phi i32 %reducer_circuit_adder_levels_num_items_0_new_0, void %_ZN13reducer_level3addER12reducer_datai.exit.thread1622, i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_datai.exit" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 50 'phi' 'reducer_circuit_adder_levels_num_items_0_new_1' <Predicate = true> <Delay = 0.00>
 ST_2 : Operation 51 [1/1] (0.00ns)   --->   "%store_ln35 = store i32 %reducer_circuit_adder_levels_num_items_0_new_1, i32 %reducer_circuit_adder_levels_num_items_0" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 51 'store' 'store_ln35' <Predicate = true> <Delay = 0.00>
 
-State 3 <SV = 2> <Delay = 6.89>
-ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%level_out_118_32 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit, i32 %level_out_label, void, i32 %level_out_label, void"   --->   Operation 52 'phi' 'level_out_118_32' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
+State 3 <SV = 2> <Delay = 5.03>
+ST_3 : Operation 52 [1/1] (0.00ns)   --->   "%level_out_118_32 = phi i32 0, void %_ZN13reducer_level3addER12reducer_datai.exit, i32 %level_out_label, void, i32 %level_out_label, void"   --->   Operation 52 'phi' 'level_out_118_32' <Predicate = (reducer_circuit_adder_levels_valid_0_load) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18) | (reducer_circuit_adder_levels_num_items_0_load == 1)> <Delay = 0.00>
 ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%store_ln34 = store i32 %level_out_118_32, i32 %reducer_circuit_adder_levels_buffer_label_1_0" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 53 'store' 'store_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18 & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 1 & !trunc_ln34_1)> <Delay = 0.00>
-ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread1622" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 54 'br' 'br_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18 & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 1 & !trunc_ln34_1)> <Delay = 0.00>
-ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_1_flag_0 = phi i1 1, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i1 0, void %_ZN13reducer_level3addER12reducer_data.exit"   --->   Operation 55 'phi' 'reducer_circuit_adder_levels_num_items_1_flag_0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%out_data_value_1 = phi i32 %reducer_circuit_adder_levels_buffer_value_1_0_loc_0, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %reducer_circuit_adder_levels_buffer_value_1_0_load, void %_ZN13reducer_level3addER12reducer_data.exit" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 56 'phi' 'out_data_value_1' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%empty = phi i32 %add_ln35_1, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %reducer_circuit_adder_levels_num_items_1_load, void %_ZN13reducer_level3addER12reducer_data.exit" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 57 'phi' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%br_ln34 = br void %_ZN13reducer_level3addER12reducer_datai.exit.thread1622" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 54 'br' 'br_ln34' <Predicate = (reducer_circuit_adder_levels_valid_0_load & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 0 & icmp_ln18 & !trunc_ln34_1) | (reducer_circuit_adder_levels_num_items_0_load == 1 & !trunc_ln34_1)> <Delay = 0.00>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_1_flag_0 = phi i1 1, void %_ZN13reducer_level3addER12reducer_datai.exit.thread1622, i1 0, void %_ZN13reducer_level3addER12reducer_datai.exit"   --->   Operation 55 'phi' 'reducer_circuit_adder_levels_num_items_1_flag_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%out_data_value_1 = phi i32 %reducer_circuit_adder_levels_buffer_value_1_0_loc_0, void %_ZN13reducer_level3addER12reducer_datai.exit.thread1622, i32 %reducer_circuit_adder_levels_buffer_value_1_0_load, void %_ZN13reducer_level3addER12reducer_datai.exit" [SPMV_CSR_src/accelerator/reducer.cpp:34]   --->   Operation 56 'phi' 'out_data_value_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%empty = phi i32 %add_ln35_1, void %_ZN13reducer_level3addER12reducer_datai.exit.thread1622, i32 %reducer_circuit_adder_levels_num_items_1_load, void %_ZN13reducer_level3addER12reducer_datai.exit" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 57 'phi' 'empty' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 58 [1/1] (1.30ns)   --->   "%switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32 1, void, i32 0, void" [SPMV_CSR_src/accelerator/reducer.cpp:11]   --->   Operation 58 'switch' 'switch_ln11' <Predicate = true> <Delay = 1.30>
 ST_3 : Operation 59 [1/1] (1.58ns)   --->   "%store_ln26 = store i1 0, i1 %reducer_circuit_adder_levels_valid_1" [SPMV_CSR_src/accelerator/reducer.cpp:26]   --->   Operation 59 'store' 'store_ln26' <Predicate = (empty == 0)> <Delay = 1.58>
 ST_3 : Operation 60 [1/1] (0.00ns)   --->   "%br_ln29 = br void %._crit_edge1" [SPMV_CSR_src/accelerator/reducer.cpp:29]   --->   Operation 60 'br' 'br_ln29' <Predicate = (empty == 0)> <Delay = 0.00>
 ST_3 : Operation 61 [1/1] (0.00ns)   --->   "%out_data_label = load i32 %reducer_circuit_adder_levels_buffer_label_1_0" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 61 'load' 'out_data_label' <Predicate = (empty == 1)> <Delay = 0.00>
-ST_3 : Operation 62 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_curr_level_1_load = load i1 %reducer_circuit_adder_levels_curr_level_1" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 62 'load' 'reducer_circuit_adder_levels_curr_level_1_load' <Predicate = (empty == 1)> <Delay = 0.00>
-ST_3 : Operation 63 [1/1] (0.00ns) (grouped into LUT with out node add_ln18)   --->   "%zext_ln18 = zext i1 %reducer_circuit_adder_levels_curr_level_1_load" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 63 'zext' 'zext_ln18' <Predicate = (empty == 1)> <Delay = 0.00>
-ST_3 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node add_ln18)   --->   "%shl_ln18 = shl i2 1, i2 %zext_ln18" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 64 'shl' 'shl_ln18' <Predicate = (empty == 1)> <Delay = 0.00> <CoreInst = "Shifter">   --->   Core 75 'Shifter' <Latency = 0> <II = 1> <Delay = 1.85> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 65 [1/1] (0.00ns) (grouped into LUT with out node add_ln18)   --->   "%zext_ln18_1 = zext i2 %shl_ln18" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 65 'zext' 'zext_ln18_1' <Predicate = (empty == 1)> <Delay = 0.00>
-ST_3 : Operation 66 [1/1] (1.85ns) (out node of the LUT)   --->   "%add_ln18 = add i3 %zext_ln18_1, i3 1" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 66 'add' 'add_ln18' <Predicate = (empty == 1)> <Delay = 1.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%zext_ln18_2 = zext i3 %add_ln18" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 67 'zext' 'zext_ln18_2' <Predicate = (empty == 1)> <Delay = 0.00>
-ST_3 : Operation 68 [1/1] (2.47ns)   --->   "%icmp_ln18_1 = icmp_slt  i32 %out_data_label, i32 %zext_ln18_2" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 68 'icmp' 'icmp_ln18_1' <Predicate = (empty == 1)> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 69 [1/1] (0.00ns)   --->   "%br_ln18 = br i1 %icmp_ln18_1, void %_ZN13reducer_level3addER12reducer_data.exit16, void" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 69 'br' 'br_ln18' <Predicate = (empty == 1)> <Delay = 0.00>
-ST_3 : Operation 70 [1/1] (1.58ns)   --->   "%store_ln20 = store i1 1, i1 %reducer_circuit_adder_levels_valid_1" [SPMV_CSR_src/accelerator/reducer.cpp:20]   --->   Operation 70 'store' 'store_ln20' <Predicate = (empty == 1 & icmp_ln18_1)> <Delay = 1.58>
-ST_3 : Operation 71 [1/1] (1.70ns)   --->   "%br_ln23 = br void %_ZN13reducer_level3addER12reducer_data.exit16.thread" [SPMV_CSR_src/accelerator/reducer.cpp:23]   --->   Operation 71 'br' 'br_ln23' <Predicate = (empty == 1 & icmp_ln18_1)> <Delay = 1.70>
-ST_3 : Operation 72 [1/1] (1.58ns)   --->   "%store_ln13 = store i1 1, i1 %reducer_circuit_adder_levels_valid_1" [SPMV_CSR_src/accelerator/reducer.cpp:13]   --->   Operation 72 'store' 'store_ln13' <Predicate = (empty == 2)> <Delay = 1.58>
-ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_buffer_value_1_1_load = load i32 %reducer_circuit_adder_levels_buffer_value_1_1" [SPMV_CSR_src/accelerator/reducer.cpp:14]   --->   Operation 73 'load' 'reducer_circuit_adder_levels_buffer_value_1_1_load' <Predicate = (empty == 2)> <Delay = 0.00>
-ST_3 : Operation 74 [1/1] (2.55ns)   --->   "%out_data_value = add i32 %reducer_circuit_adder_levels_buffer_value_1_1_load, i32 %out_data_value_1" [SPMV_CSR_src/accelerator/reducer.cpp:14]   --->   Operation 74 'add' 'out_data_value' <Predicate = (empty == 2)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 75 [1/1] (1.70ns)   --->   "%br_ln16 = br void %_ZN13reducer_level3addER12reducer_data.exit16.thread" [SPMV_CSR_src/accelerator/reducer.cpp:16]   --->   Operation 75 'br' 'br_ln16' <Predicate = (empty == 2)> <Delay = 1.70>
-ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit16"   --->   Operation 76 'br' 'br_ln0' <Predicate = (empty != 2 & empty != 1)> <Delay = 0.00>
-ST_3 : Operation 77 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_valid_1_load = load i1 %reducer_circuit_adder_levels_valid_1" [SPMV_CSR_src/accelerator/reducer.cpp:60]   --->   Operation 77 'load' 'reducer_circuit_adder_levels_valid_1_load' <Predicate = (empty != 2 & !icmp_ln18_1) | (empty != 2 & empty != 1)> <Delay = 0.00>
-ST_3 : Operation 78 [1/1] (1.70ns)   --->   "%br_ln60 = br i1 %reducer_circuit_adder_levels_valid_1_load, void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge, void %_ZN13reducer_level3addER12reducer_data.exit16.thread" [SPMV_CSR_src/accelerator/reducer.cpp:60]   --->   Operation 78 'br' 'br_ln60' <Predicate = (empty != 2 & !icmp_ln18_1) | (empty != 2 & empty != 1)> <Delay = 1.70>
-ST_3 : Operation 79 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_1_flag_1 = phi i1 %reducer_circuit_adder_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_data.exit16, i1 1, void, i1 1, void"   --->   Operation 79 'phi' 'reducer_circuit_adder_levels_num_items_1_flag_1' <Predicate = (reducer_circuit_adder_levels_valid_1_load) | (empty == 1 & icmp_ln18_1) | (empty == 2)> <Delay = 0.00>
-ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_1_new_1 = phi i32 %empty, void %_ZN13reducer_level3addER12reducer_data.exit16, i32 0, void, i32 0, void" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 80 'phi' 'reducer_circuit_adder_levels_num_items_1_new_1' <Predicate = (reducer_circuit_adder_levels_valid_1_load) | (empty == 1 & icmp_ln18_1) | (empty == 2)> <Delay = 0.00>
-ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%out_data_0_35 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit16, i32 %out_data_value_1, void, i32 %out_data_value, void"   --->   Operation 81 'phi' 'out_data_0_35' <Predicate = (reducer_circuit_adder_levels_valid_1_load) | (empty == 1 & icmp_ln18_1) | (empty == 2)> <Delay = 0.00>
-ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%write_ln61 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %out_r, i32 %out_data_0_35" [SPMV_CSR_src/accelerator/reducer.cpp:61]   --->   Operation 82 'write' 'write_ln61' <Predicate = (reducer_circuit_adder_levels_valid_1_load) | (empty == 1 & icmp_ln18_1) | (empty == 2)> <Delay = 0.00>
-ST_3 : Operation 83 [1/1] (1.58ns)   --->   "%br_ln61 = br void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge" [SPMV_CSR_src/accelerator/reducer.cpp:61]   --->   Operation 83 'br' 'br_ln61' <Predicate = (reducer_circuit_adder_levels_valid_1_load) | (empty == 1 & icmp_ln18_1) | (empty == 2)> <Delay = 1.58>
-ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_1_flag_2 = phi i1 %reducer_circuit_adder_levels_num_items_1_flag_1, void %_ZN13reducer_level3addER12reducer_data.exit16.thread, i1 %reducer_circuit_adder_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_data.exit16"   --->   Operation 84 'phi' 'reducer_circuit_adder_levels_num_items_1_flag_2' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 85 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_1_new_2 = phi i32 %reducer_circuit_adder_levels_num_items_1_new_1, void %_ZN13reducer_level3addER12reducer_data.exit16.thread, i32 %empty, void %_ZN13reducer_level3addER12reducer_data.exit16" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 85 'phi' 'reducer_circuit_adder_levels_num_items_1_new_2' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 86 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %reducer_circuit_adder_levels_num_items_1_flag_2, void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge.new, void %mergeST26"   --->   Operation 86 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 87 [1/1] (0.00ns)   --->   "%store_ln35 = store i32 %reducer_circuit_adder_levels_num_items_1_new_2, i32 %reducer_circuit_adder_levels_num_items_1" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 87 'store' 'store_ln35' <Predicate = (reducer_circuit_adder_levels_num_items_1_flag_2)> <Delay = 0.00>
-ST_3 : Operation 88 [1/1] (0.00ns)   --->   "%br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge.new"   --->   Operation 88 'br' 'br_ln0' <Predicate = (reducer_circuit_adder_levels_num_items_1_flag_2)> <Delay = 0.00>
-ST_3 : Operation 89 [1/1] (0.00ns)   --->   "%ret_ln62 = ret" [SPMV_CSR_src/accelerator/reducer.cpp:62]   --->   Operation 89 'ret' 'ret_ln62' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 62 [1/1] (2.47ns)   --->   "%icmp_ln18_1 = icmp_slt  i32 %out_data_label, i32 3" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 62 'icmp' 'icmp_ln18_1' <Predicate = (empty == 1)> <Delay = 2.47> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.47> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%br_ln18 = br i1 %icmp_ln18_1, void %_ZN13reducer_level3addER12reducer_datai.exit14, void" [SPMV_CSR_src/accelerator/reducer.cpp:18]   --->   Operation 63 'br' 'br_ln18' <Predicate = (empty == 1)> <Delay = 0.00>
+ST_3 : Operation 64 [1/1] (1.58ns)   --->   "%store_ln20 = store i1 1, i1 %reducer_circuit_adder_levels_valid_1" [SPMV_CSR_src/accelerator/reducer.cpp:20]   --->   Operation 64 'store' 'store_ln20' <Predicate = (empty == 1 & icmp_ln18_1)> <Delay = 1.58>
+ST_3 : Operation 65 [1/1] (1.70ns)   --->   "%br_ln23 = br void %_ZN13reducer_level3addER12reducer_datai.exit14.thread" [SPMV_CSR_src/accelerator/reducer.cpp:23]   --->   Operation 65 'br' 'br_ln23' <Predicate = (empty == 1 & icmp_ln18_1)> <Delay = 1.70>
+ST_3 : Operation 66 [1/1] (1.58ns)   --->   "%store_ln13 = store i1 1, i1 %reducer_circuit_adder_levels_valid_1" [SPMV_CSR_src/accelerator/reducer.cpp:13]   --->   Operation 66 'store' 'store_ln13' <Predicate = (empty == 2)> <Delay = 1.58>
+ST_3 : Operation 67 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_buffer_value_1_1_load = load i32 %reducer_circuit_adder_levels_buffer_value_1_1" [SPMV_CSR_src/accelerator/reducer.cpp:14]   --->   Operation 67 'load' 'reducer_circuit_adder_levels_buffer_value_1_1_load' <Predicate = (empty == 2)> <Delay = 0.00>
+ST_3 : Operation 68 [1/1] (2.55ns)   --->   "%out_data_value = add i32 %reducer_circuit_adder_levels_buffer_value_1_1_load, i32 %out_data_value_1" [SPMV_CSR_src/accelerator/reducer.cpp:14]   --->   Operation 68 'add' 'out_data_value' <Predicate = (empty == 2)> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 69 [1/1] (1.70ns)   --->   "%br_ln16 = br void %_ZN13reducer_level3addER12reducer_datai.exit14.thread" [SPMV_CSR_src/accelerator/reducer.cpp:16]   --->   Operation 69 'br' 'br_ln16' <Predicate = (empty == 2)> <Delay = 1.70>
+ST_3 : Operation 70 [1/1] (0.00ns)   --->   "%br_ln0 = br void %_ZN13reducer_level3addER12reducer_datai.exit14"   --->   Operation 70 'br' 'br_ln0' <Predicate = (empty != 2 & empty != 1)> <Delay = 0.00>
+ST_3 : Operation 71 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_valid_1_load = load i1 %reducer_circuit_adder_levels_valid_1" [SPMV_CSR_src/accelerator/reducer.cpp:53]   --->   Operation 71 'load' 'reducer_circuit_adder_levels_valid_1_load' <Predicate = (empty != 2 & !icmp_ln18_1) | (empty != 2 & empty != 1)> <Delay = 0.00>
+ST_3 : Operation 72 [1/1] (1.70ns)   --->   "%br_ln53 = br i1 %reducer_circuit_adder_levels_valid_1_load, void %_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge, void %_ZN13reducer_level3addER12reducer_datai.exit14.thread" [SPMV_CSR_src/accelerator/reducer.cpp:53]   --->   Operation 72 'br' 'br_ln53' <Predicate = (empty != 2 & !icmp_ln18_1) | (empty != 2 & empty != 1)> <Delay = 1.70>
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_1_flag_1 = phi i1 %reducer_circuit_adder_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_datai.exit14, i1 1, void, i1 1, void"   --->   Operation 73 'phi' 'reducer_circuit_adder_levels_num_items_1_flag_1' <Predicate = (reducer_circuit_adder_levels_valid_1_load) | (empty == 1 & icmp_ln18_1) | (empty == 2)> <Delay = 0.00>
+ST_3 : Operation 74 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_1_new_1 = phi i32 %empty, void %_ZN13reducer_level3addER12reducer_datai.exit14, i32 0, void, i32 0, void" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 74 'phi' 'reducer_circuit_adder_levels_num_items_1_new_1' <Predicate = (reducer_circuit_adder_levels_valid_1_load) | (empty == 1 & icmp_ln18_1) | (empty == 2)> <Delay = 0.00>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%out_data_0_35 = phi i32 0, void %_ZN13reducer_level3addER12reducer_datai.exit14, i32 %out_data_value_1, void, i32 %out_data_value, void"   --->   Operation 75 'phi' 'out_data_0_35' <Predicate = (reducer_circuit_adder_levels_valid_1_load) | (empty == 1 & icmp_ln18_1) | (empty == 2)> <Delay = 0.00>
+ST_3 : Operation 76 [1/1] (0.00ns)   --->   "%write_ln54 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %out_r, i32 %out_data_0_35" [SPMV_CSR_src/accelerator/reducer.cpp:54]   --->   Operation 76 'write' 'write_ln54' <Predicate = (reducer_circuit_adder_levels_valid_1_load) | (empty == 1 & icmp_ln18_1) | (empty == 2)> <Delay = 0.00>
+ST_3 : Operation 77 [1/1] (1.58ns)   --->   "%br_ln54 = br void %_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge" [SPMV_CSR_src/accelerator/reducer.cpp:54]   --->   Operation 77 'br' 'br_ln54' <Predicate = (reducer_circuit_adder_levels_valid_1_load) | (empty == 1 & icmp_ln18_1) | (empty == 2)> <Delay = 1.58>
+ST_3 : Operation 78 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_1_flag_2 = phi i1 %reducer_circuit_adder_levels_num_items_1_flag_1, void %_ZN13reducer_level3addER12reducer_datai.exit14.thread, i1 %reducer_circuit_adder_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_datai.exit14"   --->   Operation 78 'phi' 'reducer_circuit_adder_levels_num_items_1_flag_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 79 [1/1] (0.00ns)   --->   "%reducer_circuit_adder_levels_num_items_1_new_2 = phi i32 %reducer_circuit_adder_levels_num_items_1_new_1, void %_ZN13reducer_level3addER12reducer_datai.exit14.thread, i32 %empty, void %_ZN13reducer_level3addER12reducer_datai.exit14" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 79 'phi' 'reducer_circuit_adder_levels_num_items_1_new_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 80 [1/1] (0.00ns)   --->   "%br_ln0 = br i1 %reducer_circuit_adder_levels_num_items_1_flag_2, void %_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new, void %mergeST26"   --->   Operation 80 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 81 [1/1] (0.00ns)   --->   "%store_ln35 = store i32 %reducer_circuit_adder_levels_num_items_1_new_2, i32 %reducer_circuit_adder_levels_num_items_1" [SPMV_CSR_src/accelerator/reducer.cpp:35]   --->   Operation 81 'store' 'store_ln35' <Predicate = (reducer_circuit_adder_levels_num_items_1_flag_2)> <Delay = 0.00>
+ST_3 : Operation 82 [1/1] (0.00ns)   --->   "%br_ln0 = br void %_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new"   --->   Operation 82 'br' 'br_ln0' <Predicate = (reducer_circuit_adder_levels_num_items_1_flag_2)> <Delay = 0.00>
+ST_3 : Operation 83 [1/1] (0.00ns)   --->   "%ret_ln55 = ret" [SPMV_CSR_src/accelerator/reducer.cpp:55]   --->   Operation 83 'ret' 'ret_ln55' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -197,7 +191,6 @@ Port [ reducer_circuit_adder_levels_buffer_value_0_1]:  wired=0; compound=0; hid
 Port [ reducer_circuit_adder_levels_valid_1]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; IO mode=ap_ovld:ce=0
 Port [ reducer_circuit_adder_levels_buffer_value_1_1]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; IO mode=ap_ovld:ce=0
 Port [ reducer_circuit_adder_levels_buffer_label_1_0]:  wired=0; compound=0; hidden=1; nouse=0; global=1; static=1; extern=0; dir=2; type=0; pingpong=0; private_global=1; IO mode=ap_ovld:ce=0
-Port [ reducer_circuit_adder_levels_curr_level_1]:  wired=1; compound=0; hidden=0; nouse=0; global=1; static=1; extern=0; dir=0; type=0; pingpong=0; private_global=0; IO mode=ap_none:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
@@ -237,7 +230,7 @@ store_ln20                                          (store     ) [ 0000]
 br_ln23                                             (br        ) [ 0111]
 br_ln16                                             (br        ) [ 0111]
 reducer_circuit_adder_levels_valid_0_load           (load      ) [ 0111]
-br_ln55                                             (br        ) [ 0111]
+br_ln48                                             (br        ) [ 0111]
 reducer_circuit_adder_levels_num_items_0_new_0      (phi       ) [ 0110]
 level_out_017_31                                    (phi       ) [ 0110]
 trunc_ln34_1                                        (trunc     ) [ 0111]
@@ -249,7 +242,7 @@ br_ln34                                             (br        ) [ 0000]
 reducer_circuit_adder_levels_buffer_value_1_0_loc_0 (phi       ) [ 0111]
 br_ln34                                             (br        ) [ 0000]
 add_ln35_1                                          (add       ) [ 0111]
-br_ln56                                             (br        ) [ 0111]
+br_ln49                                             (br        ) [ 0111]
 reducer_circuit_adder_levels_num_items_0_new_1      (phi       ) [ 0110]
 store_ln35                                          (store     ) [ 0000]
 level_out_118_32                                    (phi       ) [ 0101]
@@ -262,12 +255,6 @@ switch_ln11                                         (switch    ) [ 0000]
 store_ln26                                          (store     ) [ 0000]
 br_ln29                                             (br        ) [ 0000]
 out_data_label                                      (load      ) [ 0000]
-reducer_circuit_adder_levels_curr_level_1_load      (load      ) [ 0000]
-zext_ln18                                           (zext      ) [ 0000]
-shl_ln18                                            (shl       ) [ 0000]
-zext_ln18_1                                         (zext      ) [ 0000]
-add_ln18                                            (add       ) [ 0000]
-zext_ln18_2                                         (zext      ) [ 0000]
 icmp_ln18_1                                         (icmp      ) [ 0101]
 br_ln18                                             (br        ) [ 0000]
 store_ln20                                          (store     ) [ 0000]
@@ -278,18 +265,18 @@ out_data_value                                      (add       ) [ 0000]
 br_ln16                                             (br        ) [ 0000]
 br_ln0                                              (br        ) [ 0000]
 reducer_circuit_adder_levels_valid_1_load           (load      ) [ 0101]
-br_ln60                                             (br        ) [ 0000]
+br_ln53                                             (br        ) [ 0000]
 reducer_circuit_adder_levels_num_items_1_flag_1     (phi       ) [ 0000]
 reducer_circuit_adder_levels_num_items_1_new_1      (phi       ) [ 0000]
 out_data_0_35                                       (phi       ) [ 0000]
-write_ln61                                          (write     ) [ 0000]
-br_ln61                                             (br        ) [ 0000]
+write_ln54                                          (write     ) [ 0000]
+br_ln54                                             (br        ) [ 0000]
 reducer_circuit_adder_levels_num_items_1_flag_2     (phi       ) [ 0101]
 reducer_circuit_adder_levels_num_items_1_new_2      (phi       ) [ 0000]
 br_ln0                                              (br        ) [ 0000]
 store_ln35                                          (store     ) [ 0000]
 br_ln0                                              (br        ) [ 0000]
-ret_ln62                                            (ret       ) [ 0000]
+ret_ln55                                            (ret       ) [ 0000]
 </LifeTime>
 
 <model>
@@ -412,12 +399,12 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="26" class="1000" name="reducer_circuit_adder_levels_curr_level_1">
+<comp id="26" class="1001" name="const_26">
 <pin_list>
 <pin id="27" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="reducer_circuit_adder_levels_curr_level_1"/></StgValue>
+<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
 </bind>
 </comp>
 
@@ -426,7 +413,7 @@ ret_ln62                                            (ret       ) [ 0000]
 <pin id="29" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_Read.ap_auto.i32"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -441,7 +428,7 @@ ret_ln62                                            (ret       ) [ 0000]
 
 <comp id="32" class="1001" name="const_32">
 <pin_list>
-<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+<pin id="33" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name=""/></StgValue>
@@ -450,7 +437,7 @@ ret_ln62                                            (ret       ) [ 0000]
 
 <comp id="34" class="1001" name="const_34">
 <pin_list>
-<pin id="35" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name=""/></StgValue>
@@ -471,7 +458,7 @@ ret_ln62                                            (ret       ) [ 0000]
 <pin id="39" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
+<StgValue><ssdm name="_ssdm_op_PartSelect.i31.i32.i32.i32"/></StgValue>
 </bind>
 </comp>
 
@@ -480,7 +467,7 @@ ret_ln62                                            (ret       ) [ 0000]
 <pin id="41" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="_ssdm_op_PartSelect.i31.i32.i32.i32"/></StgValue>
+<StgValue><ssdm name=""/></StgValue>
 </bind>
 </comp>
 
@@ -495,7 +482,7 @@ ret_ln62                                            (ret       ) [ 0000]
 
 <comp id="44" class="1001" name="const_44">
 <pin_list>
-<pin id="45" dir="1" index="0" bw="1" slack="0"/>
+<pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name=""/></StgValue>
@@ -504,7 +491,7 @@ ret_ln62                                            (ret       ) [ 0000]
 
 <comp id="46" class="1001" name="const_46">
 <pin_list>
-<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+<pin id="47" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <StgValue><ssdm name=""/></StgValue>
@@ -516,33 +503,15 @@ ret_ln62                                            (ret       ) [ 0000]
 <pin id="49" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name=""/></StgValue>
-</bind>
-</comp>
-
-<comp id="50" class="1001" name="const_50">
-<pin_list>
-<pin id="51" dir="1" index="0" bw="1" slack="0"/>
-</pin_list>
-<bind>
-<StgValue><ssdm name=""/></StgValue>
-</bind>
-</comp>
-
-<comp id="52" class="1001" name="const_52">
-<pin_list>
-<pin id="53" dir="1" index="0" bw="1" slack="0"/>
-</pin_list>
-<bind>
 <StgValue><ssdm name="_ssdm_op_Write.ap_auto.i32P0A"/></StgValue>
 </bind>
 </comp>
 
-<comp id="54" class="1004" name="label_read_read_fu_54">
+<comp id="50" class="1004" name="label_read_read_fu_50">
 <pin_list>
-<pin id="55" dir="0" index="0" bw="32" slack="0"/>
-<pin id="56" dir="0" index="1" bw="32" slack="0"/>
-<pin id="57" dir="1" index="2" bw="32" slack="0"/>
+<pin id="51" dir="0" index="0" bw="32" slack="0"/>
+<pin id="52" dir="0" index="1" bw="32" slack="0"/>
+<pin id="53" dir="1" index="2" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -550,11 +519,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="60" class="1004" name="value_read_read_fu_60">
+<comp id="56" class="1004" name="value_read_read_fu_56">
 <pin_list>
-<pin id="61" dir="0" index="0" bw="32" slack="0"/>
-<pin id="62" dir="0" index="1" bw="32" slack="0"/>
-<pin id="63" dir="1" index="2" bw="32" slack="0"/>
+<pin id="57" dir="0" index="0" bw="32" slack="0"/>
+<pin id="58" dir="0" index="1" bw="32" slack="0"/>
+<pin id="59" dir="1" index="2" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="read(1150) " fcode="read"/>
@@ -562,36 +531,36 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="66" class="1004" name="write_ln61_write_fu_66">
+<comp id="62" class="1004" name="write_ln54_write_fu_62">
 <pin_list>
-<pin id="67" dir="0" index="0" bw="0" slack="0"/>
-<pin id="68" dir="0" index="1" bw="32" slack="0"/>
-<pin id="69" dir="0" index="2" bw="32" slack="0"/>
-<pin id="70" dir="1" index="3" bw="0" slack="2147483647"/>
+<pin id="63" dir="0" index="0" bw="0" slack="0"/>
+<pin id="64" dir="0" index="1" bw="32" slack="0"/>
+<pin id="65" dir="0" index="2" bw="32" slack="0"/>
+<pin id="66" dir="1" index="3" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="write(1151) " fcode="write"/>
-<opset="write_ln61/3 "/>
+<opset="write_ln54/3 "/>
 </bind>
 </comp>
 
-<comp id="73" class="1005" name="level_out_value_1_reg_73">
+<comp id="69" class="1005" name="level_out_value_1_reg_69">
 <pin_list>
-<pin id="74" dir="0" index="0" bw="32" slack="1"/>
-<pin id="75" dir="1" index="1" bw="32" slack="1"/>
+<pin id="70" dir="0" index="0" bw="32" slack="1"/>
+<pin id="71" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="level_out_value_1 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="76" class="1004" name="level_out_value_1_phi_fu_76">
+<comp id="72" class="1004" name="level_out_value_1_phi_fu_72">
 <pin_list>
-<pin id="77" dir="0" index="0" bw="32" slack="0"/>
-<pin id="78" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="79" dir="0" index="2" bw="32" slack="0"/>
-<pin id="80" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="81" dir="1" index="4" bw="32" slack="0"/>
+<pin id="73" dir="0" index="0" bw="32" slack="0"/>
+<pin id="74" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="75" dir="0" index="2" bw="32" slack="0"/>
+<pin id="76" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="77" dir="1" index="4" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -599,23 +568,23 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="84" class="1005" name="level_out_label_reg_84">
+<comp id="80" class="1005" name="level_out_label_reg_80">
 <pin_list>
-<pin id="85" dir="0" index="0" bw="32" slack="1"/>
-<pin id="86" dir="1" index="1" bw="32" slack="1"/>
+<pin id="81" dir="0" index="0" bw="32" slack="1"/>
+<pin id="82" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="level_out_label (phireg) "/>
 </bind>
 </comp>
 
-<comp id="87" class="1004" name="level_out_label_phi_fu_87">
+<comp id="83" class="1004" name="level_out_label_phi_fu_83">
 <pin_list>
-<pin id="88" dir="0" index="0" bw="32" slack="1"/>
-<pin id="89" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="90" dir="0" index="2" bw="32" slack="1"/>
-<pin id="91" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="92" dir="1" index="4" bw="32" slack="0"/>
+<pin id="84" dir="0" index="0" bw="32" slack="1"/>
+<pin id="85" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="86" dir="0" index="2" bw="32" slack="1"/>
+<pin id="87" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="88" dir="1" index="4" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -623,25 +592,25 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="94" class="1005" name="reducer_circuit_adder_levels_num_items_0_new_0_reg_94">
+<comp id="90" class="1005" name="reducer_circuit_adder_levels_num_items_0_new_0_reg_90">
 <pin_list>
-<pin id="95" dir="0" index="0" bw="32" slack="2147483647"/>
-<pin id="96" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="91" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="92" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_num_items_0_new_0 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="97" class="1004" name="reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_97">
+<comp id="93" class="1004" name="reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_93">
 <pin_list>
-<pin id="98" dir="0" index="0" bw="32" slack="1"/>
-<pin id="99" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="100" dir="0" index="2" bw="1" slack="0"/>
-<pin id="101" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="102" dir="0" index="4" bw="1" slack="0"/>
-<pin id="103" dir="0" index="5" bw="0" slack="2147483647"/>
-<pin id="104" dir="1" index="6" bw="32" slack="0"/>
+<pin id="94" dir="0" index="0" bw="32" slack="1"/>
+<pin id="95" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="96" dir="0" index="2" bw="1" slack="0"/>
+<pin id="97" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="98" dir="0" index="4" bw="1" slack="0"/>
+<pin id="99" dir="0" index="5" bw="0" slack="2147483647"/>
+<pin id="100" dir="1" index="6" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -649,25 +618,25 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="107" class="1005" name="level_out_017_31_reg_107">
+<comp id="103" class="1005" name="level_out_017_31_reg_103">
 <pin_list>
-<pin id="108" dir="0" index="0" bw="32" slack="2147483647"/>
-<pin id="109" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="104" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="105" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="level_out_017_31 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="110" class="1004" name="level_out_017_31_phi_fu_110">
+<comp id="106" class="1004" name="level_out_017_31_phi_fu_106">
 <pin_list>
-<pin id="111" dir="0" index="0" bw="1" slack="0"/>
-<pin id="112" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="113" dir="0" index="2" bw="32" slack="1"/>
-<pin id="114" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="115" dir="0" index="4" bw="32" slack="1"/>
-<pin id="116" dir="0" index="5" bw="0" slack="2147483647"/>
-<pin id="117" dir="1" index="6" bw="32" slack="0"/>
+<pin id="107" dir="0" index="0" bw="1" slack="0"/>
+<pin id="108" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="109" dir="0" index="2" bw="32" slack="1"/>
+<pin id="110" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="111" dir="0" index="4" bw="32" slack="1"/>
+<pin id="112" dir="0" index="5" bw="0" slack="2147483647"/>
+<pin id="113" dir="1" index="6" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -675,23 +644,23 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="120" class="1005" name="reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_120">
+<comp id="116" class="1005" name="reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_116">
 <pin_list>
-<pin id="121" dir="0" index="0" bw="32" slack="1"/>
-<pin id="122" dir="1" index="1" bw="32" slack="1"/>
+<pin id="117" dir="0" index="0" bw="32" slack="1"/>
+<pin id="118" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_buffer_value_1_0_loc_0 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="123" class="1004" name="reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_123">
+<comp id="119" class="1004" name="reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_119">
 <pin_list>
-<pin id="124" dir="0" index="0" bw="32" slack="0"/>
-<pin id="125" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="126" dir="0" index="2" bw="32" slack="0"/>
-<pin id="127" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="128" dir="1" index="4" bw="32" slack="1"/>
+<pin id="120" dir="0" index="0" bw="32" slack="0"/>
+<pin id="121" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="122" dir="0" index="2" bw="32" slack="0"/>
+<pin id="123" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="124" dir="1" index="4" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -699,23 +668,23 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="131" class="1005" name="reducer_circuit_adder_levels_num_items_0_new_1_reg_131">
+<comp id="127" class="1005" name="reducer_circuit_adder_levels_num_items_0_new_1_reg_127">
 <pin_list>
-<pin id="132" dir="0" index="0" bw="32" slack="2147483647"/>
-<pin id="133" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="128" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="129" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_num_items_0_new_1 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="134" class="1004" name="reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_134">
+<comp id="130" class="1004" name="reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_130">
 <pin_list>
-<pin id="135" dir="0" index="0" bw="32" slack="0"/>
-<pin id="136" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="137" dir="0" index="2" bw="32" slack="1"/>
-<pin id="138" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="139" dir="1" index="4" bw="32" slack="0"/>
+<pin id="131" dir="0" index="0" bw="32" slack="0"/>
+<pin id="132" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="133" dir="0" index="2" bw="32" slack="1"/>
+<pin id="134" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="135" dir="1" index="4" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -723,25 +692,25 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="141" class="1005" name="level_out_118_32_reg_141">
+<comp id="137" class="1005" name="level_out_118_32_reg_137">
 <pin_list>
-<pin id="142" dir="0" index="0" bw="32" slack="1"/>
-<pin id="143" dir="1" index="1" bw="32" slack="1"/>
+<pin id="138" dir="0" index="0" bw="32" slack="1"/>
+<pin id="139" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="level_out_118_32 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="145" class="1004" name="level_out_118_32_phi_fu_145">
+<comp id="141" class="1004" name="level_out_118_32_phi_fu_141">
 <pin_list>
-<pin id="146" dir="0" index="0" bw="1" slack="1"/>
-<pin id="147" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="148" dir="0" index="2" bw="32" slack="1"/>
-<pin id="149" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="150" dir="0" index="4" bw="32" slack="1"/>
-<pin id="151" dir="0" index="5" bw="0" slack="2147483647"/>
-<pin id="152" dir="1" index="6" bw="32" slack="0"/>
+<pin id="142" dir="0" index="0" bw="1" slack="1"/>
+<pin id="143" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="144" dir="0" index="2" bw="32" slack="1"/>
+<pin id="145" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="146" dir="0" index="4" bw="32" slack="1"/>
+<pin id="147" dir="0" index="5" bw="0" slack="2147483647"/>
+<pin id="148" dir="1" index="6" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -749,23 +718,23 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="156" class="1005" name="reducer_circuit_adder_levels_num_items_1_flag_0_reg_156">
+<comp id="152" class="1005" name="reducer_circuit_adder_levels_num_items_1_flag_0_reg_152">
 <pin_list>
-<pin id="157" dir="0" index="0" bw="1" slack="1"/>
-<pin id="158" dir="1" index="1" bw="1" slack="1"/>
+<pin id="153" dir="0" index="0" bw="1" slack="1"/>
+<pin id="154" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_num_items_1_flag_0 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="161" class="1004" name="reducer_circuit_adder_levels_num_items_1_flag_0_phi_fu_161">
+<comp id="157" class="1004" name="reducer_circuit_adder_levels_num_items_1_flag_0_phi_fu_157">
 <pin_list>
-<pin id="162" dir="0" index="0" bw="1" slack="1"/>
-<pin id="163" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="164" dir="0" index="2" bw="1" slack="1"/>
-<pin id="165" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="166" dir="1" index="4" bw="1" slack="0"/>
+<pin id="158" dir="0" index="0" bw="1" slack="1"/>
+<pin id="159" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="160" dir="0" index="2" bw="1" slack="1"/>
+<pin id="161" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="162" dir="1" index="4" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -773,23 +742,23 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="169" class="1005" name="out_data_value_1_reg_169">
+<comp id="165" class="1005" name="out_data_value_1_reg_165">
 <pin_list>
-<pin id="170" dir="0" index="0" bw="32" slack="2147483647"/>
-<pin id="171" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="166" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="167" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="out_data_value_1 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="172" class="1004" name="out_data_value_1_phi_fu_172">
+<comp id="168" class="1004" name="out_data_value_1_phi_fu_168">
 <pin_list>
-<pin id="173" dir="0" index="0" bw="32" slack="1"/>
-<pin id="174" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="175" dir="0" index="2" bw="32" slack="1"/>
-<pin id="176" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="177" dir="1" index="4" bw="32" slack="0"/>
+<pin id="169" dir="0" index="0" bw="32" slack="1"/>
+<pin id="170" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="171" dir="0" index="2" bw="32" slack="1"/>
+<pin id="172" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="173" dir="1" index="4" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -797,23 +766,23 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="179" class="1005" name="empty_reg_179">
+<comp id="175" class="1005" name="empty_reg_175">
 <pin_list>
-<pin id="180" dir="0" index="0" bw="32" slack="2147483647"/>
-<pin id="181" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="176" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="177" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="empty (phireg) "/>
 </bind>
 </comp>
 
-<comp id="182" class="1004" name="empty_phi_fu_182">
+<comp id="178" class="1004" name="empty_phi_fu_178">
 <pin_list>
-<pin id="183" dir="0" index="0" bw="32" slack="1"/>
-<pin id="184" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="185" dir="0" index="2" bw="32" slack="1"/>
-<pin id="186" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="187" dir="1" index="4" bw="32" slack="0"/>
+<pin id="179" dir="0" index="0" bw="32" slack="1"/>
+<pin id="180" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="181" dir="0" index="2" bw="32" slack="1"/>
+<pin id="182" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="183" dir="1" index="4" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -821,25 +790,25 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="188" class="1005" name="reducer_circuit_adder_levels_num_items_1_flag_1_reg_188">
+<comp id="184" class="1005" name="reducer_circuit_adder_levels_num_items_1_flag_1_reg_184">
 <pin_list>
-<pin id="189" dir="0" index="0" bw="1" slack="2147483647"/>
-<pin id="190" dir="1" index="1" bw="1" slack="2147483647"/>
+<pin id="185" dir="0" index="0" bw="1" slack="2147483647"/>
+<pin id="186" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_num_items_1_flag_1 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="191" class="1004" name="reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_191">
+<comp id="187" class="1004" name="reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_187">
 <pin_list>
-<pin id="192" dir="0" index="0" bw="1" slack="0"/>
-<pin id="193" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="194" dir="0" index="2" bw="1" slack="0"/>
-<pin id="195" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="196" dir="0" index="4" bw="1" slack="0"/>
-<pin id="197" dir="0" index="5" bw="0" slack="2147483647"/>
-<pin id="198" dir="1" index="6" bw="1" slack="0"/>
+<pin id="188" dir="0" index="0" bw="1" slack="0"/>
+<pin id="189" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="190" dir="0" index="2" bw="1" slack="0"/>
+<pin id="191" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="192" dir="0" index="4" bw="1" slack="0"/>
+<pin id="193" dir="0" index="5" bw="0" slack="2147483647"/>
+<pin id="194" dir="1" index="6" bw="1" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -847,25 +816,25 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="202" class="1005" name="reducer_circuit_adder_levels_num_items_1_new_1_reg_202">
+<comp id="198" class="1005" name="reducer_circuit_adder_levels_num_items_1_new_1_reg_198">
 <pin_list>
-<pin id="203" dir="0" index="0" bw="32" slack="2147483647"/>
-<pin id="204" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="199" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="200" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_num_items_1_new_1 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="205" class="1004" name="reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_205">
+<comp id="201" class="1004" name="reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_201">
 <pin_list>
-<pin id="206" dir="0" index="0" bw="32" slack="0"/>
-<pin id="207" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="208" dir="0" index="2" bw="1" slack="0"/>
-<pin id="209" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="210" dir="0" index="4" bw="1" slack="0"/>
-<pin id="211" dir="0" index="5" bw="0" slack="2147483647"/>
-<pin id="212" dir="1" index="6" bw="32" slack="0"/>
+<pin id="202" dir="0" index="0" bw="32" slack="0"/>
+<pin id="203" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="204" dir="0" index="2" bw="1" slack="0"/>
+<pin id="205" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="206" dir="0" index="4" bw="1" slack="0"/>
+<pin id="207" dir="0" index="5" bw="0" slack="2147483647"/>
+<pin id="208" dir="1" index="6" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -873,25 +842,25 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="216" class="1005" name="out_data_0_35_reg_216">
+<comp id="212" class="1005" name="out_data_0_35_reg_212">
 <pin_list>
-<pin id="217" dir="0" index="0" bw="32" slack="2147483647"/>
-<pin id="218" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="213" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="214" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="out_data_0_35 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="219" class="1004" name="out_data_0_35_phi_fu_219">
+<comp id="215" class="1004" name="out_data_0_35_phi_fu_215">
 <pin_list>
-<pin id="220" dir="0" index="0" bw="1" slack="0"/>
-<pin id="221" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="222" dir="0" index="2" bw="32" slack="0"/>
-<pin id="223" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="224" dir="0" index="4" bw="32" slack="0"/>
-<pin id="225" dir="0" index="5" bw="0" slack="2147483647"/>
-<pin id="226" dir="1" index="6" bw="32" slack="0"/>
+<pin id="216" dir="0" index="0" bw="1" slack="0"/>
+<pin id="217" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="218" dir="0" index="2" bw="32" slack="0"/>
+<pin id="219" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="220" dir="0" index="4" bw="32" slack="0"/>
+<pin id="221" dir="0" index="5" bw="0" slack="2147483647"/>
+<pin id="222" dir="1" index="6" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -899,23 +868,23 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="230" class="1005" name="reducer_circuit_adder_levels_num_items_1_flag_2_reg_230">
+<comp id="226" class="1005" name="reducer_circuit_adder_levels_num_items_1_flag_2_reg_226">
 <pin_list>
-<pin id="231" dir="0" index="0" bw="1" slack="2147483647"/>
-<pin id="232" dir="1" index="1" bw="1" slack="2147483647"/>
+<pin id="227" dir="0" index="0" bw="1" slack="2147483647"/>
+<pin id="228" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_num_items_1_flag_2 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="233" class="1004" name="reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_233">
+<comp id="229" class="1004" name="reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_229">
 <pin_list>
-<pin id="234" dir="0" index="0" bw="1" slack="0"/>
-<pin id="235" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="236" dir="0" index="2" bw="1" slack="0"/>
-<pin id="237" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="238" dir="1" index="4" bw="1" slack="2147483647"/>
+<pin id="230" dir="0" index="0" bw="1" slack="0"/>
+<pin id="231" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="232" dir="0" index="2" bw="1" slack="0"/>
+<pin id="233" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="234" dir="1" index="4" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -923,23 +892,23 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="241" class="1005" name="reducer_circuit_adder_levels_num_items_1_new_2_reg_241">
+<comp id="237" class="1005" name="reducer_circuit_adder_levels_num_items_1_new_2_reg_237">
 <pin_list>
-<pin id="242" dir="0" index="0" bw="32" slack="2147483647"/>
-<pin id="243" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="238" dir="0" index="0" bw="32" slack="2147483647"/>
+<pin id="239" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_num_items_1_new_2 (phireg) "/>
 </bind>
 </comp>
 
-<comp id="244" class="1004" name="reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_244">
+<comp id="240" class="1004" name="reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_240">
 <pin_list>
-<pin id="245" dir="0" index="0" bw="32" slack="0"/>
-<pin id="246" dir="0" index="1" bw="0" slack="2147483647"/>
-<pin id="247" dir="0" index="2" bw="32" slack="0"/>
-<pin id="248" dir="0" index="3" bw="0" slack="2147483647"/>
-<pin id="249" dir="1" index="4" bw="32" slack="0"/>
+<pin id="241" dir="0" index="0" bw="32" slack="0"/>
+<pin id="242" dir="0" index="1" bw="0" slack="2147483647"/>
+<pin id="243" dir="0" index="2" bw="32" slack="0"/>
+<pin id="244" dir="0" index="3" bw="0" slack="2147483647"/>
+<pin id="245" dir="1" index="4" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
@@ -947,10 +916,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="252" class="1004" name="reducer_circuit_adder_levels_num_items_0_load_load_fu_252">
+<comp id="248" class="1004" name="reducer_circuit_adder_levels_num_items_0_load_load_fu_248">
 <pin_list>
-<pin id="253" dir="0" index="0" bw="32" slack="0"/>
-<pin id="254" dir="1" index="1" bw="32" slack="0"/>
+<pin id="249" dir="0" index="0" bw="32" slack="0"/>
+<pin id="250" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -958,10 +927,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="256" class="1004" name="trunc_ln34_fu_256">
+<comp id="252" class="1004" name="trunc_ln34_fu_252">
 <pin_list>
-<pin id="257" dir="0" index="0" bw="32" slack="0"/>
-<pin id="258" dir="1" index="1" bw="1" slack="2147483647"/>
+<pin id="253" dir="0" index="0" bw="32" slack="0"/>
+<pin id="254" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
@@ -969,10 +938,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="260" class="1004" name="reducer_circuit_adder_levels_buffer_value_0_0_load_load_fu_260">
+<comp id="256" class="1004" name="reducer_circuit_adder_levels_buffer_value_0_0_load_load_fu_256">
 <pin_list>
-<pin id="261" dir="0" index="0" bw="32" slack="0"/>
-<pin id="262" dir="1" index="1" bw="32" slack="0"/>
+<pin id="257" dir="0" index="0" bw="32" slack="0"/>
+<pin id="258" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -980,11 +949,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="265" class="1004" name="store_ln34_store_fu_265">
+<comp id="261" class="1004" name="store_ln34_store_fu_261">
 <pin_list>
-<pin id="266" dir="0" index="0" bw="32" slack="0"/>
-<pin id="267" dir="0" index="1" bw="32" slack="0"/>
-<pin id="268" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="262" dir="0" index="0" bw="32" slack="0"/>
+<pin id="263" dir="0" index="1" bw="32" slack="0"/>
+<pin id="264" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -992,11 +961,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="271" class="1004" name="store_ln34_store_fu_271">
+<comp id="267" class="1004" name="store_ln34_store_fu_267">
 <pin_list>
-<pin id="272" dir="0" index="0" bw="32" slack="0"/>
-<pin id="273" dir="0" index="1" bw="32" slack="0"/>
-<pin id="274" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="268" dir="0" index="0" bw="32" slack="0"/>
+<pin id="269" dir="0" index="1" bw="32" slack="0"/>
+<pin id="270" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1004,10 +973,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="277" class="1004" name="reducer_circuit_adder_levels_buffer_label_0_0_load_load_fu_277">
+<comp id="273" class="1004" name="reducer_circuit_adder_levels_buffer_label_0_0_load_load_fu_273">
 <pin_list>
-<pin id="278" dir="0" index="0" bw="32" slack="0"/>
-<pin id="279" dir="1" index="1" bw="32" slack="1"/>
+<pin id="274" dir="0" index="0" bw="32" slack="0"/>
+<pin id="275" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -1015,11 +984,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="281" class="1004" name="store_ln34_store_fu_281">
+<comp id="277" class="1004" name="store_ln34_store_fu_277">
 <pin_list>
-<pin id="282" dir="0" index="0" bw="32" slack="0"/>
-<pin id="283" dir="0" index="1" bw="32" slack="0"/>
-<pin id="284" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="278" dir="0" index="0" bw="32" slack="0"/>
+<pin id="279" dir="0" index="1" bw="32" slack="0"/>
+<pin id="280" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1027,11 +996,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="287" class="1004" name="add_ln35_fu_287">
+<comp id="283" class="1004" name="add_ln35_fu_283">
 <pin_list>
-<pin id="288" dir="0" index="0" bw="32" slack="0"/>
-<pin id="289" dir="0" index="1" bw="1" slack="0"/>
-<pin id="290" dir="1" index="2" bw="32" slack="1"/>
+<pin id="284" dir="0" index="0" bw="32" slack="0"/>
+<pin id="285" dir="0" index="1" bw="1" slack="0"/>
+<pin id="286" dir="1" index="2" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
@@ -1039,11 +1008,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="293" class="1004" name="store_ln26_store_fu_293">
+<comp id="289" class="1004" name="store_ln26_store_fu_289">
 <pin_list>
-<pin id="294" dir="0" index="0" bw="1" slack="0"/>
-<pin id="295" dir="0" index="1" bw="1" slack="0"/>
-<pin id="296" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="290" dir="0" index="0" bw="1" slack="0"/>
+<pin id="291" dir="0" index="1" bw="1" slack="0"/>
+<pin id="292" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1051,11 +1020,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="299" class="1004" name="store_ln13_store_fu_299">
+<comp id="295" class="1004" name="store_ln13_store_fu_295">
 <pin_list>
-<pin id="300" dir="0" index="0" bw="1" slack="0"/>
-<pin id="301" dir="0" index="1" bw="1" slack="0"/>
-<pin id="302" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="296" dir="0" index="0" bw="1" slack="0"/>
+<pin id="297" dir="0" index="1" bw="1" slack="0"/>
+<pin id="298" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1063,10 +1032,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="305" class="1004" name="reducer_circuit_adder_levels_buffer_value_0_1_load_load_fu_305">
+<comp id="301" class="1004" name="reducer_circuit_adder_levels_buffer_value_0_1_load_load_fu_301">
 <pin_list>
-<pin id="306" dir="0" index="0" bw="32" slack="0"/>
-<pin id="307" dir="1" index="1" bw="32" slack="0"/>
+<pin id="302" dir="0" index="0" bw="32" slack="0"/>
+<pin id="303" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -1074,11 +1043,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="309" class="1004" name="level_out_value_fu_309">
+<comp id="305" class="1004" name="level_out_value_fu_305">
 <pin_list>
-<pin id="310" dir="0" index="0" bw="32" slack="0"/>
-<pin id="311" dir="0" index="1" bw="32" slack="0"/>
-<pin id="312" dir="1" index="2" bw="32" slack="1"/>
+<pin id="306" dir="0" index="0" bw="32" slack="0"/>
+<pin id="307" dir="0" index="1" bw="32" slack="0"/>
+<pin id="308" dir="1" index="2" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
@@ -1086,10 +1055,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="315" class="1004" name="reducer_circuit_adder_levels_num_items_1_load_load_fu_315">
+<comp id="311" class="1004" name="reducer_circuit_adder_levels_num_items_1_load_load_fu_311">
 <pin_list>
-<pin id="316" dir="0" index="0" bw="32" slack="0"/>
-<pin id="317" dir="1" index="1" bw="32" slack="0"/>
+<pin id="312" dir="0" index="0" bw="32" slack="0"/>
+<pin id="313" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -1097,10 +1066,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="319" class="1004" name="reducer_circuit_adder_levels_buffer_value_1_0_load_load_fu_319">
+<comp id="315" class="1004" name="reducer_circuit_adder_levels_buffer_value_1_0_load_load_fu_315">
 <pin_list>
-<pin id="320" dir="0" index="0" bw="32" slack="0"/>
-<pin id="321" dir="1" index="1" bw="32" slack="0"/>
+<pin id="316" dir="0" index="0" bw="32" slack="0"/>
+<pin id="317" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -1108,13 +1077,13 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="324" class="1004" name="tmp_fu_324">
+<comp id="320" class="1004" name="tmp_fu_320">
 <pin_list>
-<pin id="325" dir="0" index="0" bw="31" slack="0"/>
-<pin id="326" dir="0" index="1" bw="32" slack="0"/>
-<pin id="327" dir="0" index="2" bw="1" slack="0"/>
-<pin id="328" dir="0" index="3" bw="6" slack="0"/>
-<pin id="329" dir="1" index="4" bw="31" slack="0"/>
+<pin id="321" dir="0" index="0" bw="31" slack="0"/>
+<pin id="322" dir="0" index="1" bw="32" slack="0"/>
+<pin id="323" dir="0" index="2" bw="1" slack="0"/>
+<pin id="324" dir="0" index="3" bw="6" slack="0"/>
+<pin id="325" dir="1" index="4" bw="31" slack="0"/>
 </pin_list>
 <bind>
 <opcode="partselect(1002) " fcode="partselect"/>
@@ -1122,11 +1091,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="334" class="1004" name="icmp_ln18_fu_334">
+<comp id="330" class="1004" name="icmp_ln18_fu_330">
 <pin_list>
-<pin id="335" dir="0" index="0" bw="31" slack="0"/>
-<pin id="336" dir="0" index="1" bw="1" slack="0"/>
-<pin id="337" dir="1" index="2" bw="1" slack="1"/>
+<pin id="331" dir="0" index="0" bw="31" slack="0"/>
+<pin id="332" dir="0" index="1" bw="1" slack="0"/>
+<pin id="333" dir="1" index="2" bw="1" slack="1"/>
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
@@ -1134,11 +1103,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="340" class="1004" name="store_ln20_store_fu_340">
+<comp id="336" class="1004" name="store_ln20_store_fu_336">
 <pin_list>
-<pin id="341" dir="0" index="0" bw="1" slack="0"/>
-<pin id="342" dir="0" index="1" bw="1" slack="0"/>
-<pin id="343" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="337" dir="0" index="0" bw="1" slack="0"/>
+<pin id="338" dir="0" index="1" bw="1" slack="0"/>
+<pin id="339" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1146,10 +1115,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="346" class="1004" name="reducer_circuit_adder_levels_valid_0_load_load_fu_346">
+<comp id="342" class="1004" name="reducer_circuit_adder_levels_valid_0_load_load_fu_342">
 <pin_list>
-<pin id="347" dir="0" index="0" bw="1" slack="0"/>
-<pin id="348" dir="1" index="1" bw="1" slack="1"/>
+<pin id="343" dir="0" index="0" bw="1" slack="0"/>
+<pin id="344" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -1157,10 +1126,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="350" class="1004" name="trunc_ln34_1_fu_350">
+<comp id="346" class="1004" name="trunc_ln34_1_fu_346">
 <pin_list>
-<pin id="351" dir="0" index="0" bw="32" slack="0"/>
-<pin id="352" dir="1" index="1" bw="1" slack="1"/>
+<pin id="347" dir="0" index="0" bw="32" slack="0"/>
+<pin id="348" dir="1" index="1" bw="1" slack="1"/>
 </pin_list>
 <bind>
 <opcode="trunc(33) " fcode="trunc"/>
@@ -1168,11 +1137,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="354" class="1004" name="store_ln34_store_fu_354">
+<comp id="350" class="1004" name="store_ln34_store_fu_350">
 <pin_list>
-<pin id="355" dir="0" index="0" bw="32" slack="0"/>
-<pin id="356" dir="0" index="1" bw="32" slack="0"/>
-<pin id="357" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="351" dir="0" index="0" bw="32" slack="0"/>
+<pin id="352" dir="0" index="1" bw="32" slack="0"/>
+<pin id="353" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1180,11 +1149,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="360" class="1004" name="store_ln34_store_fu_360">
+<comp id="356" class="1004" name="store_ln34_store_fu_356">
 <pin_list>
-<pin id="361" dir="0" index="0" bw="32" slack="0"/>
-<pin id="362" dir="0" index="1" bw="32" slack="0"/>
-<pin id="363" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="357" dir="0" index="0" bw="32" slack="0"/>
+<pin id="358" dir="0" index="1" bw="32" slack="0"/>
+<pin id="359" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1192,11 +1161,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="366" class="1004" name="add_ln35_1_fu_366">
+<comp id="362" class="1004" name="add_ln35_1_fu_362">
 <pin_list>
-<pin id="367" dir="0" index="0" bw="32" slack="0"/>
-<pin id="368" dir="0" index="1" bw="1" slack="0"/>
-<pin id="369" dir="1" index="2" bw="32" slack="1"/>
+<pin id="363" dir="0" index="0" bw="32" slack="0"/>
+<pin id="364" dir="0" index="1" bw="1" slack="0"/>
+<pin id="365" dir="1" index="2" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
@@ -1204,11 +1173,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="372" class="1004" name="store_ln35_store_fu_372">
+<comp id="368" class="1004" name="store_ln35_store_fu_368">
 <pin_list>
-<pin id="373" dir="0" index="0" bw="32" slack="0"/>
-<pin id="374" dir="0" index="1" bw="32" slack="0"/>
-<pin id="375" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="369" dir="0" index="0" bw="32" slack="0"/>
+<pin id="370" dir="0" index="1" bw="32" slack="0"/>
+<pin id="371" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1216,11 +1185,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="378" class="1004" name="store_ln34_store_fu_378">
+<comp id="374" class="1004" name="store_ln34_store_fu_374">
 <pin_list>
-<pin id="379" dir="0" index="0" bw="32" slack="0"/>
-<pin id="380" dir="0" index="1" bw="32" slack="0"/>
-<pin id="381" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="375" dir="0" index="0" bw="32" slack="0"/>
+<pin id="376" dir="0" index="1" bw="32" slack="0"/>
+<pin id="377" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1228,11 +1197,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="384" class="1004" name="store_ln26_store_fu_384">
+<comp id="380" class="1004" name="store_ln26_store_fu_380">
 <pin_list>
-<pin id="385" dir="0" index="0" bw="1" slack="0"/>
-<pin id="386" dir="0" index="1" bw="1" slack="0"/>
-<pin id="387" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="381" dir="0" index="0" bw="1" slack="0"/>
+<pin id="382" dir="0" index="1" bw="1" slack="0"/>
+<pin id="383" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1240,10 +1209,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="390" class="1004" name="out_data_label_load_fu_390">
+<comp id="386" class="1004" name="out_data_label_load_fu_386">
 <pin_list>
-<pin id="391" dir="0" index="0" bw="32" slack="0"/>
-<pin id="392" dir="1" index="1" bw="32" slack="0"/>
+<pin id="387" dir="0" index="0" bw="32" slack="0"/>
+<pin id="388" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -1251,79 +1220,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="394" class="1004" name="reducer_circuit_adder_levels_curr_level_1_load_load_fu_394">
+<comp id="390" class="1004" name="icmp_ln18_1_fu_390">
 <pin_list>
-<pin id="395" dir="0" index="0" bw="1" slack="0"/>
-<pin id="396" dir="1" index="1" bw="1" slack="0"/>
-</pin_list>
-<bind>
-<opcode="load(27) " fcode="load"/>
-<opset="reducer_circuit_adder_levels_curr_level_1_load/3 "/>
-</bind>
-</comp>
-
-<comp id="398" class="1004" name="zext_ln18_fu_398">
-<pin_list>
-<pin id="399" dir="0" index="0" bw="1" slack="0"/>
-<pin id="400" dir="1" index="1" bw="2" slack="0"/>
-</pin_list>
-<bind>
-<opcode="zext(34) " fcode="zext"/>
-<opset="zext_ln18/3 "/>
-</bind>
-</comp>
-
-<comp id="402" class="1004" name="shl_ln18_fu_402">
-<pin_list>
-<pin id="403" dir="0" index="0" bw="1" slack="0"/>
-<pin id="404" dir="0" index="1" bw="1" slack="0"/>
-<pin id="405" dir="1" index="2" bw="2" slack="0"/>
-</pin_list>
-<bind>
-<opcode="shl(20) " fcode="shl"/>
-<opset="shl_ln18/3 "/>
-</bind>
-</comp>
-
-<comp id="408" class="1004" name="zext_ln18_1_fu_408">
-<pin_list>
-<pin id="409" dir="0" index="0" bw="2" slack="0"/>
-<pin id="410" dir="1" index="1" bw="3" slack="0"/>
-</pin_list>
-<bind>
-<opcode="zext(34) " fcode="zext"/>
-<opset="zext_ln18_1/3 "/>
-</bind>
-</comp>
-
-<comp id="412" class="1004" name="add_ln18_fu_412">
-<pin_list>
-<pin id="413" dir="0" index="0" bw="2" slack="0"/>
-<pin id="414" dir="0" index="1" bw="1" slack="0"/>
-<pin id="415" dir="1" index="2" bw="3" slack="0"/>
-</pin_list>
-<bind>
-<opcode="add(8) " fcode="add"/>
-<opset="add_ln18/3 "/>
-</bind>
-</comp>
-
-<comp id="418" class="1004" name="zext_ln18_2_fu_418">
-<pin_list>
-<pin id="419" dir="0" index="0" bw="3" slack="0"/>
-<pin id="420" dir="1" index="1" bw="32" slack="0"/>
-</pin_list>
-<bind>
-<opcode="zext(34) " fcode="zext"/>
-<opset="zext_ln18_2/3 "/>
-</bind>
-</comp>
-
-<comp id="422" class="1004" name="icmp_ln18_1_fu_422">
-<pin_list>
-<pin id="423" dir="0" index="0" bw="32" slack="0"/>
-<pin id="424" dir="0" index="1" bw="3" slack="0"/>
-<pin id="425" dir="1" index="2" bw="1" slack="2147483647"/>
+<pin id="391" dir="0" index="0" bw="32" slack="0"/>
+<pin id="392" dir="0" index="1" bw="3" slack="0"/>
+<pin id="393" dir="1" index="2" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
@@ -1331,11 +1232,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="428" class="1004" name="store_ln20_store_fu_428">
+<comp id="396" class="1004" name="store_ln20_store_fu_396">
 <pin_list>
-<pin id="429" dir="0" index="0" bw="1" slack="0"/>
-<pin id="430" dir="0" index="1" bw="1" slack="0"/>
-<pin id="431" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="397" dir="0" index="0" bw="1" slack="0"/>
+<pin id="398" dir="0" index="1" bw="1" slack="0"/>
+<pin id="399" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1343,11 +1244,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="434" class="1004" name="store_ln13_store_fu_434">
+<comp id="402" class="1004" name="store_ln13_store_fu_402">
 <pin_list>
-<pin id="435" dir="0" index="0" bw="1" slack="0"/>
-<pin id="436" dir="0" index="1" bw="1" slack="0"/>
-<pin id="437" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="403" dir="0" index="0" bw="1" slack="0"/>
+<pin id="404" dir="0" index="1" bw="1" slack="0"/>
+<pin id="405" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1355,10 +1256,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="440" class="1004" name="reducer_circuit_adder_levels_buffer_value_1_1_load_load_fu_440">
+<comp id="408" class="1004" name="reducer_circuit_adder_levels_buffer_value_1_1_load_load_fu_408">
 <pin_list>
-<pin id="441" dir="0" index="0" bw="32" slack="0"/>
-<pin id="442" dir="1" index="1" bw="32" slack="0"/>
+<pin id="409" dir="0" index="0" bw="32" slack="0"/>
+<pin id="410" dir="1" index="1" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -1366,11 +1267,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="444" class="1004" name="out_data_value_fu_444">
+<comp id="412" class="1004" name="out_data_value_fu_412">
 <pin_list>
-<pin id="445" dir="0" index="0" bw="32" slack="0"/>
-<pin id="446" dir="0" index="1" bw="32" slack="0"/>
-<pin id="447" dir="1" index="2" bw="32" slack="0"/>
+<pin id="413" dir="0" index="0" bw="32" slack="0"/>
+<pin id="414" dir="0" index="1" bw="32" slack="0"/>
+<pin id="415" dir="1" index="2" bw="32" slack="0"/>
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
@@ -1378,10 +1279,10 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="451" class="1004" name="reducer_circuit_adder_levels_valid_1_load_load_fu_451">
+<comp id="419" class="1004" name="reducer_circuit_adder_levels_valid_1_load_load_fu_419">
 <pin_list>
-<pin id="452" dir="0" index="0" bw="1" slack="0"/>
-<pin id="453" dir="1" index="1" bw="1" slack="2147483647"/>
+<pin id="420" dir="0" index="0" bw="1" slack="0"/>
+<pin id="421" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="load(27) " fcode="load"/>
@@ -1389,11 +1290,11 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="455" class="1004" name="store_ln35_store_fu_455">
+<comp id="423" class="1004" name="store_ln35_store_fu_423">
 <pin_list>
-<pin id="456" dir="0" index="0" bw="32" slack="0"/>
-<pin id="457" dir="0" index="1" bw="32" slack="0"/>
-<pin id="458" dir="1" index="2" bw="0" slack="2147483647"/>
+<pin id="424" dir="0" index="0" bw="32" slack="0"/>
+<pin id="425" dir="0" index="1" bw="32" slack="0"/>
+<pin id="426" dir="1" index="2" bw="0" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -1401,110 +1302,110 @@ ret_ln62                                            (ret       ) [ 0000]
 </bind>
 </comp>
 
-<comp id="461" class="1005" name="label_read_reg_461">
+<comp id="429" class="1005" name="label_read_reg_429">
 <pin_list>
-<pin id="462" dir="0" index="0" bw="32" slack="1"/>
-<pin id="463" dir="1" index="1" bw="32" slack="1"/>
+<pin id="430" dir="0" index="0" bw="32" slack="1"/>
+<pin id="431" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="label_read "/>
 </bind>
 </comp>
 
-<comp id="466" class="1005" name="reducer_circuit_adder_levels_num_items_0_load_reg_466">
+<comp id="434" class="1005" name="reducer_circuit_adder_levels_num_items_0_load_reg_434">
 <pin_list>
-<pin id="467" dir="0" index="0" bw="32" slack="1"/>
-<pin id="468" dir="1" index="1" bw="32" slack="2147483647"/>
+<pin id="435" dir="0" index="0" bw="32" slack="1"/>
+<pin id="436" dir="1" index="1" bw="32" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_num_items_0_load "/>
 </bind>
 </comp>
 
-<comp id="473" class="1005" name="reducer_circuit_adder_levels_buffer_label_0_0_load_reg_473">
+<comp id="441" class="1005" name="reducer_circuit_adder_levels_buffer_label_0_0_load_reg_441">
 <pin_list>
-<pin id="474" dir="0" index="0" bw="32" slack="1"/>
-<pin id="475" dir="1" index="1" bw="32" slack="1"/>
+<pin id="442" dir="0" index="0" bw="32" slack="1"/>
+<pin id="443" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_buffer_label_0_0_load "/>
 </bind>
 </comp>
 
-<comp id="478" class="1005" name="add_ln35_reg_478">
+<comp id="446" class="1005" name="add_ln35_reg_446">
 <pin_list>
-<pin id="479" dir="0" index="0" bw="32" slack="1"/>
-<pin id="480" dir="1" index="1" bw="32" slack="1"/>
+<pin id="447" dir="0" index="0" bw="32" slack="1"/>
+<pin id="448" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="add_ln35 "/>
 </bind>
 </comp>
 
-<comp id="484" class="1005" name="level_out_value_reg_484">
+<comp id="452" class="1005" name="level_out_value_reg_452">
 <pin_list>
-<pin id="485" dir="0" index="0" bw="32" slack="1"/>
-<pin id="486" dir="1" index="1" bw="32" slack="1"/>
+<pin id="453" dir="0" index="0" bw="32" slack="1"/>
+<pin id="454" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="level_out_value "/>
 </bind>
 </comp>
 
-<comp id="489" class="1005" name="reducer_circuit_adder_levels_num_items_1_load_reg_489">
+<comp id="457" class="1005" name="reducer_circuit_adder_levels_num_items_1_load_reg_457">
 <pin_list>
-<pin id="490" dir="0" index="0" bw="32" slack="1"/>
-<pin id="491" dir="1" index="1" bw="32" slack="1"/>
+<pin id="458" dir="0" index="0" bw="32" slack="1"/>
+<pin id="459" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_num_items_1_load "/>
 </bind>
 </comp>
 
-<comp id="494" class="1005" name="reducer_circuit_adder_levels_buffer_value_1_0_load_reg_494">
+<comp id="462" class="1005" name="reducer_circuit_adder_levels_buffer_value_1_0_load_reg_462">
 <pin_list>
-<pin id="495" dir="0" index="0" bw="32" slack="1"/>
-<pin id="496" dir="1" index="1" bw="32" slack="1"/>
+<pin id="463" dir="0" index="0" bw="32" slack="1"/>
+<pin id="464" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_buffer_value_1_0_load "/>
 </bind>
 </comp>
 
-<comp id="499" class="1005" name="icmp_ln18_reg_499">
+<comp id="467" class="1005" name="icmp_ln18_reg_467">
 <pin_list>
-<pin id="500" dir="0" index="0" bw="1" slack="1"/>
-<pin id="501" dir="1" index="1" bw="1" slack="2147483647"/>
+<pin id="468" dir="0" index="0" bw="1" slack="1"/>
+<pin id="469" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="icmp_ln18 "/>
 </bind>
 </comp>
 
-<comp id="503" class="1005" name="reducer_circuit_adder_levels_valid_0_load_reg_503">
+<comp id="471" class="1005" name="reducer_circuit_adder_levels_valid_0_load_reg_471">
 <pin_list>
-<pin id="504" dir="0" index="0" bw="1" slack="1"/>
-<pin id="505" dir="1" index="1" bw="1" slack="2147483647"/>
+<pin id="472" dir="0" index="0" bw="1" slack="1"/>
+<pin id="473" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="reducer_circuit_adder_levels_valid_0_load "/>
 </bind>
 </comp>
 
-<comp id="507" class="1005" name="trunc_ln34_1_reg_507">
+<comp id="475" class="1005" name="trunc_ln34_1_reg_475">
 <pin_list>
-<pin id="508" dir="0" index="0" bw="1" slack="1"/>
-<pin id="509" dir="1" index="1" bw="1" slack="2147483647"/>
+<pin id="476" dir="0" index="0" bw="1" slack="1"/>
+<pin id="477" dir="1" index="1" bw="1" slack="2147483647"/>
 </pin_list>
 <bind>
 <opset="trunc_ln34_1 "/>
 </bind>
 </comp>
 
-<comp id="511" class="1005" name="add_ln35_1_reg_511">
+<comp id="479" class="1005" name="add_ln35_1_reg_479">
 <pin_list>
-<pin id="512" dir="0" index="0" bw="32" slack="1"/>
-<pin id="513" dir="1" index="1" bw="32" slack="1"/>
+<pin id="480" dir="0" index="0" bw="32" slack="1"/>
+<pin id="481" dir="1" index="1" bw="32" slack="1"/>
 </pin_list>
 <bind>
 <opset="add_ln35_1 "/>
@@ -1514,253 +1415,237 @@ ret_ln62                                            (ret       ) [ 0000]
 </comp_list>
 
 <net_list>
-<net id="58"><net_src comp="28" pin="0"/><net_sink comp="54" pin=0"/></net>
+<net id="54"><net_src comp="26" pin="0"/><net_sink comp="50" pin=0"/></net>
 
-<net id="59"><net_src comp="4" pin="0"/><net_sink comp="54" pin=1"/></net>
+<net id="55"><net_src comp="4" pin="0"/><net_sink comp="50" pin=1"/></net>
 
-<net id="64"><net_src comp="28" pin="0"/><net_sink comp="60" pin=0"/></net>
+<net id="60"><net_src comp="26" pin="0"/><net_sink comp="56" pin=0"/></net>
 
-<net id="65"><net_src comp="2" pin="0"/><net_sink comp="60" pin=1"/></net>
+<net id="61"><net_src comp="2" pin="0"/><net_sink comp="56" pin=1"/></net>
 
-<net id="71"><net_src comp="52" pin="0"/><net_sink comp="66" pin=0"/></net>
+<net id="67"><net_src comp="48" pin="0"/><net_sink comp="62" pin=0"/></net>
 
-<net id="72"><net_src comp="0" pin="0"/><net_sink comp="66" pin=1"/></net>
+<net id="68"><net_src comp="0" pin="0"/><net_sink comp="62" pin=1"/></net>
 
-<net id="82"><net_src comp="60" pin="2"/><net_sink comp="76" pin=0"/></net>
+<net id="78"><net_src comp="56" pin="2"/><net_sink comp="72" pin=0"/></net>
 
-<net id="83"><net_src comp="76" pin="4"/><net_sink comp="73" pin=0"/></net>
+<net id="79"><net_src comp="72" pin="4"/><net_sink comp="69" pin=0"/></net>
 
-<net id="93"><net_src comp="87" pin="4"/><net_sink comp="84" pin=0"/></net>
+<net id="89"><net_src comp="83" pin="4"/><net_sink comp="80" pin=0"/></net>
 
-<net id="105"><net_src comp="32" pin="0"/><net_sink comp="97" pin=2"/></net>
+<net id="101"><net_src comp="30" pin="0"/><net_sink comp="93" pin=2"/></net>
 
-<net id="106"><net_src comp="32" pin="0"/><net_sink comp="97" pin=4"/></net>
+<net id="102"><net_src comp="30" pin="0"/><net_sink comp="93" pin=4"/></net>
 
-<net id="118"><net_src comp="32" pin="0"/><net_sink comp="110" pin=0"/></net>
+<net id="114"><net_src comp="30" pin="0"/><net_sink comp="106" pin=0"/></net>
 
-<net id="119"><net_src comp="73" pin="1"/><net_sink comp="110" pin=2"/></net>
+<net id="115"><net_src comp="69" pin="1"/><net_sink comp="106" pin=2"/></net>
 
-<net id="129"><net_src comp="110" pin="6"/><net_sink comp="123" pin=0"/></net>
+<net id="125"><net_src comp="106" pin="6"/><net_sink comp="119" pin=0"/></net>
 
-<net id="130"><net_src comp="123" pin="4"/><net_sink comp="120" pin=0"/></net>
+<net id="126"><net_src comp="119" pin="4"/><net_sink comp="116" pin=0"/></net>
 
-<net id="140"><net_src comp="97" pin="6"/><net_sink comp="134" pin=0"/></net>
+<net id="136"><net_src comp="93" pin="6"/><net_sink comp="130" pin=0"/></net>
 
-<net id="144"><net_src comp="32" pin="0"/><net_sink comp="141" pin=0"/></net>
+<net id="140"><net_src comp="30" pin="0"/><net_sink comp="137" pin=0"/></net>
 
-<net id="153"><net_src comp="141" pin="1"/><net_sink comp="145" pin=0"/></net>
+<net id="149"><net_src comp="137" pin="1"/><net_sink comp="141" pin=0"/></net>
 
-<net id="154"><net_src comp="84" pin="1"/><net_sink comp="145" pin=2"/></net>
+<net id="150"><net_src comp="80" pin="1"/><net_sink comp="141" pin=2"/></net>
 
-<net id="155"><net_src comp="84" pin="1"/><net_sink comp="145" pin=4"/></net>
+<net id="151"><net_src comp="80" pin="1"/><net_sink comp="141" pin=4"/></net>
 
-<net id="159"><net_src comp="38" pin="0"/><net_sink comp="156" pin=0"/></net>
+<net id="155"><net_src comp="36" pin="0"/><net_sink comp="152" pin=0"/></net>
 
-<net id="160"><net_src comp="36" pin="0"/><net_sink comp="156" pin=0"/></net>
+<net id="156"><net_src comp="34" pin="0"/><net_sink comp="152" pin=0"/></net>
 
-<net id="167"><net_src comp="156" pin="1"/><net_sink comp="161" pin=0"/></net>
+<net id="163"><net_src comp="152" pin="1"/><net_sink comp="157" pin=0"/></net>
 
-<net id="168"><net_src comp="156" pin="1"/><net_sink comp="161" pin=2"/></net>
+<net id="164"><net_src comp="152" pin="1"/><net_sink comp="157" pin=2"/></net>
 
-<net id="178"><net_src comp="120" pin="1"/><net_sink comp="172" pin=0"/></net>
+<net id="174"><net_src comp="116" pin="1"/><net_sink comp="168" pin=0"/></net>
 
-<net id="199"><net_src comp="161" pin="4"/><net_sink comp="191" pin=0"/></net>
+<net id="195"><net_src comp="157" pin="4"/><net_sink comp="187" pin=0"/></net>
 
-<net id="200"><net_src comp="38" pin="0"/><net_sink comp="191" pin=2"/></net>
+<net id="196"><net_src comp="36" pin="0"/><net_sink comp="187" pin=2"/></net>
 
-<net id="201"><net_src comp="38" pin="0"/><net_sink comp="191" pin=4"/></net>
+<net id="197"><net_src comp="36" pin="0"/><net_sink comp="187" pin=4"/></net>
 
-<net id="213"><net_src comp="182" pin="4"/><net_sink comp="205" pin=0"/></net>
+<net id="209"><net_src comp="178" pin="4"/><net_sink comp="201" pin=0"/></net>
 
-<net id="214"><net_src comp="32" pin="0"/><net_sink comp="205" pin=2"/></net>
+<net id="210"><net_src comp="30" pin="0"/><net_sink comp="201" pin=2"/></net>
 
-<net id="215"><net_src comp="32" pin="0"/><net_sink comp="205" pin=4"/></net>
+<net id="211"><net_src comp="30" pin="0"/><net_sink comp="201" pin=4"/></net>
 
-<net id="227"><net_src comp="32" pin="0"/><net_sink comp="219" pin=0"/></net>
+<net id="223"><net_src comp="30" pin="0"/><net_sink comp="215" pin=0"/></net>
 
-<net id="228"><net_src comp="172" pin="4"/><net_sink comp="219" pin=2"/></net>
+<net id="224"><net_src comp="168" pin="4"/><net_sink comp="215" pin=2"/></net>
 
-<net id="229"><net_src comp="219" pin="6"/><net_sink comp="66" pin=2"/></net>
+<net id="225"><net_src comp="215" pin="6"/><net_sink comp="62" pin=2"/></net>
 
-<net id="239"><net_src comp="191" pin="6"/><net_sink comp="233" pin=0"/></net>
+<net id="235"><net_src comp="187" pin="6"/><net_sink comp="229" pin=0"/></net>
 
-<net id="240"><net_src comp="161" pin="4"/><net_sink comp="233" pin=2"/></net>
+<net id="236"><net_src comp="157" pin="4"/><net_sink comp="229" pin=2"/></net>
 
-<net id="250"><net_src comp="205" pin="6"/><net_sink comp="244" pin=0"/></net>
+<net id="246"><net_src comp="201" pin="6"/><net_sink comp="240" pin=0"/></net>
 
-<net id="251"><net_src comp="182" pin="4"/><net_sink comp="244" pin=2"/></net>
+<net id="247"><net_src comp="178" pin="4"/><net_sink comp="240" pin=2"/></net>
 
-<net id="255"><net_src comp="6" pin="0"/><net_sink comp="252" pin=0"/></net>
+<net id="251"><net_src comp="6" pin="0"/><net_sink comp="248" pin=0"/></net>
 
-<net id="259"><net_src comp="252" pin="1"/><net_sink comp="256" pin=0"/></net>
+<net id="255"><net_src comp="248" pin="1"/><net_sink comp="252" pin=0"/></net>
 
-<net id="263"><net_src comp="8" pin="0"/><net_sink comp="260" pin=0"/></net>
+<net id="259"><net_src comp="8" pin="0"/><net_sink comp="256" pin=0"/></net>
 
-<net id="264"><net_src comp="260" pin="1"/><net_sink comp="76" pin=2"/></net>
+<net id="260"><net_src comp="256" pin="1"/><net_sink comp="72" pin=2"/></net>
 
-<net id="269"><net_src comp="60" pin="2"/><net_sink comp="265" pin=0"/></net>
+<net id="265"><net_src comp="56" pin="2"/><net_sink comp="261" pin=0"/></net>
 
-<net id="270"><net_src comp="8" pin="0"/><net_sink comp="265" pin=1"/></net>
+<net id="266"><net_src comp="8" pin="0"/><net_sink comp="261" pin=1"/></net>
 
-<net id="275"><net_src comp="60" pin="2"/><net_sink comp="271" pin=0"/></net>
+<net id="271"><net_src comp="56" pin="2"/><net_sink comp="267" pin=0"/></net>
 
-<net id="276"><net_src comp="18" pin="0"/><net_sink comp="271" pin=1"/></net>
+<net id="272"><net_src comp="18" pin="0"/><net_sink comp="267" pin=1"/></net>
 
-<net id="280"><net_src comp="10" pin="0"/><net_sink comp="277" pin=0"/></net>
+<net id="276"><net_src comp="10" pin="0"/><net_sink comp="273" pin=0"/></net>
 
-<net id="285"><net_src comp="54" pin="2"/><net_sink comp="281" pin=0"/></net>
+<net id="281"><net_src comp="50" pin="2"/><net_sink comp="277" pin=0"/></net>
 
-<net id="286"><net_src comp="10" pin="0"/><net_sink comp="281" pin=1"/></net>
+<net id="282"><net_src comp="10" pin="0"/><net_sink comp="277" pin=1"/></net>
 
-<net id="291"><net_src comp="252" pin="1"/><net_sink comp="287" pin=0"/></net>
+<net id="287"><net_src comp="248" pin="1"/><net_sink comp="283" pin=0"/></net>
 
-<net id="292"><net_src comp="30" pin="0"/><net_sink comp="287" pin=1"/></net>
+<net id="288"><net_src comp="28" pin="0"/><net_sink comp="283" pin=1"/></net>
 
-<net id="297"><net_src comp="36" pin="0"/><net_sink comp="293" pin=0"/></net>
+<net id="293"><net_src comp="34" pin="0"/><net_sink comp="289" pin=0"/></net>
 
-<net id="298"><net_src comp="16" pin="0"/><net_sink comp="293" pin=1"/></net>
+<net id="294"><net_src comp="16" pin="0"/><net_sink comp="289" pin=1"/></net>
 
-<net id="303"><net_src comp="38" pin="0"/><net_sink comp="299" pin=0"/></net>
+<net id="299"><net_src comp="36" pin="0"/><net_sink comp="295" pin=0"/></net>
 
-<net id="304"><net_src comp="16" pin="0"/><net_sink comp="299" pin=1"/></net>
+<net id="300"><net_src comp="16" pin="0"/><net_sink comp="295" pin=1"/></net>
 
-<net id="308"><net_src comp="18" pin="0"/><net_sink comp="305" pin=0"/></net>
+<net id="304"><net_src comp="18" pin="0"/><net_sink comp="301" pin=0"/></net>
 
-<net id="313"><net_src comp="305" pin="1"/><net_sink comp="309" pin=0"/></net>
+<net id="309"><net_src comp="301" pin="1"/><net_sink comp="305" pin=0"/></net>
 
-<net id="314"><net_src comp="76" pin="4"/><net_sink comp="309" pin=1"/></net>
+<net id="310"><net_src comp="72" pin="4"/><net_sink comp="305" pin=1"/></net>
 
-<net id="318"><net_src comp="12" pin="0"/><net_sink comp="315" pin=0"/></net>
+<net id="314"><net_src comp="12" pin="0"/><net_sink comp="311" pin=0"/></net>
 
-<net id="322"><net_src comp="14" pin="0"/><net_sink comp="319" pin=0"/></net>
+<net id="318"><net_src comp="14" pin="0"/><net_sink comp="315" pin=0"/></net>
 
-<net id="323"><net_src comp="319" pin="1"/><net_sink comp="123" pin=2"/></net>
+<net id="319"><net_src comp="315" pin="1"/><net_sink comp="119" pin=2"/></net>
 
-<net id="330"><net_src comp="40" pin="0"/><net_sink comp="324" pin=0"/></net>
+<net id="326"><net_src comp="38" pin="0"/><net_sink comp="320" pin=0"/></net>
 
-<net id="331"><net_src comp="87" pin="4"/><net_sink comp="324" pin=1"/></net>
+<net id="327"><net_src comp="83" pin="4"/><net_sink comp="320" pin=1"/></net>
 
-<net id="332"><net_src comp="30" pin="0"/><net_sink comp="324" pin=2"/></net>
+<net id="328"><net_src comp="28" pin="0"/><net_sink comp="320" pin=2"/></net>
 
-<net id="333"><net_src comp="42" pin="0"/><net_sink comp="324" pin=3"/></net>
+<net id="329"><net_src comp="40" pin="0"/><net_sink comp="320" pin=3"/></net>
 
-<net id="338"><net_src comp="324" pin="4"/><net_sink comp="334" pin=0"/></net>
+<net id="334"><net_src comp="320" pin="4"/><net_sink comp="330" pin=0"/></net>
 
-<net id="339"><net_src comp="44" pin="0"/><net_sink comp="334" pin=1"/></net>
+<net id="335"><net_src comp="42" pin="0"/><net_sink comp="330" pin=1"/></net>
 
-<net id="344"><net_src comp="38" pin="0"/><net_sink comp="340" pin=0"/></net>
+<net id="340"><net_src comp="36" pin="0"/><net_sink comp="336" pin=0"/></net>
 
-<net id="345"><net_src comp="16" pin="0"/><net_sink comp="340" pin=1"/></net>
+<net id="341"><net_src comp="16" pin="0"/><net_sink comp="336" pin=1"/></net>
 
-<net id="349"><net_src comp="16" pin="0"/><net_sink comp="346" pin=0"/></net>
+<net id="345"><net_src comp="16" pin="0"/><net_sink comp="342" pin=0"/></net>
 
-<net id="353"><net_src comp="315" pin="1"/><net_sink comp="350" pin=0"/></net>
+<net id="349"><net_src comp="311" pin="1"/><net_sink comp="346" pin=0"/></net>
 
-<net id="358"><net_src comp="110" pin="6"/><net_sink comp="354" pin=0"/></net>
+<net id="354"><net_src comp="106" pin="6"/><net_sink comp="350" pin=0"/></net>
 
-<net id="359"><net_src comp="14" pin="0"/><net_sink comp="354" pin=1"/></net>
+<net id="355"><net_src comp="14" pin="0"/><net_sink comp="350" pin=1"/></net>
 
-<net id="364"><net_src comp="110" pin="6"/><net_sink comp="360" pin=0"/></net>
+<net id="360"><net_src comp="106" pin="6"/><net_sink comp="356" pin=0"/></net>
 
-<net id="365"><net_src comp="22" pin="0"/><net_sink comp="360" pin=1"/></net>
+<net id="361"><net_src comp="22" pin="0"/><net_sink comp="356" pin=1"/></net>
 
-<net id="370"><net_src comp="315" pin="1"/><net_sink comp="366" pin=0"/></net>
+<net id="366"><net_src comp="311" pin="1"/><net_sink comp="362" pin=0"/></net>
 
-<net id="371"><net_src comp="30" pin="0"/><net_sink comp="366" pin=1"/></net>
+<net id="367"><net_src comp="28" pin="0"/><net_sink comp="362" pin=1"/></net>
 
-<net id="376"><net_src comp="134" pin="4"/><net_sink comp="372" pin=0"/></net>
+<net id="372"><net_src comp="130" pin="4"/><net_sink comp="368" pin=0"/></net>
 
-<net id="377"><net_src comp="6" pin="0"/><net_sink comp="372" pin=1"/></net>
+<net id="373"><net_src comp="6" pin="0"/><net_sink comp="368" pin=1"/></net>
 
-<net id="382"><net_src comp="145" pin="6"/><net_sink comp="378" pin=0"/></net>
+<net id="378"><net_src comp="141" pin="6"/><net_sink comp="374" pin=0"/></net>
 
-<net id="383"><net_src comp="24" pin="0"/><net_sink comp="378" pin=1"/></net>
+<net id="379"><net_src comp="24" pin="0"/><net_sink comp="374" pin=1"/></net>
 
-<net id="388"><net_src comp="36" pin="0"/><net_sink comp="384" pin=0"/></net>
+<net id="384"><net_src comp="34" pin="0"/><net_sink comp="380" pin=0"/></net>
 
-<net id="389"><net_src comp="20" pin="0"/><net_sink comp="384" pin=1"/></net>
+<net id="385"><net_src comp="20" pin="0"/><net_sink comp="380" pin=1"/></net>
 
-<net id="393"><net_src comp="24" pin="0"/><net_sink comp="390" pin=0"/></net>
+<net id="389"><net_src comp="24" pin="0"/><net_sink comp="386" pin=0"/></net>
 
-<net id="397"><net_src comp="26" pin="0"/><net_sink comp="394" pin=0"/></net>
+<net id="394"><net_src comp="386" pin="1"/><net_sink comp="390" pin=0"/></net>
 
-<net id="401"><net_src comp="394" pin="1"/><net_sink comp="398" pin=0"/></net>
+<net id="395"><net_src comp="46" pin="0"/><net_sink comp="390" pin=1"/></net>
 
-<net id="406"><net_src comp="48" pin="0"/><net_sink comp="402" pin=0"/></net>
+<net id="400"><net_src comp="36" pin="0"/><net_sink comp="396" pin=0"/></net>
 
-<net id="407"><net_src comp="398" pin="1"/><net_sink comp="402" pin=1"/></net>
+<net id="401"><net_src comp="20" pin="0"/><net_sink comp="396" pin=1"/></net>
 
-<net id="411"><net_src comp="402" pin="2"/><net_sink comp="408" pin=0"/></net>
+<net id="406"><net_src comp="36" pin="0"/><net_sink comp="402" pin=0"/></net>
+
+<net id="407"><net_src comp="20" pin="0"/><net_sink comp="402" pin=1"/></net>
+
+<net id="411"><net_src comp="22" pin="0"/><net_sink comp="408" pin=0"/></net>
 
 <net id="416"><net_src comp="408" pin="1"/><net_sink comp="412" pin=0"/></net>
 
-<net id="417"><net_src comp="50" pin="0"/><net_sink comp="412" pin=1"/></net>
+<net id="417"><net_src comp="168" pin="4"/><net_sink comp="412" pin=1"/></net>
 
-<net id="421"><net_src comp="412" pin="2"/><net_sink comp="418" pin=0"/></net>
+<net id="418"><net_src comp="412" pin="2"/><net_sink comp="215" pin=4"/></net>
 
-<net id="426"><net_src comp="390" pin="1"/><net_sink comp="422" pin=0"/></net>
+<net id="422"><net_src comp="20" pin="0"/><net_sink comp="419" pin=0"/></net>
 
-<net id="427"><net_src comp="418" pin="1"/><net_sink comp="422" pin=1"/></net>
+<net id="427"><net_src comp="240" pin="4"/><net_sink comp="423" pin=0"/></net>
 
-<net id="432"><net_src comp="38" pin="0"/><net_sink comp="428" pin=0"/></net>
+<net id="428"><net_src comp="12" pin="0"/><net_sink comp="423" pin=1"/></net>
 
-<net id="433"><net_src comp="20" pin="0"/><net_sink comp="428" pin=1"/></net>
+<net id="432"><net_src comp="50" pin="2"/><net_sink comp="429" pin=0"/></net>
 
-<net id="438"><net_src comp="38" pin="0"/><net_sink comp="434" pin=0"/></net>
+<net id="433"><net_src comp="429" pin="1"/><net_sink comp="83" pin=0"/></net>
 
-<net id="439"><net_src comp="20" pin="0"/><net_sink comp="434" pin=1"/></net>
+<net id="437"><net_src comp="248" pin="1"/><net_sink comp="434" pin=0"/></net>
 
-<net id="443"><net_src comp="22" pin="0"/><net_sink comp="440" pin=0"/></net>
+<net id="444"><net_src comp="273" pin="1"/><net_sink comp="441" pin=0"/></net>
 
-<net id="448"><net_src comp="440" pin="1"/><net_sink comp="444" pin=0"/></net>
+<net id="445"><net_src comp="441" pin="1"/><net_sink comp="83" pin=2"/></net>
 
-<net id="449"><net_src comp="172" pin="4"/><net_sink comp="444" pin=1"/></net>
+<net id="449"><net_src comp="283" pin="2"/><net_sink comp="446" pin=0"/></net>
 
-<net id="450"><net_src comp="444" pin="2"/><net_sink comp="219" pin=4"/></net>
+<net id="450"><net_src comp="446" pin="1"/><net_sink comp="93" pin=0"/></net>
 
-<net id="454"><net_src comp="20" pin="0"/><net_sink comp="451" pin=0"/></net>
+<net id="451"><net_src comp="446" pin="1"/><net_sink comp="130" pin=2"/></net>
 
-<net id="459"><net_src comp="244" pin="4"/><net_sink comp="455" pin=0"/></net>
+<net id="455"><net_src comp="305" pin="2"/><net_sink comp="452" pin=0"/></net>
 
-<net id="460"><net_src comp="12" pin="0"/><net_sink comp="455" pin=1"/></net>
+<net id="456"><net_src comp="452" pin="1"/><net_sink comp="106" pin=4"/></net>
 
-<net id="464"><net_src comp="54" pin="2"/><net_sink comp="461" pin=0"/></net>
+<net id="460"><net_src comp="311" pin="1"/><net_sink comp="457" pin=0"/></net>
 
-<net id="465"><net_src comp="461" pin="1"/><net_sink comp="87" pin=0"/></net>
+<net id="461"><net_src comp="457" pin="1"/><net_sink comp="178" pin=2"/></net>
 
-<net id="469"><net_src comp="252" pin="1"/><net_sink comp="466" pin=0"/></net>
+<net id="465"><net_src comp="315" pin="1"/><net_sink comp="462" pin=0"/></net>
 
-<net id="476"><net_src comp="277" pin="1"/><net_sink comp="473" pin=0"/></net>
+<net id="466"><net_src comp="462" pin="1"/><net_sink comp="168" pin=2"/></net>
 
-<net id="477"><net_src comp="473" pin="1"/><net_sink comp="87" pin=2"/></net>
+<net id="470"><net_src comp="330" pin="2"/><net_sink comp="467" pin=0"/></net>
 
-<net id="481"><net_src comp="287" pin="2"/><net_sink comp="478" pin=0"/></net>
+<net id="474"><net_src comp="342" pin="1"/><net_sink comp="471" pin=0"/></net>
 
-<net id="482"><net_src comp="478" pin="1"/><net_sink comp="97" pin=0"/></net>
+<net id="478"><net_src comp="346" pin="1"/><net_sink comp="475" pin=0"/></net>
 
-<net id="483"><net_src comp="478" pin="1"/><net_sink comp="134" pin=2"/></net>
+<net id="482"><net_src comp="362" pin="2"/><net_sink comp="479" pin=0"/></net>
 
-<net id="487"><net_src comp="309" pin="2"/><net_sink comp="484" pin=0"/></net>
-
-<net id="488"><net_src comp="484" pin="1"/><net_sink comp="110" pin=4"/></net>
-
-<net id="492"><net_src comp="315" pin="1"/><net_sink comp="489" pin=0"/></net>
-
-<net id="493"><net_src comp="489" pin="1"/><net_sink comp="182" pin=2"/></net>
-
-<net id="497"><net_src comp="319" pin="1"/><net_sink comp="494" pin=0"/></net>
-
-<net id="498"><net_src comp="494" pin="1"/><net_sink comp="172" pin=2"/></net>
-
-<net id="502"><net_src comp="334" pin="2"/><net_sink comp="499" pin=0"/></net>
-
-<net id="506"><net_src comp="346" pin="1"/><net_sink comp="503" pin=0"/></net>
-
-<net id="510"><net_src comp="350" pin="1"/><net_sink comp="507" pin=0"/></net>
-
-<net id="514"><net_src comp="366" pin="2"/><net_sink comp="511" pin=0"/></net>
-
-<net id="515"><net_src comp="511" pin="1"/><net_sink comp="182" pin=0"/></net>
+<net id="483"><net_src comp="479" pin="1"/><net_sink comp="178" pin=0"/></net>
 
 </net_list>
 
@@ -1793,7 +1678,6 @@ ret_ln62                                            (ret       ) [ 0000]
 	Port: reduce : reducer_circuit_adder_levels_valid_1 | {3 }
 	Port: reduce : reducer_circuit_adder_levels_buffer_value_1_1 | {3 }
 	Port: reduce : reducer_circuit_adder_levels_buffer_label_1_0 | {3 }
-	Port: reduce : reducer_circuit_adder_levels_curr_level_1 | {3 }
   - Chain level:
 	State 1
 		trunc_ln34 : 1
@@ -1807,7 +1691,7 @@ ret_ln62                                            (ret       ) [ 0000]
 		tmp : 1
 		icmp_ln18 : 2
 		br_ln18 : 3
-		br_ln55 : 1
+		br_ln48 : 1
 		reducer_circuit_adder_levels_num_items_0_new_0 : 2
 		level_out_017_31 : 2
 		trunc_ln34_1 : 1
@@ -1822,19 +1706,14 @@ ret_ln62                                            (ret       ) [ 0000]
 	State 3
 		store_ln34 : 1
 		switch_ln11 : 1
-		zext_ln18 : 1
-		shl_ln18 : 2
-		zext_ln18_1 : 3
-		add_ln18 : 4
-		zext_ln18_2 : 5
-		icmp_ln18_1 : 6
-		br_ln18 : 7
+		icmp_ln18_1 : 1
+		br_ln18 : 2
 		out_data_value : 1
-		br_ln60 : 1
+		br_ln53 : 1
 		reducer_circuit_adder_levels_num_items_1_flag_1 : 2
 		reducer_circuit_adder_levels_num_items_1_new_1 : 2
 		out_data_0_35 : 2
-		write_ln61 : 3
+		write_ln54 : 3
 		reducer_circuit_adder_levels_num_items_1_flag_2 : 3
 		reducer_circuit_adder_levels_num_items_1_new_2 : 3
 		br_ln0 : 4
@@ -1849,32 +1728,25 @@ ret_ln62                                            (ret       ) [ 0000]
 |----------|------------------------|---------|---------|
 | Operation|     Functional Unit    |    FF   |   LUT   |
 |----------|------------------------|---------|---------|
-|          |     add_ln35_fu_287    |    0    |    39   |
-|          | level_out_value_fu_309 |    0    |    39   |
-|    add   |    add_ln35_1_fu_366   |    0    |    39   |
-|          |     add_ln18_fu_412    |    0    |    10   |
-|          |  out_data_value_fu_444 |    0    |    39   |
+|          |     add_ln35_fu_283    |    0    |    39   |
+|    add   | level_out_value_fu_305 |    0    |    39   |
+|          |    add_ln35_1_fu_362   |    0    |    39   |
+|          |  out_data_value_fu_412 |    0    |    39   |
 |----------|------------------------|---------|---------|
-|   icmp   |    icmp_ln18_fu_334    |    0    |    17   |
-|          |   icmp_ln18_1_fu_422   |    0    |    18   |
+|   icmp   |    icmp_ln18_fu_330    |    0    |    17   |
+|          |   icmp_ln18_1_fu_390   |    0    |    18   |
 |----------|------------------------|---------|---------|
-|    shl   |     shl_ln18_fu_402    |    0    |    6    |
+|   read   |  label_read_read_fu_50 |    0    |    0    |
+|          |  value_read_read_fu_56 |    0    |    0    |
 |----------|------------------------|---------|---------|
-|   read   |  label_read_read_fu_54 |    0    |    0    |
-|          |  value_read_read_fu_60 |    0    |    0    |
+|   write  | write_ln54_write_fu_62 |    0    |    0    |
 |----------|------------------------|---------|---------|
-|   write  | write_ln61_write_fu_66 |    0    |    0    |
+|   trunc  |    trunc_ln34_fu_252   |    0    |    0    |
+|          |   trunc_ln34_1_fu_346  |    0    |    0    |
 |----------|------------------------|---------|---------|
-|   trunc  |    trunc_ln34_fu_256   |    0    |    0    |
-|          |   trunc_ln34_1_fu_350  |    0    |    0    |
+|partselect|       tmp_fu_320       |    0    |    0    |
 |----------|------------------------|---------|---------|
-|partselect|       tmp_fu_324       |    0    |    0    |
-|----------|------------------------|---------|---------|
-|          |    zext_ln18_fu_398    |    0    |    0    |
-|   zext   |   zext_ln18_1_fu_408   |    0    |    0    |
-|          |   zext_ln18_2_fu_418   |    0    |    0    |
-|----------|------------------------|---------|---------|
-|   Total  |                        |    0    |   207   |
+|   Total  |                        |    0    |   191   |
 |----------|------------------------|---------|---------|
 
 Memories:
@@ -1884,32 +1756,32 @@ N/A
 +-----------------------------------------------------------+--------+
 |                                                           |   FF   |
 +-----------------------------------------------------------+--------+
-|                     add_ln35_1_reg_511                    |   32   |
-|                      add_ln35_reg_478                     |   32   |
-|                       empty_reg_179                       |   32   |
-|                     icmp_ln18_reg_499                     |    1   |
-|                     label_read_reg_461                    |   32   |
-|                  level_out_017_31_reg_107                 |   32   |
-|                  level_out_118_32_reg_141                 |   32   |
-|                   level_out_label_reg_84                  |   32   |
-|                  level_out_value_1_reg_73                 |   32   |
-|                  level_out_value_reg_484                  |   32   |
-|                   out_data_0_35_reg_216                   |   32   |
-|                  out_data_value_1_reg_169                 |   32   |
-| reducer_circuit_adder_levels_buffer_label_0_0_load_reg_473|   32   |
-| reducer_circuit_adder_levels_buffer_value_1_0_load_reg_494|   32   |
-|reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_120|   32   |
-|   reducer_circuit_adder_levels_num_items_0_load_reg_466   |   32   |
-|   reducer_circuit_adder_levels_num_items_0_new_0_reg_94   |   32   |
-|   reducer_circuit_adder_levels_num_items_0_new_1_reg_131  |   32   |
-|  reducer_circuit_adder_levels_num_items_1_flag_0_reg_156  |    1   |
-|  reducer_circuit_adder_levels_num_items_1_flag_1_reg_188  |    1   |
-|  reducer_circuit_adder_levels_num_items_1_flag_2_reg_230  |    1   |
-|   reducer_circuit_adder_levels_num_items_1_load_reg_489   |   32   |
-|   reducer_circuit_adder_levels_num_items_1_new_1_reg_202  |   32   |
-|   reducer_circuit_adder_levels_num_items_1_new_2_reg_241  |   32   |
-|     reducer_circuit_adder_levels_valid_0_load_reg_503     |    1   |
-|                    trunc_ln34_1_reg_507                   |    1   |
+|                     add_ln35_1_reg_479                    |   32   |
+|                      add_ln35_reg_446                     |   32   |
+|                       empty_reg_175                       |   32   |
+|                     icmp_ln18_reg_467                     |    1   |
+|                     label_read_reg_429                    |   32   |
+|                  level_out_017_31_reg_103                 |   32   |
+|                  level_out_118_32_reg_137                 |   32   |
+|                   level_out_label_reg_80                  |   32   |
+|                  level_out_value_1_reg_69                 |   32   |
+|                  level_out_value_reg_452                  |   32   |
+|                   out_data_0_35_reg_212                   |   32   |
+|                  out_data_value_1_reg_165                 |   32   |
+| reducer_circuit_adder_levels_buffer_label_0_0_load_reg_441|   32   |
+| reducer_circuit_adder_levels_buffer_value_1_0_load_reg_462|   32   |
+|reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_116|   32   |
+|   reducer_circuit_adder_levels_num_items_0_load_reg_434   |   32   |
+|   reducer_circuit_adder_levels_num_items_0_new_0_reg_90   |   32   |
+|   reducer_circuit_adder_levels_num_items_0_new_1_reg_127  |   32   |
+|  reducer_circuit_adder_levels_num_items_1_flag_0_reg_152  |    1   |
+|  reducer_circuit_adder_levels_num_items_1_flag_1_reg_184  |    1   |
+|  reducer_circuit_adder_levels_num_items_1_flag_2_reg_226  |    1   |
+|   reducer_circuit_adder_levels_num_items_1_load_reg_457   |   32   |
+|   reducer_circuit_adder_levels_num_items_1_new_1_reg_198  |   32   |
+|   reducer_circuit_adder_levels_num_items_1_new_2_reg_237  |   32   |
+|     reducer_circuit_adder_levels_valid_0_load_reg_471     |    1   |
+|                    trunc_ln34_1_reg_475                   |    1   |
 +-----------------------------------------------------------+--------+
 |                           Total                           |   646  |
 +-----------------------------------------------------------+--------+
@@ -1918,7 +1790,7 @@ N/A
 |---------------------------------------------------------|------|------|------|--------||---------|
 |                           Comp                          |  Pin | Size |  BW  | S x BW ||  Delay  |
 |---------------------------------------------------------|------|------|------|--------||---------|
-| reducer_circuit_adder_levels_num_items_1_flag_0_reg_156 |  p0  |   2  |   1  |    2   |
+| reducer_circuit_adder_levels_num_items_1_flag_0_reg_152 |  p0  |   2  |   1  |    2   |
 |---------------------------------------------------------|------|------|------|--------||---------|
 |                          Total                          |      |      |      |    2   ||  1.588  |
 |---------------------------------------------------------|------|------|------|--------||---------|
@@ -1929,10 +1801,10 @@ N/A
 +-----------+--------+--------+--------+
 |           |  Delay |   FF   |   LUT  |
 +-----------+--------+--------+--------+
-|  Function |    -   |    0   |   207  |
+|  Function |    -   |    0   |   191  |
 |   Memory  |    -   |    -   |    -   |
 |Multiplexer|    1   |    -   |    -   |
 |  Register |    -   |   646  |    -   |
 +-----------+--------+--------+--------+
-|   Total   |    1   |   646  |   207  |
+|   Total   |    1   |   646  |   191  |
 +-----------+--------+--------+--------+

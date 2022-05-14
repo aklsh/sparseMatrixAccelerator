@@ -3,7 +3,7 @@
 0x000000000
 [[/transaction]] 
 [[transaction]] 1
-0x0ffffffff
+0x000000000
 [[/transaction]] 
 [[transaction]] 2
 0x000000000
@@ -75,9 +75,6 @@
 0x000000000
 [[/transaction]] 
 [[transaction]] 25
-0x000000000
-[[/transaction]] 
-[[transaction]] 26
 0x000000000
 [[/transaction]] 
 [[[/runtime]]]

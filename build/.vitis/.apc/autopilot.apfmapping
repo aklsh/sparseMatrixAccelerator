@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="reducer.hpp" path="/home/akileshkannan/SPMV_CSR_src/accelerator/reducer.hpp"/>
-    <originFiles name="reducer.cpp" path="/home/akileshkannan/SPMV_CSR_src/accelerator/reducer.cpp"/>
-    <originFiles name="encoded_data.hpp" path="/home/akileshkannan/SPMV_CSR_src/encoded_data.hpp"/>
-    <originFiles name="constants.hpp" path="/home/akileshkannan/SPMV_CSR_src/accelerator/constants.hpp"/>
-    <originFiles name="accelerator.hpp" path="/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp"/>
     <originFiles name="accelerator.cpp" path="/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.cpp"/>
+    <originFiles name="accelerator.hpp" path="/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp"/>
+    <originFiles name="constants.hpp" path="/home/akileshkannan/SPMV_CSR_src/accelerator/constants.hpp"/>
+    <originFiles name="encoded_data.hpp" path="/home/akileshkannan/SPMV_CSR_src/encoded_data.hpp"/>
+    <originFiles name="reducer.cpp" path="/home/akileshkannan/SPMV_CSR_src/accelerator/reducer.cpp"/>
+    <originFiles name="reducer.hpp" path="/home/akileshkannan/SPMV_CSR_src/accelerator/reducer.hpp"/>
   </source>
   <testbench>
     <originFiles name="main.cpp" path="/home/akileshkannan/SPMV_CSR_src/main.cpp"/>
