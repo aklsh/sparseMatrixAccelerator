@@ -11,25 +11,14 @@ int main(){
 	int row_ptr[] = {0, 1, 5, 6, 8, 9, 14, 18, 23, 28, 29, 36, 39, 42, 42, 43, 47, 51, 53, 54, 54, 60, 61};
 	int col_index[] = {20, 6, 10, 12, 20, 20, 1, 22, 12, 6, 12, 13, 18, 20, 1, 5, 12, 20, 1, 2, 6, 15, 22, 1, 7, 9, 13, 18, 1, 0, 1, 2, 10, 11, 20, 21, 10, 15, 20, 5, 8, 22, 1, 2, 10, 15, 20, 1, 2, 10, 20, 11, 22, 8, 1, 2, 10, 19, 20, 22, 20, 1, 8, 20};
 
-	int vector_x[N] = {1};
+	int vector_x[N] = {0};
+	std::fill(vector_x, vector_x+N, 1);
 	for(int q=0;q<N;q++)
 		printf("x[%d] = %d\n", q, vector_x[q]);
-	int vector_y[N] = {-1};
-	int ref_y[N] = {0};
+	int vector_y[N] = {0};
+	int ref_y[N] = {1, 6, 2, 2, 1, 5, 4, 9, 5, 1, 11, 5, 3, 0, 1, 5, 4, 2, 1, 0, 7, 1, 4};
 
 	bool init_storage = false;
-	int out = 0;
-	int subrow_vals[K] = {0};
-	int subrow_col_indices[K] = {0};
-	bool mult_enables[K] = {false};
-	int label = 0;
-	int len_array[N] = {0};
-
-	init_storage = true;
-
-	// Initialization
-	initialise(vector_x, init_storage);
-	init_storage = false;
 
 	int processed_elements = 0;
 	int curr_row_len = 0;
@@ -75,7 +64,9 @@ int main(){
 			}
 			curr_label = curr_num_subrows - f;
 			printf("curr_label = %d\n", curr_label);
-			accelerate(vector_y[row_index], curr_subrow_elements, curr_subrow_indices, curr_subrow_mult_enables, curr_label);
+			if(row_index == 0 && f == 0)
+				init_storage = true;
+			accelerate(vector_y[row_index], curr_subrow_elements, curr_subrow_indices, curr_subrow_mult_enables, curr_label, vector_x, init_storage);
 			processed_elements += num_elements_processed_curr;
 			elements_left_curr_row -= num_elements_processed_curr;
 		}

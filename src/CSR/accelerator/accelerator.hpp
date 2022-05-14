@@ -17,7 +17,7 @@ void initialise(int[N], bool);
 void set_storage(int[N], int[N], bool);
 void multipliers(int[K], int[N], int[K], int[K], bool[K]);
 void adders(int&, int[K]);
-void accelerate(int&, int[K], int[K], bool[K], int);
+void accelerate(int&, int[K], int[K], bool[K], int, int[N], bool);
 
 
 #endif

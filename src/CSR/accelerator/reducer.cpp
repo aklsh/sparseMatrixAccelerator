@@ -7,7 +7,7 @@ reducer_data::reducer_data(int value_init, int label_init){
 }
 
 // Add values present in the buffer and update label to be max(label1, label2)
-void reducer_level::add(reducer_data &out){
+void reducer_level::add(reducer_data &out, int curr_level){
 	if(num_items == 2){
 		num_items = 0;
 		valid = true;
@@ -44,12 +44,12 @@ void reducer::reduce(int &out, int value, int label){
 	adder_levels[0].insert(new_data);
 	reducer_loop: for(int b=1;b<NUM_REDUCER_LEVELS;b++){
 		#pragma HLS UNROLL
-		adder_levels[b-1].add(level_out);
+		adder_levels[b-1].add(level_out, b-1);
 		if(adder_levels[b-1].valid)
 			adder_levels[b].insert(level_out);
 	}
 
-	adder_levels[NUM_REDUCER_LEVELS-1].add(out_data);
+	adder_levels[NUM_REDUCER_LEVELS-1].add(out_data, NUM_REDUCER_LEVELS-1);
 	if(adder_levels[NUM_REDUCER_LEVELS-1].valid)
 		out = out_data.value;
 }
