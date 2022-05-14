@@ -1,46 +1,8 @@
 INFO: [SIM 2] *************** CSIM start ***************
-INFO: [SIM 4] CSIM will launch CLANG as the compiler.
-   Compiling ../../../../SPMV_CSR_src/main.cpp in release mode
-In file included from ../../../../SPMV_CSR_src/main.cpp:5:
-In file included from ./accelerator.hpp:6:
-In file included from ./constants.hpp:4:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/hls_math.h:1065:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/hls_hotbm_apfixed.h:42:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/ap_fixed.h:55:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/ap_common.h:658:
-/opt/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:57:32: warning: unknown warning group '-Wint-in-bool-context', ignored [-Wunknown-warning-option]
-#pragma GCC diagnostic ignored "-Wint-in-bool-context"
-                               ^
-/opt/Xilinx/Vitis_HLS/2021.2/include/etc/ap_private.h:58:32: warning: unknown warning group '-Wmaybe-uninitialized', ignored [-Wunknown-warning-option]
-#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
-                               ^
-In file included from ../../../../SPMV_CSR_src/main.cpp:5:
-In file included from ./accelerator.hpp:6:
-In file included from ./constants.hpp:4:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/hls_math.h:1065:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/hls_hotbm_apfixed.h:42:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/ap_fixed.h:56:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/ap_fixed_base.h:62:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/ap_int.h:56:
-/opt/Xilinx/Vitis_HLS/2021.2/include/ap_int_base.h:69:32: warning: unknown warning group '-Wint-in-bool-context', ignored [-Wunknown-warning-option]
-#pragma GCC diagnostic ignored "-Wint-in-bool-context"
-                               ^
-/opt/Xilinx/Vitis_HLS/2021.2/include/ap_int_base.h:70:32: warning: unknown warning group '-Wmaybe-uninitialized', ignored [-Wunknown-warning-option]
-#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
-                               ^
-In file included from ../../../../SPMV_CSR_src/main.cpp:5:
-In file included from ./accelerator.hpp:6:
-In file included from ./constants.hpp:4:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/hls_math.h:1065:
-In file included from /opt/Xilinx/Vitis_HLS/2021.2/include/hls_hotbm_apfixed.h:45:
-/opt/Xilinx/Vitis_HLS/2021.2/include/utils/x_hls_utils.h:244:16: warning: 'hls_preserve' attribute ignored [-Wignored-attributes]
-__attribute__((hls_preserve))
-               ^
-In file included from ../../../../SPMV_CSR_src/main.cpp:5:
-./accelerator.hpp:7:10: fatal error: '../encoded_data.hpp' file not found
-#include "../encoded_data.hpp"
-         ^~~~~~~~~~~~~~~~~~~~~
-5 warnings and 1 error generated.
-make: *** [csim.mk:84: obj/main.o] Error 1
-ERR: [SIM 100] CSim file generation failed: compilation error(s).
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../SPMV_CSR_src/main.cpp in debug mode
+   Compiling ../../../../SPMV_CSR_src/accelerator/accelerator.cpp in debug mode
+   Compiling ../../../../SPMV_CSR_src/accelerator/reducer.cpp in debug mode
+   Generating csim.exe
+INFO: [SIM 1] CSim file generation done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

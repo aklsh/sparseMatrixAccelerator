@@ -2,6 +2,7 @@
 #define __REDUCER_UNIT__
 
 #include "constants.hpp"
+#include "../encoded_data.hpp"
 
 class reducer_data{
 	public:
@@ -22,7 +23,7 @@ class reducer_level{
 
 class reducer{
 	public:
-		reducer_level levels[NUM_REDUCER_LEVELS];
+		reducer_level adder_levels[NUM_REDUCER_LEVELS];
 		bool valid;
 		void reduce(int&, int, int);
 };

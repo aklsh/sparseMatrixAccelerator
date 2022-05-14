@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="accelerate" xd:componentRef="accelerate" xd:initiationInterval="1" xd:clockPeriod="10" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="*(out)" xd:originalName="out" xd:direction="out" xd:interfaceRef="out_r" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(subrow_vals_0)" xd:originalName="subrow_vals" xd:direction="in" xd:interfaceRef="subrow_vals_0" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(subrow_vals_1)" xd:originalName="subrow_vals" xd:direction="in" xd:interfaceRef="subrow_vals_1" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(subrow_vals_2)" xd:originalName="subrow_vals" xd:direction="in" xd:interfaceRef="subrow_vals_2" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(subrow_vals_3)" xd:originalName="subrow_vals" xd:direction="in" xd:interfaceRef="subrow_vals_3" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(subrow_col_indices_0)" xd:originalName="subrow_col_indices" xd:direction="in" xd:interfaceRef="subrow_col_indices_0" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(subrow_col_indices_1)" xd:originalName="subrow_col_indices" xd:direction="in" xd:interfaceRef="subrow_col_indices_1" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(subrow_col_indices_2)" xd:originalName="subrow_col_indices" xd:direction="in" xd:interfaceRef="subrow_col_indices_2" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(subrow_col_indices_3)" xd:originalName="subrow_col_indices" xd:direction="in" xd:interfaceRef="subrow_col_indices_3" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(mult_enables_0)" xd:originalName="mult_enables" xd:direction="in" xd:interfaceRef="mult_enables_0" xd:busTypeRef="register" xd:dataWidth="1"/>
+  <xd:arg xd:name="*(mult_enables_1)" xd:originalName="mult_enables" xd:direction="in" xd:interfaceRef="mult_enables_1" xd:busTypeRef="register" xd:dataWidth="1"/>
+  <xd:arg xd:name="*(mult_enables_2)" xd:originalName="mult_enables" xd:direction="in" xd:interfaceRef="mult_enables_2" xd:busTypeRef="register" xd:dataWidth="1"/>
+  <xd:arg xd:name="*(mult_enables_3)" xd:originalName="mult_enables" xd:direction="in" xd:interfaceRef="mult_enables_3" xd:busTypeRef="register" xd:dataWidth="1"/>
+  <xd:arg xd:name="label" xd:originalName="label" xd:direction="in" xd:interfaceRef="label_r" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="init_vector" xd:originalName="init_vector" xd:direction="in" xd:interfaceRef="init_vector" xd:busTypeRef="register" xd:dataWidth="1"/>
+  <xd:arg xd:name="*(vector_0)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_0" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_1)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_1" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_2)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_2" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_3)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_3" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_4)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_4" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_5)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_5" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_6)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_6" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_7)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_7" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_8)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_8" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_9)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_9" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_10)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_10" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_11)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_11" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_12)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_12" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_13)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_13" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_14)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_14" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_15)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_15" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_16)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_16" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_17)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_17" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_18)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_18" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_19)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_19" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_20)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_20" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_21)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_21" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:arg xd:name="*(vector_22)" xd:originalName="vector" xd:direction="in" xd:interfaceRef="vector_22" xd:busTypeRef="register" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="7" xd:worst-case="7" xd:average-case="7"/>
+  <xd:resourceEstimates xd:LUT="1875" xd:FF="2923" xd:BRAM="0" xd:DSP="12"/>
+</xd:acceleratorMap>

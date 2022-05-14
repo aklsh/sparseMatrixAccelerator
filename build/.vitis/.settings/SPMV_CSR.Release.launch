@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.cdt.launch.applicationLaunchType">
     <stringAttribute key="org.eclipse.cdt.launch.COREFILE_PATH" value=""/>
+    <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_ARGUMENTS" value=""/>
     <stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value="Release/a.out"/>
     <stringAttribute key="org.eclipse.cdt.launch.PROJECT_ATTR" value="SPMV_CSR"/>
     <booleanAttribute key="org.eclipse.cdt.launch.PROJECT_BUILD_CONFIG_AUTO_ATTR" value="false"/>

@@ -1,8 +1,8 @@
 <project xmlns="com.autoesl.autopilot.project" name="SPMV_CSR" top="accelerate">
     <includePaths/>
     <libraryPaths/>
-    <Simulation>
-        <SimFlow name="csim" setup="true" optimizeCompile="true" profile="true" clean="true" csimMode="0" lastCsimMode="0"/>
+    <Simulation argv="">
+        <SimFlow name="csim" setup="true" ldflags="-B&quot;/usr/lib/x86_64-linux-gnu/&quot;" clean="true" csimMode="2" lastCsimMode="0"/>
     </Simulation>
     <files xmlns="">
         <file name="../../SPMV_CSR_src/main.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>

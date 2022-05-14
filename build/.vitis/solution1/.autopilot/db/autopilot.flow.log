@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace /home/akileshkannan/SPMV_CSR/solution1 opened at Fri May 13 23:47:32 +0530 2022
+INFO-FLOW: Workspace /home/akileshkannan/SPMV_CSR/solution1 opened at Sat May 14 14:36:09 +0530 2022
 Execute     ap_set_clock -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     set_part xc7z020-clg400-1 
@@ -9,7 +9,7 @@ DBG:HLSDevice: init success
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.hlp 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
-Command       create_platform done; 1.38 sec.
+Command       create_platform done; 0.79 sec.
 Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/xilinx.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/plb46.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/axi4.gen 
@@ -21,13 +21,12 @@ Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/int
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/util.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfir.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfft.gen 
-Command         ap_source done; 0.16 sec.
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.21 sec.
+Command       ap_source done; 0.13 sec.
 Execute       ap_part_info -name xc7z020-clg400-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 1.6 sec.
+Command     set_part done; 0.94 sec.
 Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Execute     get_config_interface -m_axi_latency 
@@ -35,7 +34,13 @@ Execute     get_config_interface -m_axi_alignment_byte_size
 Execute     get_config_interface -m_axi_max_widen_bitwidth 
 Execute     get_config_interface -default_interface 
 Execute     get_config_rtl -register_reset_num 
-Command   open_solution done; 1.63 sec.
+Execute     send_msg_by_id INFO @200-1464@%s config_export -format=ip_catalog 
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+Execute     config_export -format=ip_catalog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 0.94 sec.
 Execute   set_part xc7z020-clg400-1 
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
 Execute     create_platform xc7z020-clg400-1 -board  
@@ -56,9 +61,11 @@ Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/dd
 Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.gen 
 Execute     ap_part_info -name xc7z020-clg400-1 -data info 
 Execute     config_compile -quiet -complex-mul-dsp=0 
-Command   set_part done; 0.12 sec.
+Command   set_part done; 0.11 sec.
 Execute   create_clock -period 10 -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
 Execute   source ./SPMV_CSR/solution1/directives.tcl 
 Execute     set_directive_top -name accelerate accelerate 
 INFO: [HLS 200-1510] Running: set_directive_top -name accelerate accelerate 
@@ -76,7 +83,7 @@ Execute     get_config_compile -skip_transform
 Execute     get_config_compile -pre_tcl 
 Execute     get_config_compile -keep_printf 
 Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0 seconds; current allocated memory: 1.023 GB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.024 GB.
 INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/accelerator.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       get_config_compile -pragma_strict_mode 
@@ -85,8 +92,8 @@ Execute       ap_part_info -name xc7z020-clg400-1 -data info
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang SPMV_CSR_src/accelerator/accelerator.cpp -foptimization-record-file=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vitis_HLS/2021.2/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot -I /opt/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp -hls-platform-db-name=/opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.cpp.clang.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.cpp.clang.err.log 
-Command       ap_eval done; 0.29 sec.
-INFO-FLOW: Done: GCC PP 39 time: 0.3 seconds per iteration
+Command       ap_eval done; 0.11 sec.
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
 Execute       set_directive_top accelerate -name=accelerate 
 Execute       source /opt/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute       source /opt/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
@@ -94,32 +101,24 @@ Execute         source /opt/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/try/try
 Execute       list_core -type functional_unit 
 INFO-FLOW: Source syntax check for synthesis
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp -hls-platform-db-name=/opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/clang.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/clang.err.log 
-Command       ap_eval done; 3.34 sec.
 Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/.systemc_flag -fix-errors /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 3.02 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/all.directive.json -fix-errors /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 3 sec.
 Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert -desc constantarray_remove-assert /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp std=gnu++14 -target fpga  
 INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 3.87 sec.
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 6.9 seconds per iteration
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
 INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
 Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp.clang-tidy.loop-label.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp.clang-tidy.loop-label.err.log 
-Command         ap_eval done; 4.89 sec.
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
-Command       clang_tidy done; 5.36 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp.xilinx-dataflow-lawyer.err.log 
-Command       ap_eval done; 2.87 sec.
 Execute       ap_part_info -name xc7z020-clg400-1 -data info 
 INFO-FLOW: compiling source code to llvm bc
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot -I /opt/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.bc -hls-platform-db-name=/opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp.clang.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.pp.0.cpp.clang.err.log 
-Command       ap_eval done; 3.1 sec.
 INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/reducer.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       get_config_compile -pragma_strict_mode 
@@ -128,38 +127,29 @@ Execute       ap_part_info -name xc7z020-clg400-1 -data info
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang SPMV_CSR_src/accelerator/reducer.cpp -foptimization-record-file=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -gcc-toolchain /opt/Xilinx/Vitis_HLS/2021.2/tps/lnx64/gcc-6.2.0 -fhls -fno-exceptions -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -fno-threadsafe-statics -fno-use-cxa-atexit -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot -I /opt/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp -hls-platform-db-name=/opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.cpp.clang.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.cpp.clang.err.log 
-Command       ap_eval done; 0.2 sec.
-INFO-FLOW: Done: GCC PP 39 time: 0.2 seconds per iteration
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
 Execute       set_directive_top accelerate -name=accelerate 
 Execute       list_core -type functional_unit 
 INFO-FLOW: Source syntax check for synthesis
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp -hls-platform-db-name=/opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/clang.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/clang.err.log 
-Command       ap_eval done; 2.67 sec.
 Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/.systemc_flag -fix-errors /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 2.89 sec.
 INFO-FLOW: Running: clang-tidy CDT preprocess 39
 Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp std=gnu++14 -target fpga  -directive=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/all.directive.json -fix-errors /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 2.92 sec.
 Execute       clang_tidy xilinx-constantarray-param,xilinx-remove-assert -desc constantarray_remove-assert /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp std=gnu++14 -target fpga  
 INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-constantarray-param,xilinx-remove-assert -fix-errors /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0
-Command       clang_tidy done; 3.48 sec.
-INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 6.4 seconds per iteration
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0.1 seconds per iteration
 INFO-FLOW: Calling xilinx-label-all-loops ... 
 INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
 Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp std=gnu++14 -target fpga  
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp.clang-tidy.loop-label.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp.clang-tidy.loop-label.err.log 
-Command         ap_eval done; 4.84 sec.
-Command       clang_tidy done; 5.24 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp.xilinx-dataflow-lawyer.diag.yml /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp -- -std=gnu++14 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp.xilinx-dataflow-lawyer.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp.xilinx-dataflow-lawyer.err.log 
-Command       ap_eval done; 2.62 sec.
 Execute       ap_part_info -name xc7z020-clg400-1 -data info 
 INFO-FLOW: compiling source code to llvm bc
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -fno-threadsafe-statics -fno-use-cxa-atexit -std=gnu++14 -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /opt/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot -I /opt/Xilinx/Vitis_HLS/2021.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.bc -hls-platform-db-name=/opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp.clang.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.pp.0.cpp.clang.err.log 
-Command       ap_eval done; 2.72 sec.
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 46.63 seconds. CPU system time: 2.51 seconds. Elapsed time: 48.09 seconds; current allocated memory: 116.734 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.48 seconds. CPU system time: 0.67 seconds. Elapsed time: 1.1 seconds; current allocated memory: 1.024 GB.
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
 Execute       run_link_or_opt -out /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.0.bc -args  "/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerator.g.bc" "/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reducer.g.bc"  
@@ -167,20 +157,18 @@ Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/to
 INFO-FLOW: 
 Execute       run_link_or_opt -opt -out /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.1.lower.bc -args /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.1.lower.bc > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log 
-Command         ap_eval done; 0.16 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 0.16 sec.
 INFO-FLOW: Linking math bc lib
 Execute       run_link_or_opt -out /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.2.m1.bc -args /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /opt/Xilinx/Vitis_HLS/2021.2/lnx64/lib/libhlsm_39.bc /opt/Xilinx/Vitis_HLS/2021.2/lnx64/lib/libhlsmc++_39.bc 
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed /opt/Xilinx/Vitis_HLS/2021.2/lnx64/lib/libhlsm_39.bc /opt/Xilinx/Vitis_HLS/2021.2/lnx64/lib/libhlsmc++_39.bc -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.2.m1.bc > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log 
-Command         ap_eval done; 2.23 sec.
+Command         ap_eval done; 2.33 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 2.23 sec.
+Command       run_link_or_opt done; 2.34 sec.
 Execute       run_link_or_opt -opt -out /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=accelerate -reflow-float-conversion 
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=accelerate -reflow-float-conversion -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.3.fpc.bc > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log 
-Command         ap_eval done; 0.75 sec.
+Command         ap_eval done; 0.9 sec.
 INFO-FLOW: 
-Command       run_link_or_opt done; 0.76 sec.
+Command       run_link_or_opt done; 0.9 sec.
 Execute       run_link_or_opt -out /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.4.m2.bc -args /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /opt/Xilinx/Vitis_HLS/2021.2/lnx64/lib/libfloatconversion_39.bc 
 Execute         ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /opt/Xilinx/Vitis_HLS/2021.2/lnx64/lib/libfloatconversion_39.bc -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.4.m2.bc > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log 
 INFO-FLOW: 
@@ -227,75 +215,86 @@ INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
 Execute       is_m_axi_addr64 
 INFO-FLOW: Doing LTO.
 Execute       ap_eval exec -ignorestderr /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.0.bc.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=accelerate -mllvm -hls-db-dir -mllvm /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshhold=200000 -mllvm -assume-maxi-align=0 -mllvm -no-unaligned-maxi-accesses -mllvm -reflow-pipeline-style-llvm-setting=0 -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-array-partition=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-disaggregate-bitwidth-threshold=4096 -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -x ir /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/platform.db -hls-platform-name=zynq_slow > /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.0.bc.clang.out.log 2> /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.ld.0.bc.clang.err.log 
-Command       ap_eval done; 0.24 sec.
+Command       ap_eval done; 0.23 sec.
 INFO: [HLS 214-284] Auto array partition mode is set into default.
-INFO: [HLS 214-291] Loop 'reducer_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.cpp:45:16)
-INFO: [HLS 214-291] Loop 'adder_tree' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:35:14)
-INFO: [HLS 214-291] Loop 'multipliers_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:20:20)
-INFO: [HLS 214-291] Loop 'set_storage_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:9:21)
-INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:23:7)
-INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:13:7)
-INFO: [HLS 214-186] Unrolling loop 'reducer_loop' (SPMV_CSR_src/accelerator/reducer.cpp:45:16) in function 'reducer::reduce' completely with a factor of 1 (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
-INFO: [HLS 214-186] Unrolling loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:35:14) in function 'adders' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:31:0)
-WARNING: [HLS 214-189] Pipeline directive for loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:35:14) in function 'adders' has been removed because the loop is unrolled completely (SPMV_CSR_src/accelerator/accelerator.cpp:31:0)
-INFO: [HLS 214-186] Unrolling loop 'multipliers_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:20:20) in function 'multipliers' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:16:0)
-INFO: [HLS 214-186] Unrolling loop 'set_storage_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:9:21) in function 'set_storage' completely with a factor of 23 (SPMV_CSR_src/accelerator/accelerator.cpp:4:0)
-INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:23:7) in function 'reducer::reducer' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
-INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:13:7) in function 'reducer_level::reducer_level' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:13:0)
-INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(int, int)' into 'reducer_level::reducer_level()' (SPMV_CSR_src/accelerator/reducer.hpp:13:0)
-INFO: [HLS 214-178] Inlining function 'reducer_level::reducer_level()' into 'reducer::reducer()' (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
-INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(int, int)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
-INFO: [HLS 214-178] Inlining function 'reducer_level::insert(reducer_data)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
-INFO: [HLS 214-178] Inlining function 'reducer_level::add(reducer_data&)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
-INFO: [HLS 214-178] Inlining function 'reducer::reducer()' into 'accelerate(int&, int*, int*, bool*, int, bool, int*)' (SPMV_CSR_src/accelerator/accelerator.cpp:42:0)
-INFO: [HLS 214-178] Inlining function 'set_storage(int*, int*, bool)' into 'accelerate(int&, int*, int*, bool*, int, bool, int*)' (SPMV_CSR_src/accelerator/accelerator.cpp:42:0)
-INFO: [HLS 214-178] Inlining function 'multipliers(int*, int*, int*, int*, bool*)' into 'accelerate(int&, int*, int*, bool*, int, bool, int*)' (SPMV_CSR_src/accelerator/accelerator.cpp:42:0)
-INFO: [HLS 214-248] Applying array_partition to '_ZZ10accelerateRiPiS0_PbibS0_E15multiplier_outs': Complete partitioning on dimension 1. (SPMV_CSR_src/accelerator/accelerator.cpp:43:0)
-INFO: [HLS 214-248] Applying array_partition to '_ZZ10accelerateRiPiS0_PbibS0_E7storage': Complete partitioning on dimension 1. (SPMV_CSR_src/accelerator/accelerator.cpp:44:0)
-INFO: [HLS 214-248] Applying array_partition to 'vector': Complete partitioning on dimension 1. (SPMV_CSR_src/accelerator/accelerator.cpp:42:0)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_60_1' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:60:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_68_2' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:68:20)
+INFO: [HLS 214-291] Loop 'reducer_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.cpp:52:16)
+INFO: [HLS 214-291] Loop 'adder_tree' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:39:14)
+INFO: [HLS 214-291] Loop 'multipliers_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:24:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_39_1' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.cpp:39:19)
+INFO: [HLS 214-291] Loop 'set_storage_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:10:21)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:24:7)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:14:7)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_60_1' (SPMV_CSR_src/accelerator/accelerator.cpp:60:20) in function 'accelerate' completely with a factor of 23 (SPMV_CSR_src/accelerator/accelerator.cpp:46:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_68_2' (SPMV_CSR_src/accelerator/accelerator.cpp:68:20) in function 'accelerate' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:46:0)
+INFO: [HLS 214-186] Unrolling loop 'reducer_loop' (SPMV_CSR_src/accelerator/reducer.cpp:52:16) in function 'reducer::reduce' completely with a factor of 1 (SPMV_CSR_src/accelerator/reducer.cpp:46:0)
+INFO: [HLS 214-186] Unrolling loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:39:14) in function 'adders' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:35:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:39:14) in function 'adders' has been removed because the loop is unrolled completely (SPMV_CSR_src/accelerator/accelerator.cpp:35:0)
+INFO: [HLS 214-186] Unrolling loop 'multipliers_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:24:20) in function 'multipliers' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:17:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_39_1' (SPMV_CSR_src/accelerator/reducer.cpp:39:19) in function 'reducer::set_levels' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.cpp:38:0)
+INFO: [HLS 214-186] Unrolling loop 'set_storage_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:10:21) in function 'set_storage' completely with a factor of 23 (SPMV_CSR_src/accelerator/accelerator.cpp:5:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:24:7) in function 'reducer::reducer' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:24:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:14:7) in function 'reducer_level::reducer_level' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(int, int)' into 'reducer_level::reducer_level()' (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::reducer_level()' into 'reducer::reducer()' (SPMV_CSR_src/accelerator/reducer.hpp:24:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(int, int)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:46:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::insert(reducer_data)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:46:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::add(reducer_data&)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:46:0)
+INFO: [HLS 214-178] Inlining function 'reducer::reducer()' into 'accelerate(int&, int*, int*, bool*, int, int*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:46:0)
+INFO: [HLS 214-178] Inlining function 'set_storage(int*, int*, bool)' into 'accelerate(int&, int*, int*, bool*, int, int*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:46:0)
+INFO: [HLS 214-178] Inlining function 'reducer::set_levels()' into 'accelerate(int&, int*, int*, bool*, int, int*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:46:0)
+INFO: [HLS 214-178] Inlining function 'multipliers(int*, int*, int*, int*, bool*)' into 'accelerate(int&, int*, int*, bool*, int, int*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:46:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ10accelerateRiPiS0_PbiS0_bE15multiplier_outs': Complete partitioning on dimension 1. (SPMV_CSR_src/accelerator/accelerator.cpp:50:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZZ10accelerateRiPiS0_PbiS0_bE7storage': Complete partitioning on dimension 1. (SPMV_CSR_src/accelerator/accelerator.cpp:51:0)
+INFO: [HLS 214-248] Applying array_partition to 'subrow_vals': Complete partitioning on dimension 1. (SPMV_CSR_src/accelerator/accelerator.cpp:46:0)
+INFO: [HLS 214-248] Applying array_partition to 'subrow_col_indices': Complete partitioning on dimension 1. (SPMV_CSR_src/accelerator/accelerator.cpp:46:0)
+INFO: [HLS 214-248] Applying array_partition to 'mult_enables': Complete partitioning on dimension 1. (SPMV_CSR_src/accelerator/accelerator.cpp:46:0)
+INFO: [HLS 214-248] Applying array_partition to 'init_vector': Complete partitioning on dimension 1. (SPMV_CSR_src/accelerator/accelerator.cpp:46:0)
 INFO: [HLS 214-270] Starting automatic array partition analysis...
 INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/kernel.internal.xml
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.26 seconds. CPU system time: 0.4 seconds. Elapsed time: 3.8 seconds; current allocated memory: 117.508 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 117.508 MB.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.93 seconds. CPU system time: 0.34 seconds. Elapsed time: 4 seconds; current allocated memory: 112.008 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 112.008 MB.
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top accelerate -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.0.bc -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
-Command         transform done; 0.14 sec.
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.14 seconds; current allocated memory: 118.176 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 112.832 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.1.bc -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.2.prechk.bc -f 
-INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:52) automatically.
+INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:71) automatically.
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.2.prechk.bc -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 118.477 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 113.039 MB.
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.g.1.bc to /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
 Execute         transform -hls -tmp /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db -interface-port-rename -function-uniquify -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -function-uniquify -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -annotate-dataflow-channels -scalar-preprocessing -scalar-propagation2 -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.o.1.bc -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.o.1.tmp.bc -f 
-INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.levels.valid' automatically.
-INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.levels.num_items' automatically.
-INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.levels.buffer.value' completely based on array size.
-INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.levels.buffer.label' completely based on array size.
-INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.levels.buffer.value' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.levels.buffer.label' in dimension 1 completely.
-INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.levels.buffer.value' in dimension 2 completely.
-INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.levels.buffer.label' in dimension 2 completely.
-INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:52) automatically.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.valid' automatically.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.num_items' automatically.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.curr_level' automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.value' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.label' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:71) automatically.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -barrier -norm-name /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.o.1.tmp.bc -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SPMV_CSR_src/accelerator/accelerator.cpp:16:64) to (SPMV_CSR_src/accelerator/accelerator.cpp:54:1) in function 'accelerate'... converting 3 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 140.285 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SPMV_CSR_src/accelerator/accelerator.cpp:17:63) in function 'accelerate'... converting 9 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:12:1)...7 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 135.438 MB.
 Execute         get_config_compile -enable_auto_rewind 
 Execute         get_config_compile -enable_loop_extract 
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation2 -deadargelim -globaldce -mem2reg -load-elim -read-loop-dep -loop-simplify -loop-extract-inner -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.o.2.bc -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 141.113 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 136.078 MB.
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 0.32 sec.
-Command     elaborate done; 52.22 sec.
+Command       opt_and_import_c done; 0.26 sec.
+Command     elaborate done; 5.36 sec.
 Execute     ap_eval exec zip -j /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
@@ -332,7 +331,7 @@ INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'reduce'.
 INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, function 'reduce'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.13 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.15 seconds; current allocated memory: 143.840 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.11 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.12 seconds; current allocated memory: 138.820 MB.
 Execute       syn_report -verbosereport -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reduce.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -345,7 +344,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 143.840 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 138.820 MB.
 Execute       syn_report -verbosereport -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reduce.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -358,9 +357,10 @@ Execute       set_default_model accelerate
 Execute       schedule -model accelerate 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining function 'accelerate'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 7, function 'accelerate'
+WARNING: [HLS 200-880] The II Violation in module 'accelerate' (function 'accelerate'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation ('reducer_circuit_adder_levels_curr_level_1_write_ln41', SPMV_CSR_src/accelerator/reducer.cpp:41) of constant 1 on static variable 'reducer_circuit_adder_levels_curr_level_1' and 'call' operation ('_ln72', SPMV_CSR_src/accelerator/accelerator.cpp:72) to 'reduce'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 2, Depth = 9, function 'accelerate'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.09 seconds; current allocated memory: 143.980 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 139.680 MB.
 Execute       syn_report -verbosereport -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.verbose.sched.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -373,7 +373,7 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 143.980 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 139.680 MB.
 Execute       syn_report -verbosereport -o /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.verbose.bind.rpt 
 Execute         AP::get_flow_target_display_name
 Execute           get_solution -flow_target 
@@ -392,19 +392,19 @@ Execute       get_config_rtl -module_auto_prefix
 Execute       get_config_rtl -module_prefix 
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model reduce -top_prefix accelerate_ -sub_prefix accelerate_ -mg_file /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reduce.compgen.tcl 
-WARNING: [RTGEN 206-101] Register 'reducer_circuit_levels_num_items_0' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'reducer_circuit_levels_buffer_value_0_0' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'reducer_circuit_levels_buffer_label_0_0' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'reducer_circuit_levels_num_items_1' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'reducer_circuit_levels_buffer_value_1_0' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'reducer_circuit_levels_valid_0' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'reducer_circuit_levels_buffer_value_0_1' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'reducer_circuit_levels_valid_1' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'reducer_circuit_levels_buffer_value_1_1' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'reducer_circuit_levels_buffer_label_1_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_num_items_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_0_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_label_0_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_num_items_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_1_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_valid_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_0_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_valid_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_1_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_label_1_0' is power-on initialization.
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'reduce' pipeline 'reduce' pipeline type 'function pipeline'
 INFO: [RTGEN 206-100] Finished creating RTL model for 'reduce'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 144.074 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 139.680 MB.
 Execute       source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.rtl_wrap.cfg.tcl 
 Execute       gen_rtl reduce -style xilinx -f -lang vhdl -o /home/akileshkannan/SPMV_CSR/solution1/syn/vhdl/accelerate_reduce 
 Execute       gen_rtl reduce -style xilinx -f -lang vlog -o /home/akileshkannan/SPMV_CSR/solution1/syn/verilog/accelerate_reduce 
@@ -428,65 +428,75 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model accelerate -top_prefix  -sub_prefix accelerate_ -mg_file /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.compgen.tcl 
 INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/out_r' to 'ap_ovld' (last_write_notify).
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_vals' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_col_indices' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/mult_enables' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_vals_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_vals_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_vals_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_vals_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_col_indices_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_col_indices_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_col_indices_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_col_indices_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/mult_enables_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/mult_enables_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/mult_enables_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/mult_enables_3' to 'ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/label_r' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_0' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_1' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_2' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_3' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_4' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_5' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_6' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_7' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_8' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_9' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_10' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_11' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_12' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_13' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_14' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_15' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_16' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_17' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_18' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_19' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_20' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_21' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/vector_22' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_0' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_1' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_2' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_3' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_4' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_5' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_6' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_7' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_8' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_9' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_10' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_11' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_12' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_13' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_14' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_15' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_16' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_17' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_18' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_19' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_20' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_21' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector_22' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init' to 'ap_none'.
 INFO: [RTGEN 206-500] Setting interface mode on function 'accelerate' to 'ap_ctrl_hs'.
-WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_bool_int_storage' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_bool_int_storage_1' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_bool_int_storage_2' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_bool_int_storage_3' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_bool_int_storage_4' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_bool_int_storage_5' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_bool_int_storage_6' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_bool_int_storage_7' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_bool_int_storage_8' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_bool_int_storage_9' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_10' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_11' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_12' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_13' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_14' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_15' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_16' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_17' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_18' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_19' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_20' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_21' is power-on initialization.
-WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbibS0_E7storage_22' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage_2' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage_3' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage_4' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage_5' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage_6' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage_7' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage_8' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage_9' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_10' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_11' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_12' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_13' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_14' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_15' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_16' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_17' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_18' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_19' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_20' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_21' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_22' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_curr_level_1' is power-on initialization.
 WARNING: [RTGEN 206-101] Register 'sum' is power-on initialization.
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'accelerate' pipeline 'accelerate' pipeline type 'function pipeline'
-INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_2_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mux_2332_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_2_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mux_2332_32_1_1': 4 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'accelerate'.
-Command       create_rtl_model done; 0.13 sec.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.22 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.26 seconds; current allocated memory: 146.613 MB.
+Command       create_rtl_model done; 0.2 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.31 seconds. CPU system time: 0.07 seconds. Elapsed time: 0.4 seconds; current allocated memory: 142.562 MB.
 Execute       source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.rtl_wrap.cfg.tcl 
 Execute       gen_rtl accelerate -istop -style xilinx -f -lang vhdl -o /home/akileshkannan/SPMV_CSR/solution1/syn/vhdl/accelerate 
 Execute       gen_rtl accelerate -istop -style xilinx -f -lang vlog -o /home/akileshkannan/SPMV_CSR/solution1/syn/verilog/accelerate 
@@ -568,7 +578,6 @@ Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfft.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.gen 
-Command       ap_source done; 0.14 sec.
 INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
 INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/vhdl' dstVlogDir='/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/vlog' tclDir='/home/akileshkannan/SPMV_CSR/solution1/.autopilot/db' modelList='accelerate_mux_2332_32_1_1
 accelerate_mul_32s_32s_32_2_1
@@ -584,7 +593,7 @@ Execute       source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/reduce
 Execute       source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.compgen.tcl 
 Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
 Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.37 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 152.684 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.42 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.44 seconds; current allocated memory: 149.301 MB.
 INFO-FLOW: DBG:PROC: ::AP::create_csynth_xml bind_adapter_nodes_var='bind_adapter_nodes' bind_report_dict_var='bind_report_dict' outfile=''
 INFO-FLOW: Running: create_csynth_xml read xml data
 INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
@@ -796,23 +805,23 @@ Execute       source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/global
 Execute       get_config_export -ip_xdc_file 
 Execute       get_config_export -ip_xdc_ooc_file 
 Execute       get_config_debug -directory 
-INFO-FLOW: DBG:PROC: ::AP::add_csynth_report_sections bind_adapter_nodes='' bind_report_dict='TOP accelerate DATA {accelerate {DEPTH 1 CHILDREN reduce BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 1 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_2_1_U5 SOURCE SPMV_CSR_src/accelerator/accelerator.cpp:23 VARIABLE mul_ln23 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME grp_reduce_fu_334_value_r SOURCE SPMV_CSR_src/accelerator/accelerator.cpp:37 VARIABLE add_ln37 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 3 BRAM 0 URAM 0}} reduce {DEPTH 2 CHILDREN {} BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_fu_281_p2 SOURCE SPMV_CSR_src/accelerator/reducer.cpp:35 VARIABLE add_ln35 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME level_out_value_fu_303_p2 SOURCE SPMV_CSR_src/accelerator/reducer.cpp:14 VARIABLE level_out_value LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_1_fu_360_p2 SOURCE SPMV_CSR_src/accelerator/reducer.cpp:35 VARIABLE add_ln35_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME out_data_value_fu_420_p2 SOURCE SPMV_CSR_src/accelerator/reducer.cpp:14 VARIABLE out_data_value LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}}}'
+INFO-FLOW: DBG:PROC: ::AP::add_csynth_report_sections bind_adapter_nodes='' bind_report_dict='TOP accelerate DATA {accelerate {DEPTH 1 CHILDREN reduce BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 1 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_2_1_U9 SOURCE SPMV_CSR_src/accelerator/accelerator.cpp:27 VARIABLE mul_ln27 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 1 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_2_1_U11 SOURCE SPMV_CSR_src/accelerator/accelerator.cpp:27 VARIABLE mul_ln27_1 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 1 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_2_1_U10 SOURCE SPMV_CSR_src/accelerator/accelerator.cpp:27 VARIABLE mul_ln27_2 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL auto LATENCY 1 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_2_1_U12 SOURCE SPMV_CSR_src/accelerator/accelerator.cpp:27 VARIABLE mul_ln27_3 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 DISPNAME {bind_op mul}} {BINDTYPE op ID {} IMPL tadder LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln41_fu_924_p2 SOURCE SPMV_CSR_src/accelerator/accelerator.cpp:41 VARIABLE add_ln41 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL tadder LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln41_1_fu_910_p2 SOURCE SPMV_CSR_src/accelerator/accelerator.cpp:41 VARIABLE add_ln41_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL tadder LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln41_2_fu_915_p2 SOURCE SPMV_CSR_src/accelerator/accelerator.cpp:41 VARIABLE add_ln41_2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL tadder LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln41_3_fu_929_p2 SOURCE SPMV_CSR_src/accelerator/accelerator.cpp:41 VARIABLE add_ln41_3 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 12 BRAM 0 URAM 0}} reduce {DEPTH 2 CHILDREN {} BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_fu_287_p2 SOURCE SPMV_CSR_src/accelerator/reducer.cpp:35 VARIABLE add_ln35 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME level_out_value_fu_309_p2 SOURCE SPMV_CSR_src/accelerator/reducer.cpp:14 VARIABLE level_out_value LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln35_1_fu_366_p2 SOURCE SPMV_CSR_src/accelerator/reducer.cpp:35 VARIABLE add_ln35_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln18_fu_412_p2 SOURCE SPMV_CSR_src/accelerator/reducer.cpp:18 VARIABLE add_ln18 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME out_data_value_fu_444_p2 SOURCE SPMV_CSR_src/accelerator/reducer.cpp:14 VARIABLE out_data_value LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 DISPNAME {bind_op add}}} AREA {DSP 0 BRAM 0 URAM 0}}}'
 INFO-FLOW: DBG:PUTS:       update_csynth_reports json2reportxml
 INFO-FLOW: Running: gen_csynth_pragma_report_xml
 INFO-FLOW: Done: gen_csynth_pragma_report_xml time: 0 seconds per iteration
 INFO-FLOW: DBG:PUTS:       update_csynth_reports wrote xml
 INFO-FLOW: DBG:PUTS:       update_csynth_reports appended to csynth rpt file
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.66 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.68 seconds; current allocated memory: 158.086 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.46 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.47 seconds; current allocated memory: 154.168 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for accelerate.
 INFO: [VLOG 209-307] Generating Verilog RTL for accelerate.
 Execute       syn_report -model accelerate -printsummary 
 INFO: [HLS 200-789] **** Estimated Fmax: 144.68 MHz
-Command     autosyn done; 1.73 sec.
-Command   csynth_design done; 53.96 sec.
-INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 51.72 seconds. CPU system time: 3.06 seconds. Elapsed time: 53.96 seconds; current allocated memory: -889.543 MB.
-Command ap_source done; 55.74 sec.
+Command     autosyn done; 1.88 sec.
+Command   csynth_design done; 7.26 sec.
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7.38 seconds. CPU system time: 1.17 seconds. Elapsed time: 7.26 seconds; current allocated memory: -893.504 MB.
+Command ap_source done; 8.35 sec.
 Execute cleanup_all 
-INFO-FLOW: Workspace /home/akileshkannan/SPMV_CSR/solution1 opened at Fri May 13 23:52:04 +0530 2022
+INFO-FLOW: Workspace /home/akileshkannan/SPMV_CSR/solution1 opened at Sat May 14 14:36:25 +0530 2022
 Execute     ap_set_clock -name default -period 10 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 Execute     set_part xc7z020-clg400-1 
@@ -823,7 +832,7 @@ DBG:HLSDevice: init success
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.hlp 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/zynq_dsp48e1.hlp 
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
-Command       create_platform done; 1.24 sec.
+Command       create_platform done; 0.78 sec.
 Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/xilinx.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/plb46.gen 
 Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/axi4.gen 
@@ -840,7 +849,7 @@ Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP
 Command       ap_source done; 0.14 sec.
 Execute       ap_part_info -name xc7z020-clg400-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 1.42 sec.
+Command     set_part done; 0.93 sec.
 Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Execute     get_config_interface -m_axi_latency 
@@ -848,7 +857,13 @@ Execute     get_config_interface -m_axi_alignment_byte_size
 Execute     get_config_interface -m_axi_max_widen_bitwidth 
 Execute     get_config_interface -default_interface 
 Execute     get_config_rtl -register_reset_num 
-Command   open_solution done; 1.43 sec.
+Execute     send_msg_by_id INFO @200-1464@%s config_export -format=ip_catalog 
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+Execute     config_export -format=ip_catalog 
+Execute     send_msg_by_id INFO @200-1464@%s config_export -rtl=verilog 
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 0.96 sec.
 Execute   set_part xc7z020-clg400-1 
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
 Execute     create_platform xc7z020-clg400-1 -board  
@@ -870,22 +885,80 @@ Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48
 Command     ap_source done; 0.13 sec.
 Execute     ap_part_info -name xc7z020-clg400-1 -data info 
 Execute     config_compile -quiet -complex-mul-dsp=0 
-Command   set_part done; 0.21 sec.
+Command   set_part done; 0.16 sec.
 Execute   create_clock -period 10 -name default 
 INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
 Execute   source ./SPMV_CSR/solution1/directives.tcl 
 Execute     set_directive_top -name accelerate accelerate 
 INFO: [HLS 200-1510] Running: set_directive_top -name accelerate accelerate 
-Execute   csim_design -clean -O -profile -setup -quiet 
-INFO: [HLS 200-1510] Running: csim_design -clean -O -profile -setup -quiet 
+Execute   cosim_design -ldflags -B"/usr/lib/x86_64-linux-gnu/" 
+INFO: [HLS 200-1510] Running: cosim_design -ldflags -B"/usr/lib/x86_64-linux-gnu/" 
 Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/global.setting.tcl 
-INFO: [SIM 211-2] *************** CSIM start ***************
-INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
-Execute     source csim/.lst_opt.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/global.setting.tcl
+Execute     source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/generic/autopilot/common.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/generic/autopilot/op.gen 
+Execute     source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/maxi.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/util.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /opt/Xilinx/Vitis_HLS/2021.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.12 sec.
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.rtl_wrap.cfg.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.tbgen.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.tbgen.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.tbgen.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.tbgen.tcl 
+INFO: [COSIM 212-47] Using XSIM for RTL simulation.
+INFO: [COSIM 212-14] Instrumenting C test bench ...
 Execute     ap_part_info -name xc7z020-clg400-1 -data info 
-ERROR: [SIM 211-100] CSim file generation failed: compilation error(s).
-INFO: [SIM 211-3] *************** CSIM finish ***************
-Command   csim_design done; error code: 2; 5.94 sec.
-INFO: [HLS 200-111] Finished Command csim_design CPU user time: 6.43 seconds. CPU system time: 0.93 seconds. Elapsed time: 5.94 seconds; current allocated memory: -468.555 MB.
-Command ap_source done; error code: 1; 7.61 sec.
+INFO-FLOW: TB processing: /home/akileshkannan/SPMV_CSR_src/main.cpp /home/akileshkannan/SPMV_CSR/solution1/./sim/autowrap/testbench/main.cpp_pre.cpp
+Execute     clang_tidy xilinx-tb-process -desc tb-process /home/akileshkannan/SPMV_CSR/solution1/./sim/autowrap/testbench/main.cpp_pre.cpp.tb.cpp std=c++11 
+INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /home/akileshkannan/SPMV_CSR/solution1/./sim/autowrap/testbench/main.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
+Command     clang_tidy done; 5.63 sec.
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: TB processing: /home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.cpp /home/akileshkannan/SPMV_CSR/solution1/./sim/autowrap/testbench/accelerator.cpp_pre.cpp
+Execute     clang_tidy xilinx-tb-process -desc tb-process /home/akileshkannan/SPMV_CSR/solution1/./sim/autowrap/testbench/accelerator.cpp_pre.cpp.tb.cpp std=c++11 
+INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /home/akileshkannan/SPMV_CSR/solution1/./sim/autowrap/testbench/accelerator.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: TB processing: /home/akileshkannan/SPMV_CSR_src/accelerator/reducer.cpp /home/akileshkannan/SPMV_CSR/solution1/./sim/autowrap/testbench/reducer.cpp_pre.cpp
+Execute     clang_tidy xilinx-tb-process -desc tb-process /home/akileshkannan/SPMV_CSR/solution1/./sim/autowrap/testbench/reducer.cpp_pre.cpp.tb.cpp std=c++11 
+INFO-FLOW: exec /opt/Xilinx/Vitis_HLS/2021.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-tb-process -fix-errors /home/akileshkannan/SPMV_CSR/solution1/./sim/autowrap/testbench/reducer.cpp_pre.cpp.tb.cpp -- -std=c++11 -fhls -ferror-limit=0
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/./sim/autowrap/testbench/tb.status.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/global.setting.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.rtl_wrap.cfg.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.rtl_wrap.cfg.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.rtl_wrap.cfg.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.tbgen.tcl 
+Execute     source /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/accelerate.tbgen.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source .run_sim.tcl 
+INFO: [COSIM 212-302] Starting C TB testing ... 
+ERROR: [COSIM 212-359] Aborting co-simulation: C TB simulation failed, nonzero return value '1'.
+ERROR: [COSIM 212-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim.
+Command     ap_source done; error code: 1; 0.15 sec.
+ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***
+ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***
+Command   cosim_design done; error code: 2; 14.24 sec.
+INFO: [HLS 200-111] Finished Command cosim_design CPU user time: 14.3 seconds. CPU system time: 1.09 seconds. Elapsed time: 14.24 seconds; current allocated memory: -924.746 MB.
+Command ap_source done; error code: 1; 15.4 sec.
 Execute cleanup_all 

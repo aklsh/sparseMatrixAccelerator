@@ -3,17 +3,35 @@
   <errorLogs>
     <logs>
       <synLog/>
-      <csimLog>
-        <logs message="ERROR: [SIM 211-100] CSim file generation failed: compilation error(s)." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-13T23:52:12.531+0530"/>
-      </csimLog>
+      <simLog>
+        <logs message="ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***" projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:40.440+0530"/>
+        <logs message="ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***" projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:40.400+0530"/>
+        <logs message="ERROR: [COSIM 212-320] C TB testing failed, stop generating test vectors. Please check C TB or re-run cosim." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:40.396+0530"/>
+        <logs message="ERROR: [COSIM 212-359] Aborting co-simulation: C TB simulation failed, nonzero return value '1'." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:40.391+0530"/>
+      </simLog>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Register 'sum' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-13T23:48:27.354+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'sum' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.087+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_curr_level_1' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.083+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_22' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.080+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_21' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.077+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_20' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.074+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_19' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.071+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_18' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.068+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_17' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.064+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_16' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.061+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_15' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.059+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_14' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.056+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_13' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.052+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_12' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.049+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_11' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.036+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_10' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.033+0530" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'accelerate_int_int_int_bool_int_int_bool_storage_9' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T14:36:17.030+0530" type="Warning"/>
       </synLog>
-      <csimLog/>
+      <simLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

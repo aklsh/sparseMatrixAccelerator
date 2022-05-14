@@ -3,13 +3,13 @@
 
 <trans_list>
 
-<trans id="102" from="1" to="2">
+<trans id="107" from="1" to="2">
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 </trans>
 
-<trans id="103" from="2" to="3">
+<trans id="108" from="2" to="3">
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
@@ -29,7 +29,7 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="14" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="15" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
 :0 %label_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %label_r
 
@@ -44,7 +44,7 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="15" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="16" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
 :1 %value_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %value_r
 
@@ -59,12 +59,12 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="16" bw="32" op_0_bw="32">
+<Node id="17" bw="32" op_0_bw="32">
 <![CDATA[
-:2 %reducer_circuit_levels_num_items_0_load = load i32 %reducer_circuit_levels_num_items_0
+:2 %reducer_circuit_adder_levels_num_items_0_load = load i32 %reducer_circuit_adder_levels_num_items_0
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_0_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_0_load"/></StgValue>
 </operation>
 
 <operation id="7" st_id="1" stage="1" lat="1">
@@ -74,9 +74,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="17" bw="1" op_0_bw="32">
+<Node id="18" bw="1" op_0_bw="32">
 <![CDATA[
-:3 %trunc_ln34 = trunc i32 %reducer_circuit_levels_num_items_0_load
+:3 %trunc_ln34 = trunc i32 %reducer_circuit_adder_levels_num_items_0_load
 
 ]]></Node>
 <StgValue><ssdm name="trunc_ln34"/></StgValue>
@@ -89,12 +89,12 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="18" bw="32" op_0_bw="32">
+<Node id="19" bw="32" op_0_bw="32">
 <![CDATA[
-:4 %reducer_circuit_levels_buffer_value_0_0_load = load i32 %reducer_circuit_levels_buffer_value_0_0
+:4 %reducer_circuit_adder_levels_buffer_value_0_0_load = load i32 %reducer_circuit_adder_levels_buffer_value_0_0
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_value_0_0_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_0_0_load"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -104,7 +104,7 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="19" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="20" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
 :5 %br_ln34 = br i1 %trunc_ln34, void %branch0, void %branch1
 
@@ -120,9 +120,9 @@
 </and_exp></or_exp>
 </condition>
 
-<Node id="21" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<Node id="22" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-branch0:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_levels_buffer_value_0_0
+branch0:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_adder_levels_buffer_value_0_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -136,7 +136,7 @@ branch0:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_levels_buffe
 </and_exp></or_exp>
 </condition>
 
-<Node id="22" bw="0" op_0_bw="0">
+<Node id="23" bw="0" op_0_bw="0">
 <![CDATA[
 branch0:1 %br_ln34 = br void
 
@@ -152,9 +152,9 @@ branch0:1 %br_ln34 = br void
 </and_exp></or_exp>
 </condition>
 
-<Node id="24" bw="0" op_0_bw="32" op_1_bw="32">
+<Node id="25" bw="0" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch1:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_levels_buffer_value_0_1
+branch1:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_adder_levels_buffer_value_0_1
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -168,7 +168,7 @@ branch1:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_levels_buffe
 </and_exp></or_exp>
 </condition>
 
-<Node id="25" bw="0" op_0_bw="0">
+<Node id="26" bw="0" op_0_bw="0">
 <![CDATA[
 branch1:1 %br_ln34 = br void
 
@@ -183,9 +183,9 @@ branch1:1 %br_ln34 = br void
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="27" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="28" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-:0 %level_out_value_1 = phi i32 %value_read, void %branch0, i32 %reducer_circuit_levels_buffer_value_0_0_load, void %branch1
+:0 %level_out_value_1 = phi i32 %value_read, void %branch0, i32 %reducer_circuit_adder_levels_buffer_value_0_0_load, void %branch1
 
 ]]></Node>
 <StgValue><ssdm name="level_out_value_1"/></StgValue>
@@ -198,12 +198,12 @@ branch1:1 %br_ln34 = br void
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="28" bw="32" op_0_bw="32">
+<Node id="29" bw="32" op_0_bw="32">
 <![CDATA[
-:1 %reducer_circuit_levels_buffer_label_0_0_load = load i32 %reducer_circuit_levels_buffer_label_0_0
+:1 %reducer_circuit_adder_levels_buffer_label_0_0_load = load i32 %reducer_circuit_adder_levels_buffer_label_0_0
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_label_0_0_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_label_0_0_load"/></StgValue>
 </operation>
 
 <operation id="16" st_id="1" stage="1" lat="1">
@@ -213,7 +213,7 @@ branch1:1 %br_ln34 = br void
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="29" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="30" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
 :2 %br_ln34 = br i1 %trunc_ln34, void %branch4, void %branch5
 
@@ -229,9 +229,9 @@ branch1:1 %br_ln34 = br void
 </and_exp></or_exp>
 </condition>
 
-<Node id="31" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<Node id="32" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-branch4:0 %store_ln34 = store i32 %label_read, i32 %reducer_circuit_levels_buffer_label_0_0
+branch4:0 %store_ln34 = store i32 %label_read, i32 %reducer_circuit_adder_levels_buffer_label_0_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -245,7 +245,7 @@ branch4:0 %store_ln34 = store i32 %label_read, i32 %reducer_circuit_levels_buffe
 </and_exp></or_exp>
 </condition>
 
-<Node id="32" bw="0" op_0_bw="0">
+<Node id="33" bw="0" op_0_bw="0">
 <![CDATA[
 branch4:1 %br_ln34 = br void %branch5
 
@@ -260,9 +260,9 @@ branch4:1 %br_ln34 = br void %branch5
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="35" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="36" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch5:1 %add_ln35 = add i32 %reducer_circuit_levels_num_items_0_load, i32 1
+branch5:1 %add_ln35 = add i32 %reducer_circuit_adder_levels_num_items_0_load, i32 1
 
 ]]></Node>
 <StgValue><ssdm name="add_ln35"/></StgValue>
@@ -275,9 +275,9 @@ branch5:1 %add_ln35 = add i32 %reducer_circuit_levels_num_items_0_load, i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="38" bw="0" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="0">
+<Node id="39" bw="0" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="0">
 <![CDATA[
-branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, void %._crit_edge, i32 1, void, i32 0, void, i32 4294967295, void
+branch5:4 %switch_ln11 = switch i32 %reducer_circuit_adder_levels_num_items_0_load, void %._crit_edge, i32 1, void, i32 0, void, i32 4294967295, void
 
 ]]></Node>
 <StgValue><ssdm name="switch_ln11"/></StgValue>
@@ -287,13 +287,13 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="-1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="-1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="40" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="41" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:0 %store_ln26 = store i1 0, i1 %reducer_circuit_levels_valid_0
+:0 %store_ln26 = store i1 0, i1 %reducer_circuit_adder_levels_valid_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln26"/></StgValue>
@@ -303,11 +303,11 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="-1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="-1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="41" bw="0" op_0_bw="0">
+<Node id="42" bw="0" op_0_bw="0">
 <![CDATA[
 :1 %br_ln29 = br void %._crit_edge
 
@@ -319,13 +319,13 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="50" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="51" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:0 %store_ln13 = store i1 1, i1 %reducer_circuit_levels_valid_0
+:0 %store_ln13 = store i1 1, i1 %reducer_circuit_adder_levels_valid_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln13"/></StgValue>
@@ -335,29 +335,29 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="51" bw="32" op_0_bw="32" op_1_bw="0">
+<Node id="52" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:1 %reducer_circuit_levels_buffer_value_0_1_load = load i32 %reducer_circuit_levels_buffer_value_0_1
+:1 %reducer_circuit_adder_levels_buffer_value_0_1_load = load i32 %reducer_circuit_adder_levels_buffer_value_0_1
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_value_0_1_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_0_1_load"/></StgValue>
 </operation>
 
 <operation id="25" st_id="1" stage="1" lat="1">
 <core>Adder</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="52" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="53" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:2 %level_out_value = add i32 %reducer_circuit_levels_buffer_value_0_1_load, i32 %level_out_value_1
+:2 %level_out_value = add i32 %reducer_circuit_adder_levels_buffer_value_0_1_load, i32 %level_out_value_1
 
 ]]></Node>
 <StgValue><ssdm name="level_out_value"/></StgValue>
@@ -367,12 +367,12 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="55" bw="0" op_0_bw="0">
+<Node id="56" bw="0" op_0_bw="0">
 <![CDATA[
 ._crit_edge:0 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit
 
@@ -390,9 +390,9 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="34" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="35" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-branch5:0 %level_out_label = phi i32 %label_read, void %branch4, i32 %reducer_circuit_levels_buffer_label_0_0_load, void
+branch5:0 %level_out_label = phi i32 %label_read, void %branch4, i32 %reducer_circuit_adder_levels_buffer_label_0_0_load, void
 
 ]]></Node>
 <StgValue><ssdm name="level_out_label"/></StgValue>
@@ -405,12 +405,12 @@ branch5:0 %level_out_label = phi i32 %label_read, void %branch4, i32 %reducer_ci
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="36" bw="32" op_0_bw="32">
+<Node id="37" bw="32" op_0_bw="32">
 <![CDATA[
-branch5:2 %reducer_circuit_levels_num_items_1_load = load i32 %reducer_circuit_levels_num_items_1
+branch5:2 %reducer_circuit_adder_levels_num_items_1_load = load i32 %reducer_circuit_adder_levels_num_items_1
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_load"/></StgValue>
 </operation>
 
 <operation id="29" st_id="2" stage="1" lat="1">
@@ -420,23 +420,23 @@ branch5:2 %reducer_circuit_levels_num_items_1_load = load i32 %reducer_circuit_l
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="37" bw="32" op_0_bw="32">
+<Node id="38" bw="32" op_0_bw="32">
 <![CDATA[
-branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circuit_levels_buffer_value_1_0
+branch5:3 %reducer_circuit_adder_levels_buffer_value_1_0_load = load i32 %reducer_circuit_adder_levels_buffer_value_1_0
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_value_1_0_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_1_0_load"/></StgValue>
 </operation>
 
 <operation id="30" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="43" bw="31" op_0_bw="31" op_1_bw="32" op_2_bw="32" op_3_bw="32">
+<Node id="44" bw="31" op_0_bw="31" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
 :0 %tmp = partselect i31 @_ssdm_op_PartSelect.i31.i32.i32.i32, i32 %level_out_label, i32 1, i32 31
 
@@ -448,11 +448,11 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>Cmp</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="44" bw="1" op_0_bw="31" op_1_bw="31">
+<Node id="45" bw="1" op_0_bw="31" op_1_bw="31">
 <![CDATA[
 :1 %icmp_ln18 = icmp_slt  i31 %tmp, i31 1
 
@@ -464,11 +464,11 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="45" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="46" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
 :2 %br_ln18 = br i1 %icmp_ln18, void %_ZN13reducer_level3addER12reducer_data.exit, void
 
@@ -480,14 +480,14 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="47" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="48" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:0 %store_ln20 = store i1 1, i1 %reducer_circuit_levels_valid_0
+:0 %store_ln20 = store i1 1, i1 %reducer_circuit_adder_levels_valid_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln20"/></StgValue>
@@ -497,12 +497,12 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="48" bw="0" op_0_bw="0">
+<Node id="49" bw="0" op_0_bw="0">
 <![CDATA[
 :1 %br_ln23 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread
 
@@ -514,11 +514,11 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="53" bw="0" op_0_bw="0">
+<Node id="54" bw="0" op_0_bw="0">
 <![CDATA[
 :3 %br_ln16 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread
 
@@ -530,71 +530,71 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="57" bw="1" op_0_bw="1" op_1_bw="0">
+<Node id="58" bw="1" op_0_bw="1" op_1_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit:0 %reducer_circuit_levels_valid_0_load = load i1 %reducer_circuit_levels_valid_0
+_ZN13reducer_level3addER12reducer_data.exit:0 %reducer_circuit_adder_levels_valid_0_load = load i1 %reducer_circuit_adder_levels_valid_0
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_valid_0_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_valid_0_load"/></StgValue>
 </operation>
 
 <operation id="37" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="58" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="59" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit:1 %br_ln48 = br i1 %reducer_circuit_levels_valid_0_load, void %mergeST, void %_ZN13reducer_level3addER12reducer_data.exit.thread
+_ZN13reducer_level3addER12reducer_data.exit:1 %br_ln55 = br i1 %reducer_circuit_adder_levels_valid_0_load, void %mergeST, void %_ZN13reducer_level3addER12reducer_data.exit.thread
 
 ]]></Node>
-<StgValue><ssdm name="br_ln48"/></StgValue>
+<StgValue><ssdm name="br_ln55"/></StgValue>
 </operation>
 
 <operation id="38" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="60" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
+<Node id="61" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit.thread:0 %reducer_circuit_levels_num_items_0_new_0 = phi i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_data.exit, i32 0, void, i32 0, void
+_ZN13reducer_level3addER12reducer_data.exit.thread:0 %reducer_circuit_adder_levels_num_items_0_new_0 = phi i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_data.exit, i32 0, void, i32 0, void
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_0_new_0"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_0_new_0"/></StgValue>
 </operation>
 
 <operation id="39" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="62" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
+<Node id="63" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
 <![CDATA[
 _ZN13reducer_level3addER12reducer_data.exit.thread:2 %level_out_017_31 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit, i32 %level_out_value_1, void, i32 %level_out_value, void
 
@@ -606,16 +606,16 @@ _ZN13reducer_level3addER12reducer_data.exit.thread:2 %level_out_017_31 = phi i32
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="63" bw="1" op_0_bw="32">
+<Node id="64" bw="1" op_0_bw="32">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit.thread:3 %trunc_ln34_1 = trunc i32 %reducer_circuit_levels_num_items_1_load
+_ZN13reducer_level3addER12reducer_data.exit.thread:3 %trunc_ln34_1 = trunc i32 %reducer_circuit_adder_levels_num_items_1_load
 
 ]]></Node>
 <StgValue><ssdm name="trunc_ln34_1"/></StgValue>
@@ -625,14 +625,14 @@ _ZN13reducer_level3addER12reducer_data.exit.thread:3 %trunc_ln34_1 = trunc i32 %
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="64" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="65" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
 _ZN13reducer_level3addER12reducer_data.exit.thread:4 %br_ln34 = br i1 %trunc_ln34_1, void %branch2, void %branch3
 
@@ -644,19 +644,19 @@ _ZN13reducer_level3addER12reducer_data.exit.thread:4 %br_ln34 = br i1 %trunc_ln3
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="66" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<Node id="67" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-branch2:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_levels_buffer_value_1_0
+branch2:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_adder_levels_buffer_value_1_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -666,17 +666,17 @@ branch2:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_levels
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="67" bw="0" op_0_bw="0">
+<Node id="68" bw="0" op_0_bw="0">
 <![CDATA[
 branch2:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread16
 
@@ -688,19 +688,19 @@ branch2:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="69" bw="0" op_0_bw="32" op_1_bw="32">
+<Node id="70" bw="0" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch3:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_levels_buffer_value_1_1
+branch3:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_adder_levels_buffer_value_1_1
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -710,17 +710,17 @@ branch3:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_levels
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="70" bw="0" op_0_bw="0">
+<Node id="71" bw="0" op_0_bw="0">
 <![CDATA[
 branch3:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread16
 
@@ -732,33 +732,33 @@ branch3:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="72" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="73" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit.thread16:0 %reducer_circuit_levels_buffer_value_1_0_loc_0 = phi i32 %level_out_017_31, void %branch2, i32 %reducer_circuit_levels_buffer_value_1_0_load, void %branch3
+_ZN13reducer_level3addER12reducer_data.exit.thread16:0 %reducer_circuit_adder_levels_buffer_value_1_0_loc_0 = phi i32 %level_out_017_31, void %branch2, i32 %reducer_circuit_adder_levels_buffer_value_1_0_load, void %branch3
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_value_1_0_loc_0"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_1_0_loc_0"/></StgValue>
 </operation>
 
 <operation id="47" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="73" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="74" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
 _ZN13reducer_level3addER12reducer_data.exit.thread16:1 %br_ln34 = br i1 %trunc_ln34_1, void %branch6, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622
 
@@ -770,16 +770,16 @@ _ZN13reducer_level3addER12reducer_data.exit.thread16:1 %br_ln34 = br i1 %trunc_l
 <core>Adder</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="78" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="79" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit.thread1622:0 %add_ln35_1 = add i32 %reducer_circuit_levels_num_items_1_load, i32 1
+_ZN13reducer_level3addER12reducer_data.exit.thread1622:0 %add_ln35_1 = add i32 %reducer_circuit_adder_levels_num_items_1_load, i32 1
 
 ]]></Node>
 <StgValue><ssdm name="add_ln35_1"/></StgValue>
@@ -789,19 +789,19 @@ _ZN13reducer_level3addER12reducer_data.exit.thread1622:0 %add_ln35_1 = add i32 %
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="79" bw="0" op_0_bw="0">
+<Node id="80" bw="0" op_0_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit.thread1622:1 %br_ln49 = br void %mergeST
+_ZN13reducer_level3addER12reducer_data.exit.thread1622:1 %br_ln56 = br void %mergeST
 
 ]]></Node>
-<StgValue><ssdm name="br_ln49"/></StgValue>
+<StgValue><ssdm name="br_ln56"/></StgValue>
 </operation>
 
 <operation id="50" st_id="2" stage="1" lat="1">
@@ -811,12 +811,12 @@ _ZN13reducer_level3addER12reducer_data.exit.thread1622:1 %br_ln49 = br void %mer
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="81" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="82" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-mergeST:0 %reducer_circuit_levels_num_items_0_new_1 = phi i32 %reducer_circuit_levels_num_items_0_new_0, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_data.exit
+mergeST:0 %reducer_circuit_adder_levels_num_items_0_new_1 = phi i32 %reducer_circuit_adder_levels_num_items_0_new_0, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_data.exit
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_0_new_1"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_0_new_1"/></StgValue>
 </operation>
 
 <operation id="51" st_id="2" stage="1" lat="1">
@@ -826,9 +826,9 @@ mergeST:0 %reducer_circuit_levels_num_items_0_new_1 = phi i32 %reducer_circuit_l
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="85" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<Node id="86" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-mergeST:4 %store_ln35 = store i32 %reducer_circuit_levels_num_items_0_new_1, i32 %reducer_circuit_levels_num_items_0
+mergeST:4 %store_ln35 = store i32 %reducer_circuit_adder_levels_num_items_0_new_1, i32 %reducer_circuit_adder_levels_num_items_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln35"/></StgValue>
@@ -841,14 +841,14 @@ mergeST:4 %store_ln35 = store i32 %reducer_circuit_levels_num_items_0_new_1, i32
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="61" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
+<Node id="62" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
 <![CDATA[
 _ZN13reducer_level3addER12reducer_data.exit.thread:1 %level_out_118_32 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit, i32 %level_out_label, void, i32 %level_out_label, void
 
@@ -860,19 +860,19 @@ _ZN13reducer_level3addER12reducer_data.exit.thread:1 %level_out_118_32 = phi i32
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="75" bw="0" op_0_bw="32" op_1_bw="32">
+<Node id="76" bw="0" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch6:0 %store_ln34 = store i32 %level_out_118_32, i32 %reducer_circuit_levels_buffer_label_1_0
+branch6:0 %store_ln34 = store i32 %level_out_118_32, i32 %reducer_circuit_adder_levels_buffer_label_1_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -882,17 +882,17 @@ branch6:0 %store_ln34 = store i32 %level_out_118_32, i32 %reducer_circuit_levels
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="76" bw="0" op_0_bw="0">
+<Node id="77" bw="0" op_0_bw="0">
 <![CDATA[
 branch6:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread1622
 
@@ -907,12 +907,12 @@ branch6:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="82" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0">
+<Node id="83" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0">
 <![CDATA[
-mergeST:1 %reducer_circuit_levels_num_items_1_flag_0 = phi i1 1, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i1 0, void %_ZN13reducer_level3addER12reducer_data.exit
+mergeST:1 %reducer_circuit_adder_levels_num_items_1_flag_0 = phi i1 1, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i1 0, void %_ZN13reducer_level3addER12reducer_data.exit
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_flag_0"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_flag_0"/></StgValue>
 </operation>
 
 <operation id="56" st_id="3" stage="1" lat="1">
@@ -922,9 +922,9 @@ mergeST:1 %reducer_circuit_levels_num_items_1_flag_0 = phi i1 1, void %_ZN13redu
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="83" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="84" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-mergeST:2 %out_data_value_1 = phi i32 %reducer_circuit_levels_buffer_value_1_0_loc_0, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %reducer_circuit_levels_buffer_value_1_0_load, void %_ZN13reducer_level3addER12reducer_data.exit
+mergeST:2 %out_data_value_1 = phi i32 %reducer_circuit_adder_levels_buffer_value_1_0_loc_0, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %reducer_circuit_adder_levels_buffer_value_1_0_load, void %_ZN13reducer_level3addER12reducer_data.exit
 
 ]]></Node>
 <StgValue><ssdm name="out_data_value_1"/></StgValue>
@@ -937,9 +937,9 @@ mergeST:2 %out_data_value_1 = phi i32 %reducer_circuit_levels_buffer_value_1_0_l
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="84" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="85" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-mergeST:3 %empty = phi i32 %add_ln35_1, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %reducer_circuit_levels_num_items_1_load, void %_ZN13reducer_level3addER12reducer_data.exit
+mergeST:3 %empty = phi i32 %add_ln35_1, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %reducer_circuit_adder_levels_num_items_1_load, void %_ZN13reducer_level3addER12reducer_data.exit
 
 ]]></Node>
 <StgValue><ssdm name="empty"/></StgValue>
@@ -952,7 +952,7 @@ mergeST:3 %empty = phi i32 %add_ln35_1, void %_ZN13reducer_level3addER12reducer_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="86" bw="0" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="0">
+<Node id="87" bw="0" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="0">
 <![CDATA[
 mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32 1, void, i32 0, void
 
@@ -968,9 +968,9 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="88" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="89" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:0 %store_ln26 = store i1 0, i1 %reducer_circuit_levels_valid_1
+:0 %store_ln26 = store i1 0, i1 %reducer_circuit_adder_levels_valid_1
 
 ]]></Node>
 <StgValue><ssdm name="store_ln26"/></StgValue>
@@ -984,7 +984,7 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="89" bw="0" op_0_bw="0">
+<Node id="90" bw="0" op_0_bw="0">
 <![CDATA[
 :1 %br_ln29 = br void %._crit_edge1
 
@@ -1000,9 +1000,9 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="91" bw="32" op_0_bw="32" op_1_bw="0">
+<Node id="92" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:0 %out_data_label = load i32 %reducer_circuit_levels_buffer_label_1_0
+:0 %out_data_label = load i32 %reducer_circuit_adder_levels_buffer_label_1_0
 
 ]]></Node>
 <StgValue><ssdm name="out_data_label"/></StgValue>
@@ -1016,31 +1016,15 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="92" bw="31" op_0_bw="31" op_1_bw="32" op_2_bw="32" op_3_bw="32">
+<Node id="93" bw="1" op_0_bw="1">
 <![CDATA[
-:1 %tmp_1 = partselect i31 @_ssdm_op_PartSelect.i31.i32.i32.i32, i32 %out_data_label, i32 1, i32 31
+:1 %reducer_circuit_adder_levels_curr_level_1_load = load i1 %reducer_circuit_adder_levels_curr_level_1
 
 ]]></Node>
-<StgValue><ssdm name="tmp_1"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_curr_level_1_load"/></StgValue>
 </operation>
 
 <operation id="63" st_id="3" stage="1" lat="1">
-<core>Cmp</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="empty" val="1"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="93" bw="1" op_0_bw="31" op_1_bw="31">
-<![CDATA[
-:2 %icmp_ln18_1 = icmp_slt  i31 %tmp_1, i31 1
-
-]]></Node>
-<StgValue><ssdm name="icmp_ln18_1"/></StgValue>
-</operation>
-
-<operation id="64" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1048,12 +1032,28 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="94" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="94" bw="2" op_0_bw="1">
 <![CDATA[
-:3 %br_ln18 = br i1 %icmp_ln18_1, void %_ZN13reducer_level3addER12reducer_data.exit14, void
+:2 %zext_ln18 = zext i1 %reducer_circuit_adder_levels_curr_level_1_load
 
 ]]></Node>
-<StgValue><ssdm name="br_ln18"/></StgValue>
+<StgValue><ssdm name="zext_ln18"/></StgValue>
+</operation>
+
+<operation id="64" st_id="3" stage="1" lat="1">
+<core>Shifter</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="95" bw="2" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+:3 %shl_ln18 = shl i2 1, i2 %zext_ln18
+
+]]></Node>
+<StgValue><ssdm name="shl_ln18"/></StgValue>
 </operation>
 
 <operation id="65" st_id="3" stage="1" lat="1">
@@ -1061,19 +1061,82 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="96" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="96" bw="3" op_0_bw="2">
 <![CDATA[
-:0 %store_ln20 = store i1 1, i1 %reducer_circuit_levels_valid_1
+:4 %zext_ln18_1 = zext i2 %shl_ln18
 
 ]]></Node>
-<StgValue><ssdm name="store_ln20"/></StgValue>
+<StgValue><ssdm name="zext_ln18_1"/></StgValue>
 </operation>
 
 <operation id="66" st_id="3" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="97" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+:5 %add_ln18 = add i3 %zext_ln18_1, i3 1
+
+]]></Node>
+<StgValue><ssdm name="add_ln18"/></StgValue>
+</operation>
+
+<operation id="67" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="98" bw="32" op_0_bw="3">
+<![CDATA[
+:6 %zext_ln18_2 = zext i3 %add_ln18
+
+]]></Node>
+<StgValue><ssdm name="zext_ln18_2"/></StgValue>
+</operation>
+
+<operation id="68" st_id="3" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="99" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:7 %icmp_ln18_1 = icmp_slt  i32 %out_data_label, i32 %zext_ln18_2
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln18_1"/></StgValue>
+</operation>
+
+<operation id="69" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="100" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:8 %br_ln18 = br i1 %icmp_ln18_1, void %_ZN13reducer_level3addER12reducer_data.exit16, void
+
+]]></Node>
+<StgValue><ssdm name="br_ln18"/></StgValue>
+</operation>
+
+<operation id="70" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1082,15 +1145,32 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="97" bw="0" op_0_bw="0">
+<Node id="102" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:1 %br_ln23 = br void %_ZN13reducer_level3addER12reducer_data.exit14.thread
+:0 %store_ln20 = store i1 1, i1 %reducer_circuit_adder_levels_valid_1
+
+]]></Node>
+<StgValue><ssdm name="store_ln20"/></StgValue>
+</operation>
+
+<operation id="71" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="103" bw="0" op_0_bw="0">
+<![CDATA[
+:1 %br_ln23 = br void %_ZN13reducer_level3addER12reducer_data.exit16.thread
 
 ]]></Node>
 <StgValue><ssdm name="br_ln23"/></StgValue>
 </operation>
 
-<operation id="67" st_id="3" stage="1" lat="1">
+<operation id="72" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1098,15 +1178,15 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="99" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="105" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:0 %store_ln13 = store i1 1, i1 %reducer_circuit_levels_valid_1
+:0 %store_ln13 = store i1 1, i1 %reducer_circuit_adder_levels_valid_1
 
 ]]></Node>
 <StgValue><ssdm name="store_ln13"/></StgValue>
 </operation>
 
-<operation id="68" st_id="3" stage="1" lat="1">
+<operation id="73" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1114,15 +1194,15 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="100" bw="32" op_0_bw="32" op_1_bw="0">
+<Node id="106" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:1 %reducer_circuit_levels_buffer_value_1_1_load = load i32 %reducer_circuit_levels_buffer_value_1_1
+:1 %reducer_circuit_adder_levels_buffer_value_1_1_load = load i32 %reducer_circuit_adder_levels_buffer_value_1_1
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_value_1_1_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_1_1_load"/></StgValue>
 </operation>
 
-<operation id="69" st_id="3" stage="1" lat="1">
+<operation id="74" st_id="3" stage="1" lat="1">
 <core>Adder</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1130,15 +1210,15 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="101" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="107" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:2 %out_data_value = add i32 %reducer_circuit_levels_buffer_value_1_1_load, i32 %out_data_value_1
+:2 %out_data_value = add i32 %reducer_circuit_adder_levels_buffer_value_1_1_load, i32 %out_data_value_1
 
 ]]></Node>
 <StgValue><ssdm name="out_data_value"/></StgValue>
 </operation>
 
-<operation id="70" st_id="3" stage="1" lat="1">
+<operation id="75" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1146,239 +1226,162 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="102" bw="0" op_0_bw="0">
+<Node id="108" bw="0" op_0_bw="0">
 <![CDATA[
-:3 %br_ln16 = br void %_ZN13reducer_level3addER12reducer_data.exit14.thread
+:3 %br_ln16 = br void %_ZN13reducer_level3addER12reducer_data.exit16.thread
 
 ]]></Node>
 <StgValue><ssdm name="br_ln16"/></StgValue>
-</operation>
-
-<operation id="71" st_id="3" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="empty" val="!2"/>
-<literal name="empty" val="!1"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="104" bw="0" op_0_bw="0">
-<![CDATA[
-._crit_edge1:0 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit14
-
-]]></Node>
-<StgValue><ssdm name="br_ln0"/></StgValue>
-</operation>
-
-<operation id="72" st_id="3" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="empty" val="!2"/>
-<literal name="icmp_ln18_1" val="0"/>
-</and_exp><and_exp><literal name="empty" val="!2"/>
-<literal name="empty" val="!1"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="106" bw="1" op_0_bw="1" op_1_bw="0">
-<![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14:0 %reducer_circuit_levels_valid_1_load = load i1 %reducer_circuit_levels_valid_1
-
-]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_valid_1_load"/></StgValue>
-</operation>
-
-<operation id="73" st_id="3" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="empty" val="!2"/>
-<literal name="icmp_ln18_1" val="0"/>
-</and_exp><and_exp><literal name="empty" val="!2"/>
-<literal name="empty" val="!1"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="107" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
-<![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14:1 %br_ln53 = br i1 %reducer_circuit_levels_valid_1_load, void %_ZN13reducer_level3addER12reducer_data.exit14._crit_edge, void %_ZN13reducer_level3addER12reducer_data.exit14.thread
-
-]]></Node>
-<StgValue><ssdm name="br_ln53"/></StgValue>
-</operation>
-
-<operation id="74" st_id="3" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
-</and_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
-</and_exp><and_exp><literal name="empty" val="2"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="109" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0" op_4_bw="1" op_5_bw="0">
-<![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14.thread:0 %reducer_circuit_levels_num_items_1_flag_1 = phi i1 %reducer_circuit_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_data.exit14, i1 1, void, i1 1, void
-
-]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_flag_1"/></StgValue>
-</operation>
-
-<operation id="75" st_id="3" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
-</and_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
-</and_exp><and_exp><literal name="empty" val="2"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="110" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
-<![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14.thread:1 %reducer_circuit_levels_num_items_1_new_1 = phi i32 %empty, void %_ZN13reducer_level3addER12reducer_data.exit14, i32 0, void, i32 0, void
-
-]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_new_1"/></StgValue>
 </operation>
 
 <operation id="76" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
-</and_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
-</and_exp><and_exp><literal name="empty" val="2"/>
+<or_exp><and_exp><literal name="empty" val="!2"/>
+<literal name="empty" val="!1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="111" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
+<Node id="110" bw="0" op_0_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14.thread:2 %out_data_0_35 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit14, i32 %out_data_value_1, void, i32 %out_data_value, void
+._crit_edge1:0 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit16
 
 ]]></Node>
-<StgValue><ssdm name="out_data_0_35"/></StgValue>
+<StgValue><ssdm name="br_ln0"/></StgValue>
 </operation>
 
 <operation id="77" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
-</and_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
-</and_exp><and_exp><literal name="empty" val="2"/>
+<or_exp><and_exp><literal name="empty" val="!2"/>
+<literal name="icmp_ln18_1" val="0"/>
+</and_exp><and_exp><literal name="empty" val="!2"/>
+<literal name="empty" val="!1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="112" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32">
+<Node id="112" bw="1" op_0_bw="1" op_1_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14.thread:3 %write_ln54 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %out_r, i32 %out_data_0_35
+_ZN13reducer_level3addER12reducer_data.exit16:0 %reducer_circuit_adder_levels_valid_1_load = load i1 %reducer_circuit_adder_levels_valid_1
 
 ]]></Node>
-<StgValue><ssdm name="write_ln54"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_valid_1_load"/></StgValue>
 </operation>
 
 <operation id="78" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
-</and_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
-</and_exp><and_exp><literal name="empty" val="2"/>
+<or_exp><and_exp><literal name="empty" val="!2"/>
+<literal name="icmp_ln18_1" val="0"/>
+</and_exp><and_exp><literal name="empty" val="!2"/>
+<literal name="empty" val="!1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="113" bw="0" op_0_bw="0">
+<Node id="113" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14.thread:4 %br_ln54 = br void %_ZN13reducer_level3addER12reducer_data.exit14._crit_edge
+_ZN13reducer_level3addER12reducer_data.exit16:1 %br_ln60 = br i1 %reducer_circuit_adder_levels_valid_1_load, void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge, void %_ZN13reducer_level3addER12reducer_data.exit16.thread
 
 ]]></Node>
-<StgValue><ssdm name="br_ln54"/></StgValue>
+<StgValue><ssdm name="br_ln60"/></StgValue>
 </operation>
 
 <operation id="79" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
+</and_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp><and_exp><literal name="empty" val="2"/>
+</and_exp></or_exp>
 </condition>
 
-<Node id="115" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0">
+<Node id="115" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0" op_4_bw="1" op_5_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14._crit_edge:0 %reducer_circuit_levels_num_items_1_flag_2 = phi i1 %reducer_circuit_levels_num_items_1_flag_1, void %_ZN13reducer_level3addER12reducer_data.exit14.thread, i1 %reducer_circuit_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_data.exit14
+_ZN13reducer_level3addER12reducer_data.exit16.thread:0 %reducer_circuit_adder_levels_num_items_1_flag_1 = phi i1 %reducer_circuit_adder_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_data.exit16, i1 1, void, i1 1, void
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_flag_2"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_flag_1"/></StgValue>
 </operation>
 
 <operation id="80" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
+</and_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp><and_exp><literal name="empty" val="2"/>
+</and_exp></or_exp>
 </condition>
 
-<Node id="116" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="116" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14._crit_edge:1 %reducer_circuit_levels_num_items_1_new_2 = phi i32 %reducer_circuit_levels_num_items_1_new_1, void %_ZN13reducer_level3addER12reducer_data.exit14.thread, i32 %empty, void %_ZN13reducer_level3addER12reducer_data.exit14
+_ZN13reducer_level3addER12reducer_data.exit16.thread:1 %reducer_circuit_adder_levels_num_items_1_new_1 = phi i32 %empty, void %_ZN13reducer_level3addER12reducer_data.exit16, i32 0, void, i32 0, void
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_new_2"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_new_1"/></StgValue>
 </operation>
 
 <operation id="81" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
+</and_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp><and_exp><literal name="empty" val="2"/>
+</and_exp></or_exp>
 </condition>
 
-<Node id="117" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="117" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14._crit_edge:2 %br_ln0 = br i1 %reducer_circuit_levels_num_items_1_flag_2, void %_ZN13reducer_level3addER12reducer_data.exit14._crit_edge.new, void %mergeST26
+_ZN13reducer_level3addER12reducer_data.exit16.thread:2 %out_data_0_35 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit16, i32 %out_data_value_1, void, i32 %out_data_value, void
 
 ]]></Node>
-<StgValue><ssdm name="br_ln0"/></StgValue>
+<StgValue><ssdm name="out_data_0_35"/></StgValue>
 </operation>
 
 <operation id="82" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_1_flag_2" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
+</and_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp><and_exp><literal name="empty" val="2"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="119" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<Node id="118" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-mergeST26:0 %store_ln35 = store i32 %reducer_circuit_levels_num_items_1_new_2, i32 %reducer_circuit_levels_num_items_1
+_ZN13reducer_level3addER12reducer_data.exit16.thread:3 %write_ln61 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %out_r, i32 %out_data_0_35
 
 ]]></Node>
-<StgValue><ssdm name="store_ln35"/></StgValue>
+<StgValue><ssdm name="write_ln61"/></StgValue>
 </operation>
 
 <operation id="83" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_1_flag_2" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
+</and_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp><and_exp><literal name="empty" val="2"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="120" bw="0" op_0_bw="0">
+<Node id="119" bw="0" op_0_bw="0">
 <![CDATA[
-mergeST26:1 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit14._crit_edge.new
+_ZN13reducer_level3addER12reducer_data.exit16.thread:4 %br_ln61 = br void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge
 
 ]]></Node>
-<StgValue><ssdm name="br_ln0"/></StgValue>
+<StgValue><ssdm name="br_ln61"/></StgValue>
 </operation>
 
 <operation id="84" st_id="3" stage="1" lat="1">
@@ -1388,12 +1391,89 @@ mergeST26:1 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit14._cr
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="122" bw="0">
+<Node id="121" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14._crit_edge.new:0 %ret_ln55 = ret
+_ZN13reducer_level3addER12reducer_data.exit16._crit_edge:0 %reducer_circuit_adder_levels_num_items_1_flag_2 = phi i1 %reducer_circuit_adder_levels_num_items_1_flag_1, void %_ZN13reducer_level3addER12reducer_data.exit16.thread, i1 %reducer_circuit_adder_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_data.exit16
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln55"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_flag_2"/></StgValue>
+</operation>
+
+<operation id="85" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="122" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<![CDATA[
+_ZN13reducer_level3addER12reducer_data.exit16._crit_edge:1 %reducer_circuit_adder_levels_num_items_1_new_2 = phi i32 %reducer_circuit_adder_levels_num_items_1_new_1, void %_ZN13reducer_level3addER12reducer_data.exit16.thread, i32 %empty, void %_ZN13reducer_level3addER12reducer_data.exit16
+
+]]></Node>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_new_2"/></StgValue>
+</operation>
+
+<operation id="86" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="123" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+_ZN13reducer_level3addER12reducer_data.exit16._crit_edge:2 %br_ln0 = br i1 %reducer_circuit_adder_levels_num_items_1_flag_2, void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge.new, void %mergeST26
+
+]]></Node>
+<StgValue><ssdm name="br_ln0"/></StgValue>
+</operation>
+
+<operation id="87" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_1_flag_2" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="125" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+mergeST26:0 %store_ln35 = store i32 %reducer_circuit_adder_levels_num_items_1_new_2, i32 %reducer_circuit_adder_levels_num_items_1
+
+]]></Node>
+<StgValue><ssdm name="store_ln35"/></StgValue>
+</operation>
+
+<operation id="88" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_1_flag_2" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="126" bw="0" op_0_bw="0">
+<![CDATA[
+mergeST26:1 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge.new
+
+]]></Node>
+<StgValue><ssdm name="br_ln0"/></StgValue>
+</operation>
+
+<operation id="89" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="128" bw="0">
+<![CDATA[
+_ZN13reducer_level3addER12reducer_data.exit16._crit_edge.new:0 %ret_ln62 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln62"/></StgValue>
 </operation>
 </state>
 </state_list>

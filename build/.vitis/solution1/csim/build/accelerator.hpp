@@ -7,16 +7,10 @@
 #include "../encoded_data.hpp"
 #include "reducer.hpp"
 
-class accelerator{
-	public:
-		int multiplier_outs[K];
-		int storage[N];
+void set_storage(int[N], int[N], bool);
+void multipliers(int[K], int[N], int[K], int[K], bool[K]);
+void adders(int&, int[K]);
+void accelerate(int&, int[K], int[K], bool[K], int, int[N], bool);
 
-		reducer reducer_circuit;
-
-		void set_storage(int*);
-		void multipliers(int*, int*, bool*);
-		void adders(int*);
-};
 
 #endif

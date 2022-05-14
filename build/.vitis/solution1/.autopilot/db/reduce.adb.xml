@@ -3,13 +3,13 @@
 
 <trans_list>
 
-<trans id="102" from="1" to="2">
+<trans id="107" from="1" to="2">
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 </trans>
 
-<trans id="103" from="2" to="3">
+<trans id="108" from="2" to="3">
 <condition id="-1">
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
@@ -29,7 +29,7 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="14" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="15" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
 :0 %label_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %label_r
 
@@ -44,7 +44,7 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="15" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="16" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
 :1 %value_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %value_r
 
@@ -59,12 +59,12 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="16" bw="32" op_0_bw="32">
+<Node id="17" bw="32" op_0_bw="32">
 <![CDATA[
-:2 %reducer_circuit_levels_num_items_0_load = load i32 %reducer_circuit_levels_num_items_0
+:2 %reducer_circuit_adder_levels_num_items_0_load = load i32 %reducer_circuit_adder_levels_num_items_0
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_0_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_0_load"/></StgValue>
 </operation>
 
 <operation id="7" st_id="1" stage="1" lat="1">
@@ -74,9 +74,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="17" bw="1" op_0_bw="32">
+<Node id="18" bw="1" op_0_bw="32">
 <![CDATA[
-:3 %trunc_ln34 = trunc i32 %reducer_circuit_levels_num_items_0_load
+:3 %trunc_ln34 = trunc i32 %reducer_circuit_adder_levels_num_items_0_load
 
 ]]></Node>
 <StgValue><ssdm name="trunc_ln34"/></StgValue>
@@ -89,12 +89,12 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="18" bw="32" op_0_bw="32">
+<Node id="19" bw="32" op_0_bw="32">
 <![CDATA[
-:4 %reducer_circuit_levels_buffer_value_0_0_load = load i32 %reducer_circuit_levels_buffer_value_0_0
+:4 %reducer_circuit_adder_levels_buffer_value_0_0_load = load i32 %reducer_circuit_adder_levels_buffer_value_0_0
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_value_0_0_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_0_0_load"/></StgValue>
 </operation>
 
 <operation id="9" st_id="1" stage="1" lat="1">
@@ -104,7 +104,7 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="19" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="20" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
 :5 %br_ln34 = br i1 %trunc_ln34, void %branch0, void %branch1
 
@@ -120,9 +120,9 @@
 </and_exp></or_exp>
 </condition>
 
-<Node id="21" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<Node id="22" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-branch0:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_levels_buffer_value_0_0
+branch0:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_adder_levels_buffer_value_0_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -136,7 +136,7 @@ branch0:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_levels_buffe
 </and_exp></or_exp>
 </condition>
 
-<Node id="22" bw="0" op_0_bw="0">
+<Node id="23" bw="0" op_0_bw="0">
 <![CDATA[
 branch0:1 %br_ln34 = br void
 
@@ -152,9 +152,9 @@ branch0:1 %br_ln34 = br void
 </and_exp></or_exp>
 </condition>
 
-<Node id="24" bw="0" op_0_bw="32" op_1_bw="32">
+<Node id="25" bw="0" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch1:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_levels_buffer_value_0_1
+branch1:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_adder_levels_buffer_value_0_1
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -168,7 +168,7 @@ branch1:0 %store_ln34 = store i32 %value_read, i32 %reducer_circuit_levels_buffe
 </and_exp></or_exp>
 </condition>
 
-<Node id="25" bw="0" op_0_bw="0">
+<Node id="26" bw="0" op_0_bw="0">
 <![CDATA[
 branch1:1 %br_ln34 = br void
 
@@ -183,9 +183,9 @@ branch1:1 %br_ln34 = br void
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="27" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="28" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-:0 %level_out_value_1 = phi i32 %value_read, void %branch0, i32 %reducer_circuit_levels_buffer_value_0_0_load, void %branch1
+:0 %level_out_value_1 = phi i32 %value_read, void %branch0, i32 %reducer_circuit_adder_levels_buffer_value_0_0_load, void %branch1
 
 ]]></Node>
 <StgValue><ssdm name="level_out_value_1"/></StgValue>
@@ -198,12 +198,12 @@ branch1:1 %br_ln34 = br void
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="28" bw="32" op_0_bw="32">
+<Node id="29" bw="32" op_0_bw="32">
 <![CDATA[
-:1 %reducer_circuit_levels_buffer_label_0_0_load = load i32 %reducer_circuit_levels_buffer_label_0_0
+:1 %reducer_circuit_adder_levels_buffer_label_0_0_load = load i32 %reducer_circuit_adder_levels_buffer_label_0_0
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_label_0_0_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_label_0_0_load"/></StgValue>
 </operation>
 
 <operation id="16" st_id="1" stage="1" lat="1">
@@ -213,7 +213,7 @@ branch1:1 %br_ln34 = br void
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="29" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="30" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
 :2 %br_ln34 = br i1 %trunc_ln34, void %branch4, void %branch5
 
@@ -229,9 +229,9 @@ branch1:1 %br_ln34 = br void
 </and_exp></or_exp>
 </condition>
 
-<Node id="31" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<Node id="32" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-branch4:0 %store_ln34 = store i32 %label_read, i32 %reducer_circuit_levels_buffer_label_0_0
+branch4:0 %store_ln34 = store i32 %label_read, i32 %reducer_circuit_adder_levels_buffer_label_0_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -245,7 +245,7 @@ branch4:0 %store_ln34 = store i32 %label_read, i32 %reducer_circuit_levels_buffe
 </and_exp></or_exp>
 </condition>
 
-<Node id="32" bw="0" op_0_bw="0">
+<Node id="33" bw="0" op_0_bw="0">
 <![CDATA[
 branch4:1 %br_ln34 = br void %branch5
 
@@ -260,9 +260,9 @@ branch4:1 %br_ln34 = br void %branch5
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="35" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="36" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch5:1 %add_ln35 = add i32 %reducer_circuit_levels_num_items_0_load, i32 1
+branch5:1 %add_ln35 = add i32 %reducer_circuit_adder_levels_num_items_0_load, i32 1
 
 ]]></Node>
 <StgValue><ssdm name="add_ln35"/></StgValue>
@@ -275,9 +275,9 @@ branch5:1 %add_ln35 = add i32 %reducer_circuit_levels_num_items_0_load, i32 1
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="38" bw="0" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="0">
+<Node id="39" bw="0" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="0">
 <![CDATA[
-branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, void %._crit_edge, i32 1, void, i32 0, void, i32 4294967295, void
+branch5:4 %switch_ln11 = switch i32 %reducer_circuit_adder_levels_num_items_0_load, void %._crit_edge, i32 1, void, i32 0, void, i32 4294967295, void
 
 ]]></Node>
 <StgValue><ssdm name="switch_ln11"/></StgValue>
@@ -287,13 +287,13 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="-1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="-1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="40" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="41" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:0 %store_ln26 = store i1 0, i1 %reducer_circuit_levels_valid_0
+:0 %store_ln26 = store i1 0, i1 %reducer_circuit_adder_levels_valid_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln26"/></StgValue>
@@ -303,11 +303,11 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="-1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="-1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="41" bw="0" op_0_bw="0">
+<Node id="42" bw="0" op_0_bw="0">
 <![CDATA[
 :1 %br_ln29 = br void %._crit_edge
 
@@ -319,13 +319,13 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="50" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="51" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:0 %store_ln13 = store i1 1, i1 %reducer_circuit_levels_valid_0
+:0 %store_ln13 = store i1 1, i1 %reducer_circuit_adder_levels_valid_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln13"/></StgValue>
@@ -335,29 +335,29 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="51" bw="32" op_0_bw="32" op_1_bw="0">
+<Node id="52" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:1 %reducer_circuit_levels_buffer_value_0_1_load = load i32 %reducer_circuit_levels_buffer_value_0_1
+:1 %reducer_circuit_adder_levels_buffer_value_0_1_load = load i32 %reducer_circuit_adder_levels_buffer_value_0_1
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_value_0_1_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_0_1_load"/></StgValue>
 </operation>
 
 <operation id="25" st_id="1" stage="1" lat="1">
 <core>Adder</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="52" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="53" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:2 %level_out_value = add i32 %reducer_circuit_levels_buffer_value_0_1_load, i32 %level_out_value_1
+:2 %level_out_value = add i32 %reducer_circuit_adder_levels_buffer_value_0_1_load, i32 %level_out_value_1
 
 ]]></Node>
 <StgValue><ssdm name="level_out_value"/></StgValue>
@@ -367,12 +367,12 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="55" bw="0" op_0_bw="0">
+<Node id="56" bw="0" op_0_bw="0">
 <![CDATA[
 ._crit_edge:0 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit
 
@@ -390,9 +390,9 @@ branch5:4 %switch_ln11 = switch i32 %reducer_circuit_levels_num_items_0_load, vo
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="34" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="35" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-branch5:0 %level_out_label = phi i32 %label_read, void %branch4, i32 %reducer_circuit_levels_buffer_label_0_0_load, void
+branch5:0 %level_out_label = phi i32 %label_read, void %branch4, i32 %reducer_circuit_adder_levels_buffer_label_0_0_load, void
 
 ]]></Node>
 <StgValue><ssdm name="level_out_label"/></StgValue>
@@ -405,12 +405,12 @@ branch5:0 %level_out_label = phi i32 %label_read, void %branch4, i32 %reducer_ci
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="36" bw="32" op_0_bw="32">
+<Node id="37" bw="32" op_0_bw="32">
 <![CDATA[
-branch5:2 %reducer_circuit_levels_num_items_1_load = load i32 %reducer_circuit_levels_num_items_1
+branch5:2 %reducer_circuit_adder_levels_num_items_1_load = load i32 %reducer_circuit_adder_levels_num_items_1
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_load"/></StgValue>
 </operation>
 
 <operation id="29" st_id="2" stage="1" lat="1">
@@ -420,23 +420,23 @@ branch5:2 %reducer_circuit_levels_num_items_1_load = load i32 %reducer_circuit_l
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="37" bw="32" op_0_bw="32">
+<Node id="38" bw="32" op_0_bw="32">
 <![CDATA[
-branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circuit_levels_buffer_value_1_0
+branch5:3 %reducer_circuit_adder_levels_buffer_value_1_0_load = load i32 %reducer_circuit_adder_levels_buffer_value_1_0
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_value_1_0_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_1_0_load"/></StgValue>
 </operation>
 
 <operation id="30" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="43" bw="31" op_0_bw="31" op_1_bw="32" op_2_bw="32" op_3_bw="32">
+<Node id="44" bw="31" op_0_bw="31" op_1_bw="32" op_2_bw="32" op_3_bw="32">
 <![CDATA[
 :0 %tmp = partselect i31 @_ssdm_op_PartSelect.i31.i32.i32.i32, i32 %level_out_label, i32 1, i32 31
 
@@ -448,11 +448,11 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>Cmp</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="44" bw="1" op_0_bw="31" op_1_bw="31">
+<Node id="45" bw="1" op_0_bw="31" op_1_bw="31">
 <![CDATA[
 :1 %icmp_ln18 = icmp_slt  i31 %tmp, i31 1
 
@@ -464,11 +464,11 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="45" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="46" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
 :2 %br_ln18 = br i1 %icmp_ln18, void %_ZN13reducer_level3addER12reducer_data.exit, void
 
@@ -480,14 +480,14 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="47" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="48" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:0 %store_ln20 = store i1 1, i1 %reducer_circuit_levels_valid_0
+:0 %store_ln20 = store i1 1, i1 %reducer_circuit_adder_levels_valid_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln20"/></StgValue>
@@ -497,12 +497,12 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="48" bw="0" op_0_bw="0">
+<Node id="49" bw="0" op_0_bw="0">
 <![CDATA[
 :1 %br_ln23 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread
 
@@ -514,11 +514,11 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="53" bw="0" op_0_bw="0">
+<Node id="54" bw="0" op_0_bw="0">
 <![CDATA[
 :3 %br_ln16 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread
 
@@ -530,71 +530,71 @@ branch5:3 %reducer_circuit_levels_buffer_value_1_0_load = load i32 %reducer_circ
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="57" bw="1" op_0_bw="1" op_1_bw="0">
+<Node id="58" bw="1" op_0_bw="1" op_1_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit:0 %reducer_circuit_levels_valid_0_load = load i1 %reducer_circuit_levels_valid_0
+_ZN13reducer_level3addER12reducer_data.exit:0 %reducer_circuit_adder_levels_valid_0_load = load i1 %reducer_circuit_adder_levels_valid_0
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_valid_0_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_valid_0_load"/></StgValue>
 </operation>
 
 <operation id="37" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="58" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="59" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit:1 %br_ln48 = br i1 %reducer_circuit_levels_valid_0_load, void %mergeST, void %_ZN13reducer_level3addER12reducer_data.exit.thread
+_ZN13reducer_level3addER12reducer_data.exit:1 %br_ln55 = br i1 %reducer_circuit_adder_levels_valid_0_load, void %mergeST, void %_ZN13reducer_level3addER12reducer_data.exit.thread
 
 ]]></Node>
-<StgValue><ssdm name="br_ln48"/></StgValue>
+<StgValue><ssdm name="br_ln55"/></StgValue>
 </operation>
 
 <operation id="38" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="60" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
+<Node id="61" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit.thread:0 %reducer_circuit_levels_num_items_0_new_0 = phi i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_data.exit, i32 0, void, i32 0, void
+_ZN13reducer_level3addER12reducer_data.exit.thread:0 %reducer_circuit_adder_levels_num_items_0_new_0 = phi i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_data.exit, i32 0, void, i32 0, void
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_0_new_0"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_0_new_0"/></StgValue>
 </operation>
 
 <operation id="39" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="62" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
+<Node id="63" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
 <![CDATA[
 _ZN13reducer_level3addER12reducer_data.exit.thread:2 %level_out_017_31 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit, i32 %level_out_value_1, void, i32 %level_out_value, void
 
@@ -606,16 +606,16 @@ _ZN13reducer_level3addER12reducer_data.exit.thread:2 %level_out_017_31 = phi i32
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="63" bw="1" op_0_bw="32">
+<Node id="64" bw="1" op_0_bw="32">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit.thread:3 %trunc_ln34_1 = trunc i32 %reducer_circuit_levels_num_items_1_load
+_ZN13reducer_level3addER12reducer_data.exit.thread:3 %trunc_ln34_1 = trunc i32 %reducer_circuit_adder_levels_num_items_1_load
 
 ]]></Node>
 <StgValue><ssdm name="trunc_ln34_1"/></StgValue>
@@ -625,14 +625,14 @@ _ZN13reducer_level3addER12reducer_data.exit.thread:3 %trunc_ln34_1 = trunc i32 %
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="64" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="65" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
 _ZN13reducer_level3addER12reducer_data.exit.thread:4 %br_ln34 = br i1 %trunc_ln34_1, void %branch2, void %branch3
 
@@ -644,19 +644,19 @@ _ZN13reducer_level3addER12reducer_data.exit.thread:4 %br_ln34 = br i1 %trunc_ln3
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="66" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<Node id="67" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-branch2:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_levels_buffer_value_1_0
+branch2:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_adder_levels_buffer_value_1_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -666,17 +666,17 @@ branch2:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_levels
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="67" bw="0" op_0_bw="0">
+<Node id="68" bw="0" op_0_bw="0">
 <![CDATA[
 branch2:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread16
 
@@ -688,19 +688,19 @@ branch2:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="69" bw="0" op_0_bw="32" op_1_bw="32">
+<Node id="70" bw="0" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch3:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_levels_buffer_value_1_1
+branch3:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_adder_levels_buffer_value_1_1
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -710,17 +710,17 @@ branch3:0 %store_ln34 = store i32 %level_out_017_31, i32 %reducer_circuit_levels
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="70" bw="0" op_0_bw="0">
+<Node id="71" bw="0" op_0_bw="0">
 <![CDATA[
 branch3:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread16
 
@@ -732,33 +732,33 @@ branch3:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="72" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="73" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit.thread16:0 %reducer_circuit_levels_buffer_value_1_0_loc_0 = phi i32 %level_out_017_31, void %branch2, i32 %reducer_circuit_levels_buffer_value_1_0_load, void %branch3
+_ZN13reducer_level3addER12reducer_data.exit.thread16:0 %reducer_circuit_adder_levels_buffer_value_1_0_loc_0 = phi i32 %level_out_017_31, void %branch2, i32 %reducer_circuit_adder_levels_buffer_value_1_0_load, void %branch3
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_value_1_0_loc_0"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_1_0_loc_0"/></StgValue>
 </operation>
 
 <operation id="47" st_id="2" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="73" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="74" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
 _ZN13reducer_level3addER12reducer_data.exit.thread16:1 %br_ln34 = br i1 %trunc_ln34_1, void %branch6, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622
 
@@ -770,16 +770,16 @@ _ZN13reducer_level3addER12reducer_data.exit.thread16:1 %br_ln34 = br i1 %trunc_l
 <core>Adder</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="78" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="79" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit.thread1622:0 %add_ln35_1 = add i32 %reducer_circuit_levels_num_items_1_load, i32 1
+_ZN13reducer_level3addER12reducer_data.exit.thread1622:0 %add_ln35_1 = add i32 %reducer_circuit_adder_levels_num_items_1_load, i32 1
 
 ]]></Node>
 <StgValue><ssdm name="add_ln35_1"/></StgValue>
@@ -789,19 +789,19 @@ _ZN13reducer_level3addER12reducer_data.exit.thread1622:0 %add_ln35_1 = add i32 %
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="79" bw="0" op_0_bw="0">
+<Node id="80" bw="0" op_0_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit.thread1622:1 %br_ln49 = br void %mergeST
+_ZN13reducer_level3addER12reducer_data.exit.thread1622:1 %br_ln56 = br void %mergeST
 
 ]]></Node>
-<StgValue><ssdm name="br_ln49"/></StgValue>
+<StgValue><ssdm name="br_ln56"/></StgValue>
 </operation>
 
 <operation id="50" st_id="2" stage="1" lat="1">
@@ -811,12 +811,12 @@ _ZN13reducer_level3addER12reducer_data.exit.thread1622:1 %br_ln49 = br void %mer
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="81" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="82" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-mergeST:0 %reducer_circuit_levels_num_items_0_new_1 = phi i32 %reducer_circuit_levels_num_items_0_new_0, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_data.exit
+mergeST:0 %reducer_circuit_adder_levels_num_items_0_new_1 = phi i32 %reducer_circuit_adder_levels_num_items_0_new_0, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %add_ln35, void %_ZN13reducer_level3addER12reducer_data.exit
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_0_new_1"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_0_new_1"/></StgValue>
 </operation>
 
 <operation id="51" st_id="2" stage="1" lat="1">
@@ -826,9 +826,9 @@ mergeST:0 %reducer_circuit_levels_num_items_0_new_1 = phi i32 %reducer_circuit_l
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="85" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<Node id="86" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
 <![CDATA[
-mergeST:4 %store_ln35 = store i32 %reducer_circuit_levels_num_items_0_new_1, i32 %reducer_circuit_levels_num_items_0
+mergeST:4 %store_ln35 = store i32 %reducer_circuit_adder_levels_num_items_0_new_1, i32 %reducer_circuit_adder_levels_num_items_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln35"/></StgValue>
@@ -841,14 +841,14 @@ mergeST:4 %store_ln35 = store i32 %reducer_circuit_levels_num_items_0_new_1, i32
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="61" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
+<Node id="62" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
 <![CDATA[
 _ZN13reducer_level3addER12reducer_data.exit.thread:1 %level_out_118_32 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit, i32 %level_out_label, void, i32 %level_out_label, void
 
@@ -860,19 +860,19 @@ _ZN13reducer_level3addER12reducer_data.exit.thread:1 %level_out_118_32 = phi i32
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="75" bw="0" op_0_bw="32" op_1_bw="32">
+<Node id="76" bw="0" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-branch6:0 %store_ln34 = store i32 %level_out_118_32, i32 %reducer_circuit_levels_buffer_label_1_0
+branch6:0 %store_ln34 = store i32 %level_out_118_32, i32 %reducer_circuit_adder_levels_buffer_label_1_0
 
 ]]></Node>
 <StgValue><ssdm name="store_ln34"/></StgValue>
@@ -882,17 +882,17 @@ branch6:0 %store_ln34 = store i32 %level_out_118_32, i32 %reducer_circuit_levels
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="76" bw="0" op_0_bw="0">
+<Node id="77" bw="0" op_0_bw="0">
 <![CDATA[
 branch6:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread1622
 
@@ -907,12 +907,12 @@ branch6:1 %br_ln34 = br void %_ZN13reducer_level3addER12reducer_data.exit.thread
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="82" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0">
+<Node id="83" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0">
 <![CDATA[
-mergeST:1 %reducer_circuit_levels_num_items_1_flag_0 = phi i1 1, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i1 0, void %_ZN13reducer_level3addER12reducer_data.exit
+mergeST:1 %reducer_circuit_adder_levels_num_items_1_flag_0 = phi i1 1, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i1 0, void %_ZN13reducer_level3addER12reducer_data.exit
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_flag_0"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_flag_0"/></StgValue>
 </operation>
 
 <operation id="56" st_id="3" stage="1" lat="1">
@@ -922,9 +922,9 @@ mergeST:1 %reducer_circuit_levels_num_items_1_flag_0 = phi i1 1, void %_ZN13redu
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="83" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="84" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-mergeST:2 %out_data_value_1 = phi i32 %reducer_circuit_levels_buffer_value_1_0_loc_0, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %reducer_circuit_levels_buffer_value_1_0_load, void %_ZN13reducer_level3addER12reducer_data.exit
+mergeST:2 %out_data_value_1 = phi i32 %reducer_circuit_adder_levels_buffer_value_1_0_loc_0, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %reducer_circuit_adder_levels_buffer_value_1_0_load, void %_ZN13reducer_level3addER12reducer_data.exit
 
 ]]></Node>
 <StgValue><ssdm name="out_data_value_1"/></StgValue>
@@ -937,9 +937,9 @@ mergeST:2 %out_data_value_1 = phi i32 %reducer_circuit_levels_buffer_value_1_0_l
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="84" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="85" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
 <![CDATA[
-mergeST:3 %empty = phi i32 %add_ln35_1, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %reducer_circuit_levels_num_items_1_load, void %_ZN13reducer_level3addER12reducer_data.exit
+mergeST:3 %empty = phi i32 %add_ln35_1, void %_ZN13reducer_level3addER12reducer_data.exit.thread1622, i32 %reducer_circuit_adder_levels_num_items_1_load, void %_ZN13reducer_level3addER12reducer_data.exit
 
 ]]></Node>
 <StgValue><ssdm name="empty"/></StgValue>
@@ -952,7 +952,7 @@ mergeST:3 %empty = phi i32 %add_ln35_1, void %_ZN13reducer_level3addER12reducer_
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="86" bw="0" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="0">
+<Node id="87" bw="0" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0" op_6_bw="32" op_7_bw="0">
 <![CDATA[
 mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32 1, void, i32 0, void
 
@@ -968,9 +968,9 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="88" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="89" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:0 %store_ln26 = store i1 0, i1 %reducer_circuit_levels_valid_1
+:0 %store_ln26 = store i1 0, i1 %reducer_circuit_adder_levels_valid_1
 
 ]]></Node>
 <StgValue><ssdm name="store_ln26"/></StgValue>
@@ -984,7 +984,7 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="89" bw="0" op_0_bw="0">
+<Node id="90" bw="0" op_0_bw="0">
 <![CDATA[
 :1 %br_ln29 = br void %._crit_edge1
 
@@ -1000,9 +1000,9 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="91" bw="32" op_0_bw="32" op_1_bw="0">
+<Node id="92" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:0 %out_data_label = load i32 %reducer_circuit_levels_buffer_label_1_0
+:0 %out_data_label = load i32 %reducer_circuit_adder_levels_buffer_label_1_0
 
 ]]></Node>
 <StgValue><ssdm name="out_data_label"/></StgValue>
@@ -1016,31 +1016,15 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="92" bw="31" op_0_bw="31" op_1_bw="32" op_2_bw="32" op_3_bw="32">
+<Node id="93" bw="1" op_0_bw="1">
 <![CDATA[
-:1 %tmp_1 = partselect i31 @_ssdm_op_PartSelect.i31.i32.i32.i32, i32 %out_data_label, i32 1, i32 31
+:1 %reducer_circuit_adder_levels_curr_level_1_load = load i1 %reducer_circuit_adder_levels_curr_level_1
 
 ]]></Node>
-<StgValue><ssdm name="tmp_1"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_curr_level_1_load"/></StgValue>
 </operation>
 
 <operation id="63" st_id="3" stage="1" lat="1">
-<core>Cmp</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="empty" val="1"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="93" bw="1" op_0_bw="31" op_1_bw="31">
-<![CDATA[
-:2 %icmp_ln18_1 = icmp_slt  i31 %tmp_1, i31 1
-
-]]></Node>
-<StgValue><ssdm name="icmp_ln18_1"/></StgValue>
-</operation>
-
-<operation id="64" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1048,12 +1032,28 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="94" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="94" bw="2" op_0_bw="1">
 <![CDATA[
-:3 %br_ln18 = br i1 %icmp_ln18_1, void %_ZN13reducer_level3addER12reducer_data.exit14, void
+:2 %zext_ln18 = zext i1 %reducer_circuit_adder_levels_curr_level_1_load
 
 ]]></Node>
-<StgValue><ssdm name="br_ln18"/></StgValue>
+<StgValue><ssdm name="zext_ln18"/></StgValue>
+</operation>
+
+<operation id="64" st_id="3" stage="1" lat="1">
+<core>Shifter</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="95" bw="2" op_0_bw="2" op_1_bw="2">
+<![CDATA[
+:3 %shl_ln18 = shl i2 1, i2 %zext_ln18
+
+]]></Node>
+<StgValue><ssdm name="shl_ln18"/></StgValue>
 </operation>
 
 <operation id="65" st_id="3" stage="1" lat="1">
@@ -1061,19 +1061,82 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="96" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="96" bw="3" op_0_bw="2">
 <![CDATA[
-:0 %store_ln20 = store i1 1, i1 %reducer_circuit_levels_valid_1
+:4 %zext_ln18_1 = zext i2 %shl_ln18
 
 ]]></Node>
-<StgValue><ssdm name="store_ln20"/></StgValue>
+<StgValue><ssdm name="zext_ln18_1"/></StgValue>
 </operation>
 
 <operation id="66" st_id="3" stage="1" lat="1">
+<core>Adder</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="97" bw="3" op_0_bw="3" op_1_bw="3">
+<![CDATA[
+:5 %add_ln18 = add i3 %zext_ln18_1, i3 1
+
+]]></Node>
+<StgValue><ssdm name="add_ln18"/></StgValue>
+</operation>
+
+<operation id="67" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="98" bw="32" op_0_bw="3">
+<![CDATA[
+:6 %zext_ln18_2 = zext i3 %add_ln18
+
+]]></Node>
+<StgValue><ssdm name="zext_ln18_2"/></StgValue>
+</operation>
+
+<operation id="68" st_id="3" stage="1" lat="1">
+<core>Cmp</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="99" bw="1" op_0_bw="32" op_1_bw="32">
+<![CDATA[
+:7 %icmp_ln18_1 = icmp_slt  i32 %out_data_label, i32 %zext_ln18_2
+
+]]></Node>
+<StgValue><ssdm name="icmp_ln18_1"/></StgValue>
+</operation>
+
+<operation id="69" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="100" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+:8 %br_ln18 = br i1 %icmp_ln18_1, void %_ZN13reducer_level3addER12reducer_data.exit16, void
+
+]]></Node>
+<StgValue><ssdm name="br_ln18"/></StgValue>
+</operation>
+
+<operation id="70" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1082,15 +1145,32 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="97" bw="0" op_0_bw="0">
+<Node id="102" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:1 %br_ln23 = br void %_ZN13reducer_level3addER12reducer_data.exit14.thread
+:0 %store_ln20 = store i1 1, i1 %reducer_circuit_adder_levels_valid_1
+
+]]></Node>
+<StgValue><ssdm name="store_ln20"/></StgValue>
+</operation>
+
+<operation id="71" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="103" bw="0" op_0_bw="0">
+<![CDATA[
+:1 %br_ln23 = br void %_ZN13reducer_level3addER12reducer_data.exit16.thread
 
 ]]></Node>
 <StgValue><ssdm name="br_ln23"/></StgValue>
 </operation>
 
-<operation id="67" st_id="3" stage="1" lat="1">
+<operation id="72" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1098,15 +1178,15 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="99" bw="0" op_0_bw="1" op_1_bw="1">
+<Node id="105" bw="0" op_0_bw="1" op_1_bw="1">
 <![CDATA[
-:0 %store_ln13 = store i1 1, i1 %reducer_circuit_levels_valid_1
+:0 %store_ln13 = store i1 1, i1 %reducer_circuit_adder_levels_valid_1
 
 ]]></Node>
 <StgValue><ssdm name="store_ln13"/></StgValue>
 </operation>
 
-<operation id="68" st_id="3" stage="1" lat="1">
+<operation id="73" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1114,15 +1194,15 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="100" bw="32" op_0_bw="32" op_1_bw="0">
+<Node id="106" bw="32" op_0_bw="32" op_1_bw="0">
 <![CDATA[
-:1 %reducer_circuit_levels_buffer_value_1_1_load = load i32 %reducer_circuit_levels_buffer_value_1_1
+:1 %reducer_circuit_adder_levels_buffer_value_1_1_load = load i32 %reducer_circuit_adder_levels_buffer_value_1_1
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_buffer_value_1_1_load"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_1_1_load"/></StgValue>
 </operation>
 
-<operation id="69" st_id="3" stage="1" lat="1">
+<operation id="74" st_id="3" stage="1" lat="1">
 <core>Adder</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1130,15 +1210,15 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="101" bw="32" op_0_bw="32" op_1_bw="32">
+<Node id="107" bw="32" op_0_bw="32" op_1_bw="32">
 <![CDATA[
-:2 %out_data_value = add i32 %reducer_circuit_levels_buffer_value_1_1_load, i32 %out_data_value_1
+:2 %out_data_value = add i32 %reducer_circuit_adder_levels_buffer_value_1_1_load, i32 %out_data_value_1
 
 ]]></Node>
 <StgValue><ssdm name="out_data_value"/></StgValue>
 </operation>
 
-<operation id="70" st_id="3" stage="1" lat="1">
+<operation id="75" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
@@ -1146,239 +1226,162 @@ mergeST:5 %switch_ln11 = switch i32 %empty, void %._crit_edge1, i32 2, void, i32
 </and_exp></or_exp>
 </condition>
 
-<Node id="102" bw="0" op_0_bw="0">
+<Node id="108" bw="0" op_0_bw="0">
 <![CDATA[
-:3 %br_ln16 = br void %_ZN13reducer_level3addER12reducer_data.exit14.thread
+:3 %br_ln16 = br void %_ZN13reducer_level3addER12reducer_data.exit16.thread
 
 ]]></Node>
 <StgValue><ssdm name="br_ln16"/></StgValue>
-</operation>
-
-<operation id="71" st_id="3" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="empty" val="!2"/>
-<literal name="empty" val="!1"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="104" bw="0" op_0_bw="0">
-<![CDATA[
-._crit_edge1:0 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit14
-
-]]></Node>
-<StgValue><ssdm name="br_ln0"/></StgValue>
-</operation>
-
-<operation id="72" st_id="3" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="empty" val="!2"/>
-<literal name="icmp_ln18_1" val="0"/>
-</and_exp><and_exp><literal name="empty" val="!2"/>
-<literal name="empty" val="!1"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="106" bw="1" op_0_bw="1" op_1_bw="0">
-<![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14:0 %reducer_circuit_levels_valid_1_load = load i1 %reducer_circuit_levels_valid_1
-
-]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_valid_1_load"/></StgValue>
-</operation>
-
-<operation id="73" st_id="3" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="empty" val="!2"/>
-<literal name="icmp_ln18_1" val="0"/>
-</and_exp><and_exp><literal name="empty" val="!2"/>
-<literal name="empty" val="!1"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="107" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
-<![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14:1 %br_ln53 = br i1 %reducer_circuit_levels_valid_1_load, void %_ZN13reducer_level3addER12reducer_data.exit14._crit_edge, void %_ZN13reducer_level3addER12reducer_data.exit14.thread
-
-]]></Node>
-<StgValue><ssdm name="br_ln53"/></StgValue>
-</operation>
-
-<operation id="74" st_id="3" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
-</and_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
-</and_exp><and_exp><literal name="empty" val="2"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="109" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0" op_4_bw="1" op_5_bw="0">
-<![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14.thread:0 %reducer_circuit_levels_num_items_1_flag_1 = phi i1 %reducer_circuit_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_data.exit14, i1 1, void, i1 1, void
-
-]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_flag_1"/></StgValue>
-</operation>
-
-<operation id="75" st_id="3" stage="1" lat="1">
-<core>NULL</core>
-<MemPortIdVec></MemPortIdVec>
-<condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
-</and_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
-</and_exp><and_exp><literal name="empty" val="2"/>
-</and_exp></or_exp>
-</condition>
-
-<Node id="110" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
-<![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14.thread:1 %reducer_circuit_levels_num_items_1_new_1 = phi i32 %empty, void %_ZN13reducer_level3addER12reducer_data.exit14, i32 0, void, i32 0, void
-
-]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_new_1"/></StgValue>
 </operation>
 
 <operation id="76" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
-</and_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
-</and_exp><and_exp><literal name="empty" val="2"/>
+<or_exp><and_exp><literal name="empty" val="!2"/>
+<literal name="empty" val="!1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="111" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
+<Node id="110" bw="0" op_0_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14.thread:2 %out_data_0_35 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit14, i32 %out_data_value_1, void, i32 %out_data_value, void
+._crit_edge1:0 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit16
 
 ]]></Node>
-<StgValue><ssdm name="out_data_0_35"/></StgValue>
+<StgValue><ssdm name="br_ln0"/></StgValue>
 </operation>
 
 <operation id="77" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
-</and_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
-</and_exp><and_exp><literal name="empty" val="2"/>
+<or_exp><and_exp><literal name="empty" val="!2"/>
+<literal name="icmp_ln18_1" val="0"/>
+</and_exp><and_exp><literal name="empty" val="!2"/>
+<literal name="empty" val="!1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="112" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32">
+<Node id="112" bw="1" op_0_bw="1" op_1_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14.thread:3 %write_ln54 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %out_r, i32 %out_data_0_35
+_ZN13reducer_level3addER12reducer_data.exit16:0 %reducer_circuit_adder_levels_valid_1_load = load i1 %reducer_circuit_adder_levels_valid_1
 
 ]]></Node>
-<StgValue><ssdm name="write_ln54"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_valid_1_load"/></StgValue>
 </operation>
 
 <operation id="78" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
-</and_exp><and_exp><literal name="empty" val="1"/>
-<literal name="icmp_ln18_1" val="1"/>
-</and_exp><and_exp><literal name="empty" val="2"/>
+<or_exp><and_exp><literal name="empty" val="!2"/>
+<literal name="icmp_ln18_1" val="0"/>
+</and_exp><and_exp><literal name="empty" val="!2"/>
+<literal name="empty" val="!1"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="113" bw="0" op_0_bw="0">
+<Node id="113" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14.thread:4 %br_ln54 = br void %_ZN13reducer_level3addER12reducer_data.exit14._crit_edge
+_ZN13reducer_level3addER12reducer_data.exit16:1 %br_ln60 = br i1 %reducer_circuit_adder_levels_valid_1_load, void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge, void %_ZN13reducer_level3addER12reducer_data.exit16.thread
 
 ]]></Node>
-<StgValue><ssdm name="br_ln54"/></StgValue>
+<StgValue><ssdm name="br_ln60"/></StgValue>
 </operation>
 
 <operation id="79" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
+</and_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp><and_exp><literal name="empty" val="2"/>
+</and_exp></or_exp>
 </condition>
 
-<Node id="115" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0">
+<Node id="115" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0" op_4_bw="1" op_5_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14._crit_edge:0 %reducer_circuit_levels_num_items_1_flag_2 = phi i1 %reducer_circuit_levels_num_items_1_flag_1, void %_ZN13reducer_level3addER12reducer_data.exit14.thread, i1 %reducer_circuit_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_data.exit14
+_ZN13reducer_level3addER12reducer_data.exit16.thread:0 %reducer_circuit_adder_levels_num_items_1_flag_1 = phi i1 %reducer_circuit_adder_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_data.exit16, i1 1, void, i1 1, void
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_flag_2"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_flag_1"/></StgValue>
 </operation>
 
 <operation id="80" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
+</and_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp><and_exp><literal name="empty" val="2"/>
+</and_exp></or_exp>
 </condition>
 
-<Node id="116" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<Node id="116" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14._crit_edge:1 %reducer_circuit_levels_num_items_1_new_2 = phi i32 %reducer_circuit_levels_num_items_1_new_1, void %_ZN13reducer_level3addER12reducer_data.exit14.thread, i32 %empty, void %_ZN13reducer_level3addER12reducer_data.exit14
+_ZN13reducer_level3addER12reducer_data.exit16.thread:1 %reducer_circuit_adder_levels_num_items_1_new_1 = phi i32 %empty, void %_ZN13reducer_level3addER12reducer_data.exit16, i32 0, void, i32 0, void
 
 ]]></Node>
-<StgValue><ssdm name="reducer_circuit_levels_num_items_1_new_2"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_new_1"/></StgValue>
 </operation>
 
 <operation id="81" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp></and_exp></or_exp>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
+</and_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp><and_exp><literal name="empty" val="2"/>
+</and_exp></or_exp>
 </condition>
 
-<Node id="117" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<Node id="117" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0" op_4_bw="32" op_5_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14._crit_edge:2 %br_ln0 = br i1 %reducer_circuit_levels_num_items_1_flag_2, void %_ZN13reducer_level3addER12reducer_data.exit14._crit_edge.new, void %mergeST26
+_ZN13reducer_level3addER12reducer_data.exit16.thread:2 %out_data_0_35 = phi i32 0, void %_ZN13reducer_level3addER12reducer_data.exit16, i32 %out_data_value_1, void, i32 %out_data_value, void
 
 ]]></Node>
-<StgValue><ssdm name="br_ln0"/></StgValue>
+<StgValue><ssdm name="out_data_0_35"/></StgValue>
 </operation>
 
 <operation id="82" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_1_flag_2" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
+</and_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp><and_exp><literal name="empty" val="2"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="119" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<Node id="118" bw="0" op_0_bw="0" op_1_bw="32" op_2_bw="32">
 <![CDATA[
-mergeST26:0 %store_ln35 = store i32 %reducer_circuit_levels_num_items_1_new_2, i32 %reducer_circuit_levels_num_items_1
+_ZN13reducer_level3addER12reducer_data.exit16.thread:3 %write_ln61 = write void @_ssdm_op_Write.ap_auto.i32P0A, i32 %out_r, i32 %out_data_0_35
 
 ]]></Node>
-<StgValue><ssdm name="store_ln35"/></StgValue>
+<StgValue><ssdm name="write_ln61"/></StgValue>
 </operation>
 
 <operation id="83" st_id="3" stage="1" lat="1">
 <core>NULL</core>
 <MemPortIdVec></MemPortIdVec>
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_1_flag_2" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
+</and_exp><and_exp><literal name="empty" val="1"/>
+<literal name="icmp_ln18_1" val="1"/>
+</and_exp><and_exp><literal name="empty" val="2"/>
 </and_exp></or_exp>
 </condition>
 
-<Node id="120" bw="0" op_0_bw="0">
+<Node id="119" bw="0" op_0_bw="0">
 <![CDATA[
-mergeST26:1 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit14._crit_edge.new
+_ZN13reducer_level3addER12reducer_data.exit16.thread:4 %br_ln61 = br void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge
 
 ]]></Node>
-<StgValue><ssdm name="br_ln0"/></StgValue>
+<StgValue><ssdm name="br_ln61"/></StgValue>
 </operation>
 
 <operation id="84" st_id="3" stage="1" lat="1">
@@ -1388,640 +1391,728 @@ mergeST26:1 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit14._cr
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="122" bw="0">
+<Node id="121" bw="1" op_0_bw="1" op_1_bw="0" op_2_bw="1" op_3_bw="0">
 <![CDATA[
-_ZN13reducer_level3addER12reducer_data.exit14._crit_edge.new:0 %ret_ln55 = ret
+_ZN13reducer_level3addER12reducer_data.exit16._crit_edge:0 %reducer_circuit_adder_levels_num_items_1_flag_2 = phi i1 %reducer_circuit_adder_levels_num_items_1_flag_1, void %_ZN13reducer_level3addER12reducer_data.exit16.thread, i1 %reducer_circuit_adder_levels_num_items_1_flag_0, void %_ZN13reducer_level3addER12reducer_data.exit16
 
 ]]></Node>
-<StgValue><ssdm name="ret_ln55"/></StgValue>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_flag_2"/></StgValue>
+</operation>
+
+<operation id="85" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="122" bw="32" op_0_bw="32" op_1_bw="0" op_2_bw="32" op_3_bw="0">
+<![CDATA[
+_ZN13reducer_level3addER12reducer_data.exit16._crit_edge:1 %reducer_circuit_adder_levels_num_items_1_new_2 = phi i32 %reducer_circuit_adder_levels_num_items_1_new_1, void %_ZN13reducer_level3addER12reducer_data.exit16.thread, i32 %empty, void %_ZN13reducer_level3addER12reducer_data.exit16
+
+]]></Node>
+<StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1_new_2"/></StgValue>
+</operation>
+
+<operation id="86" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="123" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
+<![CDATA[
+_ZN13reducer_level3addER12reducer_data.exit16._crit_edge:2 %br_ln0 = br i1 %reducer_circuit_adder_levels_num_items_1_flag_2, void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge.new, void %mergeST26
+
+]]></Node>
+<StgValue><ssdm name="br_ln0"/></StgValue>
+</operation>
+
+<operation id="87" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_1_flag_2" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="125" bw="0" op_0_bw="32" op_1_bw="32" op_2_bw="0">
+<![CDATA[
+mergeST26:0 %store_ln35 = store i32 %reducer_circuit_adder_levels_num_items_1_new_2, i32 %reducer_circuit_adder_levels_num_items_1
+
+]]></Node>
+<StgValue><ssdm name="store_ln35"/></StgValue>
+</operation>
+
+<operation id="88" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_1_flag_2" val="1"/>
+</and_exp></or_exp>
+</condition>
+
+<Node id="126" bw="0" op_0_bw="0">
+<![CDATA[
+mergeST26:1 %br_ln0 = br void %_ZN13reducer_level3addER12reducer_data.exit16._crit_edge.new
+
+]]></Node>
+<StgValue><ssdm name="br_ln0"/></StgValue>
+</operation>
+
+<operation id="89" st_id="3" stage="1" lat="1">
+<core>NULL</core>
+<MemPortIdVec></MemPortIdVec>
+<condition id="-1">
+<or_exp><and_exp></and_exp></or_exp>
+</condition>
+
+<Node id="128" bw="0">
+<![CDATA[
+_ZN13reducer_level3addER12reducer_data.exit16._crit_edge.new:0 %ret_ln62 = ret
+
+]]></Node>
+<StgValue><ssdm name="ret_ln62"/></StgValue>
 </operation>
 </state>
 </state_list>
 
 
 <ports>
-<port id="104" name="out_r" dir="1" iftype="0">
+<port id="109" name="out_r" dir="1" iftype="0">
 <core>NULL</core><StgValue><ssdm name="out_r"/></StgValue>
 </port>
-<port id="105" name="value_r" dir="0" iftype="0">
+<port id="110" name="value_r" dir="0" iftype="0">
 <core>NULL</core><StgValue><ssdm name="value_r"/></StgValue>
 </port>
-<port id="106" name="label_r" dir="0" iftype="0">
+<port id="111" name="label_r" dir="0" iftype="0">
 <core>NULL</core><StgValue><ssdm name="label_r"/></StgValue>
 </port>
-<port id="107" name="reducer_circuit_levels_num_items_0" dir="2" iftype="0">
-<core>NULL</core><StgValue><ssdm name="reducer_circuit_levels_num_items_0"/></StgValue>
+<port id="112" name="reducer_circuit_adder_levels_num_items_0" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_num_items_0"/></StgValue>
 </port>
-<port id="108" name="reducer_circuit_levels_buffer_value_0_0" dir="2" iftype="0">
-<core>NULL</core><StgValue><ssdm name="reducer_circuit_levels_buffer_value_0_0"/></StgValue>
+<port id="113" name="reducer_circuit_adder_levels_buffer_value_0_0" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_0_0"/></StgValue>
 </port>
-<port id="109" name="reducer_circuit_levels_buffer_label_0_0" dir="2" iftype="0">
-<core>NULL</core><StgValue><ssdm name="reducer_circuit_levels_buffer_label_0_0"/></StgValue>
+<port id="114" name="reducer_circuit_adder_levels_buffer_label_0_0" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_buffer_label_0_0"/></StgValue>
 </port>
-<port id="110" name="reducer_circuit_levels_num_items_1" dir="2" iftype="0">
-<core>NULL</core><StgValue><ssdm name="reducer_circuit_levels_num_items_1"/></StgValue>
+<port id="115" name="reducer_circuit_adder_levels_num_items_1" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_num_items_1"/></StgValue>
 </port>
-<port id="111" name="reducer_circuit_levels_buffer_value_1_0" dir="2" iftype="0">
-<core>NULL</core><StgValue><ssdm name="reducer_circuit_levels_buffer_value_1_0"/></StgValue>
+<port id="116" name="reducer_circuit_adder_levels_buffer_value_1_0" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_1_0"/></StgValue>
 </port>
-<port id="112" name="reducer_circuit_levels_valid_0" dir="2" iftype="0">
-<core>NULL</core><StgValue><ssdm name="reducer_circuit_levels_valid_0"/></StgValue>
+<port id="117" name="reducer_circuit_adder_levels_valid_0" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_valid_0"/></StgValue>
 </port>
-<port id="113" name="reducer_circuit_levels_buffer_value_0_1" dir="2" iftype="0">
-<core>NULL</core><StgValue><ssdm name="reducer_circuit_levels_buffer_value_0_1"/></StgValue>
+<port id="118" name="reducer_circuit_adder_levels_buffer_value_0_1" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_0_1"/></StgValue>
 </port>
-<port id="114" name="reducer_circuit_levels_valid_1" dir="2" iftype="0">
-<core>NULL</core><StgValue><ssdm name="reducer_circuit_levels_valid_1"/></StgValue>
+<port id="119" name="reducer_circuit_adder_levels_valid_1" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_valid_1"/></StgValue>
 </port>
-<port id="115" name="reducer_circuit_levels_buffer_value_1_1" dir="2" iftype="0">
-<core>NULL</core><StgValue><ssdm name="reducer_circuit_levels_buffer_value_1_1"/></StgValue>
+<port id="120" name="reducer_circuit_adder_levels_buffer_value_1_1" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_buffer_value_1_1"/></StgValue>
 </port>
-<port id="116" name="reducer_circuit_levels_buffer_label_1_0" dir="2" iftype="0">
-<core>NULL</core><StgValue><ssdm name="reducer_circuit_levels_buffer_label_1_0"/></StgValue>
+<port id="121" name="reducer_circuit_adder_levels_buffer_label_1_0" dir="2" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_buffer_label_1_0"/></StgValue>
+</port>
+<port id="122" name="reducer_circuit_adder_levels_curr_level_1" dir="0" iftype="0">
+<core>NULL</core><StgValue><ssdm name="reducer_circuit_adder_levels_curr_level_1"/></StgValue>
 </port>
 </ports>
 
 
 <dataflows>
-<dataflow id="118" from="_ssdm_op_Read.ap_auto.i32" to="label_read" fromId="117" toId="4">
+<dataflow id="124" from="_ssdm_op_Read.ap_auto.i32" to="label_read" fromId="123" toId="4">
 </dataflow>
-<dataflow id="119" from="label_r" to="label_read" fromId="106" toId="4">
+<dataflow id="125" from="label_r" to="label_read" fromId="111" toId="4">
 </dataflow>
-<dataflow id="120" from="_ssdm_op_Read.ap_auto.i32" to="value_read" fromId="117" toId="5">
+<dataflow id="126" from="_ssdm_op_Read.ap_auto.i32" to="value_read" fromId="123" toId="5">
 </dataflow>
-<dataflow id="121" from="value_r" to="value_read" fromId="105" toId="5">
+<dataflow id="127" from="value_r" to="value_read" fromId="110" toId="5">
 </dataflow>
-<dataflow id="122" from="reducer_circuit_levels_num_items_0" to="reducer_circuit_levels_num_items_0_load" fromId="107" toId="6">
+<dataflow id="128" from="reducer_circuit_adder_levels_num_items_0" to="reducer_circuit_adder_levels_num_items_0_load" fromId="112" toId="6">
 </dataflow>
-<dataflow id="123" from="reducer_circuit_levels_num_items_0_load" to="trunc_ln34" fromId="6" toId="7">
+<dataflow id="129" from="reducer_circuit_adder_levels_num_items_0_load" to="trunc_ln34" fromId="6" toId="7">
 </dataflow>
-<dataflow id="124" from="reducer_circuit_levels_buffer_value_0_0" to="reducer_circuit_levels_buffer_value_0_0_load" fromId="108" toId="8">
+<dataflow id="130" from="reducer_circuit_adder_levels_buffer_value_0_0" to="reducer_circuit_adder_levels_buffer_value_0_0_load" fromId="113" toId="8">
 </dataflow>
-<dataflow id="125" from="trunc_ln34" to="br_ln34" fromId="7" toId="9">
+<dataflow id="131" from="trunc_ln34" to="br_ln34" fromId="7" toId="9">
 </dataflow>
-<dataflow id="126" from="value_read" to="store_ln34" fromId="5" toId="10">
+<dataflow id="132" from="value_read" to="store_ln34" fromId="5" toId="10">
 </dataflow>
-<dataflow id="127" from="reducer_circuit_levels_buffer_value_0_0" to="store_ln34" fromId="108" toId="10">
+<dataflow id="133" from="reducer_circuit_adder_levels_buffer_value_0_0" to="store_ln34" fromId="113" toId="10">
 </dataflow>
-<dataflow id="128" from="value_read" to="store_ln34" fromId="5" toId="12">
+<dataflow id="134" from="value_read" to="store_ln34" fromId="5" toId="12">
 </dataflow>
-<dataflow id="129" from="reducer_circuit_levels_buffer_value_0_1" to="store_ln34" fromId="113" toId="12">
+<dataflow id="135" from="reducer_circuit_adder_levels_buffer_value_0_1" to="store_ln34" fromId="118" toId="12">
 </dataflow>
-<dataflow id="130" from="value_read" to="level_out_value_1" fromId="5" toId="14">
+<dataflow id="136" from="value_read" to="level_out_value_1" fromId="5" toId="14">
 <condition id="-1">
 <or_exp><and_exp><literal name="trunc_ln34" val="0"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="131" from="br_ln34" to="level_out_value_1" fromId="11" toId="14">
+<dataflow id="137" from="br_ln34" to="level_out_value_1" fromId="11" toId="14">
 </dataflow>
-<dataflow id="132" from="reducer_circuit_levels_buffer_value_0_0_load" to="level_out_value_1" fromId="8" toId="14">
+<dataflow id="138" from="reducer_circuit_adder_levels_buffer_value_0_0_load" to="level_out_value_1" fromId="8" toId="14">
 <condition id="-1">
 <or_exp><and_exp><literal name="trunc_ln34" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="133" from="br_ln34" to="level_out_value_1" fromId="13" toId="14">
+<dataflow id="139" from="br_ln34" to="level_out_value_1" fromId="13" toId="14">
 </dataflow>
-<dataflow id="134" from="reducer_circuit_levels_buffer_label_0_0" to="reducer_circuit_levels_buffer_label_0_0_load" fromId="109" toId="15">
+<dataflow id="140" from="reducer_circuit_adder_levels_buffer_label_0_0" to="reducer_circuit_adder_levels_buffer_label_0_0_load" fromId="114" toId="15">
 </dataflow>
-<dataflow id="135" from="trunc_ln34" to="br_ln34" fromId="7" toId="16">
+<dataflow id="141" from="trunc_ln34" to="br_ln34" fromId="7" toId="16">
 </dataflow>
-<dataflow id="136" from="label_read" to="store_ln34" fromId="4" toId="17">
+<dataflow id="142" from="label_read" to="store_ln34" fromId="4" toId="17">
 </dataflow>
-<dataflow id="137" from="reducer_circuit_levels_buffer_label_0_0" to="store_ln34" fromId="109" toId="17">
+<dataflow id="143" from="reducer_circuit_adder_levels_buffer_label_0_0" to="store_ln34" fromId="114" toId="17">
 </dataflow>
-<dataflow id="138" from="reducer_circuit_levels_num_items_0_load" to="add_ln35" fromId="6" toId="19">
+<dataflow id="144" from="reducer_circuit_adder_levels_num_items_0_load" to="add_ln35" fromId="6" toId="19">
 </dataflow>
-<dataflow id="140" from="StgValue_139" to="add_ln35" fromId="139" toId="19">
+<dataflow id="146" from="StgValue_145" to="add_ln35" fromId="145" toId="19">
 </dataflow>
-<dataflow id="141" from="reducer_circuit_levels_num_items_0_load" to="switch_ln11" fromId="6" toId="20">
+<dataflow id="147" from="reducer_circuit_adder_levels_num_items_0_load" to="switch_ln11" fromId="6" toId="20">
 </dataflow>
-<dataflow id="142" from="StgValue_139" to="switch_ln11" fromId="139" toId="20">
+<dataflow id="148" from="StgValue_145" to="switch_ln11" fromId="145" toId="20">
 </dataflow>
-<dataflow id="144" from="StgValue_143" to="switch_ln11" fromId="143" toId="20">
+<dataflow id="150" from="StgValue_149" to="switch_ln11" fromId="149" toId="20">
 </dataflow>
-<dataflow id="146" from="StgValue_145" to="switch_ln11" fromId="145" toId="20">
+<dataflow id="152" from="StgValue_151" to="switch_ln11" fromId="151" toId="20">
 </dataflow>
-<dataflow id="148" from="StgValue_147" to="store_ln26" fromId="147" toId="21">
+<dataflow id="154" from="StgValue_153" to="store_ln26" fromId="153" toId="21">
 </dataflow>
-<dataflow id="149" from="reducer_circuit_levels_valid_0" to="store_ln26" fromId="112" toId="21">
+<dataflow id="155" from="reducer_circuit_adder_levels_valid_0" to="store_ln26" fromId="117" toId="21">
 </dataflow>
-<dataflow id="151" from="StgValue_150" to="store_ln13" fromId="150" toId="23">
+<dataflow id="157" from="StgValue_156" to="store_ln13" fromId="156" toId="23">
 </dataflow>
-<dataflow id="152" from="reducer_circuit_levels_valid_0" to="store_ln13" fromId="112" toId="23">
+<dataflow id="158" from="reducer_circuit_adder_levels_valid_0" to="store_ln13" fromId="117" toId="23">
 </dataflow>
-<dataflow id="153" from="reducer_circuit_levels_buffer_value_0_1" to="reducer_circuit_levels_buffer_value_0_1_load" fromId="113" toId="24">
+<dataflow id="159" from="reducer_circuit_adder_levels_buffer_value_0_1" to="reducer_circuit_adder_levels_buffer_value_0_1_load" fromId="118" toId="24">
 </dataflow>
-<dataflow id="154" from="reducer_circuit_levels_buffer_value_0_1_load" to="level_out_value" fromId="24" toId="25">
+<dataflow id="160" from="reducer_circuit_adder_levels_buffer_value_0_1_load" to="level_out_value" fromId="24" toId="25">
 </dataflow>
-<dataflow id="155" from="level_out_value_1" to="level_out_value" fromId="14" toId="25">
+<dataflow id="161" from="level_out_value_1" to="level_out_value" fromId="14" toId="25">
 </dataflow>
-<dataflow id="156" from="label_read" to="level_out_label" fromId="4" toId="27">
+<dataflow id="162" from="label_read" to="level_out_label" fromId="4" toId="27">
 <condition id="-1">
 <or_exp><and_exp><literal name="trunc_ln34" val="0"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="157" from="br_ln34" to="level_out_label" fromId="18" toId="27">
+<dataflow id="163" from="br_ln34" to="level_out_label" fromId="18" toId="27">
 </dataflow>
-<dataflow id="158" from="reducer_circuit_levels_buffer_label_0_0_load" to="level_out_label" fromId="15" toId="27">
+<dataflow id="164" from="reducer_circuit_adder_levels_buffer_label_0_0_load" to="level_out_label" fromId="15" toId="27">
 <condition id="-1">
 <or_exp><and_exp><literal name="trunc_ln34" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="159" from="br_ln34" to="level_out_label" fromId="16" toId="27">
+<dataflow id="165" from="br_ln34" to="level_out_label" fromId="16" toId="27">
 </dataflow>
-<dataflow id="160" from="reducer_circuit_levels_num_items_1" to="reducer_circuit_levels_num_items_1_load" fromId="110" toId="28">
+<dataflow id="166" from="reducer_circuit_adder_levels_num_items_1" to="reducer_circuit_adder_levels_num_items_1_load" fromId="115" toId="28">
 </dataflow>
-<dataflow id="161" from="reducer_circuit_levels_buffer_value_1_0" to="reducer_circuit_levels_buffer_value_1_0_load" fromId="111" toId="29">
+<dataflow id="167" from="reducer_circuit_adder_levels_buffer_value_1_0" to="reducer_circuit_adder_levels_buffer_value_1_0_load" fromId="116" toId="29">
 </dataflow>
-<dataflow id="163" from="_ssdm_op_PartSelect.i31.i32.i32.i32" to="tmp" fromId="162" toId="30">
+<dataflow id="169" from="_ssdm_op_PartSelect.i31.i32.i32.i32" to="tmp" fromId="168" toId="30">
 </dataflow>
-<dataflow id="164" from="level_out_label" to="tmp" fromId="27" toId="30">
+<dataflow id="170" from="level_out_label" to="tmp" fromId="27" toId="30">
 </dataflow>
-<dataflow id="165" from="StgValue_139" to="tmp" fromId="139" toId="30">
+<dataflow id="171" from="StgValue_145" to="tmp" fromId="145" toId="30">
 </dataflow>
-<dataflow id="167" from="StgValue_166" to="tmp" fromId="166" toId="30">
+<dataflow id="173" from="StgValue_172" to="tmp" fromId="172" toId="30">
 </dataflow>
-<dataflow id="168" from="tmp" to="icmp_ln18" fromId="30" toId="31">
+<dataflow id="174" from="tmp" to="icmp_ln18" fromId="30" toId="31">
 </dataflow>
-<dataflow id="170" from="StgValue_169" to="icmp_ln18" fromId="169" toId="31">
+<dataflow id="176" from="StgValue_175" to="icmp_ln18" fromId="175" toId="31">
 </dataflow>
-<dataflow id="171" from="icmp_ln18" to="br_ln18" fromId="31" toId="32">
+<dataflow id="177" from="icmp_ln18" to="br_ln18" fromId="31" toId="32">
 </dataflow>
-<dataflow id="172" from="StgValue_150" to="store_ln20" fromId="150" toId="33">
+<dataflow id="178" from="StgValue_156" to="store_ln20" fromId="156" toId="33">
 </dataflow>
-<dataflow id="173" from="reducer_circuit_levels_valid_0" to="store_ln20" fromId="112" toId="33">
+<dataflow id="179" from="reducer_circuit_adder_levels_valid_0" to="store_ln20" fromId="117" toId="33">
 </dataflow>
-<dataflow id="174" from="reducer_circuit_levels_valid_0" to="reducer_circuit_levels_valid_0_load" fromId="112" toId="36">
+<dataflow id="180" from="reducer_circuit_adder_levels_valid_0" to="reducer_circuit_adder_levels_valid_0_load" fromId="117" toId="36">
 </dataflow>
-<dataflow id="175" from="reducer_circuit_levels_valid_0_load" to="br_ln48" fromId="36" toId="37">
+<dataflow id="181" from="reducer_circuit_adder_levels_valid_0_load" to="br_ln55" fromId="36" toId="37">
 </dataflow>
-<dataflow id="176" from="add_ln35" to="reducer_circuit_levels_num_items_0_new_0" fromId="19" toId="38">
+<dataflow id="182" from="add_ln35" to="reducer_circuit_adder_levels_num_items_0_new_0" fromId="19" toId="38">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="177" from="br_ln48" to="reducer_circuit_levels_num_items_0_new_0" fromId="37" toId="38">
+<dataflow id="183" from="br_ln55" to="reducer_circuit_adder_levels_num_items_0_new_0" fromId="37" toId="38">
 </dataflow>
-<dataflow id="178" from="StgValue_143" to="reducer_circuit_levels_num_items_0_new_0" fromId="143" toId="38">
+<dataflow id="184" from="StgValue_149" to="reducer_circuit_adder_levels_num_items_0_new_0" fromId="149" toId="38">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="179" from="br_ln23" to="reducer_circuit_levels_num_items_0_new_0" fromId="34" toId="38">
+<dataflow id="185" from="br_ln23" to="reducer_circuit_adder_levels_num_items_0_new_0" fromId="34" toId="38">
 </dataflow>
-<dataflow id="180" from="StgValue_143" to="reducer_circuit_levels_num_items_0_new_0" fromId="143" toId="38">
+<dataflow id="186" from="StgValue_149" to="reducer_circuit_adder_levels_num_items_0_new_0" fromId="149" toId="38">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="181" from="br_ln16" to="reducer_circuit_levels_num_items_0_new_0" fromId="35" toId="38">
+<dataflow id="187" from="br_ln16" to="reducer_circuit_adder_levels_num_items_0_new_0" fromId="35" toId="38">
 </dataflow>
-<dataflow id="182" from="StgValue_143" to="level_out_017_31" fromId="143" toId="39">
+<dataflow id="188" from="StgValue_149" to="level_out_017_31" fromId="149" toId="39">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="183" from="br_ln48" to="level_out_017_31" fromId="37" toId="39">
+<dataflow id="189" from="br_ln55" to="level_out_017_31" fromId="37" toId="39">
 </dataflow>
-<dataflow id="184" from="level_out_value_1" to="level_out_017_31" fromId="14" toId="39">
+<dataflow id="190" from="level_out_value_1" to="level_out_017_31" fromId="14" toId="39">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="185" from="br_ln23" to="level_out_017_31" fromId="34" toId="39">
+<dataflow id="191" from="br_ln23" to="level_out_017_31" fromId="34" toId="39">
 </dataflow>
-<dataflow id="186" from="level_out_value" to="level_out_017_31" fromId="25" toId="39">
+<dataflow id="192" from="level_out_value" to="level_out_017_31" fromId="25" toId="39">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="187" from="br_ln16" to="level_out_017_31" fromId="35" toId="39">
+<dataflow id="193" from="br_ln16" to="level_out_017_31" fromId="35" toId="39">
 </dataflow>
-<dataflow id="188" from="reducer_circuit_levels_num_items_1_load" to="trunc_ln34_1" fromId="28" toId="40">
+<dataflow id="194" from="reducer_circuit_adder_levels_num_items_1_load" to="trunc_ln34_1" fromId="28" toId="40">
 </dataflow>
-<dataflow id="189" from="trunc_ln34_1" to="br_ln34" fromId="40" toId="41">
+<dataflow id="195" from="trunc_ln34_1" to="br_ln34" fromId="40" toId="41">
 </dataflow>
-<dataflow id="190" from="level_out_017_31" to="store_ln34" fromId="39" toId="42">
+<dataflow id="196" from="level_out_017_31" to="store_ln34" fromId="39" toId="42">
 </dataflow>
-<dataflow id="191" from="reducer_circuit_levels_buffer_value_1_0" to="store_ln34" fromId="111" toId="42">
+<dataflow id="197" from="reducer_circuit_adder_levels_buffer_value_1_0" to="store_ln34" fromId="116" toId="42">
 </dataflow>
-<dataflow id="192" from="level_out_017_31" to="store_ln34" fromId="39" toId="44">
+<dataflow id="198" from="level_out_017_31" to="store_ln34" fromId="39" toId="44">
 </dataflow>
-<dataflow id="193" from="reducer_circuit_levels_buffer_value_1_1" to="store_ln34" fromId="115" toId="44">
+<dataflow id="199" from="reducer_circuit_adder_levels_buffer_value_1_1" to="store_ln34" fromId="120" toId="44">
 </dataflow>
-<dataflow id="194" from="level_out_017_31" to="reducer_circuit_levels_buffer_value_1_0_loc_0" fromId="39" toId="46">
+<dataflow id="200" from="level_out_017_31" to="reducer_circuit_adder_levels_buffer_value_1_0_loc_0" fromId="39" toId="46">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="0"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="195" from="br_ln34" to="reducer_circuit_levels_buffer_value_1_0_loc_0" fromId="43" toId="46">
+<dataflow id="201" from="br_ln34" to="reducer_circuit_adder_levels_buffer_value_1_0_loc_0" fromId="43" toId="46">
 </dataflow>
-<dataflow id="196" from="reducer_circuit_levels_buffer_value_1_0_load" to="reducer_circuit_levels_buffer_value_1_0_loc_0" fromId="29" toId="46">
+<dataflow id="202" from="reducer_circuit_adder_levels_buffer_value_1_0_load" to="reducer_circuit_adder_levels_buffer_value_1_0_loc_0" fromId="29" toId="46">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 <literal name="trunc_ln34_1" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="197" from="br_ln34" to="reducer_circuit_levels_buffer_value_1_0_loc_0" fromId="45" toId="46">
+<dataflow id="203" from="br_ln34" to="reducer_circuit_adder_levels_buffer_value_1_0_loc_0" fromId="45" toId="46">
 </dataflow>
-<dataflow id="198" from="trunc_ln34_1" to="br_ln34" fromId="40" toId="47">
+<dataflow id="204" from="trunc_ln34_1" to="br_ln34" fromId="40" toId="47">
 </dataflow>
-<dataflow id="199" from="reducer_circuit_levels_num_items_1_load" to="add_ln35_1" fromId="28" toId="48">
+<dataflow id="205" from="reducer_circuit_adder_levels_num_items_1_load" to="add_ln35_1" fromId="28" toId="48">
 </dataflow>
-<dataflow id="200" from="StgValue_139" to="add_ln35_1" fromId="139" toId="48">
+<dataflow id="206" from="StgValue_145" to="add_ln35_1" fromId="145" toId="48">
 </dataflow>
-<dataflow id="201" from="reducer_circuit_levels_num_items_0_new_0" to="reducer_circuit_levels_num_items_0_new_1" fromId="38" toId="50">
+<dataflow id="207" from="reducer_circuit_adder_levels_num_items_0_new_0" to="reducer_circuit_adder_levels_num_items_0_new_1" fromId="38" toId="50">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="202" from="br_ln49" to="reducer_circuit_levels_num_items_0_new_1" fromId="49" toId="50">
+<dataflow id="208" from="br_ln56" to="reducer_circuit_adder_levels_num_items_0_new_1" fromId="49" toId="50">
 </dataflow>
-<dataflow id="203" from="add_ln35" to="reducer_circuit_levels_num_items_0_new_1" fromId="19" toId="50">
+<dataflow id="209" from="add_ln35" to="reducer_circuit_adder_levels_num_items_0_new_1" fromId="19" toId="50">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="204" from="br_ln48" to="reducer_circuit_levels_num_items_0_new_1" fromId="37" toId="50">
+<dataflow id="210" from="br_ln55" to="reducer_circuit_adder_levels_num_items_0_new_1" fromId="37" toId="50">
 </dataflow>
-<dataflow id="205" from="reducer_circuit_levels_num_items_0_new_1" to="store_ln35" fromId="50" toId="51">
+<dataflow id="211" from="reducer_circuit_adder_levels_num_items_0_new_1" to="store_ln35" fromId="50" toId="51">
 </dataflow>
-<dataflow id="206" from="reducer_circuit_levels_num_items_0" to="store_ln35" fromId="107" toId="51">
+<dataflow id="212" from="reducer_circuit_adder_levels_num_items_0" to="store_ln35" fromId="112" toId="51">
 </dataflow>
-<dataflow id="207" from="StgValue_143" to="level_out_118_32" fromId="143" toId="52">
+<dataflow id="213" from="StgValue_149" to="level_out_118_32" fromId="149" toId="52">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="1"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="208" from="br_ln48" to="level_out_118_32" fromId="37" toId="52">
+<dataflow id="214" from="br_ln55" to="level_out_118_32" fromId="37" toId="52">
 </dataflow>
-<dataflow id="209" from="level_out_label" to="level_out_118_32" fromId="27" toId="52">
+<dataflow id="215" from="level_out_label" to="level_out_118_32" fromId="27" toId="52">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="210" from="br_ln23" to="level_out_118_32" fromId="34" toId="52">
+<dataflow id="216" from="br_ln23" to="level_out_118_32" fromId="34" toId="52">
 </dataflow>
-<dataflow id="211" from="level_out_label" to="level_out_118_32" fromId="27" toId="52">
+<dataflow id="217" from="level_out_label" to="level_out_118_32" fromId="27" toId="52">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="212" from="br_ln16" to="level_out_118_32" fromId="35" toId="52">
+<dataflow id="218" from="br_ln16" to="level_out_118_32" fromId="35" toId="52">
 </dataflow>
-<dataflow id="213" from="level_out_118_32" to="store_ln34" fromId="52" toId="53">
+<dataflow id="219" from="level_out_118_32" to="store_ln34" fromId="52" toId="53">
 </dataflow>
-<dataflow id="214" from="reducer_circuit_levels_buffer_label_1_0" to="store_ln34" fromId="116" toId="53">
+<dataflow id="220" from="reducer_circuit_adder_levels_buffer_label_1_0" to="store_ln34" fromId="121" toId="53">
 </dataflow>
-<dataflow id="215" from="StgValue_150" to="reducer_circuit_levels_num_items_1_flag_0" fromId="150" toId="55">
+<dataflow id="221" from="StgValue_156" to="reducer_circuit_adder_levels_num_items_1_flag_0" fromId="156" toId="55">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="216" from="br_ln49" to="reducer_circuit_levels_num_items_1_flag_0" fromId="49" toId="55">
+<dataflow id="222" from="br_ln56" to="reducer_circuit_adder_levels_num_items_1_flag_0" fromId="49" toId="55">
 </dataflow>
-<dataflow id="217" from="StgValue_147" to="reducer_circuit_levels_num_items_1_flag_0" fromId="147" toId="55">
+<dataflow id="223" from="StgValue_153" to="reducer_circuit_adder_levels_num_items_1_flag_0" fromId="153" toId="55">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="218" from="br_ln48" to="reducer_circuit_levels_num_items_1_flag_0" fromId="37" toId="55">
+<dataflow id="224" from="br_ln55" to="reducer_circuit_adder_levels_num_items_1_flag_0" fromId="37" toId="55">
 </dataflow>
-<dataflow id="219" from="reducer_circuit_levels_buffer_value_1_0_loc_0" to="out_data_value_1" fromId="46" toId="56">
+<dataflow id="225" from="reducer_circuit_adder_levels_buffer_value_1_0_loc_0" to="out_data_value_1" fromId="46" toId="56">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="220" from="br_ln49" to="out_data_value_1" fromId="49" toId="56">
+<dataflow id="226" from="br_ln56" to="out_data_value_1" fromId="49" toId="56">
 </dataflow>
-<dataflow id="221" from="reducer_circuit_levels_buffer_value_1_0_load" to="out_data_value_1" fromId="29" toId="56">
+<dataflow id="227" from="reducer_circuit_adder_levels_buffer_value_1_0_load" to="out_data_value_1" fromId="29" toId="56">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="222" from="br_ln48" to="out_data_value_1" fromId="37" toId="56">
+<dataflow id="228" from="br_ln55" to="out_data_value_1" fromId="37" toId="56">
 </dataflow>
-<dataflow id="223" from="add_ln35_1" to="empty" fromId="48" toId="57">
+<dataflow id="229" from="add_ln35_1" to="empty" fromId="48" toId="57">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_0_load" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="0"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="0"/>
 <literal name="icmp_ln18" val="1"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="1"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="224" from="br_ln49" to="empty" fromId="49" toId="57">
+<dataflow id="230" from="br_ln56" to="empty" fromId="49" toId="57">
 </dataflow>
-<dataflow id="225" from="reducer_circuit_levels_num_items_1_load" to="empty" fromId="28" toId="57">
+<dataflow id="231" from="reducer_circuit_adder_levels_num_items_1_load" to="empty" fromId="28" toId="57">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
 <literal name="icmp_ln18" val="0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="0"/>
-</and_exp><and_exp><literal name="reducer_circuit_levels_num_items_0_load" val="!1"/>
-<literal name="reducer_circuit_levels_num_items_0_load" val="!0"/>
-<literal name="reducer_circuit_levels_valid_0_load" val="0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="0"/>
+</and_exp><and_exp><literal name="reducer_circuit_adder_levels_num_items_0_load" val="!1"/>
+<literal name="reducer_circuit_adder_levels_num_items_0_load" val="!0"/>
+<literal name="reducer_circuit_adder_levels_valid_0_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="226" from="br_ln48" to="empty" fromId="37" toId="57">
+<dataflow id="232" from="br_ln55" to="empty" fromId="37" toId="57">
 </dataflow>
-<dataflow id="227" from="empty" to="switch_ln11" fromId="57" toId="58">
+<dataflow id="233" from="empty" to="switch_ln11" fromId="57" toId="58">
 </dataflow>
-<dataflow id="229" from="StgValue_228" to="switch_ln11" fromId="228" toId="58">
+<dataflow id="235" from="StgValue_234" to="switch_ln11" fromId="234" toId="58">
 </dataflow>
-<dataflow id="230" from="StgValue_139" to="switch_ln11" fromId="139" toId="58">
+<dataflow id="236" from="StgValue_145" to="switch_ln11" fromId="145" toId="58">
 </dataflow>
-<dataflow id="231" from="StgValue_143" to="switch_ln11" fromId="143" toId="58">
+<dataflow id="237" from="StgValue_149" to="switch_ln11" fromId="149" toId="58">
 </dataflow>
-<dataflow id="232" from="StgValue_147" to="store_ln26" fromId="147" toId="59">
+<dataflow id="238" from="StgValue_153" to="store_ln26" fromId="153" toId="59">
 </dataflow>
-<dataflow id="233" from="reducer_circuit_levels_valid_1" to="store_ln26" fromId="114" toId="59">
+<dataflow id="239" from="reducer_circuit_adder_levels_valid_1" to="store_ln26" fromId="119" toId="59">
 </dataflow>
-<dataflow id="234" from="reducer_circuit_levels_buffer_label_1_0" to="out_data_label" fromId="116" toId="61">
+<dataflow id="240" from="reducer_circuit_adder_levels_buffer_label_1_0" to="out_data_label" fromId="121" toId="61">
 </dataflow>
-<dataflow id="235" from="_ssdm_op_PartSelect.i31.i32.i32.i32" to="tmp_1" fromId="162" toId="62">
+<dataflow id="241" from="reducer_circuit_adder_levels_curr_level_1" to="reducer_circuit_adder_levels_curr_level_1_load" fromId="122" toId="62">
 </dataflow>
-<dataflow id="236" from="out_data_label" to="tmp_1" fromId="61" toId="62">
+<dataflow id="242" from="reducer_circuit_adder_levels_curr_level_1_load" to="zext_ln18" fromId="62" toId="63">
 </dataflow>
-<dataflow id="237" from="StgValue_139" to="tmp_1" fromId="139" toId="62">
+<dataflow id="244" from="StgValue_243" to="shl_ln18" fromId="243" toId="64">
 </dataflow>
-<dataflow id="238" from="StgValue_166" to="tmp_1" fromId="166" toId="62">
+<dataflow id="245" from="zext_ln18" to="shl_ln18" fromId="63" toId="64">
 </dataflow>
-<dataflow id="239" from="tmp_1" to="icmp_ln18_1" fromId="62" toId="63">
+<dataflow id="246" from="shl_ln18" to="zext_ln18_1" fromId="64" toId="65">
 </dataflow>
-<dataflow id="240" from="StgValue_169" to="icmp_ln18_1" fromId="169" toId="63">
+<dataflow id="247" from="zext_ln18_1" to="add_ln18" fromId="65" toId="66">
 </dataflow>
-<dataflow id="241" from="icmp_ln18_1" to="br_ln18" fromId="63" toId="64">
+<dataflow id="249" from="StgValue_248" to="add_ln18" fromId="248" toId="66">
 </dataflow>
-<dataflow id="242" from="StgValue_150" to="store_ln20" fromId="150" toId="65">
+<dataflow id="250" from="add_ln18" to="zext_ln18_2" fromId="66" toId="67">
 </dataflow>
-<dataflow id="243" from="reducer_circuit_levels_valid_1" to="store_ln20" fromId="114" toId="65">
+<dataflow id="251" from="out_data_label" to="icmp_ln18_1" fromId="61" toId="68">
 </dataflow>
-<dataflow id="244" from="StgValue_150" to="store_ln13" fromId="150" toId="67">
+<dataflow id="252" from="zext_ln18_2" to="icmp_ln18_1" fromId="67" toId="68">
 </dataflow>
-<dataflow id="245" from="reducer_circuit_levels_valid_1" to="store_ln13" fromId="114" toId="67">
+<dataflow id="253" from="icmp_ln18_1" to="br_ln18" fromId="68" toId="69">
 </dataflow>
-<dataflow id="246" from="reducer_circuit_levels_buffer_value_1_1" to="reducer_circuit_levels_buffer_value_1_1_load" fromId="115" toId="68">
+<dataflow id="254" from="StgValue_156" to="store_ln20" fromId="156" toId="70">
 </dataflow>
-<dataflow id="247" from="reducer_circuit_levels_buffer_value_1_1_load" to="out_data_value" fromId="68" toId="69">
+<dataflow id="255" from="reducer_circuit_adder_levels_valid_1" to="store_ln20" fromId="119" toId="70">
 </dataflow>
-<dataflow id="248" from="out_data_value_1" to="out_data_value" fromId="56" toId="69">
+<dataflow id="256" from="StgValue_156" to="store_ln13" fromId="156" toId="72">
 </dataflow>
-<dataflow id="249" from="reducer_circuit_levels_valid_1" to="reducer_circuit_levels_valid_1_load" fromId="114" toId="72">
+<dataflow id="257" from="reducer_circuit_adder_levels_valid_1" to="store_ln13" fromId="119" toId="72">
 </dataflow>
-<dataflow id="250" from="reducer_circuit_levels_valid_1_load" to="br_ln53" fromId="72" toId="73">
+<dataflow id="258" from="reducer_circuit_adder_levels_buffer_value_1_1" to="reducer_circuit_adder_levels_buffer_value_1_1_load" fromId="120" toId="73">
 </dataflow>
-<dataflow id="251" from="reducer_circuit_levels_num_items_1_flag_0" to="reducer_circuit_levels_num_items_1_flag_1" fromId="55" toId="74">
+<dataflow id="259" from="reducer_circuit_adder_levels_buffer_value_1_1_load" to="out_data_value" fromId="73" toId="74">
+</dataflow>
+<dataflow id="260" from="out_data_value_1" to="out_data_value" fromId="56" toId="74">
+</dataflow>
+<dataflow id="261" from="reducer_circuit_adder_levels_valid_1" to="reducer_circuit_adder_levels_valid_1_load" fromId="119" toId="77">
+</dataflow>
+<dataflow id="262" from="reducer_circuit_adder_levels_valid_1_load" to="br_ln60" fromId="77" toId="78">
+</dataflow>
+<dataflow id="263" from="reducer_circuit_adder_levels_num_items_1_flag_0" to="reducer_circuit_adder_levels_num_items_1_flag_1" fromId="55" toId="79">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="!2"/>
 <literal name="icmp_ln18_1" val="0"/>
-<literal name="reducer_circuit_levels_valid_1_load" val="1"/>
+<literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
 </and_exp><and_exp><literal name="empty" val="!2"/>
 <literal name="empty" val="!1"/>
-<literal name="reducer_circuit_levels_valid_1_load" val="1"/>
+<literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="252" from="br_ln53" to="reducer_circuit_levels_num_items_1_flag_1" fromId="73" toId="74">
+<dataflow id="264" from="br_ln60" to="reducer_circuit_adder_levels_num_items_1_flag_1" fromId="78" toId="79">
 </dataflow>
-<dataflow id="253" from="StgValue_150" to="reducer_circuit_levels_num_items_1_flag_1" fromId="150" toId="74">
+<dataflow id="265" from="StgValue_156" to="reducer_circuit_adder_levels_num_items_1_flag_1" fromId="156" toId="79">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="1"/>
 <literal name="icmp_ln18_1" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="254" from="br_ln23" to="reducer_circuit_levels_num_items_1_flag_1" fromId="66" toId="74">
+<dataflow id="266" from="br_ln23" to="reducer_circuit_adder_levels_num_items_1_flag_1" fromId="71" toId="79">
 </dataflow>
-<dataflow id="255" from="StgValue_150" to="reducer_circuit_levels_num_items_1_flag_1" fromId="150" toId="74">
+<dataflow id="267" from="StgValue_156" to="reducer_circuit_adder_levels_num_items_1_flag_1" fromId="156" toId="79">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="2"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="256" from="br_ln16" to="reducer_circuit_levels_num_items_1_flag_1" fromId="70" toId="74">
+<dataflow id="268" from="br_ln16" to="reducer_circuit_adder_levels_num_items_1_flag_1" fromId="75" toId="79">
 </dataflow>
-<dataflow id="257" from="empty" to="reducer_circuit_levels_num_items_1_new_1" fromId="57" toId="75">
+<dataflow id="269" from="empty" to="reducer_circuit_adder_levels_num_items_1_new_1" fromId="57" toId="80">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="!2"/>
 <literal name="icmp_ln18_1" val="0"/>
-<literal name="reducer_circuit_levels_valid_1_load" val="1"/>
+<literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
 </and_exp><and_exp><literal name="empty" val="!2"/>
 <literal name="empty" val="!1"/>
-<literal name="reducer_circuit_levels_valid_1_load" val="1"/>
+<literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="258" from="br_ln53" to="reducer_circuit_levels_num_items_1_new_1" fromId="73" toId="75">
+<dataflow id="270" from="br_ln60" to="reducer_circuit_adder_levels_num_items_1_new_1" fromId="78" toId="80">
 </dataflow>
-<dataflow id="259" from="StgValue_143" to="reducer_circuit_levels_num_items_1_new_1" fromId="143" toId="75">
+<dataflow id="271" from="StgValue_149" to="reducer_circuit_adder_levels_num_items_1_new_1" fromId="149" toId="80">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="1"/>
 <literal name="icmp_ln18_1" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="260" from="br_ln23" to="reducer_circuit_levels_num_items_1_new_1" fromId="66" toId="75">
+<dataflow id="272" from="br_ln23" to="reducer_circuit_adder_levels_num_items_1_new_1" fromId="71" toId="80">
 </dataflow>
-<dataflow id="261" from="StgValue_143" to="reducer_circuit_levels_num_items_1_new_1" fromId="143" toId="75">
+<dataflow id="273" from="StgValue_149" to="reducer_circuit_adder_levels_num_items_1_new_1" fromId="149" toId="80">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="2"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="262" from="br_ln16" to="reducer_circuit_levels_num_items_1_new_1" fromId="70" toId="75">
+<dataflow id="274" from="br_ln16" to="reducer_circuit_adder_levels_num_items_1_new_1" fromId="75" toId="80">
 </dataflow>
-<dataflow id="263" from="StgValue_143" to="out_data_0_35" fromId="143" toId="76">
+<dataflow id="275" from="StgValue_149" to="out_data_0_35" fromId="149" toId="81">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="!2"/>
 <literal name="icmp_ln18_1" val="0"/>
-<literal name="reducer_circuit_levels_valid_1_load" val="1"/>
+<literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
 </and_exp><and_exp><literal name="empty" val="!2"/>
 <literal name="empty" val="!1"/>
-<literal name="reducer_circuit_levels_valid_1_load" val="1"/>
+<literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="264" from="br_ln53" to="out_data_0_35" fromId="73" toId="76">
+<dataflow id="276" from="br_ln60" to="out_data_0_35" fromId="78" toId="81">
 </dataflow>
-<dataflow id="265" from="out_data_value_1" to="out_data_0_35" fromId="56" toId="76">
+<dataflow id="277" from="out_data_value_1" to="out_data_0_35" fromId="56" toId="81">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="1"/>
 <literal name="icmp_ln18_1" val="1"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="266" from="br_ln23" to="out_data_0_35" fromId="66" toId="76">
+<dataflow id="278" from="br_ln23" to="out_data_0_35" fromId="71" toId="81">
 </dataflow>
-<dataflow id="267" from="out_data_value" to="out_data_0_35" fromId="69" toId="76">
+<dataflow id="279" from="out_data_value" to="out_data_0_35" fromId="74" toId="81">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="2"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="268" from="br_ln16" to="out_data_0_35" fromId="70" toId="76">
+<dataflow id="280" from="br_ln16" to="out_data_0_35" fromId="75" toId="81">
 </dataflow>
-<dataflow id="270" from="_ssdm_op_Write.ap_auto.i32P0A" to="write_ln54" fromId="269" toId="77">
+<dataflow id="282" from="_ssdm_op_Write.ap_auto.i32P0A" to="write_ln61" fromId="281" toId="82">
 </dataflow>
-<dataflow id="271" from="out_r" to="write_ln54" fromId="104" toId="77">
+<dataflow id="283" from="out_r" to="write_ln61" fromId="109" toId="82">
 </dataflow>
-<dataflow id="272" from="out_data_0_35" to="write_ln54" fromId="76" toId="77">
+<dataflow id="284" from="out_data_0_35" to="write_ln61" fromId="81" toId="82">
 </dataflow>
-<dataflow id="273" from="reducer_circuit_levels_num_items_1_flag_1" to="reducer_circuit_levels_num_items_1_flag_2" fromId="74" toId="79">
+<dataflow id="285" from="reducer_circuit_adder_levels_num_items_1_flag_1" to="reducer_circuit_adder_levels_num_items_1_flag_2" fromId="79" toId="84">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
 </and_exp><and_exp><literal name="empty" val="1"/>
 <literal name="icmp_ln18_1" val="1"/>
 </and_exp><and_exp><literal name="empty" val="2"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="274" from="br_ln54" to="reducer_circuit_levels_num_items_1_flag_2" fromId="78" toId="79">
+<dataflow id="286" from="br_ln61" to="reducer_circuit_adder_levels_num_items_1_flag_2" fromId="83" toId="84">
 </dataflow>
-<dataflow id="275" from="reducer_circuit_levels_num_items_1_flag_0" to="reducer_circuit_levels_num_items_1_flag_2" fromId="55" toId="79">
+<dataflow id="287" from="reducer_circuit_adder_levels_num_items_1_flag_0" to="reducer_circuit_adder_levels_num_items_1_flag_2" fromId="55" toId="84">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="!2"/>
 <literal name="icmp_ln18_1" val="0"/>
-<literal name="reducer_circuit_levels_valid_1_load" val="0"/>
+<literal name="reducer_circuit_adder_levels_valid_1_load" val="0"/>
 </and_exp><and_exp><literal name="empty" val="!2"/>
 <literal name="empty" val="!1"/>
-<literal name="reducer_circuit_levels_valid_1_load" val="0"/>
+<literal name="reducer_circuit_adder_levels_valid_1_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="276" from="br_ln53" to="reducer_circuit_levels_num_items_1_flag_2" fromId="73" toId="79">
+<dataflow id="288" from="br_ln60" to="reducer_circuit_adder_levels_num_items_1_flag_2" fromId="78" toId="84">
 </dataflow>
-<dataflow id="277" from="reducer_circuit_levels_num_items_1_new_1" to="reducer_circuit_levels_num_items_1_new_2" fromId="75" toId="80">
+<dataflow id="289" from="reducer_circuit_adder_levels_num_items_1_new_1" to="reducer_circuit_adder_levels_num_items_1_new_2" fromId="80" toId="85">
 <condition id="-1">
-<or_exp><and_exp><literal name="reducer_circuit_levels_valid_1_load" val="1"/>
+<or_exp><and_exp><literal name="reducer_circuit_adder_levels_valid_1_load" val="1"/>
 </and_exp><and_exp><literal name="empty" val="1"/>
 <literal name="icmp_ln18_1" val="1"/>
 </and_exp><and_exp><literal name="empty" val="2"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="278" from="br_ln54" to="reducer_circuit_levels_num_items_1_new_2" fromId="78" toId="80">
+<dataflow id="290" from="br_ln61" to="reducer_circuit_adder_levels_num_items_1_new_2" fromId="83" toId="85">
 </dataflow>
-<dataflow id="279" from="empty" to="reducer_circuit_levels_num_items_1_new_2" fromId="57" toId="80">
+<dataflow id="291" from="empty" to="reducer_circuit_adder_levels_num_items_1_new_2" fromId="57" toId="85">
 <condition id="-1">
 <or_exp><and_exp><literal name="empty" val="!2"/>
 <literal name="icmp_ln18_1" val="0"/>
-<literal name="reducer_circuit_levels_valid_1_load" val="0"/>
+<literal name="reducer_circuit_adder_levels_valid_1_load" val="0"/>
 </and_exp><and_exp><literal name="empty" val="!2"/>
 <literal name="empty" val="!1"/>
-<literal name="reducer_circuit_levels_valid_1_load" val="0"/>
+<literal name="reducer_circuit_adder_levels_valid_1_load" val="0"/>
 </and_exp></or_exp>
 </condition>
 </dataflow>
-<dataflow id="280" from="br_ln53" to="reducer_circuit_levels_num_items_1_new_2" fromId="73" toId="80">
+<dataflow id="292" from="br_ln60" to="reducer_circuit_adder_levels_num_items_1_new_2" fromId="78" toId="85">
 </dataflow>
-<dataflow id="281" from="reducer_circuit_levels_num_items_1_flag_2" to="br_ln0" fromId="79" toId="81">
+<dataflow id="293" from="reducer_circuit_adder_levels_num_items_1_flag_2" to="br_ln0" fromId="84" toId="86">
 </dataflow>
-<dataflow id="282" from="reducer_circuit_levels_num_items_1_new_2" to="store_ln35" fromId="80" toId="82">
+<dataflow id="294" from="reducer_circuit_adder_levels_num_items_1_new_2" to="store_ln35" fromId="85" toId="87">
 </dataflow>
-<dataflow id="283" from="reducer_circuit_levels_num_items_1" to="store_ln35" fromId="110" toId="82">
+<dataflow id="295" from="reducer_circuit_adder_levels_num_items_1" to="store_ln35" fromId="115" toId="87">
 </dataflow>
-<dataflow id="284" from="trunc_ln34" to="StgValue_1" fromId="7" toId="1">
+<dataflow id="296" from="trunc_ln34" to="StgValue_1" fromId="7" toId="1">
 </dataflow>
-<dataflow id="285" from="reducer_circuit_levels_num_items_0_load" to="StgValue_1" fromId="6" toId="1">
+<dataflow id="297" from="reducer_circuit_adder_levels_num_items_0_load" to="StgValue_1" fromId="6" toId="1">
 </dataflow>
-<dataflow id="286" from="reducer_circuit_levels_num_items_0_load" to="StgValue_2" fromId="6" toId="2">
+<dataflow id="298" from="reducer_circuit_adder_levels_num_items_0_load" to="StgValue_2" fromId="6" toId="2">
 </dataflow>
-<dataflow id="287" from="icmp_ln18" to="StgValue_2" fromId="31" toId="2">
+<dataflow id="299" from="icmp_ln18" to="StgValue_2" fromId="31" toId="2">
 </dataflow>
-<dataflow id="288" from="reducer_circuit_levels_valid_0_load" to="StgValue_2" fromId="36" toId="2">
+<dataflow id="300" from="reducer_circuit_adder_levels_valid_0_load" to="StgValue_2" fromId="36" toId="2">
 </dataflow>
-<dataflow id="289" from="trunc_ln34_1" to="StgValue_2" fromId="40" toId="2">
+<dataflow id="301" from="trunc_ln34_1" to="StgValue_2" fromId="40" toId="2">
 </dataflow>
-<dataflow id="290" from="reducer_circuit_levels_num_items_0_load" to="StgValue_3" fromId="6" toId="3">
+<dataflow id="302" from="reducer_circuit_adder_levels_num_items_0_load" to="StgValue_3" fromId="6" toId="3">
 </dataflow>
-<dataflow id="291" from="icmp_ln18" to="StgValue_3" fromId="31" toId="3">
+<dataflow id="303" from="icmp_ln18" to="StgValue_3" fromId="31" toId="3">
 </dataflow>
-<dataflow id="292" from="reducer_circuit_levels_valid_0_load" to="StgValue_3" fromId="36" toId="3">
+<dataflow id="304" from="reducer_circuit_adder_levels_valid_0_load" to="StgValue_3" fromId="36" toId="3">
 </dataflow>
-<dataflow id="293" from="trunc_ln34_1" to="StgValue_3" fromId="40" toId="3">
+<dataflow id="305" from="trunc_ln34_1" to="StgValue_3" fromId="40" toId="3">
 </dataflow>
-<dataflow id="294" from="empty" to="StgValue_3" fromId="57" toId="3">
+<dataflow id="306" from="empty" to="StgValue_3" fromId="57" toId="3">
 </dataflow>
-<dataflow id="295" from="icmp_ln18_1" to="StgValue_3" fromId="63" toId="3">
+<dataflow id="307" from="icmp_ln18_1" to="StgValue_3" fromId="68" toId="3">
 </dataflow>
-<dataflow id="296" from="reducer_circuit_levels_valid_1_load" to="StgValue_3" fromId="72" toId="3">
+<dataflow id="308" from="reducer_circuit_adder_levels_valid_1_load" to="StgValue_3" fromId="77" toId="3">
 </dataflow>
-<dataflow id="297" from="reducer_circuit_levels_num_items_1_flag_2" to="StgValue_3" fromId="79" toId="3">
+<dataflow id="309" from="reducer_circuit_adder_levels_num_items_1_flag_2" to="StgValue_3" fromId="84" toId="3">
 </dataflow>
 </dataflows>
 

@@ -7,18 +7,45 @@
         </hw>
       </arg>
       <arg id="1" access_type="r" src_name="subrow_vals" src_type="int*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="Register" hw_name="subrow_vals" hw_bitwidth="32" hw_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="subrow_vals_0" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="subrow_vals_1" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="subrow_vals_2" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="subrow_vals_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
       <arg id="2" access_type="r" src_name="subrow_col_indices" src_type="int*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="Register" hw_name="subrow_col_indices" hw_bitwidth="32" hw_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="subrow_col_indices_0" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="subrow_col_indices_1" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="subrow_col_indices_2" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="subrow_col_indices_3" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="3" access_type="r" src_name="mult_enables" src_type="bool*" src_isptr="1" src_bitwidth="1" src_size_or_depth="4">
-        <hw hw_usage="data" hw_interface="BRAM" hw_name="mult_enables" hw_bitwidth="1" hw_size_or_depth="4">
-          <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
+      <arg id="3" access_type="r" src_name="mult_enables" src_type="bool*" src_isptr="1" src_bitwidth="1" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="mult_enables_0" hw_bitwidth="1" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="mult_enables_1" hw_bitwidth="1" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="mult_enables_2" hw_bitwidth="1" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="mult_enables_3" hw_bitwidth="1" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
       <arg id="4" access_type="r" src_name="label" src_type="int" src_isptr="0" src_bitwidth="32" src_size_or_depth="1">
@@ -26,79 +53,79 @@
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="5" access_type="r" src_name="init_vector" src_type="bool" src_isptr="0" src_bitwidth="1" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector" hw_bitwidth="1" hw_size_or_depth="1">
+      <arg id="5" access_type="r" src_name="init_vector" src_type="int*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_0" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_1" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_2" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_3" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_4" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_5" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_6" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_7" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_8" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_9" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_10" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_11" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_12" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_13" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_14" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_15" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_16" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_17" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_18" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_19" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_20" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_21" hw_bitwidth="32" hw_size_or_depth="1">
+          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
+        </hw>
+        <hw hw_usage="data" hw_interface="Register" hw_name="init_vector_22" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="6" access_type="r" src_name="vector" src_type="int*" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_0" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_1" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_2" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_3" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_4" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_5" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_6" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_7" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_8" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_9" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_10" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_11" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_12" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_13" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_14" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_15" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_16" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_17" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_18" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_19" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_20" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_21" hw_bitwidth="32" hw_size_or_depth="1">
-          <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
-        </hw>
-        <hw hw_usage="data" hw_interface="Register" hw_name="vector_22" hw_bitwidth="32" hw_size_or_depth="1">
+      <arg id="6" access_type="r" src_name="init" src_type="bool" src_isptr="0" src_bitwidth="1" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="init" hw_bitwidth="1" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>

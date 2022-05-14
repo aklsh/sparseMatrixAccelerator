@@ -1,0 +1,41 @@
+set depth_list {
+{out_r 1}
+{subrow_vals_0 1}
+{subrow_vals_1 1}
+{subrow_vals_2 1}
+{subrow_vals_3 1}
+{subrow_col_indices_0 1}
+{subrow_col_indices_1 1}
+{subrow_col_indices_2 1}
+{subrow_col_indices_3 1}
+{mult_enables_0 1}
+{mult_enables_1 1}
+{mult_enables_2 1}
+{mult_enables_3 1}
+{label_r 1}
+{init_vector_0 1}
+{init_vector_1 1}
+{init_vector_2 1}
+{init_vector_3 1}
+{init_vector_4 1}
+{init_vector_5 1}
+{init_vector_6 1}
+{init_vector_7 1}
+{init_vector_8 1}
+{init_vector_9 1}
+{init_vector_10 1}
+{init_vector_11 1}
+{init_vector_12 1}
+{init_vector_13 1}
+{init_vector_14 1}
+{init_vector_15 1}
+{init_vector_16 1}
+{init_vector_17 1}
+{init_vector_18 1}
+{init_vector_19 1}
+{init_vector_20 1}
+{init_vector_21 1}
+{init_vector_22 1}
+{init 1}
+}
+set trans_num 27

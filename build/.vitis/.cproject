@@ -125,7 +125,7 @@
                                 								
                                 <option id="gnu.c.link.option.libs.1027481952" name="Libraries (-l)" superClass="gnu.c.link.option.libs"/>
                                 								
-                                <option id="gnu.c.link.option.ldflags.1242296936" name="Linker flags" superClass="gnu.c.link.option.ldflags"/>
+                                <option id="gnu.c.link.option.ldflags.1242296936" name="Linker flags" superClass="gnu.c.link.option.ldflags" value="-B&quot;/usr/lib/x86_64-linux-gnu/&quot;" valueType="string"/>
                                 							
                             </tool>
                             							
@@ -139,7 +139,7 @@
                                 								
                                 <option id="gnu.cpp.link.option.libs.1011804296" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs"/>
                                 								
-                                <option id="gnu.cpp.link.option.flags.1054947886" name="Linker flags" superClass="gnu.cpp.link.option.flags"/>
+                                <option id="gnu.cpp.link.option.flags.1054947886" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-B&quot;/usr/lib/x86_64-linux-gnu/&quot;" valueType="string"/>
                                 								
                                 <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.39645346" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
                                     									
@@ -307,7 +307,7 @@
                                 								
                                 <option id="gnu.c.link.option.libs.762438604" name="Libraries (-l)" superClass="gnu.c.link.option.libs"/>
                                 								
-                                <option id="gnu.c.link.option.ldflags.972648085" name="Linker flags" superClass="gnu.c.link.option.ldflags"/>
+                                <option id="gnu.c.link.option.ldflags.972648085" name="Linker flags" superClass="gnu.c.link.option.ldflags" value="-B&quot;/usr/lib/x86_64-linux-gnu/&quot;" valueType="string"/>
                                 							
                             </tool>
                             							
@@ -321,7 +321,7 @@
                                 								
                                 <option id="gnu.cpp.link.option.libs.1762135956" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs"/>
                                 								
-                                <option id="gnu.cpp.link.option.flags.546967836" name="Linker flags" superClass="gnu.cpp.link.option.flags"/>
+                                <option id="gnu.cpp.link.option.flags.546967836" name="Linker flags" superClass="gnu.cpp.link.option.flags" value="-B&quot;/usr/lib/x86_64-linux-gnu/&quot;" valueType="string"/>
                                 								
                                 <inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1228439737" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
                                     									
