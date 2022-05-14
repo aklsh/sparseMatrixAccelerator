@@ -1,4 +1,3 @@
-//#include <iostream>
 #include <stdio.h>
 #include "hls_stream.h"
 #include "hls_math.h"
@@ -28,9 +27,8 @@ int main(){
 
 	init_storage = true;
 
-	// Call accelerate to initialize storage
-	accelerate(out, subrow_vals, subrow_col_indices, mult_enables, label, vector_x, init_storage);
-
+	// Initialization
+	initialise(vector_x, init_storage);
 	init_storage = false;
 
 	int processed_elements = 0;
@@ -76,7 +74,8 @@ int main(){
 				}
 			}
 			curr_label = curr_num_subrows - f;
-			accelerate(vector_y[row_index], curr_subrow_elements, curr_subrow_indices, curr_subrow_mult_enables, curr_label, vector_x, init_storage);
+			printf("curr_label = %d\n", curr_label);
+			accelerate(vector_y[row_index], curr_subrow_elements, curr_subrow_indices, curr_subrow_mult_enables, curr_label);
 			processed_elements += num_elements_processed_curr;
 			elements_left_curr_row -= num_elements_processed_curr;
 		}

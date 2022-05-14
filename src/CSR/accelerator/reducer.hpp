@@ -26,7 +26,6 @@ class reducer{
 		reducer_level adder_levels[NUM_REDUCER_LEVELS];
 		bool valid;
 		void reduce(int&, int, int);
-		void set_levels();
 };
 
 #endif

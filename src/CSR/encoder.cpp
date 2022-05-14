@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <vector>
 
+#define __CSR_ENCODE_ENABLE__
 #include "encoding/csr.h"
 #include "matrices/matrix.hpp"
 

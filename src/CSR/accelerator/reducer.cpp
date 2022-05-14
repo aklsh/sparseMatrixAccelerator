@@ -35,13 +35,6 @@ void reducer_level::insert(reducer_data new_data){
 	num_items++;
 }
 
-void reducer::set_levels(){
-	for(int i=0;i<NUM_REDUCER_LEVELS;i++){
-		#pragma HLS UNROLL
-		adder_levels[i].curr_level = i;
-	}
-}
-
 // Reducer circuit - takes a new sum
 void reducer::reduce(int &out, int value, int label){
 	reducer_data out_data, level_out, new_data;
