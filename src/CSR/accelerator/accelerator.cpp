@@ -2,11 +2,7 @@
 #include "accelerator.hpp"
 
 // Initialize storage with vector, set levels of reducer circuit
-void initialise(int init_vector[N], bool init){
-	#pragma HLS array_partition variable=init_vector type=complete
-	#pragma HLS array_partition variable=storage type=complete
-	#pragma HLS bind_storage variable=storage type=ram_1wnr impl=bram
-
+void initialise(int storage[N], int init_vector[N], bool init){
 	if(init){
 		set_storage_loop: for(int j=0;j<N;j++){
 			#pragma HLS UNROLL
@@ -16,13 +12,7 @@ void initialise(int init_vector[N], bool init){
 }
 
 // Multiplier nodes
-void multipliers(int subrow_vals[K], int subrow_col_indices[K], bool mult_enables[K]){
-	#pragma HLS array_partition variable=multiplier_outs type=complete
-	#pragma HLS array_partition variable=mult_enables type=complete
-	#pragma HLS array_partition variable=subrow_vals type=complete
-	#pragma HLS array_partition variable=subrow_col_indices type=complete
-	#pragma HLS array_partition variable=storage type=complete
-
+void multipliers(int multiplier_outs[K], int storage[N], int subrow_vals[K], int subrow_col_indices[K], bool mult_enables[K]){
 	multipliers_loop: for(int c=0;c<K;c++){
 		#pragma HLS UNROLL
 		if(mult_enables[c])
@@ -33,13 +23,10 @@ void multipliers(int subrow_vals[K], int subrow_col_indices[K], bool mult_enable
 }
 
 // Adder Tree
-void adders(){
+void adders(int &sum, int multiplier_outs[K]){
 	#pragma HLS EXPRESSION_BALANCE
-	#pragma HLS array_partition variable=multiplier_outs type=complete
-
 	int x = 0;
 	adder_tree: for(int p=0;p<K;p++){
-		#pragma HLS PIPELINE
 		x+=multiplier_outs[p];
 	}
 	sum = x;
@@ -47,17 +34,21 @@ void adders(){
 
 // Main compute
 void accelerate(int &out, int subrow_vals[K], int subrow_col_indices[K], bool mult_enables[K], int label, int init_vector[N], bool init){
-	#pragma HLS array_partition variable=subrow_vals type=complete
-	#pragma HLS array_partition variable=subrow_col_indices type=complete
+	#pragma HLS TOP name=accelerate
+
+	static int storage[N];
+	static reducer reducer_circuit;
+	static int multiplier_outs[K];
+	static int sum;
 
 	#pragma HLS PIPELINE
-	initialise(init_vector, init);
-	multipliers(subrow_vals, subrow_col_indices, mult_enables);
+	initialise(storage, init_vector, init);
+	multipliers(multiplier_outs, storage, subrow_vals, subrow_col_indices, mult_enables);
 	printf("mult outs: ");
 	for(int u=0;u<K;u++)
 		printf("%d ", multiplier_outs[u]);
 	printf("\n");
-	adders();
+	adders(sum, multiplier_outs);
 	printf("sum: %d\n", sum);
 	reducer_circuit.reduce(out, sum, label);
 }
