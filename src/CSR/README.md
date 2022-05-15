@@ -19,3 +19,6 @@ The code in the folder corresponds to an adaptation of the basic architecture pr
 └── matrices              # matrices dataset
     └── matrix.hpp
 ```
+
+## References
+[1] Ling Zhuo and Viktor K. Prasanna. 2005. Sparse Matrix-Vector multiplication on FPGAs. In <i>Proceedings of the 2005 ACM/SIGDA 13th international symposium on Field-programmable gate arrays</i> (<i>FPGA '05</i>). Association for Computing Machinery, New York, NY, USA, 63–74. https://doi.org/10.1145/1046192.1046202
