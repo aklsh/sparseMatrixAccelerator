@@ -3,23 +3,19 @@
   <errorLogs>
     <logs>
       <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_22' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.702+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_21' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.698+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_20' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.694+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_19' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.689+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_18' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.685+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_17' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.681+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_16' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.678+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_15' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.674+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_14' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.671+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_13' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.668+0530" type="Warning"/>
-        <logs message="WARNING: [RTGEN 206-101] Register 'p_ZL7storage_12' is power-on initialization." projectName="SPMV_CSR" solutionName="solution1" date="2022-05-14T21:00:05.665+0530" type="Warning"/>
-      </synLog>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

@@ -42,6 +42,16 @@
 			<location>/home/akileshkannan/SPMV_CSR/solution1/.tcls</location>
 		</link>
 		<link>
+			<name>solution2/constraints</name>
+			<type>2</type>
+			<location>/home/akileshkannan/SPMV_CSR/solution2/.tcls</location>
+		</link>
+		<link>
+			<name>solution3/constraints</name>
+			<type>2</type>
+			<location>/home/akileshkannan/SPMV_CSR/solution3/.tcls</location>
+		</link>
+		<link>
 			<name>source/accelerator.cpp</name>
 			<type>1</type>
 			<location>/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.cpp</location>
@@ -90,6 +100,36 @@
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
 			<location>/home/akileshkannan/SPMV_CSR/solution1/script.tcl</location>
+		</link>
+		<link>
+			<name>solution2/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/home/akileshkannan/SPMV_CSR/solution2/solution2.directive</location>
+		</link>
+		<link>
+			<name>solution2/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/home/akileshkannan/SPMV_CSR/solution2/directives.tcl</location>
+		</link>
+		<link>
+			<name>solution2/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/home/akileshkannan/SPMV_CSR/solution2/script.tcl</location>
+		</link>
+		<link>
+			<name>solution3/constraints/.xml.directive</name>
+			<type>1</type>
+			<location>/home/akileshkannan/SPMV_CSR/solution3/solution3.directive</location>
+		</link>
+		<link>
+			<name>solution3/constraints/directives.tcl</name>
+			<type>1</type>
+			<location>/home/akileshkannan/SPMV_CSR/solution3/directives.tcl</location>
+		</link>
+		<link>
+			<name>solution3/constraints/script.tcl</name>
+			<type>1</type>
+			<location>/home/akileshkannan/SPMV_CSR/solution3/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>

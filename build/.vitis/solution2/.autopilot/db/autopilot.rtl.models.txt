@@ -1,0 +1,4 @@
+accelerate_mul_32s_32s_32_2_1
+accelerate_storage_RAM_AUTO_1R1W
+reduce
+accelerate

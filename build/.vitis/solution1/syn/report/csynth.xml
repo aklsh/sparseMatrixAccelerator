@@ -623,14 +623,14 @@
             <ModuleName>accelerate</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_reduce_fu_632</InstName>
+                    <InstName>grp_reduce_fu_624</InstName>
                     <ModuleName>reduce</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>632</ID>
+                    <ID>624</ID>
                     <BindInstances>add_ln35_fu_283_p2 level_out_value_fu_305_p2 add_ln35_1_fu_362_p2 out_data_value_fu_412_p2</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>mul_32s_32s_32_2_1_U8 mul_32s_32s_32_2_1_U9 mul_32s_32s_32_2_1_U10 mul_32s_32s_32_2_1_U11 add_ln43_fu_1161_p2 add_ln43_1_fu_1167_p2 x_1_fu_1173_p2</BindInstances>
+            <BindInstances>mul_32s_32s_32_2_1_U8 mul_32s_32s_32_2_1_U9 mul_32s_32s_32_2_1_U10 mul_32s_32s_32_2_1_U11 add_ln30_fu_1153_p2 add_ln30_1_fu_1159_p2 x_1_fu_1165_p2</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -722,13 +722,13 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U8" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:29" URAM="0" VARIABLE="mul_ln29"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U9" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:29" URAM="0" VARIABLE="mul_ln29_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U10" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:29" URAM="0" VARIABLE="mul_ln29_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U11" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:29" URAM="0" VARIABLE="mul_ln29_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="tadder" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln43_fu_1161_p2" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:43" URAM="0" VARIABLE="add_ln43"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln43_1_fu_1167_p2" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:43" URAM="0" VARIABLE="add_ln43_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="tadder" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="x_1_fu_1173_p2" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:43" URAM="0" VARIABLE="x_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U8" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:19" URAM="0" VARIABLE="mul_ln19"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U9" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:19" URAM="0" VARIABLE="mul_ln19_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U10" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:19" URAM="0" VARIABLE="mul_ln19_2"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U11" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:19" URAM="0" VARIABLE="mul_ln19_3"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="tadder" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln30_fu_1153_p2" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:30" URAM="0" VARIABLE="add_ln30"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln30_1_fu_1159_p2" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:30" URAM="0" VARIABLE="add_ln30_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="tadder" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="x_1_fu_1165_p2" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:30" URAM="0" VARIABLE="x_1"/>
             </BindNodes>
         </Module>
     </ModuleInformation>
@@ -1382,23 +1382,22 @@
         <section name="M_AXI Burst Information" level="0" HEADER_NOTE="Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings."/>
     </ReportBurst>
     <PragmaReport>
-        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:6" status="valid" parentFunction="initialise" variable="init_vector" isDirective="0" options="variable=init_vector type=complete"/>
-        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:7" status="valid" parentFunction="initialise" variable="storage" isDirective="0" options="variable=storage type=complete"/>
-        <Pragma type="bind_storage" location="SPMV_CSR_src/accelerator/accelerator.cpp:8" status="valid" parentFunction="initialise" variable="storage" isDirective="0" options="variable=storage type=ram_1wnr impl=bram"/>
-        <Pragma type="unroll" location="SPMV_CSR_src/accelerator/accelerator.cpp:12" status="valid" parentFunction="initialise" variable="" isDirective="0" options=""/>
-        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:20" status="valid" parentFunction="multipliers" variable="multiplier_outs" isDirective="0" options="variable=multiplier_outs type=complete"/>
-        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:21" status="valid" parentFunction="multipliers" variable="mult_enables" isDirective="0" options="variable=mult_enables type=complete"/>
-        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:22" status="valid" parentFunction="multipliers" variable="subrow_vals" isDirective="0" options="variable=subrow_vals type=complete"/>
-        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:23" status="valid" parentFunction="multipliers" variable="subrow_col_indices" isDirective="0" options="variable=subrow_col_indices type=complete"/>
-        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:24" status="valid" parentFunction="multipliers" variable="storage" isDirective="0" options="variable=storage type=complete"/>
-        <Pragma type="unroll" location="SPMV_CSR_src/accelerator/accelerator.cpp:27" status="valid" parentFunction="multipliers" variable="" isDirective="0" options=""/>
-        <Pragma type="expression_balance" location="SPMV_CSR_src/accelerator/accelerator.cpp:37" status="valid" parentFunction="adders" variable="" isDirective="0" options=""/>
-        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:38" status="valid" parentFunction="adders" variable="multiplier_outs" isDirective="0" options="variable=multiplier_outs type=complete"/>
-        <Pragma type="pipeline" location="SPMV_CSR_src/accelerator/accelerator.cpp:42" status="valid" parentFunction="adders" variable="" isDirective="0" options=""/>
-        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:50" status="valid" parentFunction="accelerate" variable="subrow_vals" isDirective="0" options="variable=subrow_vals type=complete"/>
-        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:51" status="valid" parentFunction="accelerate" variable="subrow_col_indices" isDirective="0" options="variable=subrow_col_indices type=complete"/>
-        <Pragma type="pipeline" location="SPMV_CSR_src/accelerator/accelerator.cpp:53" status="valid" parentFunction="accelerate" variable="" isDirective="0" options=""/>
+        <Pragma type="unroll" location="SPMV_CSR_src/accelerator/accelerator.cpp:8" status="valid" parentFunction="initialise" variable="" isDirective="0" options=""/>
+        <Pragma type="unroll" location="SPMV_CSR_src/accelerator/accelerator.cpp:17" status="valid" parentFunction="multipliers" variable="" isDirective="0" options=""/>
+        <Pragma type="expression_balance" location="SPMV_CSR_src/accelerator/accelerator.cpp:27" status="valid" parentFunction="adders" variable="" isDirective="0" options=""/>
+        <Pragma type="top" location="SPMV_CSR_src/accelerator/accelerator.cpp:37" status="valid" parentFunction="accelerate" variable="" isDirective="0" options="name=accelerate"/>
+        <Pragma type="pipeline" location="SPMV_CSR_src/accelerator/accelerator.cpp:44" status="valid" parentFunction="accelerate" variable="" isDirective="0" options=""/>
         <Pragma type="unroll" location="SPMV_CSR_src/accelerator/reducer.cpp:46" status="valid" parentFunction="reduce" variable="" isDirective="0" options=""/>
+        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:37" status="valid" parentFunction="accelerate" variable="subrow_col_indices" isDirective="1" options="variable=subrow_col_indices complete dim=1"/>
+        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:37" status="valid" parentFunction="accelerate" variable="subrow_vals" isDirective="1" options="variable=subrow_vals complete dim=1"/>
+        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:27" status="valid" parentFunction="adders" variable="multiplier_outs" isDirective="1" options="variable=multiplier_outs complete dim=1"/>
+        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:6" status="valid" parentFunction="initialise" variable="init_vector" isDirective="1" options="variable=init_vector complete dim=1"/>
+        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:6" status="valid" parentFunction="initialise" variable="storage" isDirective="1" options="variable=storage complete dim=1"/>
+        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:16" status="valid" parentFunction="multipliers" variable="mult_enables" isDirective="1" options="variable=mult_enables complete dim=1"/>
+        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:16" status="valid" parentFunction="multipliers" variable="multiplier_outs" isDirective="1" options="variable=multiplier_outs complete dim=1"/>
+        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:16" status="valid" parentFunction="multipliers" variable="storage" isDirective="1" options="variable=storage complete dim=1"/>
+        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:16" status="valid" parentFunction="multipliers" variable="subrow_col_indices" isDirective="1" options="variable=subrow_col_indices complete dim=1"/>
+        <Pragma type="array_partition" location="SPMV_CSR_src/accelerator/accelerator.cpp:16" status="valid" parentFunction="multipliers" variable="subrow_vals" isDirective="1" options="variable=subrow_vals complete dim=1"/>
     </PragmaReport>
 </profile>
 

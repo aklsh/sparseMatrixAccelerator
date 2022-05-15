@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'accelerate'
 ================================================================
-* Date:           Sat May 14 21:00:05 2022
+* Date:           Sun May 15 16:32:36 2022
 
 * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
 * Project:        SPMV_CSR
@@ -38,7 +38,7 @@
         |                   |        |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
         |      Instance     | Module |   min   |   max   |    min    |    max    | min | max |   Type  |
         +-------------------+--------+---------+---------+-----------+-----------+-----+-----+---------+
-        |grp_reduce_fu_632  |reduce  |        2|        2|  20.000 ns|  20.000 ns|    1|    1|      yes|
+        |grp_reduce_fu_624  |reduce  |        2|        2|  20.000 ns|  20.000 ns|    1|    1|      yes|
         +-------------------+--------+---------+---------+-----------+-----------+-----+-----+---------+
 
         * Loop: 
@@ -81,7 +81,7 @@
     |mux_2332_32_1_1_U5      |mux_2332_32_1_1     |        0|   0|    0|  113|    0|
     |mux_2332_32_1_1_U6      |mux_2332_32_1_1     |        0|   0|    0|  113|    0|
     |mux_2332_32_1_1_U7      |mux_2332_32_1_1     |        0|   0|    0|  113|    0|
-    |grp_reduce_fu_632       |reduce              |        0|   0|  650|  484|    0|
+    |grp_reduce_fu_624       |reduce              |        0|   0|  650|  484|    0|
     +------------------------+--------------------+---------+----+-----+-----+-----+
     |Total                   |                    |        0|  12| 1310| 1136|    0|
     +------------------------+--------------------+---------+----+-----+-----+-----+
@@ -99,110 +99,110 @@
     +--------------------------+----------+----+---+----+------------+------------+
     |       Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +--------------------------+----------+----+---+----+------------+------------+
-    |add_ln43_1_fu_1167_p2     |         +|   0|  0|  39|          32|          32|
-    |add_ln43_fu_1161_p2       |         +|   0|  0|  32|          32|          32|
-    |x_1_fu_1173_p2            |         +|   0|  0|  32|          32|          32|
-    |select_ln28_1_fu_1143_p3  |    select|   0|  0|  32|           1|          32|
-    |select_ln28_2_fu_1149_p3  |    select|   0|  0|  32|           1|          32|
-    |select_ln28_3_fu_1155_p3  |    select|   0|  0|  32|           1|          32|
-    |x_fu_1137_p3              |    select|   0|  0|  32|           1|          32|
+    |add_ln30_1_fu_1159_p2     |         +|   0|  0|  39|          32|          32|
+    |add_ln30_fu_1153_p2       |         +|   0|  0|  32|          32|          32|
+    |x_1_fu_1165_p2            |         +|   0|  0|  32|          32|          32|
+    |select_ln18_1_fu_1135_p3  |    select|   0|  0|  32|           1|          32|
+    |select_ln18_2_fu_1141_p3  |    select|   0|  0|  32|           1|          32|
+    |select_ln18_3_fu_1147_p3  |    select|   0|  0|  32|           1|          32|
+    |x_fu_1129_p3              |    select|   0|  0|  32|           1|          32|
     |ap_enable_pp0             |       xor|   0|  0|   2|           1|           2|
     +--------------------------+----------+----+---+----+------------+------------+
     |Total                     |          |   0|  0| 233|         101|         226|
     +--------------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
-    +------------------------------------------------+----+-----------+-----+-----------+
-    |                      Name                      | LUT| Input Size| Bits| Total Bits|
-    +------------------------------------------------+----+-----------+-----+-----------+
-    |ap_phi_mux_p_ZL7storage_0_loc_0_phi_fu_405_p4   |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_10_loc_0_phi_fu_505_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_11_loc_0_phi_fu_515_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_12_loc_0_phi_fu_525_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_13_loc_0_phi_fu_535_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_14_loc_0_phi_fu_545_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_15_loc_0_phi_fu_555_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_16_loc_0_phi_fu_565_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_17_loc_0_phi_fu_575_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_18_loc_0_phi_fu_585_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_19_loc_0_phi_fu_595_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_1_loc_0_phi_fu_415_p4   |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_20_loc_0_phi_fu_605_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_21_loc_0_phi_fu_615_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_22_loc_0_phi_fu_625_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_2_loc_0_phi_fu_425_p4   |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_3_loc_0_phi_fu_435_p4   |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_4_loc_0_phi_fu_445_p4   |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_5_loc_0_phi_fu_455_p4   |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_6_loc_0_phi_fu_465_p4   |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_7_loc_0_phi_fu_475_p4   |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_8_loc_0_phi_fu_485_p4   |  14|          3|   32|         96|
-    |ap_phi_mux_p_ZL7storage_9_loc_0_phi_fu_495_p4   |  14|          3|   32|         96|
-    +------------------------------------------------+----+-----------+-----+-----------+
-    |Total                                           | 322|         69|  736|       2208|
-    +------------------------------------------------+----+-----------+-----+-----------+
+    +----------------------------------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |                                                         Name                                                         | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_12_phi_fu_557_p4                                          |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_1_loc_0_phi_fu_407_p4                                     |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_2_loc_0_phi_fu_417_p4                                     |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_3_loc_0_phi_fu_427_p4                                     |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_4_loc_0_phi_fu_437_p4                                     |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_5_loc_0_phi_fu_447_p4                                     |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_6_loc_0_phi_fu_457_p4                                     |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_7_loc_0_phi_fu_467_p4                                     |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_8_loc_0_phi_fu_477_p4                                     |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_9_loc_0_phi_fu_487_p4                                     |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_int_int_int_bool_int_int_bool_storage_loc_0_phi_fu_397_p4                                       |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_int_bool_storage_l_unsigned_int128_char_0_14_phi_fu_617_p4     |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_int_bool_storage_l_unsigned_int128_char_0_phi_fu_517_p4        |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_int_bool_storage_lo_char_0_phi_fu_527_p4                       |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_int_bool_storage_loc_0_phi_fu_537_p4                           |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_int_bool_storage_long_unsigned_int128_char_0_13_phi_fu_607_p4  |  14|          3|   32|         96|
+    |ap_phi_mux_accelerate_mulmulmulmulint_int_int_bool_int_int_bool_storage_long_unsigned_int128_char_0_phi_fu_507_p4     |  14|          3|   32|         96|
+    |ap_phi_mux_p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_10_loc_0_phi_fu_497_p4                                             |  14|          3|   32|         96|
+    |ap_phi_mux_p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_15_loc_0_phi_fu_547_p4                                             |  14|          3|   32|         96|
+    |ap_phi_mux_p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_17_loc_0_phi_fu_567_p4                                             |  14|          3|   32|         96|
+    |ap_phi_mux_p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_18_loc_0_phi_fu_577_p4                                             |  14|          3|   32|         96|
+    |ap_phi_mux_p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_19_loc_0_phi_fu_587_p4                                             |  14|          3|   32|         96|
+    |ap_phi_mux_p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_20_loc_0_phi_fu_597_p4                                             |  14|          3|   32|         96|
+    +----------------------------------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                                                                                 | 322|         69|  736|       2208|
+    +----------------------------------------------------------------------------------------------------------------------+----+-----------+-----+-----------+
 
     * Register: 
-    +--------------------------------+----+----+-----+-----------+
-    |              Name              | FF | LUT| Bits| Const Bits|
-    +--------------------------------+----+----+-----+-----------+
-    |ap_CS_fsm                       |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter1         |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter2         |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter3         |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter4         |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter5         |   1|   0|    1|          0|
-    |ap_enable_reg_pp0_iter6         |   1|   0|    1|          0|
-    |grp_reduce_fu_632_ap_start_reg  |   1|   0|    1|          0|
-    |label_r_read_reg_1182           |  32|   0|   32|          0|
-    |mul_ln29_1_reg_1252             |  32|   0|   32|          0|
-    |mul_ln29_2_reg_1257             |  32|   0|   32|          0|
-    |mul_ln29_3_reg_1262             |  32|   0|   32|          0|
-    |mul_ln29_reg_1247               |  32|   0|   32|          0|
-    |mult_enables_0_read_reg_1187    |   1|   0|    1|          0|
-    |mult_enables_1_read_reg_1202    |   1|   0|    1|          0|
-    |mult_enables_2_read_reg_1217    |   1|   0|    1|          0|
-    |mult_enables_3_read_reg_1232    |   1|   0|    1|          0|
-    |p_ZL7storage_0                  |  32|   0|   32|          0|
-    |p_ZL7storage_1                  |  32|   0|   32|          0|
-    |p_ZL7storage_10                 |  32|   0|   32|          0|
-    |p_ZL7storage_11                 |  32|   0|   32|          0|
-    |p_ZL7storage_12                 |  32|   0|   32|          0|
-    |p_ZL7storage_13                 |  32|   0|   32|          0|
-    |p_ZL7storage_14                 |  32|   0|   32|          0|
-    |p_ZL7storage_15                 |  32|   0|   32|          0|
-    |p_ZL7storage_16                 |  32|   0|   32|          0|
-    |p_ZL7storage_17                 |  32|   0|   32|          0|
-    |p_ZL7storage_18                 |  32|   0|   32|          0|
-    |p_ZL7storage_19                 |  32|   0|   32|          0|
-    |p_ZL7storage_2                  |  32|   0|   32|          0|
-    |p_ZL7storage_20                 |  32|   0|   32|          0|
-    |p_ZL7storage_21                 |  32|   0|   32|          0|
-    |p_ZL7storage_22                 |  32|   0|   32|          0|
-    |p_ZL7storage_3                  |  32|   0|   32|          0|
-    |p_ZL7storage_4                  |  32|   0|   32|          0|
-    |p_ZL7storage_5                  |  32|   0|   32|          0|
-    |p_ZL7storage_6                  |  32|   0|   32|          0|
-    |p_ZL7storage_7                  |  32|   0|   32|          0|
-    |p_ZL7storage_8                  |  32|   0|   32|          0|
-    |p_ZL7storage_9                  |  32|   0|   32|          0|
-    |subrow_vals_0_read_reg_1192     |  32|   0|   32|          0|
-    |subrow_vals_1_read_reg_1207     |  32|   0|   32|          0|
-    |subrow_vals_2_read_reg_1222     |  32|   0|   32|          0|
-    |subrow_vals_3_read_reg_1237     |  32|   0|   32|          0|
-    |tmp_1_reg_1212                  |  32|   0|   32|          0|
-    |tmp_2_reg_1227                  |  32|   0|   32|          0|
-    |tmp_3_reg_1242                  |  32|   0|   32|          0|
-    |tmp_reg_1197                    |  32|   0|   32|          0|
-    |x_1_reg_1267                    |  32|   0|   32|          0|
-    |label_r_read_reg_1182           |  64|  32|   32|          0|
-    |mult_enables_0_read_reg_1187    |  64|  32|    1|          0|
-    |mult_enables_1_read_reg_1202    |  64|  32|    1|          0|
-    |mult_enables_2_read_reg_1217    |  64|  32|    1|          0|
-    |mult_enables_3_read_reg_1232    |  64|  32|    1|          0|
-    +--------------------------------+----+----+-----+-----------+
-    |Total                           |1516| 160| 1232|          0|
-    +--------------------------------+----+----+-----+-----------+
+    +----------------------------------------------------+----+----+-----+-----------+
+    |                        Name                        | FF | LUT| Bits| Const Bits|
+    +----------------------------------------------------+----+----+-----+-----------+
+    |accelerate_int_int_int_bool_int_int_bool_storage    |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_int_bool_storage_1  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_int_bool_storage_2  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_int_bool_storage_3  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_int_bool_storage_4  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_int_bool_storage_5  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_int_bool_storage_6  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_int_bool_storage_7  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_int_bool_storage_8  |  32|   0|   32|          0|
+    |accelerate_int_int_int_bool_int_int_bool_storage_9  |  32|   0|   32|          0|
+    |ap_CS_fsm                                           |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5                             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6                             |   1|   0|    1|          0|
+    |grp_reduce_fu_624_ap_start_reg                      |   1|   0|    1|          0|
+    |label_r_read_reg_1174                               |  32|   0|   32|          0|
+    |mul_ln19_1_reg_1244                                 |  32|   0|   32|          0|
+    |mul_ln19_2_reg_1249                                 |  32|   0|   32|          0|
+    |mul_ln19_3_reg_1254                                 |  32|   0|   32|          0|
+    |mul_ln19_reg_1239                                   |  32|   0|   32|          0|
+    |mult_enables_0_read_reg_1179                        |   1|   0|    1|          0|
+    |mult_enables_1_read_reg_1194                        |   1|   0|    1|          0|
+    |mult_enables_2_read_reg_1209                        |   1|   0|    1|          0|
+    |mult_enables_3_read_reg_1224                        |   1|   0|    1|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_10          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_11          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_12          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_13          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_14          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_15          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_16          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_17          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_18          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_19          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_20          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_21          |  32|   0|   32|          0|
+    |p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_22          |  32|   0|   32|          0|
+    |subrow_vals_0_read_reg_1184                         |  32|   0|   32|          0|
+    |subrow_vals_1_read_reg_1199                         |  32|   0|   32|          0|
+    |subrow_vals_2_read_reg_1214                         |  32|   0|   32|          0|
+    |subrow_vals_3_read_reg_1229                         |  32|   0|   32|          0|
+    |tmp_1_reg_1204                                      |  32|   0|   32|          0|
+    |tmp_2_reg_1219                                      |  32|   0|   32|          0|
+    |tmp_3_reg_1234                                      |  32|   0|   32|          0|
+    |tmp_reg_1189                                        |  32|   0|   32|          0|
+    |x_1_reg_1259                                        |  32|   0|   32|          0|
+    |label_r_read_reg_1174                               |  64|  32|   32|          0|
+    |mult_enables_0_read_reg_1179                        |  64|  32|    1|          0|
+    |mult_enables_1_read_reg_1194                        |  64|  32|    1|          0|
+    |mult_enables_2_read_reg_1209                        |  64|  32|    1|          0|
+    |mult_enables_3_read_reg_1224                        |  64|  32|    1|          0|
+    +----------------------------------------------------+----+----+-----+-----------+
+    |Total                                               |1516| 160| 1232|          0|
+    +----------------------------------------------------+----+----+-----+-----------+
 
 
 

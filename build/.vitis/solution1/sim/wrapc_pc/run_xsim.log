@@ -584,7 +584,7 @@ source accelerate.tcl
 ////////////////////////////////////////////////////////////////////////////////////
 $finish called at time : 515 ns : File "/home/akileshkannan/SPMV_CSR/solution1/sim/verilog/accelerate.autotb.v" Line 2446
 ## quit
-INFO: [Common 17-206] Exiting xsim at Sat May 14 20:58:04 2022...
+INFO: [Common 17-206] Exiting xsim at Sun May 15 15:50:18 2022...
 x[0] = 1
 x[1] = 1
 x[2] = 1

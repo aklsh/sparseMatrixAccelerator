@@ -5,10 +5,10 @@
 <ModuleName>accelerate</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_reduce_fu_632</InstName>
+<InstName>grp_reduce_fu_624</InstName>
 <ModuleName>reduce</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>632</ID>
+<ID>624</ID>
 </Instance>
 </InstancesList>
 </TopModule>

@@ -1,0 +1,8 @@
+<pragmas>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="10" pragmaType="unroll" parentfunction="initialise" factor="-1" skip_exit_check="0"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="25" pragmaType="unroll" parentfunction="multipliers" factor="-1" skip_exit_check="0"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="48" pragmaType="pipeline" parentfunction="accelerate" off="0" ii="-1" style=""/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="35" pragmaType="express_balance" parentfunction="adders" off="0"/>
+<pragma file="SPMV_CSR_src/accelerator/accelerator.cpp" line="40" pragmaType="pipeline" parentfunction="adders" off="0" ii="-1" rewind="0" style=""/>
+<pragma file="SPMV_CSR_src/accelerator/reducer.cpp" line="45" pragmaType="unroll" parentfunction="reduce" factor="-1" skip_exit_check="0"/>
+</pragmas>

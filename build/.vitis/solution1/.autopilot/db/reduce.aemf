@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1652542205510">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1652612556290">
   <ports id="1" name="out_r" type="PortType" coreId="62" bitwidth="32" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
@@ -234,26 +234,26 @@
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="value_read" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1769169250" contextFuncName="insert" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="value_read" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="4294967292" contextFuncName="insert" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>value_r</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="reducer_circuit_adder_levels_num_items_0_load" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2638463441" contextFuncName="insert" bitwidth="32" opcode="load" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="reducer_circuit_adder_levels_num_items_0_load" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="144" contextFuncName="insert" bitwidth="32" opcode="load" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>add</dataOutputObjs>
         <dataOutputObjs>switch</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="trunc_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="trunc_ln34_fu_252_p1" coreId="1886400114" contextFuncName="insert" bitwidth="1" opcode="trunc" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="trunc_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="trunc_ln34_fu_252_p1" coreId="1663971374" contextFuncName="insert" bitwidth="1" opcode="trunc" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="reducer_circuit_adder_levels_buffer_value_0_0_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1886400114" contextFuncName="add" bitwidth="32" opcode="load" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="reducer_circuit_adder_levels_buffer_value_0_0_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1919247221" contextFuncName="add" bitwidth="32" opcode="load" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="14" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
@@ -277,7 +277,7 @@
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>read</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308223184" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308391232" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="8" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>block_30</controlInputObjs>
       </node_objs>
@@ -290,11 +290,11 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>block_30</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="reducer_circuit_adder_levels_buffer_value_0_1_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308150240" contextFuncName="insert" opcode="store" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="reducer_circuit_adder_levels_buffer_value_0_1_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1913555940" contextFuncName="insert" opcode="store" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>read</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308365024" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308396664" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="10" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>block_30</controlInputObjs>
       </node_objs>
@@ -310,7 +310,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>branch5</controlOutputObjs>
       <controlOutputObjs>branch4</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="level_out_value_1" lineNumber="34" originalName="level_out.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2045241851" contextFuncName="insert" bitwidth="32" opcode="phi" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="level_out_value_1" lineNumber="34" originalName="level_out.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308055600" contextFuncName="insert" bitwidth="32" opcode="phi" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -319,11 +319,11 @@
         <controlInputObjs>branch0</controlInputObjs>
         <controlInputObjs>branch1</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="reducer_circuit_adder_levels_buffer_label_0_0_load" lineNumber="15" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2307931152" contextFuncName="add" bitwidth="32" opcode="load" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="reducer_circuit_adder_levels_buffer_label_0_0_load" lineNumber="15" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308547040" contextFuncName="add" bitwidth="32" opcode="load" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="15" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308216128" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2287487809" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="13" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>trunc</dataInputObjs>
         <controlInputObjs>branch4</controlInputObjs>
@@ -339,11 +339,11 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>branch5</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="reducer_circuit_adder_levels_buffer_label_0_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2287234880" contextFuncName="insert" opcode="store" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="reducer_circuit_adder_levels_buffer_label_0_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308547408" contextFuncName="insert" opcode="store" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>read</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308216128" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308389368" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="15" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>branch5</controlInputObjs>
       </node_objs>
@@ -360,7 +360,7 @@
       <controlOutputObjs>block_54</controlOutputObjs>
       <controlOutputObjs>block_46</controlOutputObjs>
       <controlOutputObjs>block_42</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="level_out_label" lineNumber="34" originalName="level_out.label" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1936942413" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="level_out_label" lineNumber="34" originalName="level_out.label" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308547040" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -383,12 +383,12 @@
         <dataOutputObjs>add</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="reducer_circuit_adder_levels_buffer_value_1_0_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308195392" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="reducer_circuit_adder_levels_buffer_value_1_0_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308332192" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="14" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="_ln11" lineNumber="11" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308390016" contextFuncName="add" opcode="switch" m_display="0" m_delay="1.3" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="_ln11" lineNumber="11" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="switch" m_display="0" m_delay="1.3" m_topoIndex="17" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="11" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>load</dataInputObjs>
         <controlInputObjs>._crit_edge</controlInputObjs>
@@ -408,11 +408,11 @@
       <controlInputObjs>branch5</controlInputObjs>
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>._crit_edge</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="reducer_circuit_adder_levels_valid_0_write_ln26" lineNumber="26" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="128" contextFuncName="add" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="reducer_circuit_adder_levels_valid_0_write_ln26" lineNumber="26" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="18" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="26" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="br_ln29" lineNumber="29" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="br" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="br_ln29" lineNumber="29" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308548240" contextFuncName="add" opcode="br" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="29" fileDirectory="/home/akileshkannan" functionName="add"/>
         <controlInputObjs>._crit_edge</controlInputObjs>
       </node_objs>
@@ -426,7 +426,7 @@
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>block_49</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="tmp" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="tmp_fu_320_p4" coreId="2307760400" contextFuncName="add" bitwidth="31" opcode="partselect" nodeLabel="1.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="tmp" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="tmp_fu_320_p4" coreId="0" contextFuncName="add" bitwidth="31" opcode="partselect" nodeLabel="1.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="18" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
@@ -438,7 +438,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="br_ln18" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="48" contextFuncName="add" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="br_ln18" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308548240" contextFuncName="add" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="18" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
@@ -455,11 +455,11 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="reducer_circuit_adder_levels_valid_0_write_ln20" lineNumber="20" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="128" contextFuncName="add" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="30" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="reducer_circuit_adder_levels_valid_0_write_ln20" lineNumber="20" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308446104" contextFuncName="add" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="30" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="20" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="br_ln23" lineNumber="23" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2046559737" contextFuncName="add" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.7" m_topoIndex="31" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="br_ln23" lineNumber="23" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.7" m_topoIndex="31" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="23" fileDirectory="/home/akileshkannan" functionName="add"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread</controlInputObjs>
       </node_objs>
@@ -475,11 +475,11 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="reducer_circuit_adder_levels_valid_0_write_ln13" lineNumber="13" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1965057396" contextFuncName="add" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="reducer_circuit_adder_levels_valid_0_write_ln13" lineNumber="13" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308497072" contextFuncName="add" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="20" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="13" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="reducer_circuit_adder_levels_buffer_value_0_1_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2046684679" contextFuncName="add" bitwidth="32" opcode="load" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="reducer_circuit_adder_levels_buffer_value_0_1_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308501840" contextFuncName="add" bitwidth="32" opcode="load" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="14" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
@@ -489,7 +489,7 @@
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="br_ln16" lineNumber="16" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.7" m_topoIndex="32" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="br_ln16" lineNumber="16" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308548240" contextFuncName="add" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.7" m_topoIndex="32" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="16" fileDirectory="/home/akileshkannan" functionName="add"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread</controlInputObjs>
       </node_objs>
@@ -505,7 +505,7 @@
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="br_ln0" coreId="0" opcode="br" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="br_ln0" coreId="2308548240" opcode="br" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
       </node_objs>
     </basic_blocks>
@@ -523,11 +523,11 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread</controlOutputObjs>
       <controlOutputObjs>mergeST</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="reducer_circuit_adder_levels_valid_0_load" lineNumber="48" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308435424" contextFuncName="reduce" bitwidth="1" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="reducer_circuit_adder_levels_valid_0_load" lineNumber="48" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308394136" contextFuncName="reduce" bitwidth="1" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="48" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="br_ln48" lineNumber="48" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308430992" contextFuncName="reduce" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.7" m_topoIndex="34" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="br_ln48" lineNumber="48" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308548240" contextFuncName="reduce" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.7" m_topoIndex="34" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="48" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <dataInputObjs>load</dataInputObjs>
         <controlInputObjs>mergeST</controlInputObjs>
@@ -546,7 +546,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>branch3</controlOutputObjs>
       <controlOutputObjs>branch2</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="reducer_circuit_adder_levels_num_items_0_new_0" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308430144" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="reducer_circuit_adder_levels_num_items_0_new_0" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1913636245" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
@@ -555,7 +555,7 @@
         <controlInputObjs>block_54</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="level_out_118_32" originalName="level_out.label" coreId="0" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="level_out_118_32" originalName="level_out.label" coreId="1913638153" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
@@ -564,7 +564,7 @@
         <controlInputObjs>block_54</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="level_out_017_31" originalName="level_out.value" coreId="2308420432" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="level_out_017_31" originalName="level_out.value" coreId="1330007625" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
@@ -581,7 +581,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308426024" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308546096" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>trunc</dataInputObjs>
         <controlInputObjs>branch2</controlInputObjs>
@@ -597,11 +597,11 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread16</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="reducer_circuit_adder_levels_buffer_value_1_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="reducer_circuit_adder_levels_buffer_value_1_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="572669287" contextFuncName="insert" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="6775156" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="40" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308541392" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="40" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread16</controlInputObjs>
       </node_objs>
@@ -614,11 +614,11 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread16</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="reducer_circuit_adder_levels_buffer_value_1_1_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="reducer_circuit_adder_levels_buffer_value_1_1_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308542656" contextFuncName="insert" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308409872" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="42" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308541720" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="42" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread16</controlInputObjs>
       </node_objs>
@@ -633,7 +633,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlOutputObjs>
       <controlOutputObjs>branch6</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="reducer_circuit_adder_levels_buffer_value_1_0_loc_0" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308409024" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="reducer_circuit_adder_levels_buffer_value_1_0_loc_0" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308399728" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -641,7 +641,7 @@
         <controlInputObjs>branch2</controlInputObjs>
         <controlInputObjs>branch3</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308404592" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1913651078" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>trunc</dataInputObjs>
         <controlInputObjs>branch6</controlInputObjs>
@@ -655,11 +655,11 @@
       <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread16</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="reducer_circuit_adder_levels_buffer_label_1_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" opcode="store" nodeLabel="2.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="reducer_circuit_adder_levels_buffer_label_1_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308402384" contextFuncName="insert" opcode="store" nodeLabel="2.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308404880" contextFuncName="insert" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308509728" contextFuncName="insert" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlInputObjs>
       </node_objs>
@@ -683,7 +683,7 @@
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="br_ln49" lineNumber="49" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308228832" contextFuncName="reduce" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="46" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="br_ln49" lineNumber="49" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="reduce" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="46" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="49" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <controlInputObjs>mergeST</controlInputObjs>
       </node_objs>
@@ -701,7 +701,7 @@
       <controlOutputObjs>block_102</controlOutputObjs>
       <controlOutputObjs>block_94</controlOutputObjs>
       <controlOutputObjs>block_90</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="reducer_circuit_adder_levels_num_items_0_new_1" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308227552" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="reducer_circuit_adder_levels_num_items_0_new_1" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308538528" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
@@ -709,14 +709,14 @@
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="reducer_circuit_adder_levels_num_items_1_flag_0" coreId="2308432096" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="reducer_circuit_adder_levels_num_items_1_flag_0" coreId="2308518352" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="out_data_value_1" lineNumber="34" originalName="out_data.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1702258035" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="out_data_value_1" lineNumber="34" originalName="out_data.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308520616" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -725,7 +725,7 @@
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="empty" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="48" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="empty" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>add</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -735,11 +735,11 @@
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="reducer_circuit_adder_levels_num_items_0_write_ln35" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308405696" contextFuncName="insert" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="reducer_circuit_adder_levels_num_items_0_write_ln35" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308417184" contextFuncName="insert" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="_ln11" lineNumber="11" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308406608" contextFuncName="add" opcode="switch" nodeLabel="2.0" m_display="0" m_delay="1.3" m_topoIndex="55" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="_ln11" lineNumber="11" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="4294967295" contextFuncName="add" opcode="switch" nodeLabel="2.0" m_display="0" m_delay="1.3" m_topoIndex="55" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="11" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>phi</dataInputObjs>
         <controlInputObjs>._crit_edge1</controlInputObjs>
@@ -758,7 +758,7 @@
       <controlInputObjs>mergeST</controlInputObjs>
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>._crit_edge1</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="reducer_circuit_adder_levels_valid_1_write_ln26" lineNumber="26" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1701012321" contextFuncName="add" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="56" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="reducer_circuit_adder_levels_valid_1_write_ln26" lineNumber="26" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308383312" contextFuncName="add" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="56" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="26" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
@@ -776,7 +776,7 @@
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>block_97</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="91" name="out_data_label" lineNumber="18" originalName="out_data.label" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2046769514" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="2.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="91" name="out_data_label" lineNumber="18" originalName="out_data.label" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="186" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="2.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="18" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataOutputObjs>icmp</dataOutputObjs>
       </node_objs>
@@ -786,7 +786,7 @@
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="93" name="br_ln18" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="93" name="br_ln18" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308417184" contextFuncName="add" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="18" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
@@ -803,11 +803,11 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="95" name="reducer_circuit_adder_levels_valid_1_write_ln20" lineNumber="20" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="61" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="95" name="reducer_circuit_adder_levels_valid_1_write_ln20" lineNumber="20" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308512208" contextFuncName="add" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="61" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="20" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="96" name="br_ln23" lineNumber="23" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="48" contextFuncName="add" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.7" m_topoIndex="62" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="96" name="br_ln23" lineNumber="23" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308522032" contextFuncName="add" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.7" m_topoIndex="62" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="23" fileDirectory="/home/akileshkannan" functionName="add"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlInputObjs>
       </node_objs>
@@ -823,11 +823,11 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="98" name="reducer_circuit_adder_levels_valid_1_write_ln13" lineNumber="13" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="63" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="98" name="reducer_circuit_adder_levels_valid_1_write_ln13" lineNumber="13" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1912725364" contextFuncName="add" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="63" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="13" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="99" name="reducer_circuit_adder_levels_buffer_value_1_1_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308413328" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="2.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="99" name="reducer_circuit_adder_levels_buffer_value_1_1_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="2.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="14" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataOutputObjs>add</dataOutputObjs>
       </node_objs>
@@ -837,7 +837,7 @@
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="101" name="br_ln16" lineNumber="16" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308401456" contextFuncName="add" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.7" m_topoIndex="66" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="101" name="br_ln16" lineNumber="16" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308525696" contextFuncName="add" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.7" m_topoIndex="66" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="16" fileDirectory="/home/akileshkannan" functionName="add"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlInputObjs>
       </node_objs>
@@ -853,7 +853,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="103" name="br_ln0" coreId="0" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="67" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="103" name="br_ln0" coreId="1869182069" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="67" m_clusterGroupNumber="-1">
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
       </node_objs>
     </basic_blocks>
@@ -869,11 +869,11 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="105" name="reducer_circuit_adder_levels_valid_1_load" lineNumber="53" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308281584" contextFuncName="reduce" bitwidth="1" opcode="load" nodeLabel="2.0" m_display="0" m_topoIndex="68" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="105" name="reducer_circuit_adder_levels_valid_1_load" lineNumber="53" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="176" contextFuncName="reduce" bitwidth="1" opcode="load" nodeLabel="2.0" m_display="0" m_topoIndex="68" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="53" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="106" name="br_ln53" lineNumber="53" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1702258035" contextFuncName="reduce" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.7" m_topoIndex="69" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="106" name="br_ln53" lineNumber="53" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308421960" contextFuncName="reduce" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.7" m_topoIndex="69" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="53" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <dataInputObjs>load</dataInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlInputObjs>
@@ -893,7 +893,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="108" name="reducer_circuit_adder_levels_num_items_1_flag_1" coreId="2308355264" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="70" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="108" name="reducer_circuit_adder_levels_num_items_1_flag_1" coreId="0" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="70" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
@@ -901,7 +901,7 @@
         <controlInputObjs>block_102</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="109" name="reducer_circuit_adder_levels_num_items_1_new_1" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308356504" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="71" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="109" name="reducer_circuit_adder_levels_num_items_1_new_1" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="71" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
@@ -910,7 +910,7 @@
         <controlInputObjs>block_102</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="110" name="out_data_0_35" originalName="out_data.value" coreId="2308356984" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="72" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="110" name="out_data_0_35" originalName="out_data.value" coreId="2308423840" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="72" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
         <dataOutputObjs>write</dataOutputObjs>
@@ -919,12 +919,12 @@
         <controlInputObjs>block_102</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="111" name="out_r_write_ln54" lineNumber="54" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="608" contextFuncName="reduce" opcode="write" nodeLabel="2.0" m_display="0" m_topoIndex="73" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="111" name="out_r_write_ln54" lineNumber="54" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308424112" contextFuncName="reduce" opcode="write" nodeLabel="2.0" m_display="0" m_topoIndex="73" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="54" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>out_r</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="112" name="br_ln54" lineNumber="54" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="reduce" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="74" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="112" name="br_ln54" lineNumber="54" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1913586111" contextFuncName="reduce" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="74" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="54" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlInputObjs>
       </node_objs>
@@ -940,14 +940,14 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>mergeST26</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="114" name="reducer_circuit_adder_levels_num_items_1_flag_2" coreId="2308202144" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="75" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="114" name="reducer_circuit_adder_levels_num_items_1_flag_2" coreId="2308497088" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="75" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="115" name="reducer_circuit_adder_levels_num_items_1_new_2" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="76" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="115" name="reducer_circuit_adder_levels_num_items_1_new_2" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308505264" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="76" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
@@ -955,7 +955,7 @@
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="116" name="br_ln0" coreId="4294967295" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="77" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="116" name="br_ln0" coreId="0" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="77" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new</controlInputObjs>
         <controlInputObjs>mergeST26</controlInputObjs>
@@ -968,11 +968,11 @@
       <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="118" name="reducer_circuit_adder_levels_num_items_1_write_ln35" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" opcode="store" nodeLabel="2.0" m_display="0" m_topoIndex="78" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="118" name="reducer_circuit_adder_levels_num_items_1_write_ln35" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308507440" contextFuncName="insert" opcode="store" nodeLabel="2.0" m_display="0" m_topoIndex="78" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="119" name="br_ln0" coreId="2046617799" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="79" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="119" name="br_ln0" coreId="2308508600" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="79" m_clusterGroupNumber="-1">
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="SPMV_CSR_src/accelerator/reducer.cpp">
@@ -984,7 +984,7 @@
       <controlInputObjs>mergeST26</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="121" name="_ln55" lineNumber="55" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1701602659" contextFuncName="reduce" opcode="ret" nodeLabel="2.0" m_display="0" m_topoIndex="80" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="121" name="_ln55" lineNumber="55" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308508208" contextFuncName="reduce" opcode="ret" nodeLabel="2.0" m_display="0" m_topoIndex="80" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="55" fileDirectory="/home/akileshkannan" functionName="reduce"/>
       </node_objs>
       <fileValidLineNumbers fileName="SPMV_CSR_src/accelerator/reducer.cpp">

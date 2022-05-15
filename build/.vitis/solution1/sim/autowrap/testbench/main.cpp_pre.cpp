@@ -89388,18 +89388,6 @@ int main(){
  int ref_y[23] = {1, 6, 2, 2, 1, 5, 4, 9, 5, 1, 11, 5, 3, 0, 1, 5, 4, 2, 1, 0, 7, 1, 4};
 
  bool init_storage = false;
- int out = 0;
- int subrow_vals[4] = {0};
- int subrow_col_indices[4] = {0};
- bool mult_enables[4] = {false};
- int label = 0;
- int len_array[23] = {0};
-
-
-
-
-
-
 
  int processed_elements = 0;
  int curr_row_len = 0;

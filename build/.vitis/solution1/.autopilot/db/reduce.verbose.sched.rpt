@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'reduce'
 ================================================================
-* Date:           Sat May 14 21:00:04 2022
+* Date:           Sun May 15 16:32:35 2022
 
 * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
 * Project:        SPMV_CSR
@@ -181,10 +181,10 @@ The critical path consists of the following:
 
  <State 2>: 4.06ns
 The critical path consists of the following:
-	multiplexor before 'phi' operation ('reducer_circuit_adder_levels_num_items_0_new_0', SPMV_CSR_src/accelerator/reducer.cpp:35) with incoming values : ('add_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) [60]  (1.71 ns)
-	'phi' operation ('reducer_circuit_adder_levels_num_items_0_new_0', SPMV_CSR_src/accelerator/reducer.cpp:35) with incoming values : ('add_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) [60]  (0 ns)
-	multiplexor before 'phi' operation ('reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35) with incoming values : ('add_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) [81]  (1.59 ns)
-	'phi' operation ('reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35) with incoming values : ('add_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) [81]  (0 ns)
+	multiplexor before 'phi' operation ('level_out.value') with incoming values : ('value_read', SPMV_CSR_src/accelerator/reducer.cpp:34) ('reducer_circuit_adder_levels_buffer_value_0_0_load', SPMV_CSR_src/accelerator/reducer.cpp:14) ('level_out.value', SPMV_CSR_src/accelerator/reducer.cpp:14) [62]  (1.71 ns)
+	'phi' operation ('level_out.value') with incoming values : ('value_read', SPMV_CSR_src/accelerator/reducer.cpp:34) ('reducer_circuit_adder_levels_buffer_value_0_0_load', SPMV_CSR_src/accelerator/reducer.cpp:14) ('level_out.value', SPMV_CSR_src/accelerator/reducer.cpp:14) [62]  (0 ns)
+	multiplexor before 'phi' operation ('reducer_circuit_adder_levels_buffer_value_1_0_loc_0', SPMV_CSR_src/accelerator/reducer.cpp:34) with incoming values : ('value_read', SPMV_CSR_src/accelerator/reducer.cpp:34) ('reducer_circuit_adder_levels_buffer_value_0_0_load', SPMV_CSR_src/accelerator/reducer.cpp:14) ('reducer_circuit_adder_levels_buffer_value_1_0_load', SPMV_CSR_src/accelerator/reducer.cpp:14) ('level_out.value', SPMV_CSR_src/accelerator/reducer.cpp:14) [72]  (1.59 ns)
+	'phi' operation ('reducer_circuit_adder_levels_buffer_value_1_0_loc_0', SPMV_CSR_src/accelerator/reducer.cpp:34) with incoming values : ('value_read', SPMV_CSR_src/accelerator/reducer.cpp:34) ('reducer_circuit_adder_levels_buffer_value_0_0_load', SPMV_CSR_src/accelerator/reducer.cpp:14) ('reducer_circuit_adder_levels_buffer_value_1_0_load', SPMV_CSR_src/accelerator/reducer.cpp:14) ('level_out.value', SPMV_CSR_src/accelerator/reducer.cpp:14) [72]  (0 ns)
 	blocking operation 0.763 ns on control path)
 
  <State 3>: 5.04ns

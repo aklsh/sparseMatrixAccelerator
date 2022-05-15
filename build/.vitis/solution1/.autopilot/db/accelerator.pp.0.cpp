@@ -1095,24 +1095,25 @@ class reducer{
 };
 # 9 "SPMV_CSR_src/accelerator/accelerator.hpp" 2
 
-static int storage[23];
-static reducer reducer_circuit;
-static int multiplier_outs[4];
-static int sum;
 
 
-void initialise(int[23], bool);
-void set_storage(int[23], int[23], bool);
+
+
+
+
+void initialise(int[23], int[23], bool);
 void multipliers(int[4], int[23], int[4], int[4], bool[4]);
 void adders(int&, int[4]);
 __attribute__((sdx_kernel("accelerate", 0))) void accelerate(int&, int[4], int[4], bool[4], int, int[23], bool);
 # 3 "SPMV_CSR_src/accelerator/accelerator.cpp" 2
 
 
-void initialise(int init_vector[23], bool init){
-#pragma HLS array_partition variable=init_vector type=complete
-#pragma HLS array_partition variable=storage type=complete
-#pragma HLS bind_storage variable=storage type=ram_1wnr impl=bram
+void initialise(int storage[23], int init_vector[23], bool init){
+#pragma HLSDIRECTIVE ARRAY_PARTITION variable=init_vector complete dim=1
+# 5 "SPMV_CSR_src/accelerator/accelerator.cpp"
+
+#pragma HLSDIRECTIVE ARRAY_PARTITION variable=storage complete dim=1
+# 5 "SPMV_CSR_src/accelerator/accelerator.cpp"
 
  if(init){
   set_storage_loop: for(int j=0;j<23;j++){
@@ -1123,12 +1124,21 @@ void initialise(int init_vector[23], bool init){
 }
 
 
-void multipliers(int subrow_vals[4], int subrow_col_indices[4], bool mult_enables[4]){
-#pragma HLS array_partition variable=multiplier_outs type=complete
-#pragma HLS array_partition variable=mult_enables type=complete
-#pragma HLS array_partition variable=subrow_vals type=complete
-#pragma HLS array_partition variable=subrow_col_indices type=complete
-#pragma HLS array_partition variable=storage type=complete
+void multipliers(int multiplier_outs[4], int storage[23], int subrow_vals[4], int subrow_col_indices[4], bool mult_enables[4]){
+#pragma HLSDIRECTIVE ARRAY_PARTITION variable=mult_enables complete dim=1
+# 15 "SPMV_CSR_src/accelerator/accelerator.cpp"
+
+#pragma HLSDIRECTIVE ARRAY_PARTITION variable=multiplier_outs complete dim=1
+# 15 "SPMV_CSR_src/accelerator/accelerator.cpp"
+
+#pragma HLSDIRECTIVE ARRAY_PARTITION variable=storage complete dim=1
+# 15 "SPMV_CSR_src/accelerator/accelerator.cpp"
+
+#pragma HLSDIRECTIVE ARRAY_PARTITION variable=subrow_col_indices complete dim=1
+# 15 "SPMV_CSR_src/accelerator/accelerator.cpp"
+
+#pragma HLSDIRECTIVE ARRAY_PARTITION variable=subrow_vals complete dim=1
+# 15 "SPMV_CSR_src/accelerator/accelerator.cpp"
 
  multipliers_loop: for(int c=0;c<4;c++){
 #pragma HLS UNROLL
@@ -1140,34 +1150,44 @@ void multipliers(int subrow_vals[4], int subrow_col_indices[4], bool mult_enable
 }
 
 
-void adders(){
-#pragma HLS EXPRESSION_BALANCE
-#pragma HLS array_partition variable=multiplier_outs type=complete
+void adders(int &sum, int multiplier_outs[4]){
+#pragma HLSDIRECTIVE ARRAY_PARTITION variable=multiplier_outs complete dim=1
+# 26 "SPMV_CSR_src/accelerator/accelerator.cpp"
 
+#pragma HLS EXPRESSION_BALANCE
  int x = 0;
  adder_tree: for(int p=0;p<4;p++){
-#pragma HLS PIPELINE
- x+=multiplier_outs[p];
+  x+=multiplier_outs[p];
  }
  sum = x;
 }
 
 
 __attribute__((sdx_kernel("accelerate", 0))) void accelerate(int &out, int subrow_vals[4], int subrow_col_indices[4], bool mult_enables[4], int label, int init_vector[23], bool init){_ssdm_SpecArrayDimSize(subrow_vals, 4);_ssdm_SpecArrayDimSize(subrow_col_indices, 4);_ssdm_SpecArrayDimSize(mult_enables, 4);_ssdm_SpecArrayDimSize(init_vector, 23);
-#pragma HLSDIRECTIVE TOP name=accelerate
-# 49 "SPMV_CSR_src/accelerator/accelerator.cpp"
+#pragma HLSDIRECTIVE ARRAY_PARTITION variable=subrow_col_indices complete dim=1
+# 36 "SPMV_CSR_src/accelerator/accelerator.cpp"
 
-#pragma HLS array_partition variable=subrow_vals type=complete
-#pragma HLS array_partition variable=subrow_col_indices type=complete
+#pragma HLSDIRECTIVE ARRAY_PARTITION variable=subrow_vals complete dim=1
+# 36 "SPMV_CSR_src/accelerator/accelerator.cpp"
+
+#pragma HLSDIRECTIVE TOP name=accelerate
+# 36 "SPMV_CSR_src/accelerator/accelerator.cpp"
+
+#pragma HLS TOP name=accelerate
+
+ static int storage[23];
+ static reducer reducer_circuit;
+ static int multiplier_outs[4];
+ static int sum;
 
 #pragma HLS PIPELINE
- initialise(init_vector, init);
- multipliers(subrow_vals, subrow_col_indices, mult_enables);
+ initialise(storage, init_vector, init);
+ multipliers(multiplier_outs, storage, subrow_vals, subrow_col_indices, mult_enables);
  printf("mult outs: ");
- VITIS_LOOP_57_1: for(int u=0;u<4;u++)
+ VITIS_LOOP_48_1: for(int u=0;u<4;u++)
   printf("%d ", multiplier_outs[u]);
  printf("\n");
- adders();
+ adders(sum, multiplier_outs);
  printf("sum: %d\n", sum);
  reducer_circuit.reduce(out, sum, label);
 }

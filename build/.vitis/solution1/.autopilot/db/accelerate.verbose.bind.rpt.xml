@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'accelerate'" level="0">
-<item name = "Date">Sat May 14 21:00:05 2022
+<item name = "Date">Sun May 15 16:32:36 2022
 </item>
 <item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)</item>
 <item name = "Project">SPMV_CSR</item>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_reduce_fu_632">reduce, 2, 2, 20.000 ns, 20.000 ns, 1, 1, yes</column>
+<column name="grp_reduce_fu_624">reduce, 2, 2, 20.000 ns, 20.000 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

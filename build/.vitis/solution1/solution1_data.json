@@ -355,7 +355,21 @@
       "config_export -output=\/home\/akileshkannan\/SPMV_CSR_src",
       "config_export -rtl=verilog"
     ],
-    "DirectiveTcl": ["set_directive_top accelerate -name accelerate"],
+    "DirectiveTcl": [
+      "set_directive_array_partition initialise init_vector -type complete -dim 1",
+      "set_directive_array_partition initialise storage -type complete -dim 1",
+      "set_directive_array_partition multipliers multiplier_outs -type complete -dim 1",
+      "set_directive_array_partition multipliers mult_enables -type complete -dim 1",
+      "set_directive_array_partition multipliers subrow_vals -type complete -dim 1",
+      "set_directive_array_partition multipliers subrow_col_indices -type complete -dim 1",
+      "set_directive_array_partition multipliers storage -type complete -dim 1",
+      "set_directive_array_partition adders multiplier_outs -type complete -dim 1",
+      "set_directive_array_partition accelerate subrow_vals -type complete -dim 1",
+      "set_directive_array_partition accelerate subrow_col_indices -type complete -dim 1",
+      "set_directive_top accelerate -name accelerate",
+      "set_directive_top accelerate -name accelerate",
+      "set_directive_top accelerate -name accelerate"
+    ],
     "ProfileOption": "0",
     "ProfileType": "none",
     "KernelName": "accelerate"
@@ -383,8 +397,8 @@
   },
   "Files": {
     "CSource": [
-      "..\/..\/SPMV_CSR_src\/accelerator\/reducer.cpp",
-      "..\/..\/SPMV_CSR_src\/accelerator\/accelerator.cpp"
+      "..\/..\/SPMV_CSR_src\/accelerator\/accelerator.cpp",
+      "..\/..\/SPMV_CSR_src\/accelerator\/reducer.cpp"
     ],
     "Vhdl": [
       "impl\/vhdl\/accelerate_accelerate_Pipeline_1.vhd",
@@ -1241,7 +1255,7 @@
       "ModuleName": "accelerate",
       "Instances": [{
           "ModuleName": "reduce",
-          "InstanceName": "grp_reduce_fu_632"
+          "InstanceName": "grp_reduce_fu_624"
         }]
     },
     "Info": {
@@ -1330,7 +1344,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2022-05-14 21:00:18 +0530",
+    "Time": "2022-05-15 16:32:37 +0530",
     "ToolName": "vitis_hls",
     "ToolVersion": "2021.2"
   }

@@ -1,0 +1,491 @@
+
+
+================================================================
+== Vitis HLS Report for 'accelerate'
+================================================================
+* Date:           Sun May 15 16:10:22 2022
+
+* Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
+* Project:        SPMV_CSR
+* Solution:       solution2 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.923 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       23|       23|  0.230 us|  0.230 us|   14|   14|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 14, depth = 24
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 24
+* Pipeline : 1
+  Pipeline-0 : II = 14, D = 24, States = { 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%init_read = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %init" [SPMV_CSR_src/accelerator/accelerator.cpp:48]   --->   Operation 25 'read' 'init_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln9 = br i1 %init_read, void %_Z10initialisePiS_b.exit_ifconv, void" [SPMV_CSR_src/accelerator/accelerator.cpp:9]   --->   Operation 26 'br' 'br_ln9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%init_vector_addr = getelementptr i32 %init_vector, i64 0, i64 0" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 27 'getelementptr' 'init_vector_addr' <Predicate = (init_read)> <Delay = 0.00>
+ST_1 : Operation 28 [2/2] (2.32ns)   --->   "%init_vector_load = load i5 %init_vector_addr" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 28 'load' 'init_vector_load' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%init_vector_addr_1 = getelementptr i32 %init_vector, i64 0, i64 1" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 29 'getelementptr' 'init_vector_addr_1' <Predicate = (init_read)> <Delay = 0.00>
+ST_1 : Operation 30 [2/2] (2.32ns)   --->   "%init_vector_load_1 = load i5 %init_vector_addr_1" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 30 'load' 'init_vector_load_1' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%mult_enables_addr = getelementptr i1 %mult_enables, i64 0, i64 0" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 31 'getelementptr' 'mult_enables_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [2/2] (2.32ns)   --->   "%mult_enables_load = load i2 %mult_enables_addr" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 32 'load' 'mult_enables_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 4> <RAM>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%subrow_vals_addr = getelementptr i32 %subrow_vals, i64 0, i64 0" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 33 'getelementptr' 'subrow_vals_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [2/2] (2.32ns)   --->   "%subrow_vals_load = load i2 %subrow_vals_addr" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 34 'load' 'subrow_vals_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%subrow_col_indices_addr = getelementptr i32 %subrow_col_indices, i64 0, i64 0" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 35 'getelementptr' 'subrow_col_indices_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [2/2] (2.32ns)   --->   "%subrow_col_indices_load = load i2 %subrow_col_indices_addr" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 36 'load' 'subrow_col_indices_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%mult_enables_addr_1 = getelementptr i1 %mult_enables, i64 0, i64 1" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 37 'getelementptr' 'mult_enables_addr_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [2/2] (2.32ns)   --->   "%mult_enables_load_1 = load i2 %mult_enables_addr_1" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 38 'load' 'mult_enables_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 4> <RAM>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%subrow_vals_addr_1 = getelementptr i32 %subrow_vals, i64 0, i64 1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 39 'getelementptr' 'subrow_vals_addr_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [2/2] (2.32ns)   --->   "%subrow_vals_load_1 = load i2 %subrow_vals_addr_1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 40 'load' 'subrow_vals_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%subrow_col_indices_addr_1 = getelementptr i32 %subrow_col_indices, i64 0, i64 1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 41 'getelementptr' 'subrow_col_indices_addr_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [2/2] (2.32ns)   --->   "%subrow_col_indices_load_1 = load i2 %subrow_col_indices_addr_1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 42 'load' 'subrow_col_indices_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+
+State 2 <SV = 1> <Delay = 4.64>
+ST_2 : Operation 43 [1/2] (2.32ns)   --->   "%init_vector_load = load i5 %init_vector_addr" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 43 'load' 'init_vector_load' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_2 : Operation 44 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load, i32 0" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 44 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_2 : Operation 45 [1/2] (2.32ns)   --->   "%init_vector_load_1 = load i5 %init_vector_addr_1" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 45 'load' 'init_vector_load_1' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_2 : Operation 46 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_1, i32 1" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 46 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%init_vector_addr_2 = getelementptr i32 %init_vector, i64 0, i64 2" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 47 'getelementptr' 'init_vector_addr_2' <Predicate = (init_read)> <Delay = 0.00>
+ST_2 : Operation 48 [2/2] (2.32ns)   --->   "%init_vector_load_2 = load i5 %init_vector_addr_2" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 48 'load' 'init_vector_load_2' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_2 : Operation 49 [1/1] (0.00ns)   --->   "%init_vector_addr_3 = getelementptr i32 %init_vector, i64 0, i64 3" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 49 'getelementptr' 'init_vector_addr_3' <Predicate = (init_read)> <Delay = 0.00>
+ST_2 : Operation 50 [2/2] (2.32ns)   --->   "%init_vector_load_3 = load i5 %init_vector_addr_3" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 50 'load' 'init_vector_load_3' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_2 : Operation 51 [1/2] (2.32ns)   --->   "%mult_enables_load = load i2 %mult_enables_addr" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 51 'load' 'mult_enables_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 4> <RAM>
+ST_2 : Operation 52 [1/2] (2.32ns)   --->   "%subrow_vals_load = load i2 %subrow_vals_addr" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 52 'load' 'subrow_vals_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_2 : Operation 53 [1/2] (2.32ns)   --->   "%subrow_col_indices_load = load i2 %subrow_col_indices_addr" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 53 'load' 'subrow_col_indices_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_2 : Operation 54 [1/2] (2.32ns)   --->   "%mult_enables_load_1 = load i2 %mult_enables_addr_1" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 54 'load' 'mult_enables_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 4> <RAM>
+ST_2 : Operation 55 [1/2] (2.32ns)   --->   "%subrow_vals_load_1 = load i2 %subrow_vals_addr_1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 55 'load' 'subrow_vals_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_2 : Operation 56 [1/2] (2.32ns)   --->   "%subrow_col_indices_load_1 = load i2 %subrow_col_indices_addr_1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 56 'load' 'subrow_col_indices_load_1' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_2 : Operation 57 [1/1] (0.00ns)   --->   "%mult_enables_addr_2 = getelementptr i1 %mult_enables, i64 0, i64 2" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 57 'getelementptr' 'mult_enables_addr_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 58 [2/2] (2.32ns)   --->   "%mult_enables_load_2 = load i2 %mult_enables_addr_2" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 58 'load' 'mult_enables_load_2' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 4> <RAM>
+ST_2 : Operation 59 [1/1] (0.00ns)   --->   "%subrow_vals_addr_2 = getelementptr i32 %subrow_vals, i64 0, i64 2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 59 'getelementptr' 'subrow_vals_addr_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 60 [2/2] (2.32ns)   --->   "%subrow_vals_load_2 = load i2 %subrow_vals_addr_2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 60 'load' 'subrow_vals_load_2' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_2 : Operation 61 [1/1] (0.00ns)   --->   "%subrow_col_indices_addr_2 = getelementptr i32 %subrow_col_indices, i64 0, i64 2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 61 'getelementptr' 'subrow_col_indices_addr_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 62 [2/2] (2.32ns)   --->   "%subrow_col_indices_load_2 = load i2 %subrow_col_indices_addr_2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 62 'load' 'subrow_col_indices_load_2' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_2 : Operation 63 [1/1] (0.00ns)   --->   "%mult_enables_addr_3 = getelementptr i1 %mult_enables, i64 0, i64 3" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 63 'getelementptr' 'mult_enables_addr_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 64 [2/2] (2.32ns)   --->   "%mult_enables_load_3 = load i2 %mult_enables_addr_3" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 64 'load' 'mult_enables_load_3' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 4> <RAM>
+ST_2 : Operation 65 [1/1] (0.00ns)   --->   "%subrow_vals_addr_3 = getelementptr i32 %subrow_vals, i64 0, i64 3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 65 'getelementptr' 'subrow_vals_addr_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 66 [2/2] (2.32ns)   --->   "%subrow_vals_load_3 = load i2 %subrow_vals_addr_3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 66 'load' 'subrow_vals_load_3' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_2 : Operation 67 [1/1] (0.00ns)   --->   "%subrow_col_indices_addr_3 = getelementptr i32 %subrow_col_indices, i64 0, i64 3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 67 'getelementptr' 'subrow_col_indices_addr_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 68 [2/2] (2.32ns)   --->   "%subrow_col_indices_load_3 = load i2 %subrow_col_indices_addr_3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 68 'load' 'subrow_col_indices_load_3' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+
+State 3 <SV = 2> <Delay = 4.64>
+ST_3 : Operation 69 [1/2] (2.32ns)   --->   "%init_vector_load_2 = load i5 %init_vector_addr_2" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 69 'load' 'init_vector_load_2' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_3 : Operation 70 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_2, i32 2" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 70 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_3 : Operation 71 [1/2] (2.32ns)   --->   "%init_vector_load_3 = load i5 %init_vector_addr_3" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 71 'load' 'init_vector_load_3' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_3 : Operation 72 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_3, i32 3" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 72 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_3 : Operation 73 [1/1] (0.00ns)   --->   "%init_vector_addr_4 = getelementptr i32 %init_vector, i64 0, i64 4" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 73 'getelementptr' 'init_vector_addr_4' <Predicate = (init_read)> <Delay = 0.00>
+ST_3 : Operation 74 [2/2] (2.32ns)   --->   "%init_vector_load_4 = load i5 %init_vector_addr_4" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 74 'load' 'init_vector_load_4' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_3 : Operation 75 [1/1] (0.00ns)   --->   "%init_vector_addr_5 = getelementptr i32 %init_vector, i64 0, i64 5" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 75 'getelementptr' 'init_vector_addr_5' <Predicate = (init_read)> <Delay = 0.00>
+ST_3 : Operation 76 [2/2] (2.32ns)   --->   "%init_vector_load_5 = load i5 %init_vector_addr_5" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 76 'load' 'init_vector_load_5' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_3 : Operation 77 [1/2] (2.32ns)   --->   "%mult_enables_load_2 = load i2 %mult_enables_addr_2" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 77 'load' 'mult_enables_load_2' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 4> <RAM>
+ST_3 : Operation 78 [1/2] (2.32ns)   --->   "%subrow_vals_load_2 = load i2 %subrow_vals_addr_2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 78 'load' 'subrow_vals_load_2' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_3 : Operation 79 [1/2] (2.32ns)   --->   "%subrow_col_indices_load_2 = load i2 %subrow_col_indices_addr_2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 79 'load' 'subrow_col_indices_load_2' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_3 : Operation 80 [1/2] (2.32ns)   --->   "%mult_enables_load_3 = load i2 %mult_enables_addr_3" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 80 'load' 'mult_enables_load_3' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 4> <RAM>
+ST_3 : Operation 81 [1/2] (2.32ns)   --->   "%subrow_vals_load_3 = load i2 %subrow_vals_addr_3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 81 'load' 'subrow_vals_load_3' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+ST_3 : Operation 82 [1/2] (2.32ns)   --->   "%subrow_col_indices_load_3 = load i2 %subrow_col_indices_addr_3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 82 'load' 'subrow_col_indices_load_3' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 4> <RAM>
+
+State 4 <SV = 3> <Delay = 4.64>
+ST_4 : Operation 83 [1/2] (2.32ns)   --->   "%init_vector_load_4 = load i5 %init_vector_addr_4" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 83 'load' 'init_vector_load_4' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_4 : Operation 84 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_4, i32 4" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 84 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_4 : Operation 85 [1/2] (2.32ns)   --->   "%init_vector_load_5 = load i5 %init_vector_addr_5" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 85 'load' 'init_vector_load_5' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_4 : Operation 86 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_5, i32 5" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 86 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_4 : Operation 87 [1/1] (0.00ns)   --->   "%init_vector_addr_6 = getelementptr i32 %init_vector, i64 0, i64 6" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 87 'getelementptr' 'init_vector_addr_6' <Predicate = (init_read)> <Delay = 0.00>
+ST_4 : Operation 88 [2/2] (2.32ns)   --->   "%init_vector_load_6 = load i5 %init_vector_addr_6" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 88 'load' 'init_vector_load_6' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_4 : Operation 89 [1/1] (0.00ns)   --->   "%init_vector_addr_7 = getelementptr i32 %init_vector, i64 0, i64 7" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 89 'getelementptr' 'init_vector_addr_7' <Predicate = (init_read)> <Delay = 0.00>
+ST_4 : Operation 90 [2/2] (2.32ns)   --->   "%init_vector_load_7 = load i5 %init_vector_addr_7" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 90 'load' 'init_vector_load_7' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 5 <SV = 4> <Delay = 4.64>
+ST_5 : Operation 91 [1/2] (2.32ns)   --->   "%init_vector_load_6 = load i5 %init_vector_addr_6" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 91 'load' 'init_vector_load_6' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_5 : Operation 92 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_6, i32 6" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 92 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_5 : Operation 93 [1/2] (2.32ns)   --->   "%init_vector_load_7 = load i5 %init_vector_addr_7" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 93 'load' 'init_vector_load_7' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_5 : Operation 94 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_7, i32 7" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 94 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_5 : Operation 95 [1/1] (0.00ns)   --->   "%init_vector_addr_8 = getelementptr i32 %init_vector, i64 0, i64 8" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 95 'getelementptr' 'init_vector_addr_8' <Predicate = (init_read)> <Delay = 0.00>
+ST_5 : Operation 96 [2/2] (2.32ns)   --->   "%init_vector_load_8 = load i5 %init_vector_addr_8" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 96 'load' 'init_vector_load_8' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_5 : Operation 97 [1/1] (0.00ns)   --->   "%init_vector_addr_9 = getelementptr i32 %init_vector, i64 0, i64 9" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 97 'getelementptr' 'init_vector_addr_9' <Predicate = (init_read)> <Delay = 0.00>
+ST_5 : Operation 98 [2/2] (2.32ns)   --->   "%init_vector_load_9 = load i5 %init_vector_addr_9" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 98 'load' 'init_vector_load_9' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 6 <SV = 5> <Delay = 4.64>
+ST_6 : Operation 99 [1/2] (2.32ns)   --->   "%init_vector_load_8 = load i5 %init_vector_addr_8" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 99 'load' 'init_vector_load_8' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_6 : Operation 100 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_8, i32 8" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 100 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_6 : Operation 101 [1/2] (2.32ns)   --->   "%init_vector_load_9 = load i5 %init_vector_addr_9" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 101 'load' 'init_vector_load_9' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_6 : Operation 102 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_9, i32 9" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 102 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_6 : Operation 103 [1/1] (0.00ns)   --->   "%init_vector_addr_10 = getelementptr i32 %init_vector, i64 0, i64 10" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 103 'getelementptr' 'init_vector_addr_10' <Predicate = (init_read)> <Delay = 0.00>
+ST_6 : Operation 104 [2/2] (2.32ns)   --->   "%init_vector_load_10 = load i5 %init_vector_addr_10" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 104 'load' 'init_vector_load_10' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_6 : Operation 105 [1/1] (0.00ns)   --->   "%init_vector_addr_11 = getelementptr i32 %init_vector, i64 0, i64 11" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 105 'getelementptr' 'init_vector_addr_11' <Predicate = (init_read)> <Delay = 0.00>
+ST_6 : Operation 106 [2/2] (2.32ns)   --->   "%init_vector_load_11 = load i5 %init_vector_addr_11" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 106 'load' 'init_vector_load_11' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 7 <SV = 6> <Delay = 4.64>
+ST_7 : Operation 107 [1/2] (2.32ns)   --->   "%init_vector_load_10 = load i5 %init_vector_addr_10" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 107 'load' 'init_vector_load_10' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_7 : Operation 108 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_10, i32 10" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 108 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_7 : Operation 109 [1/2] (2.32ns)   --->   "%init_vector_load_11 = load i5 %init_vector_addr_11" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 109 'load' 'init_vector_load_11' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_7 : Operation 110 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_11, i32 11" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 110 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_7 : Operation 111 [1/1] (0.00ns)   --->   "%init_vector_addr_12 = getelementptr i32 %init_vector, i64 0, i64 12" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 111 'getelementptr' 'init_vector_addr_12' <Predicate = (init_read)> <Delay = 0.00>
+ST_7 : Operation 112 [2/2] (2.32ns)   --->   "%init_vector_load_12 = load i5 %init_vector_addr_12" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 112 'load' 'init_vector_load_12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_7 : Operation 113 [1/1] (0.00ns)   --->   "%init_vector_addr_13 = getelementptr i32 %init_vector, i64 0, i64 13" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 113 'getelementptr' 'init_vector_addr_13' <Predicate = (init_read)> <Delay = 0.00>
+ST_7 : Operation 114 [2/2] (2.32ns)   --->   "%init_vector_load_13 = load i5 %init_vector_addr_13" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 114 'load' 'init_vector_load_13' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 8 <SV = 7> <Delay = 4.64>
+ST_8 : Operation 115 [1/2] (2.32ns)   --->   "%init_vector_load_12 = load i5 %init_vector_addr_12" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 115 'load' 'init_vector_load_12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_8 : Operation 116 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_12, i32 12" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 116 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_8 : Operation 117 [1/2] (2.32ns)   --->   "%init_vector_load_13 = load i5 %init_vector_addr_13" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 117 'load' 'init_vector_load_13' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_8 : Operation 118 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_13, i32 13" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 118 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_8 : Operation 119 [1/1] (0.00ns)   --->   "%init_vector_addr_14 = getelementptr i32 %init_vector, i64 0, i64 14" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 119 'getelementptr' 'init_vector_addr_14' <Predicate = (init_read)> <Delay = 0.00>
+ST_8 : Operation 120 [2/2] (2.32ns)   --->   "%init_vector_load_14 = load i5 %init_vector_addr_14" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 120 'load' 'init_vector_load_14' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_8 : Operation 121 [1/1] (0.00ns)   --->   "%init_vector_addr_15 = getelementptr i32 %init_vector, i64 0, i64 15" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 121 'getelementptr' 'init_vector_addr_15' <Predicate = (init_read)> <Delay = 0.00>
+ST_8 : Operation 122 [2/2] (2.32ns)   --->   "%init_vector_load_15 = load i5 %init_vector_addr_15" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 122 'load' 'init_vector_load_15' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 9 <SV = 8> <Delay = 4.64>
+ST_9 : Operation 123 [1/2] (2.32ns)   --->   "%init_vector_load_14 = load i5 %init_vector_addr_14" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 123 'load' 'init_vector_load_14' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_9 : Operation 124 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_14, i32 14" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 124 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_9 : Operation 125 [1/2] (2.32ns)   --->   "%init_vector_load_15 = load i5 %init_vector_addr_15" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 125 'load' 'init_vector_load_15' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_9 : Operation 126 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_15, i32 15" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 126 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_9 : Operation 127 [1/1] (0.00ns)   --->   "%init_vector_addr_16 = getelementptr i32 %init_vector, i64 0, i64 16" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 127 'getelementptr' 'init_vector_addr_16' <Predicate = (init_read)> <Delay = 0.00>
+ST_9 : Operation 128 [2/2] (2.32ns)   --->   "%init_vector_load_16 = load i5 %init_vector_addr_16" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 128 'load' 'init_vector_load_16' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_9 : Operation 129 [1/1] (0.00ns)   --->   "%init_vector_addr_17 = getelementptr i32 %init_vector, i64 0, i64 17" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 129 'getelementptr' 'init_vector_addr_17' <Predicate = (init_read)> <Delay = 0.00>
+ST_9 : Operation 130 [2/2] (2.32ns)   --->   "%init_vector_load_17 = load i5 %init_vector_addr_17" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 130 'load' 'init_vector_load_17' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 10 <SV = 9> <Delay = 4.64>
+ST_10 : Operation 131 [1/2] (2.32ns)   --->   "%init_vector_load_16 = load i5 %init_vector_addr_16" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 131 'load' 'init_vector_load_16' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_10 : Operation 132 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_16, i32 16" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 132 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_10 : Operation 133 [1/2] (2.32ns)   --->   "%init_vector_load_17 = load i5 %init_vector_addr_17" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 133 'load' 'init_vector_load_17' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_10 : Operation 134 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_17, i32 17" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 134 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_10 : Operation 135 [1/1] (0.00ns)   --->   "%init_vector_addr_18 = getelementptr i32 %init_vector, i64 0, i64 18" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 135 'getelementptr' 'init_vector_addr_18' <Predicate = (init_read)> <Delay = 0.00>
+ST_10 : Operation 136 [2/2] (2.32ns)   --->   "%init_vector_load_18 = load i5 %init_vector_addr_18" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 136 'load' 'init_vector_load_18' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_10 : Operation 137 [1/1] (0.00ns)   --->   "%init_vector_addr_19 = getelementptr i32 %init_vector, i64 0, i64 19" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 137 'getelementptr' 'init_vector_addr_19' <Predicate = (init_read)> <Delay = 0.00>
+ST_10 : Operation 138 [2/2] (2.32ns)   --->   "%init_vector_load_19 = load i5 %init_vector_addr_19" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 138 'load' 'init_vector_load_19' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 11 <SV = 10> <Delay = 4.64>
+ST_11 : Operation 139 [1/2] (2.32ns)   --->   "%init_vector_load_18 = load i5 %init_vector_addr_18" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 139 'load' 'init_vector_load_18' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_11 : Operation 140 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_18, i32 18" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 140 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_11 : Operation 141 [1/2] (2.32ns)   --->   "%init_vector_load_19 = load i5 %init_vector_addr_19" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 141 'load' 'init_vector_load_19' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_11 : Operation 142 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_19, i32 19" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 142 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_11 : Operation 143 [1/1] (0.00ns)   --->   "%init_vector_addr_20 = getelementptr i32 %init_vector, i64 0, i64 20" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 143 'getelementptr' 'init_vector_addr_20' <Predicate = (init_read)> <Delay = 0.00>
+ST_11 : Operation 144 [2/2] (2.32ns)   --->   "%init_vector_load_20 = load i5 %init_vector_addr_20" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 144 'load' 'init_vector_load_20' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_11 : Operation 145 [1/1] (0.00ns)   --->   "%init_vector_addr_21 = getelementptr i32 %init_vector, i64 0, i64 21" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 145 'getelementptr' 'init_vector_addr_21' <Predicate = (init_read)> <Delay = 0.00>
+ST_11 : Operation 146 [2/2] (2.32ns)   --->   "%init_vector_load_21 = load i5 %init_vector_addr_21" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 146 'load' 'init_vector_load_21' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 12 <SV = 11> <Delay = 4.64>
+ST_12 : Operation 147 [1/2] (2.32ns)   --->   "%init_vector_load_20 = load i5 %init_vector_addr_20" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 147 'load' 'init_vector_load_20' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_12 : Operation 148 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_20, i32 20" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 148 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_12 : Operation 149 [1/2] (2.32ns)   --->   "%init_vector_load_21 = load i5 %init_vector_addr_21" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 149 'load' 'init_vector_load_21' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_12 : Operation 150 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_21, i32 21" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 150 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_12 : Operation 151 [1/1] (0.00ns)   --->   "%init_vector_addr_22 = getelementptr i32 %init_vector, i64 0, i64 22" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 151 'getelementptr' 'init_vector_addr_22' <Predicate = (init_read)> <Delay = 0.00>
+ST_12 : Operation 152 [2/2] (2.32ns)   --->   "%init_vector_load_22 = load i5 %init_vector_addr_22" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 152 'load' 'init_vector_load_22' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 13 <SV = 12> <Delay = 4.64>
+ST_13 : Operation 153 [1/2] (2.32ns)   --->   "%init_vector_load_22 = load i5 %init_vector_addr_22" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 153 'load' 'init_vector_load_22' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_13 : Operation 154 [1/1] (2.32ns)   --->   "%store_ln12 = store i32 %init_vector_load_22, i32 22" [SPMV_CSR_src/accelerator/accelerator.cpp:12]   --->   Operation 154 'store' 'store_ln12' <Predicate = (init_read)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_13 : Operation 155 [1/1] (0.00ns)   --->   "%br_ln14 = br void %_Z10initialisePiS_b.exit_ifconv" [SPMV_CSR_src/accelerator/accelerator.cpp:14]   --->   Operation 155 'br' 'br_ln14' <Predicate = (init_read)> <Delay = 0.00>
+
+State 14 <SV = 13> <Delay = 2.32>
+ST_14 : Operation 156 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_0"   --->   Operation 156 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 157 [1/1] (0.00ns)   --->   "%spectopmodule_ln0 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_2"   --->   Operation 157 'spectopmodule' 'spectopmodule_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 158 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %out_r"   --->   Operation 158 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 159 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %out_r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 159 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 160 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %subrow_vals, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 160 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 161 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %subrow_vals"   --->   Operation 161 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 162 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %subrow_col_indices, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 162 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 163 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %subrow_col_indices"   --->   Operation 163 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 164 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %mult_enables, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 164 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 165 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %mult_enables"   --->   Operation 165 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 166 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %label_r"   --->   Operation 166 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 167 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %label_r, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 167 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 168 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %init_vector, void @empty_1, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 168 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 169 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %init_vector"   --->   Operation 169 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 170 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %init"   --->   Operation 170 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 171 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %init, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0"   --->   Operation 171 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 172 [1/1] (0.00ns)   --->   "%label_r_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %label_r" [SPMV_CSR_src/accelerator/accelerator.cpp:48]   --->   Operation 172 'read' 'label_r_read' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 173 [1/1] (0.00ns)   --->   "%zext_ln28 = zext i32 %subrow_col_indices_load" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 173 'zext' 'zext_ln28' <Predicate = (mult_enables_load)> <Delay = 0.00>
+ST_14 : Operation 174 [1/1] (0.00ns)   --->   "%storage_addr = getelementptr i32 %storage, i64 0, i64 %zext_ln28" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 174 'getelementptr' 'storage_addr' <Predicate = (mult_enables_load)> <Delay = 0.00>
+ST_14 : Operation 175 [2/2] (2.32ns)   --->   "%storage_load = load i5 %storage_addr" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 175 'load' 'storage_load' <Predicate = (mult_enables_load)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_14 : Operation 176 [1/1] (0.00ns)   --->   "%zext_ln28_1 = zext i32 %subrow_col_indices_load_1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 176 'zext' 'zext_ln28_1' <Predicate = (mult_enables_load_1)> <Delay = 0.00>
+ST_14 : Operation 177 [1/1] (0.00ns)   --->   "%storage_addr_1 = getelementptr i32 %storage, i64 0, i64 %zext_ln28_1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 177 'getelementptr' 'storage_addr_1' <Predicate = (mult_enables_load_1)> <Delay = 0.00>
+ST_14 : Operation 178 [2/2] (2.32ns)   --->   "%storage_load_1 = load i5 %storage_addr_1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 178 'load' 'storage_load_1' <Predicate = (mult_enables_load_1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 15 <SV = 14> <Delay = 2.32>
+ST_15 : Operation 179 [1/2] (2.32ns)   --->   "%storage_load = load i5 %storage_addr" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 179 'load' 'storage_load' <Predicate = (mult_enables_load)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_15 : Operation 180 [1/2] (2.32ns)   --->   "%storage_load_1 = load i5 %storage_addr_1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 180 'load' 'storage_load_1' <Predicate = (mult_enables_load_1)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_15 : Operation 181 [1/1] (0.00ns)   --->   "%zext_ln28_2 = zext i32 %subrow_col_indices_load_2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 181 'zext' 'zext_ln28_2' <Predicate = (mult_enables_load_2)> <Delay = 0.00>
+ST_15 : Operation 182 [1/1] (0.00ns)   --->   "%storage_addr_2 = getelementptr i32 %storage, i64 0, i64 %zext_ln28_2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 182 'getelementptr' 'storage_addr_2' <Predicate = (mult_enables_load_2)> <Delay = 0.00>
+ST_15 : Operation 183 [2/2] (2.32ns)   --->   "%storage_load_2 = load i5 %storage_addr_2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 183 'load' 'storage_load_2' <Predicate = (mult_enables_load_2)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_15 : Operation 184 [1/1] (0.00ns)   --->   "%zext_ln28_3 = zext i32 %subrow_col_indices_load_3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 184 'zext' 'zext_ln28_3' <Predicate = (mult_enables_load_3)> <Delay = 0.00>
+ST_15 : Operation 185 [1/1] (0.00ns)   --->   "%storage_addr_3 = getelementptr i32 %storage, i64 0, i64 %zext_ln28_3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 185 'getelementptr' 'storage_addr_3' <Predicate = (mult_enables_load_3)> <Delay = 0.00>
+ST_15 : Operation 186 [2/2] (2.32ns)   --->   "%storage_load_3 = load i5 %storage_addr_3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 186 'load' 'storage_load_3' <Predicate = (mult_enables_load_3)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 16 <SV = 15> <Delay = 6.91>
+ST_16 : Operation 187 [2/2] (6.91ns)   --->   "%mul_ln28 = mul i32 %storage_load, i32 %subrow_vals_load" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 187 'mul' 'mul_ln28' <Predicate = (mult_enables_load)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_16 : Operation 188 [1/2] (2.32ns)   --->   "%storage_load_2 = load i5 %storage_addr_2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 188 'load' 'storage_load_2' <Predicate = (mult_enables_load_2)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+ST_16 : Operation 189 [1/2] (2.32ns)   --->   "%storage_load_3 = load i5 %storage_addr_3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 189 'load' 'storage_load_3' <Predicate = (mult_enables_load_3)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 23> <RAM>
+
+State 17 <SV = 16> <Delay = 6.91>
+ST_17 : Operation 190 [1/2] (6.91ns)   --->   "%mul_ln28 = mul i32 %storage_load, i32 %subrow_vals_load" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 190 'mul' 'mul_ln28' <Predicate = (mult_enables_load)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 191 [2/2] (6.91ns)   --->   "%mul_ln28_1 = mul i32 %storage_load_1, i32 %subrow_vals_load_1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 191 'mul' 'mul_ln28_1' <Predicate = (mult_enables_load_1)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 18 <SV = 17> <Delay = 6.91>
+ST_18 : Operation 192 [1/1] (0.69ns)   --->   "%x = select i1 %mult_enables_load, i32 %mul_ln28, i32 0" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 192 'select' 'x' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_18 : Operation 193 [1/2] (6.91ns)   --->   "%mul_ln28_1 = mul i32 %storage_load_1, i32 %subrow_vals_load_1" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 193 'mul' 'mul_ln28_1' <Predicate = (mult_enables_load_1)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_18 : Operation 194 [2/2] (6.91ns)   --->   "%mul_ln28_2 = mul i32 %storage_load_2, i32 %subrow_vals_load_2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 194 'mul' 'mul_ln28_2' <Predicate = (mult_enables_load_2)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 19 <SV = 18> <Delay = 6.91>
+ST_19 : Operation 195 [1/1] (0.69ns)   --->   "%select_ln27_1 = select i1 %mult_enables_load_1, i32 %mul_ln28_1, i32 0" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 195 'select' 'select_ln27_1' <Predicate = true> <Delay = 0.69> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_19 : Operation 196 [1/2] (6.91ns)   --->   "%mul_ln28_2 = mul i32 %storage_load_2, i32 %subrow_vals_load_2" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 196 'mul' 'mul_ln28_2' <Predicate = (mult_enables_load_2)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_19 : Operation 197 [2/2] (6.91ns)   --->   "%mul_ln28_3 = mul i32 %storage_load_3, i32 %subrow_vals_load_3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 197 'mul' 'mul_ln28_3' <Predicate = (mult_enables_load_3)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 20 <SV = 19> <Delay = 6.91>
+ST_20 : Operation 198 [1/2] (6.91ns)   --->   "%mul_ln28_3 = mul i32 %storage_load_3, i32 %subrow_vals_load_3" [SPMV_CSR_src/accelerator/accelerator.cpp:28]   --->   Operation 198 'mul' 'mul_ln28_3' <Predicate = (mult_enables_load_3)> <Delay = 6.91> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 6.91> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 21 <SV = 20> <Delay = 6.92>
+ST_21 : Operation 199 [1/1] (0.00ns) (grouped into LUT with out node add_ln42_1)   --->   "%select_ln27_2 = select i1 %mult_enables_load_2, i32 %mul_ln28_2, i32 0" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 199 'select' 'select_ln27_2' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 200 [1/1] (0.00ns) (grouped into LUT with out node add_ln42_1)   --->   "%select_ln27_3 = select i1 %mult_enables_load_3, i32 %mul_ln28_3, i32 0" [SPMV_CSR_src/accelerator/accelerator.cpp:27]   --->   Operation 200 'select' 'select_ln27_3' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.69> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_21 : Operation 201 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln42 = add i32 %select_ln27_1, i32 %x" [SPMV_CSR_src/accelerator/accelerator.cpp:42->SPMV_CSR_src/accelerator/accelerator.cpp:66]   --->   Operation 201 'add' 'add_ln42' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_21 : Operation 202 [1/1] (2.55ns) (out node of the LUT)   --->   "%add_ln42_1 = add i32 %select_ln27_2, i32 %select_ln27_3" [SPMV_CSR_src/accelerator/accelerator.cpp:42->SPMV_CSR_src/accelerator/accelerator.cpp:66]   --->   Operation 202 'add' 'add_ln42_1' <Predicate = true> <Delay = 2.55> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.55> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 203 [1/1] (4.37ns) (root node of TernaryAdder)   --->   "%x_1 = add i32 %add_ln42_1, i32 %add_ln42" [SPMV_CSR_src/accelerator/accelerator.cpp:42->SPMV_CSR_src/accelerator/accelerator.cpp:66]   --->   Operation 203 'add' 'x_1' <Predicate = true> <Delay = 4.37> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 2.18> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+State 22 <SV = 21> <Delay = 4.14>
+ST_22 : Operation 204 [3/3] (4.14ns)   --->   "%call_ln68 = call void @reduce, i32 %out_r, i32 %x_1, i32 %label_r_read, i32 %reducer_circuit_adder_levels_num_items_0, i32 %reducer_circuit_adder_levels_buffer_value_0_0, i32 %reducer_circuit_adder_levels_buffer_label_0_0, i32 %reducer_circuit_adder_levels_num_items_1, i32 %reducer_circuit_adder_levels_buffer_value_1_0, i1 %reducer_circuit_adder_levels_valid_0, i32 %reducer_circuit_adder_levels_buffer_value_0_1, i1 %reducer_circuit_adder_levels_valid_1, i32 %reducer_circuit_adder_levels_buffer_value_1_1, i32 %reducer_circuit_adder_levels_buffer_label_1_0" [SPMV_CSR_src/accelerator/accelerator.cpp:68]   --->   Operation 204 'call' 'call_ln68' <Predicate = true> <Delay = 4.14> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 22> <Delay = 5.03>
+ST_23 : Operation 205 [2/3] (5.03ns)   --->   "%call_ln68 = call void @reduce, i32 %out_r, i32 %x_1, i32 %label_r_read, i32 %reducer_circuit_adder_levels_num_items_0, i32 %reducer_circuit_adder_levels_buffer_value_0_0, i32 %reducer_circuit_adder_levels_buffer_label_0_0, i32 %reducer_circuit_adder_levels_num_items_1, i32 %reducer_circuit_adder_levels_buffer_value_1_0, i1 %reducer_circuit_adder_levels_valid_0, i32 %reducer_circuit_adder_levels_buffer_value_0_1, i1 %reducer_circuit_adder_levels_valid_1, i32 %reducer_circuit_adder_levels_buffer_value_1_1, i32 %reducer_circuit_adder_levels_buffer_label_1_0" [SPMV_CSR_src/accelerator/accelerator.cpp:68]   --->   Operation 205 'call' 'call_ln68' <Predicate = true> <Delay = 5.03> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 24 <SV = 23> <Delay = 4.25>
+ST_24 : Operation 206 [1/3] (4.25ns)   --->   "%call_ln68 = call void @reduce, i32 %out_r, i32 %x_1, i32 %label_r_read, i32 %reducer_circuit_adder_levels_num_items_0, i32 %reducer_circuit_adder_levels_buffer_value_0_0, i32 %reducer_circuit_adder_levels_buffer_label_0_0, i32 %reducer_circuit_adder_levels_num_items_1, i32 %reducer_circuit_adder_levels_buffer_value_1_0, i1 %reducer_circuit_adder_levels_valid_0, i32 %reducer_circuit_adder_levels_buffer_value_0_1, i1 %reducer_circuit_adder_levels_valid_1, i32 %reducer_circuit_adder_levels_buffer_value_1_1, i32 %reducer_circuit_adder_levels_buffer_label_1_0" [SPMV_CSR_src/accelerator/accelerator.cpp:68]   --->   Operation 206 'call' 'call_ln68' <Predicate = true> <Delay = 4.25> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_24 : Operation 207 [1/1] (0.00ns)   --->   "%ret_ln69 = ret" [SPMV_CSR_src/accelerator/accelerator.cpp:69]   --->   Operation 207 'ret' 'ret_ln69' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('init_vector_addr', SPMV_CSR_src/accelerator/accelerator.cpp:12) [39]  (0 ns)
+	'load' operation ('init_vector_load', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [40]  (2.32 ns)
+
+ <State 2>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [40]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [41]  (2.32 ns)
+
+ <State 3>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_2', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [46]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_2', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [47]  (2.32 ns)
+
+ <State 4>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_4', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [52]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_4', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [53]  (2.32 ns)
+
+ <State 5>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_6', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [58]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_6', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [59]  (2.32 ns)
+
+ <State 6>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_8', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [64]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_8', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [65]  (2.32 ns)
+
+ <State 7>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_10', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [70]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_10', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [71]  (2.32 ns)
+
+ <State 8>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_12', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [76]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_12', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [77]  (2.32 ns)
+
+ <State 9>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_14', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [82]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_14', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [83]  (2.32 ns)
+
+ <State 10>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_16', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [88]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_16', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [89]  (2.32 ns)
+
+ <State 11>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_18', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [94]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_18', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [95]  (2.32 ns)
+
+ <State 12>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_20', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [100]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_20', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [101]  (2.32 ns)
+
+ <State 13>: 4.64ns
+The critical path consists of the following:
+	'load' operation ('init_vector_load_22', SPMV_CSR_src/accelerator/accelerator.cpp:12) on array 'init_vector' [106]  (2.32 ns)
+	'store' operation ('store_ln12', SPMV_CSR_src/accelerator/accelerator.cpp:12) of variable 'init_vector_load_22', SPMV_CSR_src/accelerator/accelerator.cpp:12 on array 'storage' [107]  (2.32 ns)
+
+ <State 14>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('storage_addr', SPMV_CSR_src/accelerator/accelerator.cpp:28) [117]  (0 ns)
+	'load' operation ('storage_load', SPMV_CSR_src/accelerator/accelerator.cpp:28) on array 'storage' [118]  (2.32 ns)
+
+ <State 15>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('storage_load', SPMV_CSR_src/accelerator/accelerator.cpp:28) on array 'storage' [118]  (2.32 ns)
+
+ <State 16>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln28', SPMV_CSR_src/accelerator/accelerator.cpp:28) [119]  (6.91 ns)
+
+ <State 17>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln28', SPMV_CSR_src/accelerator/accelerator.cpp:28) [119]  (6.91 ns)
+
+ <State 18>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln28_1', SPMV_CSR_src/accelerator/accelerator.cpp:28) [130]  (6.91 ns)
+
+ <State 19>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln28_2', SPMV_CSR_src/accelerator/accelerator.cpp:28) [141]  (6.91 ns)
+
+ <State 20>: 6.91ns
+The critical path consists of the following:
+	'mul' operation ('mul_ln28_3', SPMV_CSR_src/accelerator/accelerator.cpp:28) [152]  (6.91 ns)
+
+ <State 21>: 6.92ns
+The critical path consists of the following:
+	'select' operation ('select_ln27_2', SPMV_CSR_src/accelerator/accelerator.cpp:27) [142]  (0 ns)
+	'add' operation ('add_ln42_1', SPMV_CSR_src/accelerator/accelerator.cpp:42->SPMV_CSR_src/accelerator/accelerator.cpp:66) [155]  (2.55 ns)
+	'add' operation ('x', SPMV_CSR_src/accelerator/accelerator.cpp:42->SPMV_CSR_src/accelerator/accelerator.cpp:66) [156]  (4.37 ns)
+
+ <State 22>: 4.14ns
+The critical path consists of the following:
+	'call' operation ('call_ln68', SPMV_CSR_src/accelerator/accelerator.cpp:68) to 'reduce' [157]  (4.14 ns)
+
+ <State 23>: 5.04ns
+The critical path consists of the following:
+	'call' operation ('call_ln68', SPMV_CSR_src/accelerator/accelerator.cpp:68) to 'reduce' [157]  (5.04 ns)
+
+ <State 24>: 4.26ns
+The critical path consists of the following:
+	'call' operation ('call_ln68', SPMV_CSR_src/accelerator/accelerator.cpp:68) to 'reduce' [157]  (4.26 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

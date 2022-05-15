@@ -89398,18 +89398,6 @@ int main(){
  int ref_y[23] = {1, 6, 2, 2, 1, 5, 4, 9, 5, 1, 11, 5, 3, 0, 1, 5, 4, 2, 1, 0, 7, 1, 4};
 
  bool init_storage = false;
- int out = 0;
- int subrow_vals[4] = {0};
- int subrow_col_indices[4] = {0};
- bool mult_enables[4] = {false};
- int label = 0;
- int len_array[23] = {0};
-
-
-
-
-
-
 
  int processed_elements = 0;
  int curr_row_len = 0;
@@ -89461,10 +89449,10 @@ int main(){
 #ifndef HLS_FASTSIM
 #define accelerate apatb_accelerate_sw
 #endif
-# 81 "/home/akileshkannan/SPMV_CSR_src/main.cpp"
+# 69 "/home/akileshkannan/SPMV_CSR_src/main.cpp"
 accelerate(vector_y[row_index], curr_subrow_elements, curr_subrow_indices, curr_subrow_mult_enables, curr_label, vector_x, init_storage);
 #undef accelerate
-# 81 "/home/akileshkannan/SPMV_CSR_src/main.cpp"
+# 69 "/home/akileshkannan/SPMV_CSR_src/main.cpp"
 
    processed_elements += num_elements_processed_curr;
    elements_left_curr_row -= num_elements_processed_curr;
@@ -89488,5 +89476,5 @@ accelerate(vector_y[row_index], curr_subrow_elements, curr_subrow_indices, curr_
   return 1;
 }
 #endif
-# 102 "/home/akileshkannan/SPMV_CSR_src/main.cpp"
+# 90 "/home/akileshkannan/SPMV_CSR_src/main.cpp"
 
