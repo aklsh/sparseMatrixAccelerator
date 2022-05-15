@@ -6,9 +6,9 @@
 
 class reducer_data{
 	public:
-		int value;
+		data_t value;
 		int label;
-		reducer_data(int=0, int=0);
+		reducer_data(data_t=0, int=0);
 };
 
 class reducer_level{
@@ -24,7 +24,7 @@ class reducer{
 	public:
 		reducer_level adder_levels[NUM_REDUCER_LEVELS];
 		bool valid;
-		void reduce(int&, int, int);
+		void reduce(data_t&, data_t, int);
 };
 
 #endif

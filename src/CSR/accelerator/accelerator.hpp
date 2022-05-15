@@ -13,10 +13,10 @@
 //static int sum;
 
 
-void initialise(int[N], int[N], bool);
-void multipliers(int[K], int[N], int[K], int[K], bool[K]);
-void adders(int&, int[K]);
-void accelerate(int&, int[K], int[K], bool[K], int, int[N], bool);
+void initialise(data_t[N], data_t[N], bool);
+void multipliers(data_t[K], data_t[N], data_t[K], int[K], bool[K]);
+void adders(data_t&, data_t[K]);
+void accelerate(data_t&, data_t[K], int[K], bool[K], int, data_t[N], bool);
 
 
 #endif

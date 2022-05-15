@@ -1,7 +1,7 @@
 #include "reducer.hpp"
 
 // Reducer circuit data structure - (value, label)
-reducer_data::reducer_data(int value_init, int label_init){
+reducer_data::reducer_data(data_t value_init, int label_init){
 	value = value_init;
 	label = label_init;
 }
@@ -36,7 +36,7 @@ void reducer_level::insert(reducer_data new_data){
 }
 
 // Reducer circuit - takes a new sum
-void reducer::reduce(int &out, int value, int label){
+void reducer::reduce(data_t &out, data_t value, int label){
 	reducer_data out_data, level_out, new_data;
 	new_data.label = label;
 	new_data.value = value;
