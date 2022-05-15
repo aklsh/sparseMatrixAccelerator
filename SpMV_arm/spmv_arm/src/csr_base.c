@@ -18,16 +18,19 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <arm_neon.h>
 #include <string.h>
-#include "test_data.h"
 #include "platform.h"
 #include "xil_printf.h"
+#include <arm_neon.h>
+#include "test_vectors.h"
+#include "test_sparse.h"
+#include "structSparseEncode.h"
 
 #define SIMD_WIDTH 4	// using 128-bit packed NEON registers
 
 float weights[MATRIX_HEIGHT][MATRIX_WIDTH];
 float inp_vector[NUM_INPUTS][MATRIX_WIDTH];
+float structSparse[MATRIX_HEIGHT][MATRIX_WIDTH];
 
 typedef struct{
 	float data;
@@ -182,9 +185,29 @@ void spMV_simd(
 	}
 }
 
-
 int main(){
 	init_platform();
+	/*
+	float dataValues[MATRIX_HEIGHT][nnzPerRow];
+	unsigned int indices[MATRIX_HEIGHT][numIndicesPerRow];
+	encode2_4Sparsity(structSparse, dataValues, indices);
+	xil_printf("\n");
+	for (int k = 0; k < 64; k++){
+		xil_printf(" (%d, ", (int)(structSparse[1][k]*1000));
+		xil_printf(" %d), ", k%4);
+	}
+	xil_printf("\n");
+
+	for (int k = 0; k < 32; k++){
+		xil_printf(" %d, ", (int)(dataValues[1][k]*1000));
+	}
+	xil_printf("\n");
+	for (int k = 0; k < 2; k++){
+		xil_printf(" %x, ", indices[1][k]);
+	}
+	*/
+
+
 	CSRdata *csrValues, *csrValuesSIMD;
 	unsigned int indicesPtr[MATRIX_HEIGHT+1], indicesPtrSIMD[MATRIX_HEIGHT+1];
 	//
