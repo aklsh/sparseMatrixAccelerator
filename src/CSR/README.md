@@ -44,9 +44,18 @@ Another reason to further show the need for a subrow-style processing design is 
 
 Using HLS pragmas, we can pipeline this design and also have II=1, which will allow us to send one subrow every clock cycle*. Hence, the number of clock cycle required for the computation of the product of the full matrix will be ⌈N/K⌉\*N (number of subrows/row * number of rows).
 
-## Solutions & Pareto-optimality
+## Solutions
 ### Integer
+| **Solution** | **Latency (ns)** | **DSP** | **FF** | **LUT** |             **Description**             | **II** | **Target Tclk (ns)** | **Verified cosim** |
+|:------------:|:----------------:|:-------:|:------:|:-------:|:---------------------------------------:|--------|:--------------------:|:------------------:|
+| 1            | 60              | 12       | 2826   | 1851    | K=4, all arrays partitioned completely. | 1      | 10                   | yes                |
+| 2            | 230              | 12       | 2136   | 1356    | K=4, no partitioning.                   | 14     | 10                   | yes                |
+
 ### Floating-point
+| **Solution** | **Latency (ns)** | **DSP** | **FF** | **LUT** |             **Description**             | **II** | **Target Tclk (ns)** | **Verified cosim** |
+|:------------:|:----------------:|:-------:|:------:|:-------:|:---------------------------------------:|--------|:--------------------:|:------------------:|
+| 1            | 690              | 9       | 3627   | 5671    | K=4, all arrays partitioned completely. | 6      | 10                   | yes                |
+| 2            | 830              | 9       | 3218   | 5370    | K=4, no partitioning.                   | 14     | 10                   | yes                |
 
 ## Usage
 ### Changing between integer/floating-point design
