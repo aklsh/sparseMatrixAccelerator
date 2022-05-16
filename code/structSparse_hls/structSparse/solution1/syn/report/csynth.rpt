@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'sparse2_4Mult'
 ================================================================
 + General Information: 
-    * Date:           Mon May 16 10:27:23 2022
+    * Date:           Mon May 16 14:55:35 2022
     * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
     * Project:        structSparse
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -15,15 +15,15 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +--------------------+------+------+---------+-----------+----------+---------+------+----------+--------+----------+-------------+-------------+-----+
-    |       Modules      | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |        |          |             |             |     |
-    |       & Loops      | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM  |    DSP   |      FF     |     LUT     | URAM|
-    +--------------------+------+------+---------+-----------+----------+---------+------+----------+--------+----------+-------------+-------------+-----+
-    |+ sparse2_4Mult     |     -|  0.04|      100|  1.000e+03|         -|      101|     -|        no|  4 (1%)|  80 (36%)|  14159 (13%)|  13758 (25%)|    -|
-    | + decodeStage      |     -|  3.15|        2|     20.000|         -|        2|     -|        no|       -|         -|   1059 (~0%)|     962 (1%)|    -|
-    | + macStage         |     -|  0.04|       29|    290.000|         -|        2|     -|       yes|       -|  80 (36%)|    8593 (8%)|  12269 (23%)|    -|
-    | o VITIS_LOOP_30_1  |     -|  7.30|       64|    640.000|         2|        1|    64|       yes|       -|         -|            -|            -|    -|
-    +--------------------+------+------+---------+-----------+----------+---------+------+----------+--------+----------+-------------+-------------+-----+
+    +--------------------+------+------+---------+-----------+----------+---------+------+----------+--------+----------+-------------+------------+-----+
+    |       Modules      | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |        |          |             |            |     |
+    |       & Loops      | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM  |    DSP   |      FF     |     LUT    | URAM|
+    +--------------------+------+------+---------+-----------+----------+---------+------+----------+--------+----------+-------------+------------+-----+
+    |+ sparse2_4Mult     |     -|  0.04|      102|  1.020e+03|         -|      103|     -|        no|  4 (1%)|  40 (18%)|  11884 (11%)|  8012 (15%)|    -|
+    | + decodeStage      |     -|  3.15|        2|     20.000|         -|        2|     -|        no|       -|         -|   1059 (~0%)|    962 (1%)|    -|
+    | + macStage         |     -|  0.04|       31|    310.000|         -|        4|     -|       yes|       -|  40 (18%)|    6316 (5%)|  6514 (12%)|    -|
+    | o VITIS_LOOP_29_1  |     -|  7.30|       64|    640.000|         2|        1|    64|       yes|       -|         -|            -|           -|    -|
+    +--------------------+------+------+---------+-----------+----------+---------+------+----------+--------+----------+-------------+------------+-----+
 
 
 ================================================================
@@ -97,72 +97,72 @@
 +----------------------------------------+-----+--------+---------------+------+---------+---------+
 | Name                                   | DSP | Pragma | Variable      | Op   | Impl    | Latency |
 +----------------------------------------+-----+--------+---------------+------+---------+---------+
-| + sparse2_4Mult                        | 80  |        |               |      |         |         |
-|   add_ln30_fu_837_p2                   | -   |        | add_ln30      | add  | fabric  | 0       |
-|  + macStage                            | 80  |        |               |      |         |         |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U115  | 3   |        | partialMAC    | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U116  | 3   |        | partialMAC_1  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U117  | 3   |        | partialMAC_2  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U118  | 3   |        | partialMAC_3  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U119  | 3   |        | partialMAC_4  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U120  | 3   |        | partialMAC_5  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U121  | 3   |        | partialMAC_6  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U122  | 3   |        | partialMAC_7  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U123  | 3   |        | partialMAC_8  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U124  | 3   |        | partialMAC_9  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U125  | 3   |        | partialMAC_10 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U126  | 3   |        | partialMAC_11 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U127  | 3   |        | partialMAC_12 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U128  | 3   |        | partialMAC_13 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U129  | 3   |        | partialMAC_14 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U130  | 3   |        | partialMAC_15 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U115  | 3   |        | partialMAC_16 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U116  | 3   |        | partialMAC_17 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U117  | 3   |        | partialMAC_18 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U118  | 3   |        | partialMAC_19 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U119  | 3   |        | partialMAC_20 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U120  | 3   |        | partialMAC_21 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U121  | 3   |        | partialMAC_22 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U122  | 3   |        | partialMAC_23 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U123  | 3   |        | partialMAC_24 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U124  | 3   |        | partialMAC_25 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U125  | 3   |        | partialMAC_26 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U126  | 3   |        | partialMAC_27 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U127  | 3   |        | partialMAC_28 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U128  | 3   |        | partialMAC_29 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U129  | 3   |        | partialMAC_30 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U130  | 3   |        | partialMAC_31 | fmul | maxdsp  | 3       |
+| + sparse2_4Mult                        | 40  |        |               |      |         |         |
+|   add_ln29_fu_837_p2                   | -   |        | add_ln29      | add  | fabric  | 0       |
+|  + macStage                            | 40  |        |               |      |         |         |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U107  | 3   |        | partialMAC    | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U108  | 3   |        | partialMAC_1  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U109  | 3   |        | partialMAC_2  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U110  | 3   |        | partialMAC_3  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U111  | 3   |        | partialMAC_4  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U112  | 3   |        | partialMAC_5  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U113  | 3   |        | partialMAC_6  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U114  | 3   |        | partialMAC_7  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U107  | 3   |        | partialMAC_8  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U108  | 3   |        | partialMAC_9  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U109  | 3   |        | partialMAC_10 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U110  | 3   |        | partialMAC_11 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U111  | 3   |        | partialMAC_12 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U112  | 3   |        | partialMAC_13 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U113  | 3   |        | partialMAC_14 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U114  | 3   |        | partialMAC_15 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U107  | 3   |        | partialMAC_16 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U108  | 3   |        | partialMAC_17 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U109  | 3   |        | partialMAC_18 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U110  | 3   |        | partialMAC_19 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U111  | 3   |        | partialMAC_20 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U112  | 3   |        | partialMAC_21 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U113  | 3   |        | partialMAC_22 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U114  | 3   |        | partialMAC_23 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U107  | 3   |        | partialMAC_24 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U108  | 3   |        | partialMAC_25 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U109  | 3   |        | partialMAC_26 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U110  | 3   |        | partialMAC_27 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U111  | 3   |        | partialMAC_28 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U112  | 3   |        | partialMAC_29 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U113  | 3   |        | partialMAC_30 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U114  | 3   |        | partialMAC_31 | fmul | maxdsp  | 3       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U99  | 2   |        | partialMAC_32 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U100 | 2   |        | partialMAC_33 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U101 | 2   |        | partialMAC_34 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U102 | 2   |        | partialMAC_35 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_36 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_37 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_38 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U106 | 2   |        | partialMAC_39 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U99  | 2   |        | partialMAC_36 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U100 | 2   |        | partialMAC_37 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U101 | 2   |        | partialMAC_38 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U102 | 2   |        | partialMAC_39 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U99  | 2   |        | partialMAC_40 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U100 | 2   |        | partialMAC_41 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U101 | 2   |        | partialMAC_42 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U102 | 2   |        | partialMAC_43 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_44 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_45 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_46 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U106 | 2   |        | partialMAC_47 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U107 | 2   |        | partialMAC_48 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U108 | 2   |        | partialMAC_49 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U109 | 2   |        | partialMAC_50 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U110 | 2   |        | partialMAC_51 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U107 | 2   |        | partialMAC_52 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U108 | 2   |        | partialMAC_53 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U109 | 2   |        | partialMAC_54 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U110 | 2   |        | partialMAC_55 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U111 | 2   |        | partialMAC_56 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U112 | 2   |        | partialMAC_57 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U111 | 2   |        | partialMAC_58 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U112 | 2   |        | partialMAC_59 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U113 | 2   |        | partialMAC_60 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U113 | 2   |        | partialMAC_61 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U114 | 2   |        | add           | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U99  | 2   |        | partialMAC_44 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U100 | 2   |        | partialMAC_45 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U101 | 2   |        | partialMAC_46 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U102 | 2   |        | partialMAC_47 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_48 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_49 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_50 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_51 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_52 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_53 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_54 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_55 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_56 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_57 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_58 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_59 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U106 | 2   |        | partialMAC_60 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U106 | 2   |        | partialMAC_61 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U106 | 2   |        | add           | fadd | fulldsp | 4       |
 +----------------------------------------+-----+--------+---------------+------+---------+---------+
 
 
@@ -178,24 +178,24 @@
 +-----------------+----------------------------------------------+-----------------------------------------------------+
 | Type            | Options                                      | Location                                            |
 +-----------------+----------------------------------------------+-----------------------------------------------------+
-| pipeline        |                                              | sparse2_4.cpp:31 in demuxinputs                     |
-| unroll          |                                              | sparse2_4.cpp:68 in decodestage                     |
-| pipeline        | II=2                                         | sparse2_4.cpp:97 in macstage                        |
-| unroll          | factor=32                                    | sparse2_4.cpp:99 in macstage                        |
-| unroll          | factor= 16                                   | sparse2_4.cpp:105 in macstage                       |
-| unroll          | factor= 8                                    | sparse2_4.cpp:110 in macstage                       |
-| unroll          | factor= 4                                    | sparse2_4.cpp:115 in macstage                       |
-| unroll          | factor= 2                                    | sparse2_4.cpp:120 in macstage                       |
-| interface       | mode=s_axilite port=return                   | sparse2_4.cpp:134 in sparse2_4mult, return          |
-| aggregate       | compact=auto variable=inp_vector             | sparse2_4.cpp:136 in sparse2_4mult, inp_vector      |
-| aggregate       | compact=auto variable=dataValues             | sparse2_4.cpp:137 in sparse2_4mult, dataValues      |
-| interface       | mode=s_axilite port=dotProd                  | sparse2_4.cpp:138 in sparse2_4mult, dotProd         |
-| interface       | mode=s_axilite port=inp_vector               | sparse2_4.cpp:139 in sparse2_4mult, inp_vector      |
-| interface       | mode=s_axilite port=indices                  | sparse2_4.cpp:140 in sparse2_4mult, indices         |
-| interface       | mode=s_axilite port=dataValues               | sparse2_4.cpp:141 in sparse2_4mult, dataValues      |
-| array_partition | dim=1 type=complete variable=dataValuesDemux | sparse2_4.cpp:147 in sparse2_4mult, dataValuesDemux |
-| array_partition | dim=1 type=complete variable=inp_vectorDemux | sparse2_4.cpp:149 in sparse2_4mult, inp_vectorDemux |
-| array_partition | dim=1 type=complete variable=multInpsRow     | sparse2_4.cpp:153 in sparse2_4mult, multInpsRow     |
+| pipeline        |                                              | sparse2_4.cpp:30 in demuxinputs                     |
+| unroll          |                                              | sparse2_4.cpp:56 in decodestage                     |
+| pipeline        | II=4                                         | sparse2_4.cpp:84 in macstage                        |
+| unroll          | factor=32                                    | sparse2_4.cpp:86 in macstage                        |
+| unroll          | factor= 16                                   | sparse2_4.cpp:91 in macstage                        |
+| unroll          | factor= 8                                    | sparse2_4.cpp:95 in macstage                        |
+| unroll          | factor= 4                                    | sparse2_4.cpp:99 in macstage                        |
+| unroll          | factor= 2                                    | sparse2_4.cpp:103 in macstage                       |
+| interface       | mode=s_axilite port=return                   | sparse2_4.cpp:117 in sparse2_4mult, return          |
+| aggregate       | compact=auto variable=inp_vector             | sparse2_4.cpp:118 in sparse2_4mult, inp_vector      |
+| aggregate       | compact=auto variable=dataValues             | sparse2_4.cpp:119 in sparse2_4mult, dataValues      |
+| interface       | mode=s_axilite port=dotProd                  | sparse2_4.cpp:120 in sparse2_4mult, dotProd         |
+| interface       | mode=s_axilite port=inp_vector               | sparse2_4.cpp:121 in sparse2_4mult, inp_vector      |
+| interface       | mode=s_axilite port=indices                  | sparse2_4.cpp:122 in sparse2_4mult, indices         |
+| interface       | mode=s_axilite port=dataValues               | sparse2_4.cpp:123 in sparse2_4mult, dataValues      |
+| array_partition | dim=1 type=complete variable=dataValuesDemux | sparse2_4.cpp:127 in sparse2_4mult, dataValuesDemux |
+| array_partition | dim=1 type=complete variable=inp_vectorDemux | sparse2_4.cpp:129 in sparse2_4mult, inp_vectorDemux |
+| array_partition | dim=1 type=complete variable=multInpsRow     | sparse2_4.cpp:132 in sparse2_4mult, multInpsRow     |
 +-----------------+----------------------------------------------+-----------------------------------------------------+
 
 
