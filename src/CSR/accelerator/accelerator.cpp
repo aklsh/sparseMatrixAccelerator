@@ -13,20 +13,22 @@ void initialise(data_t storage[N], data_t init_vector[N], bool init){
 
 // Multiplier nodes
 void multipliers(data_t multiplier_outs[K], data_t storage[N], data_t subrow_vals[K], int subrow_col_indices[K], bool mult_enables[K]){
+	#pragma HLS ALLOCATION operation instances=fmul limit=25
+	#pragma HLS ALLOCATION operation instances=fadd limit=25
 	multipliers_loop: for(int c=0;c<K;c++){
 		#pragma HLS UNROLL
 		if(mult_enables[c])
 			multiplier_outs[c] = subrow_vals[c]*storage[subrow_col_indices[c]];
 		else
-			multiplier_outs[c] = 0;
+			multiplier_outs[c] = (data_t)0;
 	}
 }
 
 // Adder Tree
 void adders(data_t &sum, data_t multiplier_outs[K]){
-	#pragma HLS EXPRESSION_BALANCE
-	int x = 0;
+	data_t x = 0;
 	adder_tree: for(int p=0;p<K;p++){
+		#pragma HLS EXPRESSION_BALANCE
 		x+=multiplier_outs[p];
 	}
 	sum = x;
