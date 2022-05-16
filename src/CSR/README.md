@@ -54,8 +54,12 @@ Using HLS pragmas, we can pipeline this design and also have II=1, which will al
 ### Floating-point
 | **Solution** | **Latency (ns)** | **DSP** | **FF** | **LUT** |             **Description**             | **II** | **Target Tclk (ns)** | **Verified cosim** |
 |:------------:|:----------------:|:-------:|:------:|:-------:|:---------------------------------------:|--------|:--------------------:|:------------------:|
-| 1            | 690              | 9       | 3627   | 5671    | K=4, all arrays partitioned completely. | 6      | 10                   | yes                |
-| 2            | 830              | 9       | 3218   | 5370    | K=4, no partitioning.                   | 14     | 10                   | yes                |
+| 1            | 270              | 22       | 3811   | 4693    | K=4, all arrays partitioned completely. | 6      | 10                   | yes                |
+| 2            | 420              | 22       | 3375   | 4401    | K=4, no partitioning.                   | 14     | 10                   | yes                |
+
+### Resource Usage
+In the integer design, the DSPs are used by the integer multiplier. Since K=4, there are 4 such multipliers, each taking up 3 DSP slices.
+In the FP design, the DSPs are used by the multipliers as well as the adders. Each FP adder uses 2 DSP slices. For K=4, there are 3 adders in the adder tree, and 2 adders in the reduction circuit. Thus there are an extra 5\*2=10 DSP slices.
 
 ## Usage
 ### Changing between integer/floating-point design
