@@ -1,0 +1,54 @@
+#-----------------------------------------------------------
+# xsim v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon May 16 14:06:40 2022
+# Process ID: 9399
+# Current directory: /home/akileshkannan/SPMV_CSR/solution2/sim/verilog
+# Command line: xsim -mode tcl -source {xsim.dir/accelerate/xsim_script.tcl}
+# Log file: /home/akileshkannan/SPMV_CSR/solution2/sim/verilog/xsim.log
+# Journal file: /home/akileshkannan/SPMV_CSR/solution2/sim/verilog/xsim.jou
+# Running On: pop-os, OS: Linux, CPU Frequency: 2894.532 MHz, CPU Physical cores: 8, Host memory: 8336 MB
+#-----------------------------------------------------------
+source xsim.dir/accelerate/xsim_script.tcl
+# xsim {accelerate} -autoloadwcfg -tclbatch {accelerate.tcl}
+Time resolution is 1 ps
+source accelerate.tcl
+## run all
+////////////////////////////////////////////////////////////////////////////////////
+// Inter-Transaction Progress: Completed Transaction / Total Transaction
+// Intra-Transaction Progress: Measured Latency / Latency Estimation * 100%
+//
+// RTL Simulation : "Inter-Transaction Progress" ["Intra-Transaction Progress"] @ "Simulation Time"
+////////////////////////////////////////////////////////////////////////////////////
+// RTL Simulation : 0 / 26 [0.00%] @ "125000"
+// RTL Simulation : 1 / 26 [66.67%] @ "565000"
+// RTL Simulation : 2 / 26 [66.67%] @ "705000"
+// RTL Simulation : 3 / 26 [66.67%] @ "845000"
+// RTL Simulation : 4 / 26 [66.67%] @ "985000"
+// RTL Simulation : 5 / 26 [66.67%] @ "1125000"
+// RTL Simulation : 6 / 26 [66.67%] @ "1265000"
+// RTL Simulation : 7 / 26 [66.67%] @ "1405000"
+// RTL Simulation : 8 / 26 [66.67%] @ "1545000"
+// RTL Simulation : 9 / 26 [66.67%] @ "1685000"
+// RTL Simulation : 10 / 26 [66.67%] @ "1825000"
+// RTL Simulation : 11 / 26 [66.67%] @ "1965000"
+// RTL Simulation : 12 / 26 [66.67%] @ "2105000"
+// RTL Simulation : 13 / 26 [66.67%] @ "2245000"
+// RTL Simulation : 14 / 26 [66.67%] @ "2385000"
+// RTL Simulation : 15 / 26 [66.67%] @ "2525000"
+// RTL Simulation : 16 / 26 [66.67%] @ "2665000"
+// RTL Simulation : 17 / 26 [66.67%] @ "2805000"
+// RTL Simulation : 18 / 26 [66.67%] @ "2945000"
+// RTL Simulation : 19 / 26 [66.67%] @ "3085000"
+// RTL Simulation : 20 / 26 [66.67%] @ "3225000"
+// RTL Simulation : 21 / 26 [66.67%] @ "3365000"
+// RTL Simulation : 22 / 26 [66.67%] @ "3505000"
+// RTL Simulation : 23 / 26 [66.67%] @ "3645000"
+// RTL Simulation : 24 / 26 [66.67%] @ "3785000"
+// RTL Simulation : 25 / 26 [66.67%] @ "3925000"
+// RTL Simulation : 26 / 26 [100.00%] @ "4065000"
+////////////////////////////////////////////////////////////////////////////////////
+$finish called at time : 4125 ns : File "/home/akileshkannan/SPMV_CSR/solution2/sim/verilog/accelerate.autotb.v" Line 584
+## quit
+INFO: [Common 17-206] Exiting xsim at Mon May 16 14:06:47 2022...

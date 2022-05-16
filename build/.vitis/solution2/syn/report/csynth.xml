@@ -16,18 +16,18 @@
         <PipelineType>yes</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>6.923</EstimatedClockPeriod>
+            <EstimatedClockPeriod>7.256</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>23</Best-caseLatency>
-            <Average-caseLatency>23</Average-caseLatency>
-            <Worst-caseLatency>23</Worst-caseLatency>
-            <Best-caseRealTimeLatency>0.230 us</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>0.230 us</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>0.230 us</Worst-caseRealTimeLatency>
+            <Best-caseLatency>42</Best-caseLatency>
+            <Average-caseLatency>42</Average-caseLatency>
+            <Worst-caseLatency>42</Worst-caseLatency>
+            <Best-caseRealTimeLatency>0.420 us</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>0.420 us</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>0.420 us</Worst-caseRealTimeLatency>
             <PipelineInitiationInterval>14</PipelineInitiationInterval>
-            <PipelineDepth>24</PipelineDepth>
+            <PipelineDepth>43</PipelineDepth>
             <Interval-min>14</Interval-min>
             <Interval-max>14</Interval-max>
         </SummaryOfOverallLatency>
@@ -35,9 +35,9 @@
     <AreaEstimates>
         <Resources>
             <BRAM_18K>0</BRAM_18K>
-            <DSP>12</DSP>
-            <FF>2136</FF>
-            <LUT>1356</LUT>
+            <DSP>22</DSP>
+            <FF>3375</FF>
+            <LUT>4401</LUT>
             <URAM>0</URAM>
         </Resources>
         <AvailableResources>
@@ -479,14 +479,14 @@
             <ModuleName>accelerate</ModuleName>
             <InstancesList>
                 <Instance>
-                    <InstName>grp_reduce_fu_583</InstName>
+                    <InstName>grp_reduce_fu_1452</InstName>
                     <ModuleName>reduce</ModuleName>
                     <IsCompInst>true</IsCompInst>
-                    <ID>583</ID>
-                    <BindInstances>add_ln35_fu_283_p2 level_out_value_fu_305_p2 add_ln35_1_fu_362_p2 out_data_value_fu_412_p2</BindInstances>
+                    <ID>1452</ID>
+                    <BindInstances>add_ln35_fu_312_p2 fadd_32ns_32ns_32_5_full_dsp_1_U1 add_ln35_1_fu_374_p2 fadd_32ns_32ns_32_5_full_dsp_1_U2</BindInstances>
                 </Instance>
             </InstancesList>
-            <BindInstances>mul_32s_32s_32_2_1_U4 mul_32s_32s_32_2_1_U5 mul_32s_32s_32_2_1_U6 mul_32s_32s_32_2_1_U7 add_ln42_fu_667_p2 add_ln42_1_fu_671_p2 x_1_fu_677_p2 storage_U</BindInstances>
+            <BindInstances>fmul_32ns_32ns_32_4_max_dsp_1_U12 fmul_32ns_32ns_32_4_max_dsp_1_U10 fmul_32ns_32ns_32_4_max_dsp_1_U13 fmul_32ns_32ns_32_4_max_dsp_1_U11 fadd_32ns_32ns_32_5_full_dsp_1_x_U7 fadd_32ns_32ns_32_5_full_dsp_1_x_U8 fadd_32ns_32ns_32_5_full_dsp_1_x_U9 storage_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -497,44 +497,44 @@
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
                     <TargetInitiationInterval>4294967295</TargetInitiationInterval>
-                    <EstimatedClockPeriod>5.039</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>7.256</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>2</Best-caseLatency>
-                    <Average-caseLatency>2</Average-caseLatency>
-                    <Worst-caseLatency>2</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>20.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>20.000 ns</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>20.000 ns</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>1</PipelineInitiationInterval>
-                    <PipelineDepth>3</PipelineDepth>
+                    <Best-caseLatency>12</Best-caseLatency>
+                    <Average-caseLatency>12</Average-caseLatency>
+                    <Worst-caseLatency>12</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.120 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.120 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.120 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>6</PipelineInitiationInterval>
+                    <PipelineDepth>13</PipelineDepth>
                     <PipelineType>yes</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <FF>650</FF>
+                    <DSP>4</DSP>
+                    <AVAIL_DSP>220</AVAIL_DSP>
+                    <UTIL_DSP>1</UTIL_DSP>
+                    <FF>1424</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>484</LUT>
+                    <UTIL_FF>1</UTIL_FF>
+                    <LUT>1248</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>~0</UTIL_LUT>
+                    <UTIL_LUT>2</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
-                    <DSP>0</DSP>
-                    <AVAIL_DSP>220</AVAIL_DSP>
-                    <UTIL_DSP>0</UTIL_DSP>
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln35_fu_283_p2" SOURCE="SPMV_CSR_src/accelerator/reducer.cpp:35" URAM="0" VARIABLE="add_ln35"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="level_out_value_fu_305_p2" SOURCE="SPMV_CSR_src/accelerator/reducer.cpp:14" URAM="0" VARIABLE="level_out_value"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln35_1_fu_362_p2" SOURCE="SPMV_CSR_src/accelerator/reducer.cpp:35" URAM="0" VARIABLE="add_ln35_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="out_data_value_fu_412_p2" SOURCE="SPMV_CSR_src/accelerator/reducer.cpp:14" URAM="0" VARIABLE="out_data_value"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln35_fu_312_p2" SOURCE="SPMV_CSR_src/accelerator/reducer.cpp:35" URAM="0" VARIABLE="add_ln35"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U1" SOURCE="SPMV_CSR_src/accelerator/reducer.cpp:14" URAM="0" VARIABLE="level_out_value"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln35_1_fu_374_p2" SOURCE="SPMV_CSR_src/accelerator/reducer.cpp:35" URAM="0" VARIABLE="add_ln35_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_U2" SOURCE="SPMV_CSR_src/accelerator/reducer.cpp:14" URAM="0" VARIABLE="out_data_value"/>
             </BindNodes>
         </Module>
         <Module>
@@ -544,17 +544,17 @@
                     <TargetClockPeriod>10.00</TargetClockPeriod>
                     <ClockUncertainty>2.70</ClockUncertainty>
                     <TargetInitiationInterval>4294967295</TargetInitiationInterval>
-                    <EstimatedClockPeriod>6.923</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>7.256</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>23</Best-caseLatency>
-                    <Average-caseLatency>23</Average-caseLatency>
-                    <Worst-caseLatency>23</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>0.230 us</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>0.230 us</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>0.230 us</Worst-caseRealTimeLatency>
+                    <Best-caseLatency>42</Best-caseLatency>
+                    <Average-caseLatency>42</Average-caseLatency>
+                    <Worst-caseLatency>42</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.420 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.420 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.420 us</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>14</PipelineInitiationInterval>
-                    <PipelineDepth>24</PipelineDepth>
+                    <PipelineDepth>43</PipelineDepth>
                     <PipelineType>yes</PipelineType>
                 </SummaryOfOverallLatency>
             </PerformanceEstimates>
@@ -563,44 +563,45 @@
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
-                    <DSP>12</DSP>
+                    <DSP>22</DSP>
                     <AVAIL_DSP>220</AVAIL_DSP>
-                    <UTIL_DSP>5</UTIL_DSP>
-                    <FF>2136</FF>
+                    <UTIL_DSP>10</UTIL_DSP>
+                    <FF>3375</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
-                    <UTIL_FF>2</UTIL_FF>
-                    <LUT>1356</LUT>
+                    <UTIL_FF>3</UTIL_FF>
+                    <LUT>4401</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
-                    <UTIL_LUT>2</UTIL_LUT>
+                    <UTIL_LUT>8</UTIL_LUT>
                     <URAM>0</URAM>
                     <AVAIL_URAM>0</AVAIL_URAM>
                     <UTIL_URAM>0</UTIL_URAM>
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U4" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:28" URAM="0" VARIABLE="mul_ln28"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U5" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:28" URAM="0" VARIABLE="mul_ln28_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U6" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:28" URAM="0" VARIABLE="mul_ln28_2"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="3" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_32_2_1_U7" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:28" URAM="0" VARIABLE="mul_ln28_3"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="tadder" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln42_fu_667_p2" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:42" URAM="0" VARIABLE="add_ln42"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln42_1_fu_671_p2" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:42" URAM="0" VARIABLE="add_ln42_1"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="tadder" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="x_1_fu_677_p2" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:42" URAM="0" VARIABLE="x_1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U12" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:21" URAM="0" VARIABLE="mul_i"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U10" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:21" URAM="0" VARIABLE="mul_1_i"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U13" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:21" URAM="0" VARIABLE="mul_2_i"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fmul" DSP="3" ID="" IMPL="maxdsp" LATENCY="3" LOOP="" OPTYPE="fmul" PRAGMA="" RTLNAME="fmul_32ns_32ns_32_4_max_dsp_1_U11" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:21" URAM="0" VARIABLE="mul_3_i"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_x_U7" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:32" URAM="0" VARIABLE="tmp"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_x_U8" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:32" URAM="0" VARIABLE="tmp1"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op fadd" DSP="2" ID="" IMPL="fulldsp" LATENCY="4" LOOP="" OPTYPE="fadd" PRAGMA="" RTLNAME="fadd_32ns_32ns_32_5_full_dsp_1_x_U9" SOURCE="SPMV_CSR_src/accelerator/accelerator.cpp:32" URAM="0" VARIABLE="x_1"/>
                 <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage ram_t2p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_t2p" PRAGMA="" RTLNAME="storage_U" SOURCE="" URAM="0" VARIABLE="storage"/>
             </BindNodes>
         </Module>
     </ModuleInformation>
     <FIFOInformation/>
     <UserConfigCommands>
+        <config_compile unsafe_math_optimizations="1"/>
         <config_export output="/home/akileshkannan/SPMV_CSR_src"/>
     </UserConfigCommands>
     <Args>
-        <Arg ArgName="out" index="0" direction="out" srcType="int&amp;" srcSize="32">
+        <Arg ArgName="out" index="0" direction="out" srcType="float&amp;" srcSize="32">
             <hwRefs>
                 <hwRef type="port" interface="out_r" name="out_r" usage="data" direction="out"/>
                 <hwRef type="port" interface="out_r_ap_vld" name="out_r_ap_vld" usage="control" direction="out"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="subrow_vals" index="1" direction="in" srcType="int*" srcSize="32">
+        <Arg ArgName="subrow_vals" index="1" direction="in" srcType="float*" srcSize="32">
             <hwRefs>
                 <hwRef type="port" interface="subrow_vals_address0" name="subrow_vals_address0" usage="address" direction="out"/>
                 <hwRef type="port" interface="subrow_vals_ce0" name="subrow_vals_ce0" usage="control" direction="out"/>
@@ -635,7 +636,7 @@
                 <hwRef type="port" interface="label_r" name="label_r" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="init_vector" index="5" direction="in" srcType="int*" srcSize="32">
+        <Arg ArgName="init_vector" index="5" direction="in" srcType="float*" srcSize="32">
             <hwRefs>
                 <hwRef type="port" interface="init_vector_address0" name="init_vector_address0" usage="address" direction="out"/>
                 <hwRef type="port" interface="init_vector_ce0" name="init_vector_ce0" usage="control" direction="out"/>
@@ -944,12 +945,12 @@
             <item name="Top Function Arguments">
                 <table isCollapsed="1">
                     <keys size="3">Argument, Direction, Datatype</keys>
-                    <column name="out">out, int&amp;</column>
-                    <column name="subrow_vals">in, int*</column>
+                    <column name="out">out, float&amp;</column>
+                    <column name="subrow_vals">in, float*</column>
                     <column name="subrow_col_indices">in, int*</column>
                     <column name="mult_enables">in, bool*</column>
                     <column name="label">in, int</column>
-                    <column name="init_vector">in, int*</column>
+                    <column name="init_vector">in, float*</column>
                     <column name="init">in, bool</column>
                 </table>
             </item>
@@ -992,11 +993,13 @@
         <section name="M_AXI Burst Information" level="0" HEADER_NOTE="Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings."/>
     </ReportBurst>
     <PragmaReport>
-        <Pragma type="unroll" location="SPMV_CSR_src/accelerator/accelerator.cpp:11" status="valid" parentFunction="initialise" variable="" isDirective="0" options=""/>
-        <Pragma type="unroll" location="SPMV_CSR_src/accelerator/accelerator.cpp:26" status="valid" parentFunction="multipliers" variable="" isDirective="0" options=""/>
-        <Pragma type="expression_balance" location="SPMV_CSR_src/accelerator/accelerator.cpp:36" status="valid" parentFunction="adders" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="SPMV_CSR_src/accelerator/accelerator.cpp:41" status="valid" parentFunction="adders" variable="" isDirective="0" options=""/>
-        <Pragma type="pipeline" location="SPMV_CSR_src/accelerator/accelerator.cpp:59" status="valid" parentFunction="accelerate" variable="" isDirective="0" options=""/>
+        <Pragma type="unroll" location="SPMV_CSR_src/accelerator/accelerator.cpp:8" status="valid" parentFunction="initialise" variable="" isDirective="0" options=""/>
+        <Pragma type="allocation" location="SPMV_CSR_src/accelerator/accelerator.cpp:16" status="valid" parentFunction="multipliers" variable="" isDirective="0" options="operation instances=fmul limit=25"/>
+        <Pragma type="allocation" location="SPMV_CSR_src/accelerator/accelerator.cpp:17" status="valid" parentFunction="multipliers" variable="" isDirective="0" options="operation instances=fadd limit=25"/>
+        <Pragma type="unroll" location="SPMV_CSR_src/accelerator/accelerator.cpp:19" status="valid" parentFunction="multipliers" variable="" isDirective="0" options=""/>
+        <Pragma type="expression_balance" location="SPMV_CSR_src/accelerator/accelerator.cpp:31" status="valid" parentFunction="adders" variable="" isDirective="0" options=""/>
+        <Pragma type="top" location="SPMV_CSR_src/accelerator/accelerator.cpp:39" status="valid" parentFunction="accelerate" variable="" isDirective="0" options="name=accelerate"/>
+        <Pragma type="pipeline" location="SPMV_CSR_src/accelerator/accelerator.cpp:46" status="valid" parentFunction="accelerate" variable="" isDirective="0" options=""/>
         <Pragma type="unroll" location="SPMV_CSR_src/accelerator/reducer.cpp:46" status="valid" parentFunction="reduce" variable="" isDirective="0" options=""/>
     </PragmaReport>
 </profile>

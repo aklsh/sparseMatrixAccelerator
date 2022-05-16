@@ -136,4 +136,631 @@ INFO: [RTMG 210-278] Implementing memory 'accelerate_storage_RAM_AUTO_1R1W_ram (
 INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.34 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.35 seconds; current allocated memory: 148.055 MB.
 INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.3 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 152.535 MB.
 INFO: [VHDL 208-304] Generating VHDL RTL for accelerate.
-INFO
+INFO==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -output=/home/akileshkannan/SPMV_CSR_src
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -output /home/akileshkannan/SPMV_CSR_src -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name accelerate accelerate 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.024 GB.
+INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/reducer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/accelerator.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.61 seconds. CPU system time: 1.39 seconds. Elapsed time: 1.65 seconds; current allocated memory: 1.024 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_48_1' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:48:19)
+INFO: [HLS 214-291] Loop 'reducer_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.cpp:45:16)
+INFO: [HLS 214-291] Loop 'adder_tree' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:29:14)
+INFO: [HLS 214-291] Loop 'multipliers_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:16:20)
+INFO: [HLS 214-291] Loop 'set_storage_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:7:21)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:23:7)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:14:7)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_48_1' (SPMV_CSR_src/accelerator/accelerator.cpp:48:19) in function 'accelerate' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-186] Unrolling loop 'reducer_loop' (SPMV_CSR_src/accelerator/reducer.cpp:45:16) in function 'reducer::reduce' completely with a factor of 1 (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-186] Unrolling loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:29:14) in function 'adders' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:26:0)
+INFO: [HLS 214-186] Unrolling loop 'multipliers_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:16:20) in function 'multipliers' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:15:0)
+INFO: [HLS 214-186] Unrolling loop 'set_storage_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:7:21) in function 'initialise' completely with a factor of 23 (SPMV_CSR_src/accelerator/accelerator.cpp:5:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:23:7) in function 'reducer::reducer' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:14:7) in function 'reducer_level::reducer_level' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(float, int)' into 'reducer_level::reducer_level()' (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::reducer_level()' into 'reducer::reducer()' (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::fp_struct(float)' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (/wrk/ci/prod/2021.2/rdi_builds/continuous/2021_10_19_3367213/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::mantissa() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (/wrk/ci/prod/2021.2/rdi_builds/continuous/2021_10_19_3367213/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::expv() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (/wrk/ci/prod/2021.2/rdi_builds/continuous/2021_10_19_3367213/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<float>::__signbit() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (/wrk/ci/prod/2021.2/rdi_builds/continuous/2021_10_19_3367213/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, (ap_q_mode)6, float>(float, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' into 'int generic_cast_IEEE754<int, float>(float, bool)' (/wrk/ci/prod/2021.2/rdi_builds/continuous/2021_10_19_3367213/src/shared/hls/clib/hlsmath/include/FloatingPoint/hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, float>(float, bool)' into '__hls_fptosi_float_i32' (/wrk/ci/prod/2021.2/rdi_builds/continuous/2021_10_19_3367213/src/shared/hls/clib/hlsmath/src/lib_floatconversion.cpp:51:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(float, int)' into 'reducer::reduce(float&, float, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::insert(reducer_data)' into 'reducer::reduce(float&, float, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::add(reducer_data&, int)' into 'reducer::reduce(float&, float, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer::reducer()' into 'accelerate(float&, float*, int*, bool*, int, float*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-178] Inlining function 'initialise(float*, float*, bool)' into 'accelerate(float&, float*, int*, bool*, int, float*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-178] Inlining function 'multipliers(float*, float*, float*, int*, bool*)' into 'accelerate(float&, float*, int*, bool*, int, float*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.91 seconds. CPU system time: 0.51 seconds. Elapsed time: 4.5 seconds; current allocated memory: 111.949 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 111.949 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.08 seconds. CPU system time: 0.05 seconds. Elapsed time: 0.22 seconds; current allocated memory: 129.930 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'adders' (SPMV_CSR_src/accelerator/accelerator.cpp:30) automatically.
+INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:51) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.2 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 153.602 MB.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.valid' automatically.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.num_items' automatically.
+INFO: [XFORM 203-102] Partitioning array 'multiplier_outs' automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.value' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.label' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function '__hls_fptosi_float_i32' into 'adders' (SPMV_CSR_src/accelerator/accelerator.cpp:30) automatically.
+INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:51) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SPMV_CSR_src/accelerator/accelerator.cpp:18:5) to (SPMV_CSR_src/accelerator/accelerator.cpp:54:1) in function 'accelerate'... converting 9 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.24 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 197.066 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'storage' (SPMV_CSR_src/accelerator/accelerator.cpp:9:13)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 210.156 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'accelerate' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reduce' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'reduce'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 13, function 'reduce'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.16 seconds; current allocated memory: 210.156 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 210.156 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'accelerate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'accelerate'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_11', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 6). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-875] II = 7 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln53', SPMV_CSR_src/accelerator/accelerator.cpp:53) to 'reduce'.
+WARNING: [HLS 200-875] II = 8 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln53', SPMV_CSR_src/accelerator/accelerator.cpp:53) to 'reduce'.
+WARNING: [HLS 200-875] II = 9 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln53', SPMV_CSR_src/accelerator/accelerator.cpp:53) to 'reduce'.
+WARNING: [HLS 200-875] II = 10 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln53', SPMV_CSR_src/accelerator/accelerator.cpp:53) to 'reduce'.
+WARNING: [HLS 200-875] II = 11 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln53', SPMV_CSR_src/accelerator/accelerator.cpp:53) to 'reduce'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('storage_load_1', SPMV_CSR_src/accelerator/accelerator.cpp:19) on array 'storage' due to limited memory ports (II = 12). Please consider using a memory core with more ports or partitioning the array 'storage'.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -output=/home/akileshkannan/SPMV_CSR_src
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -output /home/akileshkannan/SPMV_CSR_src -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name accelerate accelerate 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.024 GB.
+INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/reducer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/accelerator.cpp' ... 
+WARNING: [HLS 207-4850] format specifies type 'double' but the argument has type 'data_t' (aka 'int') (SPMV_CSR_src/accelerator/accelerator.cpp:49:17)
+WARNING: [HLS 207-4850] format specifies type 'double' but the argument has type 'data_t' (aka 'int') (SPMV_CSR_src/accelerator/accelerator.cpp:52:22)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.55 seconds. CPU system time: 0.82 seconds. Elapsed time: 1.23 seconds; current allocated memory: 1.024 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_48_1' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:48:19)
+INFO: [HLS 214-291] Loop 'reducer_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.cpp:45:16)
+INFO: [HLS 214-291] Loop 'adder_tree' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:29:14)
+INFO: [HLS 214-291] Loop 'multipliers_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:16:20)
+INFO: [HLS 214-291] Loop 'set_storage_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:7:21)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:23:7)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:14:7)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_48_1' (SPMV_CSR_src/accelerator/accelerator.cpp:48:19) in function 'accelerate' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-186] Unrolling loop 'reducer_loop' (SPMV_CSR_src/accelerator/reducer.cpp:45:16) in function 'reducer::reduce' completely with a factor of 1 (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-186] Unrolling loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:29:14) in function 'adders' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:26:0)
+INFO: [HLS 214-186] Unrolling loop 'multipliers_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:16:20) in function 'multipliers' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:15:0)
+INFO: [HLS 214-186] Unrolling loop 'set_storage_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:7:21) in function 'initialise' completely with a factor of 23 (SPMV_CSR_src/accelerator/accelerator.cpp:5:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:23:7) in function 'reducer::reducer' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:14:7) in function 'reducer_level::reducer_level' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(int, int)' into 'reducer_level::reducer_level()' (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::reducer_level()' into 'reducer::reducer()' (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(int, int)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::insert(reducer_data)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::add(reducer_data&, int)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer::reducer()' into 'accelerate(int&, int*, int*, bool*, int, int*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-178] Inlining function 'initialise(int*, int*, bool)' into 'accelerate(int&, int*, int*, bool*, int, int*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-178] Inlining function 'multipliers(int*, int*, int*, int*, bool*)' into 'accelerate(int&, int*, int*, bool*, int, int*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.95 seconds. CPU system time: 0.37 seconds. Elapsed time: 3.66 seconds; current allocated memory: 111.789 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 111.789 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 112.500 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:51) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 112.633 MB.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.valid' automatically.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.num_items' automatically.
+INFO: [XFORM 203-102] Partitioning array 'multiplier_outs' automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.value' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.label' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:51) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SPMV_CSR_src/accelerator/accelerator.cpp:18:5) to (SPMV_CSR_src/accelerator/accelerator.cpp:54:1) in function 'accelerate'... converting 9 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:36)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 134.188 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'storage' (SPMV_CSR_src/accelerator/accelerator.cpp:9:13)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 134.930 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'accelerate' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reduce' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'reduce'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, function 'reduce'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.1 seconds; current allocated memory: 137.598 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 137.598 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'accelerate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'accelerate'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_1', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_3', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_5', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_7', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_21', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_9', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 13). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 24, function 'accelerate'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.37 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 138.078 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 138.078 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reduce' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_num_items_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_0_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_label_0_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_num_items_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_1_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_valid_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_0_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_valid_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_1_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_label_1_0' is power-on initialization.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'reduce' pipeline 'reduce' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reduce'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 138.078 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'accelerate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/out_r' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_vals' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_col_indices' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/mult_enables' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/label_r' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'accelerate' to 'ap_ctrl_hs'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'accelerate' pipeline 'accelerate' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_2_1': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'accelerate'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.16 seconds; current allocated memory: 140.852 MB.
+INFO: [RTMG 210-278] Implementing memory 'accelerate_storage_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.35 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.35 seconds; current allocated memory: 148.570 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.31 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.32 seconds; current allocated memory: 152.633 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for accelerate.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -output=/home/akileshkannan/SPMV_CSR_src
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -output /home/akileshkannan/SPMV_CSR_src -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name accelerate accelerate 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1.024 GB.
+INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/reducer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/accelerator.cpp' ... 
+WARNING: [HLS 207-4850] format specifies type 'double' but the argument has type 'data_t' (aka 'int') (SPMV_CSR_src/accelerator/accelerator.cpp:49:17)
+WARNING: [HLS 207-4850] format specifies type 'double' but the argument has type 'data_t' (aka 'int') (SPMV_CSR_src/accelerator/accelerator.cpp:52:22)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.5 seconds. CPU system time: 0.7 seconds. Elapsed time: 1.11 seconds; current allocated memory: 1.024 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_48_1' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:48:19)
+INFO: [HLS 214-291] Loop 'reducer_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.cpp:45:16)
+INFO: [HLS 214-291] Loop 'adder_tree' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:29:14)
+INFO: [HLS 214-291] Loop 'multipliers_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:16:20)
+INFO: [HLS 214-291] Loop 'set_storage_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:7:21)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:23:7)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:14:7)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_48_1' (SPMV_CSR_src/accelerator/accelerator.cpp:48:19) in function 'accelerate' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-186] Unrolling loop 'reducer_loop' (SPMV_CSR_src/accelerator/reducer.cpp:45:16) in function 'reducer::reduce' completely with a factor of 1 (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-186] Unrolling loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:29:14) in function 'adders' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:26:0)
+INFO: [HLS 214-186] Unrolling loop 'multipliers_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:16:20) in function 'multipliers' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:15:0)
+INFO: [HLS 214-186] Unrolling loop 'set_storage_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:7:21) in function 'initialise' completely with a factor of 23 (SPMV_CSR_src/accelerator/accelerator.cpp:5:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:23:7) in function 'reducer::reducer' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:14:7) in function 'reducer_level::reducer_level' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(int, int)' into 'reducer_level::reducer_level()' (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::reducer_level()' into 'reducer::reducer()' (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(int, int)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::insert(reducer_data)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::add(reducer_data&, int)' into 'reducer::reduce(int&, int, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer::reducer()' into 'accelerate(int&, int*, int*, bool*, int, int*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-178] Inlining function 'initialise(int*, int*, bool)' into 'accelerate(int&, int*, int*, bool*, int, int*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-178] Inlining function 'multipliers(int*, int*, int*, int*, bool*)' into 'accelerate(int&, int*, int*, bool*, int, int*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.47 seconds. CPU system time: 0.36 seconds. Elapsed time: 3.69 seconds; current allocated memory: 111.789 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 111.789 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 112.500 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:51) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 112.633 MB.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.valid' automatically.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.num_items' automatically.
+INFO: [XFORM 203-102] Partitioning array 'multiplier_outs' automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.value' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.label' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:51) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SPMV_CSR_src/accelerator/accelerator.cpp:18:5) to (SPMV_CSR_src/accelerator/accelerator.cpp:54:1) in function 'accelerate'... converting 9 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:36)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 134.434 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'storage' (SPMV_CSR_src/accelerator/accelerator.cpp:9:13)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 134.930 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'accelerate' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reduce' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'reduce'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 3, function 'reduce'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.11 seconds; current allocated memory: 137.656 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 137.656 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'accelerate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'accelerate'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_1', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_3', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 2). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_5', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 3). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_7', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 4). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_21', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 11). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_9', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 13). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 24, function 'accelerate'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.36 seconds. CPU system time: 0 seconds. Elapsed time: 0.37 seconds; current allocated memory: 137.973 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.12 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.13 seconds; current allocated memory: 137.973 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reduce' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_num_items_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_0_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_label_0_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_num_items_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_1_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_valid_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_0_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_valid_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_1_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_label_1_0' is power-on initialization.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'reduce' pipeline 'reduce' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Finished creating RTL model for 'reduce'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 137.973 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'accelerate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/out_r' to 'ap_vld'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_vals' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/subrow_col_indices' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/mult_enables' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/label_r' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init_vector' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'accelerate/init' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'accelerate' to 'ap_ctrl_hs'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'accelerate' pipeline 'accelerate' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_2_1': 4 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'accelerate'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 140.852 MB.
+INFO: [RTMG 210-278] Implementing memory 'accelerate_storage_RAM_AUTO_1R1W_ram (RAM)' using auto RAMs with power-on initialization.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.32 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.34 seconds; current allocated memory: 148.570 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.32 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.32 seconds; current allocated memory: 152.633 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for accelerate.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -output=/home/akileshkannan/SPMV_CSR_src
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -output /home/akileshkannan/SPMV_CSR_src -rtl verilog 
+INFO: [HLS 200-1510] Running: set_directive_top -name accelerate accelerate 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 1.024 GB.
+INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/reducer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/accelerator.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1.2 seconds. CPU system time: 0.63 seconds. Elapsed time: 0.94 seconds; current allocated memory: 1.024 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_48_1' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:48:19)
+INFO: [HLS 214-291] Loop 'reducer_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.cpp:45:16)
+INFO: [HLS 214-291] Loop 'adder_tree' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:29:14)
+INFO: [HLS 214-291] Loop 'multipliers_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:16:20)
+INFO: [HLS 214-291] Loop 'set_storage_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:7:21)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:23:7)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:14:7)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_48_1' (SPMV_CSR_src/accelerator/accelerator.cpp:48:19) in function 'accelerate' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-186] Unrolling loop 'reducer_loop' (SPMV_CSR_src/accelerator/reducer.cpp:45:16) in function 'reducer::reduce' completely with a factor of 1 (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-186] Unrolling loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:29:14) in function 'adders' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:26:0)
+INFO: [HLS 214-186] Unrolling loop 'multipliers_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:16:20) in function 'multipliers' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:15:0)
+INFO: [HLS 214-186] Unrolling loop 'set_storage_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:7:21) in function 'initialise' completely with a factor of 23 (SPMV_CSR_src/accelerator/accelerator.cpp:5:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:23:7) in function 'reducer::reducer' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:14:7) in function 'reducer_level::reducer_level' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(float, int)' into 'reducer_level::reducer_level()' (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::reducer_level()' into 'reducer::reducer()' (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(float, int)' into 'reducer::reduce(float&, float, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::insert(reducer_data)' into 'reducer::reduce(float&, float, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::add(reducer_data&, int)' into 'reducer::reduce(float&, float, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer::reducer()' into 'accelerate(float&, float*, int*, bool*, int, float*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-178] Inlining function 'initialise(float*, float*, bool)' into 'accelerate(float&, float*, int*, bool*, int, float*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-178] Inlining function 'multipliers(float*, float*, float*, int*, bool*)' into 'accelerate(float&, float*, int*, bool*, int, float*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:36:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3.59 seconds. CPU system time: 0.34 seconds. Elapsed time: 3.6 seconds; current allocated memory: 111.758 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 111.758 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 112.473 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:51) automatically.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 112.578 MB.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.valid' automatically.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.num_items' automatically.
+INFO: [XFORM 203-102] Partitioning array 'multiplier_outs' automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.value' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.label' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 2 completely.
+INFO: [XFORM 203-602] Inlining function 'adders' into 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:51) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SPMV_CSR_src/accelerator/accelerator.cpp:18:5) to (SPMV_CSR_src/accelerator/accelerator.cpp:54:1) in function 'accelerate'... converting 9 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.07 seconds; current allocated memory: 134.184 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'storage' (SPMV_CSR_src/accelerator/accelerator.cpp:9:13)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 134.980 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'accelerate' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reduce' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'reduce'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 13, function 'reduce'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.14 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 137.699 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 137.699 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'accelerate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'accelerate'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_11', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 6). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-875] II = 7 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln53', SPMV_CSR_src/accelerator/accelerator.cpp:53) to 'reduce'.
+WARNING: [HLS 200-875] II = 8 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln53', SPMV_CSR_src/accelerator/accelerator.cpp:53) to 'reduce'.
+WARNING: [HLS 200-875] II = 9 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln53', SPMV_CSR_src/accelerator/accelerator.cpp:53) to 'reduce'.
+WARNING: [HLS 200-875] II = 10 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln53', SPMV_CSR_src/accelerator/accelerator.cpp:53) to 'reduce'.
+WARNING: [HLS 200-875] II = 11 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln53', SPMV_CSR_src/accelerator/accelerator.cpp:53) to 'reduce'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('storage_load_1', SPMV_CSR_src/accelerator/accelerator.cpp:19) on array 'storage' due to limited memory ports (II = 12). Please consider using a memory core with more ports or partitioning the array 'storage'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_9', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 13). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 52, function 'accelerate'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.6 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.61 seconds; current allocated memory: 138.266 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.24 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 138.266 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'reduce' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_num_items_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_0_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_label_0_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_num_items_1' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_buffer_value_1_0' is power-on initialization.
+WARNING: [RTGEN 206-101] Register 'reducer_circuit_adder_levels_valid_0' is power-on initialization.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1464] Running solution command: config_compile -unsafe_math_optimizations=1
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [HLS 200-1464] Running solution command: config_export -output=/home/akileshkannan/SPMV_CSR_src
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_compile -unsafe_math_optimizations 
+INFO: [XFORM 203-1172] Optimizing floating point zeros and discarding its signedness.
+INFO: [XFORM 203-1176] Optimizing floating point comparison without checking NaN.
+INFO: [XFORM 203-1173] Reordering floating point operations aggressively.
+INFO: [HLS 200-1510] Running: config_export -output /home/akileshkannan/SPMV_CSR_src 
+INFO: [HLS 200-1510] Running: set_directive_top -name accelerate accelerate 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 579.535 MB.
+INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/reducer.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file 'SPMV_CSR_src/accelerator/accelerator.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.89 seconds. CPU system time: 0.81 seconds. Elapsed time: 1.28 seconds; current allocated memory: 1.024 GB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-284] Auto array partition mode is set into default.
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_50_1' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:50:19)
+INFO: [HLS 214-291] Loop 'reducer_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.cpp:45:16)
+INFO: [HLS 214-291] Loop 'adder_tree' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:30:14)
+INFO: [HLS 214-291] Loop 'multipliers_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:18:20)
+INFO: [HLS 214-291] Loop 'set_storage_loop' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/accelerator.cpp:7:21)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:23:7)
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (SPMV_CSR_src/accelerator/reducer.hpp:14:7)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_50_1' (SPMV_CSR_src/accelerator/accelerator.cpp:50:19) in function 'accelerate' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:38:0)
+INFO: [HLS 214-186] Unrolling loop 'reducer_loop' (SPMV_CSR_src/accelerator/reducer.cpp:45:16) in function 'reducer::reduce' completely with a factor of 1 (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-186] Unrolling loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:30:14) in function 'adders' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:28:0)
+INFO: [HLS 214-186] Unrolling loop 'multipliers_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:18:20) in function 'multipliers' completely with a factor of 4 (SPMV_CSR_src/accelerator/accelerator.cpp:15:0)
+INFO: [HLS 214-186] Unrolling loop 'set_storage_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:7:21) in function 'initialise' completely with a factor of 23 (SPMV_CSR_src/accelerator/accelerator.cpp:5:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:23:7) in function 'reducer::reducer' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:14:7) in function 'reducer_level::reducer_level' completely with a factor of 2 (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(float, int)' into 'reducer_level::reducer_level()' (SPMV_CSR_src/accelerator/reducer.hpp:14:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::reducer_level()' into 'reducer::reducer()' (SPMV_CSR_src/accelerator/reducer.hpp:23:0)
+INFO: [HLS 214-178] Inlining function 'reducer_data::reducer_data(float, int)' into 'reducer::reduce(float&, float, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::insert(reducer_data)' into 'reducer::reduce(float&, float, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer_level::add(reducer_data&, int)' into 'reducer::reduce(float&, float, int)' (SPMV_CSR_src/accelerator/reducer.cpp:39:0)
+INFO: [HLS 214-178] Inlining function 'reducer::reducer()' into 'accelerate(float&, float*, int*, bool*, int, float*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:38:0)
+INFO: [HLS 214-178] Inlining function 'initialise(float*, float*, bool)' into 'accelerate(float&, float*, int*, bool*, int, float*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:38:0)
+INFO: [HLS 214-178] Inlining function 'multipliers(float*, float*, float*, int*, bool*)' into 'accelerate(float&, float*, int*, bool*, int, float*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:38:0)
+INFO: [HLS 214-178] Inlining function 'adders(float&, float*)' into 'accelerate(float&, float*, int*, bool*, int, float*, bool)' (SPMV_CSR_src/accelerator/accelerator.cpp:38:0)
+INFO: [HLS 214-270] Starting automatic array partition analysis...
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 5.18 seconds. CPU system time: 0.48 seconds. Elapsed time: 4.08 seconds; current allocated memory: 111.824 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 111.824 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 112.547 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 112.645 MB.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.valid' automatically.
+INFO: [XFORM 203-102] Partitioning array 'reducer_circuit.adder_levels.num_items' automatically.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.value' completely based on array size.
+INFO: [XFORM 203-102] Automatically partitioning small array 'reducer_circuit.adder_levels.buffer.label' completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 1 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.value' in dimension 2 completely.
+INFO: [XFORM 203-101] Partitioning array 'reducer_circuit.adder_levels.buffer.label' in dimension 2 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (SPMV_CSR_src/accelerator/accelerator.cpp:15:136) to (SPMV_CSR_src/accelerator/accelerator.cpp:56:1) in function 'accelerate'... converting 9 basic blocks.
+INFO: [XFORM 203-11] Balancing expressions in function 'accelerate' (SPMV_CSR_src/accelerator/accelerator.cpp:38)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 134.496 MB.
+INFO: [HLS 200-472] Inferring partial write operation for 'storage' (SPMV_CSR_src/accelerator/accelerator.cpp:9:13)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 135.027 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'accelerate' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'reduce' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'reduce'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+WARNING: [HLS 200-880] The II Violation in module 'reduce' (function 'reduce'): Unable to enforce a carried dependence constraint (II = 5, distance = 1, offset = 0) between 'store' operation ('reducer_circuit_adder_levels_num_items_0_write_ln35', SPMV_CSR_src/accelerator/reducer.cpp:35) of variable 'reducer_circuit_adder_levels_num_items_0_new_1', SPMV_CSR_src/accelerator/reducer.cpp:35 on static variable 'reducer_circuit_adder_levels_num_items_0' and 'load' operation ('reducer_circuit_adder_levels_num_items_0_load', SPMV_CSR_src/accelerator/reducer.cpp:34) on static variable 'reducer_circuit_adder_levels_num_items_0'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 6, Depth = 13, function 'reduce'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.14 seconds; current allocated memory: 137.727 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 137.727 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'accelerate' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'accelerate'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_11', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 6). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+WARNING: [HLS 200-875] II = 7 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln55', SPMV_CSR_src/accelerator/accelerator.cpp:55) to 'reduce'.
+WARNING: [HLS 200-875] II = 8 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln55', SPMV_CSR_src/accelerator/accelerator.cpp:55) to 'reduce'.
+WARNING: [HLS 200-875] II = 9 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln55', SPMV_CSR_src/accelerator/accelerator.cpp:55) to 'reduce'.
+WARNING: [HLS 200-875] II = 10 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln55', SPMV_CSR_src/accelerator/accelerator.cpp:55) to 'reduce'.
+WARNING: [HLS 200-875] II = 11 is infeasible due to multiple pipeline iteration latency = 13 and incompatible II = 6 of 'call' operation ('_ln55', SPMV_CSR_src/accelerator/accelerator.cpp:55) to 'reduce'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('storage_load_1', SPMV_CSR_src/accelerator/accelerator.cpp:21) on array 'storage' due to limited memory ports (II = 12). Please consider using a memory core with more ports or partitioning the array 'storage'.
+WARNING: [HLS 200-885] The II Violation in module 'accelerate' (function 'accelerate'): Unable to schedule 'load' operation ('init_vector_load_9', SPMV_CSR_src/accelerator/accelerator.cpp:9) on array 'init_vector' due to limited memory ports (II = 13). Please consider using a memory core with more ports or partitioning the array 'init_vector'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 14, Depth = 43, function 'accelerate'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.58 seconds. CPU system time: 0 seconds. Elapsed time: 0.59 seconds; current allocated memory: 138.297 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Starting global binding ...
+INFO: [BIND 205-100] Starting global binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.26 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 138.297 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2021.2 (64-bit)
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+==============================================================

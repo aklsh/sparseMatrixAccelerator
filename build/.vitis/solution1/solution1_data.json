@@ -18,7 +18,7 @@
     "out": {
       "index": "0",
       "direction": "out",
-      "srcType": "int&",
+      "srcType": "float&",
       "srcSize": "32",
       "hwRefs": [
         {
@@ -47,7 +47,7 @@
     "subrow_vals": {
       "index": "1",
       "direction": "in",
-      "srcType": "int*",
+      "srcType": "float*",
       "srcSize": "32",
       "hwRefs": [
         {
@@ -168,7 +168,7 @@
     "init_vector": {
       "index": "5",
       "direction": "in",
-      "srcType": "int*",
+      "srcType": "float*",
       "srcSize": "32",
       "hwRefs": [
         {
@@ -351,9 +351,9 @@
   "HlsSolution": {
     "FlowTarget": "vivado",
     "ConfigTcl": [
-      "config_export -format=ip_catalog",
-      "config_export -output=\/home\/akileshkannan\/SPMV_CSR_src",
-      "config_export -rtl=verilog"
+      "config_compile -unsafe_math_optimizations=1",
+      "config_compile -complex-mul-dsp=0",
+      "config_export -output=\/home\/akileshkannan\/SPMV_CSR_src"
     ],
     "DirectiveTcl": [
       "set_directive_array_partition initialise init_vector -type complete -dim 1",
@@ -379,8 +379,8 @@
     "ClockPeriod": "10",
     "Uncertainty": "2.7",
     "IsCombinational": "0",
-    "II": "1",
-    "Latency": "6"
+    "II": "6",
+    "Latency": "27"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 10.000 [get_ports ap_clk]"]},
   "Ipx": {
@@ -397,19 +397,23 @@
   },
   "Files": {
     "CSource": [
-      "..\/..\/SPMV_CSR_src\/accelerator\/accelerator.cpp",
-      "..\/..\/SPMV_CSR_src\/accelerator\/reducer.cpp"
+      "..\/..\/SPMV_CSR_src\/accelerator\/reducer.cpp",
+      "..\/..\/SPMV_CSR_src\/accelerator\/accelerator.cpp"
     ],
     "Vhdl": [
       "impl\/vhdl\/accelerate_accelerate_Pipeline_1.vhd",
       "impl\/vhdl\/accelerate_accelerate_Pipeline_adder_tree.vhd",
       "impl\/vhdl\/accelerate_add.vhd",
       "impl\/vhdl\/accelerate_adders.vhd",
+      "impl\/vhdl\/accelerate_fadd_32ns_32ns_32_5_full_dsp_1.vhd",
+      "impl\/vhdl\/accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x.vhd",
       "impl\/vhdl\/accelerate_flow_control_loop_pipe_sequential_init.vhd",
+      "impl\/vhdl\/accelerate_fmul_32ns_32ns_32_4_max_dsp_1.vhd",
       "impl\/vhdl\/accelerate_mul_32s_32s_32_2_1.vhd",
       "impl\/vhdl\/accelerate_mux_43_32_1_1.vhd",
       "impl\/vhdl\/accelerate_mux_2332_32_1_1.vhd",
       "impl\/vhdl\/accelerate_reduce.vhd",
+      "impl\/vhdl\/accelerate_sitofp_32ns_32_6_no_dsp_1.vhd",
       "impl\/vhdl\/accelerate_storage_RAM_1WNR_AUTO_1R1W.vhd",
       "impl\/vhdl\/accelerate_storage_RAM_1WNR_BRAM_1R1W.vhd",
       "impl\/vhdl\/accelerate_storage_RAM_AUTO_1R1W.vhd",
@@ -421,11 +425,15 @@
       "impl\/verilog\/accelerate_accelerate_Pipeline_adder_tree.v",
       "impl\/verilog\/accelerate_add.v",
       "impl\/verilog\/accelerate_adders.v",
+      "impl\/verilog\/accelerate_fadd_32ns_32ns_32_5_full_dsp_1.v",
+      "impl\/verilog\/accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x.v",
       "impl\/verilog\/accelerate_flow_control_loop_pipe_sequential_init.v",
+      "impl\/verilog\/accelerate_fmul_32ns_32ns_32_4_max_dsp_1.v",
       "impl\/verilog\/accelerate_mul_32s_32s_32_2_1.v",
       "impl\/verilog\/accelerate_mux_43_32_1_1.v",
       "impl\/verilog\/accelerate_mux_2332_32_1_1.v",
       "impl\/verilog\/accelerate_reduce.v",
+      "impl\/verilog\/accelerate_sitofp_32ns_32_6_no_dsp_1.v",
       "impl\/verilog\/accelerate_storage_RAM_1WNR_AUTO_1R1W.dat",
       "impl\/verilog\/accelerate_storage_RAM_1WNR_AUTO_1R1W.v",
       "impl\/verilog\/accelerate_storage_RAM_1WNR_BRAM_1R1W.dat",
@@ -437,6 +445,12 @@
       "impl\/verilog\/accelerate.v"
     ],
     "IpMisc": ["impl\/misc\/logo.png"],
+    "Subcore": [
+      "impl\/misc\/accelerate_fadd_32ns_32ns_32_5_full_dsp_1_ip.tcl",
+      "impl\/misc\/accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x_ip.tcl",
+      "impl\/misc\/accelerate_fmul_32ns_32ns_32_4_max_dsp_1_ip.tcl",
+      "impl\/misc\/accelerate_sitofp_32ns_32_6_no_dsp_1_ip.tcl"
+    ],
     "CsynthXml": "syn\/report\/csynth.xml",
     "DebugDir": ".debug",
     "KernelXml": ".autopilot\/db\/kernel.internal.xml",
@@ -447,7 +461,28 @@
   "SubcoreInfo": {
     "HasXpmMemory": false,
     "HasClockedDsp": false,
-    "Ip": []
+    "Ip": [
+      {
+        "Name": "accelerate_fadd_32ns_32ns_32_5_full_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name accelerate_fadd_32ns_32ns_32_5_full_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Add CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 3 CONFIG.c_mult_usage Full_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Add_Subtract CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "accelerate_fmul_32ns_32ns_32_4_max_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Single CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 8 CONFIG.c_a_fraction_width 24 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 2 CONFIG.c_mult_usage Max_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name accelerate_fmul_32ns_32ns_32_4_max_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Multiply CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      },
+      {
+        "Name": "accelerate_sitofp_32ns_32_6_no_dsp_1_ip",
+        "Vlnv": "xilinx.com:ip:floating_point:7.1",
+        "Params": "CONFIG.a_precision_type Custom CONFIG.a_tuser_width 1 CONFIG.add_sub_value Both CONFIG.b_tuser_width 1 CONFIG.c_a_exponent_width 32 CONFIG.c_a_fraction_width 0 CONFIG.c_compare_operation Programmable CONFIG.c_has_divide_by_zero false CONFIG.c_has_invalid_op false CONFIG.c_has_overflow false CONFIG.c_has_underflow false CONFIG.c_latency 4 CONFIG.c_mult_usage No_Usage CONFIG.c_optimization Speed_Optimized CONFIG.c_rate 1 CONFIG.c_result_exponent_width 8 CONFIG.c_result_fraction_width 24 CONFIG.component_name accelerate_sitofp_32ns_32_6_no_dsp_1_ip CONFIG.flow_control NonBlocking CONFIG.has_a_tlast false CONFIG.has_a_tuser false CONFIG.has_aclken true CONFIG.has_aresetn false CONFIG.has_b_tlast false CONFIG.has_b_tuser false CONFIG.has_operation_tlast false CONFIG.has_operation_tuser false CONFIG.has_result_tready false CONFIG.maximum_latency false CONFIG.operation_tuser_width 1 CONFIG.operation_type Fixed_to_Float CONFIG.result_precision_type Single CONFIG.result_tlast_behv Null"
+      }
+    ]
   },
   "Interfaces": {
     "ap_clk": {
@@ -1255,7 +1290,7 @@
       "ModuleName": "accelerate",
       "Instances": [{
           "ModuleName": "reduce",
-          "InstanceName": "grp_reduce_fu_624"
+          "InstanceName": "grp_reduce_fu_1487"
         }]
     },
     "Info": {
@@ -1277,31 +1312,31 @@
     "Metrics": {
       "reduce": {
         "Latency": {
-          "LatencyBest": "2",
-          "LatencyAvg": "2",
-          "LatencyWorst": "2",
-          "PipelineII": "1",
-          "PipelineDepth": "3",
+          "LatencyBest": "12",
+          "LatencyAvg": "12",
+          "LatencyWorst": "12",
+          "PipelineII": "6",
+          "PipelineDepth": "13",
           "PipelineType": "yes"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "5.039"
+          "Estimate": "7.256"
         },
         "Area": {
-          "FF": "650",
+          "DSP": "4",
+          "AVAIL_DSP": "220",
+          "UTIL_DSP": "1",
+          "FF": "1424",
           "AVAIL_FF": "106400",
-          "UTIL_FF": "~0",
-          "LUT": "484",
+          "UTIL_FF": "1",
+          "LUT": "1248",
           "AVAIL_LUT": "53200",
-          "UTIL_LUT": "~0",
+          "UTIL_LUT": "2",
           "BRAM_18K": "0",
           "AVAIL_BRAM": "280",
           "UTIL_BRAM": "0",
-          "DSP": "0",
-          "AVAIL_DSP": "220",
-          "UTIL_DSP": "0",
           "URAM": "0",
           "AVAIL_URAM": "0",
           "UTIL_URAM": "0"
@@ -1309,28 +1344,28 @@
       },
       "accelerate": {
         "Latency": {
-          "LatencyBest": "6",
-          "LatencyAvg": "6",
-          "LatencyWorst": "6",
-          "PipelineII": "1",
-          "PipelineDepth": "7",
+          "LatencyBest": "27",
+          "LatencyAvg": "27",
+          "LatencyWorst": "27",
+          "PipelineII": "6",
+          "PipelineDepth": "28",
           "PipelineType": "yes"
         },
         "Timing": {
           "Target": "10.00",
           "Uncertainty": "2.70",
-          "Estimate": "6.923"
+          "Estimate": "7.256"
         },
         "Area": {
-          "DSP": "12",
+          "DSP": "22",
           "AVAIL_DSP": "220",
-          "UTIL_DSP": "5",
-          "FF": "2826",
+          "UTIL_DSP": "10",
+          "FF": "3811",
           "AVAIL_FF": "106400",
-          "UTIL_FF": "2",
-          "LUT": "1851",
+          "UTIL_FF": "3",
+          "LUT": "4693",
           "AVAIL_LUT": "53200",
-          "UTIL_LUT": "3",
+          "UTIL_LUT": "8",
           "BRAM_18K": "0",
           "AVAIL_BRAM": "280",
           "UTIL_BRAM": "0",
@@ -1344,7 +1379,7 @@
   "GenerateBdFiles": "0",
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2022-05-15 16:32:37 +0530",
+    "Time": "2022-05-16 14:02:28 +0530",
     "ToolName": "vitis_hls",
     "ToolVersion": "2021.2"
   }

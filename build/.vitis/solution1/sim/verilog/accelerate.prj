@@ -1,0 +1,13 @@
+sv xil_defaultlib "ip/xil_defaultlib/accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x_ip.v"
+sv xil_defaultlib "ip/xil_defaultlib/accelerate_fadd_32ns_32ns_32_5_full_dsp_1_ip.v"
+sv xil_defaultlib "ip/xil_defaultlib/accelerate_fmul_32ns_32ns_32_4_max_dsp_1_ip.v"
+sv work "glbl.v"
+sv xil_defaultlib "accelerate.autotb.v"
+sv xil_defaultlib "accelerate_reduce.v"
+sv xil_defaultlib "accelerate_fmul_32ns_32ns_32_4_max_dsp_1.v"
+sv xil_defaultlib "accelerate.v"
+sv xil_defaultlib "accelerate_mux_2332_32_1_1.v"
+sv xil_defaultlib "accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x.v"
+sv xil_defaultlib "accelerate_fadd_32ns_32ns_32_5_full_dsp_1.v"
+sv xil_defaultlib "dataflow_monitor.sv"
+

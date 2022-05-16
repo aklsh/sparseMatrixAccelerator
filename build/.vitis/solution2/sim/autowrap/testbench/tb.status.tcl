@@ -1,0 +1,1 @@
+set ::AESL_AUTOSIM::gTopFileName /home/akileshkannan/SPMV_CSR/solution2/./sim/autowrap/testbench/accelerator.cpp_pre.cpp.tb.cpp

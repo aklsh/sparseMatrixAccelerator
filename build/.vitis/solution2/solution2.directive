@@ -5,16 +5,6 @@
                 <option name="name" value="accelerate"/>
             </pragma>
         </directive>
-        <directive functionName="accelerate" label="" functionLabel="">
-            <pragma name="TOP">
-                <option name="name" value="accelerate"/>
-            </pragma>
-        </directive>
-        <directive functionName="accelerate" label="" functionLabel="">
-            <pragma name="TOP">
-                <option name="name" value="accelerate"/>
-            </pragma>
-        </directive>
     </sourceFile>
 </AutoPilot:ProjectResources>
 

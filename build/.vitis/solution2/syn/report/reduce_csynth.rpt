@@ -3,7 +3,7 @@
 ================================================================
 == Vitis HLS Report for 'reduce'
 ================================================================
-* Date:           Sun May 15 16:10:22 2022
+* Date:           Mon May 16 14:04:44 2022
 
 * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
 * Project:        SPMV_CSR
@@ -20,17 +20,17 @@
     +--------+----------+----------+------------+
     |  Clock |  Target  | Estimated| Uncertainty|
     +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  5.039 ns|     2.70 ns|
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
     +--------+----------+----------+------------+
 
 + Latency: 
     * Summary: 
-    +---------+---------+-----------+-----------+-----+-----+---------+
-    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
-    |   min   |   max   |    min    |    max    | min | max |   Type  |
-    +---------+---------+-----------+-----------+-----+-----+---------+
-    |        2|        2|  20.000 ns|  20.000 ns|    1|    1|      yes|
-    +---------+---------+-----------+-----------+-----+-----+---------+
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       12|       12|  0.120 us|  0.120 us|    6|    6|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
         * Instance: 
@@ -49,23 +49,30 @@
 |       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
 +-----------------+---------+-----+--------+-------+-----+
 |DSP              |        -|    -|       -|      -|    -|
-|Expression       |        -|    -|       0|    203|    -|
+|Expression       |        -|    -|       0|    127|    -|
 |FIFO             |        -|    -|       -|      -|    -|
-|Instance         |        -|    -|       -|      -|    -|
+|Instance         |        -|    4|     410|    780|    -|
 |Memory           |        -|    -|       -|      -|    -|
-|Multiplexer      |        -|    -|       -|    281|    -|
-|Register         |        -|    -|     650|      -|    -|
+|Multiplexer      |        -|    -|       -|    341|    -|
+|Register         |        -|    -|    1014|      -|    -|
 +-----------------+---------+-----+--------+-------+-----+
-|Total            |        0|    0|     650|    484|    0|
+|Total            |        0|    4|    1424|   1248|    0|
 +-----------------+---------+-----+--------+-------+-----+
 |Available        |      280|  220|  106400|  53200|    0|
 +-----------------+---------+-----+--------+-------+-----+
-|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
+|Utilization (%)  |        0|    1|       1|      2|    0|
 +-----------------+---------+-----+--------+-------+-----+
 
 + Detail: 
     * Instance: 
-    N/A
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+    |              Instance             |             Module             | BRAM_18K| DSP|  FF | LUT | URAM|
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+    |fadd_32ns_32ns_32_5_full_dsp_1_U1  |fadd_32ns_32ns_32_5_full_dsp_1  |        0|   2|  205|  390|    0|
+    |fadd_32ns_32ns_32_5_full_dsp_1_U2  |fadd_32ns_32ns_32_5_full_dsp_1  |        0|   2|  205|  390|    0|
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
+    |Total                              |                                |        0|   4|  410|  780|    0|
+    +-----------------------------------+--------------------------------+---------+----+-----+-----+-----+
 
     * DSP: 
     N/A
@@ -77,74 +84,96 @@
     N/A
 
     * Expression: 
-    +---------------------------+----------+----+---+----+------------+------------+
-    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
-    +---------------------------+----------+----+---+----+------------+------------+
-    |add_ln35_1_fu_362_p2       |         +|   0|  0|  39|          32|           1|
-    |add_ln35_fu_283_p2         |         +|   0|  0|  39|          32|           1|
-    |level_out_value_fu_305_p2  |         +|   0|  0|  39|          32|          32|
-    |out_data_value_fu_412_p2   |         +|   0|  0|  39|          32|          32|
-    |ap_condition_139           |       and|   0|  0|   2|           1|           1|
-    |ap_condition_151           |       and|   0|  0|   2|           1|           1|
-    |ap_condition_365           |       and|   0|  0|   2|           1|           1|
-    |icmp_ln18_1_fu_390_p2      |      icmp|   0|  0|  18|          32|           2|
-    |icmp_ln18_fu_330_p2        |      icmp|   0|  0|  17|          31|           1|
-    |ap_condition_131           |        or|   0|  0|   2|           1|           1|
-    |ap_condition_186           |        or|   0|  0|   2|           1|           1|
-    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
-    +---------------------------+----------+----+---+----+------------+------------+
-    |Total                      |          |   0|  0| 203|         197|          76|
-    +---------------------------+----------+----+---+----+------------+------------+
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |add_ln35_1_fu_374_p2   |         +|   0|  0|  39|          32|           1|
+    |add_ln35_fu_312_p2     |         +|   0|  0|  39|          32|           1|
+    |ap_condition_212       |       and|   0|  0|   2|           1|           1|
+    |ap_condition_224       |       and|   0|  0|   2|           1|           1|
+    |ap_condition_228       |       and|   0|  0|   2|           1|           1|
+    |ap_condition_277       |       and|   0|  0|   2|           1|           1|
+    |icmp_ln18_1_fu_424_p2  |      icmp|   0|  0|  18|          32|           2|
+    |icmp_ln18_fu_333_p2    |      icmp|   0|  0|  17|          31|           1|
+    |ap_condition_288       |        or|   0|  0|   2|           1|           1|
+    |ap_condition_311       |        or|   0|  0|   2|           1|           1|
+    |ap_enable_pp0          |       xor|   0|  0|   2|           1|           2|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0| 127|         134|          13|
+    +-----------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
     +------------------------------------------------------------------------------+----+-----------+-----+-----------+
     |                                     Name                                     | LUT| Input Size| Bits| Total Bits|
     +------------------------------------------------------------------------------+----+-----------+-----+-----------+
-    |ap_phi_mux_level_out_017_31_phi_fu_106_p6                                     |  20|          4|   32|        128|
-    |ap_phi_mux_level_out_value_1_phi_fu_72_p4                                     |  14|          3|   32|         96|
-    |ap_phi_mux_out_data_0_35_phi_fu_215_p6                                        |  20|          4|   32|        128|
-    |ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_119_p4  |  14|          3|   32|         96|
-    |ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_93_p6        |  14|          3|   32|         96|
-    |ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_130_p4       |  14|          3|   32|         96|
-    |ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_187_p6      |  14|          3|    1|          3|
-    |ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_229_p4      |  14|          3|    1|          3|
-    |ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_201_p6       |  14|          3|   32|         96|
-    |ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_240_p4       |  14|          3|   32|         96|
-    |ap_phi_reg_pp0_iter1_level_out_label_reg_80                                   |  14|          3|   32|         96|
-    |ap_phi_reg_pp0_iter2_empty_reg_175                                            |  14|          3|   32|         96|
-    |ap_phi_reg_pp0_iter2_level_out_118_32_reg_137                                 |  14|          3|   32|         96|
-    |ap_phi_reg_pp0_iter2_out_data_value_1_reg_165                                 |  14|          3|   32|         96|
-    |ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152  |  14|          3|    1|          3|
-    |ap_sig_allocacmp_out_data_label                                               |   9|          2|   32|         64|
-    |ap_sig_allocacmp_reducer_circuit_adder_levels_buffer_value_0_1_load           |   9|          2|   32|         64|
+    |ap_NS_fsm                                                                     |  37|          7|    1|          7|
+    |ap_enable_reg_pp0_iter0                                                       |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2                                                       |   9|          2|    1|          2|
+    |ap_phi_mux_level_out_017_31_phi_fu_110_p6                                     |  14|          3|   32|         96|
+    |ap_phi_mux_out_data_0_35_phi_fu_173_p6                                        |   9|          2|   32|         64|
+    |ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_123_p4  |  14|          3|   32|         96|
+    |ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_97_p6        |  14|          3|   32|         96|
+    |ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_134_p4       |  14|          3|   32|         96|
+    |ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_145_p6      |   9|          2|    1|          2|
+    |ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_185_p4      |   9|          2|    1|          2|
+    |ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_159_p6       |   9|          2|   32|         64|
+    |ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_195_p4       |   9|          2|   32|         64|
+    |ap_phi_reg_pp0_iter0_level_out_label_reg_83                                   |   9|          2|   32|         64|
+    |ap_phi_reg_pp0_iter0_level_out_value_1_reg_73                                 |   9|          2|   32|         64|
+    |ap_phi_reg_pp0_iter1_empty_reg_229                                            |  14|          3|   32|         96|
+    |ap_phi_reg_pp0_iter1_level_out_017_31_reg_107                                 |   9|          2|   32|         64|
+    |ap_phi_reg_pp0_iter1_level_out_118_32_reg_202                                 |  20|          4|   32|        128|
+    |ap_phi_reg_pp0_iter1_out_data_value_1_reg_217                                 |  14|          3|   32|         96|
+    |ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_0_reg_93    |   9|          2|   32|         64|
+    |ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241  |  14|          3|    1|          3|
+    |ap_phi_reg_pp0_iter2_out_data_0_35_reg_169                                    |  14|          3|   32|         96|
+    |ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141  |  14|          3|    1|          3|
+    |ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182  |   9|          2|    1|          2|
+    |ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_1_reg_155   |  14|          3|   32|         96|
+    |ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_2_reg_192   |   9|          2|   32|         64|
     |ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load                |   9|          2|   32|         64|
     |ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load                |   9|          2|   32|         64|
     |ap_sig_allocacmp_reducer_circuit_adder_levels_valid_1_load                    |   9|          2|    1|          2|
-    |level_out_value_1_reg_69                                                      |  14|          3|   32|         96|
     +------------------------------------------------------------------------------+----+-----------+-----+-----------+
-    |Total                                                                         | 281|         60|  548|       1579|
+    |Total                                                                         | 341|         73|  617|       1561|
     +------------------------------------------------------------------------------+----+-----------+-----+-----------+
 
     * Register: 
     +------------------------------------------------------------------------------+----+----+-----+-----------+
     |                                     Name                                     | FF | LUT| Bits| Const Bits|
     +------------------------------------------------------------------------------+----+----+-----+-----------+
-    |add_ln35_reg_446                                                              |  32|   0|   32|          0|
-    |ap_CS_fsm                                                                     |   1|   0|    1|          0|
+    |add_ln35_reg_474                                                              |  32|   0|   32|          0|
+    |ap_CS_fsm                                                                     |   6|   0|    6|          0|
+    |ap_enable_reg_pp0_iter0_reg                                                   |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter1                                                       |   1|   0|    1|          0|
     |ap_enable_reg_pp0_iter2                                                       |   1|   0|    1|          0|
-    |ap_phi_reg_pp0_iter1_empty_reg_175                                            |  32|   0|   32|          0|
-    |ap_phi_reg_pp0_iter1_level_out_118_32_reg_137                                 |  32|   0|   32|          0|
-    |ap_phi_reg_pp0_iter1_level_out_label_reg_80                                   |  32|   0|   32|          0|
-    |ap_phi_reg_pp0_iter1_out_data_value_1_reg_165                                 |  32|   0|   32|          0|
-    |ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152  |   1|   0|    1|          0|
-    |ap_phi_reg_pp0_iter2_empty_reg_175                                            |  32|   0|   32|          0|
-    |ap_phi_reg_pp0_iter2_level_out_118_32_reg_137                                 |  32|   0|   32|          0|
-    |ap_phi_reg_pp0_iter2_out_data_value_1_reg_165                                 |  32|   0|   32|          0|
-    |ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152  |   1|   0|    1|          0|
-    |icmp_ln18_reg_467                                                             |   1|   0|    1|          0|
-    |level_out_value_1_reg_69                                                      |  32|   0|   32|          0|
-    |level_out_value_reg_452                                                       |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter0_level_out_label_reg_83                                   |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter0_level_out_value_1_reg_73                                 |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_empty_reg_229                                            |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_level_out_017_31_reg_107                                 |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_level_out_118_32_reg_202                                 |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_out_data_0_35_reg_169                                    |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_out_data_value_1_reg_217                                 |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_0_reg_93    |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241  |   1|   0|    1|          0|
+    |ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141  |   1|   0|    1|          0|
+    |ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182  |   1|   0|    1|          0|
+    |ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_new_1_reg_155   |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_new_2_reg_192   |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter2_out_data_0_35_reg_169                                    |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141  |   1|   0|    1|          0|
+    |ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182  |   1|   0|    1|          0|
+    |ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_1_reg_155   |  32|   0|   32|          0|
+    |ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_2_reg_192   |  32|   0|   32|          0|
+    |ap_port_reg_label_r                                                           |  32|   0|   32|          0|
+    |empty_reg_229                                                                 |  32|   0|   32|          0|
+    |icmp_ln18_1_reg_517                                                           |   1|   0|    1|          0|
+    |icmp_ln18_reg_480                                                             |   1|   0|    1|          0|
+    |level_out_label_reg_83                                                        |  32|   0|   32|          0|
+    |level_out_value_1_reg_73                                                      |  32|   0|   32|          0|
+    |level_out_value_reg_484                                                       |  32|   0|   32|          0|
+    |out_data_value_1_reg_217                                                      |  32|   0|   32|          0|
+    |out_data_value_reg_521                                                        |  32|   0|   32|          0|
     |reducer_circuit_adder_levels_buffer_label_0_0                                 |  32|   0|   32|          0|
     |reducer_circuit_adder_levels_buffer_label_1_0                                 |  32|   0|   32|          0|
     |reducer_circuit_adder_levels_buffer_value_0_0                                 |  32|   0|   32|          0|
@@ -152,15 +181,17 @@
     |reducer_circuit_adder_levels_buffer_value_1_0                                 |  32|   0|   32|          0|
     |reducer_circuit_adder_levels_buffer_value_1_1                                 |  32|   0|   32|          0|
     |reducer_circuit_adder_levels_num_items_0                                      |  32|   0|   32|          0|
-    |reducer_circuit_adder_levels_num_items_0_load_reg_434                         |  32|   0|   32|          0|
-    |reducer_circuit_adder_levels_num_items_0_load_reg_434_pp0_iter1_reg           |  32|   0|   32|          0|
+    |reducer_circuit_adder_levels_num_items_0_load_reg_445                         |  32|   0|   32|          0|
+    |reducer_circuit_adder_levels_num_items_0_load_reg_445_pp0_iter1_reg           |  32|   0|   32|          0|
     |reducer_circuit_adder_levels_num_items_1                                      |  32|   0|   32|          0|
     |reducer_circuit_adder_levels_valid_0                                          |   1|   0|    1|          0|
-    |reducer_circuit_adder_levels_valid_0_load_reg_471                             |   1|   0|    1|          0|
+    |reducer_circuit_adder_levels_valid_0_load_reg_499                             |   1|   0|    1|          0|
     |reducer_circuit_adder_levels_valid_1                                          |   1|   0|    1|          0|
-    |trunc_ln34_1_reg_475                                                          |   1|   0|    1|          0|
+    |reducer_circuit_adder_levels_valid_1_load_reg_526                             |   1|   0|    1|          0|
+    |trunc_ln34_1_reg_503                                                          |   1|   0|    1|          0|
+    |trunc_ln34_reg_450                                                            |   1|   0|    1|          0|
     +------------------------------------------------------------------------------+----+----+-----+-----------+
-    |Total                                                                         | 650|   0|  650|          0|
+    |Total                                                                         |1014|   0| 1014|          0|
     +------------------------------------------------------------------------------+----+----+-----+-----------+
 
 

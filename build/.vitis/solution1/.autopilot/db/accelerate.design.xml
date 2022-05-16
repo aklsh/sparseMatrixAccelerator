@@ -5,10 +5,10 @@
 <ModuleName>accelerate</ModuleName>
 <InstancesList>
 <Instance>
-<InstName>grp_reduce_fu_624</InstName>
+<InstName>grp_reduce_fu_1487</InstName>
 <ModuleName>reduce</ModuleName>
 <IsCompInst>true</IsCompInst>
-<ID>624</ID>
+<ID>1487</ID>
 </Instance>
 </InstancesList>
 </TopModule>
@@ -22,34 +22,34 @@
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>2.70</ClockUncertainty>
 <TargetInitiationInterval>4294967295</TargetInitiationInterval>
-<EstimatedClockPeriod>5.039</EstimatedClockPeriod>
+<EstimatedClockPeriod>7.256</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>2</Best-caseLatency>
-<Average-caseLatency>2</Average-caseLatency>
-<Worst-caseLatency>2</Worst-caseLatency>
-<Best-caseRealTimeLatency>20.000 ns</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>20.000 ns</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>20.000 ns</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>1</PipelineInitiationInterval>
-<PipelineDepth>3</PipelineDepth>
+<Best-caseLatency>12</Best-caseLatency>
+<Average-caseLatency>12</Average-caseLatency>
+<Worst-caseLatency>12</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.120 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.120 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.120 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>6</PipelineInitiationInterval>
+<PipelineDepth>13</PipelineDepth>
 <PipelineType>yes</PipelineType>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<FF>650</FF>
+<DSP>4</DSP>
+<AVAIL_DSP>220</AVAIL_DSP>
+<UTIL_DSP>1</UTIL_DSP>
+<FF>1424</FF>
 <AVAIL_FF>106400</AVAIL_FF>
-<UTIL_FF>~0</UTIL_FF>
-<LUT>484</LUT>
+<UTIL_FF>1</UTIL_FF>
+<LUT>1248</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
-<UTIL_LUT>~0</UTIL_LUT>
+<UTIL_LUT>2</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>
-<DSP>0</DSP>
-<AVAIL_DSP>220</AVAIL_DSP>
-<UTIL_DSP>0</UTIL_DSP>
 <URAM>0</URAM>
 <AVAIL_URAM>0</AVAIL_URAM>
 <UTIL_URAM>0</UTIL_URAM>
@@ -175,31 +175,31 @@
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>2.70</ClockUncertainty>
 <TargetInitiationInterval>4294967295</TargetInitiationInterval>
-<EstimatedClockPeriod>6.923</EstimatedClockPeriod>
+<EstimatedClockPeriod>7.256</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
-<Best-caseLatency>6</Best-caseLatency>
-<Average-caseLatency>6</Average-caseLatency>
-<Worst-caseLatency>6</Worst-caseLatency>
-<Best-caseRealTimeLatency>60.000 ns</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>60.000 ns</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>60.000 ns</Worst-caseRealTimeLatency>
-<PipelineInitiationInterval>1</PipelineInitiationInterval>
-<PipelineDepth>7</PipelineDepth>
+<Best-caseLatency>27</Best-caseLatency>
+<Average-caseLatency>27</Average-caseLatency>
+<Worst-caseLatency>27</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.270 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>0.270 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.270 us</Worst-caseRealTimeLatency>
+<PipelineInitiationInterval>6</PipelineInitiationInterval>
+<PipelineDepth>28</PipelineDepth>
 <PipelineType>yes</PipelineType>
 </SummaryOfOverallLatency>
 </PerformanceEstimates>
 <AreaEstimates>
 <Resources>
-<DSP>12</DSP>
+<DSP>22</DSP>
 <AVAIL_DSP>220</AVAIL_DSP>
-<UTIL_DSP>5</UTIL_DSP>
-<FF>2826</FF>
+<UTIL_DSP>10</UTIL_DSP>
+<FF>3811</FF>
 <AVAIL_FF>106400</AVAIL_FF>
-<UTIL_FF>2</UTIL_FF>
-<LUT>1851</LUT>
+<UTIL_FF>3</UTIL_FF>
+<LUT>4693</LUT>
 <AVAIL_LUT>53200</AVAIL_LUT>
-<UTIL_LUT>3</UTIL_LUT>
+<UTIL_LUT>8</UTIL_LUT>
 <BRAM_18K>0</BRAM_18K>
 <AVAIL_BRAM>280</AVAIL_BRAM>
 <UTIL_BRAM>0</UTIL_BRAM>

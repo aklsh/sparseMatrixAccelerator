@@ -7,12 +7,12 @@
     </downStreamTool>
     <synthesis askAgain="true"/>
     <config>
-        <config_export format="ip_catalog" output="/home/akileshkannan/SPMV_CSR_src" rtl="verilog"/>
+        <config_compile complex-mul-dsp="0" unsafe_math_optimizations="1"/>
+        <config_export output="/home/akileshkannan/SPMV_CSR_src"/>
     </config>
     <UIConfigurations>
         <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
             <Platform>xilinx/zynq/zynq</Platform>
-            <Platform>xilinx/zynq/zynq_fpv6</Platform>
             <customLibs/>
         </UIAutosynConf>
         <UIIPPackagerConf AskAgain="true" DescriptionButton="false" LibraryButton="false" RTLLanguage="verilog" UseNetList="none" VendorButton="false" VersionButton="false" evaluateRTL="false" setup="false">
@@ -49,13 +49,19 @@
         <Format formatName="pcore" use_netlist="none"/>
         <Format formatName="xo"/>
     </ExportDesign>
-    <Simulation>
-        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="none" enableDataflowProfiling="false" enableFifoSizing="false" ldflags="-B&quot;/usr/lib/x86_64-linux-gnu/&quot;" name="cosim" optimizeCompile="false" random_stall="false" reduce_diskspace="false" setup="false" toolName="Auto" waveDebug="false">
+    <Simulation argv="">
+        <SimFlow askAgain="true" clangSanitizer="false" compile="false" compileChoice="gcc" disableDeadlockDetect="false" dumpTrace="none" enableDataflowProfiling="false" enableFifoSizing="false" ldflags="-B&quot;/usr/lib/x86_64-linux-gnu/&quot;" name="cosim" optimizeCompile="false" random_stall="false" reduce_diskspace="false" setup="false" toolName="auto" waveDebug="false" mflags="" compiledLibrary="">
             <Rtl active="false" name="systemc"/>
             <Rtl active="true" name="verilog"/>
             <Rtl active="false" name="vhdl"/>
         </SimFlow>
     </Simulation>
+    <name>
+        <value string="solution2"/>
+    </name>
+    <project>
+        <value string="SPMV_CSR"/>
+    </project>
     <flowTarget value="vivado"/>
     <targetInfo>
         <TargetInfo value="xc7z020:-clg400:-1"/>
@@ -66,11 +72,5 @@
     <clockList>
         <clock name="default" default="false" period="10"/>
     </clockList>
-    <name>
-        <value string="solution2"/>
-    </name>
-    <project>
-        <value string="SPMV_CSR"/>
-    </project>
 </solution>
 

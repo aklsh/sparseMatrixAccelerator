@@ -1,4 +1,6 @@
+accelerate_fadd_32ns_32ns_32_5_full_dsp_1
+accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x
+accelerate_fmul_32ns_32ns_32_4_max_dsp_1
 accelerate_mux_2332_32_1_1
-accelerate_mul_32s_32s_32_2_1
 reduce
 accelerate

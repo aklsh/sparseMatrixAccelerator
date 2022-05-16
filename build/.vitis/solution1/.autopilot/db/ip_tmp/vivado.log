@@ -1,0 +1,26 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon May 16 14:03:29 2022
+# Process ID: 8869
+# Current directory: /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/ip_tmp
+# Command line: vivado  -notrace -log vivado.log -mode batch -source run_vivado_gen_ip.tcl
+# Log file: /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/ip_tmp/vivado.log
+# Journal file: /home/akileshkannan/SPMV_CSR/solution1/.autopilot/db/ip_tmp/vivado.jou
+# Running On: pop-os, OS: Linux, CPU Frequency: 2894.532 MHz, CPU Physical cores: 8, Host memory: 8336 MB
+#-----------------------------------------------------------
+source run_vivado_gen_ip.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/opt/Xilinx/Vivado/2021.2/data/ip'.
+WARNING: [IP_Flow 19-4832] The IP name 'accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x_ip'...
+WARNING: [IP_Flow 19-4832] The IP name 'accelerate_fadd_32ns_32ns_32_5_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'accelerate_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'accelerate_fadd_32ns_32ns_32_5_full_dsp_1_ip'...
+WARNING: [IP_Flow 19-4832] The IP name 'accelerate_fmul_32ns_32ns_32_4_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues.
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'accelerate_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'accelerate_fmul_32ns_32ns_32_4_max_dsp_1_ip'...
+INFO: [Common 17-206] Exiting Vivado at Mon May 16 14:03:50 2022...

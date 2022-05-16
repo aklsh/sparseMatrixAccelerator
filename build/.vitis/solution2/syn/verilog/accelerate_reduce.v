@@ -20,7 +20,12 @@ module accelerate_reduce (
         label_r
 );
 
-parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
+parameter    ap_ST_fsm_pp0_stage0 = 6'd1;
+parameter    ap_ST_fsm_pp0_stage1 = 6'd2;
+parameter    ap_ST_fsm_pp0_stage2 = 6'd4;
+parameter    ap_ST_fsm_pp0_stage3 = 6'd8;
+parameter    ap_ST_fsm_pp0_stage4 = 6'd16;
+parameter    ap_ST_fsm_pp0_stage5 = 6'd32;
 
 input   ap_clk;
 input   ap_rst;
@@ -38,16 +43,16 @@ reg ap_idle;
 reg ap_ready;
 reg out_r_ap_vld;
 
-(* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
+(* fsm_encoding = "none" *) reg   [5:0] ap_CS_fsm;
 wire    ap_CS_fsm_pp0_stage0;
-wire    ap_enable_reg_pp0_iter0;
+reg    ap_enable_reg_pp0_iter0;
 reg    ap_enable_reg_pp0_iter1;
 reg    ap_enable_reg_pp0_iter2;
 reg    ap_idle_pp0;
-wire    ap_block_state1_pp0_stage0_iter0;
-wire    ap_block_state2_pp0_stage0_iter1;
-wire    ap_block_state3_pp0_stage0_iter2;
-wire    ap_block_pp0_stage0_subdone;
+wire    ap_CS_fsm_pp0_stage5;
+wire    ap_block_state6_pp0_stage5_iter0;
+wire    ap_block_state13_pp0_stage5_iter1;
+wire    ap_block_pp0_stage5_subdone;
 reg   [31:0] reducer_circuit_adder_levels_num_items_0;
 reg   [31:0] reducer_circuit_adder_levels_buffer_value_0_0;
 reg   [31:0] reducer_circuit_adder_levels_buffer_label_0_0;
@@ -58,83 +63,121 @@ reg   [31:0] reducer_circuit_adder_levels_buffer_value_0_1;
 reg   [0:0] reducer_circuit_adder_levels_valid_1;
 reg   [31:0] reducer_circuit_adder_levels_buffer_value_1_1;
 reg   [31:0] reducer_circuit_adder_levels_buffer_label_1_0;
-reg   [31:0] level_out_value_1_reg_69;
+reg   [31:0] level_out_value_1_reg_73;
+reg   [31:0] level_out_label_reg_83;
+reg   [31:0] out_data_value_1_reg_217;
+reg   [31:0] empty_reg_229;
+wire    ap_block_state1_pp0_stage0_iter0;
+wire    ap_block_state7_pp0_stage0_iter1;
+wire    ap_block_state8_pp0_stage0_iter2;
 wire    ap_block_pp0_stage0_11001;
-wire   [31:0] reducer_circuit_adder_levels_num_items_0_load_load_fu_248_p1;
-reg   [31:0] reducer_circuit_adder_levels_num_items_0_load_reg_434;
-reg   [31:0] reducer_circuit_adder_levels_num_items_0_load_reg_434_pp0_iter1_reg;
-wire   [31:0] add_ln35_fu_283_p2;
-reg   [31:0] add_ln35_reg_446;
-wire   [31:0] level_out_value_fu_305_p2;
-reg   [31:0] level_out_value_reg_452;
-wire   [0:0] icmp_ln18_fu_330_p2;
-reg   [0:0] icmp_ln18_reg_467;
-wire   [0:0] reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1;
-reg   [0:0] reducer_circuit_adder_levels_valid_0_load_reg_471;
-wire   [0:0] trunc_ln34_1_fu_346_p1;
-reg   [0:0] trunc_ln34_1_reg_475;
-wire   [31:0] add_ln35_1_fu_362_p2;
-reg   [31:0] ap_phi_mux_level_out_value_1_phi_fu_72_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_level_out_value_1_reg_69;
-wire   [0:0] trunc_ln34_fu_252_p1;
-wire   [31:0] ap_phi_reg_pp0_iter0_level_out_label_reg_80;
-reg   [31:0] ap_phi_reg_pp0_iter1_level_out_label_reg_80;
-reg   [31:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_93_p6;
-wire   [31:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_0_reg_90;
-reg   [31:0] ap_phi_mux_level_out_017_31_phi_fu_106_p6;
-wire   [31:0] ap_phi_reg_pp0_iter1_level_out_017_31_reg_103;
-reg   [31:0] ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_119_p4;
-wire   [31:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_116;
-reg   [31:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_130_p4;
-wire   [31:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_1_reg_127;
-wire   [31:0] ap_phi_reg_pp0_iter0_level_out_118_32_reg_137;
-reg   [31:0] ap_phi_reg_pp0_iter1_level_out_118_32_reg_137;
-reg   [31:0] ap_phi_reg_pp0_iter2_level_out_118_32_reg_137;
-wire   [0:0] ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152;
-reg   [0:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152;
-reg   [0:0] ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152;
-wire   [31:0] ap_phi_reg_pp0_iter0_out_data_value_1_reg_165;
-reg   [31:0] ap_phi_reg_pp0_iter1_out_data_value_1_reg_165;
-reg   [31:0] ap_phi_reg_pp0_iter2_out_data_value_1_reg_165;
-wire   [31:0] ap_phi_mux_empty_phi_fu_178_p4;
-wire   [31:0] ap_phi_reg_pp0_iter0_empty_reg_175;
-reg   [31:0] ap_phi_reg_pp0_iter1_empty_reg_175;
-reg   [31:0] ap_phi_reg_pp0_iter2_empty_reg_175;
-reg   [0:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_187_p6;
-wire   [0:0] ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_1_reg_184;
-wire   [0:0] icmp_ln18_1_fu_390_p2;
-wire   [0:0] reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1;
-reg   [31:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_201_p6;
-wire   [31:0] ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_1_reg_198;
-reg   [31:0] ap_phi_mux_out_data_0_35_phi_fu_215_p6;
-wire   [31:0] ap_phi_reg_pp0_iter2_out_data_0_35_reg_212;
-wire   [31:0] out_data_value_fu_412_p2;
-reg   [0:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_229_p4;
-wire   [0:0] ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_2_reg_226;
-reg   [31:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_240_p4;
-wire   [31:0] ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_2_reg_237;
+reg   [31:0] reducer_circuit_adder_levels_num_items_0_load_reg_445;
+reg   [31:0] reducer_circuit_adder_levels_num_items_0_load_reg_445_pp0_iter1_reg;
+wire   [0:0] trunc_ln34_fu_271_p1;
+reg   [0:0] trunc_ln34_reg_450;
+wire    ap_CS_fsm_pp0_stage1;
+wire    ap_block_state2_pp0_stage1_iter0;
+wire    ap_block_state9_pp0_stage1_iter1;
+wire    ap_block_pp0_stage1_11001;
+wire    ap_CS_fsm_pp0_stage4;
+wire    ap_block_state5_pp0_stage4_iter0;
+wire    ap_block_state12_pp0_stage4_iter1;
+wire    ap_block_pp0_stage4_11001;
+wire   [31:0] add_ln35_fu_312_p2;
+reg   [31:0] add_ln35_reg_474;
+wire    ap_block_pp0_stage5_11001;
+wire   [0:0] icmp_ln18_fu_333_p2;
+reg   [0:0] icmp_ln18_reg_480;
+wire   [31:0] grp_fu_257_p2;
+reg   [31:0] level_out_value_reg_484;
+wire   [0:0] reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1;
+reg   [0:0] reducer_circuit_adder_levels_valid_0_load_reg_499;
+wire   [0:0] trunc_ln34_1_fu_358_p1;
+reg   [0:0] trunc_ln34_1_reg_503;
+wire   [31:0] add_ln35_1_fu_374_p2;
+wire   [31:0] ap_phi_mux_empty_phi_fu_234_p4;
+wire   [0:0] icmp_ln18_1_fu_424_p2;
+reg   [0:0] icmp_ln18_1_reg_517;
+wire   [31:0] grp_fu_262_p2;
+reg   [31:0] out_data_value_reg_521;
+wire   [0:0] reducer_circuit_adder_levels_valid_1_load_load_fu_436_p1;
+reg   [0:0] reducer_circuit_adder_levels_valid_1_load_reg_526;
+reg    ap_enable_reg_pp0_iter0_reg;
+wire    ap_block_pp0_stage0_subdone;
+reg   [31:0] ap_port_reg_label_r;
+reg   [31:0] ap_phi_reg_pp0_iter0_level_out_value_1_reg_73;
+reg   [31:0] ap_phi_reg_pp0_iter0_level_out_label_reg_83;
+reg   [31:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_97_p6;
+wire   [31:0] ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_0_new_0_reg_93;
+reg   [31:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_0_reg_93;
+reg   [31:0] ap_phi_mux_level_out_017_31_phi_fu_110_p6;
+wire   [31:0] ap_phi_reg_pp0_iter0_level_out_017_31_reg_107;
+reg   [31:0] ap_phi_reg_pp0_iter1_level_out_017_31_reg_107;
+reg   [31:0] ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_123_p4;
+wire   [31:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_120;
+reg   [31:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_134_p4;
+wire   [31:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_1_reg_131;
+reg   [0:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_145_p6;
+wire   [0:0] ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141;
+reg   [0:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141;
+reg   [0:0] ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141;
+reg   [31:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_159_p6;
+wire   [31:0] ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_new_1_reg_155;
+reg   [31:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_new_1_reg_155;
+reg   [31:0] ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_1_reg_155;
+reg   [31:0] ap_phi_mux_out_data_0_35_phi_fu_173_p6;
+wire   [31:0] ap_phi_reg_pp0_iter0_out_data_0_35_reg_169;
+reg   [31:0] ap_phi_reg_pp0_iter1_out_data_0_35_reg_169;
+reg   [31:0] ap_phi_reg_pp0_iter2_out_data_0_35_reg_169;
+reg   [0:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_185_p4;
+reg   [0:0] ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182;
+wire   [0:0] ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182;
+reg   [0:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182;
+reg   [31:0] ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_195_p4;
+reg   [31:0] ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_2_reg_192;
+wire   [31:0] ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_new_2_reg_192;
+reg   [31:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_new_2_reg_192;
+wire   [31:0] ap_phi_reg_pp0_iter0_level_out_118_32_reg_202;
+reg   [31:0] ap_phi_reg_pp0_iter1_level_out_118_32_reg_202;
+wire   [31:0] ap_phi_reg_pp0_iter0_out_data_value_1_reg_217;
+reg   [31:0] ap_phi_reg_pp0_iter1_out_data_value_1_reg_217;
+wire   [31:0] ap_phi_reg_pp0_iter0_empty_reg_229;
+reg   [31:0] ap_phi_reg_pp0_iter1_empty_reg_229;
+wire   [0:0] ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241;
+reg   [0:0] ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241;
 reg   [31:0] ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load;
 wire    ap_block_pp0_stage0;
+wire    ap_block_pp0_stage4;
 reg   [31:0] ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load;
-reg   [31:0] ap_sig_allocacmp_reducer_circuit_adder_levels_buffer_value_0_1_load;
+wire    ap_block_pp0_stage1;
 reg   [0:0] ap_sig_allocacmp_reducer_circuit_adder_levels_valid_1_load;
-reg   [31:0] ap_sig_allocacmp_out_data_label;
+wire    ap_block_pp0_stage5;
 wire    ap_block_pp0_stage0_01001;
-wire   [30:0] tmp_fu_320_p4;
-reg   [0:0] ap_NS_fsm;
+wire   [30:0] tmp_fu_323_p4;
+reg   [5:0] ap_NS_fsm;
 reg    ap_idle_pp0_0to1;
 reg    ap_reset_idle_pp0;
+reg    ap_idle_pp0_1to2;
+wire    ap_block_pp0_stage1_subdone;
+wire    ap_block_state3_pp0_stage2_iter0;
+wire    ap_block_state10_pp0_stage2_iter1;
+wire    ap_block_pp0_stage2_subdone;
+wire    ap_block_state4_pp0_stage3_iter0;
+wire    ap_block_state11_pp0_stage3_iter1;
+wire    ap_block_pp0_stage3_subdone;
+wire    ap_block_pp0_stage4_subdone;
 wire    ap_enable_pp0;
-reg    ap_condition_139;
-reg    ap_condition_131;
-reg    ap_condition_186;
-reg    ap_condition_151;
-reg    ap_condition_365;
+reg    ap_condition_224;
+reg    ap_condition_212;
+reg    ap_condition_228;
+reg    ap_condition_288;
+reg    ap_condition_277;
+reg    ap_condition_311;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 1'd1;
+#0 ap_CS_fsm = 6'd1;
 #0 ap_enable_reg_pp0_iter1 = 1'b0;
 #0 ap_enable_reg_pp0_iter2 = 1'b0;
 #0 reducer_circuit_adder_levels_num_items_0 = 32'd0;
@@ -147,7 +190,38 @@ initial begin
 #0 reducer_circuit_adder_levels_valid_1 = 1'd0;
 #0 reducer_circuit_adder_levels_buffer_value_1_1 = 32'd0;
 #0 reducer_circuit_adder_levels_buffer_label_1_0 = 32'd0;
+#0 ap_enable_reg_pp0_iter0_reg = 1'b0;
 end
+
+accelerate_fadd_32ns_32ns_32_5_full_dsp_1 #(
+    .ID( 1 ),
+    .NUM_STAGE( 5 ),
+    .din0_WIDTH( 32 ),
+    .din1_WIDTH( 32 ),
+    .dout_WIDTH( 32 ))
+fadd_32ns_32ns_32_5_full_dsp_1_U1(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .din0(reducer_circuit_adder_levels_buffer_value_0_1),
+    .din1(ap_phi_reg_pp0_iter0_level_out_value_1_reg_73),
+    .ce(1'b1),
+    .dout(grp_fu_257_p2)
+);
+
+accelerate_fadd_32ns_32ns_32_5_full_dsp_1 #(
+    .ID( 1 ),
+    .NUM_STAGE( 5 ),
+    .din0_WIDTH( 32 ),
+    .din1_WIDTH( 32 ),
+    .dout_WIDTH( 32 ))
+fadd_32ns_32ns_32_5_full_dsp_1_U2(
+    .clk(ap_clk),
+    .reset(ap_rst),
+    .din0(reducer_circuit_adder_levels_buffer_value_1_1),
+    .din1(ap_phi_reg_pp0_iter1_out_data_value_1_reg_217),
+    .ce(1'b1),
+    .dout(grp_fu_262_p2)
+);
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
@@ -159,10 +233,20 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
+        ap_enable_reg_pp0_iter0_reg <= 1'b0;
+    end else begin
+        if ((1'b1 == ap_CS_fsm_pp0_stage0)) begin
+            ap_enable_reg_pp0_iter0_reg <= ap_start;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (ap_rst == 1'b1) begin
         ap_enable_reg_pp0_iter1 <= 1'b0;
     end else begin
-        if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-            ap_enable_reg_pp0_iter1 <= ap_start;
+        if (((1'b0 == ap_block_pp0_stage5_subdone) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
+            ap_enable_reg_pp0_iter1 <= ap_enable_reg_pp0_iter0;
         end
     end
 end
@@ -171,188 +255,304 @@ always @ (posedge ap_clk) begin
     if (ap_rst == 1'b1) begin
         ap_enable_reg_pp0_iter2 <= 1'b0;
     end else begin
-        if ((1'b0 == ap_block_pp0_stage0_subdone)) begin
+        if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter2 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+            ap_enable_reg_pp0_iter2 <= 1'b0;
+        end else if (((1'b0 == ap_block_pp0_stage5_subdone) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
             ap_enable_reg_pp0_iter2 <= ap_enable_reg_pp0_iter1;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_condition_139)) begin
-        if ((trunc_ln34_fu_252_p1 == 1'd1)) begin
-            ap_phi_reg_pp0_iter1_level_out_label_reg_80 <= reducer_circuit_adder_levels_buffer_label_0_0;
-        end else if ((trunc_ln34_fu_252_p1 == 1'd0)) begin
-            ap_phi_reg_pp0_iter1_level_out_label_reg_80 <= label_r;
+    if ((1'b1 == ap_condition_224)) begin
+        if ((trunc_ln34_reg_450 == 1'd1)) begin
+            ap_phi_reg_pp0_iter0_level_out_label_reg_83 <= reducer_circuit_adder_levels_buffer_label_0_0;
+        end else if ((trunc_ln34_reg_450 == 1'd0)) begin
+            ap_phi_reg_pp0_iter0_level_out_label_reg_83 <= ap_port_reg_label_r;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_condition_212)) begin
+        if ((trunc_ln34_fu_271_p1 == 1'd1)) begin
+            ap_phi_reg_pp0_iter0_level_out_value_1_reg_73 <= reducer_circuit_adder_levels_buffer_value_0_0;
+        end else if ((trunc_ln34_fu_271_p1 == 1'd0)) begin
+            ap_phi_reg_pp0_iter0_level_out_value_1_reg_73 <= value_r;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd0)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd0) & (icmp_ln18_reg_480 == 1'd0))))) begin
+        ap_phi_reg_pp0_iter1_empty_reg_229 <= ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load;
+    end else if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) | ((reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1) | ((icmp_ln18_reg_480 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0)))))) begin
+        ap_phi_reg_pp0_iter1_empty_reg_229 <= add_ln35_1_fu_374_p2;
+    end else if (((1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
+        ap_phi_reg_pp0_iter1_empty_reg_229 <= ap_phi_reg_pp0_iter0_empty_reg_229;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_condition_228)) begin
+        if (((icmp_ln18_fu_333_p2 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0))) begin
+            ap_phi_reg_pp0_iter1_level_out_017_31_reg_107 <= level_out_value_1_reg_73;
         end else if ((1'b1 == 1'b1)) begin
-            ap_phi_reg_pp0_iter1_level_out_label_reg_80 <= ap_phi_reg_pp0_iter0_level_out_label_reg_80;
+            ap_phi_reg_pp0_iter1_level_out_017_31_reg_107 <= ap_phi_reg_pp0_iter0_level_out_017_31_reg_107;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_condition_151)) begin
-        if ((1'b1 == ap_condition_186)) begin
-            ap_phi_reg_pp0_iter2_empty_reg_175 <= ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load;
-        end else if ((1'b1 == ap_condition_131)) begin
-            ap_phi_reg_pp0_iter2_empty_reg_175 <= add_ln35_1_fu_362_p2;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1) & (icmp_ln18_reg_480 == 1'd0))))) begin
+        ap_phi_reg_pp0_iter1_level_out_118_32_reg_202 <= 32'd0;
+    end else if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1))) begin
+        ap_phi_reg_pp0_iter1_level_out_118_32_reg_202 <= level_out_label_reg_83;
+    end else if (((1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5) & (icmp_ln18_fu_333_p2 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0))) begin
+        ap_phi_reg_pp0_iter1_level_out_118_32_reg_202 <= ap_phi_reg_pp0_iter0_level_out_label_reg_83;
+    end else if (((1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
+        ap_phi_reg_pp0_iter1_level_out_118_32_reg_202 <= ap_phi_reg_pp0_iter0_level_out_118_32_reg_202;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd0)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd0) & (icmp_ln18_reg_480 == 1'd0))))) begin
+        ap_phi_reg_pp0_iter1_out_data_value_1_reg_217 <= reducer_circuit_adder_levels_buffer_value_1_0;
+    end else if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) | ((reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1) | ((icmp_ln18_reg_480 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0)))))) begin
+        ap_phi_reg_pp0_iter1_out_data_value_1_reg_217 <= ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_123_p4;
+    end else if (((1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
+        ap_phi_reg_pp0_iter1_out_data_value_1_reg_217 <= ap_phi_reg_pp0_iter0_out_data_value_1_reg_217;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((1'b1 == ap_condition_228)) begin
+        if (((icmp_ln18_fu_333_p2 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0))) begin
+            ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_0_reg_93 <= 32'd0;
         end else if ((1'b1 == 1'b1)) begin
-            ap_phi_reg_pp0_iter2_empty_reg_175 <= ap_phi_reg_pp0_iter1_empty_reg_175;
+            ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_0_reg_93 <= ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_0_new_0_reg_93;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1) & (icmp_ln18_fu_330_p2 == 1'd0)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1))))) begin
-        ap_phi_reg_pp0_iter2_level_out_118_32_reg_137 <= 32'd0;
-    end else if ((((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0)) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (icmp_ln18_fu_330_p2 == 1'd1)))) begin
-        ap_phi_reg_pp0_iter2_level_out_118_32_reg_137 <= ap_phi_reg_pp0_iter1_level_out_label_reg_80;
-    end else if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_phi_reg_pp0_iter2_level_out_118_32_reg_137 <= ap_phi_reg_pp0_iter1_level_out_118_32_reg_137;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd0)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd0) & (icmp_ln18_reg_480 == 1'd0))))) begin
+        ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241 <= 1'd0;
+    end else if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) | ((reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1) | ((icmp_ln18_reg_480 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0)))))) begin
+        ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241 <= 1'd1;
+    end else if (((1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
+        ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241 <= ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_condition_151)) begin
-        if ((1'b1 == ap_condition_186)) begin
-            ap_phi_reg_pp0_iter2_out_data_value_1_reg_165 <= reducer_circuit_adder_levels_buffer_value_1_0;
-        end else if ((1'b1 == ap_condition_131)) begin
-            ap_phi_reg_pp0_iter2_out_data_value_1_reg_165 <= ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_119_p4;
+    if ((1'b1 == ap_condition_277)) begin
+        if ((1'b1 == ap_condition_288)) begin
+            ap_phi_reg_pp0_iter2_out_data_0_35_reg_169 <= 32'd0;
+        end else if (((empty_reg_229 == 32'd1) & (icmp_ln18_1_fu_424_p2 == 1'd1))) begin
+            ap_phi_reg_pp0_iter2_out_data_0_35_reg_169 <= out_data_value_1_reg_217;
         end else if ((1'b1 == 1'b1)) begin
-            ap_phi_reg_pp0_iter2_out_data_value_1_reg_165 <= ap_phi_reg_pp0_iter1_out_data_value_1_reg_165;
+            ap_phi_reg_pp0_iter2_out_data_0_35_reg_169 <= ap_phi_reg_pp0_iter1_out_data_0_35_reg_169;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_condition_151)) begin
-        if ((1'b1 == ap_condition_186)) begin
-            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152 <= 1'd0;
-        end else if ((1'b1 == ap_condition_131)) begin
-            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152 <= 1'd1;
+    if ((1'b1 == ap_condition_277)) begin
+        if ((1'b1 == ap_condition_288)) begin
+            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141 <= ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241;
+        end else if (((empty_reg_229 == 32'd1) & (icmp_ln18_1_fu_424_p2 == 1'd1))) begin
+            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141 <= 1'd1;
         end else if ((1'b1 == 1'b1)) begin
-            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152 <= ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152;
+            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141 <= ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_condition_139)) begin
-        if ((trunc_ln34_fu_252_p1 == 1'd1)) begin
-            level_out_value_1_reg_69 <= reducer_circuit_adder_levels_buffer_value_0_0;
-        end else if ((trunc_ln34_fu_252_p1 == 1'd0)) begin
-            level_out_value_1_reg_69 <= value_r;
+    if ((1'b1 == ap_condition_277)) begin
+        if ((1'b1 == ap_condition_311)) begin
+            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182 <= ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241;
         end else if ((1'b1 == 1'b1)) begin
-            level_out_value_1_reg_69 <= ap_phi_reg_pp0_iter0_level_out_value_1_reg_69;
+            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182 <= ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        if (((reducer_circuit_adder_levels_num_items_0_load_load_fu_248_p1 == 32'd1) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            reducer_circuit_adder_levels_valid_0 <= 1'd1;
-        end else if (((reducer_circuit_adder_levels_num_items_0_load_load_fu_248_p1 == 32'd4294967295) & (ap_enable_reg_pp0_iter0 == 1'b1))) begin
-            reducer_circuit_adder_levels_valid_0 <= 1'd0;
-        end else if ((1'b1 == ap_condition_365)) begin
-            reducer_circuit_adder_levels_valid_0 <= 1'd1;
+    if ((1'b1 == ap_condition_277)) begin
+        if ((1'b1 == ap_condition_288)) begin
+            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_1_reg_155 <= empty_reg_229;
+        end else if (((empty_reg_229 == 32'd1) & (icmp_ln18_1_fu_424_p2 == 1'd1))) begin
+            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_1_reg_155 <= 32'd0;
+        end else if ((1'b1 == 1'b1)) begin
+            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_1_reg_155 <= ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_new_1_reg_155;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & (ap_phi_mux_empty_phi_fu_178_p4 == 32'd2)) | ((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & (icmp_ln18_1_fu_390_p2 == 1'd1) & (ap_phi_mux_empty_phi_fu_178_p4 == 32'd1)))) begin
+    if ((1'b1 == ap_condition_277)) begin
+        if ((1'b1 == ap_condition_311)) begin
+            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_2_reg_192 <= empty_reg_229;
+        end else if ((1'b1 == 1'b1)) begin
+            ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_2_reg_192 <= ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_new_2_reg_192;
+        end
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((((1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5) & (icmp_ln18_fu_333_p2 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0)) | ((1'b0 == ap_block_pp0_stage1_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1)))) begin
+        reducer_circuit_adder_levels_valid_0 <= 1'd1;
+    end else if (((1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd4294967295))) begin
+        reducer_circuit_adder_levels_valid_0 <= 1'd0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if ((((empty_reg_229 == 32'd1) & (1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5) & (icmp_ln18_1_fu_424_p2 == 1'd1)) | ((1'b0 == ap_block_pp0_stage1_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage1) & (ap_phi_mux_empty_phi_fu_234_p4 == 32'd2)))) begin
         reducer_circuit_adder_levels_valid_1 <= 1'd1;
-    end else if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & (ap_phi_mux_empty_phi_fu_178_p4 == 32'd0))) begin
+    end else if (((empty_reg_229 == 32'd0) & (1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
         reducer_circuit_adder_levels_valid_1 <= 1'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        add_ln35_reg_446 <= add_ln35_fu_283_p2;
-        reducer_circuit_adder_levels_num_items_0_load_reg_434 <= ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load;
-        reducer_circuit_adder_levels_num_items_0_load_reg_434_pp0_iter1_reg <= reducer_circuit_adder_levels_num_items_0_load_reg_434;
+    if (((1'b0 == ap_block_pp0_stage5_11001) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
+        add_ln35_reg_474 <= add_ln35_fu_312_p2;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
+        ap_phi_reg_pp0_iter1_out_data_0_35_reg_169 <= ap_phi_reg_pp0_iter0_out_data_0_35_reg_169;
+        ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141 <= ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141;
+        ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182 <= ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182;
+        ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_new_1_reg_155 <= ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_new_1_reg_155;
+        ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_new_2_reg_192 <= ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_new_2_reg_192;
+        level_out_label_reg_83 <= ap_phi_reg_pp0_iter0_level_out_label_reg_83;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_phi_reg_pp0_iter1_empty_reg_175 <= ap_phi_reg_pp0_iter0_empty_reg_175;
-        ap_phi_reg_pp0_iter1_level_out_118_32_reg_137 <= ap_phi_reg_pp0_iter0_level_out_118_32_reg_137;
-        ap_phi_reg_pp0_iter1_out_data_value_1_reg_165 <= ap_phi_reg_pp0_iter0_out_data_value_1_reg_165;
-        ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152 <= ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152;
+        ap_port_reg_label_r <= label_r;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        icmp_ln18_reg_467 <= icmp_ln18_fu_330_p2;
+    if (((1'b0 == ap_block_pp0_stage1_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage1))) begin
+        empty_reg_229 <= ap_phi_reg_pp0_iter1_empty_reg_229;
+        out_data_value_1_reg_217 <= ap_phi_reg_pp0_iter1_out_data_value_1_reg_217;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((reducer_circuit_adder_levels_num_items_0_load_load_fu_248_p1 == 32'd1) & (1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        level_out_value_reg_452 <= level_out_value_fu_305_p2;
+    if (((empty_reg_229 == 32'd1) & (1'b0 == ap_block_pp0_stage5_11001) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
+        icmp_ln18_1_reg_517 <= icmp_ln18_1_fu_424_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln34_fu_252_p1 == 1'd0))) begin
-        reducer_circuit_adder_levels_buffer_label_0_0 <= label_r;
+    if (((1'b0 == ap_block_pp0_stage5_11001) & (1'b1 == ap_CS_fsm_pp0_stage5) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0))) begin
+        icmp_ln18_reg_480 <= icmp_ln18_fu_333_p2;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage1_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage1))) begin
+        level_out_value_1_reg_73 <= ap_phi_reg_pp0_iter0_level_out_value_1_reg_73;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage5_11001) & (1'b1 == ap_CS_fsm_pp0_stage5) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1))) begin
+        level_out_value_reg_484 <= grp_fu_257_p2;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((empty_reg_229 == 32'd2) & (1'b0 == ap_block_pp0_stage5_11001) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
+        out_data_value_reg_521 <= grp_fu_262_p2;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage4_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage4) & (trunc_ln34_reg_450 == 1'd0))) begin
+        reducer_circuit_adder_levels_buffer_label_0_0 <= ap_port_reg_label_r;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage1_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage1) & ((((trunc_ln34_1_reg_503 == 1'd0) & (reducer_circuit_adder_levels_valid_0_load_reg_499 == 1'd1)) | ((trunc_ln34_1_reg_503 == 1'd0) & (icmp_ln18_reg_480 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445_pp0_iter1_reg == 32'd0))) | ((trunc_ln34_1_reg_503 == 1'd0) & (reducer_circuit_adder_levels_num_items_0_load_reg_445_pp0_iter1_reg == 32'd1))))) begin
+        reducer_circuit_adder_levels_buffer_label_1_0 <= ap_phi_reg_pp0_iter1_level_out_118_32_reg_202;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln34_fu_271_p1 == 1'd0))) begin
         reducer_circuit_adder_levels_buffer_value_0_0 <= value_r;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & ((((reducer_circuit_adder_levels_num_items_0_load_reg_434_pp0_iter1_reg == 32'd0) & (trunc_ln34_1_reg_475 == 1'd0) & (icmp_ln18_reg_467 == 1'd1)) | ((trunc_ln34_1_reg_475 == 1'd0) & (reducer_circuit_adder_levels_valid_0_load_reg_471 == 1'd1))) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434_pp0_iter1_reg == 32'd1) & (trunc_ln34_1_reg_475 == 1'd0))))) begin
-        reducer_circuit_adder_levels_buffer_label_1_0 <= ap_phi_reg_pp0_iter2_level_out_118_32_reg_137;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln34_fu_252_p1 == 1'd1))) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln34_fu_271_p1 == 1'd1))) begin
         reducer_circuit_adder_levels_buffer_value_0_1 <= value_r;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((((trunc_ln34_1_fu_346_p1 == 1'd0) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1)) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (trunc_ln34_1_fu_346_p1 == 1'd0) & (icmp_ln18_fu_330_p2 == 1'd1))) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (trunc_ln34_1_fu_346_p1 == 1'd0))))) begin
-        reducer_circuit_adder_levels_buffer_value_1_0 <= ap_phi_mux_level_out_017_31_phi_fu_106_p6;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((((trunc_ln34_1_fu_358_p1 == 1'd0) & (icmp_ln18_reg_480 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0)) | ((trunc_ln34_1_fu_358_p1 == 1'd0) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1))) | ((trunc_ln34_1_fu_358_p1 == 1'd0) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1))))) begin
+        reducer_circuit_adder_levels_buffer_value_1_0 <= ap_phi_mux_level_out_017_31_phi_fu_110_p6;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((((trunc_ln34_1_fu_346_p1 == 1'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1)) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (trunc_ln34_1_fu_346_p1 == 1'd1) & (icmp_ln18_fu_330_p2 == 1'd1))) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (trunc_ln34_1_fu_346_p1 == 1'd1))))) begin
-        reducer_circuit_adder_levels_buffer_value_1_1 <= ap_phi_mux_level_out_017_31_phi_fu_106_p6;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((((trunc_ln34_1_fu_358_p1 == 1'd1) & (icmp_ln18_reg_480 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0)) | ((trunc_ln34_1_fu_358_p1 == 1'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1))) | ((trunc_ln34_1_fu_358_p1 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1))))) begin
+        reducer_circuit_adder_levels_buffer_value_1_1 <= ap_phi_mux_level_out_017_31_phi_fu_110_p6;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        reducer_circuit_adder_levels_num_items_0 <= ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_130_p4;
+        reducer_circuit_adder_levels_num_items_0 <= ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_134_p4;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & (ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_229_p4 == 1'd1))) begin
-        reducer_circuit_adder_levels_num_items_1 <= ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_240_p4;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        reducer_circuit_adder_levels_num_items_0_load_reg_445 <= ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load;
+        reducer_circuit_adder_levels_num_items_0_load_reg_445_pp0_iter1_reg <= reducer_circuit_adder_levels_num_items_0_load_reg_445;
+        trunc_ln34_reg_450 <= trunc_ln34_fu_271_p1;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (icmp_ln18_fu_330_p2 == 1'd0))))) begin
-        reducer_circuit_adder_levels_valid_0_load_reg_471 <= reducer_circuit_adder_levels_valid_0;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & (ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_185_p4 == 1'd1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        reducer_circuit_adder_levels_num_items_1 <= ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_195_p4;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) | ((reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (icmp_ln18_fu_330_p2 == 1'd1)))))) begin
-        trunc_ln34_1_reg_475 <= trunc_ln34_1_fu_346_p1;
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (icmp_ln18_reg_480 == 1'd0))))) begin
+        reducer_circuit_adder_levels_valid_0_load_reg_499 <= reducer_circuit_adder_levels_valid_0;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage5_11001) & (1'b1 == ap_CS_fsm_pp0_stage5) & ((~(empty_reg_229 == 32'd2) & ~(empty_reg_229 == 32'd1)) | (~(empty_reg_229 == 32'd2) & (icmp_ln18_1_fu_424_p2 == 1'd0))))) begin
+        reducer_circuit_adder_levels_valid_1_load_reg_526 <= ap_sig_allocacmp_reducer_circuit_adder_levels_valid_1_load;
+    end
+end
+
+always @ (posedge ap_clk) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) | ((reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1) | ((icmp_ln18_reg_480 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0)))))) begin
+        trunc_ln34_1_reg_503 <= trunc_ln34_1_fu_358_p1;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter2 == 1'b1))) begin
+    if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter2 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = 1'b0;
@@ -360,7 +560,15 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_start == 1'b0) & (ap_idle_pp0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if ((1'b1 == ap_CS_fsm_pp0_stage0)) begin
+        ap_enable_reg_pp0_iter0 = ap_start;
+    end else begin
+        ap_enable_reg_pp0_iter0 = ap_enable_reg_pp0_iter0_reg;
+    end
+end
+
+always @ (*) begin
+    if (((ap_idle_pp0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (ap_start == 1'b0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -384,111 +592,95 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1) & (icmp_ln18_fu_330_p2 == 1'd0)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1)))) begin
-        ap_phi_mux_level_out_017_31_phi_fu_106_p6 = 32'd0;
-    end else if ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1)) begin
-        ap_phi_mux_level_out_017_31_phi_fu_106_p6 = level_out_value_reg_452;
-    end else if (((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (icmp_ln18_fu_330_p2 == 1'd1))) begin
-        ap_phi_mux_level_out_017_31_phi_fu_106_p6 = level_out_value_1_reg_69;
+    if (((ap_enable_reg_pp0_iter2 == 1'b0) & (ap_enable_reg_pp0_iter1 == 1'b0))) begin
+        ap_idle_pp0_1to2 = 1'b1;
     end else begin
-        ap_phi_mux_level_out_017_31_phi_fu_106_p6 = ap_phi_reg_pp0_iter1_level_out_017_31_reg_103;
+        ap_idle_pp0_1to2 = 1'b0;
     end
 end
 
 always @ (*) begin
-    if ((trunc_ln34_fu_252_p1 == 1'd1)) begin
-        ap_phi_mux_level_out_value_1_phi_fu_72_p4 = reducer_circuit_adder_levels_buffer_value_0_0;
-    end else if ((trunc_ln34_fu_252_p1 == 1'd0)) begin
-        ap_phi_mux_level_out_value_1_phi_fu_72_p4 = value_r;
+    if (((~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1) & (icmp_ln18_reg_480 == 1'd0)))) begin
+        ap_phi_mux_level_out_017_31_phi_fu_110_p6 = 32'd0;
+    end else if ((reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1)) begin
+        ap_phi_mux_level_out_017_31_phi_fu_110_p6 = level_out_value_reg_484;
     end else begin
-        ap_phi_mux_level_out_value_1_phi_fu_72_p4 = ap_phi_reg_pp0_iter0_level_out_value_1_reg_69;
+        ap_phi_mux_level_out_017_31_phi_fu_110_p6 = ap_phi_reg_pp0_iter1_level_out_017_31_reg_107;
     end
 end
 
 always @ (*) begin
-    if (((~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) & ~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd1) & (reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd1)) | (~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) & (reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd1) & (icmp_ln18_1_fu_390_p2 == 1'd0)))) begin
-        ap_phi_mux_out_data_0_35_phi_fu_215_p6 = 32'd0;
-    end else if ((ap_phi_mux_empty_phi_fu_178_p4 == 32'd2)) begin
-        ap_phi_mux_out_data_0_35_phi_fu_215_p6 = out_data_value_fu_412_p2;
-    end else if (((icmp_ln18_1_fu_390_p2 == 1'd1) & (ap_phi_mux_empty_phi_fu_178_p4 == 32'd1))) begin
-        ap_phi_mux_out_data_0_35_phi_fu_215_p6 = ap_phi_reg_pp0_iter2_out_data_value_1_reg_165;
+    if ((empty_reg_229 == 32'd2)) begin
+        ap_phi_mux_out_data_0_35_phi_fu_173_p6 = out_data_value_reg_521;
     end else begin
-        ap_phi_mux_out_data_0_35_phi_fu_215_p6 = ap_phi_reg_pp0_iter2_out_data_0_35_reg_212;
+        ap_phi_mux_out_data_0_35_phi_fu_173_p6 = ap_phi_reg_pp0_iter2_out_data_0_35_reg_169;
     end
 end
 
 always @ (*) begin
-    if (((((trunc_ln34_1_fu_346_p1 == 1'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1)) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (trunc_ln34_1_fu_346_p1 == 1'd1) & (icmp_ln18_fu_330_p2 == 1'd1))) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (trunc_ln34_1_fu_346_p1 == 1'd1)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_119_p4 = reducer_circuit_adder_levels_buffer_value_1_0;
-    end else if (((((trunc_ln34_1_fu_346_p1 == 1'd0) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1)) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (trunc_ln34_1_fu_346_p1 == 1'd0) & (icmp_ln18_fu_330_p2 == 1'd1))) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (trunc_ln34_1_fu_346_p1 == 1'd0)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_119_p4 = ap_phi_mux_level_out_017_31_phi_fu_106_p6;
+    if (((((trunc_ln34_1_fu_358_p1 == 1'd1) & (icmp_ln18_reg_480 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0)) | ((trunc_ln34_1_fu_358_p1 == 1'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1))) | ((trunc_ln34_1_fu_358_p1 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1)))) begin
+        ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_123_p4 = reducer_circuit_adder_levels_buffer_value_1_0;
+    end else if (((((trunc_ln34_1_fu_358_p1 == 1'd0) & (icmp_ln18_reg_480 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0)) | ((trunc_ln34_1_fu_358_p1 == 1'd0) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1))) | ((trunc_ln34_1_fu_358_p1 == 1'd0) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1)))) begin
+        ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_123_p4 = ap_phi_mux_level_out_017_31_phi_fu_110_p6;
     end else begin
-        ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_119_p4 = ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_116;
+        ap_phi_mux_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_123_p4 = ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_120;
     end
 end
 
 always @ (*) begin
-    if (((~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1) & (icmp_ln18_fu_330_p2 == 1'd0)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_93_p6 = add_ln35_reg_446;
-    end else if (((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (icmp_ln18_fu_330_p2 == 1'd1)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_93_p6 = 32'd0;
+    if (((~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1) & (icmp_ln18_reg_480 == 1'd0)))) begin
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_97_p6 = add_ln35_reg_474;
+    end else if ((reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1)) begin
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_97_p6 = 32'd0;
     end else begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_93_p6 = ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_0_reg_90;
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_97_p6 = ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_0_reg_93;
     end
 end
 
 always @ (*) begin
-    if (((~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd0) & (icmp_ln18_fu_330_p2 == 1'd0)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd0)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_130_p4 = add_ln35_reg_446;
-    end else if (((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) | ((reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (icmp_ln18_fu_330_p2 == 1'd1))))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_130_p4 = ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_93_p6;
+    if (((~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd0)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd0) & (icmp_ln18_reg_480 == 1'd0)))) begin
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_134_p4 = add_ln35_reg_474;
+    end else if (((reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd1) | ((reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 == 1'd1) | ((icmp_ln18_reg_480 == 1'd1) & (reducer_circuit_adder_levels_num_items_0_load_reg_445 == 32'd0))))) begin
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_134_p4 = ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_97_p6;
     end else begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_130_p4 = ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_1_reg_127;
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_134_p4 = ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_1_reg_131;
     end
 end
 
 always @ (*) begin
-    if (((~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) & ~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd1) & (reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd1)) | (~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) & (reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd1) & (icmp_ln18_1_fu_390_p2 == 1'd0)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_187_p6 = ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152;
-    end else if (((ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) | ((icmp_ln18_1_fu_390_p2 == 1'd1) & (ap_phi_mux_empty_phi_fu_178_p4 == 32'd1)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_187_p6 = 1'd1;
+    if ((empty_reg_229 == 32'd2)) begin
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_145_p6 = 1'd1;
     end else begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_187_p6 = ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_1_reg_184;
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_145_p6 = ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141;
     end
 end
 
 always @ (*) begin
-    if (((~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) & (reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd0) & (icmp_ln18_1_fu_390_p2 == 1'd0)) | (~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) & ~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd1) & (reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd0)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_229_p4 = ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152;
-    end else if (((ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) | ((reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd1) | ((icmp_ln18_1_fu_390_p2 == 1'd1) & (ap_phi_mux_empty_phi_fu_178_p4 == 32'd1))))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_229_p4 = ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_187_p6;
+    if (((empty_reg_229 == 32'd2) | ((reducer_circuit_adder_levels_valid_1_load_reg_526 == 1'd1) | ((empty_reg_229 == 32'd1) & (icmp_ln18_1_reg_517 == 1'd1))))) begin
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_185_p4 = ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_145_p6;
     end else begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_229_p4 = ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_2_reg_226;
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_185_p4 = ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182;
     end
 end
 
 always @ (*) begin
-    if (((~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) & ~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd1) & (reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd1)) | (~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) & (reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd1) & (icmp_ln18_1_fu_390_p2 == 1'd0)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_201_p6 = ap_phi_reg_pp0_iter2_empty_reg_175;
-    end else if (((ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) | ((icmp_ln18_1_fu_390_p2 == 1'd1) & (ap_phi_mux_empty_phi_fu_178_p4 == 32'd1)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_201_p6 = 32'd0;
+    if ((empty_reg_229 == 32'd2)) begin
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_159_p6 = 32'd0;
     end else begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_201_p6 = ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_1_reg_198;
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_159_p6 = ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_1_reg_155;
     end
 end
 
 always @ (*) begin
-    if (((~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) & (reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd0) & (icmp_ln18_1_fu_390_p2 == 1'd0)) | (~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) & ~(ap_phi_mux_empty_phi_fu_178_p4 == 32'd1) & (reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd0)))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_240_p4 = ap_phi_reg_pp0_iter2_empty_reg_175;
-    end else if (((ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) | ((reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd1) | ((icmp_ln18_1_fu_390_p2 == 1'd1) & (ap_phi_mux_empty_phi_fu_178_p4 == 32'd1))))) begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_240_p4 = ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_201_p6;
+    if (((empty_reg_229 == 32'd2) | ((reducer_circuit_adder_levels_valid_1_load_reg_526 == 1'd1) | ((empty_reg_229 == 32'd1) & (icmp_ln18_1_reg_517 == 1'd1))))) begin
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_195_p4 = ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_159_p6;
     end else begin
-        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_240_p4 = ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_2_reg_237;
+        ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_195_p4 = ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_2_reg_192;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((1'b0 == ap_block_pp0_stage5_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -496,7 +688,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_start == 1'b0) & (ap_idle_pp0_0to1 == 1'b1))) begin
+    if (((ap_idle_pp0_0to1 == 1'b1) & (ap_start == 1'b0))) begin
         ap_reset_idle_pp0 = 1'b1;
     end else begin
         ap_reset_idle_pp0 = 1'b0;
@@ -504,39 +696,23 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter2 == 1'b1) & ((((reducer_circuit_adder_levels_num_items_0_load_reg_434_pp0_iter1_reg == 32'd0) & (trunc_ln34_1_reg_475 == 1'd0) & (icmp_ln18_reg_467 == 1'd1)) | ((trunc_ln34_1_reg_475 == 1'd0) & (reducer_circuit_adder_levels_valid_0_load_reg_471 == 1'd1))) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434_pp0_iter1_reg == 32'd1) & (trunc_ln34_1_reg_475 == 1'd0))))) begin
-        ap_sig_allocacmp_out_data_label = ap_phi_reg_pp0_iter2_level_out_118_32_reg_137;
-    end else begin
-        ap_sig_allocacmp_out_data_label = reducer_circuit_adder_levels_buffer_label_1_0;
-    end
-end
-
-always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (trunc_ln34_fu_252_p1 == 1'd1))) begin
-        ap_sig_allocacmp_reducer_circuit_adder_levels_buffer_value_0_1_load = value_r;
-    end else begin
-        ap_sig_allocacmp_reducer_circuit_adder_levels_buffer_value_0_1_load = reducer_circuit_adder_levels_buffer_value_0_1;
-    end
-end
-
-always @ (*) begin
     if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load = ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_130_p4;
+        ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load = ap_phi_mux_reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_134_p4;
     end else begin
         ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load = reducer_circuit_adder_levels_num_items_0;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_229_p4 == 1'd1))) begin
-        ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load = ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_240_p4;
+    if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (ap_phi_mux_reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_185_p4 == 1'd1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+        ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load = ap_phi_mux_reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_195_p4;
     end else begin
         ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load = reducer_circuit_adder_levels_num_items_1;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0) & (ap_enable_reg_pp0_iter2 == 1'b1) & (ap_phi_mux_empty_phi_fu_178_p4 == 32'd0))) begin
+    if (((empty_reg_229 == 32'd0) & (1'b0 == ap_block_pp0_stage5) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5))) begin
         ap_sig_allocacmp_reducer_circuit_adder_levels_valid_1_load = 1'd0;
     end else begin
         ap_sig_allocacmp_reducer_circuit_adder_levels_valid_1_load = reducer_circuit_adder_levels_valid_1;
@@ -544,7 +720,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & ((ap_phi_mux_empty_phi_fu_178_p4 == 32'd2) | ((reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 == 1'd1) | ((icmp_ln18_1_fu_390_p2 == 1'd1) & (ap_phi_mux_empty_phi_fu_178_p4 == 32'd1)))))) begin
+    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter2 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & ((empty_reg_229 == 32'd2) | ((reducer_circuit_adder_levels_valid_1_load_reg_526 == 1'd1) | ((empty_reg_229 == 32'd1) & (icmp_ln18_1_reg_517 == 1'd1)))))) begin
         out_r_ap_vld = 1'b1;
     end else begin
         out_r_ap_vld = 1'b0;
@@ -554,7 +730,48 @@ end
 always @ (*) begin
     case (ap_CS_fsm)
         ap_ST_fsm_pp0_stage0 : begin
-            ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            if ((~((ap_idle_pp0_1to2 == 1'b1) & (ap_start == 1'b0)) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_reset_idle_pp0 == 1'b0))) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage1;
+            end else if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_reset_idle_pp0 == 1'b1))) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            end
+        end
+        ap_ST_fsm_pp0_stage1 : begin
+            if ((1'b0 == ap_block_pp0_stage1_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage2;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage1;
+            end
+        end
+        ap_ST_fsm_pp0_stage2 : begin
+            if ((1'b0 == ap_block_pp0_stage2_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage3;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage2;
+            end
+        end
+        ap_ST_fsm_pp0_stage3 : begin
+            if ((1'b0 == ap_block_pp0_stage3_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage4;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage3;
+            end
+        end
+        ap_ST_fsm_pp0_stage4 : begin
+            if ((1'b0 == ap_block_pp0_stage4_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage5;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage4;
+            end
+        end
+        ap_ST_fsm_pp0_stage5 : begin
+            if ((1'b0 == ap_block_pp0_stage5_subdone)) begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_pp0_stage5;
+            end
         end
         default : begin
             ap_NS_fsm = 'bx;
@@ -562,11 +779,17 @@ always @ (*) begin
     endcase
 end
 
-assign add_ln35_1_fu_362_p2 = (ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load + 32'd1);
+assign add_ln35_1_fu_374_p2 = (ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load + 32'd1);
 
-assign add_ln35_fu_283_p2 = (ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load + 32'd1);
+assign add_ln35_fu_312_p2 = (reducer_circuit_adder_levels_num_items_0_load_reg_445 + 32'd1);
 
 assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
+
+assign ap_CS_fsm_pp0_stage1 = ap_CS_fsm[32'd1];
+
+assign ap_CS_fsm_pp0_stage4 = ap_CS_fsm[32'd4];
+
+assign ap_CS_fsm_pp0_stage5 = ap_CS_fsm[32'd5];
 
 assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
 
@@ -576,88 +799,122 @@ assign ap_block_pp0_stage0_11001 = ~(1'b1 == 1'b1);
 
 assign ap_block_pp0_stage0_subdone = ~(1'b1 == 1'b1);
 
+assign ap_block_pp0_stage1 = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage1_11001 = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage1_subdone = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage2_subdone = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage3_subdone = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage4 = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage4_11001 = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage4_subdone = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage5 = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage5_11001 = ~(1'b1 == 1'b1);
+
+assign ap_block_pp0_stage5_subdone = ~(1'b1 == 1'b1);
+
+assign ap_block_state10_pp0_stage2_iter1 = ~(1'b1 == 1'b1);
+
+assign ap_block_state11_pp0_stage3_iter1 = ~(1'b1 == 1'b1);
+
+assign ap_block_state12_pp0_stage4_iter1 = ~(1'b1 == 1'b1);
+
+assign ap_block_state13_pp0_stage5_iter1 = ~(1'b1 == 1'b1);
+
 assign ap_block_state1_pp0_stage0_iter0 = ~(1'b1 == 1'b1);
 
-assign ap_block_state2_pp0_stage0_iter1 = ~(1'b1 == 1'b1);
+assign ap_block_state2_pp0_stage1_iter0 = ~(1'b1 == 1'b1);
 
-assign ap_block_state3_pp0_stage0_iter2 = ~(1'b1 == 1'b1);
+assign ap_block_state3_pp0_stage2_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state4_pp0_stage3_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state5_pp0_stage4_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state6_pp0_stage5_iter0 = ~(1'b1 == 1'b1);
+
+assign ap_block_state7_pp0_stage0_iter1 = ~(1'b1 == 1'b1);
+
+assign ap_block_state8_pp0_stage0_iter2 = ~(1'b1 == 1'b1);
+
+assign ap_block_state9_pp0_stage1_iter1 = ~(1'b1 == 1'b1);
 
 always @ (*) begin
-    ap_condition_131 = ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) | ((reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd1) | ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (icmp_ln18_fu_330_p2 == 1'd1))));
+    ap_condition_212 = ((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0));
 end
 
 always @ (*) begin
-    ap_condition_139 = ((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0));
+    ap_condition_224 = ((1'b0 == ap_block_pp0_stage4_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage4));
 end
 
 always @ (*) begin
-    ap_condition_151 = ((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0));
+    ap_condition_228 = ((1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5));
 end
 
 always @ (*) begin
-    ap_condition_186 = ((~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd0) & (icmp_ln18_fu_330_p2 == 1'd0)) | (~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd1) & ~(reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 == 1'd0)));
+    ap_condition_277 = ((1'b0 == ap_block_pp0_stage5_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage5));
 end
 
 always @ (*) begin
-    ap_condition_365 = ((reducer_circuit_adder_levels_num_items_0_load_reg_434 == 32'd0) & (ap_enable_reg_pp0_iter1 == 1'b1) & (icmp_ln18_fu_330_p2 == 1'd1));
+    ap_condition_288 = ((~(empty_reg_229 == 32'd2) & (reducer_circuit_adder_levels_valid_1_load_load_fu_436_p1 == 1'd1) & (icmp_ln18_1_fu_424_p2 == 1'd0)) | (~(empty_reg_229 == 32'd2) & ~(empty_reg_229 == 32'd1) & (reducer_circuit_adder_levels_valid_1_load_load_fu_436_p1 == 1'd1)));
+end
+
+always @ (*) begin
+    ap_condition_311 = ((~(empty_reg_229 == 32'd2) & (reducer_circuit_adder_levels_valid_1_load_load_fu_436_p1 == 1'd0) & (icmp_ln18_1_fu_424_p2 == 1'd0)) | (~(empty_reg_229 == 32'd2) & ~(empty_reg_229 == 32'd1) & (reducer_circuit_adder_levels_valid_1_load_load_fu_436_p1 == 1'd0)));
 end
 
 assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
 
-assign ap_enable_reg_pp0_iter0 = ap_start;
+assign ap_phi_mux_empty_phi_fu_234_p4 = ap_phi_reg_pp0_iter1_empty_reg_229;
 
-assign ap_phi_mux_empty_phi_fu_178_p4 = ap_phi_reg_pp0_iter2_empty_reg_175;
+assign ap_phi_reg_pp0_iter0_empty_reg_229 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_empty_reg_175 = 'bx;
+assign ap_phi_reg_pp0_iter0_level_out_017_31_reg_107 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_level_out_118_32_reg_137 = 'bx;
+assign ap_phi_reg_pp0_iter0_level_out_118_32_reg_202 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_level_out_label_reg_80 = 'bx;
+assign ap_phi_reg_pp0_iter0_out_data_0_35_reg_169 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_level_out_value_1_reg_69 = 'bx;
+assign ap_phi_reg_pp0_iter0_out_data_value_1_reg_217 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_out_data_value_1_reg_165 = 'bx;
+assign ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_0_new_0_reg_93 = 'bx;
 
-assign ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_0_reg_152 = 'bx;
+assign ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_0_reg_241 = 'bx;
 
-assign ap_phi_reg_pp0_iter1_level_out_017_31_reg_103 = 'bx;
+assign ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_1_reg_141 = 'bx;
 
-assign ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_116 = 'bx;
+assign ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_flag_2_reg_182 = 'bx;
 
-assign ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_0_reg_90 = 'bx;
+assign ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_new_1_reg_155 = 'bx;
 
-assign ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_1_reg_127 = 'bx;
+assign ap_phi_reg_pp0_iter0_reducer_circuit_adder_levels_num_items_1_new_2_reg_192 = 'bx;
 
-assign ap_phi_reg_pp0_iter2_out_data_0_35_reg_212 = 'bx;
+assign ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_120 = 'bx;
 
-assign ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_1_reg_184 = 'bx;
+assign ap_phi_reg_pp0_iter1_reducer_circuit_adder_levels_num_items_0_new_1_reg_131 = 'bx;
 
-assign ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_flag_2_reg_226 = 'bx;
+assign icmp_ln18_1_fu_424_p2 = (($signed(reducer_circuit_adder_levels_buffer_label_1_0) < $signed(32'd3)) ? 1'b1 : 1'b0);
 
-assign ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_1_reg_198 = 'bx;
+assign icmp_ln18_fu_333_p2 = (($signed(tmp_fu_323_p4) < $signed(31'd1)) ? 1'b1 : 1'b0);
 
-assign ap_phi_reg_pp0_iter2_reducer_circuit_adder_levels_num_items_1_new_2_reg_237 = 'bx;
+assign out_r = ap_phi_mux_out_data_0_35_phi_fu_173_p6;
 
-assign icmp_ln18_1_fu_390_p2 = (($signed(ap_sig_allocacmp_out_data_label) < $signed(32'd3)) ? 1'b1 : 1'b0);
+assign reducer_circuit_adder_levels_valid_0_load_load_fu_354_p1 = reducer_circuit_adder_levels_valid_0;
 
-assign icmp_ln18_fu_330_p2 = (($signed(tmp_fu_320_p4) < $signed(31'd1)) ? 1'b1 : 1'b0);
+assign reducer_circuit_adder_levels_valid_1_load_load_fu_436_p1 = ap_sig_allocacmp_reducer_circuit_adder_levels_valid_1_load;
 
-assign level_out_value_fu_305_p2 = (ap_sig_allocacmp_reducer_circuit_adder_levels_buffer_value_0_1_load + ap_phi_mux_level_out_value_1_phi_fu_72_p4);
+assign tmp_fu_323_p4 = {{ap_phi_reg_pp0_iter0_level_out_label_reg_83[31:1]}};
 
-assign out_data_value_fu_412_p2 = (reducer_circuit_adder_levels_buffer_value_1_1 + ap_phi_reg_pp0_iter2_out_data_value_1_reg_165);
+assign trunc_ln34_1_fu_358_p1 = ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load[0:0];
 
-assign out_r = ap_phi_mux_out_data_0_35_phi_fu_215_p6;
-
-assign reducer_circuit_adder_levels_num_items_0_load_load_fu_248_p1 = ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load;
-
-assign reducer_circuit_adder_levels_valid_0_load_load_fu_342_p1 = reducer_circuit_adder_levels_valid_0;
-
-assign reducer_circuit_adder_levels_valid_1_load_load_fu_419_p1 = ap_sig_allocacmp_reducer_circuit_adder_levels_valid_1_load;
-
-assign tmp_fu_320_p4 = {{ap_phi_reg_pp0_iter1_level_out_label_reg_80[31:1]}};
-
-assign trunc_ln34_1_fu_346_p1 = ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_1_load[0:0];
-
-assign trunc_ln34_fu_252_p1 = ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load[0:0];
+assign trunc_ln34_fu_271_p1 = ap_sig_allocacmp_reducer_circuit_adder_levels_num_items_0_load[0:0];
 
 endmodule //accelerate_reduce

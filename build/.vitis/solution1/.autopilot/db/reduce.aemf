@@ -1,263 +1,271 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1652612556290">
+<cdfg:DBCdfg xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cdfg="http://www.autoesl.com/DBCdfg" timeStamp="1652689947398">
   <ports id="1" name="out_r" type="PortType" coreId="62" bitwidth="32" direction="DirOut">
     <dataInputObjs>write</dataInputObjs>
   </ports>
   <ports id="2" name="value_r" type="PortType" coreId="3621216858" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <ports id="3" name="label_r" type="PortType" coreId="57" bitwidth="32">
+  <ports id="3" name="label_r" type="PortType" coreId="136" bitwidth="32">
     <dataOutputObjs>read</dataOutputObjs>
   </ports>
-  <edges id="125" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
-  <edges id="127" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
-  <edges id="128" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
-  <edges id="129" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
-  <edges id="130" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
-  <edges id="131" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="132" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="133" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
-  <edges id="134" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
-  <edges id="135" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
-  <edges id="136" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
-  <edges id="137" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
-  <edges id="138" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
-  <edges id="139" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.2"/>
-  <edges id="140" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.2"/>
-  <edges id="141" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.2"/>
-  <edges id="142" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
-  <edges id="143" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
-  <edges id="144" source_obj="//@regions.0/@basic_blocks.3/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
-  <edges id="145" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
-  <edges id="146" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.1"/>
-  <edges id="149" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.2"/>
-  <edges id="150" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.3"/>
-  <edges id="151" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.4"/>
-  <edges id="152" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.10" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.4"/>
-  <edges id="154" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.4"/>
-  <edges id="157" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.7" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.4"/>
-  <edges id="160" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.4"/>
-  <edges id="163" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.0"/>
-  <edges id="164" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.1"/>
-  <edges id="165" source_obj="//@regions.0/@basic_blocks.9/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.2"/>
-  <edges id="166" source_obj="//@regions.0/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.2"/>
-  <edges id="167" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.3"/>
-  <edges id="170" source_obj="//@regions.0/@basic_blocks.5/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.0"/>
-  <edges id="174" source_obj="//@regions.0/@basic_blocks.7/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.1"/>
-  <edges id="177" source_obj="//@regions.0/@basic_blocks.7/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.2"/>
-  <edges id="178" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.2"/>
-  <edges id="179" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.2"/>
-  <edges id="181" sink_obj="//@regions.0/@basic_blocks.8/@node_objs.0"/>
-  <edges id="182" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.8/@node_objs.1"/>
-  <edges id="185" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.0"/>
-  <edges id="186" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.10" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.1"/>
-  <edges id="187" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.10/@node_objs.0"/>
-  <edges id="188" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.0"/>
-  <edges id="189" source_obj="//@regions.0/@basic_blocks.11/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.1"/>
-  <edges id="190" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.1"/>
-  <edges id="191" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.1"/>
-  <edges id="192" source_obj="//@regions.0/@basic_blocks.5/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.0"/>
-  <edges id="193" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.0"/>
-  <edges id="195" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.0"/>
-  <edges id="197" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.0"/>
-  <edges id="199" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.1"/>
-  <edges id="200" source_obj="//@regions.0/@basic_blocks.5/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.1"/>
-  <edges id="201" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.1"/>
+  <edges id="126" source_obj="//@ports.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.0"/>
+  <edges id="129" source_obj="//@ports.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.1"/>
+  <edges id="130" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2"/>
+  <edges id="131" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.3"/>
+  <edges id="132" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.4"/>
+  <edges id="133" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="134" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="135" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.5"/>
+  <edges id="136" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="137" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="138" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="139" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.0"/>
+  <edges id="140" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.1"/>
+  <edges id="141" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.2"/>
+  <edges id="142" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.2"/>
+  <edges id="143" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.3/@node_objs.2"/>
+  <edges id="144" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
+  <edges id="145" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
+  <edges id="146" source_obj="//@regions.0/@basic_blocks.3/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
+  <edges id="147" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.0"/>
+  <edges id="148" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.1"/>
+  <edges id="151" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.2"/>
+  <edges id="152" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.3"/>
+  <edges id="153" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.4"/>
+  <edges id="154" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.10" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.4"/>
+  <edges id="156" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.4"/>
+  <edges id="159" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.7" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.4"/>
+  <edges id="162" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.5/@node_objs.4"/>
+  <edges id="165" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.0"/>
+  <edges id="166" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.1"/>
+  <edges id="167" source_obj="//@regions.0/@basic_blocks.9/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.2"/>
+  <edges id="168" source_obj="//@regions.0/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.2"/>
+  <edges id="169" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.3"/>
+  <edges id="172" source_obj="//@regions.0/@basic_blocks.5/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.0"/>
+  <edges id="176" source_obj="//@regions.0/@basic_blocks.7/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.1"/>
+  <edges id="179" source_obj="//@regions.0/@basic_blocks.7/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.2"/>
+  <edges id="180" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.2"/>
+  <edges id="181" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.7/@node_objs.2"/>
+  <edges id="183" sink_obj="//@regions.0/@basic_blocks.8/@node_objs.0"/>
+  <edges id="184" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.8/@node_objs.1"/>
+  <edges id="187" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.0"/>
+  <edges id="188" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.10" sink_obj="//@regions.0/@basic_blocks.6/@node_objs.1"/>
+  <edges id="189" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.10/@node_objs.0"/>
+  <edges id="190" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.0"/>
+  <edges id="191" source_obj="//@regions.0/@basic_blocks.11/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.1"/>
+  <edges id="192" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.1"/>
+  <edges id="193" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.1"/>
+  <edges id="194" source_obj="//@regions.0/@basic_blocks.5/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.0"/>
+  <edges id="195" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.0"/>
+  <edges id="197" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.0"/>
+  <edges id="199" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.0"/>
+  <edges id="201" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.1"/>
   <edges id="202" source_obj="//@regions.0/@basic_blocks.5/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.1"/>
-  <edges id="203" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.1"/>
-  <edges id="205" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.2"/>
-  <edges id="206" source_obj="//@regions.0/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.2"/>
-  <edges id="207" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.2"/>
-  <edges id="208" source_obj="//@regions.0/@basic_blocks.9/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.2"/>
-  <edges id="209" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.2"/>
-  <edges id="210" source_obj="//@regions.0/@basic_blocks.5/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.3"/>
-  <edges id="211" source_obj="//@regions.0/@basic_blocks.12/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.4"/>
-  <edges id="212" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.13" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.4"/>
-  <edges id="213" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.14" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.4"/>
-  <edges id="214" source_obj="//@regions.0/@basic_blocks.12/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.0"/>
-  <edges id="215" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.13" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.0"/>
-  <edges id="216" source_obj="//@regions.0/@basic_blocks.5/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.0"/>
-  <edges id="217" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.14" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.0"/>
-  <edges id="218" source_obj="//@regions.0/@basic_blocks.12/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.1"/>
-  <edges id="219" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.16" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.1"/>
-  <edges id="220" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.1"/>
-  <edges id="221" source_obj="//@regions.0/@basic_blocks.5/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.17/@node_objs.0"/>
-  <edges id="223" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.17/@node_objs.1"/>
-  <edges id="225" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.0"/>
-  <edges id="226" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.1"/>
-  <edges id="227" source_obj="//@regions.0/@basic_blocks.22/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.2"/>
-  <edges id="228" source_obj="//@regions.0/@basic_blocks.18/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.2"/>
-  <edges id="229" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.3"/>
-  <edges id="230" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.0"/>
-  <edges id="231" source_obj="//@regions.0/@basic_blocks.20/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.1"/>
-  <edges id="234" source_obj="//@regions.0/@basic_blocks.20/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.2"/>
-  <edges id="235" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.2"/>
-  <edges id="236" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.21" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.2"/>
-  <edges id="238" sink_obj="//@regions.0/@basic_blocks.21/@node_objs.0"/>
-  <edges id="239" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.21/@node_objs.1"/>
-  <edges id="241" sink_obj="//@regions.0/@basic_blocks.19/@node_objs.0"/>
-  <edges id="242" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.23" sink_obj="//@regions.0/@basic_blocks.19/@node_objs.1"/>
-  <edges id="243" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.23/@node_objs.0"/>
-  <edges id="244" sink_obj="//@regions.0/@basic_blocks.24/@node_objs.0"/>
-  <edges id="245" source_obj="//@regions.0/@basic_blocks.24/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.24/@node_objs.1"/>
-  <edges id="246" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.26" sink_obj="//@regions.0/@basic_blocks.24/@node_objs.1"/>
-  <edges id="247" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.24/@node_objs.1"/>
-  <edges id="248" source_obj="//@regions.0/@basic_blocks.18/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.0"/>
-  <edges id="249" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.0"/>
-  <edges id="251" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.21" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.0"/>
-  <edges id="253" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.22" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.0"/>
-  <edges id="254" source_obj="//@regions.0/@basic_blocks.18/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.1"/>
-  <edges id="255" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.1"/>
-  <edges id="257" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.21" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.1"/>
-  <edges id="259" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.22" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.1"/>
-  <edges id="261" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.2"/>
-  <edges id="262" source_obj="//@regions.0/@basic_blocks.18/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.2"/>
-  <edges id="263" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.21" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.2"/>
-  <edges id="264" source_obj="//@regions.0/@basic_blocks.22/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.2"/>
-  <edges id="265" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.22" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.2"/>
-  <edges id="268" source_obj="//@regions.0/@basic_blocks.25/@node_objs.3" sink_obj="//@ports.0"/>
+  <edges id="203" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.1"/>
+  <edges id="204" source_obj="//@regions.0/@basic_blocks.5/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.1"/>
+  <edges id="205" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.1"/>
+  <edges id="208" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.2"/>
+  <edges id="209" source_obj="//@regions.0/@basic_blocks.3/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.2"/>
+  <edges id="210" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.2"/>
+  <edges id="211" source_obj="//@regions.0/@basic_blocks.9/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.2"/>
+  <edges id="212" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.2"/>
+  <edges id="213" source_obj="//@regions.0/@basic_blocks.5/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.3"/>
+  <edges id="214" source_obj="//@regions.0/@basic_blocks.12/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.4"/>
+  <edges id="215" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.13" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.4"/>
+  <edges id="216" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.14" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.4"/>
+  <edges id="217" source_obj="//@regions.0/@basic_blocks.12/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.0"/>
+  <edges id="218" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.13" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.0"/>
+  <edges id="219" source_obj="//@regions.0/@basic_blocks.5/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.0"/>
+  <edges id="220" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.14" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.0"/>
+  <edges id="221" source_obj="//@regions.0/@basic_blocks.12/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.1"/>
+  <edges id="222" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.16" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.1"/>
+  <edges id="223" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.15/@node_objs.1"/>
+  <edges id="224" source_obj="//@regions.0/@basic_blocks.5/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.17/@node_objs.0"/>
+  <edges id="226" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.17/@node_objs.1"/>
+  <edges id="228" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.0"/>
+  <edges id="229" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.1"/>
+  <edges id="230" source_obj="//@regions.0/@basic_blocks.22/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.2"/>
+  <edges id="231" source_obj="//@regions.0/@basic_blocks.18/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.2"/>
+  <edges id="232" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.3"/>
+  <edges id="233" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.0"/>
+  <edges id="234" source_obj="//@regions.0/@basic_blocks.20/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.1"/>
+  <edges id="237" source_obj="//@regions.0/@basic_blocks.20/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.2"/>
+  <edges id="238" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.2"/>
+  <edges id="239" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.21" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.2"/>
+  <edges id="241" sink_obj="//@regions.0/@basic_blocks.21/@node_objs.0"/>
+  <edges id="242" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.21/@node_objs.1"/>
+  <edges id="244" sink_obj="//@regions.0/@basic_blocks.19/@node_objs.0"/>
+  <edges id="245" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.23" sink_obj="//@regions.0/@basic_blocks.19/@node_objs.1"/>
+  <edges id="246" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.23/@node_objs.0"/>
+  <edges id="247" sink_obj="//@regions.0/@basic_blocks.24/@node_objs.0"/>
+  <edges id="248" source_obj="//@regions.0/@basic_blocks.24/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.24/@node_objs.1"/>
+  <edges id="249" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.26" sink_obj="//@regions.0/@basic_blocks.24/@node_objs.1"/>
+  <edges id="250" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.24/@node_objs.1"/>
+  <edges id="251" source_obj="//@regions.0/@basic_blocks.18/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.0"/>
+  <edges id="252" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.0"/>
+  <edges id="254" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.21" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.0"/>
+  <edges id="256" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.22" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.0"/>
+  <edges id="257" source_obj="//@regions.0/@basic_blocks.18/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.1"/>
+  <edges id="258" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.1"/>
+  <edges id="260" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.21" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.1"/>
+  <edges id="262" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.22" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.1"/>
+  <edges id="264" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.2"/>
+  <edges id="265" source_obj="//@regions.0/@basic_blocks.18/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.2"/>
+  <edges id="266" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.21" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.2"/>
+  <edges id="267" source_obj="//@regions.0/@basic_blocks.22/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.2"/>
+  <edges id="268" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.22" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.2"/>
   <edges id="269" source_obj="//@regions.0/@basic_blocks.25/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.3"/>
-  <edges id="270" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.26" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.4"/>
-  <edges id="271" source_obj="//@regions.0/@basic_blocks.25/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.0"/>
-  <edges id="272" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.0"/>
-  <edges id="273" source_obj="//@regions.0/@basic_blocks.18/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.0"/>
-  <edges id="274" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.0"/>
-  <edges id="275" source_obj="//@regions.0/@basic_blocks.25/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.1"/>
-  <edges id="276" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.1"/>
-  <edges id="277" source_obj="//@regions.0/@basic_blocks.18/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.1"/>
-  <edges id="278" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.1"/>
-  <edges id="279" source_obj="//@regions.0/@basic_blocks.26/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.2"/>
-  <edges id="280" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.28" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.2"/>
-  <edges id="281" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.27" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.2"/>
-  <edges id="282" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
-  <edges id="283" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
-  <edges id="284" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
-  <edges id="285" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
-  <edges id="286" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
-  <edges id="287" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
-  <edges id="288" source_obj="//@regions.0/@basic_blocks.12/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.0"/>
-  <edges id="289" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.0"/>
-  <edges id="290" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.15" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.1"/>
-  <edges id="291" source_obj="//@regions.0/@basic_blocks.12/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.14/@node_objs.0"/>
-  <edges id="292" sink_obj="//@regions.0/@basic_blocks.14/@node_objs.0"/>
-  <edges id="293" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.15" sink_obj="//@regions.0/@basic_blocks.14/@node_objs.1"/>
-  <edges id="294" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
-  <edges id="295" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
-  <edges id="296" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.1"/>
-  <edges id="297" source_obj="//@regions.0/@basic_blocks.12/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.0"/>
-  <edges id="298" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.0"/>
-  <edges id="299" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.1"/>
-  <edges id="300" source_obj="//@regions.0/@basic_blocks.12/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.0"/>
-  <edges id="301" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.0"/>
-  <edges id="302" source_obj="//@regions.0/@basic_blocks.5/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.0"/>
-  <edges id="303" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.0"/>
-  <edges id="305" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.1"/>
-  <edges id="307" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.1"/>
-  <edges id="308" source_obj="//@regions.0/@basic_blocks.15/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.2"/>
-  <edges id="309" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.2"/>
-  <edges id="310" source_obj="//@regions.0/@basic_blocks.5/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.2"/>
-  <edges id="311" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.2"/>
-  <edges id="312" source_obj="//@regions.0/@basic_blocks.17/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.3"/>
-  <edges id="313" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.3"/>
-  <edges id="314" source_obj="//@regions.0/@basic_blocks.5/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.3"/>
-  <edges id="315" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.3"/>
-  <edges id="316" source_obj="//@regions.0/@basic_blocks.18/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.4"/>
-  <edges id="317" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.4"/>
-  <edges id="318" source_obj="//@regions.0/@basic_blocks.18/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.5"/>
-  <edges id="319" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.23" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.5"/>
-  <edges id="322" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.22" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.5"/>
-  <edges id="324" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.20" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.5"/>
-  <edges id="326" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.19" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.5"/>
-  <edges id="327" source_obj="//@regions.0/@basic_blocks.26/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.27/@node_objs.0"/>
-  <edges id="328" sink_obj="//@regions.0/@basic_blocks.27/@node_objs.0"/>
-  <edges id="329" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.28" sink_obj="//@regions.0/@basic_blocks.27/@node_objs.1"/>
-  <edges id="330" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.2"/>
-  <edges id="331" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
-  <edges id="332" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.3"/>
-  <edges id="333" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.3"/>
-  <edges id="334" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.5"/>
-  <edges id="335" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.4"/>
-  <edges id="336" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.5"/>
-  <edges id="337" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.10"/>
-  <edges id="338" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.9"/>
-  <edges id="339" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.7"/>
-  <edges id="340" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.6"/>
-  <edges id="341" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.10"/>
-  <edges id="342" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.7" sink_obj="//@regions.0/@basic_blocks.8"/>
-  <edges id="343" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.7" sink_obj="//@regions.0/@basic_blocks.11"/>
-  <edges id="344" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.12"/>
-  <edges id="345" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.12"/>
-  <edges id="346" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.10" sink_obj="//@regions.0/@basic_blocks.11"/>
-  <edges id="347" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.12"/>
-  <edges id="348" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.18"/>
-  <edges id="349" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.14"/>
-  <edges id="350" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.13"/>
-  <edges id="351" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.13" sink_obj="//@regions.0/@basic_blocks.15"/>
-  <edges id="352" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.14" sink_obj="//@regions.0/@basic_blocks.15"/>
-  <edges id="353" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.15" sink_obj="//@regions.0/@basic_blocks.17"/>
-  <edges id="354" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.15" sink_obj="//@regions.0/@basic_blocks.16"/>
-  <edges id="355" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.16" sink_obj="//@regions.0/@basic_blocks.17"/>
-  <edges id="356" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.18"/>
-  <edges id="357" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.23"/>
-  <edges id="358" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.22"/>
-  <edges id="359" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.20"/>
-  <edges id="360" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.19"/>
-  <edges id="361" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.19" sink_obj="//@regions.0/@basic_blocks.23"/>
-  <edges id="362" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.20" sink_obj="//@regions.0/@basic_blocks.21"/>
-  <edges id="363" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.20" sink_obj="//@regions.0/@basic_blocks.24"/>
-  <edges id="364" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.21" sink_obj="//@regions.0/@basic_blocks.25"/>
-  <edges id="365" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.22" sink_obj="//@regions.0/@basic_blocks.25"/>
-  <edges id="366" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.23" sink_obj="//@regions.0/@basic_blocks.24"/>
-  <edges id="367" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.25"/>
-  <edges id="368" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.26"/>
-  <edges id="369" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.26"/>
-  <edges id="370" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.26" sink_obj="//@regions.0/@basic_blocks.27"/>
-  <edges id="371" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.26" sink_obj="//@regions.0/@basic_blocks.28"/>
-  <edges id="372" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.27" sink_obj="//@regions.0/@basic_blocks.28"/>
-  <edges id="373" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
-  <edges id="374" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.4"/>
-  <edges id="375" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.2/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.1"/>
-  <edges id="376" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.3/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
-  <edges id="377" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.5/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.0"/>
-  <edges id="378" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.5/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.27/@node_objs.0"/>
-  <edges id="379" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.6/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.0"/>
-  <edges id="380" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.14/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.1"/>
-  <edges id="381" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.16/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.0"/>
-  <edges id="382" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.19/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.24/@node_objs.0"/>
-  <regions anchor_node="-1" region_type="8" interval="1" typeName="Pipeline" iiViolation="" id="454" pipe_depth="3" RegionName="reduce">
+  <edges id="272" source_obj="//@regions.0/@basic_blocks.25/@node_objs.4" sink_obj="//@ports.0"/>
+  <edges id="273" source_obj="//@regions.0/@basic_blocks.25/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.4"/>
+  <edges id="274" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.26" sink_obj="//@regions.0/@basic_blocks.25/@node_objs.5"/>
+  <edges id="275" source_obj="//@regions.0/@basic_blocks.25/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.0"/>
+  <edges id="276" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.0"/>
+  <edges id="277" source_obj="//@regions.0/@basic_blocks.18/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.0"/>
+  <edges id="278" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.0"/>
+  <edges id="279" source_obj="//@regions.0/@basic_blocks.25/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.1"/>
+  <edges id="280" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.1"/>
+  <edges id="281" source_obj="//@regions.0/@basic_blocks.18/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.1"/>
+  <edges id="282" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.1"/>
+  <edges id="283" source_obj="//@regions.0/@basic_blocks.26/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.2"/>
+  <edges id="284" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.28" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.2"/>
+  <edges id="285" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.27" sink_obj="//@regions.0/@basic_blocks.26/@node_objs.2"/>
+  <edges id="286" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="287" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="288" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="289" source_obj="//@regions.0/@basic_blocks.0/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
+  <edges id="290" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.0"/>
+  <edges id="291" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.2/@node_objs.1"/>
+  <edges id="292" source_obj="//@regions.0/@basic_blocks.12/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.0"/>
+  <edges id="293" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.0"/>
+  <edges id="294" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.15" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.1"/>
+  <edges id="295" source_obj="//@regions.0/@basic_blocks.12/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.14/@node_objs.0"/>
+  <edges id="296" sink_obj="//@regions.0/@basic_blocks.14/@node_objs.0"/>
+  <edges id="297" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.15" sink_obj="//@regions.0/@basic_blocks.14/@node_objs.1"/>
+  <edges id="298" source_obj="//@regions.0/@basic_blocks.0/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="299" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="300" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.1"/>
+  <edges id="301" source_obj="//@regions.0/@basic_blocks.12/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.0"/>
+  <edges id="302" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.0"/>
+  <edges id="303" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.16/@node_objs.1"/>
+  <edges id="304" source_obj="//@regions.0/@basic_blocks.12/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.0"/>
+  <edges id="305" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.0"/>
+  <edges id="306" source_obj="//@regions.0/@basic_blocks.5/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.0"/>
+  <edges id="307" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.0"/>
+  <edges id="309" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.1"/>
+  <edges id="311" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.1"/>
+  <edges id="312" source_obj="//@regions.0/@basic_blocks.15/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.2"/>
+  <edges id="313" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.2"/>
+  <edges id="314" source_obj="//@regions.0/@basic_blocks.5/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.2"/>
+  <edges id="315" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.2"/>
+  <edges id="316" source_obj="//@regions.0/@basic_blocks.17/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.3"/>
+  <edges id="317" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.3"/>
+  <edges id="318" source_obj="//@regions.0/@basic_blocks.5/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.3"/>
+  <edges id="319" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.3"/>
+  <edges id="320" source_obj="//@regions.0/@basic_blocks.18/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.4"/>
+  <edges id="321" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.4"/>
+  <edges id="322" source_obj="//@regions.0/@basic_blocks.18/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.5"/>
+  <edges id="323" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.23" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.5"/>
+  <edges id="326" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.22" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.5"/>
+  <edges id="328" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.20" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.5"/>
+  <edges id="330" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.19" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.5"/>
+  <edges id="331" source_obj="//@regions.0/@basic_blocks.26/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.27/@node_objs.0"/>
+  <edges id="332" sink_obj="//@regions.0/@basic_blocks.27/@node_objs.0"/>
+  <edges id="333" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.28" sink_obj="//@regions.0/@basic_blocks.27/@node_objs.1"/>
+  <edges id="334" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.2"/>
+  <edges id="335" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.0" sink_obj="//@regions.0/@basic_blocks.1"/>
+  <edges id="336" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.1" sink_obj="//@regions.0/@basic_blocks.3"/>
+  <edges id="337" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.2" sink_obj="//@regions.0/@basic_blocks.3"/>
+  <edges id="338" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.5"/>
+  <edges id="339" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.3" sink_obj="//@regions.0/@basic_blocks.4"/>
+  <edges id="340" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.4" sink_obj="//@regions.0/@basic_blocks.5"/>
+  <edges id="341" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.10"/>
+  <edges id="342" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.9"/>
+  <edges id="343" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.7"/>
+  <edges id="344" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.5" sink_obj="//@regions.0/@basic_blocks.6"/>
+  <edges id="345" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.6" sink_obj="//@regions.0/@basic_blocks.10"/>
+  <edges id="346" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.7" sink_obj="//@regions.0/@basic_blocks.8"/>
+  <edges id="347" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.7" sink_obj="//@regions.0/@basic_blocks.11"/>
+  <edges id="348" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.8" sink_obj="//@regions.0/@basic_blocks.12"/>
+  <edges id="349" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.9" sink_obj="//@regions.0/@basic_blocks.12"/>
+  <edges id="350" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.10" sink_obj="//@regions.0/@basic_blocks.11"/>
+  <edges id="351" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.12"/>
+  <edges id="352" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.11" sink_obj="//@regions.0/@basic_blocks.18"/>
+  <edges id="353" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.14"/>
+  <edges id="354" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.12" sink_obj="//@regions.0/@basic_blocks.13"/>
+  <edges id="355" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.13" sink_obj="//@regions.0/@basic_blocks.15"/>
+  <edges id="356" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.14" sink_obj="//@regions.0/@basic_blocks.15"/>
+  <edges id="357" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.15" sink_obj="//@regions.0/@basic_blocks.17"/>
+  <edges id="358" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.15" sink_obj="//@regions.0/@basic_blocks.16"/>
+  <edges id="359" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.16" sink_obj="//@regions.0/@basic_blocks.17"/>
+  <edges id="360" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.17" sink_obj="//@regions.0/@basic_blocks.18"/>
+  <edges id="361" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.23"/>
+  <edges id="362" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.22"/>
+  <edges id="363" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.20"/>
+  <edges id="364" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.18" sink_obj="//@regions.0/@basic_blocks.19"/>
+  <edges id="365" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.19" sink_obj="//@regions.0/@basic_blocks.23"/>
+  <edges id="366" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.20" sink_obj="//@regions.0/@basic_blocks.21"/>
+  <edges id="367" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.20" sink_obj="//@regions.0/@basic_blocks.24"/>
+  <edges id="368" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.21" sink_obj="//@regions.0/@basic_blocks.25"/>
+  <edges id="369" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.22" sink_obj="//@regions.0/@basic_blocks.25"/>
+  <edges id="370" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.23" sink_obj="//@regions.0/@basic_blocks.24"/>
+  <edges id="371" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.25"/>
+  <edges id="372" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.24" sink_obj="//@regions.0/@basic_blocks.26"/>
+  <edges id="373" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.25" sink_obj="//@regions.0/@basic_blocks.26"/>
+  <edges id="374" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.26" sink_obj="//@regions.0/@basic_blocks.27"/>
+  <edges id="375" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.26" sink_obj="//@regions.0/@basic_blocks.28"/>
+  <edges id="376" edge_type="CtrlEdge" source_obj="//@regions.0/@basic_blocks.27" sink_obj="//@regions.0/@basic_blocks.28"/>
+  <edges id="377" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.0"/>
+  <edges id="378" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.0/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.18/@node_objs.4"/>
+  <edges id="379" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.2/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.1"/>
+  <edges id="380" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.3/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.4/@node_objs.0"/>
+  <edges id="381" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.5/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.13/@node_objs.0"/>
+  <edges id="382" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.5/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.27/@node_objs.0"/>
+  <edges id="383" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.6/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.11/@node_objs.0"/>
+  <edges id="384" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.14/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.22/@node_objs.1"/>
+  <edges id="385" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.16/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.20/@node_objs.0"/>
+  <edges id="386" edge_type="VirtEdge" source_obj="//@regions.0/@basic_blocks.19/@node_objs.0" sink_obj="//@regions.0/@basic_blocks.24/@node_objs.0"/>
+  <edges id="2147483647" source_obj="//@regions.0/@basic_blocks.0/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.1/@node_objs.1"/>
+  <edges id="2147483647" source_obj="//@regions.0/@basic_blocks.1/@node_objs.1" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.2"/>
+  <edges id="2147483647" source_obj="//@regions.0/@basic_blocks.9/@node_objs.2" sink_obj="//@regions.0/@basic_blocks.9/@node_objs.3"/>
+  <edges id="2147483647" source_obj="//@regions.0/@basic_blocks.9/@node_objs.3" sink_obj="//@regions.0/@basic_blocks.12/@node_objs.0"/>
+  <edges id="2147483647" source_obj="//@regions.0/@basic_blocks.18/@node_objs.4" sink_obj="//@regions.0/@basic_blocks.0/@node_objs.2" is_back_edge="1"/>
+  <regions anchor_node="-1" region_type="8" interval="6" typeName="Pipeline" iiViolation="Memory Dependency;mFailedII=5;mDependenceDistancedII=1;mLimitedResource=0;nodes=85__,16__;" id="491" pipe_depth="13" RegionName="reduce">
     <basic_blocks id="20" name="block_20" type="BlockType">
       <controlOutputObjs>branch1</controlOutputObjs>
       <controlOutputObjs>branch0</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="label_read" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="696" contextFuncName="insert" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="14" name="label_read" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="719" contextFuncName="insert" bitwidth="32" opcode="read" nodeLabel="4.0" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>label_r</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="value_read" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="4294967292" contextFuncName="insert" bitwidth="32" opcode="read" m_display="0" m_topoIndex="2" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="15" name="value_read" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="4294967291" contextFuncName="insert" bitwidth="32" opcode="read" m_display="0" m_topoIndex="1" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>value_r</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="reducer_circuit_adder_levels_num_items_0_load" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="144" contextFuncName="insert" bitwidth="32" opcode="load" m_display="0" m_topoIndex="3" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="16" name="reducer_circuit_adder_levels_num_items_0_load" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="4294967290" contextFuncName="insert" bitwidth="32" opcode="load" m_display="1" m_isLCDNode="true" m_isStartOfPath="true" m_topoIndex="2" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
+        <dataInputObjs>store</dataInputObjs>
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>add</dataOutputObjs>
         <dataOutputObjs>switch</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="trunc_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="trunc_ln34_fu_252_p1" coreId="1663971374" contextFuncName="insert" bitwidth="1" opcode="trunc" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="17" name="trunc_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="trunc_ln34_fu_271_p1" coreId="4294967291" contextFuncName="insert" bitwidth="1" opcode="trunc" m_display="1" m_isLCDNode="true" m_topoIndex="3" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
         <dataOutputObjs>br</dataOutputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="reducer_circuit_adder_levels_buffer_value_0_0_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1919247221" contextFuncName="add" bitwidth="32" opcode="load" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="18" name="reducer_circuit_adder_levels_buffer_value_0_0_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="4294967290" contextFuncName="add" bitwidth="32" opcode="load" m_display="0" m_topoIndex="4" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="14" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1886400114" contextFuncName="insert" opcode="br" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="19" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="4294967291" contextFuncName="insert" opcode="br" m_display="0" m_topoIndex="5" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>trunc</dataInputObjs>
         <controlInputObjs>branch0</controlInputObjs>
@@ -273,12 +281,14 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>block_30</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="reducer_circuit_adder_levels_buffer_value_0_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1814062958" contextFuncName="insert" opcode="store" m_display="0" m_topoIndex="7" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="21" name="reducer_circuit_adder_levels_buffer_value_0_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="4294967291" contextFuncName="insert" opcode="store" m_display="0" m_topoIndex="6" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>read</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308391232" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="8" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="22" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160684656" contextFuncName="insert" opcode="br" m_display="1" m_delay="1.58" m_isLCDNode="true" m_topoIndex="7" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
+        <dataInputObjs>trunc</dataInputObjs>
+        <dataOutputObjs>fadd</dataOutputObjs>
         <controlInputObjs>block_30</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="SPMV_CSR_src/accelerator/reducer.cpp">
@@ -290,11 +300,11 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>block_30</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="reducer_circuit_adder_levels_buffer_value_0_1_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1913555940" contextFuncName="insert" opcode="store" m_display="0" m_topoIndex="9" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="24" name="reducer_circuit_adder_levels_buffer_value_0_1_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="4273061680" contextFuncName="insert" opcode="store" m_display="0" m_topoIndex="8" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>read</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308396664" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="10" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="25" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160718608" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="9" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>block_30</controlInputObjs>
       </node_objs>
@@ -310,20 +320,20 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>branch5</controlOutputObjs>
       <controlOutputObjs>branch4</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="level_out_value_1" lineNumber="34" originalName="level_out.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308055600" contextFuncName="insert" bitwidth="32" opcode="phi" m_display="0" m_topoIndex="11" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="27" name="level_out_value_1" lineNumber="34" originalName="level_out.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160695232" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="10" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
-        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>fadd</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <controlInputObjs>branch0</controlInputObjs>
         <controlInputObjs>branch1</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="reducer_circuit_adder_levels_buffer_label_0_0_load" lineNumber="15" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308547040" contextFuncName="add" bitwidth="32" opcode="load" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="28" name="reducer_circuit_adder_levels_buffer_label_0_0_load" lineNumber="15" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160684656" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="4.0" m_display="0" m_topoIndex="15" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="15" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2287487809" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="13" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="29" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="448" contextFuncName="insert" opcode="br" nodeLabel="4.0" m_display="0" m_delay="1.58" m_topoIndex="16" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>trunc</dataInputObjs>
         <controlInputObjs>branch4</controlInputObjs>
@@ -339,11 +349,11 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>branch5</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="reducer_circuit_adder_levels_buffer_label_0_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308547408" contextFuncName="insert" opcode="store" m_display="0" m_topoIndex="14" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="31" name="reducer_circuit_adder_levels_buffer_label_0_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160483568" contextFuncName="insert" opcode="store" nodeLabel="4.0" m_display="0" m_topoIndex="17" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>read</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308389368" contextFuncName="insert" opcode="br" m_display="0" m_delay="1.58" m_topoIndex="15" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="32" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160684656" contextFuncName="insert" opcode="br" nodeLabel="4.0" m_display="0" m_delay="1.58" m_topoIndex="18" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>branch5</controlInputObjs>
       </node_objs>
@@ -360,7 +370,7 @@
       <controlOutputObjs>block_54</controlOutputObjs>
       <controlOutputObjs>block_46</controlOutputObjs>
       <controlOutputObjs>block_42</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="level_out_label" lineNumber="34" originalName="level_out.label" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308547040" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="34" name="level_out_label" lineNumber="34" originalName="level_out.label" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160718608" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="5.0" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>read</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -370,25 +380,25 @@
         <controlInputObjs>branch4</controlInputObjs>
         <controlInputObjs>block_30</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="add_ln35" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="add_ln35_fu_283_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="insert" bitwidth="32" opcode="add" m_display="0" m_delay="2.55" m_topoIndex="16" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="35" name="add_ln35" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="add_ln35_fu_312_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="insert" bitwidth="32" opcode="add" nodeLabel="5.0" m_display="0" m_delay="2.55" m_topoIndex="20" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="reducer_circuit_adder_levels_num_items_1_load" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" bitwidth="32" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="25" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="36" name="reducer_circuit_adder_levels_num_items_1_load" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1344" contextFuncName="insert" bitwidth="32" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataOutputObjs>trunc</dataOutputObjs>
         <dataOutputObjs>add</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="reducer_circuit_adder_levels_buffer_value_1_0_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308332192" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="37" name="reducer_circuit_adder_levels_buffer_value_1_0_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160508928" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="30" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="14" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="_ln11" lineNumber="11" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="switch" m_display="0" m_delay="1.3" m_topoIndex="17" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="38" name="_ln11" lineNumber="11" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160697520" contextFuncName="add" opcode="switch" nodeLabel="5.0" m_display="0" m_delay="1.3" m_topoIndex="21" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="11" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>load</dataInputObjs>
         <controlInputObjs>._crit_edge</controlInputObjs>
@@ -408,11 +418,11 @@
       <controlInputObjs>branch5</controlInputObjs>
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>._crit_edge</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="reducer_circuit_adder_levels_valid_0_write_ln26" lineNumber="26" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="18" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="40" name="reducer_circuit_adder_levels_valid_0_write_ln26" lineNumber="26" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="store" nodeLabel="5.0" m_display="0" m_delay="1.58" m_topoIndex="22" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="26" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="br_ln29" lineNumber="29" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308548240" contextFuncName="add" opcode="br" m_display="0" m_topoIndex="19" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="41" name="br_ln29" lineNumber="29" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="br" nodeLabel="5.0" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="29" fileDirectory="/home/akileshkannan" functionName="add"/>
         <controlInputObjs>._crit_edge</controlInputObjs>
       </node_objs>
@@ -426,19 +436,19 @@
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>block_49</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="tmp" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="tmp_fu_320_p4" coreId="0" contextFuncName="add" bitwidth="31" opcode="partselect" nodeLabel="1.0" m_display="0" m_topoIndex="27" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="43" name="tmp" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="tmp_fu_323_p4" coreId="161053808" contextFuncName="add" bitwidth="31" opcode="partselect" nodeLabel="5.0" m_display="0" m_topoIndex="24" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="18" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>icmp</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="icmp_ln18" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="icmp_ln18_fu_330_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="add" bitwidth="1" opcode="icmp" nodeLabel="1.0" m_display="0" m_delay="2.47" m_topoIndex="28" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="44" name="icmp_ln18" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="icmp_ln18_fu_333_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="add" bitwidth="1" opcode="icmp" nodeLabel="5.0" m_display="0" m_delay="2.47" m_topoIndex="25" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="18" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>partselect</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="br_ln18" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308548240" contextFuncName="add" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="29" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="45" name="br_ln18" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161053808" contextFuncName="add" opcode="br" nodeLabel="5.0" m_display="0" m_topoIndex="26" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="18" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
@@ -455,11 +465,11 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="reducer_circuit_adder_levels_valid_0_write_ln20" lineNumber="20" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308446104" contextFuncName="add" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="30" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="47" name="reducer_circuit_adder_levels_valid_0_write_ln20" lineNumber="20" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160684656" contextFuncName="add" opcode="store" nodeLabel="5.0" m_display="0" m_delay="1.58" m_topoIndex="27" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="20" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="br_ln23" lineNumber="23" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.7" m_topoIndex="31" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="48" name="br_ln23" lineNumber="23" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="176" contextFuncName="add" opcode="br" nodeLabel="5.0" m_display="0" m_delay="1.7" m_topoIndex="28" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="23" fileDirectory="/home/akileshkannan" functionName="add"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread</controlInputObjs>
       </node_objs>
@@ -475,22 +485,26 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="reducer_circuit_adder_levels_valid_0_write_ln13" lineNumber="13" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308497072" contextFuncName="add" opcode="store" m_display="0" m_delay="1.58" m_topoIndex="20" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="50" name="reducer_circuit_adder_levels_valid_0_write_ln13" lineNumber="13" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160684656" contextFuncName="add" opcode="store" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="11" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="13" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="reducer_circuit_adder_levels_buffer_value_0_1_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308501840" contextFuncName="add" bitwidth="32" opcode="load" m_display="0" m_topoIndex="21" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="51" name="reducer_circuit_adder_levels_buffer_value_0_1_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161111600" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="12" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="14" fileDirectory="/home/akileshkannan" functionName="add"/>
-        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>fadd</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="level_out_value" lineNumber="14" originalName="level_out.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="level_out_value_fu_305_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="add" bitwidth="32" opcode="add" m_display="0" m_delay="2.55" m_topoIndex="22" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="52" name="level_out_value" lineNumber="14" originalName="level_out.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="fadd_32ns_32ns_32_5_full_dsp_1_U1" coreName="FAddSub_fulldsp" implIndex="fulldsp" control="no" opType="fadd" coreId="18" contextFuncName="add" bitwidth="32" opcode="fadd" nodeLabel="1.0" nodeLatency="4" m_display="1" m_delay="7.25" m_isLCDNode="true" m_topoIndex="13" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="14" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
+        <dataInputObjs>br</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
+        <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="br_ln16" lineNumber="16" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308548240" contextFuncName="add" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.7" m_topoIndex="32" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="53" name="br_ln16" lineNumber="16" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="br" nodeLabel="6.0" m_display="1" m_delay="1.7" m_isLCDNode="true" m_topoIndex="31" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="16" fileDirectory="/home/akileshkannan" functionName="add"/>
+        <dataInputObjs>fadd</dataInputObjs>
+        <dataOutputObjs>phi</dataOutputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="SPMV_CSR_src/accelerator/reducer.cpp">
@@ -505,7 +519,7 @@
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="br_ln0" coreId="2308548240" opcode="br" m_display="0" m_topoIndex="23" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="55" name="br_ln0" coreId="161005856" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
       </node_objs>
     </basic_blocks>
@@ -523,11 +537,11 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread</controlOutputObjs>
       <controlOutputObjs>mergeST</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="reducer_circuit_adder_levels_valid_0_load" lineNumber="48" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308394136" contextFuncName="reduce" bitwidth="1" opcode="load" nodeLabel="1.0" m_display="0" m_topoIndex="33" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="57" name="reducer_circuit_adder_levels_valid_0_load" lineNumber="48" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161011384" contextFuncName="reduce" bitwidth="1" opcode="load" nodeLabel="6.0" m_display="0" m_topoIndex="32" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="48" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="br_ln48" lineNumber="48" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308548240" contextFuncName="reduce" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.7" m_topoIndex="34" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="58" name="br_ln48" lineNumber="48" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="reduce" opcode="br" nodeLabel="6.0" m_display="0" m_delay="1.7" m_topoIndex="33" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="48" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <dataInputObjs>load</dataInputObjs>
         <controlInputObjs>mergeST</controlInputObjs>
@@ -546,16 +560,17 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>branch3</controlOutputObjs>
       <controlOutputObjs>branch2</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="reducer_circuit_adder_levels_num_items_0_new_0" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1913636245" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="60" name="reducer_circuit_adder_levels_num_items_0_new_0" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161117216" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="6.0" m_display="1" m_isLCDNode="true" m_topoIndex="34" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>br</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
         <controlInputObjs>block_49</controlInputObjs>
         <controlInputObjs>block_54</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="level_out_118_32" originalName="level_out.label" coreId="1913638153" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="49" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="61" name="level_out_118_32" originalName="level_out.label" coreId="160684656" bitwidth="32" opcode="phi" nodeLabel="8.0" m_display="0" m_topoIndex="63" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>store</dataOutputObjs>
@@ -564,9 +579,9 @@
         <controlInputObjs>block_54</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="level_out_017_31" originalName="level_out.value" coreId="1330007625" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="62" name="level_out_017_31" originalName="level_out.value" coreId="0" bitwidth="32" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="35" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
-        <dataInputObjs>add</dataInputObjs>
+        <dataInputObjs>fadd</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
         <dataOutputObjs>store</dataOutputObjs>
@@ -575,13 +590,13 @@
         <controlInputObjs>block_54</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="trunc_ln34_1" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="trunc_ln34_1_fu_346_p1" coreId="0" contextFuncName="insert" bitwidth="1" opcode="trunc" nodeLabel="1.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="63" name="trunc_ln34_1" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="trunc_ln34_1_fu_358_p1" coreId="161137832" contextFuncName="insert" bitwidth="1" opcode="trunc" nodeLabel="6.0" m_display="0" m_topoIndex="36" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308546096" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="64" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" opcode="br" nodeLabel="6.0" m_display="0" m_topoIndex="37" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>trunc</dataInputObjs>
         <controlInputObjs>branch2</controlInputObjs>
@@ -597,11 +612,11 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread16</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="reducer_circuit_adder_levels_buffer_value_1_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="572669287" contextFuncName="insert" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="39" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="66" name="reducer_circuit_adder_levels_buffer_value_1_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" opcode="store" nodeLabel="6.0" m_display="0" m_topoIndex="38" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308541392" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="40" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="67" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161029776" contextFuncName="insert" opcode="br" nodeLabel="6.0" m_display="0" m_delay="1.58" m_topoIndex="39" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread16</controlInputObjs>
       </node_objs>
@@ -614,11 +629,11 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread16</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="reducer_circuit_adder_levels_buffer_value_1_1_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308542656" contextFuncName="insert" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="41" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="69" name="reducer_circuit_adder_levels_buffer_value_1_1_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" opcode="store" nodeLabel="6.0" m_display="0" m_topoIndex="40" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308541720" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="42" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="70" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161087056" contextFuncName="insert" opcode="br" nodeLabel="6.0" m_display="0" m_delay="1.58" m_topoIndex="41" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread16</controlInputObjs>
       </node_objs>
@@ -633,7 +648,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlOutputObjs>
       <controlOutputObjs>branch6</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="reducer_circuit_adder_levels_buffer_value_1_0_loc_0" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308399728" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="72" name="reducer_circuit_adder_levels_buffer_value_1_0_loc_0" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="6.0" m_display="0" m_topoIndex="42" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -641,7 +656,7 @@
         <controlInputObjs>branch2</controlInputObjs>
         <controlInputObjs>branch3</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1913651078" contextFuncName="insert" opcode="br" nodeLabel="1.0" m_display="0" m_topoIndex="44" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="73" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160938176" contextFuncName="insert" opcode="br" nodeLabel="6.0" m_display="0" m_topoIndex="43" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>trunc</dataInputObjs>
         <controlInputObjs>branch6</controlInputObjs>
@@ -655,11 +670,11 @@
       <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread16</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="reducer_circuit_adder_levels_buffer_label_1_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308402384" contextFuncName="insert" opcode="store" nodeLabel="2.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="75" name="reducer_circuit_adder_levels_buffer_label_1_0_write_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160945472" contextFuncName="insert" opcode="store" nodeLabel="8.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308509728" contextFuncName="insert" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="76" name="br_ln34" lineNumber="34" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="139930512" contextFuncName="insert" opcode="br" nodeLabel="8.0" m_display="0" m_topoIndex="65" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlInputObjs>
       </node_objs>
@@ -677,13 +692,13 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>mergeST</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="add_ln35_1" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="add_ln35_1_fu_362_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="insert" bitwidth="32" opcode="add" nodeLabel="1.0" m_display="0" m_delay="2.55" m_topoIndex="45" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="78" name="add_ln35_1" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="add_ln35_1_fu_374_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="insert" bitwidth="32" opcode="add" nodeLabel="6.0" m_display="0" m_delay="2.55" m_topoIndex="44" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="br_ln49" lineNumber="49" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="reduce" opcode="br" nodeLabel="1.0" m_display="0" m_delay="1.58" m_topoIndex="46" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="79" name="br_ln49" lineNumber="49" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="reduce" opcode="br" nodeLabel="6.0" m_display="0" m_delay="1.58" m_topoIndex="45" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="49" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <controlInputObjs>mergeST</controlInputObjs>
       </node_objs>
@@ -701,7 +716,7 @@
       <controlOutputObjs>block_102</controlOutputObjs>
       <controlOutputObjs>block_94</controlOutputObjs>
       <controlOutputObjs>block_90</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="reducer_circuit_adder_levels_num_items_0_new_1" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308538528" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="1.0" m_display="0" m_topoIndex="47" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="81" name="reducer_circuit_adder_levels_num_items_0_new_1" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1768120178" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="6.0" m_display="1" m_isLCDNode="true" m_topoIndex="46" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>add</dataInputObjs>
@@ -709,23 +724,23 @@
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="reducer_circuit_adder_levels_num_items_1_flag_0" coreId="2308518352" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="82" name="reducer_circuit_adder_levels_num_items_1_flag_0" coreId="1297109792" bitwidth="1" opcode="phi" nodeLabel="12.0" m_display="0" m_topoIndex="72" m_clusterGroupNumber="-1">
         <dataOutputObjs>phi</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="out_data_value_1" lineNumber="34" originalName="out_data.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308520616" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="83" name="out_data_value_1" lineNumber="34" originalName="out_data.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1769236852" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="8.0" m_display="0" m_topoIndex="66" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="34" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
-        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>fadd</dataOutputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="empty" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="84" name="empty" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1869181806" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="8.0" m_display="0" m_topoIndex="67" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>add</dataInputObjs>
         <dataInputObjs>load</dataInputObjs>
@@ -735,11 +750,12 @@
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit.thread1622</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="reducer_circuit_adder_levels_num_items_0_write_ln35" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308417184" contextFuncName="insert" opcode="store" nodeLabel="1.0" m_display="0" m_topoIndex="48" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="85" name="reducer_circuit_adder_levels_num_items_0_write_ln35" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1631286127" contextFuncName="insert" opcode="store" nodeLabel="6.0" m_display="1" m_isLCDNode="true" m_topoIndex="47" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>load</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="_ln11" lineNumber="11" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="4294967295" contextFuncName="add" opcode="switch" nodeLabel="2.0" m_display="0" m_delay="1.3" m_topoIndex="55" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="86" name="_ln11" lineNumber="11" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1397508130" contextFuncName="add" opcode="switch" nodeLabel="8.0" m_display="0" m_delay="1.3" m_topoIndex="68" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="11" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>phi</dataInputObjs>
         <controlInputObjs>._crit_edge1</controlInputObjs>
@@ -758,11 +774,11 @@
       <controlInputObjs>mergeST</controlInputObjs>
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>._crit_edge1</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="reducer_circuit_adder_levels_valid_1_write_ln26" lineNumber="26" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308383312" contextFuncName="add" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="56" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="88" name="reducer_circuit_adder_levels_valid_1_write_ln26" lineNumber="26" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1769300850" contextFuncName="add" opcode="store" nodeLabel="12.0" m_display="0" m_delay="1.58" m_topoIndex="73" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="26" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="br_ln29" lineNumber="29" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="89" name="br_ln29" lineNumber="29" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="993144369" contextFuncName="add" opcode="br" nodeLabel="12.0" m_display="0" m_topoIndex="74" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="29" fileDirectory="/home/akileshkannan" functionName="add"/>
         <controlInputObjs>._crit_edge1</controlInputObjs>
       </node_objs>
@@ -776,17 +792,17 @@
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>block_97</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="91" name="out_data_label" lineNumber="18" originalName="out_data.label" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="186" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="2.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="91" name="out_data_label" lineNumber="18" originalName="out_data.label" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1414676816" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="12.0" m_display="0" m_topoIndex="75" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="18" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataOutputObjs>icmp</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="92" name="icmp_ln18_1" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="icmp_ln18_1_fu_390_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="add" bitwidth="1" opcode="icmp" nodeLabel="2.0" m_display="0" m_delay="2.47" m_topoIndex="59" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="92" name="icmp_ln18_1" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="icmp_ln18_1_fu_424_p2" coreName="Cmp" implIndex="auto" control="no" opType="icmp" coreId="9" contextFuncName="add" bitwidth="1" opcode="icmp" nodeLabel="12.0" m_display="0" m_delay="2.47" m_topoIndex="76" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="18" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>load</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="93" name="br_ln18" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308417184" contextFuncName="add" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="93" name="br_ln18" lineNumber="18" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="171847458" contextFuncName="add" opcode="br" nodeLabel="12.0" m_display="0" m_topoIndex="77" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="18" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>icmp</dataInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
@@ -803,11 +819,11 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="95" name="reducer_circuit_adder_levels_valid_1_write_ln20" lineNumber="20" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308512208" contextFuncName="add" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="61" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="95" name="reducer_circuit_adder_levels_valid_1_write_ln20" lineNumber="20" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="639657324" contextFuncName="add" opcode="store" nodeLabel="12.0" m_display="0" m_delay="1.58" m_topoIndex="78" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="20" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="96" name="br_ln23" lineNumber="23" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308522032" contextFuncName="add" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.7" m_topoIndex="62" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="96" name="br_ln23" lineNumber="23" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1634300513" contextFuncName="add" opcode="br" nodeLabel="12.0" m_display="0" m_delay="1.7" m_topoIndex="79" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="23" fileDirectory="/home/akileshkannan" functionName="add"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlInputObjs>
       </node_objs>
@@ -823,21 +839,21 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="98" name="reducer_circuit_adder_levels_valid_1_write_ln13" lineNumber="13" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1912725364" contextFuncName="add" opcode="store" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="63" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="98" name="reducer_circuit_adder_levels_valid_1_write_ln13" lineNumber="13" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="256" contextFuncName="add" opcode="store" nodeLabel="8.0" m_display="0" m_delay="1.58" m_topoIndex="69" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="13" fileDirectory="/home/akileshkannan" functionName="add"/>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="99" name="reducer_circuit_adder_levels_buffer_value_1_1_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="2.0" m_display="0" m_topoIndex="64" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="99" name="reducer_circuit_adder_levels_buffer_value_1_1_load" lineNumber="14" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161087952" contextFuncName="add" bitwidth="32" opcode="load" nodeLabel="8.0" m_display="0" m_topoIndex="70" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="14" fileDirectory="/home/akileshkannan" functionName="add"/>
-        <dataOutputObjs>add</dataOutputObjs>
+        <dataOutputObjs>fadd</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="100" name="out_data_value" lineNumber="14" originalName="out_data.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="out_data_value_fu_412_p2" coreName="Adder" implIndex="fabric" control="no" opType="add" coreId="1" contextFuncName="add" bitwidth="32" opcode="add" nodeLabel="2.0" m_display="0" m_delay="2.55" m_topoIndex="65" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="100" name="out_data_value" lineNumber="14" originalName="out_data.value" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="fadd_32ns_32ns_32_5_full_dsp_1_U2" coreName="FAddSub_fulldsp" implIndex="fulldsp" control="no" opType="fadd" coreId="18" contextFuncName="add" bitwidth="32" opcode="fadd" nodeLabel="8.0" nodeLatency="4" m_display="0" m_delay="7.25" m_topoIndex="71" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="14" fileDirectory="/home/akileshkannan" functionName="add"/>
         <dataInputObjs>load</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="101" name="br_ln16" lineNumber="16" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308525696" contextFuncName="add" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.7" m_topoIndex="66" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="101" name="br_ln16" lineNumber="16" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161012032" contextFuncName="add" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.7" m_topoIndex="49" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="16" fileDirectory="/home/akileshkannan" functionName="add"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlInputObjs>
       </node_objs>
@@ -853,7 +869,7 @@
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>switch</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="103" name="br_ln0" coreId="1869182069" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="67" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="103" name="br_ln0" coreId="161008352" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="50" m_clusterGroupNumber="-1">
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
       </node_objs>
     </basic_blocks>
@@ -869,11 +885,11 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="105" name="reducer_circuit_adder_levels_valid_1_load" lineNumber="53" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="176" contextFuncName="reduce" bitwidth="1" opcode="load" nodeLabel="2.0" m_display="0" m_topoIndex="68" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="105" name="reducer_circuit_adder_levels_valid_1_load" lineNumber="53" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161015104" contextFuncName="reduce" bitwidth="1" opcode="load" nodeLabel="12.0" m_display="0" m_topoIndex="80" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="53" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <dataOutputObjs>br</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="106" name="br_ln53" lineNumber="53" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308421960" contextFuncName="reduce" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.7" m_topoIndex="69" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="106" name="br_ln53" lineNumber="53" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="176" contextFuncName="reduce" opcode="br" nodeLabel="12.0" m_display="0" m_delay="1.7" m_topoIndex="81" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="53" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <dataInputObjs>load</dataInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlInputObjs>
@@ -883,7 +899,7 @@
         <validLinenumbers>53</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
-    <basic_blocks id="113" name="_ZN13reducer_level3addER12reducer_datai.exit14.thread" type="BlockType">
+    <basic_blocks id="114" name="_ZN13reducer_level3addER12reducer_datai.exit14.thread" type="BlockType">
       <controlInputObjs>block_97</controlInputObjs>
       <controlInputObjs>block_102</controlInputObjs>
       <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
@@ -893,7 +909,7 @@
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>phi</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="108" name="reducer_circuit_adder_levels_num_items_1_flag_1" coreId="0" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="70" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="108" name="reducer_circuit_adder_levels_num_items_1_flag_1" coreId="4273499663" bitwidth="1" opcode="phi" nodeLabel="7.0" m_display="0" m_topoIndex="51" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
@@ -901,7 +917,7 @@
         <controlInputObjs>block_102</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="109" name="reducer_circuit_adder_levels_num_items_1_new_1" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="71" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="109" name="reducer_circuit_adder_levels_num_items_1_new_1" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161020336" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="7.0" m_display="0" m_topoIndex="52" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>phi</dataOutputObjs>
@@ -910,21 +926,26 @@
         <controlInputObjs>block_102</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="110" name="out_data_0_35" originalName="out_data.value" coreId="2308423840" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="72" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="110" name="out_data_0_35" originalName="out_data.value" coreId="89" bitwidth="32" opcode="phi" nodeLabel="7.0" m_display="0" m_topoIndex="53" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
-        <dataInputObjs>add</dataInputObjs>
-        <dataOutputObjs>write</dataOutputObjs>
+        <dataInputObjs>fadd</dataInputObjs>
+        <dataOutputObjs>bitcast</dataOutputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
         <controlInputObjs>block_97</controlInputObjs>
         <controlInputObjs>block_102</controlInputObjs>
         <constName>empty</constName>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="111" name="out_r_write_ln54" lineNumber="54" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308424112" contextFuncName="reduce" opcode="write" nodeLabel="2.0" m_display="0" m_topoIndex="73" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="111" name="bitcast_ln54" lineNumber="54" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." rtlName="out_r" coreId="161022016" contextFuncName="reduce" bitwidth="32" opcode="bitcast" nodeLabel="7.0" m_display="0" m_topoIndex="54" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="54" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <dataInputObjs>phi</dataInputObjs>
+        <dataOutputObjs>write</dataOutputObjs>
+      </node_objs>
+      <node_objs xsi:type="cdfg:CdfgNode" id="112" name="out_r_write_ln54" lineNumber="54" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161023128" contextFuncName="reduce" opcode="write" nodeLabel="7.0" m_display="0" m_topoIndex="55" m_clusterGroupNumber="-1">
+        <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="54" fileDirectory="/home/akileshkannan" functionName="reduce"/>
+        <dataInputObjs>bitcast</dataInputObjs>
         <dataOutputObjs>out_r</dataOutputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="112" name="br_ln54" lineNumber="54" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="1913586111" contextFuncName="reduce" opcode="br" nodeLabel="2.0" m_display="0" m_delay="1.58" m_topoIndex="74" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="113" name="br_ln54" lineNumber="54" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="0" contextFuncName="reduce" opcode="br" nodeLabel="7.0" m_display="0" m_delay="1.58" m_topoIndex="56" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="54" fileDirectory="/home/akileshkannan" functionName="reduce"/>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlInputObjs>
       </node_objs>
@@ -933,21 +954,21 @@
         <validLinenumbers>54</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
-    <basic_blocks id="117" name="_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge" type="BlockType">
+    <basic_blocks id="118" name="_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge" type="BlockType">
       <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
       <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>mergeST26</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="114" name="reducer_circuit_adder_levels_num_items_1_flag_2" coreId="2308497088" bitwidth="1" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="75" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="115" name="reducer_circuit_adder_levels_num_items_1_flag_2" coreId="4273572288" bitwidth="1" opcode="phi" nodeLabel="7.0" m_display="0" m_topoIndex="57" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
         <dataOutputObjs>br</dataOutputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="115" name="reducer_circuit_adder_levels_num_items_1_new_2" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308505264" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="2.0" m_display="0" m_topoIndex="76" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="116" name="reducer_circuit_adder_levels_num_items_1_new_2" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160684656" contextFuncName="insert" bitwidth="32" opcode="phi" nodeLabel="7.0" m_display="0" m_topoIndex="58" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
         <dataInputObjs>phi</dataInputObjs>
@@ -955,7 +976,7 @@
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14.thread</controlInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14</controlInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="116" name="br_ln0" coreId="0" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="77" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="117" name="br_ln0" coreId="0" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="59" m_clusterGroupNumber="-1">
         <dataInputObjs>phi</dataInputObjs>
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new</controlInputObjs>
         <controlInputObjs>mergeST26</controlInputObjs>
@@ -964,27 +985,27 @@
         <validLinenumbers>35</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
-    <basic_blocks id="120" name="mergeST26" type="BlockType">
+    <basic_blocks id="121" name="mergeST26" type="BlockType">
       <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="118" name="reducer_circuit_adder_levels_num_items_1_write_ln35" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308507440" contextFuncName="insert" opcode="store" nodeLabel="2.0" m_display="0" m_topoIndex="78" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="119" name="reducer_circuit_adder_levels_num_items_1_write_ln35" lineNumber="35" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="160684656" contextFuncName="insert" opcode="store" nodeLabel="7.0" m_display="0" m_topoIndex="60" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="35" fileDirectory="/home/akileshkannan" functionName="insert"/>
         <dataInputObjs>phi</dataInputObjs>
       </node_objs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="119" name="br_ln0" coreId="2308508600" opcode="br" nodeLabel="2.0" m_display="0" m_topoIndex="79" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="120" name="br_ln0" coreId="0" opcode="br" nodeLabel="7.0" m_display="0" m_topoIndex="61" m_clusterGroupNumber="-1">
         <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new</controlInputObjs>
       </node_objs>
       <fileValidLineNumbers fileName="SPMV_CSR_src/accelerator/reducer.cpp">
         <validLinenumbers>35</validLinenumbers>
       </fileValidLineNumbers>
     </basic_blocks>
-    <basic_blocks id="122" name="_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new" type="BlockType">
+    <basic_blocks id="123" name="_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge.new" type="BlockType">
       <controlInputObjs>_ZN13reducer_level3addER12reducer_datai.exit14._crit_edge</controlInputObjs>
       <controlInputObjs>mergeST26</controlInputObjs>
       <controlOutputObjs>br</controlOutputObjs>
       <controlOutputObjs>br</controlOutputObjs>
-      <node_objs xsi:type="cdfg:CdfgNode" id="121" name="_ln55" lineNumber="55" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="2308508208" contextFuncName="reduce" opcode="ret" nodeLabel="2.0" m_display="0" m_topoIndex="80" m_clusterGroupNumber="-1">
+      <node_objs xsi:type="cdfg:CdfgNode" id="122" name="_ln55" lineNumber="55" fileName="SPMV_CSR_src/accelerator/reducer.cpp" fileDirectory=".." coreId="161122832" contextFuncName="reduce" opcode="ret" nodeLabel="7.0" m_display="0" m_topoIndex="62" m_clusterGroupNumber="-1">
         <inlineStackInfo fileName="SPMV_CSR_src/accelerator/reducer.cpp" linenumber="55" fileDirectory="/home/akileshkannan" functionName="reduce"/>
       </node_objs>
       <fileValidLineNumbers fileName="SPMV_CSR_src/accelerator/reducer.cpp">
@@ -995,236 +1016,273 @@
   <ScheduleInfo time="0"/>
   <ScheduleInfo time="1"/>
   <ScheduleInfo time="2"/>
-  <regnodes realName="reducer_circuit_adder_levels_num_items_1_load_reg_457">
-    <nodeIds>36</nodeIds>
-  </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_num_items_1_flag_0_reg_152">
-    <nodeIds>82</nodeIds>
-  </regnodes>
-  <regnodes realName="add_ln35_reg_446">
-    <nodeIds>35</nodeIds>
-  </regnodes>
-  <regnodes realName="level_out_017_31_reg_103">
-    <nodeIds>62</nodeIds>
-  </regnodes>
-  <regnodes realName="level_out_value_reg_452">
-    <nodeIds>52</nodeIds>
-  </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_valid_0_load_reg_471">
-    <nodeIds>57</nodeIds>
-  </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_num_items_1_new_2_reg_237">
-    <nodeIds>115</nodeIds>
-  </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_num_items_0_new_1_reg_127">
-    <nodeIds>81</nodeIds>
-  </regnodes>
-  <regnodes realName="level_out_118_32_reg_137">
-    <nodeIds>61</nodeIds>
-  </regnodes>
-  <regnodes realName="icmp_ln18_reg_467">
+  <ScheduleInfo time="3"/>
+  <ScheduleInfo time="4"/>
+  <ScheduleInfo time="5"/>
+  <ScheduleInfo time="6"/>
+  <ScheduleInfo time="7"/>
+  <ScheduleInfo time="8"/>
+  <ScheduleInfo time="9"/>
+  <ScheduleInfo time="10"/>
+  <ScheduleInfo time="11"/>
+  <ScheduleInfo time="12"/>
+  <regnodes realName="icmp_ln18_reg_480">
     <nodeIds>44</nodeIds>
   </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_buffer_value_1_0_load_reg_462">
-    <nodeIds>37</nodeIds>
-  </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_num_items_0_load_reg_434">
-    <nodeIds>16</nodeIds>
-  </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_num_items_1_flag_1_reg_184">
-    <nodeIds>108</nodeIds>
-  </regnodes>
-  <regnodes realName="add_ln35_1_reg_479">
+  <regnodes realName="add_ln35_1_reg_507">
     <nodeIds>78</nodeIds>
   </regnodes>
-  <regnodes realName="level_out_label_reg_80">
-    <nodeIds>34</nodeIds>
+  <regnodes realName="reducer_circuit_adder_levels_buffer_value_1_0_load_reg_494">
+    <nodeIds>37</nodeIds>
   </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_num_items_1_flag_2_reg_226">
-    <nodeIds>114</nodeIds>
+  <regnodes realName="reducer_circuit_adder_levels_valid_0_load_reg_499">
+    <nodeIds>57</nodeIds>
   </regnodes>
-  <regnodes realName="out_data_0_35_reg_212">
-    <nodeIds>110</nodeIds>
-  </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_buffer_label_0_0_load_reg_441">
-    <nodeIds>28</nodeIds>
-  </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_num_items_0_new_0_reg_90">
-    <nodeIds>60</nodeIds>
-  </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_num_items_1_new_1_reg_198">
-    <nodeIds>109</nodeIds>
-  </regnodes>
-  <regnodes realName="reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_116">
-    <nodeIds>72</nodeIds>
-  </regnodes>
-  <regnodes realName="out_data_value_1_reg_165">
-    <nodeIds>83</nodeIds>
-  </regnodes>
-  <regnodes realName="trunc_ln34_1_reg_475">
-    <nodeIds>63</nodeIds>
-  </regnodes>
-  <regnodes realName="empty_reg_175">
-    <nodeIds>84</nodeIds>
-  </regnodes>
-  <regnodes realName="level_out_value_1_reg_69">
+  <regnodes realName="level_out_value_1_reg_73">
     <nodeIds>27</nodeIds>
   </regnodes>
-  <regnodes realName="label_read_reg_429">
+  <regnodes realName="reducer_circuit_adder_levels_num_items_0_new_1_reg_131">
+    <nodeIds>81</nodeIds>
+  </regnodes>
+  <regnodes realName="out_data_0_35_reg_169">
+    <nodeIds>110</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_buffer_value_0_0_load_reg_454">
+    <nodeIds>18</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_buffer_value_0_1_load_reg_459">
+    <nodeIds>51</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_buffer_label_0_0_load_reg_469">
+    <nodeIds>28</nodeIds>
+  </regnodes>
+  <regnodes realName="value_read_reg_440">
+    <nodeIds>15</nodeIds>
+  </regnodes>
+  <regnodes realName="empty_reg_229">
+    <nodeIds>84</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln34_1_reg_503">
+    <nodeIds>63</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_num_items_1_flag_2_reg_182">
+    <nodeIds>115</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_buffer_value_1_0_loc_0_reg_120">
+    <nodeIds>72</nodeIds>
+  </regnodes>
+  <regnodes realName="out_data_value_1_reg_217">
+    <nodeIds>83</nodeIds>
+  </regnodes>
+  <regnodes realName="trunc_ln34_reg_450">
+    <nodeIds>17</nodeIds>
+  </regnodes>
+  <regnodes realName="level_out_label_reg_83">
+    <nodeIds>34</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_num_items_1_flag_1_reg_141">
+    <nodeIds>108</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_num_items_1_load_reg_489">
+    <nodeIds>36</nodeIds>
+  </regnodes>
+  <regnodes realName="label_read_reg_464">
     <nodeIds>14</nodeIds>
   </regnodes>
-  <expressionNodes realName="reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_229">
-    <nodeIds>114</nodeIds>
+  <regnodes realName="reducer_circuit_adder_levels_num_items_1_new_2_reg_192">
+    <nodeIds>116</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_num_items_1_flag_0_reg_241">
+    <nodeIds>82</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_valid_1_load_reg_526">
+    <nodeIds>105</nodeIds>
+  </regnodes>
+  <regnodes realName="out_data_value_reg_521">
+    <nodeIds>100</nodeIds>
+  </regnodes>
+  <regnodes realName="icmp_ln18_1_reg_517">
+    <nodeIds>92</nodeIds>
+  </regnodes>
+  <regnodes realName="level_out_value_reg_484">
+    <nodeIds>52</nodeIds>
+  </regnodes>
+  <regnodes realName="add_ln35_reg_474">
+    <nodeIds>35</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_num_items_1_new_1_reg_155">
+    <nodeIds>109</nodeIds>
+  </regnodes>
+  <regnodes realName="level_out_118_32_reg_202">
+    <nodeIds>61</nodeIds>
+  </regnodes>
+  <regnodes realName="level_out_017_31_reg_107">
+    <nodeIds>62</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_num_items_0_new_0_reg_93">
+    <nodeIds>60</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_buffer_value_1_1_load_reg_512">
+    <nodeIds>99</nodeIds>
+  </regnodes>
+  <regnodes realName="reducer_circuit_adder_levels_num_items_0_load_reg_445">
+    <nodeIds>16</nodeIds>
+  </regnodes>
+  <expressionNodes realName="bitcast_ln54_fu_386">
+    <nodeIds>111</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="tmp_fu_320">
+  <expressionNodes realName="reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_195">
+    <nodeIds>116</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="reducer_circuit_adder_levels_num_items_1_flag_0_phi_fu_248">
+    <nodeIds>82</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_97">
+    <nodeIds>60</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="tmp_fu_323">
     <nodeIds>43</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="out_data_value_fu_412">
-    <nodeIds>100</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln18_1_fu_390">
-    <nodeIds>92</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="reducer_circuit_adder_levels_num_items_1_new_2_phi_fu_240">
-    <nodeIds>115</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="reducer_circuit_adder_levels_num_items_0_new_0_phi_fu_93">
-    <nodeIds>60</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="icmp_ln18_fu_330">
-    <nodeIds>44</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="trunc_ln34_1_fu_346">
-    <nodeIds>63</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="level_out_value_fu_305">
-    <nodeIds>52</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="reducer_circuit_adder_levels_num_items_1_flag_0_phi_fu_157">
-    <nodeIds>82</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="level_out_118_32_phi_fu_141">
-    <nodeIds>61</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="level_out_017_31_phi_fu_106">
-    <nodeIds>62</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="trunc_ln34_fu_252">
-    <nodeIds>17</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="out_data_value_1_phi_fu_168">
-    <nodeIds>83</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="out_data_0_35_phi_fu_215">
-    <nodeIds>110</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="empty_phi_fu_178">
-    <nodeIds>84</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="level_out_value_1_phi_fu_72">
-    <nodeIds>27</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_130">
-    <nodeIds>81</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_187">
-    <nodeIds>108</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_119">
-    <nodeIds>72</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_201">
-    <nodeIds>109</nodeIds>
-  </expressionNodes>
-  <expressionNodes realName="add_ln35_fu_283">
+  <expressionNodes realName="add_ln35_fu_312">
     <nodeIds>35</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="add_ln35_1_fu_362">
-    <nodeIds>78</nodeIds>
+  <expressionNodes realName="level_out_118_32_phi_fu_206">
+    <nodeIds>61</nodeIds>
   </expressionNodes>
-  <expressionNodes realName="level_out_label_phi_fu_83">
+  <expressionNodes realName="out_data_value_1_phi_fu_221">
+    <nodeIds>83</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln18_fu_333">
+    <nodeIds>44</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="reducer_circuit_adder_levels_num_items_1_flag_2_phi_fu_185">
+    <nodeIds>115</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="level_out_017_31_phi_fu_110">
+    <nodeIds>62</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln34_1_fu_358">
+    <nodeIds>63</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="level_out_label_phi_fu_86">
     <nodeIds>34</nodeIds>
   </expressionNodes>
-  <ioNodes realName="store_ln20_store_fu_396">
-    <nodeIds>95</nodeIds>
-  </ioNodes>
-  <ioNodes realName="store_ln34_store_fu_356">
-    <nodeIds>69</nodeIds>
-  </ioNodes>
-  <ioNodes realName="reducer_circuit_adder_levels_buffer_value_0_1_load_load_fu_301">
-    <nodeIds>51</nodeIds>
-  </ioNodes>
-  <ioNodes realName="reducer_circuit_adder_levels_buffer_value_1_1_load_load_fu_408">
-    <nodeIds>99</nodeIds>
-  </ioNodes>
-  <ioNodes realName="label_read_read_fu_50">
-    <nodeIds>14</nodeIds>
-  </ioNodes>
-  <ioNodes realName="reducer_circuit_adder_levels_valid_0_load_load_fu_342">
-    <nodeIds>57</nodeIds>
-  </ioNodes>
-  <ioNodes realName="write_ln54_write_fu_62">
-    <nodeIds>111</nodeIds>
-  </ioNodes>
-  <ioNodes realName="store_ln34_store_fu_261">
-    <nodeIds>21</nodeIds>
-  </ioNodes>
-  <ioNodes realName="reducer_circuit_adder_levels_num_items_0_load_load_fu_248">
-    <nodeIds>16</nodeIds>
-  </ioNodes>
-  <ioNodes realName="store_ln34_store_fu_267">
-    <nodeIds>24</nodeIds>
-  </ioNodes>
-  <ioNodes realName="reducer_circuit_adder_levels_num_items_1_load_load_fu_311">
+  <expressionNodes realName="reducer_circuit_adder_levels_buffer_value_1_0_loc_0_phi_fu_123">
+    <nodeIds>72</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="icmp_ln18_1_fu_424">
+    <nodeIds>92</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="level_out_value_1_phi_fu_76">
+    <nodeIds>27</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="reducer_circuit_adder_levels_num_items_0_new_1_phi_fu_134">
+    <nodeIds>81</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="trunc_ln34_fu_271">
+    <nodeIds>17</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="empty_phi_fu_234">
+    <nodeIds>84</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="out_data_0_35_phi_fu_173">
+    <nodeIds>110</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="reducer_circuit_adder_levels_num_items_1_new_1_phi_fu_159">
+    <nodeIds>109</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="add_ln35_1_fu_374">
+    <nodeIds>78</nodeIds>
+  </expressionNodes>
+  <expressionNodes realName="reducer_circuit_adder_levels_num_items_1_flag_1_phi_fu_145">
+    <nodeIds>108</nodeIds>
+  </expressionNodes>
+  <moduleNodes realName="grp_fu_257">
+    <nodeIds>52</nodeIds>
+  </moduleNodes>
+  <moduleNodes realName="grp_fu_262">
+    <nodeIds>100</nodeIds>
+  </moduleNodes>
+  <ioNodes realName="reducer_circuit_adder_levels_num_items_1_load_load_fu_345">
     <nodeIds>36</nodeIds>
   </ioNodes>
-  <ioNodes realName="reducer_circuit_adder_levels_buffer_value_0_0_load_load_fu_256">
-    <nodeIds>18</nodeIds>
+  <ioNodes realName="store_ln34_store_fu_279">
+    <nodeIds>21</nodeIds>
   </ioNodes>
-  <ioNodes realName="reducer_circuit_adder_levels_buffer_value_1_0_load_load_fu_315">
-    <nodeIds>37</nodeIds>
+  <ioNodes realName="write_ln54_write_fu_66">
+    <nodeIds>112</nodeIds>
   </ioNodes>
-  <ioNodes realName="store_ln35_store_fu_368">
-    <nodeIds>85</nodeIds>
+  <ioNodes realName="label_read_read_fu_60">
+    <nodeIds>14</nodeIds>
   </ioNodes>
-  <ioNodes realName="store_ln35_store_fu_423">
-    <nodeIds>118</nodeIds>
+  <ioNodes realName="store_ln34_store_fu_285">
+    <nodeIds>24</nodeIds>
   </ioNodes>
-  <ioNodes realName="value_read_read_fu_56">
-    <nodeIds>15</nodeIds>
-  </ioNodes>
-  <ioNodes realName="store_ln13_store_fu_295">
-    <nodeIds>50</nodeIds>
-  </ioNodes>
-  <ioNodes realName="store_ln34_store_fu_350">
+  <ioNodes realName="store_ln34_store_fu_362">
     <nodeIds>66</nodeIds>
   </ioNodes>
-  <ioNodes realName="reducer_circuit_adder_levels_buffer_label_0_0_load_load_fu_273">
+  <ioNodes realName="reducer_circuit_adder_levels_buffer_value_0_0_load_load_fu_275">
+    <nodeIds>18</nodeIds>
+  </ioNodes>
+  <ioNodes realName="reducer_circuit_adder_levels_buffer_label_0_0_load_load_fu_302">
     <nodeIds>28</nodeIds>
   </ioNodes>
-  <ioNodes realName="store_ln34_store_fu_277">
-    <nodeIds>31</nodeIds>
+  <ioNodes realName="reducer_circuit_adder_levels_num_items_0_load_load_fu_267">
+    <nodeIds>16</nodeIds>
   </ioNodes>
-  <ioNodes realName="store_ln26_store_fu_289">
-    <nodeIds>40</nodeIds>
+  <ioNodes realName="store_ln35_store_fu_380">
+    <nodeIds>85</nodeIds>
   </ioNodes>
-  <ioNodes realName="store_ln34_store_fu_374">
-    <nodeIds>75</nodeIds>
+  <ioNodes realName="store_ln13_store_fu_291">
+    <nodeIds>50</nodeIds>
   </ioNodes>
-  <ioNodes realName="store_ln13_store_fu_402">
-    <nodeIds>98</nodeIds>
-  </ioNodes>
-  <ioNodes realName="reducer_circuit_adder_levels_valid_1_load_load_fu_419">
+  <ioNodes realName="reducer_circuit_adder_levels_valid_1_load_load_fu_436">
     <nodeIds>105</nodeIds>
   </ioNodes>
-  <ioNodes realName="out_data_label_load_fu_386">
-    <nodeIds>91</nodeIds>
+  <ioNodes realName="reducer_circuit_adder_levels_buffer_value_0_1_load_load_fu_297">
+    <nodeIds>51</nodeIds>
   </ioNodes>
-  <ioNodes realName="store_ln20_store_fu_336">
+  <ioNodes realName="store_ln26_store_fu_317">
+    <nodeIds>40</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln26_store_fu_414">
+    <nodeIds>88</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln34_store_fu_368">
+    <nodeIds>69</nodeIds>
+  </ioNodes>
+  <ioNodes realName="value_read_read_fu_54">
+    <nodeIds>15</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln34_store_fu_306">
+    <nodeIds>31</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln20_store_fu_339">
     <nodeIds>47</nodeIds>
   </ioNodes>
-  <ioNodes realName="store_ln26_store_fu_380">
-    <nodeIds>88</nodeIds>
+  <ioNodes realName="reducer_circuit_adder_levels_valid_0_load_load_fu_354">
+    <nodeIds>57</nodeIds>
+  </ioNodes>
+  <ioNodes realName="reducer_circuit_adder_levels_buffer_value_1_1_load_load_fu_409">
+    <nodeIds>99</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln13_store_fu_403">
+    <nodeIds>98</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln34_store_fu_397">
+    <nodeIds>75</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln20_store_fu_430">
+    <nodeIds>95</nodeIds>
+  </ioNodes>
+  <ioNodes realName="out_data_label_load_fu_420">
+    <nodeIds>91</nodeIds>
+  </ioNodes>
+  <ioNodes realName="reducer_circuit_adder_levels_buffer_value_1_0_load_load_fu_349">
+    <nodeIds>37</nodeIds>
+  </ioNodes>
+  <ioNodes realName="store_ln35_store_fu_391">
+    <nodeIds>119</nodeIds>
   </ioNodes>
   <ioPorts name="label_r">
     <contents name="read">
@@ -1233,7 +1291,7 @@
   </ioPorts>
   <ioPorts name="out_r">
     <contents name="write">
-      <nodeIds>111</nodeIds>
+      <nodeIds>112</nodeIds>
     </contents>
   </ioPorts>
   <ioPorts name="value_r">
@@ -1243,7 +1301,6 @@
   </ioPorts>
   <fsm>
     <states id="1">
-      <operations id="14" stage="1" latency="1"/>
       <operations id="15" stage="1" latency="1"/>
       <operations id="16" stage="1" latency="1"/>
       <operations id="17" stage="1" latency="1"/>
@@ -1253,29 +1310,43 @@
       <operations id="22" stage="1" latency="1"/>
       <operations id="24" stage="1" latency="1"/>
       <operations id="25" stage="1" latency="1"/>
+    </states>
+    <states id="2">
       <operations id="27" stage="1" latency="1"/>
+      <operations id="50" stage="1" latency="1"/>
+      <operations id="51" stage="1" latency="1"/>
+      <operations id="52" stage="5" latency="5"/>
+    </states>
+    <states id="3">
+      <operations id="52" stage="4" latency="5"/>
+    </states>
+    <states id="4">
+      <operations id="52" stage="3" latency="5"/>
+    </states>
+    <states id="5">
+      <operations id="14" stage="1" latency="1"/>
       <operations id="28" stage="1" latency="1"/>
       <operations id="29" stage="1" latency="1"/>
       <operations id="31" stage="1" latency="1"/>
       <operations id="32" stage="1" latency="1"/>
+      <operations id="52" stage="2" latency="5"/>
+    </states>
+    <states id="6">
+      <operations id="34" stage="1" latency="1"/>
       <operations id="35" stage="1" latency="1"/>
       <operations id="38" stage="1" latency="1"/>
       <operations id="40" stage="1" latency="1"/>
       <operations id="41" stage="1" latency="1"/>
-      <operations id="50" stage="1" latency="1"/>
-      <operations id="51" stage="1" latency="1"/>
-      <operations id="52" stage="1" latency="1"/>
-      <operations id="55" stage="1" latency="1"/>
-    </states>
-    <states id="2">
-      <operations id="34" stage="1" latency="1"/>
-      <operations id="36" stage="1" latency="1"/>
-      <operations id="37" stage="1" latency="1"/>
       <operations id="43" stage="1" latency="1"/>
       <operations id="44" stage="1" latency="1"/>
       <operations id="45" stage="1" latency="1"/>
       <operations id="47" stage="1" latency="1"/>
       <operations id="48" stage="1" latency="1"/>
+      <operations id="52" stage="1" latency="5"/>
+    </states>
+    <states id="7">
+      <operations id="36" stage="1" latency="1"/>
+      <operations id="37" stage="1" latency="1"/>
       <operations id="53" stage="1" latency="1"/>
       <operations id="57" stage="1" latency="1"/>
       <operations id="58" stage="1" latency="1"/>
@@ -1294,14 +1365,45 @@
       <operations id="81" stage="1" latency="1"/>
       <operations id="85" stage="1" latency="1"/>
     </states>
-    <states id="3">
+    <states id="8">
+      <operations id="55" stage="1" latency="1"/>
+      <operations id="101" stage="1" latency="1"/>
+      <operations id="103" stage="1" latency="1"/>
+      <operations id="108" stage="1" latency="1"/>
+      <operations id="109" stage="1" latency="1"/>
+      <operations id="110" stage="1" latency="1"/>
+      <operations id="111" stage="1" latency="1"/>
+      <operations id="112" stage="1" latency="1"/>
+      <operations id="113" stage="1" latency="1"/>
+      <operations id="115" stage="1" latency="1"/>
+      <operations id="116" stage="1" latency="1"/>
+      <operations id="117" stage="1" latency="1"/>
+      <operations id="119" stage="1" latency="1"/>
+      <operations id="120" stage="1" latency="1"/>
+      <operations id="122" stage="1" latency="1"/>
+    </states>
+    <states id="9">
       <operations id="61" stage="1" latency="1"/>
       <operations id="75" stage="1" latency="1"/>
       <operations id="76" stage="1" latency="1"/>
-      <operations id="82" stage="1" latency="1"/>
       <operations id="83" stage="1" latency="1"/>
       <operations id="84" stage="1" latency="1"/>
       <operations id="86" stage="1" latency="1"/>
+      <operations id="98" stage="1" latency="1"/>
+      <operations id="99" stage="1" latency="1"/>
+      <operations id="100" stage="5" latency="5"/>
+    </states>
+    <states id="10">
+      <operations id="100" stage="4" latency="5"/>
+    </states>
+    <states id="11">
+      <operations id="100" stage="3" latency="5"/>
+    </states>
+    <states id="12">
+      <operations id="100" stage="2" latency="5"/>
+    </states>
+    <states id="13">
+      <operations id="82" stage="1" latency="1"/>
       <operations id="88" stage="1" latency="1"/>
       <operations id="89" stage="1" latency="1"/>
       <operations id="91" stage="1" latency="1"/>
@@ -1309,24 +1411,9 @@
       <operations id="93" stage="1" latency="1"/>
       <operations id="95" stage="1" latency="1"/>
       <operations id="96" stage="1" latency="1"/>
-      <operations id="98" stage="1" latency="1"/>
-      <operations id="99" stage="1" latency="1"/>
-      <operations id="100" stage="1" latency="1"/>
-      <operations id="101" stage="1" latency="1"/>
-      <operations id="103" stage="1" latency="1"/>
+      <operations id="100" stage="1" latency="5"/>
       <operations id="105" stage="1" latency="1"/>
       <operations id="106" stage="1" latency="1"/>
-      <operations id="108" stage="1" latency="1"/>
-      <operations id="109" stage="1" latency="1"/>
-      <operations id="110" stage="1" latency="1"/>
-      <operations id="111" stage="1" latency="1"/>
-      <operations id="112" stage="1" latency="1"/>
-      <operations id="114" stage="1" latency="1"/>
-      <operations id="115" stage="1" latency="1"/>
-      <operations id="116" stage="1" latency="1"/>
-      <operations id="118" stage="1" latency="1"/>
-      <operations id="119" stage="1" latency="1"/>
-      <operations id="121" stage="1" latency="1"/>
     </states>
     <transitions inState="1" outState="2">
       <condition id="-1"/>
@@ -1334,9 +1421,39 @@
     <transitions inState="2" outState="3">
       <condition id="-1"/>
     </transitions>
+    <transitions inState="3" outState="4">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="4" outState="5">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="5" outState="6">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="6" outState="7">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="7" outState="9">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="9" outState="10">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="10" outState="11">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="11" outState="12">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="12" outState="13">
+      <condition id="-1"/>
+    </transitions>
+    <transitions inState="13" outState="8">
+      <condition id="-1"/>
+    </transitions>
   </fsm>
   <CFGRegionsRoot>
-    <cfgRegions mId="1" mTag="reduce" mII="1" mDepth="3" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="2" mMaxLatency="2">
+    <cfgRegions mId="1" mTag="reduce" mII="6" mDepth="13" mMinTripCount="-1" mMaxTripCount="-1" mMinLatency="12" mMaxLatency="12">
       <basicBlocks>20</basicBlocks>
       <basicBlocks>23</basicBlocks>
       <basicBlocks>26</basicBlocks>
@@ -1362,10 +1479,10 @@
       <basicBlocks>102</basicBlocks>
       <basicBlocks>104</basicBlocks>
       <basicBlocks>107</basicBlocks>
-      <basicBlocks>113</basicBlocks>
-      <basicBlocks>117</basicBlocks>
-      <basicBlocks>120</basicBlocks>
-      <basicBlocks>122</basicBlocks>
+      <basicBlocks>114</basicBlocks>
+      <basicBlocks>118</basicBlocks>
+      <basicBlocks>121</basicBlocks>
+      <basicBlocks>123</basicBlocks>
       <mDfPipe/>
     </cfgRegions>
   </CFGRegionsRoot>

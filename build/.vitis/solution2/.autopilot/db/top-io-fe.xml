@@ -1,12 +1,12 @@
 <root versionMajor = "1" versionMinor = "5">
   <kernel src_name="accelerate" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
     <args>
-      <arg id="0" access_type="w" src_name="out" src_type="int&amp;" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
+      <arg id="0" access_type="w" src_name="out" src_type="float&amp;" src_isptr="1" src_bitwidth="32" src_size_or_depth="1">
         <hw hw_usage="data" hw_interface="Register" hw_name="out_r" hw_bitwidth="32" hw_size_or_depth="1">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="1" access_type="r" src_name="subrow_vals" src_type="int*" src_isptr="1" src_bitwidth="32" src_size_or_depth="4">
+      <arg id="1" access_type="r" src_name="subrow_vals" src_type="float*" src_isptr="1" src_bitwidth="32" src_size_or_depth="4">
         <hw hw_usage="data" hw_interface="BRAM" hw_name="subrow_vals" hw_bitwidth="32" hw_size_or_depth="4">
           <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
         </hw>
@@ -26,7 +26,7 @@
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="5" access_type="r" src_name="init_vector" src_type="int*" src_isptr="1" src_bitwidth="32" src_size_or_depth="23">
+      <arg id="5" access_type="r" src_name="init_vector" src_type="float*" src_isptr="1" src_bitwidth="32" src_size_or_depth="23">
         <hw hw_usage="data" hw_interface="BRAM" hw_name="init_vector" hw_bitwidth="32" hw_size_or_depth="23">
           <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
         </hw>

@@ -107,13 +107,13 @@ set NewPortList {[
  	{ "name": "init", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "init", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "5", "6", "7", "8", "9", "10", "11"],
 		"CDFG" : "accelerate",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "14",
-		"VariableLatency" : "0", "ExactLatency" : "23", "EstimateLatencyMin" : "23", "EstimateLatencyMax" : "23",
+		"VariableLatency" : "0", "ExactLatency" : "42", "EstimateLatencyMin" : "42", "EstimateLatencyMax" : "42",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -124,7 +124,7 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "out_r", "Type" : "Vld", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "out_r"}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "out_r"}]},
 			{"Name" : "subrow_vals", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "subrow_col_indices", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "mult_enables", "Type" : "Memory", "Direction" : "I"},
@@ -134,42 +134,42 @@ set RtlHierarchyInfo {[
 			{"Name" : "storage", "Type" : "Memory", "Direction" : "IO"},
 			{"Name" : "reducer_circuit_adder_levels_num_items_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "reducer_circuit_adder_levels_num_items_0"}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "reducer_circuit_adder_levels_num_items_0"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_0_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "reducer_circuit_adder_levels_buffer_value_0_0"}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "reducer_circuit_adder_levels_buffer_value_0_0"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_label_0_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "reducer_circuit_adder_levels_buffer_label_0_0"}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "reducer_circuit_adder_levels_buffer_label_0_0"}]},
 			{"Name" : "reducer_circuit_adder_levels_num_items_1", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "reducer_circuit_adder_levels_num_items_1"}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "reducer_circuit_adder_levels_num_items_1"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_1_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "reducer_circuit_adder_levels_buffer_value_1_0"}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "reducer_circuit_adder_levels_buffer_value_1_0"}]},
 			{"Name" : "reducer_circuit_adder_levels_valid_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "reducer_circuit_adder_levels_valid_0"}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "reducer_circuit_adder_levels_valid_0"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_0_1", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "reducer_circuit_adder_levels_buffer_value_0_1"}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "reducer_circuit_adder_levels_buffer_value_0_1"}]},
 			{"Name" : "reducer_circuit_adder_levels_valid_1", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "reducer_circuit_adder_levels_valid_1"}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "reducer_circuit_adder_levels_valid_1"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_1_1", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "reducer_circuit_adder_levels_buffer_value_1_1"}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "reducer_circuit_adder_levels_buffer_value_1_1"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_label_1_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "2", "SubInstance" : "grp_reduce_fu_583", "Port" : "reducer_circuit_adder_levels_buffer_label_1_0"}]}]},
+					{"ID" : "2", "SubInstance" : "grp_reduce_fu_1452", "Port" : "reducer_circuit_adder_levels_buffer_label_1_0"}]}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.storage_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_reduce_fu_583", "Parent" : "0",
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_reduce_fu_1452", "Parent" : "0", "Child" : ["3", "4"],
 		"CDFG" : "reduce",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "1",
-		"VariableLatency" : "0", "ExactLatency" : "2", "EstimateLatencyMin" : "2", "EstimateLatencyMax" : "2",
+		"II" : "6",
+		"VariableLatency" : "0", "ExactLatency" : "12", "EstimateLatencyMin" : "12", "EstimateLatencyMax" : "12",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -191,15 +191,20 @@ set RtlHierarchyInfo {[
 			{"Name" : "reducer_circuit_adder_levels_valid_1", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_1_1", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "reducer_circuit_adder_levels_buffer_label_1_0", "Type" : "OVld", "Direction" : "IO"}]},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U4", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U5", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U6", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U7", "Parent" : "0"}]}
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_reduce_fu_1452.fadd_32ns_32ns_32_5_full_dsp_1_U1", "Parent" : "2"},
+	{"ID" : "4", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_reduce_fu_1452.fadd_32ns_32ns_32_5_full_dsp_1_U2", "Parent" : "2"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_x_U7", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_x_U8", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_x_U9", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fmul_32ns_32ns_32_4_max_dsp_1_U10", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fmul_32ns_32ns_32_4_max_dsp_1_U11", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fmul_32ns_32ns_32_4_max_dsp_1_U12", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fmul_32ns_32ns_32_4_max_dsp_1_U13", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	accelerate {
-		out_r {Type O LastRead -1 FirstWrite 2}
+		out_r {Type O LastRead -1 FirstWrite 12}
 		subrow_vals {Type I LastRead 2 FirstWrite -1}
 		subrow_col_indices {Type I LastRead 2 FirstWrite -1}
 		mult_enables {Type I LastRead 2 FirstWrite -1}
@@ -218,9 +223,9 @@ set ArgLastReadFirstWriteLatency {
 		reducer_circuit_adder_levels_buffer_value_1_1 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_label_1_0 {Type IO LastRead -1 FirstWrite -1}}
 	reduce {
-		out_r {Type O LastRead -1 FirstWrite 2}
+		out_r {Type O LastRead -1 FirstWrite 12}
 		value_r {Type I LastRead 0 FirstWrite -1}
-		label_r {Type I LastRead 0 FirstWrite -1}
+		label_r {Type I LastRead 4 FirstWrite -1}
 		reducer_circuit_adder_levels_num_items_0 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_value_0_0 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_label_0_0 {Type IO LastRead -1 FirstWrite -1}
@@ -235,7 +240,7 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "23", "Max" : "23"}
+	{"Name" : "Latency", "Min" : "42", "Max" : "42"}
 	, {"Name" : "Interval", "Min" : "14", "Max" : "14"}
 ]}
 

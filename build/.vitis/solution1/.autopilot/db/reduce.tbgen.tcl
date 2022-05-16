@@ -13,7 +13,7 @@ set C_modelName {reduce}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ out_r int 32 regular {pointer 1}  }
-	{ value_r int 32 regular  }
+	{ value_r float 32 regular  }
 	{ label_r int 32 regular  }
 }
 set C_modelArgMapList {[ 
@@ -47,13 +47,13 @@ set NewPortList {[
  	{ "name": "label_r", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "label_r", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "",
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2"],
 		"CDFG" : "reduce",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "1",
-		"VariableLatency" : "0", "ExactLatency" : "2", "EstimateLatencyMin" : "2", "EstimateLatencyMax" : "2",
+		"II" : "6",
+		"VariableLatency" : "0", "ExactLatency" : "12", "EstimateLatencyMin" : "12", "EstimateLatencyMax" : "12",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -74,14 +74,16 @@ set RtlHierarchyInfo {[
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_0_1", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "reducer_circuit_adder_levels_valid_1", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_1_1", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "reducer_circuit_adder_levels_buffer_label_1_0", "Type" : "OVld", "Direction" : "IO"}]}]}
+			{"Name" : "reducer_circuit_adder_levels_buffer_label_1_0", "Type" : "OVld", "Direction" : "IO"}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_U1", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_U2", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	reduce {
-		out_r {Type O LastRead -1 FirstWrite 2}
+		out_r {Type O LastRead -1 FirstWrite 12}
 		value_r {Type I LastRead 0 FirstWrite -1}
-		label_r {Type I LastRead 0 FirstWrite -1}
+		label_r {Type I LastRead 4 FirstWrite -1}
 		reducer_circuit_adder_levels_num_items_0 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_value_0_0 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_label_0_0 {Type IO LastRead -1 FirstWrite -1}
@@ -96,8 +98,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "2", "Max" : "2"}
-	, {"Name" : "Interval", "Min" : "1", "Max" : "1"}
+	{"Name" : "Latency", "Min" : "12", "Max" : "12"}
+	, {"Name" : "Interval", "Min" : "6", "Max" : "6"}
 ]}
 
 set PipelineEnableSignalInfo {[

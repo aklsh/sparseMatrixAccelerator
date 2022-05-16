@@ -7,7 +7,8 @@
     </downStreamTool>
     <synthesis askAgain="true"/>
     <config>
-        <config_export format="ip_catalog" output="/home/akileshkannan/SPMV_CSR_src" rtl="verilog"/>
+        <config_compile complex-mul-dsp="0" unsafe_math_optimizations="1"/>
+        <config_export output="/home/akileshkannan/SPMV_CSR_src"/>
     </config>
     <UIConfigurations>
         <UIAutosynConf boardInfo="Zybo Z7-20 (xc7z020clg400-1) " hideTrivialOp="true" isBasedOnBoard="true" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">

@@ -89322,6 +89322,10 @@ namespace hls {
 # 4 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
 
 # 1 "/home/akileshkannan/SPMV_CSR_src/accelerator/constants.hpp" 1
+
+
+
+typedef float data_t;
 # 6 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
 # 1 "/home/akileshkannan/SPMV_CSR_src/encoded_data.hpp" 1
 # 7 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
@@ -89344,9 +89348,9 @@ namespace hls {
 
 class reducer_data{
  public:
-  int value;
+  data_t value;
   int label;
-  reducer_data(int=0, int=0);
+  reducer_data(data_t=0, int=0);
 };
 
 class reducer_level{
@@ -89362,40 +89366,39 @@ class reducer{
  public:
   reducer_level adder_levels[2];
   bool valid;
-  void reduce(int&, int, int);
+  void reduce(data_t&, data_t, int);
 };
 # 9 "/home/akileshkannan/SPMV_CSR_src/accelerator/accelerator.hpp" 2
 
-static int storage[23];
-static reducer reducer_circuit;
-static int multiplier_outs[4];
-static int sum;
 
 
-void initialise(int[23], bool);
-void set_storage(int[23], int[23], bool);
-void multipliers(int[4], int[23], int[4], int[4], bool[4]);
-void adders(int&, int[4]);
-void accelerate(int&, int[4], int[4], bool[4], int, int[23], bool);
+
+
+
+
+void initialise(data_t[23], data_t[23], bool);
+void multipliers(data_t[4], data_t[23], data_t[4], int[4], bool[4]);
+void adders(data_t&, data_t[4]);
+void accelerate(data_t&, data_t[4], int[4], bool[4], int, data_t[23], bool);
 # 8 "/home/akileshkannan/SPMV_CSR_src/main.cpp" 2
 
 #ifndef HLS_FASTSIM
 #ifdef __cplusplus
 extern "C"
 #endif
-void apatb_accelerate_sw(int &, int *, int *, bool *, int, int *, bool);
+void apatb_accelerate_sw(float &, float *, int *, bool *, int, float *, bool);
 # 9 "/home/akileshkannan/SPMV_CSR_src/main.cpp"
 int main(){
- int val[] = {1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 4, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 2, 2, 1, 1, 1, 3, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 2, 1};
+ float val[] = {1.0, 1.0, 2.0, 2.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 4.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 2.0, 2.0, 2.0, 1.0, 1.0, 1.0, 3.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 2.0, 1.0};
  int row_ptr[] = {0, 1, 5, 6, 8, 9, 14, 18, 23, 28, 29, 36, 39, 42, 42, 43, 47, 51, 53, 54, 54, 60, 61};
  int col_index[] = {20, 6, 10, 12, 20, 20, 1, 22, 12, 6, 12, 13, 18, 20, 1, 5, 12, 20, 1, 2, 6, 15, 22, 1, 7, 9, 13, 18, 1, 0, 1, 2, 10, 11, 20, 21, 10, 15, 20, 5, 8, 22, 1, 2, 10, 15, 20, 1, 2, 10, 20, 11, 22, 8, 1, 2, 10, 19, 20, 22, 20, 1, 8, 20};
 
- int vector_x[23] = {0};
- std::fill(vector_x, vector_x+23, 1);
+ data_t vector_x[23] = {0};
+ std::fill(vector_x, vector_x+23, 1.0);
  for(int q=0;q<23;q++)
-  printf("x[%d] = %d\n", q, vector_x[q]);
- int vector_y[23] = {0};
- int ref_y[23] = {1, 6, 2, 2, 1, 5, 4, 9, 5, 1, 11, 5, 3, 0, 1, 5, 4, 2, 1, 0, 7, 1, 4};
+  printf("x[%d] = %f\n", q, vector_x[q]);
+ data_t vector_y[23] = {0};
+ data_t ref_y[23] = {1, 6, 2, 2, 1, 5, 4, 9, 5, 1, 11, 5, 3, 0, 1, 5, 4, 2, 1, 0, 7, 1, 4};
 
  bool init_storage = false;
 
@@ -89406,7 +89409,7 @@ int main(){
  int elements_left_curr_row = 0;
  int num_elements_processed_curr = 0;
  int curr_label = 0;
- int curr_subrow_elements[4] = {0};
+ data_t curr_subrow_elements[4] = {0};
  int curr_subrow_indices[4] = {0};
  bool curr_subrow_mult_enables[4] = {false};
 
@@ -89426,7 +89429,7 @@ int main(){
    for(int g = 0; g < 4; g++){
     if(g < num_elements_processed_curr){
      curr_subrow_elements[g] = val[processed_elements+g];
-     printf("curr_subrow_elements[%d] = %d\n", g, curr_subrow_elements[g]);
+     printf("curr_subrow_elements[%d] = %f\n", g, curr_subrow_elements[g]);
      curr_subrow_mult_enables[g] = true;
      printf("curr_subrow_mult_enables[%d] = true\n", g);
      curr_subrow_indices[g] = col_index[processed_elements+g];
@@ -89434,7 +89437,7 @@ int main(){
     }
     else{
      curr_subrow_elements[g] = 0;
-     printf("curr_subrow_elements[%d] = %d\n", g, curr_subrow_elements[g]);
+     printf("curr_subrow_elements[%d] = %f\n", g, curr_subrow_elements[g]);
      curr_subrow_mult_enables[g] = false;
      printf("curr_subrow_mult_enables[%d] = false\n", g);
      curr_subrow_indices[g] = 0;
@@ -89460,7 +89463,7 @@ accelerate(vector_y[row_index], curr_subrow_elements, curr_subrow_indices, curr_
  }
 
  for(int r = 0; r < 23; r++)
-  printf("vector_y[%d] = %d\n", r, vector_y[r]);
+  printf("vector_y[%d] = %f\n", r, vector_y[r]);
 
  bool correct = true;
  for(int z = 0; z < 23; z++){

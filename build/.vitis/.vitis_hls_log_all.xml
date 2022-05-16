@@ -4,18 +4,18 @@
     <logs>
       <synLog/>
       <simLog/>
-      <mgLog/>
-      <packageLog/>
-      <csimLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
-      <synLog/>
-      <simLog/>
-      <mgLog/>
-      <packageLog/>
-      <csimLog/>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] RTL name 'fadd_32ns_32ns_32_5_full_dsp_1' is changed to 'fadd_32ns_32ns_32_5_full_dsp_1_x' due to conflict." projectName="SPMV_CSR" solutionName="solution2" date="2022-05-16T14:04:44.745+0530" type="Warning"/>
+      </synLog>
+      <simLog>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'accelerate_fmul_32ns_32ns_32_4_max_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="SPMV_CSR" solutionName="solution2" date="2022-05-16T14:06:22.133+0530" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'accelerate_fadd_32ns_32ns_32_5_full_dsp_1_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="SPMV_CSR" solutionName="solution2" date="2022-05-16T14:06:19.382+0530" type="Warning"/>
+        <logs message="WARNING: [IP_Flow 19-4832] The IP name 'accelerate_fadd_32ns_32ns_32_5_full_dsp_1_x_ip' you have specified is long. The Windows operating system has path length limitations. It is recommended you use shorter names to reduce the likelihood of issues." projectName="SPMV_CSR" solutionName="solution2" date="2022-05-16T14:06:17.022+0530" type="Warning"/>
+      </simLog>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

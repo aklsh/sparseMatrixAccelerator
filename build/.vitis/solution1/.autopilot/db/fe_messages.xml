@@ -1,4 +1,7 @@
 <xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/reducer.cpp:46:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:6:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="initialise" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=init_vector complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
@@ -23,43 +26,46 @@
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:16:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="multipliers" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=subrow_vals complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="multipliers" ARG_PragmaIsValid="1" ARG_PragmaOptions="operation instances=fmul limit=25" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:17:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="multipliers" ARG_PragmaIsValid="1" ARG_PragmaOptions="operation instances=fadd limit=25" ARG_PragmaType="allocation" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:19:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="multipliers" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:27:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:29:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="adders" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=multiplier_outs complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:27:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:31:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="adders" ARG_PragmaIsValid="1" ARG_PragmaType="expression_balance" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:37:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:39:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="accelerate" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=subrow_col_indices complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:37:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:39:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="accelerate" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=subrow_vals complete dim=1" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:37:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:39:9" msg_body="HLS pragma dump">
         <args ARG_PragmaContext="directive" ARG_PragmaFunction="accelerate" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=accelerate" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:37:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:39:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="accelerate" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=accelerate" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:44:9" msg_body="HLS pragma dump">
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:46:9" msg_body="HLS pragma dump">
         <args ARG_PragmaFunction="accelerate" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
-    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="SPMV_CSR_src/accelerator/reducer.cpp:46:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaFunction="reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:48:19" msg_body="Loop 'VITIS_LOOP_48_1' is marked as complete unroll implied by the pipeline pragma">
-        <args LoopName="VITIS_LOOP_48_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:50:19" msg_body="Loop 'VITIS_LOOP_50_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_50_1"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.cpp:45:16" msg_body="Loop 'reducer_loop' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="reducer_loop"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:29:14" msg_body="Loop 'adder_tree' is marked as complete unroll implied by the pipeline pragma">
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:30:14" msg_body="Loop 'adder_tree' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="adder_tree"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:16:20" msg_body="Loop 'multipliers_loop' is marked as complete unroll implied by the pipeline pragma">
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:18:20" msg_body="Loop 'multipliers_loop' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="multipliers_loop"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:7:21" msg_body="Loop 'set_storage_loop' is marked as complete unroll implied by the pipeline pragma">
@@ -71,17 +77,17 @@
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.hpp:14:7" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
         <args LoopName="anonymous"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:36:0" msg_body="Unrolling loop 'VITIS_LOOP_48_1' (SPMV_CSR_src/accelerator/accelerator.cpp:48:19) in function 'accelerate' completely with a factor of 4">
-        <args Factor="4" LoopLoc="SPMV_CSR_src/accelerator/accelerator.cpp:48:19" LoopName="VITIS_LOOP_48_1"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:38:0" msg_body="Unrolling loop 'VITIS_LOOP_50_1' (SPMV_CSR_src/accelerator/accelerator.cpp:50:19) in function 'accelerate' completely with a factor of 4">
+        <args Factor="4" LoopLoc="SPMV_CSR_src/accelerator/accelerator.cpp:50:19" LoopName="VITIS_LOOP_50_1"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.cpp:39:0" msg_body="Unrolling loop 'reducer_loop' (SPMV_CSR_src/accelerator/reducer.cpp:45:16) in function 'reducer::reduce' completely with a factor of 1">
         <args Factor="1" LoopLoc="SPMV_CSR_src/accelerator/reducer.cpp:45:16" LoopName="reducer_loop"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:26:0" msg_body="Unrolling loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:29:14) in function 'adders' completely with a factor of 4">
-        <args Factor="4" LoopLoc="SPMV_CSR_src/accelerator/accelerator.cpp:29:14" LoopName="adder_tree"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:28:0" msg_body="Unrolling loop 'adder_tree' (SPMV_CSR_src/accelerator/accelerator.cpp:30:14) in function 'adders' completely with a factor of 4">
+        <args Factor="4" LoopLoc="SPMV_CSR_src/accelerator/accelerator.cpp:30:14" LoopName="adder_tree"/>
     </msg>
-    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:15:0" msg_body="Unrolling loop 'multipliers_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:16:20) in function 'multipliers' completely with a factor of 4">
-        <args Factor="4" LoopLoc="SPMV_CSR_src/accelerator/accelerator.cpp:16:20" LoopName="multipliers_loop"/>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:15:0" msg_body="Unrolling loop 'multipliers_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:18:20) in function 'multipliers' completely with a factor of 4">
+        <args Factor="4" LoopLoc="SPMV_CSR_src/accelerator/accelerator.cpp:18:20" LoopName="multipliers_loop"/>
     </msg>
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:5:0" msg_body="Unrolling loop 'set_storage_loop' (SPMV_CSR_src/accelerator/accelerator.cpp:7:21) in function 'initialise' completely with a factor of 23">
         <args Factor="23" LoopLoc="SPMV_CSR_src/accelerator/accelerator.cpp:7:21" LoopName="set_storage_loop"/>
@@ -92,46 +98,49 @@
     <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.hpp:14:0" msg_body="Unrolling loop 'anonymous' (SPMV_CSR_src/accelerator/reducer.hpp:14:7) in function 'reducer_level::reducer_level' completely with a factor of 2">
         <args Factor="2" LoopLoc="SPMV_CSR_src/accelerator/reducer.hpp:14:7" LoopName="anonymous"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.hpp:14:0" msg_body="Inlining function 'reducer_data::reducer_data(int, int)' into 'reducer_level::reducer_level()'">
-        <args Callee="reducer_data::reducer_data(int, int)" Caller="reducer_level::reducer_level()"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.hpp:14:0" msg_body="Inlining function 'reducer_data::reducer_data(float, int)' into 'reducer_level::reducer_level()'">
+        <args Callee="reducer_data::reducer_data(float, int)" Caller="reducer_level::reducer_level()"/>
     </msg>
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.hpp:23:0" msg_body="Inlining function 'reducer_level::reducer_level()' into 'reducer::reducer()'">
         <args Callee="reducer_level::reducer_level()" Caller="reducer::reducer()"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.cpp:39:0" msg_body="Inlining function 'reducer_data::reducer_data(int, int)' into 'reducer::reduce(int&amp;, int, int)'">
-        <args Callee="reducer_data::reducer_data(int, int)" Caller="reducer::reduce(int&amp;, int, int)"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.cpp:39:0" msg_body="Inlining function 'reducer_data::reducer_data(float, int)' into 'reducer::reduce(float&amp;, float, int)'">
+        <args Callee="reducer_data::reducer_data(float, int)" Caller="reducer::reduce(float&amp;, float, int)"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.cpp:39:0" msg_body="Inlining function 'reducer_level::insert(reducer_data)' into 'reducer::reduce(int&amp;, int, int)'">
-        <args Callee="reducer_level::insert(reducer_data)" Caller="reducer::reduce(int&amp;, int, int)"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.cpp:39:0" msg_body="Inlining function 'reducer_level::insert(reducer_data)' into 'reducer::reduce(float&amp;, float, int)'">
+        <args Callee="reducer_level::insert(reducer_data)" Caller="reducer::reduce(float&amp;, float, int)"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.cpp:39:0" msg_body="Inlining function 'reducer_level::add(reducer_data&amp;, int)' into 'reducer::reduce(int&amp;, int, int)'">
-        <args Callee="reducer_level::add(reducer_data&amp;, int)" Caller="reducer::reduce(int&amp;, int, int)"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/reducer.cpp:39:0" msg_body="Inlining function 'reducer_level::add(reducer_data&amp;, int)' into 'reducer::reduce(float&amp;, float, int)'">
+        <args Callee="reducer_level::add(reducer_data&amp;, int)" Caller="reducer::reduce(float&amp;, float, int)"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:36:0" msg_body="Inlining function 'reducer::reducer()' into 'accelerate(int&amp;, int*, int*, bool*, int, int*, bool)'">
-        <args Callee="reducer::reducer()" Caller="accelerate(int&amp;, int*, int*, bool*, int, int*, bool)"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:38:0" msg_body="Inlining function 'reducer::reducer()' into 'accelerate(float&amp;, float*, int*, bool*, int, float*, bool)'">
+        <args Callee="reducer::reducer()" Caller="accelerate(float&amp;, float*, int*, bool*, int, float*, bool)"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:36:0" msg_body="Inlining function 'initialise(int*, int*, bool)' into 'accelerate(int&amp;, int*, int*, bool*, int, int*, bool)'">
-        <args Callee="initialise(int*, int*, bool)" Caller="accelerate(int&amp;, int*, int*, bool*, int, int*, bool)"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:38:0" msg_body="Inlining function 'initialise(float*, float*, bool)' into 'accelerate(float&amp;, float*, int*, bool*, int, float*, bool)'">
+        <args Callee="initialise(float*, float*, bool)" Caller="accelerate(float&amp;, float*, int*, bool*, int, float*, bool)"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:36:0" msg_body="Inlining function 'multipliers(int*, int*, int*, int*, bool*)' into 'accelerate(int&amp;, int*, int*, bool*, int, int*, bool)'">
-        <args Callee="multipliers(int*, int*, int*, int*, bool*)" Caller="accelerate(int&amp;, int*, int*, bool*, int, int*, bool)"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:38:0" msg_body="Inlining function 'multipliers(float*, float*, float*, int*, bool*)' into 'accelerate(float&amp;, float*, int*, bool*, int, float*, bool)'">
+        <args Callee="multipliers(float*, float*, float*, int*, bool*)" Caller="accelerate(float&amp;, float*, int*, bool*, int, float*, bool)"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:41:0" msg_body="Applying array_partition to '_ZZ10accelerateRiPiS0_PbiS0_bE15multiplier_outs': Complete partitioning on dimension 1.">
-        <args Dim="1" Mode="Complete" UOName="_ZZ10accelerateRiPiS0_PbiS0_bE15multiplier_outs"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:38:0" msg_body="Inlining function 'adders(float&amp;, float*)' into 'accelerate(float&amp;, float*, int*, bool*, int, float*, bool)'">
+        <args Callee="adders(float&amp;, float*)" Caller="accelerate(float&amp;, float*, int*, bool*, int, float*, bool)"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:39:0" msg_body="Applying array_partition to '_ZZ10accelerateRiPiS0_PbiS0_bE7storage': Complete partitioning on dimension 1.">
-        <args Dim="1" Mode="Complete" UOName="_ZZ10accelerateRiPiS0_PbiS0_bE7storage"/>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:43:0" msg_body="Applying array_partition to '_ZZ10accelerateRfPfPiPbiS0_bE15multiplier_outs': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZ10accelerateRfPfPiPbiS0_bE15multiplier_outs"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:36:0" msg_body="Applying array_partition to 'subrow_vals': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:41:0" msg_body="Applying array_partition to '_ZZ10accelerateRfPfPiPbiS0_bE7storage': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="_ZZ10accelerateRfPfPiPbiS0_bE7storage"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:38:0" msg_body="Applying array_partition to 'subrow_vals': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="subrow_vals"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:36:0" msg_body="Applying array_partition to 'subrow_col_indices': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:38:0" msg_body="Applying array_partition to 'subrow_col_indices': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="subrow_col_indices"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:36:0" msg_body="Applying array_partition to 'mult_enables': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:38:0" msg_body="Applying array_partition to 'mult_enables': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="mult_enables"/>
     </msg>
-    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:36:0" msg_body="Applying array_partition to 'init_vector': Complete partitioning on dimension 1.">
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="SPMV_CSR_src/accelerator/accelerator.cpp:38:0" msg_body="Applying array_partition to 'init_vector': Complete partitioning on dimension 1.">
         <args Dim="1" Mode="Complete" UOName="init_vector"/>
     </msg>
 </xilinx:hls_fe_msgs>

@@ -1061,6 +1061,10 @@ extern int __overflow (FILE *, int);
 # 5 "SPMV_CSR_src/accelerator/accelerator.hpp" 2
 
 # 1 "SPMV_CSR_src/accelerator/constants.hpp" 1
+
+
+
+typedef float data_t;
 # 7 "SPMV_CSR_src/accelerator/accelerator.hpp" 2
 # 1 "SPMV_CSR_src/accelerator/../encoded_data.hpp" 1
 # 8 "SPMV_CSR_src/accelerator/accelerator.hpp" 2
@@ -1073,9 +1077,9 @@ extern int __overflow (FILE *, int);
 
 class reducer_data{
  public:
-  int value;
+  data_t value;
   int label;
-  reducer_data(int=0, int=0);
+  reducer_data(data_t=0, int=0);
 };
 
 class reducer_level{
@@ -1091,7 +1095,7 @@ class reducer{
  public:
   reducer_level adder_levels[2];
   bool valid;
-  void reduce(int&, int, int);
+  void reduce(data_t&, data_t, int);
 };
 # 9 "SPMV_CSR_src/accelerator/accelerator.hpp" 2
 
@@ -1101,17 +1105,14 @@ class reducer{
 
 
 
-void initialise(int[23], int[23], bool);
-void multipliers(int[4], int[23], int[4], int[4], bool[4]);
-void adders(int&, int[4]);
-__attribute__((sdx_kernel("accelerate", 0))) void accelerate(int&, int[4], int[4], bool[4], int, int[23], bool);
+void initialise(data_t[23], data_t[23], bool);
+void multipliers(data_t[4], data_t[23], data_t[4], int[4], bool[4]);
+void adders(data_t&, data_t[4]);
+__attribute__((sdx_kernel("accelerate", 0))) void accelerate(data_t&, data_t[4], int[4], bool[4], int, data_t[23], bool);
 # 3 "SPMV_CSR_src/accelerator/accelerator.cpp" 2
 
 
-void initialise(int storage[23], int init_vector[23], bool init){
-
-
-
+void initialise(data_t storage[23], data_t init_vector[23], bool init){
  if(init){
   set_storage_loop: for(int j=0;j<23;j++){
 #pragma HLS UNROLL
@@ -1121,58 +1122,48 @@ void initialise(int storage[23], int init_vector[23], bool init){
 }
 
 
-void multipliers(int multiplier_outs[4], int storage[23], int subrow_vals[4], int subrow_col_indices[4], bool mult_enables[4]){
-
-
-
-
-
-
+void multipliers(data_t multiplier_outs[4], data_t storage[23], data_t subrow_vals[4], int subrow_col_indices[4], bool mult_enables[4]){
+#pragma HLS ALLOCATION operation instances=fmul limit=25
+#pragma HLS ALLOCATION operation instances=fadd limit=25
  multipliers_loop: for(int c=0;c<4;c++){
 #pragma HLS UNROLL
  if(mult_enables[c])
    multiplier_outs[c] = subrow_vals[c]*storage[subrow_col_indices[c]];
   else
-   multiplier_outs[c] = 0;
+   multiplier_outs[c] = (data_t)0;
  }
 }
 
 
-void adders(int &sum, int multiplier_outs[4]){
-#pragma HLS EXPRESSION_BALANCE
-
-
- int x = 0;
+void adders(data_t &sum, data_t multiplier_outs[4]){
+ data_t x = 0;
  adder_tree: for(int p=0;p<4;p++){
-#pragma HLS PIPELINE
+#pragma HLS EXPRESSION_BALANCE
  x+=multiplier_outs[p];
  }
  sum = x;
 }
 
 
-__attribute__((sdx_kernel("accelerate", 0))) void accelerate(int &out, int subrow_vals[4], int subrow_col_indices[4], bool mult_enables[4], int label, int init_vector[23], bool init){_ssdm_SpecArrayDimSize(subrow_vals, 4);_ssdm_SpecArrayDimSize(subrow_col_indices, 4);_ssdm_SpecArrayDimSize(mult_enables, 4);_ssdm_SpecArrayDimSize(init_vector, 23);
+__attribute__((sdx_kernel("accelerate", 0))) void accelerate(data_t &out, data_t subrow_vals[4], int subrow_col_indices[4], bool mult_enables[4], int label, data_t init_vector[23], bool init){_ssdm_SpecArrayDimSize(subrow_vals, 4);_ssdm_SpecArrayDimSize(subrow_col_indices, 4);_ssdm_SpecArrayDimSize(mult_enables, 4);_ssdm_SpecArrayDimSize(init_vector, 23);
 #pragma HLSDIRECTIVE TOP name=accelerate
-# 48 "SPMV_CSR_src/accelerator/accelerator.cpp"
+# 38 "SPMV_CSR_src/accelerator/accelerator.cpp"
 
+#pragma HLS TOP name=accelerate
 
-
-
- static int storage[23];
-
-
+ static data_t storage[23];
  static reducer reducer_circuit;
- static int multiplier_outs[4];
- static int sum;
+ static data_t multiplier_outs[4];
+ static data_t sum;
 
 #pragma HLS PIPELINE
  initialise(storage, init_vector, init);
  multipliers(multiplier_outs, storage, subrow_vals, subrow_col_indices, mult_enables);
  printf("mult outs: ");
- VITIS_LOOP_63_1: for(int u=0;u<4;u++)
-  printf("%d ", multiplier_outs[u]);
+ VITIS_LOOP_50_1: for(int u=0;u<4;u++)
+  printf("%f ", multiplier_outs[u]);
  printf("\n");
  adders(sum, multiplier_outs);
- printf("sum: %d\n", sum);
+ printf("sum: %f\n", sum);
  reducer_circuit.reduce(out, sum, label);
 }

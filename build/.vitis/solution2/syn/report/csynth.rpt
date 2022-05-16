@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'accelerate'
 ================================================================
 + General Information: 
-    * Date:           Sun May 15 16:10:22 2022
+    * Date:           Mon May 16 14:04:45 2022
     * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
     * Project:        SPMV_CSR
     * Solution:       solution2 (Vivado IP Flow Target)
@@ -15,13 +15,13 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +--------------+------+------+---------+---------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
-    |    Modules   | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |         |           |           |     |
-    |    & Loops   | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF    |    LUT    | URAM|
-    +--------------+------+------+---------+---------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
-    |+ accelerate  |    II|  0.38|       23|  230.000|         -|       14|     -|       yes|     -|  12 (5%)|  2136 (2%)|  1356 (2%)|    -|
-    | + reduce     |    II|  2.26|        2|   20.000|         -|        1|     -|       yes|     -|        -|  650 (~0%)|  484 (~0%)|    -|
-    +--------------+------+------+---------+---------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    +--------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-----------+-----------+-----+
+    |    Modules   | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |          |           |           |     |
+    |    & Loops   | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |     FF    |    LUT    | URAM|
+    +--------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-----------+-----------+-----+
+    |+ accelerate  |    II|  0.04|       42|  420.000|         -|       14|     -|       yes|     -|  22 (10%)|  3375 (3%)|  4401 (8%)|    -|
+    | + reduce     |    II|  0.04|       12|  120.000|         -|        6|     -|       yes|     -|    4 (1%)|  1424 (1%)|  1248 (2%)|    -|
+    +--------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-----------+-----------+-----+
 
 
 ================================================================
@@ -75,12 +75,12 @@
 +--------------------+-----------+----------+
 | Argument           | Direction | Datatype |
 +--------------------+-----------+----------+
-| out                | out       | int&     |
-| subrow_vals        | in        | int*     |
+| out                | out       | float&   |
+| subrow_vals        | in        | float*   |
 | subrow_col_indices | in        | int*     |
 | mult_enables       | in        | bool*    |
 | label              | in        | int      |
-| init_vector        | in        | int*     |
+| init_vector        | in        | float*   |
 | init               | in        | bool     |
 +--------------------+-----------+----------+
 
@@ -129,23 +129,23 @@
 ================================================================
 == Bind Op Report
 ================================================================
-+------------------------------+-----+--------+-----------------+-----+--------+---------+
-| Name                         | DSP | Pragma | Variable        | Op  | Impl   | Latency |
-+------------------------------+-----+--------+-----------------+-----+--------+---------+
-| + accelerate                 | 12  |        |                 |     |        |         |
-|   mul_32s_32s_32_2_1_U4      | 3   |        | mul_ln28        | mul | auto   | 1       |
-|   mul_32s_32s_32_2_1_U5      | 3   |        | mul_ln28_1      | mul | auto   | 1       |
-|   mul_32s_32s_32_2_1_U6      | 3   |        | mul_ln28_2      | mul | auto   | 1       |
-|   mul_32s_32s_32_2_1_U7      | 3   |        | mul_ln28_3      | mul | auto   | 1       |
-|   add_ln42_fu_667_p2         | -   |        | add_ln42        | add | tadder | 0       |
-|   add_ln42_1_fu_671_p2       | -   |        | add_ln42_1      | add | fabric | 0       |
-|   x_1_fu_677_p2              | -   |        | x_1             | add | tadder | 0       |
-|  + reduce                    | 0   |        |                 |     |        |         |
-|    add_ln35_fu_283_p2        | -   |        | add_ln35        | add | fabric | 0       |
-|    level_out_value_fu_305_p2 | -   |        | level_out_value | add | fabric | 0       |
-|    add_ln35_1_fu_362_p2      | -   |        | add_ln35_1      | add | fabric | 0       |
-|    out_data_value_fu_412_p2  | -   |        | out_data_value  | add | fabric | 0       |
-+------------------------------+-----+--------+-----------------+-----+--------+---------+
++---------------------------------------+-----+--------+-----------------+------+---------+---------+
+| Name                                  | DSP | Pragma | Variable        | Op   | Impl    | Latency |
++---------------------------------------+-----+--------+-----------------+------+---------+---------+
+| + accelerate                          | 22  |        |                 |      |         |         |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U12   | 3   |        | mul_i           | fmul | maxdsp  | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U10   | 3   |        | mul_1_i         | fmul | maxdsp  | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U13   | 3   |        | mul_2_i         | fmul | maxdsp  | 3       |
+|   fmul_32ns_32ns_32_4_max_dsp_1_U11   | 3   |        | mul_3_i         | fmul | maxdsp  | 3       |
+|   fadd_32ns_32ns_32_5_full_dsp_1_x_U7 | 2   |        | tmp             | fadd | fulldsp | 4       |
+|   fadd_32ns_32ns_32_5_full_dsp_1_x_U8 | 2   |        | tmp1            | fadd | fulldsp | 4       |
+|   fadd_32ns_32ns_32_5_full_dsp_1_x_U9 | 2   |        | x_1             | fadd | fulldsp | 4       |
+|  + reduce                             | 4   |        |                 |      |         |         |
+|    add_ln35_fu_312_p2                 | -   |        | add_ln35        | add  | fabric  | 0       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U1  | 2   |        | level_out_value | fadd | fulldsp | 4       |
+|    add_ln35_1_fu_374_p2               | -   |        | add_ln35_1      | add  | fabric  | 0       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U2  | 2   |        | out_data_value  | fadd | fulldsp | 4       |
++---------------------------------------+-----+--------+-----------------+------+---------+---------+
 
 
 ================================================================
@@ -163,15 +163,17 @@
 == User Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+--------------------+---------+------------------------------------------------------------+
-| Type               | Options | Location                                                   |
-+--------------------+---------+------------------------------------------------------------+
-| unroll             |         | SPMV_CSR_src/accelerator/accelerator.cpp:11 in initialise  |
-| unroll             |         | SPMV_CSR_src/accelerator/accelerator.cpp:26 in multipliers |
-| expression_balance |         | SPMV_CSR_src/accelerator/accelerator.cpp:36 in adders      |
-| pipeline           |         | SPMV_CSR_src/accelerator/accelerator.cpp:41 in adders      |
-| pipeline           |         | SPMV_CSR_src/accelerator/accelerator.cpp:59 in accelerate  |
-| unroll             |         | SPMV_CSR_src/accelerator/reducer.cpp:46 in reduce          |
-+--------------------+---------+------------------------------------------------------------+
++--------------------+-----------------------------------+------------------------------------------------------------+
+| Type               | Options                           | Location                                                   |
++--------------------+-----------------------------------+------------------------------------------------------------+
+| unroll             |                                   | SPMV_CSR_src/accelerator/accelerator.cpp:8 in initialise   |
+| allocation         | operation instances=fmul limit=25 | SPMV_CSR_src/accelerator/accelerator.cpp:16 in multipliers |
+| allocation         | operation instances=fadd limit=25 | SPMV_CSR_src/accelerator/accelerator.cpp:17 in multipliers |
+| unroll             |                                   | SPMV_CSR_src/accelerator/accelerator.cpp:19 in multipliers |
+| expression_balance |                                   | SPMV_CSR_src/accelerator/accelerator.cpp:31 in adders      |
+| top                | name=accelerate                   | SPMV_CSR_src/accelerator/accelerator.cpp:39 in accelerate  |
+| pipeline           |                                   | SPMV_CSR_src/accelerator/accelerator.cpp:46 in accelerate  |
+| unroll             |                                   | SPMV_CSR_src/accelerator/reducer.cpp:46 in reduce          |
++--------------------+-----------------------------------+------------------------------------------------------------+
 
 

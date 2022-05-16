@@ -193,13 +193,13 @@ set NewPortList {[
  	{ "name": "out_r_ap_lwr", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outlwr", "bundle":{"name": "out_r", "role": "ap_lwr" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14"],
 		"CDFG" : "accelerate",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "1",
-		"VariableLatency" : "0", "ExactLatency" : "6", "EstimateLatencyMin" : "6", "EstimateLatencyMax" : "6",
+		"II" : "6",
+		"VariableLatency" : "0", "ExactLatency" : "27", "EstimateLatencyMin" : "27", "EstimateLatencyMax" : "27",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -210,7 +210,7 @@ set RtlHierarchyInfo {[
 		"Port" : [
 			{"Name" : "out_r", "Type" : "OVld", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "out_r"}]},
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "out_r"}]},
 			{"Name" : "subrow_vals_0", "Type" : "None", "Direction" : "I"},
 			{"Name" : "subrow_vals_1", "Type" : "None", "Direction" : "I"},
 			{"Name" : "subrow_vals_2", "Type" : "None", "Direction" : "I"},
@@ -248,66 +248,66 @@ set RtlHierarchyInfo {[
 			{"Name" : "init_vector_21", "Type" : "None", "Direction" : "I"},
 			{"Name" : "init_vector_22", "Type" : "None", "Direction" : "I"},
 			{"Name" : "init", "Type" : "None", "Direction" : "I"},
-			{"Name" : "accelerate_int_int_int_bool_int_int_bool_storage", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "accelerate_int_int_int_bool_int_int_bool_storage_1", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "accelerate_int_int_int_bool_int_int_bool_storage_2", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "accelerate_int_int_int_bool_int_int_bool_storage_3", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "accelerate_int_int_int_bool_int_int_bool_storage_4", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "accelerate_int_int_int_bool_int_int_bool_storage_5", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "accelerate_int_int_int_bool_int_int_bool_storage_6", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "accelerate_int_int_int_bool_int_int_bool_storage_7", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "accelerate_int_int_int_bool_int_int_bool_storage_8", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "accelerate_int_int_int_bool_int_int_bool_storage_9", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_10", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_11", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_12", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_13", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_14", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_15", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_16", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_17", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_18", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_19", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_20", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_21", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_22", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "accelerate_float_float_int_bool_int_float_bool_storage", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "accelerate_float_float_int_bool_int_float_bool_storage_1", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "accelerate_float_float_int_bool_int_float_bool_storage_2", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "accelerate_float_float_int_bool_int_float_bool_storage_3", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "accelerate_float_float_int_bool_int_float_bool_storage_4", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "accelerate_float_float_int_bool_int_float_bool_storage_5", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "accelerate_float_float_int_bool_int_float_bool_storage_6", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "accelerate_float_float_int_bool_int_float_bool_storage_7", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "accelerate_float_float_int_bool_int_float_bool_storage_8", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "accelerate_float_float_int_bool_int_float_bool_storage_9", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_10", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_11", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_12", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_13", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_14", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_15", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_16", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_17", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_18", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_19", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_20", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_21", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "p_ZZ10accelerateRfPfPiPbiS0_bE7storage_22", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "reducer_circuit_adder_levels_num_items_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "reducer_circuit_adder_levels_num_items_0"}]},
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "reducer_circuit_adder_levels_num_items_0"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_0_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "reducer_circuit_adder_levels_buffer_value_0_0"}]},
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "reducer_circuit_adder_levels_buffer_value_0_0"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_label_0_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "reducer_circuit_adder_levels_buffer_label_0_0"}]},
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "reducer_circuit_adder_levels_buffer_label_0_0"}]},
 			{"Name" : "reducer_circuit_adder_levels_num_items_1", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "reducer_circuit_adder_levels_num_items_1"}]},
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "reducer_circuit_adder_levels_num_items_1"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_1_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "reducer_circuit_adder_levels_buffer_value_1_0"}]},
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "reducer_circuit_adder_levels_buffer_value_1_0"}]},
 			{"Name" : "reducer_circuit_adder_levels_valid_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "reducer_circuit_adder_levels_valid_0"}]},
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "reducer_circuit_adder_levels_valid_0"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_0_1", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "reducer_circuit_adder_levels_buffer_value_0_1"}]},
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "reducer_circuit_adder_levels_buffer_value_0_1"}]},
 			{"Name" : "reducer_circuit_adder_levels_valid_1", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "reducer_circuit_adder_levels_valid_1"}]},
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "reducer_circuit_adder_levels_valid_1"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_1_1", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "reducer_circuit_adder_levels_buffer_value_1_1"}]},
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "reducer_circuit_adder_levels_buffer_value_1_1"}]},
 			{"Name" : "reducer_circuit_adder_levels_buffer_label_1_0", "Type" : "OVld", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "1", "SubInstance" : "grp_reduce_fu_624", "Port" : "reducer_circuit_adder_levels_buffer_label_1_0"}]}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_reduce_fu_624", "Parent" : "0",
+					{"ID" : "1", "SubInstance" : "grp_reduce_fu_1487", "Port" : "reducer_circuit_adder_levels_buffer_label_1_0"}]}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_reduce_fu_1487", "Parent" : "0", "Child" : ["2", "3"],
 		"CDFG" : "reduce",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "1",
-		"VariableLatency" : "0", "ExactLatency" : "2", "EstimateLatencyMin" : "2", "EstimateLatencyMax" : "2",
+		"II" : "6",
+		"VariableLatency" : "0", "ExactLatency" : "12", "EstimateLatencyMin" : "12", "EstimateLatencyMax" : "12",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -329,23 +329,28 @@ set RtlHierarchyInfo {[
 			{"Name" : "reducer_circuit_adder_levels_valid_1", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "reducer_circuit_adder_levels_buffer_value_1_1", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "reducer_circuit_adder_levels_buffer_label_1_0", "Type" : "OVld", "Direction" : "IO"}]},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_2332_32_1_1_U4", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_2332_32_1_1_U5", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_2332_32_1_1_U6", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_2332_32_1_1_U7", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U8", "Parent" : "0"},
-	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U9", "Parent" : "0"},
-	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U10", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_32s_32s_32_2_1_U11", "Parent" : "0"}]}
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_reduce_fu_1487.fadd_32ns_32ns_32_5_full_dsp_1_U1", "Parent" : "1"},
+	{"ID" : "3", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_reduce_fu_1487.fadd_32ns_32ns_32_5_full_dsp_1_U2", "Parent" : "1"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_x_U7", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_x_U8", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fmul_32ns_32ns_32_4_max_dsp_1_U9", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fadd_32ns_32ns_32_5_full_dsp_1_x_U10", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fmul_32ns_32ns_32_4_max_dsp_1_U11", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fmul_32ns_32ns_32_4_max_dsp_1_U12", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.fmul_32ns_32ns_32_4_max_dsp_1_U13", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_2332_32_1_1_U14", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_2332_32_1_1_U15", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_2332_32_1_1_U16", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mux_2332_32_1_1_U17", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	accelerate {
-		out_r {Type O LastRead -1 FirstWrite 2}
-		subrow_vals_0 {Type I LastRead 0 FirstWrite -1}
-		subrow_vals_1 {Type I LastRead 0 FirstWrite -1}
-		subrow_vals_2 {Type I LastRead 0 FirstWrite -1}
-		subrow_vals_3 {Type I LastRead 0 FirstWrite -1}
+		out_r {Type O LastRead -1 FirstWrite 12}
+		subrow_vals_0 {Type I LastRead 1 FirstWrite -1}
+		subrow_vals_1 {Type I LastRead 1 FirstWrite -1}
+		subrow_vals_2 {Type I LastRead 1 FirstWrite -1}
+		subrow_vals_3 {Type I LastRead 1 FirstWrite -1}
 		subrow_col_indices_0 {Type I LastRead 0 FirstWrite -1}
 		subrow_col_indices_1 {Type I LastRead 0 FirstWrite -1}
 		subrow_col_indices_2 {Type I LastRead 0 FirstWrite -1}
@@ -354,7 +359,7 @@ set ArgLastReadFirstWriteLatency {
 		mult_enables_1 {Type I LastRead 0 FirstWrite -1}
 		mult_enables_2 {Type I LastRead 0 FirstWrite -1}
 		mult_enables_3 {Type I LastRead 0 FirstWrite -1}
-		label_r {Type I LastRead 0 FirstWrite -1}
+		label_r {Type I LastRead 5 FirstWrite -1}
 		init_vector_0 {Type I LastRead 0 FirstWrite -1}
 		init_vector_1 {Type I LastRead 0 FirstWrite -1}
 		init_vector_2 {Type I LastRead 0 FirstWrite -1}
@@ -379,29 +384,29 @@ set ArgLastReadFirstWriteLatency {
 		init_vector_21 {Type I LastRead 0 FirstWrite -1}
 		init_vector_22 {Type I LastRead 0 FirstWrite -1}
 		init {Type I LastRead 0 FirstWrite -1}
-		accelerate_int_int_int_bool_int_int_bool_storage {Type IO LastRead -1 FirstWrite -1}
-		accelerate_int_int_int_bool_int_int_bool_storage_1 {Type IO LastRead -1 FirstWrite -1}
-		accelerate_int_int_int_bool_int_int_bool_storage_2 {Type IO LastRead -1 FirstWrite -1}
-		accelerate_int_int_int_bool_int_int_bool_storage_3 {Type IO LastRead -1 FirstWrite -1}
-		accelerate_int_int_int_bool_int_int_bool_storage_4 {Type IO LastRead -1 FirstWrite -1}
-		accelerate_int_int_int_bool_int_int_bool_storage_5 {Type IO LastRead -1 FirstWrite -1}
-		accelerate_int_int_int_bool_int_int_bool_storage_6 {Type IO LastRead -1 FirstWrite -1}
-		accelerate_int_int_int_bool_int_int_bool_storage_7 {Type IO LastRead -1 FirstWrite -1}
-		accelerate_int_int_int_bool_int_int_bool_storage_8 {Type IO LastRead -1 FirstWrite -1}
-		accelerate_int_int_int_bool_int_int_bool_storage_9 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_10 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_11 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_12 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_13 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_14 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_15 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_16 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_17 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_18 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_19 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_20 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_21 {Type IO LastRead -1 FirstWrite -1}
-		p_ZZ10accelerateRiPiS0_PbiS0_bE7storage_22 {Type IO LastRead -1 FirstWrite -1}
+		accelerate_float_float_int_bool_int_float_bool_storage {Type IO LastRead -1 FirstWrite -1}
+		accelerate_float_float_int_bool_int_float_bool_storage_1 {Type IO LastRead -1 FirstWrite -1}
+		accelerate_float_float_int_bool_int_float_bool_storage_2 {Type IO LastRead -1 FirstWrite -1}
+		accelerate_float_float_int_bool_int_float_bool_storage_3 {Type IO LastRead -1 FirstWrite -1}
+		accelerate_float_float_int_bool_int_float_bool_storage_4 {Type IO LastRead -1 FirstWrite -1}
+		accelerate_float_float_int_bool_int_float_bool_storage_5 {Type IO LastRead -1 FirstWrite -1}
+		accelerate_float_float_int_bool_int_float_bool_storage_6 {Type IO LastRead -1 FirstWrite -1}
+		accelerate_float_float_int_bool_int_float_bool_storage_7 {Type IO LastRead -1 FirstWrite -1}
+		accelerate_float_float_int_bool_int_float_bool_storage_8 {Type IO LastRead -1 FirstWrite -1}
+		accelerate_float_float_int_bool_int_float_bool_storage_9 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_10 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_11 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_12 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_13 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_14 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_15 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_16 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_17 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_18 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_19 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_20 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_21 {Type IO LastRead -1 FirstWrite -1}
+		p_ZZ10accelerateRfPfPiPbiS0_bE7storage_22 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_num_items_0 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_value_0_0 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_label_0_0 {Type IO LastRead -1 FirstWrite -1}
@@ -413,9 +418,9 @@ set ArgLastReadFirstWriteLatency {
 		reducer_circuit_adder_levels_buffer_value_1_1 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_label_1_0 {Type IO LastRead -1 FirstWrite -1}}
 	reduce {
-		out_r {Type O LastRead -1 FirstWrite 2}
+		out_r {Type O LastRead -1 FirstWrite 12}
 		value_r {Type I LastRead 0 FirstWrite -1}
-		label_r {Type I LastRead 0 FirstWrite -1}
+		label_r {Type I LastRead 4 FirstWrite -1}
 		reducer_circuit_adder_levels_num_items_0 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_value_0_0 {Type IO LastRead -1 FirstWrite -1}
 		reducer_circuit_adder_levels_buffer_label_0_0 {Type IO LastRead -1 FirstWrite -1}
@@ -430,8 +435,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "6", "Max" : "6"}
-	, {"Name" : "Interval", "Min" : "1", "Max" : "1"}
+	{"Name" : "Latency", "Min" : "27", "Max" : "27"}
+	, {"Name" : "Interval", "Min" : "6", "Max" : "6"}
 ]}
 
 set PipelineEnableSignalInfo {[

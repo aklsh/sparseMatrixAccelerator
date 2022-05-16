@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'accelerate'" level="0">
-<item name = "Date">Sun May 15 16:10:22 2022
+<item name = "Date">Mon May 16 14:04:44 2022
 </item>
 <item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)</item>
 <item name = "Project">SPMV_CSR</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.923 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.256 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">23, 23, 0.230 us, 0.230 us, 14, 14, yes</column>
+<column name="">42, 42, 0.420 us, 0.420 us, 14, 14, yes</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_reduce_fu_583">reduce, 2, 2, 20.000 ns, 20.000 ns, 1, 1, yes</column>
+<column name="grp_reduce_fu_1452">reduce, 12, 12, 0.120 us, 0.120 us, 6, 6, yes</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
@@ -48,25 +48,28 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 233, -</column>
+<column name="Expression">-, -, 0, 130, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 12, 1310, 684, -</column>
+<column name="Instance">-, 22, 2611, 3702, -</column>
 <column name="Memory">0, -, 64, 12, 0</column>
-<column name="Multiplexer">-, -, -, 427, -</column>
-<column name="Register">-, -, 762, -, -</column>
+<column name="Multiplexer">-, -, -, 557, -</column>
+<column name="Register">-, -, 700, -, -</column>
 <specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 5, 2, 2, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 10, 3, 8, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
-<column name="mul_32s_32s_32_2_1_U4">mul_32s_32s_32_2_1, 0, 3, 165, 50, 0</column>
-<column name="mul_32s_32s_32_2_1_U5">mul_32s_32s_32_2_1, 0, 3, 165, 50, 0</column>
-<column name="mul_32s_32s_32_2_1_U6">mul_32s_32s_32_2_1, 0, 3, 165, 50, 0</column>
-<column name="mul_32s_32s_32_2_1_U7">mul_32s_32s_32_2_1, 0, 3, 165, 50, 0</column>
-<column name="grp_reduce_fu_583">reduce, 0, 0, 650, 484, 0</column>
+<column name="fadd_32ns_32ns_32_5_full_dsp_1_x_U7">fadd_32ns_32ns_32_5_full_dsp_1_x, 0, 2, 205, 390, 0</column>
+<column name="fadd_32ns_32ns_32_5_full_dsp_1_x_U8">fadd_32ns_32ns_32_5_full_dsp_1_x, 0, 2, 205, 390, 0</column>
+<column name="fadd_32ns_32ns_32_5_full_dsp_1_x_U9">fadd_32ns_32ns_32_5_full_dsp_1_x, 0, 2, 205, 390, 0</column>
+<column name="fmul_32ns_32ns_32_4_max_dsp_1_U10">fmul_32ns_32ns_32_4_max_dsp_1, 0, 3, 143, 321, 0</column>
+<column name="fmul_32ns_32ns_32_4_max_dsp_1_U11">fmul_32ns_32ns_32_4_max_dsp_1, 0, 3, 143, 321, 0</column>
+<column name="fmul_32ns_32ns_32_4_max_dsp_1_U12">fmul_32ns_32ns_32_4_max_dsp_1, 0, 3, 143, 321, 0</column>
+<column name="fmul_32ns_32ns_32_4_max_dsp_1_U13">fmul_32ns_32ns_32_4_max_dsp_1, 0, 3, 143, 321, 0</column>
+<column name="grp_reduce_fu_1452">reduce, 0, 4, 1424, 1248, 0</column>
 </table>
 </item>
 <item name = "DSP"><table name="" hasTotal="0">
@@ -84,13 +87,10 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln42_1_fu_671_p2">+, 0, 0, 39, 32, 32</column>
-<column name="add_ln42_fu_667_p2">+, 0, 0, 32, 32, 32</column>
-<column name="x_1_fu_677_p2">+, 0, 0, 32, 32, 32</column>
-<column name="select_ln27_1_fu_645_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln27_2_fu_655_p3">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln27_3_fu_661_p3">select, 0, 0, 32, 1, 32</column>
-<column name="x_fu_635_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln20_1_fu_1634_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln20_2_fu_1641_p3">select, 0, 0, 32, 1, 32</column>
+<column name="select_ln20_3_fu_1648_p3">select, 0, 0, 32, 1, 32</column>
+<column name="x_fu_1627_p3">select, 0, 0, 32, 1, 32</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
@@ -98,13 +98,15 @@
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">65, 15, 1, 15</column>
 <column name="ap_enable_reg_pp0_iter0">9, 2, 1, 2</column>
-<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter3">9, 2, 1, 2</column>
 <column name="init_vector_address0">65, 13, 5, 65</column>
 <column name="init_vector_address1">65, 12, 5, 60</column>
 <column name="mult_enables_address0">14, 3, 2, 6</column>
 <column name="mult_enables_address1">14, 3, 2, 6</column>
 <column name="storage_address0">65, 15, 5, 75</column>
 <column name="storage_address1">65, 14, 5, 70</column>
+<column name="storage_d0">65, 13, 32, 416</column>
+<column name="storage_d1">65, 12, 32, 384</column>
 <column name="subrow_col_indices_address0">14, 3, 2, 6</column>
 <column name="subrow_col_indices_address1">14, 3, 2, 6</column>
 <column name="subrow_vals_address0">14, 3, 2, 6</column>
@@ -116,39 +118,39 @@
 <column name="ap_CS_fsm">14, 0, 14, 0</column>
 <column name="ap_enable_reg_pp0_iter0_reg">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
-<column name="grp_reduce_fu_583_ap_start_reg">1, 0, 1, 0</column>
-<column name="init_read_reg_683">1, 0, 1, 0</column>
-<column name="label_r_read_reg_922">32, 0, 32, 0</column>
-<column name="mul_ln28_1_reg_977">32, 0, 32, 0</column>
-<column name="mul_ln28_2_reg_987">32, 0, 32, 0</column>
-<column name="mul_ln28_3_reg_992">32, 0, 32, 0</column>
-<column name="mul_ln28_reg_967">32, 0, 32, 0</column>
-<column name="mult_enables_load_1_reg_752">1, 0, 1, 0</column>
-<column name="mult_enables_load_1_reg_752_pp0_iter1_reg">1, 0, 1, 0</column>
-<column name="mult_enables_load_2_reg_807">1, 0, 1, 0</column>
-<column name="mult_enables_load_2_reg_807_pp0_iter1_reg">1, 0, 1, 0</column>
-<column name="mult_enables_load_3_reg_822">1, 0, 1, 0</column>
-<column name="mult_enables_load_3_reg_822_pp0_iter1_reg">1, 0, 1, 0</column>
-<column name="mult_enables_load_reg_737">1, 0, 1, 0</column>
-<column name="mult_enables_load_reg_737_pp0_iter1_reg">1, 0, 1, 0</column>
-<column name="select_ln27_1_reg_982">32, 0, 32, 0</column>
-<column name="storage_load_1_reg_942">32, 0, 32, 0</column>
-<column name="storage_load_2_reg_957">32, 0, 32, 0</column>
-<column name="storage_load_3_reg_962">32, 0, 32, 0</column>
-<column name="storage_load_reg_937">32, 0, 32, 0</column>
-<column name="subrow_col_indices_load_1_reg_762">32, 0, 32, 0</column>
-<column name="subrow_col_indices_load_2_reg_817">32, 0, 32, 0</column>
-<column name="subrow_col_indices_load_3_reg_832">32, 0, 32, 0</column>
-<column name="subrow_col_indices_load_reg_747">32, 0, 32, 0</column>
-<column name="subrow_vals_load_1_reg_757">32, 0, 32, 0</column>
-<column name="subrow_vals_load_1_reg_757_pp0_iter1_reg">32, 0, 32, 0</column>
-<column name="subrow_vals_load_2_reg_812">32, 0, 32, 0</column>
-<column name="subrow_vals_load_2_reg_812_pp0_iter1_reg">32, 0, 32, 0</column>
-<column name="subrow_vals_load_3_reg_827">32, 0, 32, 0</column>
-<column name="subrow_vals_load_3_reg_827_pp0_iter1_reg">32, 0, 32, 0</column>
-<column name="subrow_vals_load_reg_742">32, 0, 32, 0</column>
-<column name="x_1_reg_997">32, 0, 32, 0</column>
-<column name="x_reg_972">32, 0, 32, 0</column>
+<column name="ap_enable_reg_pp0_iter2">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter3">1, 0, 1, 0</column>
+<column name="grp_reduce_fu_1452_ap_start_reg">1, 0, 1, 0</column>
+<column name="init_read_reg_1655">1, 0, 1, 0</column>
+<column name="label_r_read_reg_1894">32, 0, 32, 0</column>
+<column name="label_r_read_reg_1894_pp0_iter1_reg">32, 0, 32, 0</column>
+<column name="mult_enables_load_1_reg_1724">1, 0, 1, 0</column>
+<column name="mult_enables_load_1_reg_1724_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="mult_enables_load_2_reg_1779">1, 0, 1, 0</column>
+<column name="mult_enables_load_2_reg_1779_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="mult_enables_load_3_reg_1794">1, 0, 1, 0</column>
+<column name="mult_enables_load_3_reg_1794_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="mult_enables_load_reg_1709">1, 0, 1, 0</column>
+<column name="mult_enables_load_reg_1709_pp0_iter1_reg">1, 0, 1, 0</column>
+<column name="select_ln20_1_reg_1964">32, 0, 32, 0</column>
+<column name="select_ln20_2_reg_1969">32, 0, 32, 0</column>
+<column name="select_ln20_3_reg_1974">32, 0, 32, 0</column>
+<column name="storage_load_1_reg_1914">32, 0, 32, 0</column>
+<column name="storage_load_2_reg_1939">32, 0, 32, 0</column>
+<column name="storage_load_3_reg_1944">32, 0, 32, 0</column>
+<column name="storage_load_reg_1909">32, 0, 32, 0</column>
+<column name="subrow_col_indices_load_1_reg_1734">32, 0, 32, 0</column>
+<column name="subrow_col_indices_load_2_reg_1789">32, 0, 32, 0</column>
+<column name="subrow_col_indices_load_3_reg_1804">32, 0, 32, 0</column>
+<column name="subrow_col_indices_load_reg_1719">32, 0, 32, 0</column>
+<column name="subrow_vals_load_1_reg_1729">32, 0, 32, 0</column>
+<column name="subrow_vals_load_2_reg_1784">32, 0, 32, 0</column>
+<column name="subrow_vals_load_3_reg_1799">32, 0, 32, 0</column>
+<column name="subrow_vals_load_reg_1714">32, 0, 32, 0</column>
+<column name="tmp1_reg_1984">32, 0, 32, 0</column>
+<column name="tmp_reg_1979">32, 0, 32, 0</column>
+<column name="x_1_reg_1989">32, 0, 32, 0</column>
+<column name="x_reg_1959">32, 0, 32, 0</column>
 </table>
 </item>
 </section>

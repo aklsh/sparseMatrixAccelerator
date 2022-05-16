@@ -160,15 +160,19 @@ extern "C" {
 
 
 # 1 "SPMV_CSR_src/accelerator/constants.hpp" 1
+
+
+
+typedef float data_t;
 # 5 "SPMV_CSR_src/accelerator/reducer.hpp" 2
 # 1 "SPMV_CSR_src/accelerator/../encoded_data.hpp" 1
 # 6 "SPMV_CSR_src/accelerator/reducer.hpp" 2
 
 class reducer_data{
  public:
-  int value;
+  data_t value;
   int label;
-  reducer_data(int=0, int=0);
+  reducer_data(data_t=0, int=0);
 };
 
 class reducer_level{
@@ -184,12 +188,12 @@ class reducer{
  public:
   reducer_level adder_levels[2];
   bool valid;
-  void reduce(int&, int, int);
+  void reduce(data_t&, data_t, int);
 };
 # 2 "SPMV_CSR_src/accelerator/reducer.cpp" 2
 
 
-reducer_data::reducer_data(int value_init, int label_init){
+reducer_data::reducer_data(data_t value_init, int label_init){
  value = value_init;
  label = label_init;
 }
@@ -224,7 +228,7 @@ void reducer_level::insert(reducer_data new_data){
 }
 
 
-void reducer::reduce(int &out, int value, int label){
+void reducer::reduce(data_t &out, data_t value, int label){
  reducer_data out_data, level_out, new_data;
  new_data.label = label;
  new_data.value = value;

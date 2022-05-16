@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'accelerate'" level="0">
-<item name = "Date">Sun May 15 16:32:36 2022
+<item name = "Date">Mon May 16 14:02:26 2022
 </item>
 <item name = "Version">2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)</item>
 <item name = "Project">SPMV_CSR</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 6.923 ns, 2.70 ns</column>
+<column name="ap_clk">10.00 ns, 7.256 ns, 2.70 ns</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">6, 6, 60.000 ns, 60.000 ns, 1, 1, yes</column>
+<column name="">27, 27, 0.270 us, 0.270 us, 6, 6, yes</column>
 </table>
 </item>
 <item name = "Detail">
