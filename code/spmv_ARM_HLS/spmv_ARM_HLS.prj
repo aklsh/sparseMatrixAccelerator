@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="spmv_ARM_HLS" location="/home/arjunmenonv/Arjun_acads/Year4/MappingDSP/sparseMatrixAccelerator/code/spmv_ARM_HLS" platform="/home/arjunmenonv/Arjun_acads/Year4/MappingDSP/sparseMatrixAccelerator/code/sparseAccel_InpDemux/export/sparseAccel_InpDemux/sparseAccel_InpDemux.xpfm" platformUID="xilinx:zybo-z7-20:zynqps:0.0(custom)" systemProject="spmv_ARM_HLS_system" sysConfig="sparseAccel_InpDemux" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="c09615ecd297bfd0c1e4e60ce3aacb41">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.1410392097">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.182261910" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>
