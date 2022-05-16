@@ -5,6 +5,7 @@
  * 		- CSR encoding of sparse weight matrix (sequential, 4-way SIMD)
  * 		- Row-wise evaluation of the SpMV product (sequential, 4-way SIMD)
  * 		- Profiling for different kinds of sparsity (Random irregular, 2:4 struct sparsity, col-wise skewed CISR friendly)
+ * 		- Software code to run SpMV using the 2:4 sparse dot-product accelerator
  *
  *	Profiling:
  *		- clock(), time() based profiling requires a Linux OS (for gettimeofday() function)
@@ -16,6 +17,26 @@
  * May 2022
  */
 
+#define TEST_MATRIX structSparse
+#define TEST_HLS_MODULE 1
+#define TEST_CISR 0
+#if (TEST_CISR == 1)
+#include "test_cisr8x8.h"
+float weights8_8[8][8];
+float inputs8[30][8];
+#define USE_MATRIX weights8_8
+#define USE_INPUT inputs8
+#else
+#include "test_vectors.h"
+#include "test_sparse.h"
+float weights[MATRIX_HEIGHT][MATRIX_WIDTH];
+float weights90[MATRIX_HEIGHT][MATRIX_WIDTH];
+float inp_vector[NUM_INPUTS][MATRIX_WIDTH];
+float structSparse[MATRIX_HEIGHT][MATRIX_WIDTH];
+#define USE_MATRIX TEST_MATRIX
+#define USE_INPUT inp_vector
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -23,8 +44,6 @@
 #include "platform.h"
 #include "xil_printf.h"
 #include <arm_neon.h>
-#include "test_vectors.h"
-#include "test_sparse.h"
 #include "structSparseEncode.h"
 #include "xsparse2_4mult.h"
 #include "xcounter.h"
@@ -34,11 +53,6 @@
 #define COUNTER_devID XPAR_COUNTER_0_DEVICE_ID
 #define SPARSEHLS_devID XPAR_SPARSE2_4MULT_0_DEVICE_ID
 #define POLL_CTR_MAX 10000
-
-float weights[MATRIX_HEIGHT][MATRIX_WIDTH];
-float weights90[MATRIX_HEIGHT][MATRIX_WIDTH];
-float inp_vector[NUM_INPUTS][MATRIX_WIDTH];
-float structSparse[MATRIX_HEIGHT][MATRIX_WIDTH];
 
 typedef struct{
 	float data;
@@ -234,202 +248,95 @@ int main(){
 	XCounter_EnableAutoRestart(xctr_ptr);
 	XCounter_Start(xctr_ptr);
 	//
-	/*
-	float dataValues[MATRIX_HEIGHT][nnzPerRow];
-	unsigned int indices[MATRIX_HEIGHT][numIndicesPerRow];
-	float outputHLS[NUM_INPUTS][MATRIX_HEIGHT];
-	int tEnc_begin = XCounter_Get_return(xctr_ptr);
-	encode2_4Sparsity(structSparse, dataValues, indices);
-	//encode2_4Sparsity(weights90, dataValues, indices);
-	int tEnc_elapsed = XCounter_Get_return(xctr_ptr) - tEnc_begin;
-	xil_printf("| SW Encoding of 2:4 sparse matrix: elapsed time = %d |", tEnc_elapsed);
 
-	//
-	int tSparse_compute = 0;
-	int tCompute_begin;
-	int tSparse_begin = XCounter_Get_return(xctr_ptr);
-	for (int i = 0; i < NUM_INPUTS; i++){
-		float *inp_vector_ptr = &inp_vector[i][0];
-		for (int j = 0; j < MATRIX_HEIGHT; j++){
-			float *dataValuesRow_ptr = &dataValues[j][0];
-			unsigned int *indices_ptr = &indices[j][0];
-			XSparse2_4mult_Write_indices_Words(xsparse_ptr, 0, (long unsigned int *)indices_ptr, numIndicesPerRow);
-			XSparse2_4mult_Write_dataValues_Words(xsparse_ptr, 0, (long unsigned int *)dataValuesRow_ptr, nnzPerRow);
-			XSparse2_4mult_Write_inp_vector_Words(xsparse_ptr, 0, (long unsigned int *)inp_vector_ptr, MATRIX_WIDTH);
-			tCompute_begin = XCounter_Get_return(xctr_ptr);
-			XSparse2_4mult_Start(xsparse_ptr);
-			int poll_ctr = 0;
-			while(!XSparse2_4mult_IsDone(xsparse_ptr) && poll_ctr < POLL_CTR_MAX) poll_ctr++;
-			if (poll_ctr == POLL_CTR_MAX){
-				xil_printf("| Timed Out: Sparse HLS Unit did not complete in % cycles |", POLL_CTR_MAX);
+	if ((TEST_HLS_MODULE == 1) && (TEST_CISR == 0)){
+		float dataValues[MATRIX_HEIGHT][nnzPerRow];
+		unsigned int indices[MATRIX_HEIGHT][numIndicesPerRow];
+		float outputHLS[NUM_INPUTS][MATRIX_HEIGHT];
+		int tEnc_begin = XCounter_Get_return(xctr_ptr);
+		encode2_4Sparsity(USE_MATRIX, dataValues, indices);
+		int tEnc_elapsed = XCounter_Get_return(xctr_ptr) - tEnc_begin;
+		xil_printf("| SW Encoding of 2:4 sparse matrix: elapsed time = %d |", tEnc_elapsed);
+		//
+		int tSparse_compute = 0;
+		int tCompute_begin;
+		int tSparse_begin = XCounter_Get_return(xctr_ptr);
+		for (int i = 0; i < NUM_INPUTS; i++){
+			float *inp_vector_ptr = &inp_vector[i][0];
+			for (int j = 0; j < MATRIX_HEIGHT; j++){
+				float *dataValuesRow_ptr = &dataValues[j][0];
+				unsigned int *indices_ptr = &indices[j][0];
+				XSparse2_4mult_Write_indices_Words(xsparse_ptr, 0, (long unsigned int *)indices_ptr, numIndicesPerRow);
+				XSparse2_4mult_Write_dataValues_Words(xsparse_ptr, 0, (long unsigned int *)dataValuesRow_ptr, nnzPerRow);
+				XSparse2_4mult_Write_inp_vector_Words(xsparse_ptr, 0, (long unsigned int *)inp_vector_ptr, MATRIX_WIDTH);
+				tCompute_begin = XCounter_Get_return(xctr_ptr);
+				XSparse2_4mult_Start(xsparse_ptr);
+				int poll_ctr = 0;
+				while(!XSparse2_4mult_IsDone(xsparse_ptr) && poll_ctr < POLL_CTR_MAX) poll_ctr++;
+				if (poll_ctr == POLL_CTR_MAX){
+					xil_printf("| Timed Out: Sparse HLS Unit did not complete in % cycles |", POLL_CTR_MAX);
+				}
+				tSparse_compute += XCounter_Get_return(xctr_ptr) - tCompute_begin;
+				long unsigned int dotProd;
+				dotProd = XSparse2_4mult_Get_dotProd(xsparse_ptr);
+				float *dotProd_ptr = &dotProd;
+				outputHLS[i][j] = *dotProd_ptr;
 			}
-			tSparse_compute += XCounter_Get_return(xctr_ptr) - tCompute_begin;
-			long unsigned int dotProd;
-			dotProd = XSparse2_4mult_Get_dotProd(xsparse_ptr);
-			float *dotProd_ptr = &dotProd;
-			outputHLS[i][j] = *dotProd_ptr;
 		}
+		int tSparse_elapsed = XCounter_Get_return(xctr_ptr) - tSparse_begin;
+		//
+		xil_printf("| Elapsed Time: HLS MODULE = %d |", tSparse_elapsed);
+		xil_printf("| Elapsed Time: HLS MODULE Compute only = %d |", tSparse_compute);
 	}
-	int tSparse_elapsed = XCounter_Get_return(xctr_ptr) - tSparse_begin;
-	*/
+	else{
+		CSRdata *csrValues, *csrValuesSIMD;
+		unsigned int indicesPtr[MATRIX_HEIGHT+1], indicesPtrSIMD[MATRIX_HEIGHT+1];
+		//
+		memset(indicesPtr, 0, (MATRIX_HEIGHT+1)*sizeof(unsigned int));
+		getNNZ(USE_MATRIX, indicesPtr);
+		unsigned int nnz = indicesPtr[MATRIX_HEIGHT];
+		csrValues = (CSRdata *)malloc(nnz*sizeof(CSRdata));
+		csrEncode(USE_MATRIX, csrValues);
 
-	//
+		memset(indicesPtrSIMD, 0, (MATRIX_HEIGHT+1)*sizeof(unsigned int));
+		getNNZ_simd(USE_MATRIX, indicesPtrSIMD);
+		unsigned int nnzSIMD = indicesPtrSIMD[MATRIX_HEIGHT];
+		csrValuesSIMD = (CSRdata *)malloc(nnzSIMD*sizeof(CSRdata));
+		csrEncode(USE_MATRIX, csrValuesSIMD);
+		//
+		float outputs_csr[NUM_INPUTS][MATRIX_HEIGHT];
+		float outputs_simd[NUM_INPUTS][MATRIX_HEIGHT];
+		//
+		memset(outputs_csr, 0, NUM_INPUTS*MATRIX_HEIGHT*sizeof(float));
+		memset(outputs_simd, 0, NUM_INPUTS*MATRIX_HEIGHT*sizeof(float));
+		int tCSR_begin = XCounter_Get_return(xctr_ptr);
+		spMV(csrValues, indicesPtr, USE_INPUT, outputs_csr);
+		int tCSR_elapsed = XCounter_Get_return(xctr_ptr) - tCSR_begin;
+		int tCSR_SIMD_begin = XCounter_Get_return(xctr_ptr);
+		spMV_simd(csrValuesSIMD, indicesPtrSIMD, USE_INPUT, outputs_simd);
+		int tCSR_SIMD_elapsed = XCounter_Get_return(xctr_ptr) - tCSR_SIMD_begin;
 
+		xil_printf("| Elapsed Time: CSR-Sequential = %d |", tCSR_elapsed);
+		xil_printf("| Elapsed Time: CSR-NEON SIMD = %d |", tCSR_SIMD_elapsed);
+		//
+		float output_std[NUM_INPUTS][MATRIX_HEIGHT];
+		int tStd_begin = XCounter_Get_return(xctr_ptr);
+		memset(output_std, 0, NUM_INPUTS * MATRIX_HEIGHT * sizeof(float));
+		stdMatMul(USE_MATRIX, USE_INPUT, output_std);
+		int tStd_elapsed = XCounter_Get_return(xctr_ptr) - tStd_begin;
+		xil_printf("| Elapsed Time: Std Matmul = %d |", tStd_elapsed);
+		//
+		float output_stdSIMD[NUM_INPUTS][MATRIX_HEIGHT];
+		int tStdSIMD_begin = XCounter_Get_return(xctr_ptr);
+		memset(output_stdSIMD, 0, NUM_INPUTS * MATRIX_HEIGHT * sizeof(float));
+		//
+		stdMatMulSIMD(USE_MATRIX, USE_INPUT, output_stdSIMD);
+		int tStdSIMD_elapsed = XCounter_Get_return(xctr_ptr) - tStdSIMD_begin;
+		xil_printf("| Elapsed Time: Std Matmul SIMD = %d |", tStdSIMD_elapsed);
 
-
-	/*
-	float diff = 0;
-	for (int m = 0; m < NUM_INPUTS; m++){
-		for (int n = 0; n < MATRIX_HEIGHT; n++){
-			//diff += fabs(output_std[m][n] - outputHLS[m][n]);
-			diff += fabs(output_std[m][n] - output_stdSIMD[m][n]);
-		}
+		free(csrValues);
+		free(csrValuesSIMD);
 	}
-	*/
-
-	/*
-	//xil_printf("| spMV result: Cumulative diff (std matmul vs HLS): %d |", (int)(diff*10000));
-	//xil_printf("| spMV result: Cumulative diff (std matmul vs std SIMD): %d |", (int)(diff*10000));
-	xil_printf("| Elapsed Time: HLS MODULE = %d |", tSparse_elapsed);
-	xil_printf("| Elapsed Time: HLS MODULE Compute only = %d |", tSparse_compute);
-	//
-	*/
-
-	//
-	CSRdata *csrValues, *csrValuesSIMD;
-	unsigned int indicesPtr[MATRIX_HEIGHT+1], indicesPtrSIMD[MATRIX_HEIGHT+1];
-	//
-	memset(indicesPtr, 0, (MATRIX_HEIGHT+1)*sizeof(unsigned int));
-	getNNZ(weights, indicesPtr);
-	//getNNZ(weights90, indicesPtr);
-	//getNNZ(structSparse, indicesPtr);
-	unsigned int nnz = indicesPtr[MATRIX_HEIGHT];
-	csrValues = (CSRdata *)malloc(nnz*sizeof(CSRdata));
-	csrEncode(weights, csrValues);
-	//csrEncode(weights90, csrValues);
-	//csrEncode(structSparse, csrValues);
-	//
-	memset(indicesPtrSIMD, 0, (MATRIX_HEIGHT+1)*sizeof(unsigned int));
-	getNNZ_simd(weights, indicesPtrSIMD);
-	//getNNZ_simd(weights90, indicesPtrSIMD);
-	//getNNZ_simd(structSparse, indicesPtrSIMD);
-	unsigned int nnzSIMD = indicesPtrSIMD[MATRIX_HEIGHT];
-	csrValuesSIMD = (CSRdata *)malloc(nnzSIMD*sizeof(CSRdata));
-	csrEncode(weights, csrValuesSIMD);
-	//csrEncode(weights90, csrValuesSIMD);
-	//csrEncode(structSparse, csrValuesSIMD);
-	//
-	float outputs_csr[NUM_INPUTS][MATRIX_HEIGHT];
-	float outputs_simd[NUM_INPUTS][MATRIX_HEIGHT];
-	//
-	memset(outputs_csr, 0, NUM_INPUTS*MATRIX_HEIGHT*sizeof(float));
-	memset(outputs_simd, 0, NUM_INPUTS*MATRIX_HEIGHT*sizeof(float));
-	int tCSR_begin = XCounter_Get_return(xctr_ptr);
-	spMV(csrValues, indicesPtr, inp_vector, outputs_csr);
-	int tCSR_elapsed = XCounter_Get_return(xctr_ptr) - tCSR_begin;
-	int tCSR_SIMD_begin = XCounter_Get_return(xctr_ptr);
-	spMV_simd(csrValuesSIMD, indicesPtrSIMD, inp_vector, outputs_simd);
-	int tCSR_SIMD_elapsed = XCounter_Get_return(xctr_ptr) - tCSR_SIMD_begin;
-
-	xil_printf("| Elapsed Time: CSR-Sequential = %d |", tCSR_elapsed);
-	xil_printf("| Elapsed Time: CSR-NEON SIMD = %d |", tCSR_SIMD_elapsed);
-
-	float output_std[NUM_INPUTS][MATRIX_HEIGHT];
-	int tStd_begin = XCounter_Get_return(xctr_ptr);
-	memset(output_std, 0, NUM_INPUTS * MATRIX_HEIGHT * sizeof(float));
-	//stdMatMul(structSparse, inp_vector, output_std);
-	stdMatMul(weights, inp_vector, output_std);
-	//stdMatMul(weights90, inp_vector, output_std);
-	int tStd_elapsed = XCounter_Get_return(xctr_ptr) - tStd_begin;
-	xil_printf("| Elapsed Time: Std Matmul = %d |", tStd_elapsed);
-
-
-	float output_stdSIMD[NUM_INPUTS][MATRIX_HEIGHT];
-	int tStdSIMD_begin = XCounter_Get_return(xctr_ptr);
-	memset(output_stdSIMD, 0, NUM_INPUTS * MATRIX_HEIGHT * sizeof(float));
-	//stdMatMulSIMD(structSparse, inp_vector, output_stdSIMD);
-	stdMatMulSIMD(weights, inp_vector, output_stdSIMD);
-	//stdMatMulSIMD(weights90, inp_vector, output_stdSIMD);
-	int tStdSIMD_elapsed = XCounter_Get_return(xctr_ptr) - tStdSIMD_begin;
-	xil_printf("| Elapsed Time: Std Matmul SIMD = %d |", tStdSIMD_elapsed);
-
-	free(csrValues);
-	free(csrValuesSIMD);
-	//
-	/*
-	float dataValues[MATRIX_HEIGHT][nnzPerRow];
-	unsigned int indices[MATRIX_HEIGHT][numIndicesPerRow];
-	encode2_4Sparsity(structSparse, dataValues, indices);
-	xil_printf("\n");
-	for (int k = 0; k < 64; k++){
-		xil_printf(" (%d, ", (int)(structSparse[1][k]*1000));
-		xil_printf(" %d), ", k%4);
-	}
-	xil_printf("\n");
-
-	for (int k = 0; k < 32; k++){
-		xil_printf(" %d, ", (int)(dataValues[1][k]*1000));
-	}
-	xil_printf("\n");
-	for (int k = 0; k < 2; k++){
-		xil_printf(" %x, ", indices[1][k]);
-	}
-	*/
-
-	/*
-	CSRdata *csrValues, *csrValuesSIMD;
-	unsigned int indicesPtr[MATRIX_HEIGHT+1], indicesPtrSIMD[MATRIX_HEIGHT+1];
-	//
-	memset(indicesPtr, 0, (MATRIX_HEIGHT+1)*sizeof(unsigned int));
-	getNNZ(weights, indicesPtr);
-	unsigned int nnz = indicesPtr[MATRIX_HEIGHT];
-	csrValues = (CSRdata *)malloc(nnz*sizeof(CSRdata));
-	csrEncode(weights, csrValues);
-	//
-	memset(indicesPtrSIMD, 0, (MATRIX_HEIGHT+1)*sizeof(unsigned int));
-	getNNZ_simd(weights, indicesPtrSIMD);
-	unsigned int nnzSIMD = indicesPtrSIMD[MATRIX_HEIGHT];
-	csrValuesSIMD = (CSRdata *)malloc(nnzSIMD*sizeof(CSRdata));
-	csrEncode(weights, csrValuesSIMD);
-	//
-	int diff = 0;
-	for (int k = 0; k < MATRIX_HEIGHT + 1; k++){
-		diff += abs(indicesPtr[k] - indicesPtrSIMD[k]);
-	}
-	xil_printf("\nIndex Ptrs: Cumulative diff (SIMD vs seq) : %d, ", diff);
-	//
-	float outputs_std[NUM_INPUTS][MATRIX_HEIGHT];
-	float outputs_csr[NUM_INPUTS][MATRIX_HEIGHT];
-	float outputs_simd[NUM_INPUTS][MATRIX_HEIGHT];
-	//
-	memset(outputs_std, 0, NUM_INPUTS*MATRIX_HEIGHT*sizeof(float));
-	memset(outputs_csr, 0, NUM_INPUTS*MATRIX_HEIGHT*sizeof(float));
-	memset(outputs_simd, 0, NUM_INPUTS*MATRIX_HEIGHT*sizeof(float));
-	xil_printf("Staring seq Mult\n");
-	stdMatMul(weights, inp_vector, outputs_std);
-	xil_printf("Starting spMV\n");
-	spMV(csrValues, indicesPtr, inp_vector, outputs_csr);
-	spMV_simd(csrValuesSIMD, indicesPtrSIMD, inp_vector, outputs_simd);
-	//
-	diff = 0;
-	for (int m = 0; m < NUM_INPUTS; m++){
-		for (int n = 0; n < MATRIX_HEIGHT; n++){
-			diff += abs(outputs_std[m][n] - outputs_csr[m][n]);
-		}
-	}
-	xil_printf("spMV result: Cumulative diff (std matmul vs CSR): %d, ", (int)(diff));
-	//
-	diff = 0;
-	for (int m = 0; m < NUM_INPUTS; m++){
-		for (int n = 0; n < 1; n++){
-			diff += abs(outputs_simd[m][n] - outputs_std[m][n]);
-		}
-	}
-	xil_printf("spMV result: Cumulative diff (simd vs std matmul): %d, ", (int)(diff));
-	//
-	free(csrValues);
-	free(csrValuesSIMD);
-	*/
 	cleanup_platform();
 	return 0;
 }
