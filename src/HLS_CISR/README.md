@@ -1,5 +1,5 @@
 ## CISR Encoding Based Runtime SPMV Accelerator Version 1
-![HLS_arch1](HLS_arch1.jpeg)
+![HLS_arch1](HLS_arch1.jpg)
 
 ### Working
 The basic outline of version 1 of the CISR encoding based runtime spmv accelerator is given as follows:
