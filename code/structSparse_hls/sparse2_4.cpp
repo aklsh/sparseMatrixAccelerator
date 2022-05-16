@@ -18,6 +18,24 @@
 #include "sparseHLS.h"
 #include "hls_print.h"
 
+void demuxInputs(
+		float dataValues[nnzPerRow],
+		float inp_vector[MATRIX_WIDTH],
+		float dataValuesDemux[nnzPerRow],
+		float inp_vectorDemux[nnzPerRow]
+		){
+
+	//HARD-CODED for 2:4 sparsity
+	for (int i = 0; i < MATRIX_WIDTH; i++){
+#pragma HLS PIPELINE
+		inp_vectorDemux[i] = inp_vector[i];
+		if (i % 2 == 0){
+			// nnzPerRow = MATRIX_WIDTH / 2
+			dataValuesDemux[i / 2] = dataValues[i / 2];
+		}
+	}
+}
+
 void decodeStage(
 		unsigned int indicesRow[numIndicesPerRow],
 		float inp_vectorRow[MATRIX_WIDTH],
@@ -33,7 +51,7 @@ void decodeStage(
 	unsigned int maskPacked = 0xF;
 	unsigned int maskLow = 0x3;
 	unsigned int maskHigh = 0xC;
-	// unroll by blocksPerRow
+
 	for (int i = 0; i < blocksPerRow; i++){
 #pragma HLS UNROLL
 		unsigned int indexPos = i / ( blocksPerRow / numIndicesPerRow );
@@ -63,29 +81,24 @@ void macStage(
 	*/
 
 	float partialMAC[nnzPerRow];
-	// unroll by 32
 #pragma HLS PIPELINE II=4
 	for (int i = 0; i < nnzPerRow; i++){
 #pragma HLS UNROLL factor=32
 		partialMAC[i] = dataValuesRow[i] * multInpsRow[i];
 	}
 	// reduction: (HARD-CODED for 32 nnzPerRow)
-	// unroll by 16
 	for (int i = 0; i < nnzPerRow; i += 2){
 #pragma HLS UNROLL factor= 16
 		partialMAC[i] += partialMAC[i+1];
 	}
-	// unroll by 8
 	for (int i = 0; i < nnzPerRow; i += 4){
 #pragma HLS UNROLL factor= 8
 		partialMAC[i] += partialMAC[i+2];
 	}
-	// unroll by 4
 	for (int i = 0; i < nnzPerRow; i += 8){
 #pragma HLS UNROLL factor= 4
 		partialMAC[i] += partialMAC[i+4];
 	}
-	// unroll by 2
 	for (int i = 0; i < nnzPerRow; i += 16){
 #pragma HLS UNROLL factor= 2
 		partialMAC[i] += partialMAC[i+8];
@@ -100,16 +113,25 @@ void sparse2_4Mult(
 		float inp_vector[MATRIX_WIDTH],
 		float *dotProd
 		){
+
+#pragma HLS INTERFACE mode=s_axilite port=return
+#pragma HLS AGGREGATE compact=auto variable=inp_vector
+#pragma HLS AGGREGATE compact=auto variable=dataValues
 #pragma HLS INTERFACE mode=s_axilite port=dotProd
 #pragma HLS INTERFACE mode=s_axilite port=inp_vector
 #pragma HLS INTERFACE mode=s_axilite port=indices
 #pragma HLS INTERFACE mode=s_axilite port=dataValues
-#pragma HLS ARRAY_PARTITION dim=1 type=complete variable=dataValues
-#pragma HLS ARRAY_PARTITION dim=1 type=complete variable=inp_vector
+
+	// demuxing inputs into array partitioned buffers
+	float dataValuesDemux[nnzPerRow];
+#pragma HLS ARRAY_PARTITION dim=1 type=complete variable=dataValuesDemux
+	float inp_vectorDemux[MATRIX_WIDTH];
+#pragma HLS ARRAY_PARTITION dim=1 type=complete variable=inp_vectorDemux
+
 	float multInpsRow[nnzPerRow];
 #pragma HLS ARRAY_PARTITION dim=1 type=complete variable=multInpsRow
-	//float dotProd[1];
 
-	decodeStage(indices, inp_vector, multInpsRow);
-	macStage(dataValues, multInpsRow, dotProd);
+	demuxInputs(dataValues, inp_vector, dataValuesDemux, inp_vectorDemux);
+	decodeStage(indices, inp_vectorDemux, multInpsRow);
+	macStage(dataValuesDemux, multInpsRow, dotProd);
 }

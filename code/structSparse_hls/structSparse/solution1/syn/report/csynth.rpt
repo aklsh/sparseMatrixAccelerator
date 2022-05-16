@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'sparse2_4Mult'
 ================================================================
 + General Information: 
-    * Date:           Sun May 15 20:23:08 2022
+    * Date:           Mon May 16 10:27:23 2022
     * Version:        2021.2 (Build 3367213 on Tue Oct 19 02:47:39 MDT 2021)
     * Project:        structSparse
     * Solution:       solution1 (Vivado IP Flow Target)
@@ -15,138 +15,48 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +-----------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
-    |     Modules     | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |          |             |             |     |
-    |     & Loops     | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM |    DSP   |      FF     |     LUT     | URAM|
-    +-----------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
-    |+ sparse2_4Mult  |     -|  0.04|       36|  360.000|         -|       37|     -|        no|     -|  40 (18%)|  15343 (14%)|  13955 (26%)|    -|
-    | + decodeStage   |     -|  3.15|        2|   20.000|         -|        2|     -|        no|     -|         -|   1059 (~0%)|     962 (1%)|    -|
-    | + macStage      |     -|  0.04|       31|  310.000|         -|        4|     -|       yes|     -|  40 (18%)|    6316 (5%)|   6514 (12%)|    -|
-    +-----------------+------+------+---------+---------+----------+---------+------+----------+------+----------+-------------+-------------+-----+
+    +--------------------+------+------+---------+-----------+----------+---------+------+----------+--------+----------+-------------+-------------+-----+
+    |       Modules      | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |        |          |             |             |     |
+    |       & Loops      | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|  BRAM  |    DSP   |      FF     |     LUT     | URAM|
+    +--------------------+------+------+---------+-----------+----------+---------+------+----------+--------+----------+-------------+-------------+-----+
+    |+ sparse2_4Mult     |     -|  0.04|      100|  1.000e+03|         -|      101|     -|        no|  4 (1%)|  80 (36%)|  14159 (13%)|  13758 (25%)|    -|
+    | + decodeStage      |     -|  3.15|        2|     20.000|         -|        2|     -|        no|       -|         -|   1059 (~0%)|     962 (1%)|    -|
+    | + macStage         |     -|  0.04|       29|    290.000|         -|        2|     -|       yes|       -|  80 (36%)|    8593 (8%)|  12269 (23%)|    -|
+    | o VITIS_LOOP_30_1  |     -|  7.30|       64|    640.000|         2|        1|    64|       yes|       -|         -|            -|            -|    -|
+    +--------------------+------+------+---------+-----------+----------+---------+------+----------+--------+----------+-------------+-------------+-----+
 
 
 ================================================================
 == HW Interfaces
 ================================================================
 * S_AXILITE Interfaces
-+---------------+------------+---------------+--------+----------+
-| Interface     | Data Width | Address Width | Offset | Register |
-+---------------+------------+---------------+--------+----------+
-| s_axi_control | 32         | 10            | 16     | 0        |
-+---------------+------------+---------------+--------+----------+
++---------------+------------+---------------+--------+----------+-------------------+
+| Interface     | Data Width | Address Width | Offset | Register | Resource Estimate |
++---------------+------------+---------------+--------+----------+-------------------+
+| s_axi_control | 32         | 9             | 128    | 0        | BRAM=4            |
++---------------+------------+---------------+--------+----------+-------------------+
 
 * S_AXILITE Registers
-+---------------+---------------+--------+-------+--------+------------------------------+------------------+
-| Interface     | Register      | Offset | Width | Access | Description                  | Bit Fields       |
-+---------------+---------------+--------+-------+--------+------------------------------+------------------+
-| s_axi_control | dataValues_0  | 0x10   | 32    | W      | Data signal of dataValues_0  |                  |
-| s_axi_control | dataValues_1  | 0x18   | 32    | W      | Data signal of dataValues_1  |                  |
-| s_axi_control | dataValues_2  | 0x20   | 32    | W      | Data signal of dataValues_2  |                  |
-| s_axi_control | dataValues_3  | 0x28   | 32    | W      | Data signal of dataValues_3  |                  |
-| s_axi_control | dataValues_4  | 0x30   | 32    | W      | Data signal of dataValues_4  |                  |
-| s_axi_control | dataValues_5  | 0x38   | 32    | W      | Data signal of dataValues_5  |                  |
-| s_axi_control | dataValues_6  | 0x40   | 32    | W      | Data signal of dataValues_6  |                  |
-| s_axi_control | dataValues_7  | 0x48   | 32    | W      | Data signal of dataValues_7  |                  |
-| s_axi_control | dataValues_8  | 0x50   | 32    | W      | Data signal of dataValues_8  |                  |
-| s_axi_control | dataValues_9  | 0x58   | 32    | W      | Data signal of dataValues_9  |                  |
-| s_axi_control | dataValues_10 | 0x60   | 32    | W      | Data signal of dataValues_10 |                  |
-| s_axi_control | dataValues_11 | 0x68   | 32    | W      | Data signal of dataValues_11 |                  |
-| s_axi_control | dataValues_12 | 0x70   | 32    | W      | Data signal of dataValues_12 |                  |
-| s_axi_control | dataValues_13 | 0x78   | 32    | W      | Data signal of dataValues_13 |                  |
-| s_axi_control | dataValues_14 | 0x80   | 32    | W      | Data signal of dataValues_14 |                  |
-| s_axi_control | dataValues_15 | 0x88   | 32    | W      | Data signal of dataValues_15 |                  |
-| s_axi_control | dataValues_16 | 0x90   | 32    | W      | Data signal of dataValues_16 |                  |
-| s_axi_control | dataValues_17 | 0x98   | 32    | W      | Data signal of dataValues_17 |                  |
-| s_axi_control | dataValues_18 | 0xa0   | 32    | W      | Data signal of dataValues_18 |                  |
-| s_axi_control | dataValues_19 | 0xa8   | 32    | W      | Data signal of dataValues_19 |                  |
-| s_axi_control | dataValues_20 | 0xb0   | 32    | W      | Data signal of dataValues_20 |                  |
-| s_axi_control | dataValues_21 | 0xb8   | 32    | W      | Data signal of dataValues_21 |                  |
-| s_axi_control | dataValues_22 | 0xc0   | 32    | W      | Data signal of dataValues_22 |                  |
-| s_axi_control | dataValues_23 | 0xc8   | 32    | W      | Data signal of dataValues_23 |                  |
-| s_axi_control | dataValues_24 | 0xd0   | 32    | W      | Data signal of dataValues_24 |                  |
-| s_axi_control | dataValues_25 | 0xd8   | 32    | W      | Data signal of dataValues_25 |                  |
-| s_axi_control | dataValues_26 | 0xe0   | 32    | W      | Data signal of dataValues_26 |                  |
-| s_axi_control | dataValues_27 | 0xe8   | 32    | W      | Data signal of dataValues_27 |                  |
-| s_axi_control | dataValues_28 | 0xf0   | 32    | W      | Data signal of dataValues_28 |                  |
-| s_axi_control | dataValues_29 | 0xf8   | 32    | W      | Data signal of dataValues_29 |                  |
-| s_axi_control | dataValues_30 | 0x100  | 32    | W      | Data signal of dataValues_30 |                  |
-| s_axi_control | dataValues_31 | 0x108  | 32    | W      | Data signal of dataValues_31 |                  |
-| s_axi_control | inp_vector_0  | 0x118  | 32    | W      | Data signal of inp_vector_0  |                  |
-| s_axi_control | inp_vector_1  | 0x120  | 32    | W      | Data signal of inp_vector_1  |                  |
-| s_axi_control | inp_vector_2  | 0x128  | 32    | W      | Data signal of inp_vector_2  |                  |
-| s_axi_control | inp_vector_3  | 0x130  | 32    | W      | Data signal of inp_vector_3  |                  |
-| s_axi_control | inp_vector_4  | 0x138  | 32    | W      | Data signal of inp_vector_4  |                  |
-| s_axi_control | inp_vector_5  | 0x140  | 32    | W      | Data signal of inp_vector_5  |                  |
-| s_axi_control | inp_vector_6  | 0x148  | 32    | W      | Data signal of inp_vector_6  |                  |
-| s_axi_control | inp_vector_7  | 0x150  | 32    | W      | Data signal of inp_vector_7  |                  |
-| s_axi_control | inp_vector_8  | 0x158  | 32    | W      | Data signal of inp_vector_8  |                  |
-| s_axi_control | inp_vector_9  | 0x160  | 32    | W      | Data signal of inp_vector_9  |                  |
-| s_axi_control | inp_vector_10 | 0x168  | 32    | W      | Data signal of inp_vector_10 |                  |
-| s_axi_control | inp_vector_11 | 0x170  | 32    | W      | Data signal of inp_vector_11 |                  |
-| s_axi_control | inp_vector_12 | 0x178  | 32    | W      | Data signal of inp_vector_12 |                  |
-| s_axi_control | inp_vector_13 | 0x180  | 32    | W      | Data signal of inp_vector_13 |                  |
-| s_axi_control | inp_vector_14 | 0x188  | 32    | W      | Data signal of inp_vector_14 |                  |
-| s_axi_control | inp_vector_15 | 0x190  | 32    | W      | Data signal of inp_vector_15 |                  |
-| s_axi_control | inp_vector_16 | 0x198  | 32    | W      | Data signal of inp_vector_16 |                  |
-| s_axi_control | inp_vector_17 | 0x1a0  | 32    | W      | Data signal of inp_vector_17 |                  |
-| s_axi_control | inp_vector_18 | 0x1a8  | 32    | W      | Data signal of inp_vector_18 |                  |
-| s_axi_control | inp_vector_19 | 0x1b0  | 32    | W      | Data signal of inp_vector_19 |                  |
-| s_axi_control | inp_vector_20 | 0x1b8  | 32    | W      | Data signal of inp_vector_20 |                  |
-| s_axi_control | inp_vector_21 | 0x1c0  | 32    | W      | Data signal of inp_vector_21 |                  |
-| s_axi_control | inp_vector_22 | 0x1c8  | 32    | W      | Data signal of inp_vector_22 |                  |
-| s_axi_control | inp_vector_23 | 0x1d0  | 32    | W      | Data signal of inp_vector_23 |                  |
-| s_axi_control | inp_vector_24 | 0x1d8  | 32    | W      | Data signal of inp_vector_24 |                  |
-| s_axi_control | inp_vector_25 | 0x1e0  | 32    | W      | Data signal of inp_vector_25 |                  |
-| s_axi_control | inp_vector_26 | 0x1e8  | 32    | W      | Data signal of inp_vector_26 |                  |
-| s_axi_control | inp_vector_27 | 0x1f0  | 32    | W      | Data signal of inp_vector_27 |                  |
-| s_axi_control | inp_vector_28 | 0x1f8  | 32    | W      | Data signal of inp_vector_28 |                  |
-| s_axi_control | inp_vector_29 | 0x200  | 32    | W      | Data signal of inp_vector_29 |                  |
-| s_axi_control | inp_vector_30 | 0x208  | 32    | W      | Data signal of inp_vector_30 |                  |
-| s_axi_control | inp_vector_31 | 0x210  | 32    | W      | Data signal of inp_vector_31 |                  |
-| s_axi_control | inp_vector_32 | 0x218  | 32    | W      | Data signal of inp_vector_32 |                  |
-| s_axi_control | inp_vector_33 | 0x220  | 32    | W      | Data signal of inp_vector_33 |                  |
-| s_axi_control | inp_vector_34 | 0x228  | 32    | W      | Data signal of inp_vector_34 |                  |
-| s_axi_control | inp_vector_35 | 0x230  | 32    | W      | Data signal of inp_vector_35 |                  |
-| s_axi_control | inp_vector_36 | 0x238  | 32    | W      | Data signal of inp_vector_36 |                  |
-| s_axi_control | inp_vector_37 | 0x240  | 32    | W      | Data signal of inp_vector_37 |                  |
-| s_axi_control | inp_vector_38 | 0x248  | 32    | W      | Data signal of inp_vector_38 |                  |
-| s_axi_control | inp_vector_39 | 0x250  | 32    | W      | Data signal of inp_vector_39 |                  |
-| s_axi_control | inp_vector_40 | 0x258  | 32    | W      | Data signal of inp_vector_40 |                  |
-| s_axi_control | inp_vector_41 | 0x260  | 32    | W      | Data signal of inp_vector_41 |                  |
-| s_axi_control | inp_vector_42 | 0x268  | 32    | W      | Data signal of inp_vector_42 |                  |
-| s_axi_control | inp_vector_43 | 0x270  | 32    | W      | Data signal of inp_vector_43 |                  |
-| s_axi_control | inp_vector_44 | 0x278  | 32    | W      | Data signal of inp_vector_44 |                  |
-| s_axi_control | inp_vector_45 | 0x280  | 32    | W      | Data signal of inp_vector_45 |                  |
-| s_axi_control | inp_vector_46 | 0x288  | 32    | W      | Data signal of inp_vector_46 |                  |
-| s_axi_control | inp_vector_47 | 0x290  | 32    | W      | Data signal of inp_vector_47 |                  |
-| s_axi_control | inp_vector_48 | 0x298  | 32    | W      | Data signal of inp_vector_48 |                  |
-| s_axi_control | inp_vector_49 | 0x2a0  | 32    | W      | Data signal of inp_vector_49 |                  |
-| s_axi_control | inp_vector_50 | 0x2a8  | 32    | W      | Data signal of inp_vector_50 |                  |
-| s_axi_control | inp_vector_51 | 0x2b0  | 32    | W      | Data signal of inp_vector_51 |                  |
-| s_axi_control | inp_vector_52 | 0x2b8  | 32    | W      | Data signal of inp_vector_52 |                  |
-| s_axi_control | inp_vector_53 | 0x2c0  | 32    | W      | Data signal of inp_vector_53 |                  |
-| s_axi_control | inp_vector_54 | 0x2c8  | 32    | W      | Data signal of inp_vector_54 |                  |
-| s_axi_control | inp_vector_55 | 0x2d0  | 32    | W      | Data signal of inp_vector_55 |                  |
-| s_axi_control | inp_vector_56 | 0x2d8  | 32    | W      | Data signal of inp_vector_56 |                  |
-| s_axi_control | inp_vector_57 | 0x2e0  | 32    | W      | Data signal of inp_vector_57 |                  |
-| s_axi_control | inp_vector_58 | 0x2e8  | 32    | W      | Data signal of inp_vector_58 |                  |
-| s_axi_control | inp_vector_59 | 0x2f0  | 32    | W      | Data signal of inp_vector_59 |                  |
-| s_axi_control | inp_vector_60 | 0x2f8  | 32    | W      | Data signal of inp_vector_60 |                  |
-| s_axi_control | inp_vector_61 | 0x300  | 32    | W      | Data signal of inp_vector_61 |                  |
-| s_axi_control | inp_vector_62 | 0x308  | 32    | W      | Data signal of inp_vector_62 |                  |
-| s_axi_control | inp_vector_63 | 0x310  | 32    | W      | Data signal of inp_vector_63 |                  |
-| s_axi_control | dotProd       | 0x318  | 32    | R      | Data signal of dotProd       |                  |
-| s_axi_control | dotProd_ctrl  | 0x31c  | 32    | R      | Control signal of dotProd    | 0=dotProd_ap_vld |
-+---------------+---------------+--------+-------+--------+------------------------------+------------------+
++---------------+--------------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+| Interface     | Register     | Offset | Width | Access | Description                      | Bit Fields                                               |
++---------------+--------------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
+| s_axi_control | CTRL         | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART |
+| s_axi_control | GIER         | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                 |
+| s_axi_control | IP_IER       | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN 5=CHAN2_INT_EN             |
+| s_axi_control | IP_ISR       | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST 5=CHAN2_INT_ST             |
+| s_axi_control | dotProd      | 0x18   | 32    | R      | Data signal of dotProd           |                                                          |
+| s_axi_control | dotProd_ctrl | 0x1c   | 32    | R      | Control signal of dotProd        | 0=dotProd_ap_vld                                         |
++---------------+--------------+--------+-------+--------+----------------------------------+----------------------------------------------------------+
 
 * TOP LEVEL CONTROL
-+-----------+------------+-----------------------------------+
-| Interface | Type       | Ports                             |
-+-----------+------------+-----------------------------------+
-| ap_clk    | clock      | ap_clk                            |
-| ap_rst_n  | reset      | ap_rst_n                          |
-| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
-+-----------+------------+-----------------------------------+
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
 
 
 ================================================================
@@ -163,110 +73,23 @@
 +------------+-----------+---------------+
 
 * SW-to-HW Mapping
-+------------+---------------+-----------+-----------------------------------------+
-| Argument   | HW Interface  | HW Type   | HW Info                                 |
-+------------+---------------+-----------+-----------------------------------------+
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| dataValues | s_axi_control | interface |                                         |
-| indices    | s_axi_control | memory    | name=indices offset=272 range=8         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| inp_vector | s_axi_control | interface |                                         |
-| dotProd    | s_axi_control | register  | name=dotProd offset=0x318 range=32      |
-| dotProd    | s_axi_control | register  | name=dotProd_ctrl offset=0x31c range=32 |
-+------------+---------------+-----------+-----------------------------------------+
++------------+---------------+----------+----------------------------------------+
+| Argument   | HW Interface  | HW Type  | HW Info                                |
++------------+---------------+----------+----------------------------------------+
+| dataValues | s_axi_control | memory   | name=dataValues offset=128 range=128   |
+| indices    | s_axi_control | memory   | name=indices offset=16 range=8         |
+| inp_vector | s_axi_control | memory   | name=inp_vector offset=256 range=256   |
+| dotProd    | s_axi_control | register | name=dotProd offset=0x18 range=32      |
+| dotProd    | s_axi_control | register | name=dotProd_ctrl offset=0x1c range=32 |
++------------+---------------+----------+----------------------------------------+
 
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+  No burst in design
 
 ================================================================
 == Bind Op Report
@@ -274,71 +97,72 @@
 +----------------------------------------+-----+--------+---------------+------+---------+---------+
 | Name                                   | DSP | Pragma | Variable      | Op   | Impl    | Latency |
 +----------------------------------------+-----+--------+---------------+------+---------+---------+
-| + sparse2_4Mult                        | 40  |        |               |      |         |         |
-|  + macStage                            | 40  |        |               |      |         |         |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U107  | 3   |        | partialMAC    | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U108  | 3   |        | partialMAC_1  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U109  | 3   |        | partialMAC_2  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U110  | 3   |        | partialMAC_3  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U111  | 3   |        | partialMAC_4  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U112  | 3   |        | partialMAC_5  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U113  | 3   |        | partialMAC_6  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U114  | 3   |        | partialMAC_7  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U107  | 3   |        | partialMAC_8  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U108  | 3   |        | partialMAC_9  | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U109  | 3   |        | partialMAC_10 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U110  | 3   |        | partialMAC_11 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U111  | 3   |        | partialMAC_12 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U112  | 3   |        | partialMAC_13 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U113  | 3   |        | partialMAC_14 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U114  | 3   |        | partialMAC_15 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U107  | 3   |        | partialMAC_16 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U108  | 3   |        | partialMAC_17 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U109  | 3   |        | partialMAC_18 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U110  | 3   |        | partialMAC_19 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U111  | 3   |        | partialMAC_20 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U112  | 3   |        | partialMAC_21 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U113  | 3   |        | partialMAC_22 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U114  | 3   |        | partialMAC_23 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U107  | 3   |        | partialMAC_24 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U108  | 3   |        | partialMAC_25 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U109  | 3   |        | partialMAC_26 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U110  | 3   |        | partialMAC_27 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U111  | 3   |        | partialMAC_28 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U112  | 3   |        | partialMAC_29 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U113  | 3   |        | partialMAC_30 | fmul | maxdsp  | 3       |
-|    fmul_32ns_32ns_32_4_max_dsp_1_U114  | 3   |        | partialMAC_31 | fmul | maxdsp  | 3       |
+| + sparse2_4Mult                        | 80  |        |               |      |         |         |
+|   add_ln30_fu_837_p2                   | -   |        | add_ln30      | add  | fabric  | 0       |
+|  + macStage                            | 80  |        |               |      |         |         |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U115  | 3   |        | partialMAC    | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U116  | 3   |        | partialMAC_1  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U117  | 3   |        | partialMAC_2  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U118  | 3   |        | partialMAC_3  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U119  | 3   |        | partialMAC_4  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U120  | 3   |        | partialMAC_5  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U121  | 3   |        | partialMAC_6  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U122  | 3   |        | partialMAC_7  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U123  | 3   |        | partialMAC_8  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U124  | 3   |        | partialMAC_9  | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U125  | 3   |        | partialMAC_10 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U126  | 3   |        | partialMAC_11 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U127  | 3   |        | partialMAC_12 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U128  | 3   |        | partialMAC_13 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U129  | 3   |        | partialMAC_14 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U130  | 3   |        | partialMAC_15 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U115  | 3   |        | partialMAC_16 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U116  | 3   |        | partialMAC_17 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U117  | 3   |        | partialMAC_18 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U118  | 3   |        | partialMAC_19 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U119  | 3   |        | partialMAC_20 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U120  | 3   |        | partialMAC_21 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U121  | 3   |        | partialMAC_22 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U122  | 3   |        | partialMAC_23 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U123  | 3   |        | partialMAC_24 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U124  | 3   |        | partialMAC_25 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U125  | 3   |        | partialMAC_26 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U126  | 3   |        | partialMAC_27 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U127  | 3   |        | partialMAC_28 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U128  | 3   |        | partialMAC_29 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U129  | 3   |        | partialMAC_30 | fmul | maxdsp  | 3       |
+|    fmul_32ns_32ns_32_4_max_dsp_1_U130  | 3   |        | partialMAC_31 | fmul | maxdsp  | 3       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U99  | 2   |        | partialMAC_32 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U100 | 2   |        | partialMAC_33 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U101 | 2   |        | partialMAC_34 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U102 | 2   |        | partialMAC_35 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U99  | 2   |        | partialMAC_36 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U100 | 2   |        | partialMAC_37 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U101 | 2   |        | partialMAC_38 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U102 | 2   |        | partialMAC_39 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_36 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_37 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_38 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U106 | 2   |        | partialMAC_39 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U99  | 2   |        | partialMAC_40 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U100 | 2   |        | partialMAC_41 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U101 | 2   |        | partialMAC_42 | fadd | fulldsp | 4       |
 |    fadd_32ns_32ns_32_5_full_dsp_1_U102 | 2   |        | partialMAC_43 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U99  | 2   |        | partialMAC_44 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U100 | 2   |        | partialMAC_45 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U101 | 2   |        | partialMAC_46 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U102 | 2   |        | partialMAC_47 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_48 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_49 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_50 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_51 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_52 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_53 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_54 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_55 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_56 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_57 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_58 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_59 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U106 | 2   |        | partialMAC_60 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U106 | 2   |        | partialMAC_61 | fadd | fulldsp | 4       |
-|    fadd_32ns_32ns_32_5_full_dsp_1_U106 | 2   |        | add           | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U103 | 2   |        | partialMAC_44 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U104 | 2   |        | partialMAC_45 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U105 | 2   |        | partialMAC_46 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U106 | 2   |        | partialMAC_47 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U107 | 2   |        | partialMAC_48 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U108 | 2   |        | partialMAC_49 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U109 | 2   |        | partialMAC_50 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U110 | 2   |        | partialMAC_51 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U107 | 2   |        | partialMAC_52 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U108 | 2   |        | partialMAC_53 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U109 | 2   |        | partialMAC_54 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U110 | 2   |        | partialMAC_55 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U111 | 2   |        | partialMAC_56 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U112 | 2   |        | partialMAC_57 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U111 | 2   |        | partialMAC_58 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U112 | 2   |        | partialMAC_59 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U113 | 2   |        | partialMAC_60 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U113 | 2   |        | partialMAC_61 | fadd | fulldsp | 4       |
+|    fadd_32ns_32ns_32_5_full_dsp_1_U114 | 2   |        | add           | fadd | fulldsp | 4       |
 +----------------------------------------+-----+--------+---------------+------+---------+---------+
 
 
@@ -351,23 +175,27 @@
 == User Pragma Report
 ================================================================
 * Valid Pragma Syntax
-+-----------------+------------------------------------------+-------------------------------------------------+
-| Type            | Options                                  | Location                                        |
-+-----------------+------------------------------------------+-------------------------------------------------+
-| unroll          |                                          | sparse2_4.cpp:38 in decodestage                 |
-| pipeline        | II=4                                     | sparse2_4.cpp:67 in macstage                    |
-| unroll          | factor=32                                | sparse2_4.cpp:69 in macstage                    |
-| unroll          | factor= 16                               | sparse2_4.cpp:75 in macstage                    |
-| unroll          | factor= 8                                | sparse2_4.cpp:80 in macstage                    |
-| unroll          | factor= 4                                | sparse2_4.cpp:85 in macstage                    |
-| unroll          | factor= 2                                | sparse2_4.cpp:90 in macstage                    |
-| interface       | mode=s_axilite port=dotProd              | sparse2_4.cpp:103 in sparse2_4mult, dotProd     |
-| interface       | mode=s_axilite port=inp_vector           | sparse2_4.cpp:104 in sparse2_4mult, inp_vector  |
-| interface       | mode=s_axilite port=indices              | sparse2_4.cpp:105 in sparse2_4mult, indices     |
-| interface       | mode=s_axilite port=dataValues           | sparse2_4.cpp:106 in sparse2_4mult, dataValues  |
-| array_partition | dim=1 type=complete variable=dataValues  | sparse2_4.cpp:107 in sparse2_4mult, dataValues  |
-| array_partition | dim=1 type=complete variable=inp_vector  | sparse2_4.cpp:108 in sparse2_4mult, inp_vector  |
-| array_partition | dim=1 type=complete variable=multInpsRow | sparse2_4.cpp:110 in sparse2_4mult, multInpsRow |
-+-----------------+------------------------------------------+-------------------------------------------------+
++-----------------+----------------------------------------------+-----------------------------------------------------+
+| Type            | Options                                      | Location                                            |
++-----------------+----------------------------------------------+-----------------------------------------------------+
+| pipeline        |                                              | sparse2_4.cpp:31 in demuxinputs                     |
+| unroll          |                                              | sparse2_4.cpp:68 in decodestage                     |
+| pipeline        | II=2                                         | sparse2_4.cpp:97 in macstage                        |
+| unroll          | factor=32                                    | sparse2_4.cpp:99 in macstage                        |
+| unroll          | factor= 16                                   | sparse2_4.cpp:105 in macstage                       |
+| unroll          | factor= 8                                    | sparse2_4.cpp:110 in macstage                       |
+| unroll          | factor= 4                                    | sparse2_4.cpp:115 in macstage                       |
+| unroll          | factor= 2                                    | sparse2_4.cpp:120 in macstage                       |
+| interface       | mode=s_axilite port=return                   | sparse2_4.cpp:134 in sparse2_4mult, return          |
+| aggregate       | compact=auto variable=inp_vector             | sparse2_4.cpp:136 in sparse2_4mult, inp_vector      |
+| aggregate       | compact=auto variable=dataValues             | sparse2_4.cpp:137 in sparse2_4mult, dataValues      |
+| interface       | mode=s_axilite port=dotProd                  | sparse2_4.cpp:138 in sparse2_4mult, dotProd         |
+| interface       | mode=s_axilite port=inp_vector               | sparse2_4.cpp:139 in sparse2_4mult, inp_vector      |
+| interface       | mode=s_axilite port=indices                  | sparse2_4.cpp:140 in sparse2_4mult, indices         |
+| interface       | mode=s_axilite port=dataValues               | sparse2_4.cpp:141 in sparse2_4mult, dataValues      |
+| array_partition | dim=1 type=complete variable=dataValuesDemux | sparse2_4.cpp:147 in sparse2_4mult, dataValuesDemux |
+| array_partition | dim=1 type=complete variable=inp_vectorDemux | sparse2_4.cpp:149 in sparse2_4mult, inp_vectorDemux |
+| array_partition | dim=1 type=complete variable=multInpsRow     | sparse2_4.cpp:153 in sparse2_4mult, multInpsRow     |
++-----------------+----------------------------------------------+-----------------------------------------------------+
 
 
