@@ -1,4 +1,6 @@
 # CISR Encoding Based Runtime SPMV Accelerator Version 2
+![HLS_arch2](HLS_arch2.jpg)
+
 ## Comparison with previous version
 This version is very similar to version 1 in terms of functionality and working, but here instead of the testbench calling the hardware unit for many iterations, it calls it once- sending the input vector, sparse matrix data and output vec to be written to. This data has to be ofcourse partitioned using the HLS array_partition pragma due to less memory ports in the Zybo Z7 20 device. Then, the hardware unit is responsible for doing the entire computation. 
 ## Description of modules or functions of the accelerator:
