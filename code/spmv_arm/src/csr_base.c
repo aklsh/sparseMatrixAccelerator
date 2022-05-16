@@ -25,8 +25,14 @@
 #include "test_vectors.h"
 #include "test_sparse.h"
 #include "structSparseEncode.h"
+#include "xsparse2_4mult.h"
+#include "xcounter.h"
+#include "xparameters.h"
 
 #define SIMD_WIDTH 4	// using 128-bit packed NEON registers
+#define COUNTER_devID XPAR_COUNTER_0_DEVICE_ID
+#define SPARSEHLS_devID XPAR_SPARSE2_4MULT_0_DEVICE_ID
+#define POLL_CTR_MAX 10000
 
 float weights[MATRIX_HEIGHT][MATRIX_WIDTH];
 float inp_vector[NUM_INPUTS][MATRIX_WIDTH];
@@ -187,6 +193,56 @@ void spMV_simd(
 
 int main(){
 	init_platform();
+	// Peripheral Driver Initialization:
+	XCounter xctr;
+	XSparse2_4mult xsparseHLS;
+	XCounter *xctr_ptr = &xctr;
+	XSparse2_4mult *xsparse_ptr = &xsparseHLS;
+
+	XCounter_Initialize(xctr_ptr, COUNTER_devID);
+	XSparse2_4mult_Initialize(xsparse_ptr, SPARSEHLS_devID);
+	XCounter_EnableAutoRestart(xctr_ptr);
+	XCounter_Start(xctr_ptr);
+	//
+	float dataValues[MATRIX_HEIGHT][nnzPerRow];
+	unsigned int indices[MATRIX_HEIGHT][numIndicesPerRow];
+	float outputHLS[NUM_INPUTS][MATRIX_HEIGHT];
+	int tEnc_begin = XCounter_Get_return(xctr_ptr);
+	encode2_4Sparsity(structSparse, dataValues, indices);
+	int tEnc_elapsed = XCounter_Get_return(xctr_ptr) - tEnc_begin;
+	xil_printf("| SW Encoding of 2:4 sparse matrix: elapsed time = %d |", tEnc_elapsed);
+	//
+	for (int i = 0; i < NUM_INPUTS; i++){
+		float *inp_vector_ptr = &inp_vector[i][0];
+		for (int j = 0; j < MATRIX_HEIGHT; j++){
+			float *dataValuesRow_ptr = &dataValues[j][0];
+			unsigned int *indices_ptr = &indices[j][0];
+			XSparse2_4mult_Write_indices_Words(xsparse_ptr, 0, (long unsigned int *)indices_ptr, numIndicesPerRow);
+			XSparse2_4mult_Write_dataValues_Words(xsparse_ptr, 0, (long unsigned int *)dataValuesRow_ptr, nnzPerRow);
+			XSparse2_4mult_Write_inp_vector_Words(xsparse_ptr, 0, (long unsigned int *)inp_vector_ptr, MATRIX_WIDTH);
+			XSparse2_4mult_Start(xsparse_ptr);
+			int poll_ctr = 0;
+			while(!XSparse2_4mult_IsDone(xsparse_ptr) && poll_ctr < POLL_CTR_MAX) poll_ctr++;
+			if (poll_ctr == POLL_CTR_MAX){
+				xil_printf("| Timed Out: Sparse HLS Unit did not complete in % cycles |", POLL_CTR_MAX);
+			}
+			long unsigned int dotProd;
+			dotProd = XSparse2_4mult_Get_dotProd(xsparse_ptr);
+			outputHLS[i][j] = (float)(dotProd);
+		}
+	}
+	float output_std[NUM_INPUTS][MATRIX_HEIGHT];
+	memset(output_std, 0, NUM_INPUTS * MATRIX_HEIGHT * sizeof(float));
+	stdMatMul(structSparse, inp_vector, output_std);
+
+	float diff = 0;
+	for (int m = 0; m < NUM_INPUTS; m++){
+		for (int n = 0; n < MATRIX_HEIGHT; n++){
+			diff += abs(output_std[m][n] - outputHLS[m][n]);
+		}
+	}
+	xil_printf("spMV result: Cumulative diff (std matmul vs HLS): %d, ", (int)(diff));
+
 	/*
 	float dataValues[MATRIX_HEIGHT][nnzPerRow];
 	unsigned int indices[MATRIX_HEIGHT][numIndicesPerRow];
@@ -207,7 +263,7 @@ int main(){
 	}
 	*/
 
-
+	/*
 	CSRdata *csrValues, *csrValuesSIMD;
 	unsigned int indicesPtr[MATRIX_HEIGHT+1], indicesPtrSIMD[MATRIX_HEIGHT+1];
 	//
@@ -260,7 +316,7 @@ int main(){
 	//
 	free(csrValues);
 	free(csrValuesSIMD);
-
+	*/
 	cleanup_platform();
 	return 0;
 }
