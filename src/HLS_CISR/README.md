@@ -1,5 +1,6 @@
 ## CISR Encoding Based Runtime SPMV Accelerator Version 1
 ![HLS_arch1](HLS_arch1.jpeg)
+
 ### Working
 The basic outline of version 1 of the CISR encoding based runtime spmv accelerator is given as follows:
 There are 'num\_slots number of compute units- made of basically a floating point multiplier and fp adder. Each slot is concerned with doing the computation on separate rows fully before moving on. As mentioned in the README of CISR based encoding, the whole logic behind CISR encoding is to make the scheduling easier. The sparse matrix data is organized in conseucitve sets of 'num\_slots' non-zero values and these are the first non-zero values for every row corresponding to different slots. So, the final idea is to push 'num\_slots' number of values to 'num\_slots' compute units so that they can easily do the computation in parallel without worrying about conflicts. Then, the next set of non-zero values for every row and different slots is pushed and so on. What we have also seen is that for each of these values pushed, it comes along with it's corresponding 'col\_index' in the matrix. So, we only have to worry about the row index decoding now. 
