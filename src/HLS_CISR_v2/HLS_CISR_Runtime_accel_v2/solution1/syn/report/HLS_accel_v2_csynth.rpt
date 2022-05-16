@@ -1,0 +1,202 @@
+
+
+================================================================
+== Vitis HLS Report for 'HLS_accel_v2'
+================================================================
+* Date:           Fri May 13 23:08:56 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:47 MST 2020)
+* Project:        HLS_CISR_Runtime_accel_v2
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       50|       50|  0.500 us|  0.500 us|   51|   51|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +--------------------------------------+-----------------------------------+---------+---------+----------+----------+-----+-----+----------+
+        |                                      |                                   |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+        |               Instance               |               Module              |   min   |   max   |    min   |    max   | min | max |   Type   |
+        +--------------------------------------+-----------------------------------+---------+---------+----------+----------+-----+-----+----------+
+        |dataflow_in_loop_VITIS_LOOP_417_1_U0  |dataflow_in_loop_VITIS_LOOP_417_1  |       18|       18|  0.180 us|  0.180 us|   10|   10|  dataflow|
+        +--------------------------------------+-----------------------------------+---------+---------+----------+----------+-----+-----+----------+
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_417_1  |       49|       49|        20|          -|          -|     4|        no|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|      56|     22|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        0|   10|    3763|   6219|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     18|    -|
+|Register         |        -|    -|       6|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|   10|    3825|   6259|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    4|       3|     11|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------------------+-----------------------------------+---------+----+------+------+-----+
+    |               Instance               |               Module              | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +--------------------------------------+-----------------------------------+---------+----+------+------+-----+
+    |dataflow_in_loop_VITIS_LOOP_417_1_U0  |dataflow_in_loop_VITIS_LOOP_417_1  |        0|  10|  3763|  6219|    0|
+    +--------------------------------------+-----------------------------------+---------+----+------+------+-----+
+    |Total                                 |                                   |        0|  10|  3763|  6219|    0|
+    +--------------------------------------+-----------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +----------------------------+----------+----+----+----+------------+------------+
+    |        Variable Name       | Operation| DSP| FF | LUT| Bitwidth P0| Bitwidth P1|
+    +----------------------------+----------+----+----+----+------------+------------+
+    |loop_dataflow_input_count   |         +|   0|  17|   7|           3|           1|
+    |loop_dataflow_output_count  |         +|   0|  17|   7|           3|           1|
+    |bound_minus_1               |         -|   0|  22|   8|           4|           1|
+    +----------------------------+----------+----+----+----+------------+------------+
+    |Total                       |          |   0|  56|  22|          10|           3|
+    +----------------------------+----------+----+----+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+----+-----------+-----+-----------+
+    |            Name            | LUT| Input Size| Bits| Total Bits|
+    +----------------------------+----+-----------+-----+-----------+
+    |loop_dataflow_input_count   |   9|          2|    3|          6|
+    |loop_dataflow_output_count  |   9|          2|    3|          6|
+    +----------------------------+----+-----------+-----+-----------+
+    |Total                       |  18|          4|    6|         12|
+    +----------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------+---+----+-----+-----------+
+    |            Name            | FF| LUT| Bits| Const Bits|
+    +----------------------------+---+----+-----+-----------+
+    |loop_dataflow_input_count   |  3|   0|    3|          0|
+    |loop_dataflow_output_count  |  3|   0|    3|          0|
+    +----------------------------+---+----+-----+-----------+
+    |Total                       |  6|   0|    6|          0|
+    +----------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+------------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  |   Source Object  |    C Type    |
++---------------------+-----+-----+------------+------------------+--------------+
+|inp_vec_address0     |  out|    3|   ap_memory|           inp_vec|         array|
+|inp_vec_ce0          |  out|    1|   ap_memory|           inp_vec|         array|
+|inp_vec_d0           |  out|   32|   ap_memory|           inp_vec|         array|
+|inp_vec_q0           |   in|   32|   ap_memory|           inp_vec|         array|
+|inp_vec_we0          |  out|    1|   ap_memory|           inp_vec|         array|
+|inp_vec_address1     |  out|    3|   ap_memory|           inp_vec|         array|
+|inp_vec_ce1          |  out|    1|   ap_memory|           inp_vec|         array|
+|inp_vec_d1           |  out|   32|   ap_memory|           inp_vec|         array|
+|inp_vec_q1           |   in|   32|   ap_memory|           inp_vec|         array|
+|inp_vec_we1          |  out|    1|   ap_memory|           inp_vec|         array|
+|data_val_arr_0       |   in|   32|     ap_none|    data_val_arr_0|       pointer|
+|data_val_arr_1       |   in|   32|     ap_none|    data_val_arr_1|       pointer|
+|data_val_arr_2       |   in|   32|     ap_none|    data_val_arr_2|       pointer|
+|data_val_arr_3       |   in|   32|     ap_none|    data_val_arr_3|       pointer|
+|data_val_arr_4       |   in|   32|     ap_none|    data_val_arr_4|       pointer|
+|data_val_arr_5       |   in|   32|     ap_none|    data_val_arr_5|       pointer|
+|data_val_arr_6       |   in|   32|     ap_none|    data_val_arr_6|       pointer|
+|data_val_arr_7       |   in|   32|     ap_none|    data_val_arr_7|       pointer|
+|data_val_arr_8       |   in|   32|     ap_none|    data_val_arr_8|       pointer|
+|data_val_arr_9       |   in|   32|     ap_none|    data_val_arr_9|       pointer|
+|data_val_arr_10      |   in|   32|     ap_none|   data_val_arr_10|       pointer|
+|data_val_arr_11      |   in|   32|     ap_none|   data_val_arr_11|       pointer|
+|data_val_arr_12      |   in|   32|     ap_none|   data_val_arr_12|       pointer|
+|data_val_arr_13      |   in|   32|     ap_none|   data_val_arr_13|       pointer|
+|data_val_arr_14      |   in|   32|     ap_none|   data_val_arr_14|       pointer|
+|data_val_arr_15      |   in|   32|     ap_none|   data_val_arr_15|       pointer|
+|col_index_arr_0      |   in|   32|     ap_none|   col_index_arr_0|       pointer|
+|col_index_arr_1      |   in|   32|     ap_none|   col_index_arr_1|       pointer|
+|col_index_arr_2      |   in|   32|     ap_none|   col_index_arr_2|       pointer|
+|col_index_arr_3      |   in|   32|     ap_none|   col_index_arr_3|       pointer|
+|col_index_arr_4      |   in|   32|     ap_none|   col_index_arr_4|       pointer|
+|col_index_arr_5      |   in|   32|     ap_none|   col_index_arr_5|       pointer|
+|col_index_arr_6      |   in|   32|     ap_none|   col_index_arr_6|       pointer|
+|col_index_arr_7      |   in|   32|     ap_none|   col_index_arr_7|       pointer|
+|col_index_arr_8      |   in|   32|     ap_none|   col_index_arr_8|       pointer|
+|col_index_arr_9      |   in|   32|     ap_none|   col_index_arr_9|       pointer|
+|col_index_arr_10     |   in|   32|     ap_none|  col_index_arr_10|       pointer|
+|col_index_arr_11     |   in|   32|     ap_none|  col_index_arr_11|       pointer|
+|col_index_arr_12     |   in|   32|     ap_none|  col_index_arr_12|       pointer|
+|col_index_arr_13     |   in|   32|     ap_none|  col_index_arr_13|       pointer|
+|col_index_arr_14     |   in|   32|     ap_none|  col_index_arr_14|       pointer|
+|col_index_arr_15     |   in|   32|     ap_none|  col_index_arr_15|       pointer|
+|row_len_arr_0        |   in|   32|     ap_none|     row_len_arr_0|       pointer|
+|row_len_arr_1        |   in|   32|     ap_none|     row_len_arr_1|       pointer|
+|row_len_arr_2        |   in|   32|     ap_none|     row_len_arr_2|       pointer|
+|row_len_arr_3        |   in|   32|     ap_none|     row_len_arr_3|       pointer|
+|row_len_arr_4        |   in|   32|     ap_none|     row_len_arr_4|       pointer|
+|row_len_arr_5        |   in|   32|     ap_none|     row_len_arr_5|       pointer|
+|row_len_arr_6        |   in|   32|     ap_none|     row_len_arr_6|       pointer|
+|row_len_arr_7        |   in|   32|     ap_none|     row_len_arr_7|       pointer|
+|output_vec_address0  |  out|    3|   ap_memory|        output_vec|         array|
+|output_vec_ce0       |  out|    1|   ap_memory|        output_vec|         array|
+|output_vec_d0        |  out|   32|   ap_memory|        output_vec|         array|
+|output_vec_q0        |   in|   32|   ap_memory|        output_vec|         array|
+|output_vec_we0       |  out|    1|   ap_memory|        output_vec|         array|
+|output_vec_address1  |  out|    3|   ap_memory|        output_vec|         array|
+|output_vec_ce1       |  out|    1|   ap_memory|        output_vec|         array|
+|output_vec_d1        |  out|   32|   ap_memory|        output_vec|         array|
+|output_vec_q1        |   in|   32|   ap_memory|        output_vec|         array|
+|output_vec_we1       |  out|    1|   ap_memory|        output_vec|         array|
+|ap_clk               |   in|    1|  ap_ctrl_hs|      HLS_accel_v2|  return value|
+|ap_rst               |   in|    1|  ap_ctrl_hs|      HLS_accel_v2|  return value|
+|ap_start             |   in|    1|  ap_ctrl_hs|      HLS_accel_v2|  return value|
+|ap_done              |  out|    1|  ap_ctrl_hs|      HLS_accel_v2|  return value|
+|ap_ready             |  out|    1|  ap_ctrl_hs|      HLS_accel_v2|  return value|
+|ap_idle              |  out|    1|  ap_ctrl_hs|      HLS_accel_v2|  return value|
++---------------------+-----+-----+------------+------------------+--------------+
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="HLS_CISR_spmv_accel.c" path="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_spmv_accel.c"/>
+  </source>
+  <testbench>
+    <originFiles name="HLS_CISR_spmv_accel_tb.c" path="/home/shivaubuntu/HLS_project/sparseMatrixAccelerator/src/HLS_CISR/HLS_CISR_spmv_accel_tb.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

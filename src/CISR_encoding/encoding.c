@@ -4,17 +4,40 @@
 //Assume N*N tile for now
 #define N 8
 #define num_non_zero 16
-#define num_slots 4
+#define num_slots 1
+/*
+Dummy inp vec
+inp_vec 0.000000
+inp_vec 1.000000
+inp_vec 1.000000
+inp_vec 1.000000
+inp_vec 0.000000
+inp_vec 0.000000
+inp_vec 1.000000
+inp_vec 1.000000
+*/
 const float matrix[][8] = {
-{0.2,0   ,0 ,0.3  ,0   ,0    ,0   ,0},
-{0  ,0   ,0 ,-32.5,0   ,0    ,0   ,0},
-{0  ,0   ,0 ,0    ,25.2,100.2,0   ,0},
-{0  ,0.80,0 ,0    ,0   ,1.2  ,0   ,5.4},
-{0  ,0   ,12.6,0    ,0   ,0    ,1.5 ,6.7},
-{0  ,0   ,0 ,5.4  ,0   ,0    ,0   ,9.3},
-{0  ,55.6,0 ,0    ,0   ,1.2  ,0   ,0},
-{0  ,0   ,0 ,0    ,0   ,0    ,17.6,0}
+{0.2,0   ,0   ,0.3  ,0   ,0    ,0   ,0}, //0
+{0  ,0   ,0   ,-32.5,0   ,0    ,0   ,0}, // 1
+{0  ,0   ,0   ,0    ,25.2,100.2,0   ,0},  // 1
+{0  ,0.80,0   ,0    ,0   ,1.2  ,0   ,5.4}, //  0
+{0  ,0   ,12.6,0    ,0   ,0    ,1.5 ,6.7}, // 1
+{0  ,0   ,0   ,5.4  ,0   ,0    ,0   ,9.3}, // 0
+{0  ,55.6,0   ,0    ,0   ,1.2  ,0   ,0},// 1
+{0  ,0   ,0   ,0    ,0   ,0    ,17.6,0} // 0
 };
+
+/*
+Output
+1	0.3
+2	-32.5
+3	0
+4	6.2
+5	20.8
+6	14.7
+7	55.6
+8	17.6
+*/
 
 //TODO- can either implement encoded data in linked list/ array ( will need to know number of non-zeros before hand
 //TODO- ** Figure out how row id decoding is done- esp with empty rows **
@@ -239,21 +262,29 @@ int main()
      
   }
   
-  
+  //Note- Storage
+  //The way row_len_arr is stored is that, we store the value (float) ,col index (int) and row_len_arr value (int) ( if id is valid) continguosly.
+  //Now, when the id goes beyond the number of rows- **KEEP TRACK OF THIS**, we only store value,col index contiguosly.
+  FILE *fp;
+  fp = fopen("encoded_data.txt", "w+");
   //Test output
   int row_len_arr_index= 0;
   for(int index = 0;index<num_non_zero;index++)
   {
-    printf("Val:       %f \n",Elem_arr[index].value);
-    printf("Col_index: %d \n",Elem_arr[index].col_index);
+    //fprintf(fp,"Val:       %f \n",Elem_arr[index].value);
+    fprintf(fp,"%f\n",Elem_arr[index].value);
+    //fprintf(fp,"Col_index: %d \n",Elem_arr[index].col_index);
+    fprintf(fp,"%d\n",Elem_arr[index].col_index);
+    
     if(row_len_arr_index<N)
     { 
-      printf("Row_len:   %d \n",row_len_arr[row_len_arr_index]);
+      //fprintf(fp,"Row_len:   %d \n",row_len_arr[row_len_arr_index]);
+      fprintf(fp,"%d\n",row_len_arr[row_len_arr_index]);
       row_len_arr_index++;   
     }
-    printf("------------------------------\n");
+    //fprintf(fp,"------------------------------\n");
   }
-  
+  fclose(fp);
   
   
   
